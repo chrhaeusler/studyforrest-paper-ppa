@@ -2,9 +2,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
+\usepackage{svg}
+\usepackage{caption, booktabs}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage{todonotes}
+\usepackage[
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=green
+]{hyperref}
 \newcommand{\scidatalogo}{\includegraphics[height=36pt]{SciData_logo.jpg}}
 \newcommand{\overleaflogo}{\includegraphics[height=36pt]{Overleaf-logo-300dpi.png}}
 \pagestyle{fancy}
@@ -16,166 +24,443 @@
 
 \begin{document}
 
-\title{PPA stuff (110 character maximum, inc. spaces)}
+% Vorgabe < 110 chars incl. spaces
+%  jetzt 109 Chars
+\title{Hemodynamic responses of the Parahippocampal Place Area to spatial cues in a movie and it's audio-description} 
+% alt:BOLD responses of the Parahippocampal Place Area correlate with spatial cues in a movie and it's audio-only variant
 
-\author{Firstname Lastname\textsuperscript{1}, Firstname
-Lastname\textsuperscript{2{*}}}
-
+\author{Christian O. Häusler\textsuperscript{1,2{*}}, Michael Hanke\textsuperscript{1}}
 % https://www.nature.com/sdata/publish/for-authors#other-formats
 
 \maketitle
 \thispagestyle{fancy}
+1. Psychoinformatics Lab, Institute of Neuroscience and Medicine, Brain \& Behaviour (INM-7), Research Centre Jülich, Jülich, Germany, 
+2. Institute of Systems Neuroscience, Medical Faculty, Heinrich Heine University, Düsseldorf, Germany 
+{*}corresponding author: Christian Olaf Häusler (der.haeusler@gmx.net)
 
-1. An affiliation 2. A different affiliation {*}corresponding author(s):
-Firstname Lastname (email@address)
 \begin{abstract}
-This is a manuscript template for Data Descriptor submissions to \emph{Scientific
-Data} (http://www.nature.com/scientificdata). The abstract must be
-no longer than 170 words, and should succinctly describe the study,
-the assay(s) performed, the resulting data, and the reuse potential,
-but should not make any claims regarding new scientific findings.
-No references are allowed in this section. 
+% Analysis Paper abstract: < 170 words
+% no references are allowed: 
+% new analysis of existing data of interest to a broad section of our audience
+% highlighting innovative examples of data reuse
+% may be used to present compelling new findings and conclusions derived from published data.
+% submissions using data previously published at Scientific Data are encouraged
+% submissions should exemplify reproducible research by clearly describing all steps in the analysis
+% providing supporting source code, and explaining how and where others may access all data underlying the analysis.
+Intro: PPA as classic example for an visual area
+Methods: fMRI data, studyforrest data set, general linear model
+Results: significant clusters in PPA, RSC, individual results in x of 15 subjects
+Conclusions: PPA nicht exclusively 
 \end{abstract}
+% Intro + Discussion = main text ~  3,000 words.
+% include figure providing schematic overview of the study and assay(s) design
+% -> ist overkill; Paradigma ist mit "Film ab" wenig kompliziert.
+\section{Introduction}
+% Bzgl. Zitationen (lasse alles so lange wie möglich in Kbibtext's .bib-Datei): \cite{cite1, cite2}
+% our system cannot accept BibTeX bibliography files; authors who wish to use BibTeX to prepare their references should therefore copy the reference list from the .bbl file that BibTeX generates and paste it into the main manuscript .tex file (and delete the associated  \textbackslash{}bibliography and \textbackslash{}bibliographystyle commands).
+Cognitive neuroscientists use brain imaging methods like blood oxygenation level-dependent functional magnetic resonance imaging (BOLD fMRI) to map perceptual and cognitive brain processes (e.g. viewing of landscapes, {epstein1998ppa}; or theory of mind {spunt2014validating}) to functional brain areas or networks. Brain mapping studies have traditionally employed small sets of carefully chosen, simplified stimuli to strictly control experimental conditions and facilitate functional isolation of brain areas. The disadvantage is that a limited number of simplified stimuli does not resemble our real-life experience and lacks external {westfall2016fixing} as well as ecological validity {hasson2004intersubject}. Additionally, brain mapping studies have traditionally averaged / usually average results across at least 10-15 subjects to improve the signal-to-noise-ratio (SNR). The disadvantage here is that the averaging approach does not  characterize brain functions at an individual level, a prerequisite for the application of brain imaging methods in individual diagnostics (cf. {dubois2016building})
 
-\section*{Background \& Summary}
+% Retrosplenial-Cortex kommt in der jetzigen Einleitung nicht vor, jedoch in Ergebnissen von Movie & Audio-Description
+% Muss spätestens in der Discussion diskutiert werden
+% bin auch am überlegen, ob ich in den Ergebnissen zu den sagitallen slices durch die PPAs noch sagitale Slices durch die RSCs dazunehme??
+A classic example of a functional, higher-level visual area is the "parahippocampal place area" (PPA) {epstein1998ppa; epstein1999parahippocampal}. The PPA is located in the posterior parahippocampal gyrus at the boundary to the anterior lingual gyrus and medial fusiform gyrus, both being part of the ventral visual stream [mishkin1982contribution; goodale1992separate]. Increased hemodynamic activity in the PPA correlates with the perception of static pictures of landscapes or landmarks compared to pictures of tools or faces. According to the spatial layout hypothesis, the PPA is involved in processing the surface geometry of a visual stimulus and possibly in identifying scenes based on their spatial layout {epstein2010reliable}.
+Results generalize at a group average level to a) mental imagination of landscapes {ocraven2000mental} and b) haptic exploration of scenes {wolbers2011modality}, \todo{this needs some more glue. the following is not just about spoken stimuli} whereas results of a study using spoken, place-related sentences were unclear \todo{should be more specific. unclear could mean 'not well described'} {aziz2008modulation}:
+a) In a study conducted by {ocraven2000mental} participants viewed alternating blocks of pictures showing famous faces and familiar places during an initial experimental paradigm. In a subsequent paradigm, participants were instructed to "form a vivid mental image" of the previously viewed pictures. The PPA showed increased activation during imagination of places compared to faces but the imagination tasks showed a smaller activation level compared to the perceptual task. 
+% Wolbers im Folgenden macht noch ne Connectivitäts-Analyse mit dem Occipital-Cortex; da ist dann keine Connectivity im Vergleich zum visuellen Paradigma; deshalb kann das laut ihm kein mental image sein: "the scene-related increase in coupling with the PPA was significantly stronger in multiple clusters in occipital cortex under visual than haptic stimulation (Figure 2B; Table S2)"
+b) In a block design study conducted by {wolbers2011modality} the PPA of sighted participants showed increased activation during a delayed matching-to-sample task of haptically explored scenes constructed from Lego bricks compared to haptically explored abstract geometric objects.
+% Aziz hat auf eine zweite Mail geantwortet: Sie hat kein Block-Design, sondern modelt die HRF über den jeweils gesamten Satz von ca. 2.8 Sekunden.
+c) To our knowledge only one study by {aziz2008modulation} correlated hemodynamic activity of the PPA with spoken sentences. Sentences described generic or famous places (e.g. “The Taj Mahal faces a long thin reflecting pool”) or faces  (e.g. “Marylin Monroe has a large square jaw"). Participants were instructed to press a button whenever the sentence described an inaccurate or improbable fact. Surprisingly, activation in the left, but not right, PPA was significantly reduced \todo{reduced relative to what condition?} when participants listened to place-related sentences. Moreover, this effect was only observed in sentences involving famous places. 
+% Frage: Review von Aminoff (2013) kommt nur kurz als "competing hypothesis"; muss man dann in der Discussion diskutieren, was ggf. gar nicht nötwendig ist, weil's darum im Grunde nicht geht
+In summary, studies suggest that the PPA does not exclusively respond to visual(ly) spatial information. This is consistent with a competing hypotheses stating the PPA does not process the spatial layout of a scene specifically but contextual associations in general {aminoff2006parahippocampal} for a review). Independent(ly) from competing theories (s. {aminoff2013role} for a review), it is still unacknowledged/ uncertain/ indeterminate if auditory stimuli lead to inhibitory or excitatory responses, or no change at all in the PPA.
 
-(700 words maximum) An overview of the study design, the assay(s)
-performed, and the created data, including any background information
-needed to put this study in the context of previous work and the literature.
-The section should also briefly outline the broader goals that motivated
-the creation of this dataset and the potential reuse value. We also
-encourage authors to include a figure that provides a schematic overview
-of the study and assay(s) design. This section and the other main
-body sections of the manuscript should include citations to the literature
-as needed \cite{cite1, cite2}. References should be included within the 
-manuscript file itself as our system cannot accept BibTeX bibliography files. 
-Authors who wish to use BibTeX to prepare their references should therefore 
-copy the reference list from the .bbl file that BibTeX generates and paste it 
-into the main manuscript .tex file (and delete the associated 
-\textbackslash{}bibliography and \textbackslash{}bibliographystyle commands).
+% coolness-faktor von natural stimuli ist in der Einleitung beinahe komplett raus
+% data-driven analyses vs. theory-driven analyses ist komplett raus
+% kann man in discussion bringen, muss man aber nicht ist ja dann offensichtlich
+All studies reviewed above used a small set of carefully designed, simplified stimuli to strictly control experimental conditions. They further relied on / implemented explicit judgment-based tasks to keep participants alert and paying attention. Thus, they cannot / could answer the question how the PPA might behave under life-like conditions. Natural stimuli like movies [hasson2008neurocinematics; sonkusare2019naturalistic] or narratives [honey2012not-lost; lerner2011topographic; silbert2014coupled] offer an easy to implement, (continuous,) complex, immersive stimulus that better resembles our experience of a continuous dynamic environment. 
+% hier wird GLM nicht explizit erwähnt; denke, muss nicht so spezifisch sein
+In an early study [bartels2004mapping] manually annotated time points that depict faces and human bodies in a 22 minute clip of the movie \textit{Tomorrow Never Dies}. These time points correlated with increased hemodynamic activity in the "fusiform face area" {kanwisher1997ffa} and "extrastriate body area"{downing2001body-area} respectively. 
+% hier wird ISC als solches nicht erwähnt
+{hasson2004intersubject} took an inverse approach using a 30 minute clip of the movie \textit{The Good, the Bad, the Ugly}. fMRI brain volumes showing the highest hemodynamic activity in the PPA [across (five) participants] were matched to the (temporally) correlating movie frames. Results revealed that frames depicted indoor and outdoor scenes including buildings and open fields. 
+Both studies suggest functional specialization is preserved during free viewing of a movie when many areas respond simultaneously and interact [<- der Schlusssatz ist aus hasson und bartels plagiiert]. Nevertheless, none of the reviewed study could investigate how the PPA responds to spatial clues that are embedded in a complex, audio-only stimulus.
+
+% ich habe einiges deiner Kommentare versucht einzubauen
+% wenn dir etwas nicht explizit genug ist, fühl dich, frei mir auf die Finger zu hauen oder es vorzugsweise bei wenig Aufwand direkt umzuformulieren;
+% bzgl. open source habe ich nichts geschrieben, weil ich nur weiß, das der Code veröffentlicht werden soll. Du hast die Vision diesbezüglich im Kopf und entsprechend auch kanonisch-prägnante Formulierungen und wo die am besten wie hinkommen
+% MIH:
+% 1. is such stimulus (more) suitable for distinguishing this cognitive process from others?
+% 2. given its suitability how do results (PPA-like response localization) differ from a standard visual/block-design localizer for: 
+% 1) complex visual stimulation without a task, and 
+% 2) complex auditory stimulation without an explicit imagery task
+% both aspects together can then be discussed in terms of the feasibility of (multi-dimensional) localizer development with naturalistic stimuli
+% Präteritum oder Präsens? Ist momentan gemischt; find's ok so.
+In this study, we analyze data of three publicly available datasets from the same set of 15 participants as part of the studyforrest data set (\href{http://www.studyforrest.org}{studyforrest.org}). We exploratorily investigate how the parrahippocampal gyrus responds to "spatially relevant" events embedded in a 2h audio-visual movie [hanke2016simultaneous] and it's audio-description of same length [hanke2014audiomovie]. Results are compared to PPA localizations that were obtained from a dedicated visual localizer experiment [sengupta2016extension]. Both natural stimuli were originally designed to entertain an audience and to capture attention free from any perceptual or behavioral task. We annotated events of the otherwise unknown temporal structure of both stimuli to be able to fit a theory-driven model. In/for the movie, we annotated different kinds of cinematographic cuts [haeusler2016annotation] as presumably "spatially relevant" events. Our rationale was that cuts re-orient the viewer in the depicted environment independent from the exact visual content in the movie frame following the cut. In/for the audio-description, we annotated clues about the missing visual content given by the narrator {haeusler2019annotation}. We correlated regressors drawn from the annotations in order to detect possible/possibly confounded regressors that might prevent functional isolation of the PPA. In conformity to the analyses performed in the studies reviewed above, we submitted our regressors to a standard multi-level, voxel-wise general linear model (GLM). For practical reasons (+++es war a) viel einfacher als visual content zu annotieren und ist b) viel interessanter weil non-visual+++) and encouraged by {aziz2008modulation} and {aminoff2013role}, we focus on the audio-description as a possible life-like substitute to individually localize a "visual area" in visually impaired persons.
+
+\todo[inline]{the last paragraph contains a bunch of methods already. I would reduce this to talk about
+the general approach: annotation of events, investigation of model quality, cross-analysis of datasets.
+Possibly cite https://psyarxiv.com/sdbqv/ and declare that this study is a concrete realization of that
+promise}
+
+\section{Methods}
+% Ich habe die zwei Methodenteile gemerged und vor allem gekürzt; 
+% Einige Stellen sind aber sicherlich noch zu lange; denn im Zweifel habe ich es stehen gelassen
+% Specific data outputs should be explicitly referenced via data citation (see Data Records and Data Citations, below). 
+An exhaustive description of the participants, stimulus creation, procedure, stimulation setup, and fMRI acquisition can be found in {hanke2014audiomovie} and {hanke2016simultaneous; sengupta2016extension} 
+
+\todo{following is a brief summary of most important aspects}
+
+\todo[inline]{we should consider making a statement how often these datasets have been analyzed be
+independent groups already. if we do, they will all get an 'you have been cited' alter eventually}
+
+\subsection{Participants}
+% ggf. mit "Stimuli" zusammenfassen, weil sich das, dadurch dass die gleichen 15 in beiden Experimenten mitgemacht haben schwer prägnant trennen lässt.
+In the first \todo{better to give them labels in the initial paragraph above, we will be referring to them quite a bit} study, fifteen participants (all right-handed, age 21–38 years, mean age 26.6 years, 12 male) listened to the German audio-description (Koop, Michalski, Beckmann, Meinhardt \& Benecke, produced by Bayrischer Rundfunk, 2009) of the movie "Forrest Gump" (R. Zemeckis, Paramount Pictures, 1994) as an additional audio track for visually impaired listeners on Swiss public television. In the second study, the same 15 participants (21–39 years, mean age 29.4, six female) watched the audio-visual movie with dubbed German audio track. All participants reported to have normal hearing, normal or corrected-to-normal vision, and no known history of neurological disorders. In both studies, participants received monetary compensation and gave written informed consent for their participation and for public sharing of all obtained data in anonymized form. The studies had prior approval by the Ethics Committee of Otto-von-Guericke University of Magdeburg, Germany.
+
+\todo[inline]{i think the stimulus infos need to move from here into the section below}
+
+\subsection{Stimuli}
+% grey bars habe ich nicht erwähnt, obwohl sie - weil bei Lisas Stimuli überall anders - so viel Spaß gemacht haben
+The movie's audio track and the audio-description are largely identical. The plot is carried by an off-screen voice of the main character Forrest Gump. The audio-description's male narrator additionally verbalizes essential aspects of the visual scenery when there is no dialog, off-screen voice or relevant sound in the audio track.
+The audio-description was temporally aligned to the audio track of the German DVD release (Paramount Home Entertainment, Germany, 2002; PAL video, DE103519SV). A few scenes less relevant to the major plot were removed to create the "research cut" lasting $\approx$2h. Both stimuli were further processed (filtering, volume adjustments) to improve understandability / audibleness / audibility during MRI scanning. Finally, each stimulus was split into eight segments of approximately 15 minutes. Except for the first movie segment, each segment started with a snippet of at least six seconds immediately preceding the movie scene boundary used to split the segments. \todo{cite fig 3a from hanke2014}
+
+\subsection{Procedure}
+In both studies, participants filled out a questionnaire on their basic demographic information and familiarity with the audio-description or the movie. Participants were instructed to inhibit physical movements except for eye-movements, and otherwise to simply "enjoy the audiobook" or "enjoy the movie" respectively.
+Audio-description and movie segments were presented in chronological order with four segments in two fMRI sessions respectively. \todo{possibly cut the rest of the section} At the start recording session(s), participants listened to music from the movie’s closing credits segment to individually determine optimal stimulus volume. Participants were instructed to "maximize the volume of the stimulus without it becoming unpleasantly loud or causing acoustic distortions by overdriving the loudspeaker hardware". % unterscheidet sich ggf. zwischen Hörspiel / Film oder kann ganz raus?
+Between sessions, participants left the scanner for a break with a flexible duration. Structural images were obtained during the first study on a day different from the fMRI session.
+
+\subsection{Stimulation setup}
+Stimulation was implemented with PsychoPy v1.79 (with an early version of the MovieStim2 component later to be publicly released with \href{http://www.psychopy.org}{PsychoPy v1.81}; {peirce2007psychopy}) running on a computer with the \href{http://neuro.debian.net}{(Neuro)Debian} operating system [halchenko2012open]. 
+% Einige Dinge können m.M.n. raus; insb. das in den []-Klammern
+% habe es noch einmal drinnen gelassen, solltest Du die Dinge für wichtig halten
+In the auditory study, visual instructions were presented on a rear-projection screen inside scanner bore using an LCD projector (DLA-G150CL, JVC Ltd.). During the functional scans, the projector presented a medium gray screen with the primary purpose to illuminate a participant’s visual field in order to prevent premature fatigue. [The screen contained a solid black "fixation" dot that faded in and out at the beginning and end of a movie segment.]
+In the audio-visual study, visual instructions and stimuli were presented on a rear-projection screen using an LCD projector (JVC DLA RS66E, JVC Ltd., light transmission reduced to 13.7\% with a gray filter) connected to the stimulus computer [via a DVI extender system (Gefen EXT-DVI-142DLN with EXT-DVI-FM1000). The movie was shown at a viewing distance of 63\,cm in 720\,p resolution at full width on a 1280 *1024\,pixel screen with 60\,Hz video refresh rate and screen dimension of 26.5 * 21.2\,cm, corresponding to 23.75*13.5 or 23.75*10.25 when considering only the movie content and excluding the horizontal gray bars].
+% Hier hat es Unterschiede zwischen Hörspiel & Film geben? habe es wie folgt zusammengefasst; im Zweifel ist es eh noch zu ausführlich
+Auditory stimulation was delivered through an MR confon mkII+ driving custom-built in-ear headphones (HP-M01, MR confon GmbH, Magdeburg, Germany; {baumgart1998electrodynamic}) that reduced the scanner noise by at least 20–30 dB. Headphones were  fed from an Aureon 7.1 USB (Terratec) sound card through an optical connection.
+
+\subsection{fMRI data acquisition}
+In both studies, a total of 3599 volumes were recorded for each participant (451, 441, 438, 488, 462, 439, 542 and 338 volumes for movie segment 1–8 respectively).
+In the auditory study, a whole-body 7-Tesla Siemens MAGNETOM magnetic resonance scanner equipped with a local circularly polarized head transmit and a 32 channel brain receive coil (Nova Medical, Inc., Wilmington, MA, USA) acquired T2*-weighted echo-planar images (gradient-echo, 2\,s repetition time (TR), 22\,ms echo time, 0.78\,ms echo spacing, 1488\,Hz/Px bandwidth, generalized autocalibrating partially parallel acquisition, acceleration factor 3, 24 Hz/Px bandwidth in phase encoding direction)  using 36 axial slices (thickness 1.4\,mm, 1.4 x 1.4\,mm in-plane resolution, 224\,mm field-of-view, anterior-to-posterior phase encoding direction) with a 10 percent inter-slice gap were recorded in ascending order. Slices were oriented to include the ventral portions of frontal and occipital cortex while minimizing intersection with the eyeballs. The field-of-view was centred on the approximate location of Heschl's gyrus. 
+% EPI images were online-corrected for motion and geometric distortions [Oh, S. et al. 2012; In, M. \& Speck, O., 2012; Chung, J. et al., 2011+++]. Auxiliary scans for slice alignment and motion- and distortion-correction were performed at the beginning of the first fMRI recording session and also after the break at the start of the recording for the second half of the movie.
+In the audio-visual study, a whole-body 3 Tesla Philips Achieva dStream MRI scanner equipped with a 32 channel head coil acquired T2*-weighted echo-planar images (gradient-echo, 2\,s repetition time (TR), 30\,ms echo time, 90 DEGREE flip angle, 1943\,Hz/Px bandwidth, parallel acquisition with sensitivity encoding (SENSE) reduction factor 2). 35 axial slices (thickness 3.0\,mm, 10 \% inter-slice gap) with 80*80 voxels (3.0*3.0 mm of in-plane resolution), 240\,mm mm field-of-view (FoV) and an anterior-to-posterior phase encoding direction were recorded in ascending order. Philips’ “SmartExam” was used to automatically position slices in AC-PC orientation such that the topmost slice was located at the superior edge of the brain. 
+
+\subsection{Stimulus Annotation}
+% wurde unter "Regressoren" zu Beginn der 1st-lvl-Analyse verschoben
+
+\section{Data analysis }
+% \todo{shouldn't this be also just in Methods?}
+% hier ggf. noch expliziter machen, dass die spatially downsampled sind
+% https://openneuro.org/datasets/ds000113 
+% denoised movie data: 
+% https://github.com/OpenNeuroDatasets/ds001769/tree/master/sub-01/ses-movie/func
+fMRI time series data were obtained from
+\href{''https://github.com/psychoinformatics-de/studyforrest-data-aligned''}{GitHub}. Data are already aligned to a subject-specific \href{''https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms''}{3 Tesla BOLD template} \todo{cite sengupta2016 where this was first done and described, ie same image/data was used here} by a rigid body transformation in MCFLIRT ([jenkinson2002registration]) to correct for motion during scanning. All further analysis steps in the current study were carried out using tools of FSL v5.0.9 (\href{''https://www.fmrib.ox.ac.uk/fsl''}{FMRIB's Software Library};[smith2004fsl]; on a computer cluster running the \href{https://www.debian.org}{Debian} GNU/Linux operating system. Software packages were obtained from repositories of \href{http://neuro.debian.net}{NeuroDebian}([halchenko2012open]).
+
+\subsection{Preprocessing}
+Preprocessing (and statistical analysis) was carried out using FEAT v6.00 (FMRI Expert Analysis Tool;[woolrich2001autocorr]) as part of FSL. High-pass temporal filtering was applied to every segment using a Gaussian-weighted least-squares straight line with a cutoff period of 150\,s (sigma=75.0\,s) to remove low-frequency confounds. Slice-time correction was performed using Fourier-space time series phase-shifting. \todo{hmm, why did we do that (slicetiming)?} The brain was extracted from surrounding tissues using BET [smith2002BET]. Data were spatially smoothed applying a Gaussian kernel with full width at half maximum (FWHM) of 4.0 mm. A grand-mean intensity normalization of the entire 4D dataset was performed by a single multiplicative factor. Correction for local autocorrelation in the time series (prewhitening) was applied using FILM (FMRIB’s Improved Linear Model).
+
+\subsection{Statistical analysis}
+A standard two-level general linear model (GLM) analysis was conducted in FEAT to create subject-specific results ($Z$-maps). A subsequent, third-level analysis averaged contrast estimates over subjects.
+
+\subsubsection{first-level}
+\paragraph{Regressors \todo{stimulus/statistical model?}}
+To build the regressors for the GLMs, we took advantage of two publicly available annotations of the stimuli's temporal structure. One annotation of speech occurring in the audio-description and movie {haeusler2019annotation}, and a second annotation of movie cuts and depicted locations \href{https://f1000research.com/articles/5-2273}{haeusler2016annotation}. As a first step, the annotations were split via (\href{"https://github.com/chrhaeusler/studyforrest-data-annotations/blob/master/code/researchcut2segments.py"}{python script} into eight parts corresponding to the eight segments used in the scanner. 
+% wenn ich folgend den "null regressor" nehme, darf ich den ganzen Run - glaube ich - in der 2nd level Analyse gar nicht benutzen??
+For the auditory stimulus, we used nouns embedded in sentences spoken by the narrator. The nouns are categorized by the clue they provide about a cinematographic scene's environment \todo{maybe skip the names and just cite the table} (geo, geo-room; setting\_new, setting\_old), its inherent persons (female, female name; male, male name, person), a person's appearance (face, head; body, bodypart), and a scene's inherent objects (object, furniture). Details on procedure to annotate the stimuli on a single-world level and details on the rules to manually categorize the nouns can be found in the \href{"https://www.overleaf.com/project/5d4ab1b759001b5db6ea2bc3"}{corresponding paper}. We created 11 regressors from the XY (selected?) original categories by joining / merging some categories (female, females, fname; male, males, mname; face, head) into one regressor (sex\_f; sex\_m; fahead). The regressors were modeled as boxcar functions at the end of each noun with a duration of 200 ms (jetzt ist es über Wortlänge). If a segment did not contain a single event for a specific regressor, a null regressor was chosen for that segment. Five regressors related to the cinematographic cuts (s. below) were added to built contrasts of cross-modal negative control. Two regressors reflecting auditory (low-level) features (left-right loudness volume / amplitude??? difference; root mean squared amplitude) aligned to the frame rate of (40\,ms) were modeled to reduce nuisance effects. An overview and short explanation of the 11 regressors and 5 + 2 additional nuisance regressors can be found in Table xy. 
+% entgegen der Masterarbeit kommen hier für den Film keine Abbildungen zur Verdeutlichung, weniger Text; no cut erkläre ich nicht lang & breit
+% die regressoren settinge_new & setting_old aus dem Hörspiel habe ich meiner meinung nach unnötigerweise im Film mit-modelliert; lasse mich da aber auch umstimmen
+% -> noch mal reingucken; kamen im Grunde nur "auditorische Areale" als Cluster vor; umgekehrt gab's bei der visuellen Regressoren im Hörbuch keine sign. Cluster
+For the audio-visual stimulus, we categorized the depicted location in the frame following one of the 869 cuts in the movie to built five regressors: 1) unfamiliar setting (US), 2) familiar setting (FS), 3) locale switch (LS), 4) unfamiliar perspective (UP), 5) familiar perspective (FP). In order to build negative control contrasts, a sixth regressors was created by pseudo-randomly choosing frames present within a shot and apart from a cut. Regressors were modeled as boxcar function lasting 200\,ms after a cut. An overview and short explanation of the six regressors and the additional nuisance regressors reflecting (auditory and) visual low-level features can be found in Table xy. 
+For both stimuli, regressors were convolved with a double gamma canonical hemodynamic response function (HRF). Their temporal derivatives were added to compensate for small timing differences [friston1998event]. Six motion parameters were used as additional nuisance regressors. Finally, designs were filtered with the same high-pass filter (cutoff period of 150\,s) as the BOLD time series.
+
+\begin{table*}
+\caption{Regressors used in the analysis of the audio-description. \todo[inline]{make clear which stimulus each annotation is based on, and make clear(er) what defined an event. This could be a big table, because good defintions are important for judging the results}}
+\begin{tabular}{lll}
+\toprule
+\textbf{name} & \textbf{count} & \textbf{description} \\
+\midrule
+body & 66 & trunk of the body or overlaid clothes \\ 
+bpart & 69 & limbs and trousers \\ 
+facehead & 83 & face(parts) or head(parts) \\
+furniture & 50 & big inventory of rooms (insides/outsides) \\
+geo & 125 & immobile landmarks \\ 
+geo-room & 105 & elements defining a locale's spatial layout \\ 
+setting\_new & 86 & first-time mentioned setting \\ 
+setting\_old & 37 & recurring setting \\ 
+object & 284 & inanimate entities with firm boundaries \\ 
+sex\_f & 108 & female person(s), name \\ 
+sex\_m & 403 & male person(s), name \\ 
+vse\_new & 96 & control for movie cuts; s. table y \\
+vse\_old & 90 & control for movie cuts; s. table y \\
+vloc\_change & 89 & control for movie cuts; s. table y \\
+vpe\_new & 386 & control for movie cuts; s. table y \\
+vpe\_old & 208 & control for movie cuts; s. table y \\
+fg\_ad\_lrdiff & xx &  left-right volume difference \\
+fg\_ad\_rms & xx & root mean square amplitude \\ 
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}
+\caption{Regressors used in the analysis of the movie.}
+\begin{tabular}{lll}
+\toprule
+\textbf{name} & \textbf{count} & \textbf{description} \\
+\midrule
+vse\_new & 96 & change of the camera position to a setting not depicted before \\
+vse\_old & 90 & change of the camera position to a recurring setting \\
+vloc\_change & 89 & change of the camera position to another locale within the same setting \\
+vpe\_new & 386 & change of the camera position within a locale not depicted before \\
+vpe\_old & 208 & change of the camera position within a recurring locale \\
+no\_cut & 148 & a continuous frame from the same camera position \\
+se\_new & 148 & audio-description's narrator; s. table x; KANN RAUS? \\
+se\_old & 148 & audio-description's narrator; s. table x; KANN RAUS? \\
+fg\_av\_ger\_lr & xx & left right +++???+++ in movie frame  \\
+fg\_av\_ger\_lrdiff & xx & left-right volume difference \\
+fg\_av\_ger\_pd & xx & perceptual differences of consecutive frames \\
+fg\_av\_ger\_rms & xx & root mean square amplitude \\
+fg\_av\_ger\_ud & xx & +++up down???+++ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+\begin{figure}[htbp]
+  \centering
+%  \includesvg{regressors-corr.pdf}
+  \includegraphics[width=1.0\textwidth]{regressors-corr.pdf}
+  % MIH ignore such beautification issues, they are easy to fix at the very end with a manual intervention. Shifting the colorbar by hand to make it look nicer is no threat to reproducibility ;-)
+  \caption{\label{fig:Rorrelation of Regressors}Wo diese Abbildung bringen? Im Grunde ist es "Results". Ich denke, man kann am Ende des Abschnitts "Regressoren" der 1st-lvl-Analyse einen kurzen Hinweise bringen und alles hier in der Bildunterschrift  kurz erläutern; Discussion dazu kommt in der Discussion die geringen Korrelationen nicht selbstverständlich sind}
+\end{figure}
+\paragraph{audio contrasts of parameter estimate}
+% Überblick über die Kontraste geben, die tatsächlich am Ende im Paper berichtet werden -> am besten telefonisch klären
+% HIER ERZÄHLEN, WARUM VIELE KONTRASTE GERCHNET WURDEN und WARUM DER EINE COPE THE ONE AND ONLY IST
+
+\begin{table*}
+\caption{Contrasts of parameter estimates for the analysis of the audio-description.}
+% das sind die zusammengefassten Kurzversionen, d.h. nicht alle Regressoren sind explizit in dem COPEs ausformuliert
+\begin{tabular}{lll}
+\toprule
+\textbf{COPE nr.} & \textbf{description} & \textbf{aim} \\
+\midrule
+1 & geo, rgeo, se\_new, se\_old > non\_geo & PPA \\
+2 & geo, rgeo, se\_new > non\_geo & PPA \\
+3 & geo, rgeo > non\_geo & PPA <<-- THE COOL \\
+4 & geo > non\_geo & PPA \\
+5 & se\_new > non\_geo & PPA \\
+6 & se\_new, se\_old > non\_geo & PPA \\
+7 & se\_new > se\_old & PPA \\
+8 & body > all\_others (excl. bpart) & EBA \\
+9 & body, bpart > all\_others & EBA \\
+10 & body > non\_persons (excl. bpart) & EBA \\
+11 & body, bpart > non\_persons & EBA \\
+12 & body, bpart > non\_persons (excl. faHead) & EBA \\
+13 & fahead > all\_others & FFA \\
+14 & fahead > all\_others (excl. body/parts) & FFA \\
+15 & fahead > non\_persons & FFA \\
+16 & fahead > non\_persons (excl. body/parts) & FFA \\
+17 & obj > all\_others & LOC \\
+18 & obj > all\_others (excl. fahead) & LOC \\
+19 & obj > all\_others (excl. fahead, rgeo) & LOC \\
+20 & obj > persons & LOC \\
+21 & se\_old > se\_new & DMN \\
+22 & se\_old > non\_settings & DMN \\
+23 & se\_old > non\_geo & DMN \\
+24 & female > male & ??? \\
+25 & male > female & ??? \\
+26 & persons > non\_persons (excl. body/parts) & ??? \\
+27 & non\_persons (excl. body/parts) > persons & ??? \\
+28 & se\_new > se\_old & visual contr. \\
+29 & pe\_new > pe\_old & visual contr. \\
+30 & se\_new, pe\_new > se\_old, pe\_old & visual contr. \\
+31 & se\_new > pe\_old & visual contr. \\
+32 & se\_new > se\_old, pe\_old & visual contr. \\
+33 & se\_new, pe\_new > pe\_old & visual contr. \\
+34 & se\_old > se\_new & DMN  contr. \\
+35 & pe\_old > pe\_new &  DMN contr. \\
+36 & no\_cut > pe\_new, pe\_old & neg. control \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{video contrasts of parameter estimate}
+% Überblick über die Kontraste geben, die tatsächlich am Ende im Paper berichtet werden
+% ggf. irgendwo noch reinpressen, dass man damit fast alle schnitte in FG benutzt hat
+We created a contrast presumably correlating with increased hemodynamic activity in the PPA by contrasting different kind of cuts. This was done without controlling for the specific visual content depicted in the frame after each cut. The cinematographic rationale was that - over the course of a movie - cuts shift from establishing the setting and the spatial relationships within a setting at the beginning of a movie to depicting persons and objects more relevant to the subsequently evolved narrative later in the movie {brown2012cinematography; mercado2011filmmakers}. The neurocientific rationale was that activity in the PPA is greater when participants view novel versus repeated scenes resp. view-points {epstein1999parahippocampal}. Hence, we contrasted cuts to a setting occurring for the first time (vse\_new) and cuts within a locale depicted for the first time (vpe\_new) with shots to a recurring setting (vse\_old) and cuts within a recurring locale (vpe\_old). 
+
+\begin{table*}
+\caption{COPEs for the movie.}
+\begin{tabular}{lll}
+\toprule
+\textbf{COPE nr. } & \textbf{description} & \textbf{aim} \\
+\midrule
+1 & geo, rgeo, se\_new, se\_old > non\_geo & PPA \\
+1 & se\_new > se\_old & PPA \\
+2 & pe\_new > pe\_old & PPA \\
+3 & se\_new, pe\_new > se\_old, pe\_old & PPA (the true and cool one) \\
+4 & se\_new > pe\_old & PPA \\
+5 & se\_new > se\_old, pe\_old & PPA \\
+6 & se\_new, pe\_new > pe\_old & PPA \\
+7 & pe\_new > se\_old, pe\_old & PPA \\
+8 & se\_old > se\_new & DMN \\
+9 & pe\_old > pe\_new & DMN \\
+10 & no\_cut > se\_new, se\_old & neg. control \\
+11 & no\_cut > se\_new & neg. control \\
+12 & no\_cut > se\_old & neg. control \\
+13 & no\_cut > pe\_new, pe\_old & neg. control \\
+14 & ao: se\_new > se\_old & audio control \\
+15 & ao: se\_old > se\_new & audio control \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Registration \& smoothing: individuals vs. group}
+% hier wird's wie üblich bei Registrierung;
+% bitte gucken, ob korrekt wiedergeben, was ihr gemacht habt
+% wie besprochen sind hier die individuelle Results im subject space
+% später warpe ich individuelle 2nd-lvl-results "for visualization purposes" doch noch nach MNI 
+The GLM analysis that fitted each voxel's time course separately for each subject was performed in functional space preserving the orientation of the EPI images. Correction for local autocorrelation in the time series (prewhitening) was applied using FILM (FMRIB's Improved Linear Model) to improve estimation efficiency [woolrich2001autocorr]. 
+For subsequent subject-specific second level results, subject-specific BOLD T2* time series were anatomically aligned via linear transformation to a subject-specific, study-specific T2* template (s. \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example}) that served as standard space.
+For subsequent the third level results averaging contrasts of interest across subjects, time series were anatomically aligned via non-linear transformation [+++wie genau?+++] to a \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"}{study-specific T2* group template}. To facilitate visualization and identification of cortical structures, this reference images was later co-registered to the MNI 152 template with an affine transformation (12 degrees of freedom) 
+\subsubsection{second level}
+The second-level analyses which averaged contrast estimates over the eight stimulus segments were carried out using a fixed effects model, by forcing the random effects variance to zero in FLAME (FMRIB's Local Analysis of Mixed Effects) [beckmann2003general, woolrich2004multilevel]. Z (Gaussianised T/F) statistic images were thresholded using clusters determined by Z>2.3 and a (corrected) cluster significance threshold of p=.05 [worsley2001statistical].
+\subsubsection{third level}
+Third level analyses which averaged contrast estimates over subjects were carried out using FLAME stage 1 with automatic outlier detection [beckmann2003general, woolrich2004multilevel, woolrich2008robust]. Z (Gaussianised T/F) statistic images were thresholded using clusters determined by Z>3.4 and a (corrected) cluster significance threshold of p=.05 [Worsley, 2001].
+% Brain regions associated with observed clusters were determined with the Juelich Histological Atlas Eickhoff et al. (2005); Eickhoff et al. (2007), the Harvard-Oxford Cortical Atlas (Desikan et al., 2006), and with queries on the NeuroSynth database (Yarkoni et al., 2011) provided by FSL.
+% In order to determine if activated regions were spatially congruent with higher-visual functional areas (PPA, FFA, OFA, LOC and EBA), study-specific ROI masks generated by the mean of visual localizers in Sengupta et al. (2016) were used.
+
+\subsection{Das Post-FSL-Scripting-Gedöns}
+% Wahrscheinlicher ist, dass das Prozedere der Skripte nicht im Methodenteil berichtet werden muss
+% als Erläuterung in den Bildunterschriften im Ergebnisteil sollten reichen
+% -> die Skripte durchlaufen lassen und die Abbildungen in den Ergebnisteil samt Bildunterschriften einfügen
+\subsubsection{plot-group-and-individuals.py}
+
+\subsubsection{plot-bland-altman.py}
+
+% generate-masks.py; DO NOT TOUCH! 
+% FOR GROUP:
+% 0. In FSLeyes, manually created probabilistic brain lobe maps from \href{"https://doi.org/10.5281/zenodo.1470761"}{the MNI Structural Atlas} (./data/atlases/mni_prob_*.nii.gz)
+% 1. these brain lobe maps were aligned (via FSL's flirt -applyxf with 12 dof) to the \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"}{study-specific T2* group template} (./data/atlases/grpbold3Tp2_mni_prob_*.nii.gz)
+% 2. from \href{"https://github.com/psychoinformatics-de/studyforrest-data-visualrois"} {sengupta2016extension}: UNIlateral probabilistic group ROI masks (data/masks/*_overlap.nii.gz) -> BIlateral probabilistic & binary grp ROI masks in grp space (.data/masks/bilat_???_prob.nii & .data/masks/bilat_???_binary.nii )
+% FOR SUBJECTS:
+% 1. bilateral grp ROI masks in grp space -> bilateral grp ROI masks in subject space (applywarp; sub-??/masks/grp_*_bin.nii.gz)
+% 2. probabilistic MNI mask -> subject space (via FSL's applywarp)
+% 3. merge probabilistic occipital & temporal mask in subject space
+%	(sub-??/masks/mni_prob_occip_tempo.nii.gz)
+% 4. created subject-specific FOV from 4d 7t audio drama time series
+%	(./sub-??/masks/ao_fov_mask.nii.gz)
+% 5. individual, unilateral ROIs from {sengupta2016extension} were joined and co-registered to MNI 152 (1mm) space, and binarized
+% 6. individual (un)thresholded zmaps (from the COPEs) were co-regi<wstered with MNI 152 (1mm) template.
+\section{Results (audio)}
+\begin{itemize}
+\item vgl. mit Ergebnis-Teilen anderer Localizer (in wievielen VPN funktioniert's etc.)
+\item   https://en.wikipedia.org/wiki/Bland%E2%80%93Altman_plot
+\end{itemize}
+
+\section{Results (movie)}
+\begin{itemize}
+\item lore ipsum
+\end{itemize}
+
+% MIH the discussion should primarily be anchored on the points the introduction concludes with. From my POV there is no need (and likely no space) to discuss results by stimulus type. Issue like different impact of attentional focus etc can be brought up in the joint paragraph that discussed how such a factor could have differentially impacted the results -- and if that would matter.
+\section{Discussion (audio)}
+
+\begin{itemize}
+\item Hanke et al. (2014): Compared to an audio-visual movie, this is a stimulus that leaves a much larger margin for inter-individual differences in imagining scenery, as well as actors' character and personality traits, while still preserving the time-locked presentation of information to a listener. At the same time, an auditory stimulus limits the effect of an attentional focus on the selection of a subset of simultaneously occurring auditory events, in contrast to the selection of different parts of the visual field.
+\item mental imagery hypthesis (s. O'Craven \& Kanwisher, 2000)
+\item Lerner (2011), Honey (2012), Silbert (2014) finden keine ISC in PPA? vgl. DataPaper bzgl. Hörbuch??
+\item setting\_new ist häufig vermischt mit anderer Kategorie "ein Arzt", "ein alter Film", "auf einer Straße", "im Fernsehen", "die drei Jungs", "die zwei im Bett", "Jenny als Teenager", "Forrest vor einem Buffet", "Kennedy", "Jenny kommt aus dem Wohnwagen ihrer Großmutter"
+\item  Soundscape macht es häufiger bereits vorher klar, dass Settingwechsel ist bzw. nicht erst das annotiere Substantiv
+\item object und (room)geo ist vermischt
+\item Retrospelinal Cortex ist in Probabilistic maps krasser als PPA.
+\end{itemize}
+
+\section{Discussion (movie)}
+\begin{itemize}
+\item lore ipsum
+\end{itemize}
 
 
-\section*{Methods}
-
-The Methods should include detailed text describing any steps or procedures 
-used in producing the data, including full descriptions of the experimental 
-design, data acquisition assays, and any computational processing (e.g. 
-normalization, image feature extraction). Related methods should be grouped 
-under corresponding subheadings where possible, and methods should be described 
-in enough detail to allow other researchers to interpret and repeat, if required, 
-the full study. Specific data outputs should be explicitly referenced via data 
-citation (see Data Records and Data Citations, below). Authors should cite 
-previous descriptions of the methods under use, but ideally the method 
-descriptions should be complete enough for others to understand and reproduce 
-the methods and processing steps without referring to associated publications. 
-There is no limit to the length of the Methods section.
+\section*{General Discussion}
+\begin{itemize}
+\item "Abfall" einer Film-Messung
+\item Story für parietale Aktivierung im Film -> räuml. Orientierung / Aufmerksamkeit 
+\item CONFOUNDS als klassisches Gegenargument gg. Filme (aber er ändert sich nicht über die Zeit, vgl. resting state)
+\item was sind für Film und Audiobook die Confounds? 
+\item Occipital Place Area (Nakamura, 2000), RSC
+\item Natural stimuli like movies [hasson2008neurocinematics; sonkusare2019naturalistic] or narratives [honey2012not-lost; lerner2011topographic; silbert2014coupled] offer an easy to implement, (continuous,) complex, immersive, task-free paradigm that more closely resembles our natural dynamic environment than traditional experimental designs. Compared to specifically designed paradigms, the complexity of a natural stimulus goes hand in hand with an unknown temporal structure unless the stimulus is - often manually - annotated [haeusler2016annotation; labs2015portrayed]. 
+\item Due to their continuity, complexity, and length, they offer a vast amount of data on a variety of brain functions like low-level perception, attention, comprehension, memory, emotions, or social interactions. This suggests the data can later be reused for variety of totally different, independent research questions, possibly on an individual level. 
+\item aminoffr2013; jedoch zu non-spatial stuff: Although the PHC is commonly thought of as responding to visual stimuli, it has also been found to elicit activity for auditory stimuli [25,26,30,31] and to respond to odor stimuli [32–34].
+\end{itemize}
 
 \subsection*{Code availability}
-
-For all studies using custom code in the generation or processing of datasets, 
+% wo kommt dieser Abschnitt hin?
+% how to write Code availability statement
+% https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880
+\emph{for all studies using custom code in the generation or processing of datasets, 
 a statement must be included here, indicating whether and how the code can be 
-accessed, including any restrictions to access. This section should also include 
-information on the versions of any software used, if relevant, and any specific 
-variables or parameters used to generate, test, or process the current dataset. 
-
-
-\section*{Data Records}
-
-Please explain each data record associated with this work, including
-the repository where this information is stored, and an overview of
-the data files and their formats. Each external data record should
-be listed in Data Citation section at the end of this template, and 
-records should be cited throughout the manuscript as, for example 
-(Data Citation 1). 
-
-Tables should be used to support the data records, and should clearly indicate 
-the samples and subjects, their provenance, and the experimental manipulations 
-performed on each. They should also specify the data output resulting from each 
-data-collection or analytical step, should these form part of the archived record. 
-Please see the submission guidelines at the \emph{Scientific Data} website, and 
-our Word templates for more information on preparing such tables. 
-
-
-\section*{Technical Validation}
-
-This section presents any experiments or analyses that are needed
-to support the technical quality of the dataset. This section may
-be supported by up figures and tables, as needed. This is a required
-section; authors must present information justifying the reliability
-of their data.
-
-
-\section*{Usage Notes}
-
-Brief instructions that may help other researchers reuse these dataset.
-This is an optional section, but strongly encouraged when helpful
-to readers. This may include discussion of software packages that
-are suitable for analyzing the assay data files, suggested downstream
-processing steps (e.g. normalization, etc.), or tips for integrating
-or comparing this with other datasets. If needed, authors are encouraged
-to provide code, programs, or data processing workflows when they may help 
-others analyse the data. We encourage authors to archive related code in 
-a DOI-issuing archive when possible, but code may also be supplied as 
-supplementary information files. 
-
-For studies involving privacy or safety controls on public access
-to the data, this section should describe in detail these controls,
-including how authors can apply to access the data, and what criteria
-will be used to determine who may access the data, and any limitations
-on data use. 
+accessed, including any restrictions to access; include information on the versions 
+of any software used, if relevant, and any specific variables or parameters used to 
+generate, test, or process the current dataset. }
+\begin{itemize}
+\item wo kommt der Abschnitt hin?
+\end{itemize}
 
 
 \section*{Acknowledgements}
 
-Text acknowledging non-author contributors. Acknowledgements should
+\emph{Text acknowledging non-author contributors. Acknowledgements should
 be brief, and should not include thanks to anonymous referees and
 editors, or effusive comments. Grant or contribution numbers may be
 acknowledged. Author contributions Please describe briefly the contributions
-of each author to this work on a separate line. 
-
+of each author to this work on a separate line.} 
 AK did this and that. 
-
-BG did this and that and the other. 
-
+BG did this and that and the other.
+\begin{itemize}
+\item wo kommt der Abschnitt hin?
+\end{itemize}
 
 \section*{Competing financial interests}
 
-A competing financial interests statement is required for all accepted
+\emph{A competing financial interests statement is required for all accepted
 papers published in \emph{Scientific Data}. If none exist simply write,
-``The author(s) declare no competing financial interests''.
-
+``The author(s) declare no competing financial interests''.}
+\begin{itemize}
+\item wo kommt der Abschnitt hin?
+\end{itemize}
 
 \section*{Figures Legends}
 
-Figure should be referred to using a consistent numbering scheme through
+\emph{Figure should be referred to using a consistent numbering scheme through
 the entire Data Descriptor. For initial submissions, authors may choose
 to supply this document as a single PDF with embedded figures, but
 separate figure image files must be provided for revisions and accepted
 manuscripts. In most cases, a Data Descriptor should not contain more
 than three figures, but more may be allowed when needed. We discourage
 the inclusion of figures in the Supplementary Information \textendash{}
-all key figures should be included here in the main Figure section. 
+all key figures should be included here in the main Figure section.} 
 
-Figure legends begin with a brief title sentence for the whole figure
+\emph{Figure legends begin with a brief title sentence for the whole figure
 and continue with a short description of what is shown in each panel,
 as well as explaining any symbols used. Legend must total no more
-than 350 words, and may contain literature references. 
-
+than 350 words, and may contain literature references.} 
+\begin{itemize}
+\item wo kommt der Abschnitt hin?
+\end{itemize}
 
 \section*{Tables}
 
-Tables supporting the Data Descriptor. These can provide summary information
+\emph{Tables supporting the Data Descriptor. These can provide summary information
 (sample numbers, demographics, etc.), but they should generally not
 be used to present primary data (i.e. measurements). Tables containing
-primary data should be submitted to an appropriate data repository. 
+primary data should be submitted to an appropriate data repository.}
 
-Tables may be provided within the \LaTeX{} document or as separate
+\emph{Tables may be provided within the \LaTeX{} document or as separate
 files (tab-delimited text or Excel files). Legends, where needed,
 should be included here. Generally, a Data Descriptor should have
 fewer than ten Tables, but more may be allowed when needed. Tables
 may be of any size, but only Tables which fit onto a single printed
 page will be included in the PDF version of the article (up to a maximum
-of three). 
+of three).}
+\begin{itemize}
+\item wo kommt der Abschnitt hin?
+\end{itemize}
 
 \begin{thebibliography}{1}
 \expandafter\ifx\csname url\endcsname\relax
