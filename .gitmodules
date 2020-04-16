@@ -2,3 +2,8 @@
 	path = inputs/studyforrest-data-visualrois
 	url = https://github.com/psychoinformatics-de/studyforrest-data-visualrois.git
 	branch = master
+[submodule "inputs/studyforrest_ppa"]
+	path = inputs/studyforrest_ppa
+	url = chaeusler@juseless.inm7.de:/data/project/studyforrest_ppa
+	branch = master
+	datalad-id = 9414bede-5186-11ea-b96e-ac1f6bac9bd2
