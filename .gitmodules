@@ -1,0 +1,4 @@
+[submodule "inputs/studyforrest-data-visualrois"]
+	path = inputs/studyforrest-data-visualrois
+	url = https://github.com/psychoinformatics-de/studyforrest-data-visualrois.git
+	branch = master
