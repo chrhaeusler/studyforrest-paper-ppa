@@ -108,9 +108,9 @@ We exploratorily investigate how the parahippocampal gyrus [or more general ``hu
 We compare these results to PPA localizations that were obtained from a dedicated visual localizer experiment \citep{sengupta2016extension}.
 Both natural stimuli were originally designed to entertain an audience and to capture attention free from any perceptual or behavioral task.
 We annotated events in the otherwise unknown temporal structure of both stimuli.
-In/for the movie, we annotated different kinds of cinematographic cuts \citep{haeusler2016annotation} as presumably ``spatially relevant'' events.
+In/for the movie, we annotated different kinds of cinematographic cuts \citep{haeusler2016cutanno} as presumably ``spatially relevant'' events.
 Our rationale was that cuts re-orient the viewer in the depicted environment independent from the exact visual content in the movie frame following the cut.
-In/for the audio-description, we annotated verbal clues about the missing visual content given by the audio-description's additional narrator [citep{haeusler2020speechanno}].
+In/for the audio-description, we annotated verbal clues about the missing visual content given by the audio-description's additional narrator \citep{haeusler2020speechanno}.
 In conformity to the analyses performed in the studies using not-naturalistic stimuli, we employed a standard multi-level, voxel-wise general linear model (GLM) % in order to???
 % Practical reasons = Es war viel einfacher nouns der audio-description als Frameinhalt des Films zu annotieren
 For practical reasons, and encouraged by \citep{aziz2008modulation} and \citep{aminoff2013role}, we focus on the audio-description as a possible life-like stimulus free from any task to localize a ``visual area'' in individual study participants.
@@ -159,8 +159,9 @@ Finally, each stimulus was split into eight segments of approximately 15 minutes
 A further annotation of the audio-description's narrator was done manually: Two
 persons performed a categorization of nouns embedded in sentences spoken by the
 narrator to describe the movie's missing visual content.
-Categories focus on the cinematographic scene's environment, inherent objects, persons, and a person's appearance.
+Categories focus on the cinematographic scene's environment, inherent objects, persons, and a person's appearance (cf. table \ref{tab:descr-nouns})..
 A categorizing of nouns that serve as auditory cues about the movie's visual content. Comprised categories focus on the cinematographic scene's environment (geo, geo-room; setting\_new, setting\_old), inherent persons (female, female name; male, male name, person), their appearance (face, head; body, bodypart), and objects (object, furniture).
+The nouns are categorized by the clue they provide about a cinematographic scene's environment \todo{maybe skip the names and just cite the table} (geo, geo-room; setting\_new, setting\_rec), its inherent persons (female, female name; male, male name, person), a person's appearance (face, head; body, bodypart), and a scene's inherent objects (object, furniture).
 A preliminary annotation according to the rules [entweder im laufenden Text oder in Tabelle], einer neuen Tabelle oder im laufenden Text was done by one person and corrected in several runs by the author.
 
 % Tabelle der Descriptive Nouns;
@@ -251,18 +252,42 @@ A grand-mean intensity normalization of the entire 4D dataset was performed by a
 Correction for local autocorrelation in the time series (prewhitening) was applied using FILM (FMRIB’s Improved Linear Model).
 
 \subsection{Statistical analysis}
-A standard two-level general linear model (GLM) analysis was conducted in FEAT to create subject-specific results ($Z$-maps). A subsequent, third-level analysis averaged contrast estimates over subjects.
+For both naturalistic stimli, we conducted a standard two-level general linear model (GLM) analysis in FEAT to create subject-specific results ($Z$-maps). A subsequent, third-level analysis averaged contrast estimates over subjects.
 
 \subsubsection{first-level}
-\paragraph{Regressors \todo{stimulus/statistical model?}}
-To build the regressors for the GLMs, we took advantage of two publicly available annotations of the stimuli's temporal structure.
-One annotation of speech occurring in the audio-description and movie [haeusler2020speechanno], and a second annotation of movie cuts and depicted locations \href{https://f1000research.com/articles/5-2273}{haeusler2016annotation}.
-As a first step, the annotations were split via (\href{"https://github.com/chrhaeusler/studyforrest-data-annotations/blob/master/code/researchcut2segments.py"}{python script} into eight parts corresponding to the eight segments used in the scanner.
-% wenn ich folgend den "null regressor" nehme, darf ich den ganzen Run - glaube ich - in der 2nd level Analyse gar nicht benutzen??
-For the auditory stimulus, we used nouns embedded in sentences spoken by the narrator. The nouns are categorized by the clue they provide about a cinematographic scene's environment \todo{maybe skip the names and just cite the table} (geo, geo-room; setting\_new, setting\_rec), its inherent persons (female, female name; male, male name, person), a person's appearance (face, head; body, bodypart), and a scene's inherent objects (object, furniture).
-% nope, kommt jetzt hier
-Details on procedure to annotate the stimuli on a single-world level and details on the rules to manually categorize the nouns can be found in the \href{"https://www.overleaf.com/project/5d4ab1b759001b5db6ea2bc3"}{corresponding paper}.
+\paragraph{Regressors}
+We used an annotation of movie cuts and depicted locations \citep{haeusler2016cutanno} and an annotation of speech \citep{haeusler2020speechanno} to create the FSL event files resp. regressors.
+First, both annotations were split via \href{"https://github.com/chrhaeusler/studyforrest-data-annotations/blob/master/code/researchcut2segments.py"}{python script} into eight parts corresponding to the eight segments used as stimuli during fMRI scanning.
+\todo[inline]{wenn ich folgend den "null regressor" nehme, darf ich den ganzen Run, glaube ich, in der 2nd level Analyse gar nicht benutzen??}
+For the AO stimulus, we used the narrator's ``descriptive nouns'' (cf. table \ref{tab:descr-nouns}.
 We created 11 regressors from the XY (selected?) original categories by joining / merging some categories (female, females, fname; male, males, mname; face, head) into one regressor (sex\_f; sex\_m; fahead).
+
+\todo[inline]{cross reference to fig:reg-corr}
+
+\begin{table*}[t]
+    \caption{Overview of the events to build the 18 regressors for analysis of the AO stimulus. The first column contains the number of the regressor in the design file of FSL \citep{smith2004fsl}.
+''fg\_ad\_lrdiff (left-right volume difference) and ``fg\_ad\_rms'' (root mean square loudness) represent low-level auditory nuissance regressors comprising one event for every movie frame (40ms).}
+\label{tab:regressors}
+\footnotesize
+\begin{tabular}{lp{3.5cm}lllllllll}
+\toprule
+\textbf{label} &  \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
+\midrule
+body & XYleft-right volume difference & rBodyAll & rBodyI & rBodyII & rBodyIII & rBodyIV & rBodyV & rBodyVI & rBodyVII & rBodyVIII \tabularnewline
+
+
+
+
+
+
+
+fg\_ad\_lrdiff & left-right volume difference & rFgadlrdiffAll & rFgadlrdiffI & rFgadlrdiffII & rFgadlrdiffIII & rFgadlrdiffIV & rFgadlrdiffV & rFgadlrdiffVI & rFgadlrdiffVII & rFgadlrdiffVIII \tabularnewline
+fg\_ad\_rms & root mean square & rFgadrmsAll & rFgadrmsI & rFgadrmsII & rFgadrmsIII & rFgadrmsIV & rFgadrmsV & rFgadrmsVI & rFgadrmsVII & rFgadrmsVIII \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
 % over length of each noun
 The regressors were modeled as boxcar functions at the end of each noun with a duration of 200 ms.
 If a segment did not contain a single event for a specific regressor, a null regressor was chosen for that segment.
