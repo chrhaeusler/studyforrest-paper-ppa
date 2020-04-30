@@ -183,7 +183,8 @@ Two persons performed a categorization of nouns embedded in sentences spoken by 
 The nouns were categorized by the clue they provide about the cinematographic scene's environment (geo, geo-room; setting\_new, setting\_old), its inherent persons (female, female name; male, male name, person), a person's appearance (face, head; body, bodypart), and a scene's inherent objects (object, furniture).
 See Table \ref{tab:descr-nouns} for a complete overview of all cateogries, [+++rules, counts, examples].
 
-A preliminary annotation by one person according to the rules [entweder im laufenden Text oder in einer [eigenständigen] Tabelle]. Minor corrections due to incorrectly applied rules were by the author.
+A preliminary annotation was performed by one person according to the rules (see Table XYZ).
+Minor corrections due to incorrectly applied rules were by the author.
 
 % Tabelle der Descriptive Nouns;
 \todo[inline]{wenn decriptive-statistics-anno.py angepasst und Datei mit newcommands geschrieben, Schrägstrich vor die jeweiligen Platzhalter setzen, damit commands daraus werden; Caption hübsch machen}
@@ -284,52 +285,55 @@ For both naturalistic stimli, we conducted a standard two-level general linear m
 
 \subsubsection{first-level}
 \paragraph{Regressors}
-We used an annotation of movie cuts and depicted locations \citep{haeusler2016cutanno} and an annotation of speech \citep{haeusler2020speechanno} to create the FSL event files resp. regressors.
-First, both annotations were split via \href{"https://github.com/chrhaeusler/studyforrest-data-annotations/blob/master/code/researchcut2segments.py"}{python script} into eight parts corresponding to the eight segments used as stimuli during fMRI scanning.
-\todo[inline]{wenn ich folgend den "null regressor" nehme, darf ich den ganzen Run, glaube ich, in der 2nd level Analyse gar nicht benutzen??}
-For the AO stimulus, we used the narrator's ``descriptive nouns'' (cf. table \ref{tab:descr-nouns}.
-We created 11 regressors from the XY (selected?) original categories by joining / merging some categories (female, females, fname; male, males, mname; face, head) into one regressor (sex\_f; sex\_m; fahead).
-
 \todo[inline]{cross reference to fig:reg-corr}
+We used an annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}, and an annotation of speech \citep{haeusler2020speechanno} to create event files for FSL.
+% https://github.com/psychoinformatics-de/studyforrest-data-annotations/blob/master/code/researchcut2segments.py}
+First, both annotations were split into eight parts corresponding to the eight segments used as stimuli during fMRI scanning.
+\todo[inline]{wenn ich folgend den "null regressor" nehme, darf ich den ganzen Run, glaube ich, in der 2nd level Analyse gar nicht benutzen??}
+For the AO stimulus, we used the narrator's ``descriptive nouns'' (see Table \ref{tab:descr-nouns}.
 
+\todo[inline]{some categories were pooled, because\dots}
+
+XY from the XY original categories were selected [+++why?+++], and some were pooled  original categories by joining / merging some categories resulting in 11 new categories.
+
+\todo[inline]{make clear which stimulus each annotation is based on, and make clear(er) what defined an event. This could be a big table, because good defintions are important for judging the results}
 \begin{table*}[t]
-    \caption{Overview of the events to build the 18 regressors for analysis of the AO stimulus. The first column contains the number of the regressor in the design file of FSL \citep{smith2004fsl}.
-''fg\_ad\_lrdiff (left-right volume difference) and ``fg\_ad\_rms'' (root mean square loudness) represent low-level auditory nuissance regressors comprising one event for every movie frame (40ms).}
-\label{tab:regressors}
+    \caption{Overview of events to build the 18 regressors for the analysis of the audio-only (AO) stimulus. Some of the original categories (female, females, fname; male, males, mname; face, head; see Table \ref{tab:descr-nouns}) were pooled into new categories (sex\_f; sex\_m; fahead)
+\texttt{fg\_ad\_lrdiff} (left-right volume difference) and \texttt{fg\_ad\_rms} (root mean square volume) represent one event for every movie frame (\unit[40]{ms}).}
+\label{tab:ao-events}
 \footnotesize
 \begin{tabular}{lp{3.5cm}lllllllll}
 \toprule
 \textbf{label} &  \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
-body & XY & rBodyAll & rBodyI & rBodyII & rBodyIII & rBodyIV & rBodyV & rBodyVI & rBodyVII & rBodyVIII \tabularnewline
-fg\_ad\_lrdiff & left-right volume difference & rFgadlrdiffAll & rFgadlrdiffI & rFgadlrdiffII & rFgadlrdiffIII & rFgadlrdiffIV & rFgadlrdiffV & rFgadlrdiffVI & rFgadlrdiffVII & rFgadlrdiffVIII \tabularnewline
-fg\_ad\_rms & root mean square & rFgadrmsAll & rFgadrmsI & rFgadrmsII & rFgadrmsIII & rFgadrmsIV & rFgadrmsV & rFgadrmsVI & rFgadrmsVII & rFgadrmsVIII \tabularnewline
+body & descr & \aoBodyAll & \aoBodyI & \aoBodyII & \aoBodyIII & \aoBodyIV & \aoBodyV & \aoBodyVI & \aoBodyVII & \aoBodyVIII \tabularnewline
+bpart & descr & \aoBpartAll & \aoBpartI & \aoBpartII & \aoBpartIII & \aoBpartIV & \aoBpartV & \aoBpartVI & \aoBpartVII & \aoBpartVIII \tabularnewline
+fahead & descr & \aoFaheadAll & \aoFaheadI & \aoFaheadII & \aoFaheadIII & \aoFaheadIV & \aoFaheadV & \aoFaheadVI & \aoFaheadVII & \aoFaheadVIII \tabularnewline
+furn & descr & \aoFurnAll & \aoFurnI & \aoFurnII & \aoFurnIII & \aoFurnIV & \aoFurnV & \aoFurnVI & \aoFurnVII & \aoFurnVIII \tabularnewline
+geo & descr & \aoGeoAll & \aoGeoI & \aoGeoII & \aoGeoIII & \aoGeoIV & \aoGeoV & \aoGeoVI & \aoGeoVII & \aoGeoVIII \tabularnewline
+groom & descr & \aoGroomAll & \aoGroomI & \aoGroomII & \aoGroomIII & \aoGroomIV & \aoGroomV & \aoGroomVI & \aoGroomVII & \aoGroomVIII \tabularnewline
+object & descr & \aoObjAll & \aoObjI & \aoObjII & \aoObjIII & \aoObjIV & \aoObjV & \aoObjVI & \aoObjVII & \aoObjVIII \tabularnewline
+se\_new & descr & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII \tabularnewline
+se\_old & descr & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII \tabularnewline
+sex\_f & descr & \aoSexfAll & \aoSexfI & \aoSexfII & \aoSexfIII & \aoSexfIV & \aoSexfV & \aoSexfVI & \aoSexfVII & \aoSexfVIII \tabularnewline
+sex\_m & descr & \aoSexmAll & \aoSexmI & \aoSexmII & \aoSexmIII & \aoSexmIV & \aoSexmV & \aoSexmVI & \aoSexmVII & \aoSexmVIII \tabularnewline
+sex\_u & descr & \aoSexuAll & \aoSexuI & \aoSexuII & \aoSexuIII & \aoSexuIV & \aoSexuV & \aoSexuVI & \aoSexuVII & \aoSexuVIII \tabularnewline
+% vlo_ch has no events in segment 5. So indices are shifted
+vlo\_ch & descr & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII \tabularnewline
+vno\_cut & descr & \aoVnocutAll & \aoVnocutI & \aoVnocutII & \aoVnocutIII & \aoVnocutIV & \aoVnocutV & \aoVnocutVI & \aoVnocutVII & \aoVnocutVIII \tabularnewline
+vpe\_new & descr & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII \tabularnewline
+% vpe_old has no events in 3. So the indices are shifted
+vpe\_old & descr & \aoVpeoldAll & \aoVpeoldI & \aoVpeoldII & 0 & \aoVpeoldIII & \aoVpeoldIV & \aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII \tabularnewline
+vse\_new & descr & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII \tabularnewline
+vse\_old & descr & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII \tabularnewline
+fg\_ad\_lrdiff & left-right volume difference & \aoFgadlrdiffAll & \aoFgadlrdiffI & \aoFgadlrdiffII & \aoFgadlrdiffIII & \aoFgadlrdiffIV & \aoFgadlrdiffV & \aoFgadlrdiffVI & \aoFgadlrdiffVII & \aoFgadlrdiffVIII \tabularnewline
+fg\_ad\_rms & root mean square & \aoFgadrmsAll & \aoFgadrmsI & \aoFgadrmsII & \aoFgadrmsIII & \aoFgadrmsIV & \aoFgadrmsV & \aoFgadrmsVI & \aoFgadrmsVII & \aoFgadrmsVIII \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table*}
 
-
-% over length of each noun
-The regressors were modeled as boxcar functions at the end of each noun with a duration of 200 ms.
-If a segment did not contain a single event for a specific regressor, a null regressor was chosen for that segment.
-Five regressors related to the cinematographic cuts (s. below) were added to built contrasts of cross-modal negative control.
-Two regressors reflecting auditory (low-level) features (left-right loudness volume / amplitude??? difference; root mean squared amplitude) aligned to the frame rate of (40\,ms) were modeled to reduce nuisance effects.
-An overview and short explanation of the 11 regressors and 5 + 2 additional nuisance regressors can be found in Table xy.
-% entgegen der Masterarbeit kommen hier für den Film keine Abbildungen zur Verdeutlichung, weniger Text; no cut erkläre ich nicht lang & breit
-% die regressoren settinge_new & setting_old aus dem Hörspiel habe ich meiner meinung nach unnötigerweise im Film mit-modelliert; lasse mich da aber auch umstimmen
-
-% -> noch mal reingucken; kamen im Grunde nur "auditorische Areale" als Cluster vor; umgekehrt gab's bei der visuellen Regressoren im Hörbuch keine sign. Cluster
-For the audio-visual stimulus, we categorized the depicted location in the frame following one of the 869 cuts in the movie to built five regressors: 1) unfamiliar setting (US), 2) familiar setting (FS), 3) locale switch (LS), 4) unfamiliar perspective (UP), 5) familiar perspective (FP).
-
-In order to build negative control contrasts, a sixth regressors was created by pseudo-randomly choosing frames present within a shot and apart from a cut. Regressors were modeled as boxcar function lasting 200\,ms after a cut.
-An overview and short explanation of the six regressors and the additional nuisance regressors reflecting (auditory and) visual low-level features can be found in Table xy.
-
-For both stimuli, regressors were convolved with a double gamma canonical hemodynamic response function (HRF).
-Their temporal derivatives were added to compensate for small timing differences \citep{friston1998event}.
-Six motion parameters were used as additional nuisance regressors. Finally, designs were filtered with the same high-pass filter (cutoff period of \unit[150]{s}) as the BOLD time series.
-
 \begin{table*}
-\caption{Regressors used in the analysis of the audio-description. \todo[inline]{make clear which stimulus each annotation is based on, and make clear(er) what defined an event. This could be a big table, because good defintions are important for judging the results}}
+\caption{Regressors used in the analysis of the audio-description.}
 \begin{tabular}{lll}
 \toprule
 \textbf{name} & \textbf{count} & \textbf{description} \\
@@ -378,6 +382,26 @@ fg\_av\_ger\_ud & xx & +++up down???+++ \\
 \bottomrule
 \end{tabular}
 \end{table*}
+% over length of each noun
+The regressors were modeled as boxcar functions at the end of each noun with a duration of 200 ms.
+If a segment did not contain a single event for a specific regressor, a null regressor was chosen for that segment.
+Five regressors related to the cinematographic cuts (s. below) were added to built contrasts of cross-modal negative control.
+Two regressors reflecting auditory (low-level) features (left-right loudness volume / amplitude??? difference; root mean squared amplitude) aligned to the frame rate of (40\,ms) were modeled to reduce nuisance effects.
+An overview and short explanation of the 11 regressors and 5 + 2 additional nuisance regressors can be found in Table xy.
+% entgegen der Masterarbeit kommen hier für den Film keine Abbildungen zur Verdeutlichung, weniger Text; no cut erkläre ich nicht lang & breit
+% die regressoren settinge_new & setting_old aus dem Hörspiel habe ich meiner meinung nach unnötigerweise im Film mit-modelliert; lasse mich da aber auch umstimmen
+
+% -> noch mal reingucken; kamen im Grunde nur "auditorische Areale" als Cluster vor; umgekehrt gab's bei der visuellen Regressoren im Hörbuch keine sign. Cluster
+For the audio-visual stimulus, we categorized the depicted location in the frame following one of the 869 cuts in the movie to built five regressors: 1) unfamiliar setting (US), 2) familiar setting (FS), 3) locale switch (LS), 4) unfamiliar perspective (UP), 5) familiar perspective (FP).
+
+In order to build negative control contrasts, a sixth regressors was created by pseudo-randomly choosing frames present within a shot and apart from a cut. Regressors were modeled as boxcar function lasting 200\,ms after a cut.
+An overview and short explanation of the six regressors and the additional nuisance regressors reflecting (auditory and) visual low-level features can be found in Table xy.
+
+For both stimuli, regressors were convolved with a double gamma canonical hemodynamic response function (HRF).
+Their temporal derivatives were added to compensate for small timing differences \citep{friston1998event}.
+Six motion parameters were used as additional nuisance regressors. Finally, designs were filtered with the same high-pass filter (cutoff period of \unit[150]{s}) as the BOLD time series.
+
+
 
 \paragraph{audio contrasts of parameter estimate}
 % Überblick über die Kontraste geben, die tatsächlich am Ende im Paper berichtet werden -> am besten telefonisch klären
