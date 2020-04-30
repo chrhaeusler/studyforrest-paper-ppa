@@ -1,6 +1,6 @@
 all: main.pdf
 
-main.pdf: main.tex
+main.pdf: main.tex descr-stats-ao-events.tex descr-stats-av-events.tex
 	latexmk -pdf -g $<
 
 clean:
