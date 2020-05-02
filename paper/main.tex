@@ -388,12 +388,11 @@ Six motion parameters were used as additional nuisance regressors. Finally, desi
 
 
 \paragraph{audio contrasts of parameter estimate}
-% Überblick über die Kontraste geben, die tatsächlich am Ende im Paper berichtet werden -> am besten telefonisch klären
-% HIER ERZÄHLEN, WARUM VIELE KONTRASTE GERCHNET WURDEN und WARUM DER EINE COPE THE ONE AND ONLY IST
+\todo[inline]{Warum ist COPE 1 die Nummer 1}
 
 
 \begin{table*}[t]
-\caption{Contrasts of parameter estimates for the analysis of the audio-description.
+\caption{Contrasts of parameter estimates for the analysis of the audio-description (AO).
 \texttt{all non-geo} = all non-geo related regressors except furniture.}
 \label{tab:ao-contrasts}
 \footnotesize
@@ -419,42 +418,43 @@ Six motion parameters were used as additional nuisance regressors. Finally, desi
 
 
 \paragraph{video contrasts of parameter estimate}
-% Überblick über die Kontraste geben, die tatsächlich am Ende im Paper berichtet werden
 % ggf. irgendwo noch reinpressen, dass man damit fast alle schnitte in FG benutzt hat
-We created a contrast presumably correlating with increased hemodynamic activity in the PPA by contrasting different kind of cuts. This was done without controlling for the specific visual content depicted in the frame after each cut. The cinematographic rationale was that - over the course of a movie - cuts shift from establishing the setting and the spatial relationships within a setting at the beginning of a movie to depicting persons and objects more relevant to the subsequently evolved narrative later in the movie {brown2012cinematography; mercado2011filmmakers}. The neurocientific rationale was that activity in the PPA is greater when participants view novel versus repeated scenes resp. view-points \citep{epstein1999parahippocampal}. Hence, we contrasted cuts to a setting occurring for the first time (vse\_new) and cuts within a locale depicted for the first time (vpe\_new) with shots to a recurring setting (vse\_old) and cuts within a recurring locale (vpe\_old).
+We created a contrast presumably correlating with increased hemodynamic activity in the PPA by contrasting different kind of cuts.
+This was done without controlling for the specific visual content depicted in the frame after each cut.
+The cinematographic rationale was that - over the course of a movie - cuts shift from establishing the setting and the spatial relationships within a setting at the beginning of a movie to depicting persons and objects more relevant to the subsequently evolved narrative later in the movie {brown2012cinematography; mercado2011filmmakers}.
+The neurocientific rationale was that activity in the PPA is greater when participants view novel versus repeated scenes resp. view-points \citep{epstein1999parahippocampal}.
+Hence, we contrasted cuts to a setting occurring for the first time (vse\_new) and cuts within a locale depicted for the first time (vpe\_new) with shots to a recurring setting (vse\_old) and cuts within a recurring locale (vpe\_old).
 
-\begin{table*}
-\caption{COPEs for the movie.}
+
+\begin{table*}[t]
+    \caption{Contrasts of parameter estimates for the analysis of the audio-visual movie (AV).}
+\label{tab:av-contrasts}
+\footnotesize
 \begin{tabular}{lll}
 \toprule
-\textbf{COPE nr. } & \textbf{description} & \textbf{aim} \\
+\textbf{nr.} &  \textbf{contrasted} & \textbf{aim/goal} \\
 \midrule
-1 & geo, rgeo, se\_new, se\_old > non\_geo & PPA \\
-1 & se\_new > se\_old & PPA \\
-2 & pe\_new > pe\_old & PPA \\
-3 & se\_new, pe\_new > se\_old, pe\_old & PPA (the true and cool one) \\
-4 & se\_new > pe\_old & PPA \\
-5 & se\_new > se\_old, pe\_old & PPA \\
-6 & se\_new, pe\_new > pe\_old & PPA \\
-7 & pe\_new > se\_old, pe\_old & PPA \\
-8 & se\_old > se\_new & DMN \\
-9 & pe\_old > pe\_new & DMN \\
-10 & no\_cut > se\_new, se\_old & neg. control \\
-11 & no\_cut > se\_new & neg. control \\
-12 & no\_cut > se\_old & neg. control \\
-13 & no\_cut > pe\_new, pe\_old & neg. control \\
-14 & ao: se\_new > se\_old & audio control \\
-15 & ao: se\_old > se\_new & audio control \\
-\bottomrule
+1 & vse\_new > vpe\_old  & PPA \tabularnewline
+2 & vse\_new, vpe\_new > vse\_old, vpe\_old & PPA \tabularnewline
+3 & vse\_new > vse\_old & PPA \tabularnewline
+4 & vse\_new > vse\_old, vpe\_old & PPA \tabularnewline
+5 & vse\_new, vpe\_new > vpe\_old & PPA \tabularnewline
+6 & vno\_cut > vse\_new & negative control \tabularnewline
+7 & vno\_cut > vse\_old & negative control \tabularnewline
+8 & vno\_cut > vse\_new, vse\_old & negative control \tabularnewline
+9 & vno\_cut > vpe\_new, vpe\_old & negative control \tabularnewline
+10 & se\_new > se\_old & control for narrator \tabularnewline
 \end{tabular}
 \end{table*}
+
 
 \paragraph{Registration \& smoothing: individuals vs. group}
 % hier wird's wie üblich bei Registrierung;
 % bitte gucken, ob korrekt wiedergeben, was ihr gemacht habt
 % wie besprochen sind hier die individuelle Results im subject space
 % später warpe ich individuelle 2nd-lvl-results "for visualization purposes" doch noch nach MNI
-The GLM analysis that fitted each voxel's time course separately for each subject was performed in functional space preserving the orientation of the EPI images. Correction for local autocorrelation in the time series (prewhitening) was applied using FILM (FMRIB's Improved Linear Model) to improve estimation efficiency \citep{woolrich2001autocorr}.
+The GLM analysis that fitted each voxel's time course separately for each subject was performed in functional space preserving the orientation of the EPI images.
+Correction for local autocorrelation in the time series (prewhitening) was applied using FILM (FMRIB's Improved Linear Model) to improve estimation efficiency \citep{woolrich2001autocorr}.
 For subsequent subject-specific second level results, subject-specific BOLD T2* time series were anatomically aligned via linear transformation to a subject-specific, study-specific T2* template (s. \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example}) that served as standard space.
 For subsequent the third level results averaging contrasts of interest across subjects, time series were anatomically aligned via non-linear transformation [+++wie genau?+++] to a \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"}{study-specific T2* group template}.
 To facilitate visualization and identification of cortical structures, this reference images was later co-registered to the MNI 152 template with an affine transformation (12 degrees of freedom)
