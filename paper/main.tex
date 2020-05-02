@@ -298,8 +298,10 @@ XY from the XY original categories were selected [+++why?+++], and some were poo
 
 \todo[inline]{make clear which stimulus each annotation is based on, and make clear(er) what defined an event. This could be a big table, because good defintions are important for judging the results}
 \begin{table*}[t]
-    \caption{Overview of events to build the 18 regressors for the analysis of the audio-only (AO) stimulus. Some of the original categories (female, females, fname; male, males, mname; face, head; object, objects; see Table \ref{tab:descr-nouns}) were pooled into new categories (sex\_f; sex\_m; fahead; object)
-\texttt{fg\_ad\_lrdiff} (left-right volume difference) and \texttt{fg\_ad\_rms} (root mean square volume) represent one event for every movie frame (\unit[40]{ms}).}
+\caption{Overview of events to build the 18 regressors for the analysis of the audio-only (AO) stimulus. Some of the original categories (female, females, fname; male, males, mname; face, head; object, objects; see Table \ref{tab:descr-nouns}) were pooled into new categories (sex\_f; sex\_m; fahead; object).
+\texttt{fg\_ad\_lrdiff} (left-right volume difference) and
+\texttt{fg\_ad\_rms} (root mean square volume) represent one event for every movie frame (\unit[40]{ms}).
+For description of control condition for movie cuts see Table \ref{tab:av-events}}
 \label{tab:ao-events}
 \footnotesize
 \begin{tabular}{lp{3.5cm}lllllllll}
@@ -332,28 +334,38 @@ fg\_ad\_rms & root mean square loudness & \aoFgadrmsAll & \aoFgadrmsI & \aoFgadr
 \end{table*}
 
 
-\begin{table*}
-\caption{Regressors used in the analysis of the movie.}
-\begin{tabular}{lll}
+\begin{table*}[t]
+    \caption{Overview of events to build the 14 regressors for the analysis of the audio-only (AV) stimulus.
+\texttt{fg\_av\_ger\_lr} (left-right difference in ??? of consecutive movie frame).
+\texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames).
+\texttt{fg\_av\_ger\_ud} (up-down difference in ??? of consecutive movie frames).
+\texttt{fg\_av\_ger\_lrdiff} (left-right volume difference) and \texttt{fg\_av\_ger\_rms} (root mean square volume) represent one event for every movie frame (\unit[40]{ms}).
+For description of control condition for movie cuts see Table \ref{tab:ao-events}}
+\label{tab:av-events}
+\footnotesize
+\begin{tabular}{lp{3.5cm}lllllllll}
 \toprule
-\textbf{name} & \textbf{count} & \textbf{description} \\
+\textbf{label} &  \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
-vse\_new & 96 & change of the camera position to a setting not depicted before \\
-vse\_old & 90 & change of the camera position to a recurring setting \\
-vloc\_change & 89 & change of the camera position to another locale within the same setting \\
-vpe\_new & 386 & change of the camera position within a locale not depicted before \\
-vpe\_old & 208 & change of the camera position within a recurring locale \\
-no\_cut & 148 & a continuous frame from the same camera position \\
-se\_new & 148 & audio-description's narrator; s. table x; KANN RAUS? \\
-se\_old & 148 & audio-description's narrator; s. table x; KANN RAUS? \\
-fg\_av\_ger\_lr & xx & left right +++???+++ in movie frame  \\
-fg\_av\_ger\_lrdiff & xx & left-right volume difference \\
-fg\_av\_ger\_pd & xx & perceptual differences of consecutive frames \\
-fg\_av\_ger\_rms & xx & root mean square amplitude \\
-fg\_av\_ger\_ud & xx & +++up down???+++ \\
-\bottomrule
+vse\_new &  change of the camera position to a setting not depicted before & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII \tabularnewline
+vse\_old & change of the camera position to a recurring setting & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII \tabularnewline
+vlo\_ch & change of the camera position to another locale within the same setting & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII \tabularnewline
+vpe\_new & change of the camera position within a locale not depicted before & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII \tabularnewline
+% vpe_old has no events in 3. So the indices are shifted
+vpe\_old & change of the camera position within a recurring locale & \aoVpeoldAll & \aoVpeoldI & \aoVpeoldII & 0 & \aoVpeoldIII & \aoVpeoldIV & \aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII \tabularnewline
+vno\_cut & a continuous frame from the same camera position & \avVnocutAll & \avVnocutI & \avVnocutII & 0 & \avVnocutIII & \avVnocutIV & \avVnocutV & \avVnocutVI & \avVnocutVII \tabularnewline
+se\_new & control for AO narrator & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII \tabularnewline
+se\_old & control for AO narrator & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII \tabularnewline
+fg\_av\_ger\_lr & XYZ & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII & \avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI & \avFgavgerlrVII & \avFgavgerlrVIII \tabularnewline
+fg\_av\_ger\_lrdiff & XYZ & \avFgavgerlrdiffAll & \avFgavgerlrdiffI & \avFgavgerlrdiffII & \avFgavgerlrdiffIII & \avFgavgerlrdiffIV & \avFgavgerlrdiffV & \avFgavgerlrdiffVI & \avFgavgerlrdiffVII & \avFgavgerlrdiffVIII \tabularnewline
+fg\_av\_ger\_ml & XYZ & \avFgavgermlAll & \avFgavgermlI & \avFgavgermlII & \avFgavgermlIII & \avFgavgermlIV & \avFgavgermlV & \avFgavgermlVI & \avFgavgermlVII & \avFgavgermlVIII \tabularnewline
+fg\_av\_ger\_pd & XYZ & \avFgavgerpdAll & \avFgavgerpdI & \avFgavgerpdII & \avFgavgerpdIII & \avFgavgerpdIV & \avFgavgerpdV & \avFgavgerpdVI & \avFgavgerpdVII & \avFgavgerpdVIII \tabularnewline
+fg\_av\_ger\_rms & XYZ & \avFgavgerrmsAll & \avFgavgerrmsI & \avFgavgerrmsII & \avFgavgerrmsIII & \avFgavgerrmsIV & \avFgavgerrmsV & \avFgavgerrmsVI & \avFgavgerrmsVII & \avFgavgerrmsVIII \tabularnewline
+fg\_av\_ger\_ud & XYZ & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII & \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII & \avFgavgerudVIII \tabularnewline
 \end{tabular}
 \end{table*}
+
+
 % over length of each noun
 The regressors were modeled as boxcar functions at the end of each noun with a duration of 200 ms.
 If a segment did not contain a single event for a specific regressor, a null regressor was chosen for that segment.
@@ -628,3 +640,4 @@ Bibliographic information for the data records described in the manuscript.
 1. Lastname1, Initial1., Lastname2, Initial2., ...\& LastnameN, InitialN. \emph{Repository name} Dataset accession number or DOI (YYYY).
 
 \end{document}
+\documentclass[english]{article}
