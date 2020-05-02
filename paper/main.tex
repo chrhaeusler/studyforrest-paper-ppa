@@ -391,52 +391,32 @@ Six motion parameters were used as additional nuisance regressors. Finally, desi
 % Überblick über die Kontraste geben, die tatsächlich am Ende im Paper berichtet werden -> am besten telefonisch klären
 % HIER ERZÄHLEN, WARUM VIELE KONTRASTE GERCHNET WURDEN und WARUM DER EINE COPE THE ONE AND ONLY IST
 
-\begin{table*}
-\caption{Contrasts of parameter estimates for the analysis of the audio-description.}
-% das sind die zusammengefassten Kurzversionen, d.h. nicht alle Regressoren sind explizit in dem COPEs ausformuliert
+
+\begin{table*}[t]
+\caption{Contrasts of parameter estimates for the analysis of the audio-description.
+\texttt{all non-geo} = all non-geo related regressors except furniture.}
+\label{tab:ao-contrasts}
+\footnotesize
 \begin{tabular}{lll}
 \toprule
-\textbf{COPE nr.} & \textbf{description} & \textbf{aim} \\
+\textbf{nr.} &  \textbf{contrasted} & \textbf{aim/goal} \\
 \midrule
-1 & geo, rgeo, se\_new, se\_old > non\_geo & PPA \\
-2 & geo, rgeo, se\_new > non\_geo & PPA \\
-3 & geo, rgeo > non\_geo & PPA <<-- THE COOL \\
-4 & geo > non\_geo & PPA \\
-5 & se\_new > non\_geo & PPA \\
-6 & se\_new, se\_old > non\_geo & PPA \\
-7 & se\_new > se\_old & PPA \\
-8 & body > all\_others (excl. bpart) & EBA \\
-9 & body, bpart > all\_others & EBA \\
-10 & body > non\_persons (excl. bpart) & EBA \\
-11 & body, bpart > non\_persons & EBA \\
-12 & body, bpart > non\_persons (excl. faHead) & EBA \\
-13 & fahead > all\_others & FFA \\
-14 & fahead > all\_others (excl. body/parts) & FFA \\
-15 & fahead > non\_persons & FFA \\
-16 & fahead > non\_persons (excl. body/parts) & FFA \\
-17 & obj > all\_others & LOC \\
-18 & obj > all\_others (excl. fahead) & LOC \\
-19 & obj > all\_others (excl. fahead, rgeo) & LOC \\
-20 & obj > persons & LOC \\
-21 & se\_old > se\_new & DMN \\
-22 & se\_old > non\_settings & DMN \\
-23 & se\_old > non\_geo & DMN \\
-24 & female > male & ??? \\
-25 & male > female & ??? \\
-26 & persons > non\_persons (excl. body/parts) & ??? \\
-27 & non\_persons (excl. body/parts) > persons & ??? \\
-28 & se\_new > se\_old & visual contr. \\
-29 & pe\_new > pe\_old & visual contr. \\
-30 & se\_new, pe\_new > se\_old, pe\_old & visual contr. \\
-31 & se\_new > pe\_old & visual contr. \\
-32 & se\_new > se\_old, pe\_old & visual contr. \\
-33 & se\_new, pe\_new > pe\_old & visual contr. \\
-34 & se\_old > se\_new & DMN  contr. \\
-35 & pe\_old > pe\_new &  DMN contr. \\
-36 & no\_cut > pe\_new, pe\_old & neg. control \\
-\bottomrule
+1 & geo, groom > all non-geo & PPA \tabularnewline
+2 & geo, groom, se\_new > all non-geo & PPA \tabularnewline
+3 & room, se\_new, se\_old > all non-geo & PPA \tabularnewline
+4 & geo > all non-geo & PPA \tabularnewline
+5 & groom > all non-geo & PPA \tabularnewline
+6 & se\_new > all non-geo & PPA \tabularnewline
+7 & se\_new, se\_old > all non-geo & PPA \tabularnewline
+8 & se\_new > se\_old & PPA \tabularnewline
+9 & vse\_new > vpe\_old & control at moments of cuts \tabularnewline
+10 & vse\_new, vpe\_new > vse\_old, vpe\_old & control at moments of cuts \tabularnewline
+11 & vse\_new > vse\_old & control at moments of cuts \tabularnewline
+12 & vse\_new > vse\_old, vpe\_old & control at moments of cuts \tabularnewline
+13 & vse\_new, vpe\_new > vpe\_old & control at moments of cuts \tabularnewline
 \end{tabular}
 \end{table*}
+
 
 \paragraph{video contrasts of parameter estimate}
 % Überblick über die Kontraste geben, die tatsächlich am Ende im Paper berichtet werden
