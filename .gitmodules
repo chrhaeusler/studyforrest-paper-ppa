@@ -7,3 +7,7 @@
 	url = chaeusler@juseless.inm7.de:/data/project/studyforrest_ppa
 	branch = master
 	datalad-id = 9414bede-5186-11ea-b96e-ac1f6bac9bd2
+[submodule "inputs/studyforrest-speechannotation"]
+	path = inputs/studyforrest-speechannotation
+	url = ./inputs/studyforrest-speechannotation
+	datalad-id = cacc9298-faed-11e9-9b76-e86a64c80559
