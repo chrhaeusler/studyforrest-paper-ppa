@@ -343,74 +343,79 @@ furniture). See Table \ref{tab:descr-nouns-counts} for a complete overview of al
 cateogries [+++rules, counts, examples].
 
 A preliminary annotation was performed by one person according to the rules (see
-Table XYZ). Minor corrections due to incorrectly applied rules were by the
-author.
+Table \ref{tab:descr-nouns-rules}). Minor corrections due to incorrectly applied
+rules were by the author.
 
+\todo[inline]{so ist die Tabelle zu breit; schrift kleiner oder Text kürzen?
+Könnte durchaus auch detaillierteren Text schreiben}
+
+% rules Tabelle für descriptiven nouns
 \begin{table*}[t]
-    \caption{Narrator's descriptive nouns.
-        All categories sorted alphapetically.
-    Examples are given in English.}
-\label{tab:descr-nouns-count}
+    \caption{Descriptive nouns spoken by the audio-description's narrator:
+    cateogries, annotation rules and examples (given in English).}
+\label{tab:descr-nouns-rules}
 \begin{tabular}{lll}
 \toprule
 \textbf{category} & \textbf{rule} & \textbf{examples} \\
 \midrule
 body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress
 shirt \tabularnewline
+bodypart & limbs and trousers & arm, finger, leg, toe \tabularnewline
+face & face or parts of it & face, ear, nose, mouth \tabularnewline
+female & female person & nurse, mother, woman \tabularnewline
+females & female persons & women \tabularnewline
+fname & female name & Jenny \tabularnewline
+furniture & moveable objects insides and outsides & bench, bed, table, chair
+\tabularnewline
+geo & immobile landmarks & building, tree, street, alley, meadow, cornfield, river \tabularnewline
+geo-room & rooms (insides) or  locales (outsides) & living room; wall, door, window, floor, turf \tabularnewline
+head & non-face parts of the head; worn headgear & head, hair, ear, neck,
+helmet \tabularnewline
+male & male person & man, father, soldier \tabularnewline
+males & male persons & boys, opponents \tabularnewline
+mname & male name & Bubba, Kennedy \tabularnewline
+object & countable entity with firm boundarie & telephone, car \tabularnewline
+persons & concrete persons of unknown sex & hippies, patients \tabularnewline
+setting\_new & setting mentioned for the first time &  on a ``bridge'', on an ``alley'', on ``campus'' \tabularnewline
+setting\_rec & recurring setting & at the ``bus stop'' \tabularnewline
+++ & nouns, adverbial adjectives and adverbs & in the ``evening'', it's ``daytime'', ``later'' \tabularnewline
+
 \bottomrule
 \end{tabular}
 \end{table*}
 
-% Tabelle der Descriptive Nouns;
-\todo[inline]{Caption hübsch machen}
-
+% counts Tabelle für descriptiven nouns
 \begin{table*}[t]
-    \caption{Narrator's descriptive nouns.
-        All categories sorted alphapetically.
-    Examples are given in English.}
-\label{tab:descr-nouns-count}
-\begin{tabular}{llllllllllll}
+    \caption{Descriptive nouns spoken by the audio-descriptions narrator:
+        counts for the whole audio-only stimulus and its eight segments used
+        during fMRI scanning.}
+\label{tab:descr-nouns-counts}
+\begin{tabular}{llllllllll}
 \toprule
-\textbf{category} & \textbf{rule} & \textbf{examples} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
+\textbf{category} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
-body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress shirt & \anBodyAll & \anBodyI & \anBodyII & \anBodyIII & \anBodyIV & \anBodyV & \anBodyVI & \anBodyVII & \anBodyVIII \tabularnewline
+body & \anBodyAll & \anBodyI & \anBodyII & \anBodyIII & \anBodyIV & \anBodyV & \anBodyVI & \anBodyVII & \anBodyVIII \tabularnewline
+bodypart &  \anBodypartAll & \anBodypartI & \anBodypartII & \anBodypartIII & \anBodypartIV & \anBodypartV & \anBodypartVI & \anBodypartVII & \anBodypartVIII \tabularnewline
+face & \anFaceAll & \anFaceI & \anFaceII & \anFaceIII & \anFaceIV & \anFaceV & \anFaceVI & \anFaceVII & \anFaceVIII \tabularnewline
+female & \anFemaleAll & \anFemaleI & \anFemaleII & \anFemaleIII & \anFemaleIV & \anFemaleV & \anFemaleVI & \anFemaleVII & \anFemaleVIII \tabularnewline
+females & \anFemalesAll & \anFemalesI & \anFemalesII & \anFemalesIII & \anFemalesIV & \anFemalesV & \anFemalesVI & \anFemalesVII & \anFemalesVIII \tabularnewline
+fname & \anFnameAll & \anFnameI & \anFnameII & \anFnameIII & \anFnameIV & \anFnameV & \anFnameVI & \anFnameVII & \anFnameVIII \tabularnewline
+furniture & \anFurnitureAll & \anFurnitureI & \anFurnitureII & \anFurnitureIII & \anFurnitureIV & \anFurnitureV & \anFurnitureVI & \anFurnitureVII & \anFurnitureVIII \tabularnewline
+geo & \anGeoAll & \anGeoI & \anGeoII & \anGeoIII & \anGeoIV & \anGeoV & \anGeoVI & \anGeoVII & \anGeoVIII \tabularnewline
+geo-room & \anGeoroomAll & \anGeoroomI & \anGeoroomII & \anGeoroomIII & \anGeoroomIV & \anGeoroomV & \anGeoroomVI & \anGeoroomVII & \anGeoroomVIII \tabularnewline
+head & \anHeadAll & \anHeadI & \anHeadII & \anHeadIII & \anHeadIV & \anHeadV & \anHeadVI & \anHeadVII & \anHeadVIII \tabularnewline
+male & \anMaleAll & \anMaleI & \anMaleII & \anMaleIII & \anMaleIV & \anMaleV & \anMaleVI & \anMaleVII & \anMaleVIII \tabularnewline
+males & \anMalesAll & \anMalesI & \anMalesII & \anMalesIII & \anMalesIV & \anMalesV & \anMalesVI & \anMalesVII & \anMalesVIII \tabularnewline
+mname & \anMnameAll & \anMnameI & \anMnameII & \anMnameIII & \anMnameIV & \anMnameV & \anMnameVI & \anMnameVII & \anMnameVIII \tabularnewline
+object & \anObjectAll & \anObjectI & \anObjectII & \anObjectIII & \anObjectIV & \anObjectV & \anObjectVI & \anObjectVII & \anObjectVIII \tabularnewline
+objects & \anObjectsAll & \anObjectsI & \anObjectsII & \anObjectsIII & \anObjectsIV & \anObjectsV & \anObjectsVI & \anObjectsVII & \anObjectsVIII \tabularnewline
+persons & \anPersonsAll & \anPersonsI & \anPersonsII & \anPersonsIII & \anPersonsIV & \anPersonsV & \anPersonsVI & \anPersonsVII & \anPersonsVIII \tabularnewline
 
-bodypart & limbs and trousers & arm, finger, leg, toe & \anBodypartAll & \anBodypartI & \anBodypartII & \anBodypartIII & \anBodypartIV & \anBodypartV & \anBodypartVI & \anBodypartVII & \anBodypartVIII \tabularnewline
+setting\_new & \anSettingnewAll & \anSettingnewI & \anSettingnewII & \anSettingnewIII & \anSettingnewIV & \anSettingnewV & \anSettingnewVI & \anSettingnewVII & \anSettingnewVIII \tabularnewline
 
-face & face or parts of it & face, ear, nose, mouth & \anFaceAll & \anFaceI & \anFaceII & \anFaceIII & \anFaceIV & \anFaceV & \anFaceVI & \anFaceVII & \anFaceVIII \tabularnewline
-
-female & female person & nurse, mother, woman & \anFemaleAll & \anFemaleI & \anFemaleII & \anFemaleIII & \anFemaleIV & \anFemaleV & \anFemaleVI & \anFemaleVII & \anFemaleVIII \tabularnewline
-
-females & female persons & women & \anFemalesAll & \anFemalesI & \anFemalesII & \anFemalesIII & \anFemalesIV & \anFemalesV & \anFemalesVI & \anFemalesVII & \anFemalesVIII \tabularnewline
-
-fname & female name & Jenny & \anFnameAll & \anFnameI & \anFnameII & \anFnameIII & \anFnameIV & \anFnameV & \anFnameVI & \anFnameVII & \anFnameVIII \tabularnewline
-
-furniture & movable objects insides/outsides & bench, bed, table, chair & \anFurnitureAll & \anFurnitureI & \anFurnitureII & \anFurnitureIII & \anFurnitureIV & \anFurnitureV & \anFurnitureVI & \anFurnitureVII & \anFurnitureVIII \tabularnewline
-
-geo & immobile landmarks & building, tree, street, alley, meadow, cornfield, river & \anGeoAll & \anGeoI & \anGeoII & \anGeoIII & \anGeoIV & \anGeoV & \anGeoVI & \anGeoVII & \anGeoVIII \tabularnewline
-
-geo-room & rooms / locales; elements defining a locale's spatial layout & living room; wall, door, window, floor, turf & \anGeoroomAll & \anGeoroomI & \anGeoroomII & \anGeoroomIII & \anGeoroomIV & \anGeoroomV & \anGeoroomVI & \anGeoroomVII & \anGeoroomVIII \tabularnewline
-
-head & non-face parts of the head; worn headgear & head, hair, ear, neck, helmet & \anHeadAll & \anHeadI & \anHeadII & \anHeadIII & \anHeadIV & \anHeadV & \anHeadVI & \anHeadVII & \anHeadVIII \tabularnewline
-
-male & male person & man, father, soldier & \anMaleAll & \anMaleI & \anMaleII & \anMaleIII & \anMaleIV & \anMaleV & \anMaleVI & \anMaleVII & \anMaleVIII \tabularnewline
-
-males & male persons & boys, opponents & \anMalesAll & \anMalesI & \anMalesII & \anMalesIII & \anMalesIV & \anMalesV & \anMalesVI & \anMalesVII & \anMalesVIII \tabularnewline
-
-mname & male name & Bubba, Kennedy & \anMnameAll & \anMnameI & \anMnameII & \anMnameIII & \anMnameIV & \anMnameV & \anMnameVI & \anMnameVII & \anMnameVIII \tabularnewline
-
-object & countable entity with firm boundarie & telephone, car & \anObjectAll & \anObjectI & \anObjectII & \anObjectIII & \anObjectIV & \anObjectV & \anObjectVI & \anObjectVII & \anObjectVIII \tabularnewline
-
-objects & countable entities with firm boundaries &  wheels, photos & \anObjectsAll & \anObjectsI & \anObjectsII & \anObjectsIII & \anObjectsIV & \anObjectsV & \anObjectsVI & \anObjectsVII & \anObjectsVIII \tabularnewline
-
-persons & concrete persons of unknown sex / gender & hippies, patients & \anPersonsAll & \anPersonsI & \anPersonsII & \anPersonsIII & \anPersonsIV & \anPersonsV & \anPersonsVI & \anPersonsVII & \anPersonsVIII \tabularnewline
-
-setting\_new & setting mentioned for the first time &  on a ``bridge'', on an ``alley'', on ``campus'' & \anSettingnewAll & \anSettingnewI & \anSettingnewII & \anSettingnewIII & \anSettingnewIV & \anSettingnewV & \anSettingnewVI & \anSettingnewVII & \anSettingnewVIII \tabularnewline
-
-setting\_rec & recurring setting & at the ``bus stop'' & \anSettingrecAll &
+setting\_rec & \anSettingrecAll &
 \anSettingrecI & \anSettingrecII & \anSettingrecIII & \anSettingrecIV & \anSettingrecV & \anSettingrecVI & \anSettingrecVII & \anSettingrecVIII \tabularnewline
-++ & nouns, adverbial adjectives and adverbs & in the ``evening'', it's ``daytime'', ``later'' &  anAll & \anI & \anII & \anIII & \anIV & \anV & \anVI & \anVII & \anVIII \tabularnewline
-aDescrV & aDescrVI & aDescrVII & aDescrVIII \tabularnewline
+++ & \anAll & \anI & \anII & \anIII & \anIV & \anV & \anVI & \anVII & \anVIII \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table*}
