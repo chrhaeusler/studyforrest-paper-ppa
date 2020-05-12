@@ -326,7 +326,7 @@ used to split the segments (s. Figure 3a in \citep{hanke2014audiomovie}.
 
 \subsection{Naturalistic stimuli annotation}
 
-\todo[inline]{aus Speech-Anno Paper 'descriptive-statistics-anno.py' übernehmen \& anpassen, um Statistiken und runcommand-file zu erstellen}
+\todo[inline]{um Hinweis bzgl. AV ergänzen}
 
 % annotation procedure
 We extended a publicly available annotation of speech \citep{haeusler2020speechanno} by manually annotating the audio-description's narrator: Two persons performed a categorization of nouns embedded in sentences spoken by the narrator to describe the movie's missing visual content.
@@ -339,46 +339,78 @@ The nouns were categorized by the clue they provide about the cinematographic
 scene's environment (geo, geo-room; setting\_new, setting\_old), its inherent
 persons (female, female name; male, male name, person), a person's appearance
 (face, head; body, bodypart), and a scene's inherent objects (object,
-furniture). See Table \ref{tab:descr-nouns} for a complete overview of all
+furniture). See Table \ref{tab:descr-nouns-counts} for a complete overview of all
 cateogries [+++rules, counts, examples].
 
 A preliminary annotation was performed by one person according to the rules (see
 Table XYZ). Minor corrections due to incorrectly applied rules were by the
 author.
 
-% Tabelle der Descriptive Nouns;
-\todo[inline]{decr-stats-anno.py; Schrägstriche vor Platzhalter}
+\begin{table*}[t]
+    \caption{Narrator's descriptive nouns.
+        All categories sorted alphapetically.
+    Examples are given in English.}
+\label{tab:descr-nouns-count}
+\begin{tabular}{lll}
+\toprule
+\textbf{category} & \textbf{rule} & \textbf{examples} \\
+\midrule
+body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress
+shirt \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table*}
 
+% Tabelle der Descriptive Nouns;
 \todo[inline]{Caption hübsch machen}
 
 \begin{table*}[t]
     \caption{Narrator's descriptive nouns.
         All categories sorted alphapetically.
     Examples are given in English.}
-\label{tab:descr-nouns}
+\label{tab:descr-nouns-count}
 \begin{tabular}{llllllllllll}
 \toprule
 \textbf{category} & \textbf{rule} & \textbf{examples} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
-body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress shirt & aDescrBodyAll & aDescrBodyI & aDescrBodyII & aDescrBodyIII & aDescrBodyIV & aDescrBodyV & aDescrBodyVI & aDescrBodyVII & aDescrBodyVIII \tabularnewline
-bodypart & limbs and trousers & arm, finger, leg, toe & aDescrBodypartAll & aDescrBodypartI & aDescrBodypartII & aDescrBodypartIII & aDescrBodypartIV & aDescrBodypartV & aDescrBodypartVI & aDescrBodypartVII & aDescrBodypartVIII \tabularnewline
-face & face or parts of it & face, ear, nose, mouth & aDescrFaceAll & aDescrFaceI & aDescrFaceII & aDescrFaceIII & aDescrFaceIV & aDescrFaceV & aDescrFaceVI & aDescrFaceVII & aDescrFaceVIII \tabularnewline
-female & female person & nurse, mother, woman & aDescrFemaleAll & aDescrFemaleI & aDescrFemaleII & aDescrFemaleIII & aDescrFemaleIV & aDescrFemaleV & aDescrFemaleVI & aDescrFemaleVII & aDescrFemaleVIII \tabularnewline
-females & female persons & women & aDescrFemalesAll & aDescrFemalesI & aDescrFemalesII & aDescrFemalesIII & aDescrFemalesIV & aDescrFemalesV & aDescrFemalesVI & aDescrFemalesVII & aDescrFemalesVIII \tabularnewline
-fname & female name & Jenny & aDescrFnameAll & aDescrFnameI & aDescrFnameII & aDescrFnameIII & aDescrFnameIV & aDescrFnameV & aDescrFnameVI & aDescrFnameVII & aDescrFnameVIII \tabularnewline
-furniture & movable objects insides/outsides & bench, bed, table, chair & aDescrFurnitureAll & aDescrFurnitureI & aDescrFurnitureII & aDescrFurnitureIII & aDescrFurnitureIV & aDescrFurnitureV & aDescrFurnitureVI & aDescrFurnitureVII & aDescrFurnitureVIII \tabularnewline
-geo & immobile landmarks & building, tree, street, alley, meadow, cornfield, river & aDescrGeoAll & aDescrGeoI & aDescrGeoII & aDescrGeoIII & aDescrGeoIV & aDescrGeoV & aDescrGeoVI & aDescrGeoVII & aDescrGeoVIII \tabularnewline
-geo-room & rooms / locales; elements defining a locale's spatial layout & living room; wall, door, window, floor, turf & aDescrGeoroomAll & aDescrGeoroomI & aDescrGeoroomII & aDescrGeoroomIII & aDescrGeoroomIV & aDescrGeoroomV & aDescrGeoroomVI & aDescrGeoroomVII & aDescrGeoroomVIII \tabularnewline
-head & non-face parts of the head; worn headgear & head, hair, ear, neck, helmet & aDescrHeadAll & aDescrHeadI & aDescrHeadII & aDescrHeadIII & aDescrHeadIV & aDescrHeadV & aDescrHeadVI & aDescrHeadVII & aDescrHeadVIII \tabularnewline
-male & male person & man, father, soldier & aDescrMaleAll & aDescrMaleI & aDescrMaleII & aDescrMaleIII & aDescrMaleIV & aDescrMaleV & aDescrMaleVI & aDescrMaleVII & aDescrMaleVIII \tabularnewline
-males & male persons & boys, opponents & aDescrMalesAll & aDescrMalesI & aDescrMalesII & aDescrMalesIII & aDescrMalesIV & aDescrMalesV & aDescrMalesVI & aDescrMalesVII & aDescrMalesVIII \tabularnewline
-mname & male name & Bubba, Kennedy & aDescrMnameAll & aDescrMnameI & aDescrMnameII & aDescrMnameIII & aDescrMnameIV & aDescrMnameV & aDescrMnameVI & aDescrMnameVII & aDescrMnameVIII \tabularnewline
-object & countable entity with firm boundarie & telephone, car & aDescrObjectAll & aDescrObjectI & aDescrObjectII & aDescrObjectIII & aDescrObjectIV & aDescrObjectV & aDescrObjectVI & aDescrObjectVII & aDescrObjectVIII \tabularnewline
-objects & countable entities with firm boundaries &  wheels, photos & aDescrObjectsAll & aDescrObjectsI & aDescrObjectsII & aDescrObjectsIII & aDescrObjectsIV & aDescrObjectsV & aDescrObjectsVI & aDescrObjectsVII & aDescrObjectsVIII \tabularnewline
-persons & concrete persons of unknown sex / gender & hippies, patients & aDescrPersonsAll & aDescrPersonsI & aDescrPersonsII & aDescrPersonsIII & aDescrPersonsIV & aDescrPersonsV & aDescrPersonsVI & aDescrPersonsVII & aDescrPersonsVIII \tabularnewline
-setting\_new & setting mentioned for the first time &  on a ``bridge'', on an ``alley'', on ``campus'' & aDescrSettingnewAll & aDescrSettingnewI & aDescrSettingnewII & aDescrSettingnewIII & aDescrSettingnewIV & aDescrSettingnewV & aDescrSettingnewVI & aDescrSettingnewVII & aDescrSettingnewVIII \tabularnewline
-setting\_rec & recurring setting & at the ``bus stop'' & aDescrSettingrecAll & aDescrSettingrec & aDescrSettingrecII & aDescrSettingrecIII & aDescrSettingrecIV & aDescrSettingrecV & aDescrSettingrecVI & aDescrSettingrecVII & aDescrSettingrecVIII \tabularnewline
-++ & nouns, adverbial adjectives and adverbs & in the ``evening'', it's ``daytime'', ``later'' &  aDescrAll & aDescrI & aDescrII & aDescrIII & aDescrIV & aDescrV & aDescrVI & aDescrVII & aDescrVIII \tabularnewline
+body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress shirt & \anBodyAll & \anBodyI & \anBodyII & \anBodyIII & \anBodyIV & \anBodyV & \anBodyVI & \anBodyVII & \anBodyVIII \tabularnewline
+
+bodypart & limbs and trousers & arm, finger, leg, toe & \anBodypartAll & \anBodypartI & \anBodypartII & \anBodypartIII & \anBodypartIV & \anBodypartV & \anBodypartVI & \anBodypartVII & \anBodypartVIII \tabularnewline
+
+face & face or parts of it & face, ear, nose, mouth & \anFaceAll & \anFaceI & \anFaceII & \anFaceIII & \anFaceIV & \anFaceV & \anFaceVI & \anFaceVII & \anFaceVIII \tabularnewline
+
+female & female person & nurse, mother, woman & \anFemaleAll & \anFemaleI & \anFemaleII & \anFemaleIII & \anFemaleIV & \anFemaleV & \anFemaleVI & \anFemaleVII & \anFemaleVIII \tabularnewline
+
+females & female persons & women & \anFemalesAll & \anFemalesI & \anFemalesII & \anFemalesIII & \anFemalesIV & \anFemalesV & \anFemalesVI & \anFemalesVII & \anFemalesVIII \tabularnewline
+
+fname & female name & Jenny & \anFnameAll & \anFnameI & \anFnameII & \anFnameIII & \anFnameIV & \anFnameV & \anFnameVI & \anFnameVII & \anFnameVIII \tabularnewline
+
+furniture & movable objects insides/outsides & bench, bed, table, chair & \anFurnitureAll & \anFurnitureI & \anFurnitureII & \anFurnitureIII & \anFurnitureIV & \anFurnitureV & \anFurnitureVI & \anFurnitureVII & \anFurnitureVIII \tabularnewline
+
+geo & immobile landmarks & building, tree, street, alley, meadow, cornfield, river & \anGeoAll & \anGeoI & \anGeoII & \anGeoIII & \anGeoIV & \anGeoV & \anGeoVI & \anGeoVII & \anGeoVIII \tabularnewline
+
+geo-room & rooms / locales; elements defining a locale's spatial layout & living room; wall, door, window, floor, turf & \anGeoroomAll & \anGeoroomI & \anGeoroomII & \anGeoroomIII & \anGeoroomIV & \anGeoroomV & \anGeoroomVI & \anGeoroomVII & \anGeoroomVIII \tabularnewline
+
+head & non-face parts of the head; worn headgear & head, hair, ear, neck, helmet & \anHeadAll & \anHeadI & \anHeadII & \anHeadIII & \anHeadIV & \anHeadV & \anHeadVI & \anHeadVII & \anHeadVIII \tabularnewline
+
+male & male person & man, father, soldier & \anMaleAll & \anMaleI & \anMaleII & \anMaleIII & \anMaleIV & \anMaleV & \anMaleVI & \anMaleVII & \anMaleVIII \tabularnewline
+
+males & male persons & boys, opponents & \anMalesAll & \anMalesI & \anMalesII & \anMalesIII & \anMalesIV & \anMalesV & \anMalesVI & \anMalesVII & \anMalesVIII \tabularnewline
+
+mname & male name & Bubba, Kennedy & \anMnameAll & \anMnameI & \anMnameII & \anMnameIII & \anMnameIV & \anMnameV & \anMnameVI & \anMnameVII & \anMnameVIII \tabularnewline
+
+object & countable entity with firm boundarie & telephone, car & \anObjectAll & \anObjectI & \anObjectII & \anObjectIII & \anObjectIV & \anObjectV & \anObjectVI & \anObjectVII & \anObjectVIII \tabularnewline
+
+objects & countable entities with firm boundaries &  wheels, photos & \anObjectsAll & \anObjectsI & \anObjectsII & \anObjectsIII & \anObjectsIV & \anObjectsV & \anObjectsVI & \anObjectsVII & \anObjectsVIII \tabularnewline
+
+persons & concrete persons of unknown sex / gender & hippies, patients & \anPersonsAll & \anPersonsI & \anPersonsII & \anPersonsIII & \anPersonsIV & \anPersonsV & \anPersonsVI & \anPersonsVII & \anPersonsVIII \tabularnewline
+
+setting\_new & setting mentioned for the first time &  on a ``bridge'', on an ``alley'', on ``campus'' & \anSettingnewAll & \anSettingnewI & \anSettingnewII & \anSettingnewIII & \anSettingnewIV & \anSettingnewV & \anSettingnewVI & \anSettingnewVII & \anSettingnewVIII \tabularnewline
+
+setting\_rec & recurring setting & at the ``bus stop'' & \anSettingrecAll &
+\anSettingrecI & \anSettingrecII & \anSettingrecIII & \anSettingrecIV & \anSettingrecV & \anSettingrecVI & \anSettingrecVII & \anSettingrecVIII \tabularnewline
+++ & nouns, adverbial adjectives and adverbs & in the ``evening'', it's ``daytime'', ``later'' &  anAll & \anI & \anII & \anIII & \anIV & \anV & \anVI & \anVII & \anVIII \tabularnewline
+aDescrV & aDescrVI & aDescrVII & aDescrVIII \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -529,7 +561,7 @@ across the 8 segments for every subject. A subsequent, third-level analysis aver
 
 At the first level analyzing each segment for every subject, we created
 regressors for the AO data from the narrator's descriptive nouns (see Table
-\ref{tab:descr-nouns}) added to the annotation of speech
+\ref{tab:descr-nouns-counts}) added to the annotation of speech
 \citep{haeusler2020speechanno}. For the AV stimulus, we created regressors from
 events provided by an annotation of movie cuts and depicted locations
 \citep{haeusler2016cutanno}.
