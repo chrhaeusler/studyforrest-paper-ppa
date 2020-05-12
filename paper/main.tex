@@ -702,6 +702,23 @@ high-pass filter (cutoff period of \unit[150]{s}) as the BOLD time series.
 \todo[inline]{hier kommt die Abbildung ``correlation of regressors''; ref to
 fig:reg-corr}
 
+\todo[inline]{in der Abbildung der Regressoren-Korrelationen sind jetzt alle
+    Regressoren drin; imo könnte man ein paar herausnehmen (die zur Kontrolle
+    benutzen Filmschnitt-Regressoren in der AO-Analyse, die zur Kontrolle
+    benutzen Descriptive-Nouns Regressoren (namentlich se\_new und se\_old), und ggf. [ein paar der] low-level features nuissance regressors.}
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/regressor-corr} \caption{Pearson
+        correlation coefficients of the regressors used in the analysis of the
+        audio-description (blue; see Table \ref{tab:ao-events} for a
+        description) and audio-visual movie (red; see Table
+        \ref{tab:av-events}). Regressors were convolved with FSL's
+        ``Double-Gamma HRF'' as a model of the hemodynamic response function,
+        temporally filtered with the same high-pass filter (cut-off
+        \unit[150]{s}) as the BOLD time series, and concatenated across runs
+    before performing the correlation.}
+    \label{fig:reg-corr}
+\end{figure*}
 
 \paragraph{audio stimulus: contrasts of parameter estimate}
 \todo[inline]{Warum ist welche COPES so gemacht und warum COPE 1 die Nummer 1}
