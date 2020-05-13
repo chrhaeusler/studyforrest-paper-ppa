@@ -256,73 +256,96 @@ Encouraged by \citep{aziz2008modulation} and \citep{aminoff2013role}, we focus o
 \todo[inline]{Specific data outputs should be explicitly referenced via data
 citation (see Data Records and Data Citations, below)}
 
+\todo[inline]{Nach wie vor recht ausführlich; Reihenfolge der subsections mag
+``inkorrekt'' sein.}
+
+% Intro
 We used data from three publicly available datsets as part of the studyforrest
 dataset (\href{http://www.studyforrest.org}{studyforrest.org}) that has already
 been used by other research groups for independent research questions before.
-
-We used fMRI data from 14 subjects who took part in three different studies. Namely, the same subjects were
-
+% used studies
+We fMRI data from three different studies. The same subjects were
+% AO
 a) listening to the audio-description (AO study; \citep{hanke2014audiomovie}) of
-the movie ``Forrest Gump'', a dataset already used by \citep{hu2017decoding}.
+the movie ``Forrest Gump'', a dataset already used by \citep{hu2017decoding, nguyen2016integration}.
+% AV
 b) watching the actual audio-visual movie (AV study;
 \citep{hanke2016simultaneous}, a dataset already used by
-\citep{ben2018hippocampal}. c) participating in a dedicated block-wise visual
-localizer (LOC study) \citep{sengupta2016extension}, a dataset aready used by
-\citep{jiahui2019predicting}.
+\citep{ben2018hippocampal}.
+% VIS
+c) participating in a dedicated six-category
+block-design visual localizer (VIS study) \citep{sengupta2016extension}, a dataset aready used by \citep{jiahui2019predicting}.
 
 An exhaustive description of the participants, stimulus creation, procedure,
 stimulation setup, and fMRI acquisition can be found in the corresponding
-publications  \citep{hanke2014audiomovie, hanke2016simultaneous,
+publications \citep{hanke2014audiomovie, hanke2016simultaneous,
 sengupta2016extension}. Following is a brief summary of most important aspects.
-
-\todo[inline]{Alles um Sengupta ergänzen}
 
 
 \subsection{Participants}
 
 \todo[inline]{inner join von AO \& AV: N=14; AO: N=19; es fehlt in beiden VP10;
-Angaben zu Alter (Durchschnitt; ggf. Range) und Geschlecht sind folglich falsch}
-
-In the AO study, 19 participants (all right-handed, age 21–38 years, mean age
-26.6 years, 12 male) listened to the German audio-description
+Angaben zu Alter (Durchschnitt; ggf. Range) und Geschlecht sind folglich falsch
+=> hier stehen lassen und unter Data erwähnen, dass die nicht benutzt wurde}
+% AO study
+In the AO study, 19 German native speakers (all right-handed, age 21–38 years,
+mean age 26.6 years, 12 male) listened to the German audio-description
 \citep{ForrestGumpGermanAD} of the movie ``Forrest Gump''
 \citep{ForrestGumpMovie} as an additional audio track for visually impaired
-listeners on Swiss public television. In the AV study, the same 14 participants
-(21–39 years, mean age 29.4, six female) watched the audio-visual movie with dubbed German audio track \citep{ForrestGumpDVD}. All participants reported to have normal hearing, normal or corrected-to-normal vision, and no known history of neurological disorders.
-
-\todo[inline]{Sengupta (2016)}
-In the LOC study\dots
-
-In both studies, participants received monetary compensation and gave written informed consent for their participation and for public sharing of all obtained data in anonymized form. The studies had prior approval by the Ethics Committee of Otto-von-Guericke University of Magdeburg, Germany.
+listeners on Swiss public television.  was Germin
+% AV study
+In the AV study, 15 participants (21–39 years, mean age 29.4, six female) of the
+prior AO study watched the audio-visual movie with dubbed German audio track
+\citep{ForrestGumpDVD}.
+% VIS study
+In the VIS study, the same 15 participants took part in a six-category
+block-design visual localizer.
+% participants' health
+All participants reported to have normal hearing, normal or corrected-to-normal
+vision, and no known history of neurological disorders.
+% compensation, consent and shit
+In all both studies, participants received monetary compensation and gave
+written informed consent for their participation and for public sharing of all
+obtained data in anonymized form. The studies had prior approval by the Ethics
+Committee of Otto-von-Guericke University of Magdeburg, Germany.
 
 
 \subsection{Stimuli}
-% stimulus name & references
+% AO & AV stimulus name & references
 We used the German DVD release \citep{ForrestGumpDVD} of
 the audio-visual movie ``Forrest Gump'' \citep{ForrestGumpMovie} and its
 temporally aligned audio-description (i.e. the audio-only variant of the movie)
 that was broadcast as an additional audio track for visually impaired listeners
-on Swiss public televinsion \citep{ForrestGumpGermanAD}.
-
-% difference in audio track AV vs. AO
+on Swiss public television \citep{ForrestGumpGermanAD}.
+% AO vs. AV: differences
 The plot of the movie is already carried by an off-screen voice of the main
 character Forrest Gump.  In the largely identical audio-description, a male
 narrator additionally describes essential aspects of the visual scenery when
 there is no off-screen voice, dialog, or other relevant auditory content.
 
-% stimulus creation
+% AO & AV: stimulus creation
 The audio-description was temporally aligned to the audio track of the German
 DVD release. A few scenes less relevant to the major plot were removed to create
 the ``research cut'' lasting $\approx$2h
 \citep{hanke2014audiomovie, hanke2016simultaneous}. Both stimuli were further
 processed (filtering, volume adjustments) to improve audibility during MRI
 scanning. Finally, each stimulus was split into eight segments of approximately
-15 minutes.  Except for the first movie segment, each segment started with a
+15 minutes. Except for the first movie segment, each segment started with a
 snippet of at least six seconds immediately preceding the movie scene boundary
 used to split the segments (s. Figure 3a in \citep{hanke2014audiomovie}.
+% AV: grey bars
+Black horizontal bars at the top and bottom of stimulus of the AV study were
+replaced with medium-gray bars of the same size in order to increase back-
+ground illumination for a more pleasant experience.
 
-\todo[inline]{Sengupta (2016)}
-
+% VIS study
+% picture categories
+All stimuli for the VIS study were used in a previous study
+\citep{haxby2011common}. There were 24 unique grayscale images (matched in
+luminance, size of 400 $\times$\unit[400]{px}) from each of six stimulus
+categories: human faces, human bodies without heads, small objects, houses and
+outdoor scenes comprising of nature and street scenes, and phase scrambled
+images. Mirrored views of these 24 $\times$ 6 images were also used as stimuli.
 
 \subsection{Naturalistic stimuli annotation}
 
@@ -422,23 +445,28 @@ setting\_rec & \anSettingrecAll &
 
 
 \subsection{Procedure}
-
-In both [all three] studies, participants filled out a questionnaire on their
-basic demographic information and familiarity with the audio-description or the
-movie. Participants were instructed to inhibit physical movements except for
+% questionnaire
+In all three studies, participants filled out a questionnaire on their basic
+demographic information (and familiarity with the audio-description or movie).
+% AO & AV: instructions
+Participants were instructed to inhibit physical movements except for
 eye-movements, and otherwise to simply ``enjoy the audiobook'' or ``enjoy the
-movie'' respectively. Audio-description and movie segments were presented in
-chronological order with four segments in two fMRI sessions respectively.
-Between sessions, participants left the scanner for a break with a flexible
-duration. Structural images were obtained during the first study on a day
-different from the fMRI session.
-
+movie'' respectively.
+% AO & AV: presentation & instructions
+Audio-description and movie segments were presented in chronological order with
+four segments in two fMRI sessions respectively.  Between sessions, participants
+left the scanner for a break with a flexible duration. Structural images were
+obtained during the first study on a day different from the fMRI session.
+% VIS: presentation & instructions
+In the VIS study, participants were presented with four block-design runs, with
+two \unit[16]{s} blocks per stimulus category in each run, while they also performed a one-back matching task to keep them attentive.
 
 \subsection{Stimulation setup}
 
-\todo[inline]{irrelevantes kürzen}
-In both studies, stimulation was implemented with \href{http://www.psychopy.org}{PsychoPy} \citep{peirce2007psychopy} running on a computer with the \href{http://neuro.debian.net}{(Neuro)Debian} operating system \citep{halchenko2012open}.
+% paradigm implementation
+In all three studies, stimulation was implemented with \href{http://www.psychopy.org}{PsychoPy} \citep{peirce2007psychopy} running on a computer with the \href{http://neuro.debian.net}{(Neuro)Debian} operating system \citep{halchenko2012open}.
 
+% AO
 In the AO study, visual instructions were presented on a rear-projection screen
 inside scanner bore using an LCD projector (DLA-G150CL, JVC Ltd.). During the
 functional scans, the projector presented a medium gray screen with the primary
@@ -446,19 +474,34 @@ purpose to illuminate a participant's visual field in order to prevent premature
 fatigue. [The screen contained a solid black ``fixation'' dot that faded in and
 out at the beginning and end of a movie segment.]
 
-In the AV study, visual instructions and stimuli were presented on a
+% AV & VIS
+In the AV and VIS study, visual instructions and stimuli were presented on a
 rear-projection screen using an LCD projector (JVC DLA RS66E, JVC Ltd., light
 transmission reduced to \unit[13.7]{\%} with a gray filter) connected to the
 stimulus computer [via a DVI extender system (Gefen EXT-DVI-142DLN with
-EXT-DVI-FM1000)]. The movie was shown at a viewing distance of \unit[63]{cm} in
-\unit[720]{p} resolution at full width on a \unit[1280 $\times$ 1024]{pixel}
-screen with \unit[60]{Hz} video refresh rate and screen dimension of \unit[26.5
-$\times$ 21.2]{cm}, corresponding to \unit[23.75 $\times$ 13.5] or \unit[23.75
+EXT-DVI-FM1000)].
+% screen size
+The movie was shown at a viewing distance of \unit[63]{cm} in \unit[720]{p}
+resolution at full width on a \unit[1280 $\times$ 1024]{pixel} screen with
+\unit[60]{Hz} video refresh rate and screen dimension of \unit[26.5 $\times$
+21.2]{cm}.
+% angle of view: AV
+In the AV study, this corresponded to \unit[23.75 $\times$ 13.5] or \unit[23.75
 $times$ 10.25]{cm} when considering only the movie content and excluding the
 horizontal gray bars.
+% angle of view: VIS
+In the VIS study, stimulus images were displayed at a size of approximately
+\unit[10]$^{\circ}$ $\times$ \unit[10]$^{\circ}$ of visual angle.
 
-In both studies [+++???+++] auditory stimulation was delivered through an MR confon mkII+ driving custom-built in-ear headphones (HP-M01, MR confon GmbH, Magdeburg, Germany; \citep{baumgart1998electrodynamic}) that reduced the scanner noise by at least \unit[20–30]{dB}.
-Headphones were  fed from an Aureon 7.1 USB (Terratec) sound card through an optical connection.
+\todo[inline]{Ist richtig, dass auditory stimulation in beiden Experimenten die
+gleiche war?}
+
+% AO & AV: auditory stimulation
+In the AO and AV study, auditory stimulation was delivered through an MR confon
+mkII+ driving custom-built in-ear headphones (HP-M01, MR confon GmbH, Magdeburg,
+Germany; \citep{baumgart1998electrodynamic}) that reduced the scanner noise by
+at least \unit[20–30]{dB}. Headphones were fed from an Aureon 7.1 USB
+(Terratec) sound card through an optical connection.
 
 
 \subsection{fMRI data acquisition}
@@ -469,7 +512,7 @@ In both studies, a total of 3599 volumes were recorded for each participant
 (451, 441, 438, 488, 462, 439, 542, and 338 volumes for movie segment 1–8
 respectively).
 
-% AO (Hanke, 2014)
+% AO
 In the AO study, a whole-body \unit[7]{Tesla} Siemens MAGNETOM magnetic
 resonance scanner equipped with a local circularly polarized head transmit and a
 32 channel brain receive coil (Nova Medical, Inc., Wilmington, MA, USA) acquired
@@ -492,20 +535,22 @@ for slice alignment and motion- and distortion-correction were performed at the
 beginning of the first fMRI recording session and also after the break at the
 start of the recording for the second half of the movie.
 
-% AV (Hanke, 2016)
-In the AV study, a whole-body \unit[3]{Tesla} Philips Achieva dStream MRI
-scanner equipped with a 32 channel head coil acquired T2*-weighted echo-planar
-images (gradient-echo, \unit[2]{s} repetition time (TR), \unit[30]{ms} echo
-time, \unit[90]{$^{\circ}$} flip angle, \unit[1943]{Hz/Px} bandwidth, parallel
-acquisition with sensitivity encoding (SENSE) reduction factor 2).
+% AV & VIS
+In the AV and VIS study, a whole-body \unit[3]{Tesla} Philips Achieva dStream
+MRI scanner equipped with a 32 channel head coil acquired T2*-weighted
+echo-planar images (gradient-echo, \unit[2]{s} repetition time (TR),
+\unit[30]{ms} echo time, \unit[90]{$^{\circ}$} flip angle, \unit[1943]{Hz/Px}
+bandwidth, parallel acquisition with sensitivity encoding (SENSE) reduction
+factor 2).
 % slices
 35 axial slices (thickness \unit[3.0]{mm}, \unit[10]{\%} inter-slice gap) with
 \unit[80 $\times$ 80]{voxels} (\unit[3.0 $\times$ 3.0]{mm} of in-plane
 resolution, \unit[240]{mm} field-of-view) and an anterior-to-posterior phase
 encoding direction were recorded in ascending order. Philips' ``SmartExam'' was
 used to automatically position slices in AC-PC orientation such that the topmost
-slice was located at the superior edge of the brain.
-\todo[inline]{In the LOC study\dots}
+slice was located at the superior edge of the brain. This automatic slice
+positioning procedure was identical in the AV und VIS study and yielded a
+congruent geometry across paradigms.
 
 
 \subsection{Preprocessing}
@@ -514,8 +559,9 @@ slice was located at the superior edge of the brain.
 
 \todo[inline]{cite sengupta2016 where this was first done and described, ie same image/data was used here}
 
-\todo[inline]{downsampling der 7T Daten}
+\todo[inline]{Satz zum Downsampling der 7T Daten? => check github repo}
 
+\todo[inline]{subject 10 was dropped due to excessive motion: see Hanke 2016}
 % data source
 fMRI time series data were obtained from
 \href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{GitHub}.
@@ -563,6 +609,10 @@ across the 8 segments for every subject. A subsequent, third-level analysis aver
 \subsubsection{first-level}
 
 \paragraph{Regressors}
+
+\todo[inline]{Nouns, die eigentlich zu einer anderen Kateogrie als setting\_new
+    or setting\_old gehören, aber einen Settingwechsel anzeigen, werden als
+Event eines der Settingwechsel zugehörig gezählt.}
 
 At the first level analyzing each segment for every subject, we created
 regressors for the AO data from the narrator's descriptive nouns (see Table
