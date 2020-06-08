@@ -111,16 +111,16 @@ def plot_heatmap(matrix, outFpath):
     plt.yticks(rotation=0, fontsize=12)
 
     for x in range(0, len(AO_USED)):
-        plt.gca().get_xticklabels()[x].set_color('blue')  # black = default
+        plt.gca().get_xticklabels()[x].set_color('red')  # black = default
 
     for x in range(len(AO_USED), len(AO_USED) + len(AV_USED)):
-        plt.gca().get_xticklabels()[x].set_color('red')
+        plt.gca().get_xticklabels()[x].set_color('blue')
 
     for y in range(len(AO_USED), len(AO_USED) + len(AV_USED)):
-        plt.gca().get_yticklabels()[y].set_color('blue')
+        plt.gca().get_yticklabels()[y].set_color('red')
 
     for y in range(0, len(AO_USED)):
-        plt.gca().get_yticklabels()[y].set_color('red')
+        plt.gca().get_yticklabels()[y].set_color('blue')
 
     os.makedirs(outFpath, exist_ok=True)
 
