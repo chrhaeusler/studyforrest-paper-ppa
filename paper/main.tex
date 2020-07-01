@@ -60,16 +60,12 @@ Paradigma ist mit "Film ab" wenig kompliziert}
 
 \todo[inline]{our system cannot accept BibTeX bibliography files; authors who
     wish to use BibTeX to prepare their references should therefore copy the
-    refernce list from the .bbl file that BibTeX generates and paste it into the
-    main manuscript .tex file (and delete the associated
-    \textbackslash{}bibliography and \textbackslash{}bibliographystyle
+    reference list from the .bbl file that BibTeX generates and paste it into
+    the main manuscript .tex file (and delete the associated
+    \textbackslash{}bipliography and \textbackslash{}bibliographystyle
 commands)}
 
-\todo[inline]{Ich arbeite erstmal wie gehabt mit der references.bib
-    und habe oben usepackage{natbib}' eingefügt}
 
-\todo[inline]{why naturalisticc stimuli are so cool: sinkusare2019,
-eickhoff2020}
 
 \section{Introduction} Cognitive neuroscientists use brain imaging methods like
 blood oxygenation level-dependent functional magnetic resonance imaging (BOLD
@@ -86,14 +82,14 @@ average results across at least 10-15 subjects to improve the
 signal-to-noise-ratio (SNR). The disadvantage here is that the averaging
 approach does not characterize brain functions at an individual level, a
 prerequisite for the application of brain imaging methods in individual
-diagnostics (cf. \citep{dubois2016building})
+diagnostics (cf. \citep{dubois2016building, eickhoff2020towards})
 
 \todo[inline]{Retrosplenial Cortex kommt in Einleitung bisher  nicht vor; wird
 aufgrund der Ergebnisse in AV und AO in Discussion diskutiert werden; cluster
 sind in den Abbildungen nicht zu sehen; kommen aber in (den Tabellen) der
 Results Section }
 
-% Was ist PPA?
+% What is the PPA?
 A classic example of a functional, higher-level visual area is the
 ``parahippocampal place area'' (PPA) \citep{epstein1998ppa,
 epstein1999parahippocampal}. The PPA is located in the posterior parahippocampal
@@ -105,14 +101,15 @@ pictures of tools or faces.  According to the spatial layout hypothesis, the PPA
 is involved in processing the surface geometry of a visual stimulus and possibly
 in identifying scenes based on their spatial layout \citep{epstein2010reliable}.
 
-% Literature Review PPA: Einleitung
-At a group avergae level, results generalize to mental imagination of landscapes
+% Literature Review PPA: Intro
+At a group average level, results generalize to mental imagination of landscapes
 \citep{ocraven2000mental} and haptic exploration of scenes constructed from LEGO
 blocks \citep{wolbers2011modality}. One study that used spoken, place-related
 sentences showed significantly decreased activation in the left and no
 modulation in the right-hemispheric PPA \citep{aziz2008modulation}.
 
-% Studien im Einzelnen: O'Craven: Mental imagery
+% Exemplary studies
+% O'Craven: Mental imagery
 In the study conducted by \citep{ocraven2000mental} participants viewed
 alternating blocks of pictures showing famous faces and familiar places during
 an initial experimental paradigm. In a subsequent paradigm, participants were
@@ -139,17 +136,17 @@ than haptic stimulation (Figure 2B; Table S2)"}
 \todo[inline]{Aziz hat auf eine zweite Mail geantwortet: Sie modelt die HRF über
 den jeweils gesamten Satz von ca. 2.8 Sekunden}
 
-\todo[inline]{Ihre Method Section ist strange und es bei ihr überall eh nur
-    uneinheitliche Grütze heraus; Ich blicke nicht durch; was folgend kommt,
+\todo[inline]{Ihre Method Section ist strange und es kommt bei ihr überall eh
+    nur uneinheitliche Grütze heraus; Ich blicke nicht durch; was folgend kommt,
     wird nicht vollständig korrekt sein. So wie ich es verstanden habe, hat sie
     den Unterschied zwischen PPA und FFA angeguckt, aber diesen Unterschied im
 Kontrast zu object-related Sentences (dortige Fig 3; lass uns kurz im Gespräch
 drübergucken, ich habe die relvanten Abschnitte in der PDF markiert)}
 
 To our knowledge only one study by \citep{aziz2008modulation} correlated
-hemodynamic activity of the PPA with spoken sentences.  Sentences described
+hemodynamic activity of the PPA with spoken sentences. Sentences described
 generic or famous places (e.g. ``The Taj Mahal faces a long thin reflecting
-pool''), faces  (e.g. ``Marylin Monroe has a large square jaw''), or objects
+pool''), faces  (e.g. ``Marilyn Monroe has a large square jaw''), or objects
 (e.g. ``The television has a long antenna')'. Participants were instructed to
 press a button whenever the sentence described an inaccurate or improbable fact.
 Surprisingly, activation in the left, but not right, PPA was significantly
@@ -162,8 +159,8 @@ sentences involving famous places.
 % Summary if literature review
 In summary, studies suggest that the PPA does not exclusively respond to
 visual(ly) spatial information. This is consistent with a competing hypotheses
-stating the PPA does not process the spatial layout of a scene specifically but
-contextual associations in general (\citep{aminoff2006parahippocampal,
+stating that the PPA does not process the spatial layout of a scene specifically
+but contextual associations in general (\citep{aminoff2006parahippocampal,
 aminoff2013role}). It is still uncertain if auditory stimuli lead to inhibitory
 or excitatory responses, or no change at all in the PPA.
 
@@ -172,13 +169,10 @@ nicht und macht voxel-wise encoding, was - glaube ich - über
 excitation/inhibition nichts aussagt -> Paper checken}
 
 % Shortcomings of previous studies; lack of research
-All revied studies used a just a small set of carefully designed, simplified
+All reviewed studies used a just a small set of carefully designed, simplified
 stimuli to strictly control experimental conditions. They further relied on
-explicit judgment-based tasks to ensured that participants payed attention to
+explicit judgment-based tasks to ensure that participants payed attention to
 the stimuli. This raises the question how the PPA behaves under life-like conditions.
-
-\todo[inline]{Data-driven vs. model-driven analyses ist komplett raus; in
-Discussion bringen (vgl. Speech-Anno-Paper}
 
 % Why naturalistic stimuli
 Naturalistic stimuli like movies \citep{hasson2008neurocinematics,
@@ -187,12 +181,14 @@ lerner2011topographic, silbert2014coupled} offer complex, continuous stimuli
 that better resemble our experience of a our dynamic environment.
 
 % Literature review naturalistic stimuli: Einleitung
-Two early studies using naturalistic stimuli suggest functional specialization is preserved during free viewing of a movie when many areas respond simultaneously and interact [+++ der Schlusssatz ist aus hasson und bartels plagiiert \citep{bartels2004mapping, hasson2004intersubject}+++]
+Two early studies using naturalistic stimuli suggest functional specialization
+of brain areas is preserved during movie watching when many perceptual and
+cognitive processes are triggered simultaneously \citep{bartels2004mapping, hasson2004intersubject}.
 
 % Bartels (2004): Film + GLM (jedoch ohne PPA) und Hasson (2004)
 \citep{bartels2004mapping} manually annotated time points that depict faces and
 human bodies in a 22 minute clip of the movie \textit{Tomorrow Never Dies}
-[+++Ref+++].
+\citep{tomorrowneverdies}.
 Employing a general linear model (GLM) to model hemodynamic activity, these time
 points correlated with increased activity in the ``fusiform face area''
 \citep{kanwisher1997ffa} and ``extrastriate body area''
@@ -200,12 +196,11 @@ points correlated with increased activity in the ``fusiform face area''
 
 % Hasson (2004): Film + (reverse) ISC
 Employing a reverse intersubject correlation, \citep{hasson2004intersubject}
-used a 30 minute clip of the movie \textit{The Good, the Bad, the Ugly}
-[+++Ref+++]. fMRI
-brain volumes showing the highest hemodynamic activity in the PPA [across (five)
-participants] were matched to the temporally corresponding movie frames.
-Results revealed that corresponding movie frames depicted indoor and outdoor
-scenes including buildings and open fields.
+used a 30 minute clip of the movie \textit{The Good, the Bad, and the Ugly}
+\citep{goodbadugly} fMRI brain volumes showing the highest hemodynamic activity
+in the PPA [across (five) participants] were matched to the temporally
+corresponding movie frames. Results revealed that corresponding movie frames
+depicted indoor and outdoor scenes including buildings and open fields.
 
 % Summary naturalistic stimuli
 Nevertheless, no study investigated how the PPA responds to spatial clues that are embedded in a complex, audio-only stimulus.
@@ -221,35 +216,29 @@ b) investigation of model quality,
 
 c) cross-analysis of datasets
 
-d) Possibly cite https://psyarxiv.com/sdbqv/ and declare that this study is
-a concrete realization of that promise}
+d) Possibly cite https://psyarxiv.com/sdbqv/ (DuPre (2019). Nature abhors a
+paywall) and declare that this study is a concrete realization of that promise}
 
-\todo[inline]{Präteritum oder Präsens? Ist momentan gemischt; find's ok so}
-
-\todo[inline]{Inner join of AV \& AO: N=14}
-
-% What we did: Einleitung
+% what we did data source
 In this study, we analyze data of three publicly available datasets from the
 same set of 14 participants as part of the studyforrest data set
-(\href{http://www.studyforrest.org}{studyforrest.org}). We exploratorily
-investigate how the parahippocampal gyrus [or more general ``human brain''?]
-responds to ``spatially relevant'' events embedded in a 2h audio-visual movie
-\citep{hanke2016simultaneous} and its audio-description (i.e. the audio-only
-variant) of the same length \citep{hanke2014audiomovie}. We compare these
-results to PPA localizations that were obtained from a dedicated visual
-localizer experiment \citep{sengupta2016extension}.
-
-Both natural stimuli were originally designed to entertain an audience and to capture attention free from any perceptual or behavioral task.
-We annotated events in the otherwise unknown temporal structure of both stimuli.
-In/for the movie, we annotated different kinds of cinematographic cuts \citep{haeusler2016cutanno} as presumably ``spatially relevant'' events.
-Our rationale was that cuts re-orient the viewer in the depicted environment
-indepenten from the exact visual content in the movie frame following the cut.
-In/for the audio-description, we annotated verbal clues about the missing visual content given by the audio-description's additional narrator \citep{haeusler2020speechanno}.
-
-In conformity to the analyses performed in the studies using not-naturalistic stimuli, we employed a standard multi-level, voxel-wise general linear model (GLM) % in order to???
-\todo[inline]{in order to\dots}
-
-Encouraged by \citep{aziz2008modulation} and \citep{aminoff2013role}, we focus on the audio-description as a possible life-like stimulus free from any task to localize a ``visual area'' in individual study participants.
+(\href{http://www.studyforrest.org}{studyforrest.org};
+\citep{hanke2014audiomovie, hanke2016simultaneous}).
+% PPA + movie + audio-description
+We annotated cuts in the movie ``Forrest Gump'', and words spoken by an
+additional narrator in the movie's audio-description (i.e. the movie's
+audio-only variant) to exploratorily investigate how the parahippocampal gyrus
+behaves during lifelike stimulation.
+% model-driven analysis
+In conformity to the analyses performed in the reviewed studies,  we also
+employed a standard multi-level, voxel-wise general linear model
+(GLM).\todo{why? in order to\dots}
+% focus on audio-description
+Encouraged by \citep{aziz2008modulation} and \citep{aminoff2013role}, we focus
+on the audio-description as a naturalistic, auditory-only paradigm free from any task to localize a ``visual area'' in individual study participants.
+% comparison to dedicated localizer
+Finally, we compare our results to results of a dedicated visual localizer
+experiment done with the same 14 participants \citep{sengupta2016extension}.
 
 \todo[inline]{Bzgl. Open Source der Ergebnisse/Skripte: Dazu habe ich hier nichts geschrieben, weil ich nur weiß, das der Code veröffentlicht werden soll. Du hast die Vision diesbezüglich im Kopf und entsprechend auch kanonisch-prägnante Formulierungen und wo die am besten wie hinkommen}
 
@@ -258,17 +247,16 @@ Encouraged by \citep{aziz2008modulation} and \citep{aminoff2013role}, we focus o
 
 \todo[inline]{Specific data outputs should be explicitly referenced via data
 citation (see Data Records and Data Citations, below)}
-
-\todo[inline]{Nach wie vor sind Teile aus den Originalstudien ausführlich}
-
-\todo[inline]{Reihenfolge der subsections mag ``inkorrekt'' sein.}
+\todo[inline]{order of subsections possibly wrong}
+\todo[inline]{parts from original studies still detailed}
 
 % intro
-We used data from three publicly available datsets, all being part of the
+We used data from three publicly available datasets, all being part of the
 studyforrest dataset (\href{http://www.studyforrest.org}{studyforrest.org})
 which has already been used by other research groups for independent research
 questions.
 % used studies
+\todo{this is just loveless listing so far but it's 'complete'}
 The same subjects were
 % AO
 a) listening to the audio-description (AO study; \citep{hanke2014audiomovie}) of
@@ -280,7 +268,7 @@ b) watching the actual audio-visual movie (AV study;
 \citep{ben2018hippocampal}.
 % VIS
 c) participating in a dedicated six-category block-design visual localizer (VIS
-study) \citep{sengupta2016extension}, a dataset aready used by
+study) \citep{sengupta2016extension}, a dataset already used by
 \citep{jiahui2019predicting}.
 % see corresponding papers for details
 An exhaustive description of the participants, stimulus creation, procedure,
@@ -354,6 +342,13 @@ outdoor scenes comprising of nature and street scenes, and phase scrambled
 images. Mirrored views of these 24 $\times$ 6 images were also used as stimuli.
 
 \subsection{Naturalistic stimuli annotation}
+
+Both natural stimuli were originally designed to entertain an audience and to capture attention free from any perceptual or behavioral task.
+We annotated events in the otherwise unknown temporal structure of both stimuli.
+In/for the movie, we annotated different kinds of cinematographic cuts \citep{haeusler2016cutanno} as presumably ``spatially relevant'' events.
+Our rationale was that cuts re-orient the viewer in the depicted environment
+independent from the exact visual content in the movie frame following the cut.
+In/for the audio-description, we annotated verbal clues about the missing visual content given by the audio-description's additional narrator \citep{haeusler2020speechanno}.
 
 % AV anno
 For the analysis of the AV data, we took advantage of a publicly available
@@ -1027,8 +1022,12 @@ lore ipsum
 % was sind für Film und Audiobook die Confounds?
 % Occipital Place Area (Nakamura, 2000), RSC
 % Natural stimuli like movies \citep{hasson2008neurocinematics, sonkusare2019naturalistic} or narratives \citep{honey2012not, lerner2011topographic, silbert2014coupled} offer an easy to implement, (continuous,) complex, immersive, task-free paradigm that more closely resembles our natural dynamic environment than traditional experimental designs. Compared to specifically designed paradigms, the complexity of a natural stimulus goes hand in hand with an unknown temporal structure unless the stimulus is - often manually - annotated \citep{haeusler2016annotation, labs2015portrayed}.
+\todo[inline]{why naturalistic stimuli are so cool: sinkusare2019,
+    eickhoff2020}
+\todo[inline]{model-driven vs. data-driven analyses}
 % Due to their continuity, complexity, and length, they offer a vast amount of data on a variety of brain functions like low-level perception, attention, comprehension, memory, emotions, or social interactions. This suggests the data can later be reused for variety of totally different, independent research questions, possibly on an individual level.
 % aminoffr2013; jedoch zu non-spatial stuff: Although the PHC is commonly thought of as responding to visual stimuli, it has also been found to elicit activity for auditory stimuli [25,26,30,31] and to respond to odor stimuli [32–34].
+
 
 \subsection*{Code availability}
 % wo kommt dieser Abschnitt hin?
