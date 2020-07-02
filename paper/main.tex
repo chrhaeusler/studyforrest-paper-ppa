@@ -787,15 +787,15 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 
 \todo[inline]{Why done this way? Why is no. 1 the one?}
 % intro
-For the AO stimulus, we created eight $t$-contrasts that aimed to isolate the PPA and five contrasts for negative control purposes (see Table \ref{tab:ao-contrasts}).
+For the AO stimulus, we created eight $t$-contrasts that aimed to isolate the
+PPA and five $t$-contrasts for negative control purposes (see Table \ref{tab:ao-contrasts}).
 % PPA contrasts
-\todo[inline]{settin-related regressors have small event count compared to
-geo/groom; probably more importan in discussion}
+\todo[inline]{setting-related regressors have small event count compared to
+geo/groom; probably more important in discussion}
 Contrasts 6-8: words belonging to the categories \texttt{se\_new} and
 \texttt{se\_old} were very vague in describing a scene compared to the richness
 of a picture. Hence, we assumed smaller probability of successfully isolating
 the PPA.
-Discussion der Kontraste/Ergebnisse).
 % furniture: blurred border between groom and object
 Furniture was not included in one of the contrast because it can be considered
 as an object or geometry-defining structure of a room.
@@ -845,9 +845,9 @@ script)}
 
 \todo[inline]{Why done this way? Why is no. 1 the one?}
 % intro
-For the AV stimulus, we created five contrasts presumably correlating with
+For the AV stimulus, we created five $t$-contrasts presumably correlating with
 increased hemodynamic activity in the PPA by contrasting different kind of cuts.
-and five contrasts for negative control purposes.
+and five $t$-contrasts for negative control purposes.
 % no control for frames content
 Notably, this was done without an annotation of the visual content depicted in
 the frame after each cut and statistically controlling confounding variables.
@@ -895,7 +895,7 @@ The GLM analysis that fitted each voxel's time course separately for each
 subject was performed in functional space preserving the orientation of the EPI
 images.
 % two ways of co-registration
-For subsequent second level results, we co-registered the subjects in two ways.
+For the subsequent second level results, we co-registered the subjects in two ways.
 % subject template (for Bland-Altman-Plot of unthresholded maps)
 % \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
 On the one hand, subject-specific BOLD T1* time series were anatomically aligned
@@ -952,9 +952,16 @@ PPA ROI masks for individual subjects and a PPA group mask of individual PPAs ov
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/group-slices}
-    \caption{group results}
-    \label{fig:group-slices}
-\end{figure*}
+    \caption{Mixed-effects group-level (N=14) GLM results.  Significant clusters
+        (Z>3.4, p<0.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
+        head template (grey).
+        Light grey: The audio-description's field-of-view
+        (cf. \citep{hanke2014audiomovie}).
+        Blue: the $t$-contrast comparing
+        geometry-related nouns to non geometry-related nouns spoken by the
+        audio-description's narrator (geo, groom > all non-geo).
+        Red: audio-visual movie (red).}
+    \label{fig:group-slices} \end{figure*}
 
 
 \begin{figure*} \centering
@@ -966,7 +973,7 @@ PPA ROI masks for individual subjects and a PPA group mask of individual PPAs ov
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
-    \caption{indidvidual PPAs}
+    \caption{individual PPAs}
     \label{fig:subs-thresh-ppa}
 \end{figure*}
 
