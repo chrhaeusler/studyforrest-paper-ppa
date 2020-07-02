@@ -787,13 +787,14 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 
 \todo[inline]{Why done this way? Why is no. 1 the one?}
 % intro
-For the AO stimulus, we created eight $t$-contrasts that aimed to isolate the PPA and five contrasts
-for negative control purposes (see Table \ref{tab:ao-contrasts}).
+For the AO stimulus, we created eight $t$-contrasts that aimed to isolate the PPA and five contrasts for negative control purposes (see Table \ref{tab:ao-contrasts}).
 % PPA contrasts
+\todo[inline]{settin-related regressors have small event count compared to
+geo/groom; probably more importan in discussion}
 Contrasts 6-8: words belonging to the categories \texttt{se\_new} and
 \texttt{se\_old} were very vague in describing a scene compared to the richness
 of a picture. Hence, we assumed smaller probability of successfully isolating
-the PPA (+ recht geringe Anzahl verglichen mit geo, groom) (<- das kommt eher in
+the PPA.
 Discussion der Kontraste/Ergebnisse).
 % furniture: blurred border between groom and object
 Furniture was not included in one of the contrast because it can be considered
@@ -938,14 +939,42 @@ Harvard-Oxford Cortical Atlas \citep{desikan2006automated} provided by FSL.
 % PPA masks
 PPA ROI masks for individual subjects and a PPA group mask of individual PPAs overlapping were created from data provided by \citep{sengupta2016extension}.
 
-\section{audio-only stimulus: results}
-Primary contrast, probability over contrasts (individual clusters per contrasts,
-individuelle Bland-Altman-Plots für primary contrast
+
+\section{Results}
+% both stimuli
+% group results for primary contrasts
+% stability of contrasts
+% individual PPAs
+
+% AO stimulus
+% Bland-Altman-Plots
+
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/group-slices}
+    \caption{group results}
+    \label{fig:group-slices}
+\end{figure*}
+
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/stability-slices}
+    \caption{stability of contrasts}
+    \label{fig:stability-slices}
+\end{figure*}
+
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
+    \caption{indidvidual PPAs}
+    \label{fig:subs-thresh-ppa}
+\end{figure*}
+
 
 \begin{table*}[t]
     \caption{Significant clusters (Z-Threshold Z>3.4; p<.05 cluster-corrected) for the contrast \texttt{geo, groom > all non-geo} (audio-only stimulus).
 Clusters sorted by voxel size.
-The first brain structure given contains the voxel with the maximum Z-Value, followed by brain structures from posterior to anterior, and partially covered areas.}
+The first brain structure given contains the voxel with the maximum Z-Value, followed by brain structures from posterior to anterior, and partially covered areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
 \label{tab:res-ao-group1}
 \begin{tabular}{rrrrrrrrrp{3cm}}
 \toprule
@@ -964,15 +993,12 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \end{table*}
 
 
-\section{audio-visual stimulus: results}
-Primary contrast, probability over contrasts (individual clusters per contrasts,
-individuelle Bland-Altman-Plots für primary contrast.
-
-
 \begin{table*}[t]
     \caption{Significant clusters (Z-Threshold Z>3.4; p<.05 cluster-corrected) for the contrast \texttt{vse\_new > vpe\_old} (audio-visual stimulus).
 Clusters sorted by voxel size.
-The first brain structure given contains the voxel with the maximum Z-Value, followed by brain structures from posterior to anterior, and partially covered areas.}
+The first brain structure given contains the voxel with the maximum Z-Value,
+followed by brain structures from posterior to anterior, and partially covered
+areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
 \label{tab:res-ao-group1}
 \begin{tabular}{rrrrrrrrrp{3cm}}
 \toprule
@@ -980,7 +1006,8 @@ The first brain structure given contains the voxel with the maximum Z-Value, fol
 \\ \cmidrule{4-6} \cmidrule{7-9}
 voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \midrule
-3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual gyrus; r cuneal c., intracalarine c., bilaterally occipital fusiform g., temporal fusiform c., posterior parahippocampal c.  \\
+3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r
+cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusiform c., posterior parahippocampal c.  \\
 154 & 6.56E-07 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior lateral occipital c. \\
 121 & 7.69E-06 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior lateral occipital cortex \\
 \bottomrule
@@ -988,7 +1015,9 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \end{table*}
 
 % MIH the discussion should primarily be anchored on the points the introduction concludes with. From my POV there is no need (and likely no space) to discuss results by stimulus type. Issue like different impact of attentional focus etc can be brought up in the joint paragraph that discussed how such a factor could have differentially impacted the results -- and if that would matter.
-\section{Discussion (audio)}
+\section{Discussion}
+
+\subsection{AO Discussion}
 % Hanke et al. (2014): Compared to an audio-visual movie, this is a stimulus that leaves a much larger margin for inter-individual differences in imagining scenery, as well as actors' character and personality traits, while still preserving the time-locked presentation of information to a listener. At the same time, an auditory stimulus limits the effect of an attentional focus on the selection of a subset of simultaneously occurring auditory events, in contrast to the selection of different parts of the visual field.
 % mental imagery hypthesis (s. O'Craven \& Kanwisher, 2000)
 % Lerner (2011), Honey (2012), Silbert (2014) finden keine ISC in PPA? vgl. DataPaper bzgl. Hörbuch??
@@ -1013,7 +1042,7 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 % ergibt auch noch Sinn;
 
 
-\section{Discussion (movie)}
+\subsection{AV discussion}
 lore ipsum
 
 \section*{General Discussion}
