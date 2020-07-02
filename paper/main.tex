@@ -660,7 +660,7 @@ found in Table \ref{tab:ao-events}.
 \caption{Overview of events to build the 18 regressors for the analysis of the
 audio-only (AO) stimulus. Some of the original categories (female, females,
 fname; male, males, mname; face, head; object, objects; see Table
-\ref{tab:descr-nouns}) were pooled into 11 new categories (sex\_f; sex\_m; fahead; object).
+\ref{tab:descr-nouns-rules}) were pooled into 11 new categories (sex\_f; sex\_m; fahead; object).
 \texttt{fg\_ad\_lrdiff} (left-right volume difference) and
 \texttt{fg\_ad\_rms} (root mean square volume) represent one event for every movie frame (\unit[40]{ms}).
 For a description of the five control conditions for movie cuts see Table
@@ -779,28 +779,50 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
         with FSL's ``Double-Gamma HRF'' as a model of the hemodynamic response
         function, temporally filtered with the same high-pass filter (cut-off
         \unit[150]{s}) as the BOLD time series, and concatenated across runs
-    before computing the correlation.} \label{fig:reg-corr} \end{figure*}
+    before computing the correlation.}
+    \label{fig:reg-corr}
+\end{figure*}
 
-\paragraph{audio stimulus: contrasts of parameter estimate}
-\todo[inline]{Warum ist welche COPES so gemacht und warum COPE 1 die Nummer 1}
-% wieso, weshalb, warum
-We created $t$-contrasts\dots
-% table reference
-See Table \ref{tab:ao-contrasts}
+\paragraph{AO: COPEs}
+
+\todo[inline]{Why done this way? Why is no. 1 the one?}
+% intro
+For the AO stimulus, we created eight $t$-contrasts that aimed to isolate the PPA and five contrasts
+for negative control purposes (see Table \ref{tab:ao-contrasts}).
+% PPA contrasts
+Contrasts 6-8: words belonging to the categories \texttt{se\_new} and
+\texttt{se\_old} were very vague in describing a scene compared to the richness
+of a picture. Hence, we assumed smaller probability of successfully isolating
+the PPA (+ recht geringe Anzahl verglichen mit geo, groom) (<- das kommt eher in
+Discussion der Kontraste/Ergebnisse).
+% furniture: blurred border between groom and object
+Furniture was not included in one of the contrast because it can be considered
+as an object or geometry-defining structure of a room.
+
+% negative control contrasts
+Contrasts 9-13 correspond to the contrasts 1-5 of the AV stimulus and served as
+negative controls because increased activation in the PPA could also be
+correlated with moment of cuts and a possible change in the soundscape of a
+scene.
 
 \begin{table*}[t]
-\caption{Contrasts of parameter estimates for the analysis of the audio-only
-    stimulus (AO).
-\texttt{all non-geo} = all non-geo related regressors except furniture.}
+    \caption{Contrasts of parameter estimates for the analysis of
+        the audio-only stimulus (AO).
+\texttt{all non-geo} = body, bodypart, fahead, object, sex\_f, sex\_m). Contrast
+1-8 aim to isolate the PPA.
+Contrast 9-13 serve as negative control at the moments of movie cuts
+with possible changes of the audio tracks soundscape (see Table \ref{tab:av-contrasts}}
+
 \label{tab:ao-contrasts}
 \footnotesize
 \begin{tabular}{lll}
 \toprule
-\textbf{nr.} &  \textbf{contrasted} & \textbf{aim/goal} \\
+\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
 \midrule
 1 & geo, groom > all non-geo & PPA \tabularnewline
 2 & geo, groom, se\_new > all non-geo & PPA \tabularnewline
-3 & room, se\_new, se\_old > all non-geo & PPA \tabularnewline
+3 & gro
+om, se\_new, se\_old > all non-geo & PPA \tabularnewline
 4 & geo > all non-geo & PPA \tabularnewline
 5 & groom > all non-geo & PPA \tabularnewline
 6 & se\_new > all non-geo & PPA \tabularnewline
@@ -815,25 +837,35 @@ See Table \ref{tab:ao-contrasts}
 \end{table*}
 
 
-\paragraph{audio-visual stimulus: contrasts of parameter estimate}
-% wieso, weshalb, warum
-We created a contrast presumably correlating with increased hemodynamic activity
-in the PPA by contrasting different kind of cuts, noteably without controlling
-for the specific visual content depicted in the frame after each cut.
+\paragraph{AV: COPEs}
+
+\todo[inline]{change stability of contrast plot from 6 to 5 COPES (line 40 in
+script)}
+
+\todo[inline]{Why done this way? Why is no. 1 the one?}
+% intro
+For the AV stimulus, we created five contrasts presumably correlating with
+increased hemodynamic activity in the PPA by contrasting different kind of cuts.
+and five contrasts for negative control purposes.
+% no control for frames content
+Notably, this was done without an annotation of the visual content depicted in
+the frame after each cut and statistically controlling confounding variables.
 % cinematographic rationale
-The cinematographic rationale was that - over the course of a movie - cuts shift
-from establishing the setting and the spatial relationships within a setting at
-the beginning of a movie to depicting persons and objects more relevant to the
-subsequently evolved narrative later in the movie {brown2012cinematography;
-mercado2011filmmakers}.
+The cinematographic rationale was that movie tend to establishing the setting
+(\texttt{vse\_new}) and the spatial relationships within a setting
+(\texttt{vpe\_new}) at the beginning of a movie. Later in the movie, the field
+sizes of movie shots tend to decrease when switching back to already established
+settings (\texttt{vse\_old}). Shots within a recurring settings tend to shift to
+depicting persons and objects (\texttt{vpe\_old}) more relevant to the evolved
+narrative \citep{brown2012cinematography, mercado2011filmmakers}.
 % neuroscientific rationale
-The neurocientific rationale was that activity in the PPA is greater when
-participants view novel versus repeated scenes resp. view-points
+The neuroscientific rationale was that simply that activity in the PPA is
+greater when participants view novel versus repeated scenes or view-points.
 \citep{epstein1999parahippocampal}.
 % im Ergebnis
-Hence, we contrasted cuts to a setting occurring for the first time (vse\_new)
-and cuts within a locale depicted for the first time (vpe\_new) with shots to a
-recurring setting (vse\_old) and cuts within a recurring locale (vpe\_old).
+Hence, we created varying contrasts comparing a setting occurring for the first
+time and cuts within a locale depicted for the first time to cuts into recurring
+settings and cuts within a recurring locale.
 
 \begin{table*}[t]
     \caption{Contrasts of parameter estimates for the analysis of the audio-visual movie (AV).}
@@ -841,7 +873,7 @@ recurring setting (vse\_old) and cuts within a recurring locale (vpe\_old).
 \footnotesize
 \begin{tabular}{lll}
 \toprule
-\textbf{nr.} &  \textbf{contrasted} & \textbf{aim/goal} \\
+\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
 \midrule
 1 & vse\_new > vpe\_old  & PPA \tabularnewline
 2 & vse\_new, vpe\_new > vse\_old, vpe\_old & PPA \tabularnewline
@@ -856,86 +888,55 @@ recurring setting (vse\_old) and cuts within a recurring locale (vpe\_old).
 \end{tabular}
 \end{table*}
 
-
-\paragraph{Registration \& smoothing: individuals vs. group}
-
-\todo[inline]{Wie immer bei Co-Registration: bitte prüfen, ob ich es richtig
-geschrieben habe}
-
-\todo[inline]{wie besprochen sind die individuelle Results im
-subject space und werden erst später für die Bland-Altman-Plots nach MNI
-transformiert}
-
-% anatomical alignment of single subjects
+\paragraph{second level (+ alignment)}
+% single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
 subject was performed in functional space preserving the orientation of the EPI
-images. For subsequent subject-specific second level results, subject-specific
-BOLD T2* time series were anatomically aligned via linear transformation to a
-subject-specific, study-specific T2* template (s.
-\href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
+images.
+% two ways of co-registration
+For subsequent second level results, we co-registered the subjects in two ways.
+% subject template (for Bland-Altman-Plot of unthresholded maps)
+% \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
+On the one hand, subject-specific BOLD T1* time series were anatomically aligned
+via linear transformation to a subject-specific, study-specific T1* template
 that served as standard space.
-% anatomical alignment for group results
-For subsequent the third level results averaging contrasts of interest across
-subjects, time series were anatomically aligned via non-linear transformation
-[+++wie genau?+++] to a
-\href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"}{study-specific
-T2* group template}.
-% MNI co-registration
-To facilitate visualization and identification of cortical structures, this
-reference images was later co-registered to the MNI 152 template with an affine
-transformation (12 degrees of freedom)
-
+% group template (for group and individual brain slices)
+% https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"
+On the other hand, time series were aligned via non-linear transformation to a
+study-specific T2* group template.
+% MNI152
+This reference images was later co-registered to the MNI 152 template with an
+affine transformation (12 degrees of freedom) to facilitate visualization and
+identification of cortical structures,
 
 \subsubsection{second level}
 % model
-The second-level analyses which averaged contrast estimates over the eight
+The second level analyses which averaged contrast estimates over the eight
 stimulus segments were carried out using a fixed effects model by forcing the
 random effects variance to zero in FLAME (FMRIB's Local Analysis of Mixed
 Effects; \citep{beckmann2003general, woolrich2004multilevel}.
-% thresholding
+% thresholding (Z>2.3 in subject-space; Z>3.4 in group space)
 (Gaussianised T/F) statistic images were thresholded using clusters determined
-by Z>2.3 and a (corrected) cluster significance threshold of p=.05
+by Z>3.4 and a (corrected) cluster significance threshold of p=.05
 \citep{worsley2001statistical}.
 
 
 \subsubsection{third level}
 % model
-Third level analyses which averaged contrast estimates over subjects were
+The third level analysis which averaged contrast estimates over subjects were
 carried out using FLAME stage 1 with automatic outlier detection
 \citep{beckmann2003general, woolrich2004multilevel, woolrich2008robust}.
 % thresholding
 Z (Gaussianised T/F) statistic images were thresholded using clusters determined
 by Z>3.4 and a (corrected) cluster significance threshold of p=.05
 \citep{worsley2001statistical}.
+
 % brain region identification
 Brain regions associated with observed clusters were determined with the Juelich
 Histological Atlas \citep{eickhoff2005toolbox, eickhoff2007assignment} and the
 Harvard-Oxford Cortical Atlas \citep{desikan2006automated} provided by FSL.
 % PPA masks
-PPA ROI masks for individual subjects and a PPA group overlap mask were created
-from data provided by \citep{sengupta2016extension}.
-
-\subsection{Erstellung der Masken, spatial transformations}
-
-\subsubsection{plot-group-and-individuals.py}
-
-\subsubsection{plot-bland-altman.py}
-
-% generate-masks.py; DO NOT TOUCH!
-% FOR GROUP:
-% 0. In FSLeyes, manually created probabilistic brain lobe maps from \href{"https://doi.org/10.5281/zenodo.1470761"}{the MNI Structural Atlas} (./data/atlases/mni_prob_*.nii.gz)
-% 1. these brain lobe maps were aligned (via FSL's flirt -applyxf with 12 dof) to the \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"}{study-specific T2* group template} (./data/atlases/grpbold3Tp2_mni_prob_*.nii.gz)
-% 2. from \href{"https://github.com/psychoinformatics-de/studyforrest-data-visualrois"} {sengupta2016extension}: UNIlateral probabilistic group ROI masks (data/masks/*_overlap.nii.gz) -> BIlateral probabilistic & binary grp ROI masks in grp space (.data/masks/bilat_???_prob.nii & .data/masks/bilat_???_binary.nii )
-% FOR SUBJECTS:
-% 1. bilateral grp ROI masks in grp space -> bilateral grp ROI masks in subject space (applywarp; sub-??/masks/grp_*_bin.nii.gz)
-% 2. probabilistic MNI mask -> subject space (via FSL's applywarp)
-% 3. merge probabilistic occipital & temporal mask in subject space
-%	(sub-??/masks/mni_prob_occip_tempo.nii.gz)
-% 4. created subject-specific FOV from 4d 7t audio drama time series
-%	(./sub-??/masks/ao_fov_mask.nii.gz)
-% 5. individual, unilateral ROIs from {sengupta2016extension} were joined and co-registered to MNI 152 (1mm) space, and binarized
-% 6. individual (un)thresholded zmaps (from the COPEs) were co-regi<wstered with MNI 152 (1mm) template.
-
+PPA ROI masks for individual subjects and a PPA group mask of individual PPAs overlapping were created from data provided by \citep{sengupta2016extension}.
 
 \section{audio-only stimulus: results}
 Primary contrast, probability over contrasts (individual clusters per contrasts,
@@ -1005,6 +1006,11 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 % 6. nevertheless, a  complex auditory stimulus might allow individual localization of a functionally defined brain region.
 % 7. results of other studies suggest7 the PPA does not exclusively process the ``spatial layout''" but ``contextual associations''.
 % 8. an audio drama might be suitable as ecologically more valid ``localizer'' for a variety of brain functions.
+
+% Unterschiedliche Qualität der Kontrast
+% Warum wurde Kontrast 1 als Kontrast 1 gewählt; se\_new se\_old sind recht
+% vague in der Beschreibung der Szene verglichen mit Bild; Anzahl der Events
+% ergibt auch noch Sinn;
 
 
 \section{Discussion (movie)}
