@@ -15,7 +15,7 @@ import seaborn as sns
 matplotlib.use('Agg')
 
 
-AO_USED = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+AO_USED = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 17, 18]
 AO_NAMES = { 1: 'body',
              2: 'bpart',
              3: 'fahead',
@@ -36,7 +36,7 @@ AO_NAMES = { 1: 'body',
             18: 'fg_ad_rms'
             }
 
-AV_USED = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+AV_USED = [1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14]
 AV_NAMES = { 1: 'vse_new',
              2: 'vse_old',
              3: 'vlo_ch',
@@ -111,10 +111,10 @@ def plot_heatmap(matrix, outFpath):
     plt.yticks(rotation=0, fontsize=12)
 
     for x in range(0, len(AO_USED)):
-        plt.gca().get_xticklabels()[x].set_color('red')  # black = default
+        plt.gca().get_xticklabels()[x].set_color('blue')  # black = default
 
     for x in range(len(AO_USED), len(AO_USED) + len(AV_USED)):
-        plt.gca().get_xticklabels()[x].set_color('blue')
+        plt.gca().get_xticklabels()[x].set_color('red')
 
     for y in range(len(AO_USED), len(AO_USED) + len(AV_USED)):
         plt.gca().get_yticklabels()[y].set_color('red')
