@@ -371,9 +371,9 @@ A complete overview of all categories, the rule for a word to belong to a
 category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
 % procedure
 A preliminary annotation was performed by one person according to the rules (see
-Table. Minor corrections due to incorrectly applied rules were by the author (s.
-Table \ref{tab:descr-nouns-counts} for the counts in the whole stimulus and the
-eight stimulus segments used during fMRI scanning).
+Table. Minor corrections due to incorrectly applied rules were by the author
+(see Table \ref{tab:descr-nouns-counts} for the counts in the whole stimulus and
+the eight stimulus segments used during fMRI scanning).
 
 \todo[inline]{so ist die Tabelle zu breit; schrift kleiner oder Text kürzen?
 Könnte durchaus auch detaillierteren Text schreiben}
@@ -941,28 +941,11 @@ PPA ROI masks for individual subjects and a PPA group mask of individual PPAs ov
 
 
 \section{Results}
-% both stimuli
-% group results for primary contrasts
-% stability of contrasts
-% individual PPAs
-
-% AO stimulus
-% Bland-Altman-Plots
 
 
-\begin{figure*} \centering
-    \includegraphics[width=\linewidth]{figures/group-slices}
-    \caption{Mixed-effects group-level (N=14) GLM results.  Significant clusters
-        (Z>3.4, p<0.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
-        head template (grey).
-        Light grey: The audio-description's field-of-view
-        (cf. \citep{hanke2014audiomovie}).
-        Blue: the $t$-contrast comparing
-        geometry-related nouns to non geometry-related nouns spoken by the
-        audio-description's narrator (geo, groom > all non-geo).
-        Red: audio-visual movie (red).}
-    \label{fig:group-slices} \end{figure*}
-
+\subsection{stability contrasts}
+See Figure \ref{fig:stability-slices}.
+-> Tabelle machen
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/stability-slices}
@@ -971,12 +954,13 @@ PPA ROI masks for individual subjects and a PPA group mask of individual PPAs ov
 \end{figure*}
 
 
-\begin{figure*} \centering
-    \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
-    \caption{individual PPAs}
-    \label{fig:subs-thresh-ppa}
-\end{figure*}
 
+\subsection{primary contrasts}
+See Figure \ref{fig:group-slices}.
+
+AO stimulus; See Table \ref{tab:res-ao-group1}
+
+AV stimulus; See Table \ref{tab:res-av-group1}
 
 \begin{table*}[t]
     \caption{Significant clusters (Z-Threshold Z>3.4; p<.05 cluster-corrected) for the contrast \texttt{geo, groom > all non-geo} (audio-only stimulus).
@@ -1006,7 +990,7 @@ Clusters sorted by voxel size.
 The first brain structure given contains the voxel with the maximum Z-Value,
 followed by brain structures from posterior to anterior, and partially covered
 areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
-\label{tab:res-ao-group1}
+\label{tab:res-av-group1}
 \begin{tabular}{rrrrrrrrrp{3cm}}
 \toprule
 & & & \multicolumn{3}{r}{max location (MNI)} & \multicolumn{3}{r}{center of gravity (MNI)} &
@@ -1020,6 +1004,44 @@ cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusifo
 \bottomrule
 \end{tabular}
 \end{table*}
+
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/group-slices}
+    \caption{Mixed-effects group-level (N=14) GLM results.  Significant clusters
+        (Z>3.4, p<0.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
+        head template (grey).
+        Light grey: The audio-description's field-of-view
+        (cf. \citep{hanke2014audiomovie}).
+        Blue: the $t$-contrast comparing
+        geometry-related nouns to non geometry-related nouns spoken by the
+        audio-description's narrator (geo, groom > all non-geo).
+        Red: audio-visual movie (red).}
+    \label{fig:group-slices}
+\end{figure*}
+
+
+\subsection{individual results}
+See Figure \ref{fig:subs-thresh-ppa}; AO / AV to localizer ratios
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
+    \caption{individual PPAs}
+    \label{fig:subs-thresh-ppa}
+\end{figure*}
+
+
+\subsection{Bland-Altman-Plots}
+See Figure \ref{fig:bland-altman}
+
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/subjs_bland-altman.png}
+    \caption{Bland-Altman-Plots for individual subjects}
+    \label{fig:bland-altman}
+\end{figure*}
+
+
 
 % MIH the discussion should primarily be anchored on the points the introduction concludes with. From my POV there is no need (and likely no space) to discuss results by stimulus type. Issue like different impact of attentional focus etc can be brought up in the joint paragraph that discussed how such a factor could have differentially impacted the results -- and if that would matter.
 \section{Discussion}
