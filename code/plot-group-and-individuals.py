@@ -183,9 +183,9 @@ def process_stability(ao_prob, av_prob, outfpath):
     blue = mpl.patches.Patch(color='#2474b7',
                              label='descriptive nouns (7 contrasts)')
     red = mpl.patches.Patch(color='#f03523',
-                            label='movie cuts (6 contrasts)',)
+                            label='movie cuts (5 contrasts)',)
     black = mpl.patches.Patch(color='#454545',
-                              label='individual PPA mask (Sengupta et al., 2016)')
+                              label='overlap of individual PPA masks (Sengupta et al., 2016)')
 
     legendAxis.legend(handles=[blue, red, black],
                       loc='upper center',
@@ -220,6 +220,7 @@ def process_stability(ao_prob, av_prob, outfpath):
 
     # ticklabels and edge of the colorbar
     cax2.tick_params(colors='w')
+    cax2.xaxis.set_ticks(list(range(8)))
     cb2.set_label('number of contrasts', color='w')
     cb2.outline.set_edgecolor('w')
 
@@ -353,11 +354,11 @@ def process_group_averages(outfpath):
     legendAxis = fig.add_subplot(grid[12:, :6])
 
     blue = mpl.patches.Patch(color='#2474b7',
-                             label='geo, groom > all non-geo')
+                             label='geo, groom > all non-geo (audio-description)')
     red = mpl.patches.Patch(color='#f03523',
-                            label='vse_new > vpe_old')
+                            label='vse_new > vpe_old (movie)')
     black = mpl.patches.Patch(color='#454545',
-                              label='individual PPA mask (Sengupta et al., 2016)')
+                              label='overlap of individual PPA masks (Sengupta et al., 2016)')
 
     legendAxis.legend(handles=[blue, red, black],
                       loc='upper center',
@@ -632,11 +633,11 @@ def add_legend_colobar_to_individuals(fig):
     legendAxis = fig.add_subplot(grid[6*3:6*3+3, 13:23])
 
     blue = mpl.patches.Patch(color='#2474b7',
-                             label='descriptive nouns')
+                             label='geo, groom > all non-geo (audio-description)')
     red = mpl.patches.Patch(color='#f03523',
-                            label='movie cuts',)
+                            label='vse_new > vpe_old (movie)',)
     black = mpl.patches.Patch(color='#454545',
-                              label='individual PPA mask')
+                              label='individual PPA mask (Sengupta et al., 2016)')
 
     legendAxis.legend(handles=[blue, red, black],
                       loc='center',
