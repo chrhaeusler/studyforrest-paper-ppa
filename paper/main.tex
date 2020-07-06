@@ -620,9 +620,11 @@ across the 8 segments for every subject. A subsequent, third-level analysis aver
 
 % AO: events
 For the analysis of the AO stimulus, we created regressors correlating with the
-occurrence of descriptive nouns spoken by the narrator that were added to the original annotation of speech \citep{haeusler2020speechanno}.
+occurrence of descriptive nouns spoken by the narrator that were added to the
+original annotation of speech \citep{haeusler2020speechanno}.
 % AV events
-For the AV stimulus, we created regressors correlating with annotated movie cuts \citep{haeusler2016cutanno}.
+For the AV stimulus, we created regressors correlating with annotated movie cuts
+\citep{haeusler2016cutanno}.
 % https://github.com/psychoinformatics-de/studyforrest-data-annotations/blob/master/code/researchcut2segments.py}
 First, both annotations were split into eight parts corresponding to the eight
 stimulus segments.
@@ -635,23 +637,24 @@ amount of counts were pooled resulting in eleven new categories (see Table
 category but also into another category were treated as belonging to
 setting-related category (\texttt{se\_new} or \texttt{se\_old}).
 % null regressors
-If a segment did not contain an event of a category, a null regressor was chosen for that segment.
-\todo{wenn ich "null regressor" nehme, darf ich den ganzen Run, glaube ich, in
-der 2nd level Analyse gar nicht benutzen? Hatte, glaube ich, Jeanette Mumford in
-einem ihren Videos mal gesagt}
+If a segment did not contain an event of a category, a null regressor was chosen
+for that segment.  \todo{wenn ich "null regressor" nehme, darf ich den ganzen
+    Run, glaube ich, in der 2nd level Analyse gar nicht benutzen? Hatte, glaube
+    ich, Jeanette Mumford in einem ihren Videos mal gesagt}
 % modeling as boxcar function
 Events were were modeled as boxcar function from onset to offset of each word.
 % categories taken from movie cut annotation
 Five additional categories were created from the annotation of movie cuts and
 modeled as impulse events to capture variance of a possibly confounding change
-of the soundscape after cuts, and to create contrasts of cross-modal negative control.
+of the soundscape after cuts, and to create contrasts of cross-modal negative
+control.
 % nuissance regressors
 Lastly, we used continuous bins of information about two auditory features
 (left-right difference in volume and root mean square energy) that was averaged
 across the length of every movie frame (\unit[40]{ms}) via Python script to
 capture variance correlating with low-level perceptual processes.
 % Reference to table
-A short explanation and counts of the eleven speech-related event categories,
+An explanation and counts of the eleven speech-related event categories,
 the five movie cut-related categories, and the two low-level confounds can be
 found in Table \ref{tab:ao-events}.
 
@@ -809,10 +812,12 @@ scene.
 \begin{table*}[t]
     \caption{Contrasts of parameter estimates for the analysis of
         the audio-only stimulus (AO).
-\texttt{all non-geo} = body, bodypart, fahead, object, sex\_f, sex\_m). Contrast
+\texttt{all non-geo} = body, bodypart, fahead, object, sex\_f, sex\_m).
+Contrast
 1-8 aim to isolate the PPA.
-Contrast 9-13 serve as negative control at the moments of movie cuts
-with possible changes of the audio tracks soundscape (see Table \ref{tab:av-contrasts}}
+Contrasts 9-13 serve as negative control at the moments of movie cuts
+with possible changes of the audio tracks soundscape (see Table
+\ref{tab:av-contrasts}).}
 
 \label{tab:ao-contrasts}
 \footnotesize
@@ -889,13 +894,14 @@ settings and cuts within a recurring locale.
 \end{tabular}
 \end{table*}
 
-\paragraph{second level (+ alignment)}
+\paragraph{alignment etc.}
 % single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
 subject was performed in functional space preserving the orientation of the EPI
 images.
 % two ways of co-registration
-For the subsequent second level results, we co-registered the subjects in two ways.
+For the subsequent second level results, we co-registered the subjects in two
+ways.
 % subject template (for Bland-Altman-Plot of unthresholded maps)
 % \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
 On the one hand, subject-specific BOLD T1* time series were anatomically aligned
@@ -910,7 +916,7 @@ This reference images was later co-registered to the MNI 152 template with an
 affine transformation (12 degrees of freedom) to facilitate visualization and
 identification of cortical structures,
 
-\subsubsection{second level}
+% second level
 % model
 The second level analyses which averaged contrast estimates over the eight
 stimulus segments were carried out using a fixed effects model by forcing the
@@ -921,17 +927,15 @@ Effects; \citep{beckmann2003general, woolrich2004multilevel}.
 by Z>3.4 and a (corrected) cluster significance threshold of p=.05
 \citep{worsley2001statistical}.
 
-
-\subsubsection{third level}
+% third level
 % model
-The third level analysis which averaged contrast estimates over subjects were
+The third level analysis which averaged contrast estimates over subjects was
 carried out using FLAME stage 1 with automatic outlier detection
 \citep{beckmann2003general, woolrich2004multilevel, woolrich2008robust}.
 % thresholding
-Z (Gaussianised T/F) statistic images were thresholded using clusters determined
-by Z>3.4 and a (corrected) cluster significance threshold of p=.05
-\citep{worsley2001statistical}.
-
+Here again, Z (Gaussianised T/F) statistic images were thresholded using
+clusters determined by Z>3.4 and a (corrected) cluster significance threshold of
+p=.05 \citep{worsley2001statistical}.
 % brain region identification
 Brain regions associated with observed clusters were determined with the Juelich
 Histological Atlas \citep{eickhoff2005toolbox, eickhoff2007assignment} and the
@@ -942,17 +946,47 @@ PPA ROI masks for individual subjects and a PPA group mask of individual PPAs ov
 
 \section{Results}
 
+\todo[inline]{I consider tables of significant clusters for every contrast as
+overkill. One contrast, the ``primary contrast'', appropriate.}
 
 \subsection{stability contrasts}
-See Figure \ref{fig:stability-slices}.
--> Tabelle machen
+The overlap of significant clusters of the 7 (well actually 8) contrast for the
+audio-description, and 5 contrasts computed for the movie can be found in Figure
+\ref{fig:stability-slices}.
+
+% AO
+\todo{alle noch einmal im einzelnen angucken; was ist mit COPE 8, der ist in der
+Abb. nicht drin; zeigt (noch) einer keine sign. cluster?}
+% PPA
+Six of seven AO contrasts show significant bilateral clusters in anterior
+regions of the group PPA overlap (which is temporal occipital fusiforim gyrus
+regarding to co-registered Harvard-Oxford Cortical Structural Atlas).
+% Precuneus = Retro Spenial Cortex ?
+Six of seven contrasts show significant clusters in the ventral precuneus /
+retrospenial cortex (RSC)
+
+% AV
+% PPA
+All five AV contrasts yielded significant bilateral clusters in (temporal)
+occipital, fusiform cortex showing congruency with the group overlap of
+individual PPA ROIs.
+% Lingual Gyrus
+Homologous clusters of three contrasts extend further into lingual gyrus.
+% RSC
+Three contrasts show significant bilateral clusters in RSC.
+% LOC
+Four contrasts show signficant bilateral clusters in laterial occipital cortex
+
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption{stability of contrasts}
-    \label{fig:stability-slices}
+    \caption{Stability of contrasts. Overlap of significant clusters (Z>3.4;
+        p<.05, cluster corrected) of contrasts created to isolate the PPA. Blue:
+        contrasts 1-7 (see Table \ref{tab:ao-contrasts} for the
+    audio-description.}. Red: contrasts 1-5 (see Table \ref{tab:av-contrasts}
+    for the audio-visual movie. Black: outline of overlapping individual PPA
+    ROIs \citep{sengupta2016extension}.  \label{fig:stability-slices}
 \end{figure*}
-
 
 
 \subsection{primary contrasts}
@@ -1115,14 +1149,20 @@ lore ipsum
 \subsection{Data-driven vs. Analysis-Driven}
 "Abfall" einer Film-Messung
 
-\subsection{naturalistic vs. dedicated}
-how do results (PPA-like response localization) differ from a standard visual/block-design localizer for:
+\subsection{naturalistic vs. dedicated} how do results (PPA-like response
+localization) differ from a standard visual/block-design localizer for:
 
-\subsection{parietal and RSC activations}
-Story für parietale Aktivierung im Film -> räuml. Orientierung / Aufmerksamkeit
+\subsection{anterior (AO) vs. posterior (AV) PPA}
 
-\subsection{model-driven vs. data-driven analyses}
-Due to their continuity, complexity, and length, they offer a vast amount of data on a variety of brain functions like low-level perception, attention, comprehension, memory, emotions, or social interactions. This suggests the data can later be reused for variety of totally different, independent research questions, possibly on an individual level.
+\subsection{parietal and RSC activations} Story für parietale Aktivierung im
+Film -> räuml. Orientierung / Aufmerksamkeit
+
+\subsection{model-driven vs. data-driven analyses} Due to their continuity,
+complexity, and length, they offer a vast amount of data on a variety of brain
+functions like low-level perception, attention, comprehension, memory, emotions,
+or social interactions. This suggests the data can later be reused for variety
+of totally different, independent research questions, possibly on an individual
+level.
 
 \subsection{confounds in AO and AV}
 

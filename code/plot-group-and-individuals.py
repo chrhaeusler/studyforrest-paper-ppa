@@ -198,7 +198,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     cax1 = fig.add_subplot(grid[12:13, 6:11])
     cmap = mpl.cm.Blues
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
+    norm = mpl.colors.Normalize(vmin=0, vmax=7)
     cb1 = mpl.colorbar.ColorbarBase(cax1,
                                     cmap=cmap,
                                     norm=norm,
@@ -212,7 +212,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     cax2 = fig.add_subplot(grid[13:14, 6:11])
     cmap = mpl.cm.YlOrRd
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
+    norm = mpl.colors.Normalize(vmin=0, vmax=7)
     cb2 = mpl.colorbar.ColorbarBase(cax2,
                                     cmap=cmap,
                                     norm=norm,
@@ -220,7 +220,7 @@ def process_stability(ao_prob, av_prob, outfpath):
 
     # ticklabels and edge of the colorbar
     cax2.tick_params(colors='w')
-    cb2.set_label('Z value', color='w')
+    cb2.set_label('number of contrasts', color='w')
     cb2.outline.set_edgecolor('w')
 
     # shrinke the space between subplots
