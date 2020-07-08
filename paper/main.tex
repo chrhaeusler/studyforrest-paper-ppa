@@ -29,7 +29,7 @@
 
 % Titel-Vorgabe < 110 chars incl. spaces
 %  jetzt 109 Chars
-\title{Hemodynamic responses of the Parahippocampal Place Area to spatial cues in a movie and it's audio-description}
+\title{Hemodynamic responses of the Parahippocampal Place Area to spatial cues in a movie and its audio-description}
 
 \author{Christian~O.~Häusler\textsuperscript{1,2{*}}, Michael Hanke\textsuperscript{1,2}}
 % https://www.nature.com/sdata/publish/for-authors#other-formats
@@ -881,7 +881,7 @@ settings and cuts within a recurring locale.
 \toprule
 \textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
 \midrule
-1 & vse\_new > vpe\_old  & PPA \tabularnewline
+1 & vse\_new > vpe\_old & PPA \tabularnewline
 2 & vse\_new, vpe\_new > vse\_old, vpe\_old & PPA \tabularnewline
 3 & vse\_new > vse\_old & PPA \tabularnewline
 4 & vse\_new > vse\_old, vpe\_old & PPA \tabularnewline
@@ -946,61 +946,65 @@ PPA ROI masks for individual subjects and a PPA group mask of individual PPAs ov
 
 \section{Results}
 
-\todo[inline]{I consider tables of significant clusters for every contrast as
-overkill. One contrast, the ``primary contrast'', appropriate.}
+% HOW TO WRITE METHODS SEXTION
+% first paragraph (cause most readers don't read methods beforehand
+% summarizes the overall approach to the problem outlined in the intro
+% key innovative methods that were developed
+% -> gist of the methods that were used
 
-\subsection{stability contrasts}
-The overlap of significant clusters of the 7 (well actually 8) contrast for the
-audio-description, and 5 contrasts computed for the movie can be found in Figure
-\ref{fig:stability-slices}.
+% subsequent paragraphs start with a sentence or two
+% that set up the question that the paragraph answers
+% e.g. ``To verify that there are no artifacts..''
+% What is the test-retest reliability of our measure?''
+% “We next tested whether Ca2+ flux through Ca2+ channels was involved.''
+% Middle of the paragraph presents data and logic that pertain to the question,
+% paragraph ends with a sentence that answers the question
+% For example, it may conclude that none of potential artifacts were detected.
+% Each paragraph convinces the reader of answer given in its last sentence.
+% The result of each paragraph is a logical statement
 
-% AO
-\todo{alle noch einmal im einzelnen angucken; was ist mit COPE 8, der ist in der
-Abb. nicht drin; zeigt (noch) einer keine sign. cluster?}
-% PPA
-Six of seven AO contrasts show significant bilateral clusters in anterior
-regions of the group PPA overlap (which is temporal occipital fusiforim gyrus
-regarding to co-registered Harvard-Oxford Cortical Structural Atlas).
-% Precuneus = Retro Spenial Cortex ?
-Six of seven contrasts show significant clusters in the ventral precuneus /
-retrospenial cortex (RSC)
-
-% AV
-% PPA
-All five AV contrasts yielded significant bilateral clusters in (temporal)
-occipital, fusiform cortex showing congruency with the group overlap of
-individual PPA ROIs.
-% Lingual Gyrus
-Homologous clusters of three contrasts extend further into lingual gyrus.
-% RSC
-Three contrasts show significant bilateral clusters in RSC.
-% LOC
-Four contrasts show signficant bilateral clusters in laterial occipital cortex
-
-
-\begin{figure*} \centering
-    \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption{Stability of contrasts. Overlap of significant clusters (Z>3.4;
-        p<.05, cluster corrected) of contrasts created to isolate the PPA. Blue:
-        contrasts 1-7 (see Table \ref{tab:ao-contrasts} for the
-    audio-description.}. Red: contrasts 1-5 (see Table \ref{tab:av-contrasts}
-    for the audio-visual movie. Black: outline of overlapping individual PPA
-    ROIs \citep{sengupta2016extension}.  \label{fig:stability-slices}
-\end{figure*}
 
 
 \subsection{primary contrasts}
-See Figure \ref{fig:group-slices}.
+% AO
+The primary $t$-contrast for the audio-description comparing geometry-related
+nouns to non geometry-related nouns spoken by the audio-description's narrator
+(\texttt{geo, groom > all non-geo} yielded six significant clusters (see Table
+\ref{tab:res-ao-group1}, Figure \ref{fig:group-slices}).
+% precuneus
+Two homologous clusters in the ventral precuneus extending into the
+retrosplenial cortex.
+% PPA
+Two homologous clusters in the lingual gyrus, occipital and temporal fusiform
+gyrus, and posterior parahippocampal cortex \todo{the clusters are small but
+that's what the Harvard-Oxford Atlas suggests, probably because at borders of
+the areas}.
+% LOC
+And finally, two homologous clusters in the superior lateral occipital cortex.
 
-AO stimulus; See Table \ref{tab:res-ao-group1}
+% AV
+The primary $t$-contrast for the movie comparing cuts to a new setting with cuts
+to a familiar perspective (\texttt{vse\_new > vpe\_old}) yielded three
+significant clusters (see Table \ref{tab:res-av-group1}, Figure
+\ref{fig:group-slices}).
+% LOC
+Two clusters in the superior lateral occipital cortex (left bigger than right).
+% PPA + others.
+And one one cluster spanning across the midline and comprising intracalcarine
+and cuneal cortex, lingual gyrus and restrosplenial cortex,  occipital fusiform
+gyrus and temporal fusiform gyrus, and parahippocampal cortex bilaterally.
 
-AV stimulus; See Table \ref{tab:res-av-group1}
 
 \begin{table*}[t]
-    \caption{Significant clusters (Z-Threshold Z>3.4; p<.05 cluster-corrected) for the contrast \texttt{geo, groom > all non-geo} (audio-only stimulus).
-Clusters sorted by voxel size.
-The first brain structure given contains the voxel with the maximum Z-Value, followed by brain structures from posterior to anterior, and partially covered areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
-\label{tab:res-ao-group1}
+    \caption{Significant clusters (Z-Threshold Z>3.4; p<.05 cluster-corrected)
+        of the primary $t$-contrast for the audio-description comparing
+        geometry-related nouns to non geometry-related nouns spoken by the
+        audio-description's narrator (\texttt{geo, groom > all non-geo}).
+        Clusters sorted by voxel size.
+    The first brain structure given contains the voxel with the maximum Z-Value,
+followed by brain structures from posterior to anterior, and partially covered
+areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
+    \label{tab:res-ao-group1}
 \begin{tabular}{rrrrrrrrrp{3cm}}
 \toprule
 & & & \multicolumn{3}{r}{max location (MNI)} & \multicolumn{3}{r}{center of gravity (MNI)} &
@@ -1019,7 +1023,10 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 
 
 \begin{table*}[t]
-    \caption{Significant clusters (Z-Threshold Z>3.4; p<.05 cluster-corrected) for the contrast \texttt{vse\_new > vpe\_old} (audio-visual stimulus).
+    \caption{Significant clusters (Z-Threshold Z>3.4; p<.05 cluster-corrected)
+        of the primary $t$-contrast for the movie comparing cuts to a new
+        setting with cuts to a familiar perspective (\texttt{vse\_new >
+        vpe\_old}).
 Clusters sorted by voxel size.
 The first brain structure given contains the voxel with the maximum Z-Value,
 followed by brain structures from posterior to anterior, and partially covered
@@ -1042,15 +1049,19 @@ cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusifo
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/group-slices}
-    \caption{Mixed-effects group-level (N=14) GLM results.  Significant clusters
+    \caption{Mixed-effects group-level (N=14) GLM results. Significant clusters
         (Z>3.4, p<0.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
         head template (grey).
         Light grey: The audio-description's field-of-view
         (cf. \citep{hanke2014audiomovie}).
-        Blue: the $t$-contrast comparing
+        Blue: the primary $t$-contrast for the audio-description comparing
         geometry-related nouns to non geometry-related nouns spoken by the
-        audio-description's narrator (geo, groom > all non-geo).
-        Red: audio-visual movie (red).}
+        audio-description's narrator (\texttt{geo, groom > all non-geo}).
+        Red: the primary $t$-contrast for the movie comparing cuts to a new
+        setting with cuts to a familiar perspective (\texttt{vse\_new >
+        vpe\_old)}.
+        Black: outline of overlapping individual PPA ROIs.
+        \citep{sengupta2016extension}.}
     \label{fig:group-slices}
 \end{figure*}
 
@@ -1060,8 +1071,22 @@ See Figure \ref{fig:subs-thresh-ppa}; AO / AV to localizer ratios
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
-    \caption{individual PPAs}
-    \label{fig:subs-thresh-ppa}
+    \caption{Fixed-effects individual-level GLM results (Z>3.4, p<0.05
+        cluster-corrected). The brains of the 14 subjects are aligned via
+        non-linear transformation to a study-specific T2* group template that is
+    co-registered to the MNI152 template with an affine transformation (12
+degrees of freedom) to facilitate comparisons across subjects.
+        Light grey: The audio-description's field-of-view
+        (cf. \citep{hanke2014audiomovie}).
+        Blue: the primary $t$-contrast for the audio-description comparing
+        geometry-related nouns to non geometry-related nouns spoken by the
+        audio-description's narrator (\texttt{geo, groom > all non-geo}).
+        Red: the primary $t$-contrast for the movie comparing cuts to a new
+        setting with cuts to a familiar perspective (\texttt{vse\_new >
+        vpe\_old)}.
+        Black: outline of subject-specific PPA ROI.}
+
+\label{fig:subs-thresh-ppa}
 \end{figure*}
 
 
@@ -1076,7 +1101,84 @@ See Figure \ref{fig:bland-altman}
 \end{figure*}
 
 
+\todo[inline]{I consider tables of significant clusters for every contrast as
+overkill. One contrast, the ``primary contrast'', is appropriate.}
+
+\subsection{stability contrasts}
+
+% why we did different contrasts
+We tested a variety of contrasts to ensure\dots ???
+
+% results
+The overlap of significant clusters of the 7 (well actually 8) contrast for the
+audio-description, and 5 contrasts computed for the movie can be found in Figure
+\ref{fig:stability-slices}.
+
+% AO
+\todo{alle noch einmal im einzelnen angucken; was ist mit COPE 8, der ist in der
+Abb. nicht drin; zeigt (noch) einer keine sign. cluster?}
+% PPA
+Six of seven AO contrasts show significant bilateral clusters in anterior
+regions of the group PPA overlap (which is temporal occipital fusiform gyrus
+regarding to co-registered Harvard-Oxford Cortical Structural Atlas).
+% Precuneus = retrosplenial cortex ?
+Six of seven contrasts show significant clusters in the ventral precuneus /
+retrosplenial cortex (RSC).
+
+% AV
+% PPA
+All five AV contrasts yielded significant bilateral clusters in (temporal)
+occipital, fusiform cortex showing congruency with the group overlap of
+individual PPA ROIs.
+% Lingual Gyrus
+Homologous clusters of three contrasts extend further into lingual gyrus.
+% RSC
+Three contrasts show significant bilateral clusters in RSC.
+% LOC
+Four contrasts show significant bilateral clusters in lateral occipital cortex
+
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/stability-slices}
+    \caption{Stability of contrasts. Overlap of significant clusters (Z>3.4;
+        p<.05, cluster corrected) of contrasts created to isolate the PPA
+        overlaid on the MNI152 T1-weighted head template (grey).
+        Light grey: The audio-description's field-of-view
+        (cf. \citep{hanke2014audiomovie}).
+        Blue: contrasts 1-7 for the audio-description (see Table \ref{tab:ao-contrasts}.
+        Red: contrasts 1-5 for the audio-visual movie (see Table \ref{tab:av-contrasts}.
+        Black: outline of overlapping individual PPA ROIs
+        \citep{sengupta2016extension}.}
+    \label{fig:stability-slices}
+\end{figure*}
+
+
 \section{Discussion}
+
+% Discussion explains how results fill gap identified in intro
+% provides caveats to the interpretation
+% describes how paper advances the field by providing new opportunities.
+
+% typically done by recapitulating the results, discussing limitations,
+% and then revealing how the central contribution may catalyze future progress.
+
+% first discussion paragraph is special in that it generally summarizes the
+% important findings from the results section -> give gist of results
+
+% following paragraphs in the discussion section starts by describing an area of weakness or strength of the paper.
+% It then evaluates the strength or weakness by linking it to the
+% relevant literature.
+
+% Discussion paragraphs often conclude by describing a clever, informal way of perceiving the contribution or by discussing future directions that can extend the contribution.
+
+% For example, the first paragraph may summarize the results, focusing on their meaning.
+
+% The second through fourth paragraphs may deal with potential weaknesses and with how the literature alleviates concerns or how future experiments can deal with these weaknesses.
+
+% The fifth paragraph may then culminate in a description of how the paper moves
+% the field forward.
+
+%Step by step, the reader thus learns to put the paper’s conclusions into the right context.
 
 \todo[inline]{MIH: discussion should primarily be anchored on the points the
     introduction concludes with. From my POV there is no need (and likely no
