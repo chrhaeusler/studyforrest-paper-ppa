@@ -563,14 +563,14 @@ naturalistic stimulus paradigms (451, 441, 438, 488, 462, 439, 542, and 338 volu
 
 \todo[inline]{I revised part of motion correction/co-registration but as usually
 I am pretty unsure about correctness}
-\todo[inline]{Satz zum Downsampling der 7T Daten?}.
+\todo[inline]{Satz zum Downsampling der 7T Daten?}
 
 % data sources
 % https://github.com/psychoinformatics-de/studyforrest-data-aligned/tree/master/code
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms}
-fMRI time series of those 15 participants that took part in all three
-experiments were obtained from
-\href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{GitHubi}.
+fMRI time series of those 15 participants in the studyforrest dataset that took
+part in all three experiments were obtained from
+\href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{GitHub}.
 Data were already corrected for motion and aligned by non-linear warping to a
 particpant-specific BOLD template image \citep{sengupta2016extension}.
 % exclusion of VP 10
@@ -580,7 +580,7 @@ during scanning of the AO stimulus.
 % preprocessing intro
 All further analysis steps of the current study were carried out using tools of
 FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software
-Library}; \citep{smith2004fsl} on a computer cluster running the
+Library}; \citep{smith2004fsl}) on a computer cluster running the
 \href{https://www.debian.org}{Debian} GNU/Linux operating system. Software
 packages were obtained from repositories of
 \href{http://neuro.debian.net}{NeuroDebian} \citep{halchenko2012open}.
@@ -623,40 +623,43 @@ For the analysis of the AO stimulus, we created regressors correlating with the
 occurrence of descriptive nouns spoken by the narrator that were added to the
 original annotation of speech \citep{haeusler2020speechanno}.
 % AV events
-For the AV stimulus, we created regressors correlating with annotated movie cuts
-\citep{haeusler2016cutanno}.
+For the AV stimulus, we created regressors correlating with movie cuts provided
+by a previously published annotation \citep{haeusler2016cutanno}.
 % https://github.com/psychoinformatics-de/studyforrest-data-annotations/blob/master/code/researchcut2segments.py}
+
+% procedure
 First, both annotations were split into eight parts corresponding to the eight
 stimulus segments.
-
 % AO events
-All of the original 19 categories of descriptive nouns except \texttt{++} were
-used as events. Some categories that were similar but offered only a small
+To create regressors for the AV analysis, we used all of the original 19
+categories of descriptive nouns except \texttt{++}.
+% pooling
+Some categories that were similar but offered only a small
 amount of counts were pooled resulting in eleven new categories (see Table
-\ref{tab:ao-events}). Events that fall into one of the two setting-related
-category but also into another category were treated as belonging to
+\ref{tab:ao-events}). Events that fell into one of the two setting-related
+category but also into another category were treated as belonging to the
 setting-related category (\texttt{se\_new} or \texttt{se\_old}).
+% modeling as boxcar function
+Events were were modeled as boxcar function from onset to offset of each word.
 % null regressors
 If a segment did not contain an event of a category, a null regressor was chosen
 for that segment.  \todo{wenn ich "null regressor" nehme, darf ich den ganzen
-    Run, glaube ich, in der 2nd level Analyse gar nicht benutzen? Hatte, glaube
-    ich, Jeanette Mumford in einem ihren Videos mal gesagt}
-% modeling as boxcar function
-Events were were modeled as boxcar function from onset to offset of each word.
+Run, glaube ich, in der 2nd level Analyse gar nicht benutzen? Hatte, glaube ich,
+Jeanette Mumford in einem ihren Videos mal gesagt}
 % categories taken from movie cut annotation
 Five additional categories were created from the annotation of movie cuts and
 modeled as impulse events to capture variance of a possibly confounding change
-of the soundscape after cuts, and to create contrasts of cross-modal negative
+of the soundscape after a cut, and to create contrasts of cross-modal negative
 control.
 % nuissance regressors
 Lastly, we used continuous bins of information about two auditory features
 (left-right difference in volume and root mean square energy) that was averaged
-across the length of every movie frame (\unit[40]{ms}) via Python script to
-capture variance correlating with low-level perceptual processes.
+across the length of every movie frame (\unit[40]{ms}) to capture variance
+correlating with low-level perceptual processes.
 % Reference to table
-An explanation and counts of the eleven speech-related event categories,
-the five movie cut-related categories, and the two low-level confounds can be
-found in Table \ref{tab:ao-events}.
+An explanation and counts of the eleven speech-related event categories, the
+five movie cut-related categories, and the two low-level confounds can be found
+in Table \ref{tab:ao-events}.
 
 
 \begin{table*}[t]
@@ -700,26 +703,26 @@ fg\_ad\_rms & root mean square (loudness) & \aoFgadrmsAll & \aoFgadrmsI & \aoFga
 
 % AV events
 To create regressors for the AV analysis, we categorized the depicted location
-in the frame following one of the 869 cuts into five categories
-(cf. Table \ref{tab:av-events}): 1) a cut into an unfamiliar setting
-(\texttt{vse\_new}), 2) familiar setting (\texttt{vse\_old}), 3) a switch of
-locale within a setting (\texttt{vlo\_ch}), 4) a cut into an unfamiliar
-perspective (\texttt{vpe\_new}), and 5) familiar perspective
-(\texttt{vpe\_old}).
+in the frame following one of the 869 cuts into five categories (see Table
+\ref{tab:av-events}): 1) a cut into an unfamiliar setting (\texttt{vse\_new}),
+2) a cut into a familiar setting (\texttt{vse\_old}), 3) a switch of locale
+within a setting (\texttt{vlo\_ch}), 4) a cut to an unfamiliar perspective
+(\texttt{vpe\_new}), and 5) a cut to familiar perspective (\texttt{vpe\_old}).
 % null regressor
-Here again, a null regressor was chosen for segment if it did not an event for
-of a category.
+Here again, a null regressor was chosen for segment if it did not contain an
+event of specific category.
 % no cut condition: intro
-A sixth regressors (\texttt{no\_cut}) serving a control condition and to created
-to build negative control contrasts. Frames within movie shots lasting at least
+A sixth regressors (\texttt{no\_cut}) serving a control condition and to create
+negative control contrasts. Frames within movie shots lasting at least
 \unit[20]{s} were pseudo-randomly chosen by the following rationale:
 % how they were fitted
 \texttt{no\_cut} event had to have a minimum distance of \unit[10]{s} to a movie
-cut and to another \texttt{no\_cut} events.
+cut and to another \texttt{no\_cut} event.
 % reference to table
 A short explanation and counts of these six categories modeled as impulse
-events, six additional event categories for low-level auditory and visual
-features of the movie (here again continuous bins lasting \unit[40]{ms}), can be found in Table \ref{tab:av-events}.
+events, and six additional event categories for low-level auditory and visual
+features of the movie (here again continuous bins lasting \unit[40]{ms}) can be
+found in Table \ref{tab:av-events}.
 
 \begin{table*}[t]
     \caption{Overview of events to build the 14 regressors for the analysis of the audio-only (AV) stimulus.
@@ -760,10 +763,9 @@ fg\_av\_ger\_ud & +++???+++ & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII &
 Events of both stimuli were convolved with a double gamma hemodynamic response
 function (HRF).
 % reference to figure ``correlation of regressors''
-The Pearson correlation coefficients of the 13 regressors of the AO stimulus and
-12 regressors of the AV stimulus across the time course of all stimulus segments
-can be seen in Figure \ref{fig:reg-corr}.\todo{correct colors on horizontal
-line; drop control regressors from figure}
+The Pearson correlation coefficients of the regressors of the AO and AV stimulus
+and across the time course of all stimulus segments can be seen in Figure
+\ref{fig:reg-corr}.
 % temporal derivatives
 Temporal derivatives were included in the design matrix to compensate for
 regional differences between modeled and actual HRF \citep{friston1998event}.
@@ -778,43 +780,39 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
         correlation coefficients of the regressors used in the analysis of the
         audio-description (blue; see Table \ref{tab:ao-events} for a
         description) and audio-visual movie (red; see Table
-        \ref{tab:av-events}). Regressors were created by convolving the events
-        with FSL's ``Double-Gamma HRF'' as a model of the hemodynamic response
-        function, temporally filtered with the same high-pass filter (cut-off
-        \unit[150]{s}) as the BOLD time series, and concatenated across runs
-    before computing the correlation.}
+        \ref{tab:av-events}).
     \label{fig:reg-corr}
 \end{figure*}
 
 \paragraph{AO: COPEs}
 
-\todo[inline]{Why done this way? Why is no. 1 the one?}
-% intro
-For the AO stimulus, we created eight $t$-contrasts that aimed to isolate the
-PPA and five $t$-contrasts for negative control purposes (see Table \ref{tab:ao-contrasts}).
-% PPA contrasts
-\todo[inline]{setting-related regressors have small event count compared to
-geo/groom; probably more important in discussion}
-Contrasts 6-8: words belonging to the categories \texttt{se\_new} and
-\texttt{se\_old} were very vague in describing a scene compared to the richness
-of a picture. Hence, we assumed smaller probability of successfully isolating
-the PPA.
-% furniture: blurred border between groom and object
-Furniture was not included in one of the contrast because it can be considered
-as an object or geometry-defining structure of a room.
+\todo[inline]{Why done this way? Why is no. 1 the one? Event count,
+se\_new and se\_old only vaguely describe the scene; narrator is often
+lacking behind dialogue and change in soundscape}
 
+\todo[inline]{contrasts are ordered by ``how well they make sense'' according to
+theory, ``quality of auditory cue'', and amount of events/data. Hence, the were
+assumed to result in more and more shitty results; at the moment all 8 contrasts
+are used in the result (figure)}
+
+% intro
+For the AO stimulus, we created eight $t$-contrasts to isolate presumably
+correlating with increased hemodynamic activity in the PPA by contrasting
+different kind descriptive nouns. % furniture: blurred border between groom and
+object Furniture was not included in one of the contrast because it can be
+considered as an object or geometry-defining structure of a room.
 % negative control contrasts
-Contrasts 9-13 correspond to the contrasts 1-5 of the AV stimulus and served as
-negative controls because increased activation in the PPA could also be
-correlated with moment of cuts and a possible change in the soundscape of a
-scene.
+Five $t$-contrasts (see Table \ref{tab:ao-contrasts} we created for negative
+control purposes to test if increased activation in the PPA was correlated with
+moment of cuts and therefore correlated with a possible change in the
+soundscape.
+
 
 \begin{table*}[t]
     \caption{Contrasts of parameter estimates for the analysis of
         the audio-only stimulus (AO).
 \texttt{all non-geo} = body, bodypart, fahead, object, sex\_f, sex\_m).
-Contrast
-1-8 aim to isolate the PPA.
+Contrast 1-8 aim to isolate the PPA.
 Contrasts 9-13 serve as negative control at the moments of movie cuts
 with possible changes of the audio tracks soundscape (see Table
 \ref{tab:av-contrasts}).}
@@ -845,25 +843,25 @@ om, se\_new, se\_old > all non-geo & PPA \tabularnewline
 
 \paragraph{AV: COPEs}
 
-\todo[inline]{change stability of contrast plot from 6 to 5 COPES (line 40 in
-script)}
-
 \todo[inline]{Why done this way? Why is no. 1 the one?}
 % intro
 For the AV stimulus, we created five $t$-contrasts presumably correlating with
 increased hemodynamic activity in the PPA by contrasting different kind of cuts.
-and five $t$-contrasts for negative control purposes.
 % no control for frames content
 Notably, this was done without an annotation of the visual content depicted in
-the frame after each cut and statistically controlling confounding variables.
+the frame after each cut and thus without statistically controlling confounding
+variables.
 % cinematographic rationale
-The cinematographic rationale was that movie tend to establishing the setting
+% cut to new scenes: establishing shots
+The cinematographic rationale was that movie tend to establish the setting
 (\texttt{vse\_new}) and the spatial relationships within a setting
-(\texttt{vpe\_new}) at the beginning of a movie. Later in the movie, the field
-sizes of movie shots tend to decrease when switching back to already established
-settings (\texttt{vse\_old}). Shots within a recurring settings tend to shift to
-depicting persons and objects (\texttt{vpe\_old}) more relevant to the evolved
-narrative \citep{brown2012cinematography, mercado2011filmmakers}.
+(\texttt{vpe\_new}) at the beginning of a movie.
+% cut to recurrent scene
+Later in the movie, the field sizes of movie shots tend to decrease when
+switching back to already established settings (\texttt{vse\_old}).
+% similarly for shots within a scene
+Shots within a recurring settings tend to shift to depicting persons and objects
+(\texttt{vpe\_old}) more relevant to the evolved narrative \citep{brown2012cinematography, mercado2011filmmakers}.
 % neuroscientific rationale
 The neuroscientific rationale was that simply that activity in the PPA is
 greater when participants view novel versus repeated scenes or view-points.
@@ -872,6 +870,9 @@ greater when participants view novel versus repeated scenes or view-points.
 Hence, we created varying contrasts comparing a setting occurring for the first
 time and cuts within a locale depicted for the first time to cuts into recurring
 settings and cuts within a recurring locale.
+% negative control
+Five additional $t$-contrasts we created for negative control purposes (see
+Table \ref{tab:av-contrasts}.
 
 \begin{table*}[t]
     \caption{Contrasts of parameter estimates for the analysis of the audio-visual movie (AV).}
@@ -905,8 +906,7 @@ ways.
 % subject template (for Bland-Altman-Plot of unthresholded maps)
 % \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
 On the one hand, subject-specific BOLD T1* time series were anatomically aligned
-via linear transformation to a subject-specific, study-specific T1* template
-that served as standard space.
+via linear transformation to a subject-specific, study-specific T1* template.
 % group template (for group and individual brain slices)
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"
 On the other hand, time series were aligned via non-linear transformation to a
@@ -937,11 +937,12 @@ Here again, Z (Gaussianised T/F) statistic images were thresholded using
 clusters determined by Z>3.4 and a (corrected) cluster significance threshold of
 p=.05 \citep{worsley2001statistical}.
 % brain region identification
-Brain regions associated with observed clusters were determined with the Juelich
+Brain regions associated with observed clusters were determined with the Jülich
 Histological Atlas \citep{eickhoff2005toolbox, eickhoff2007assignment} and the
 Harvard-Oxford Cortical Atlas \citep{desikan2006automated} provided by FSL.
 % PPA masks
-PPA ROI masks for individual subjects and a PPA group mask of individual PPAs overlapping were created from data provided by \citep{sengupta2016extension}.
+PPA ROI masks for individual subjects and a PPA group mask of individual PPA
+overlaps were created from data provided by \citep{sengupta2016extension}.
 
 
 \section{Results}
@@ -962,7 +963,6 @@ PPA ROI masks for individual subjects and a PPA group mask of individual PPAs ov
 % For example, it may conclude that none of potential artifacts were detected.
 % Each paragraph convinces the reader of answer given in its last sentence.
 % The result of each paragraph is a logical statement
-
 
 
 \subsection{primary contrasts}
@@ -991,7 +991,7 @@ significant clusters (see Table \ref{tab:res-av-group1}, Figure
 Two clusters in the superior lateral occipital cortex (left bigger than right).
 % PPA + others.
 And one one cluster spanning across the midline and comprising intracalcarine
-and cuneal cortex, lingual gyrus and restrosplenial cortex,  occipital fusiform
+and cuneal cortex, lingual gyrus and retrosplenial cortex,  occipital fusiform
 gyrus and temporal fusiform gyrus, and parahippocampal cortex bilaterally.
 
 
@@ -1241,6 +1241,11 @@ krasser als PPA.
 Mental Imagery Hypthesis (s. O'Craven \& Kanwisher, 2000); Lerner (2011), Honey
 (2012), Silbert (2014) finden keine ISC in PPA? vgl. auch DataPaper bzgl.
 Hörbuch??
+
+Contrasts 6-8: words belonging to the categories \texttt{se\_new} and
+\texttt{se\_old} were very vague in describing a scene compared to the richness
+of a picture. Hence, we assumed smaller probability of successfully isolating
+the PPA.
 
 
 \subsection{AV discussion}

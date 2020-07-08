@@ -29,7 +29,7 @@ BIN_MASK_GRP = 'rois-and-masks/bilat_PPA_binary.nii.gz'
 AO_COPE_PATTERN = 'inputs/studyforrest_ppa/3rd-lvl/'\
     'audio-ppa_c?_z3.4.gfeat/cope1.feat/thresh_zstat1.nii.gz'
 # first six contrasts aim for PPA, rest are control contrasts
-AO_PPA_COPES = range(1, 7)
+AO_PPA_COPES = range(1, 9)
 # primary PPA contrast
 AUDIO_GRP = AO_COPE_PATTERN.replace('c?', 'c1')
 
@@ -198,7 +198,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     cax1 = fig.add_subplot(grid[12:13, 6:11])
     cmap = mpl.cm.Blues
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=0, vmax=7)
+    norm = mpl.colors.Normalize(vmin=0, vmax=8)
     cb1 = mpl.colorbar.ColorbarBase(cax1,
                                     cmap=cmap,
                                     norm=norm,
@@ -212,7 +212,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     cax2 = fig.add_subplot(grid[13:14, 6:11])
     cmap = mpl.cm.YlOrRd
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=0, vmax=7)
+    norm = mpl.colors.Normalize(vmin=0, vmax=8)
     cb2 = mpl.colorbar.ColorbarBase(cax2,
                                     cmap=cmap,
                                     norm=norm,
@@ -220,7 +220,7 @@ def process_stability(ao_prob, av_prob, outfpath):
 
     # ticklabels and edge of the colorbar
     cax2.tick_params(colors='w')
-    cax2.xaxis.set_ticks(list(range(8)))
+    cax2.xaxis.set_ticks(list(range(9)))
     cb2.set_label('number of contrasts', color='w')
     cb2.outline.set_edgecolor('w')
 
@@ -272,7 +272,7 @@ def plot_stability_slice(mode, coord,
                         threshold=0,
                         cmap=colorMap,
                         vmin=0,
-                        vmax=7,
+                        vmax=8,
                         alpha=1)
 
     # add the audio contrasts on top of the movie contrasts
@@ -282,7 +282,7 @@ def plot_stability_slice(mode, coord,
                         threshold=0,
                         cmap=colorMap,
                         vmin=0,
-                        vmax=7,
+                        vmax=8,
                         alpha=1)
 
     # add contours of group PPA
