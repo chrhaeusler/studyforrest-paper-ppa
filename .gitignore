@@ -1,5 +1,4 @@
-*.swp
-*.swo
+*.sw?
 *.bib*
 paper/main.aux 
 paper/main.bbl
