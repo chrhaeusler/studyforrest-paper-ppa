@@ -967,9 +967,9 @@ overlaps were created from data provided by \citep{sengupta2016extension}.
 
 \section{Results}
 
-\todo[inline]{at the moment I tend to reporting the stability of contrast first,
-and then go on to report the primary contrasts for group and individuals; both
-has pros and cons}
+\todo[inline]{at the moment I think it is better to report the primary contrast
+fist and then report the stability of contrast; but that opinion changend twice
+already, so here in the text stability of contrast is still reported first}
 
 % summary of methods: AO
 We used conventional GLM contrast to exploratorily investigate how the PPA
@@ -1290,6 +1290,13 @@ probably bias to show higher values for the dedicated localizer (red voxels)}
 
 \section{Discussion}
 
+\todo[inline]{MIH: discussion should primarily be anchored on the points the
+    introduction concludes with. From my POV there is no need (and likely no
+    space) to discuss results by stimulus type. Issue like different impact of
+    attentional focus etc can be brought up in the joint paragraph that
+    discussed how such a factor could have differentially impacted the results
+    and if that would matter.}
+
 % Discussion explains how results fill gap identified in intro
 % provides caveats to the interpretation
 % describes how paper advances the field by providing new opportunities.
@@ -1314,90 +1321,144 @@ probably bias to show higher values for the dedicated localizer (red voxels)}
 % the field forward.
 
 %Step by step, the reader thus learns to put the paper’s conclusions into the right context.
+We used two naturalistic stimuli + annotation + GLM and investigated if we could
+isolate the PPA not just in an group average analysis but also on an individual
+level. We focus on the audio-only stimulus but performed a analysis for the AV
+stimulus as well (not controlling for frame content after cuts).
 
-\todo[inline]{MIH: discussion should primarily be anchored on the points the
-    introduction concludes with. From my POV there is no need (and likely no
-    space) to discuss results by stimulus type. Issue like different impact of
-    attentional focus etc can be brought up in the joint paragraph that
-    discussed how such a factor could have differentially impacted the results
-    and if that would matter.}
-
-\paragraph{From Poster}: 1. PPA shows increased activation during non-visual,
-complex auditory stimulation that provides incidental spatial information.
-
-2. only minor temporal correlation of regressors of the audio drama \& movie that were not designed for experimental research.
-
-3. but still, alternative contrasts show significant clusters in auditory
-cortices.
-
-4. inter-individual differences: for two subjects, an alternative audio-contrast
-shows bilaterally significant clusters whereas the primary contrast shows no
-significant clusters.
-
-5. audio drama shows bilaterally increased activation in subject 4 in which the
-visual localizer shows an unilateral cluster.
-
-6. nevertheless, a  complex auditory stimulus might allow individual
-localization of a functionally defined brain region.
-
-7. results of other studies suggest7 the PPA does not exclusively process the
-``spatial layout''" but ``contextual associations''.
-
-8. an audio drama might be suitable as ecologically more valid ``localizer'' for
-a variety of brain functions.
+% Correlation of regressors
+Events/Regressors are of little to no correlation despite stimulus was used as
+designed for entertainment purposes.
 
 
-\subsection{AO Discussion}
+\subsection{Group analysis}
 
-Hanke et al. (2014): Compared to an audio-visual movie, this is a stimulus that
-leaves a much larger margin for inter-individual differences in imagining
-scenery, as well as actors' character and personality traits, while still
-preserving the time-locked presentation of information to a listener. At the
-same time, an auditory stimulus limits the effect of an attentional focus on the
-selection of a subset of simultaneously occurring auditory events, in contrast
-to the selection of different parts of the visual field.
+% AO stimulus
+% cluster location
+AO stimulus isolated spatially concise cluster in anterior part of group overlap mask/roi.
+% confounds
+2h audio-description offering sufficient events such that many confounding
+variables average out (but some anternative contrasts show clusters in auditory
+cortices)
+% summary statement
+This suggest spoken language cues correlate with increased activation in higher
+visual areas bilaterally.
 
-aminoff2013: jedoch zu non-spatial stuff: Although the PHC is commonly thought
-of as responding to visual stimuli, it has also been found to elicit activity
-for auditory stimuli [25,26,30,31] and to respond to odor stimuli [32–34].
+% RSC
+words to clusters in RSC? -> see Aminoff (20xx). What does the retrosplenial
+cortex do?
 
-Unterschiedliche Qualität der Kontrast: Warum wurde Kontrast 1 als Kontrast 1
-gewählt; se\_new se\_old sind recht vague in der Beschreibung der Szene
-verglichen mit Bild; Anzahl der Events ergibt auch noch Sinn
-
-setting\_new ist häufig vermischt mit anderer Kategorie "ein Arzt", "ein alter
-Film", "auf einer Straße", "im Fernsehen", "die drei Jungs", "die zwei im Bett",
-"Jenny als Teenager", "Forrest vor einem Buffet", "Kennedy", "Jenny kommt aus
-dem Wohnwagen ihrer Großmutter" Soundscape macht es häufiger bereits vorher
-klar, dass Settingwechsel ist bzw. nicht erst das annotiere Substantiv object
-und (room)geo ist vermischt Retrospelinal Cortex ist in Probabilistic maps
-krasser als PPA.
-
+% theory what the PPA does
+\todo[inline]{aminoff2013: jedoch zu non-spatial stuff: Although the PHC is
+commonly thought of as responding to visual stimuli, it has also been found to
+elicit activity for auditory stimuli [25,26,30,31] and to respond to odor
+stimuli [32–34].}
+% Mental Imagery Hypothesis
 Mental Imagery Hypthesis (s. O'Craven \& Kanwisher, 2000); Lerner (2011), Honey
 (2012), Silbert (2014) finden keine ISC in PPA? vgl. auch DataPaper bzgl.
 Hörbuch??
+% we
+We got not task not time to form a vivid mental image; if at all automatic
+on-the-fly process; further not task to keep subjects attentive to the stimulus
+and espcially spatial cues
+% PPA is not visual exclusively
+results of other studies suggest7 the PPA does not exclusively process the
+``spatial layout''" but ``contextual associations''.
+% difference to Aziz
+Aziz modeled as boxcar from sentence onset to offset.
 
-Contrasts 6-8: words belonging to the categories \texttt{se\_new} and
-\texttt{se\_old} were very vague in describing a scene compared to the richness
-of a picture. Hence, we assumed smaller probability of successfully isolating
-the PPA.
+
+% AV stimulus cluster location
+AV middle and posterior part of group overlap mask/roi.
+% confounds
+extending into more posterior regions (which exactly?).
+% not controlled frame content
+putativ function of those regions?
+% number of events?
+confounds to not average out in (early) visual areas.
+% nevertheless
+imo it's cool, that this approach of blindly averaging the frames' content works
+at all.
+
+\subsection{stability of contrasts}
+% why we did a couple of contrasts
+it's not cherry picking of one contrast.
+% declining quality of results
+contrasts were assumed to be of ``declining'' quality of results which turned
+out to be the case.
+% decreasing congruency and amount of data
+results are kinda stable and not just an accidental finding. Nevertheless,
+performance of functional isolation is sensitive to amount of data used and
+congruency of contrasts with spatial layout hypothesis.
 
 
-\subsection{AV discussion}
-lore ipsum
+\subsection{individual analyses}
+% AO
+We were able to get isolated cluster in anterior part of individual PPA masks in
+majority of subjects.
+% one threshold for all
+Same threshold for all subjects, PPA ROIs were visually / subjectively chosen.
+% inter-individual differences
+\todo[inline]{which contrasts work better in some subjects?}
+% sub-xy
+AO yielded bilateral cluster whereas AV stimulus yielded XY and even the
+dedicated localizer yieled just one unilateral custer.
 
-\section*{General Discussion}
+% summary statement
+Results suggest naturalistic AO stimulus can be used as an non-visual localizer
+of a visual area in individual subjects.
+% with other words
+a  complex auditory stimulus might allow individual localization of a
+functionally defined brain region.
+% and again other words
+an audio drama might be suitable as ecologically more valid ``localizer'' for a
+variety of brain functions.
+% other example: speech areale
+other possibilities: low level features, stuff annotated in speech annotation
 
-\subsection{Data-driven vs. Analysis-Driven}
-"Abfall" einer Film-Messung
+% multiple localizer
+% PPA is just one example
+2h stimulus for just one process is long but chosen cognitive function is just
+one aspect that can be investigated with a complex naturalistic stimulus.
 
-\subsection{naturalistic vs. dedicated} how do results (PPA-like response
-localization) differ from a standard visual/block-design localizer for:
+% AV
+On individual level, mixed results for AV stimulus.
+% individual differences
+Individual differences when seeing a whole picture with many features vs. stream
+of serial auditory information providing incidential cues; spatial attention?
+\todo[inlin]{which contrast works better in which subjects?}
 
-\subsection{anterior (AO) vs. posterior (AV) PPA}
+% AO vs. AV
+AO vs. AV\dots
+\todo[inline]{Hanke et al. (2014): Compared to an audio-visual movie, this is a
+    stimulus that leaves a much larger margin for inter-individual differences
+    in imagining scenery, as well as actors' character and personality traits,
+    while still preserving the time-locked presentation of information to a
+    listener. At the same time, an auditory stimulus limits the effect of an
+    attentional focus on the selection of a subset of simultaneously occurring
+    auditory events, in contrast to the selection of different parts of the
+visual field}.
 
-\subsection{parietal and RSC activations} Story für parietale Aktivierung im
-Film -> räuml. Orientierung / Aufmerksamkeit
+
+\subsection{shortcommings}
+
+% spatial cues can belong to different categories
+setting\_new ist häufig vermischt mit anderer Kategorie "ein Arzt", "ein alter
+Film", "auf einer Straße", "im Fernsehen", "die drei Jungs", "die zwei im Bett",
+"Jenny als Teenager", "Forrest vor einem Buffet", "Kennedy", "Jenny kommt aus
+dem Wohnwagen ihrer Großmutter"
+% soundsscapes makes change of setting obvious before narrator kicks in
+Soundscape macht es häufiger bereits vorher klar, dass Settingwechsel ist bzw.
+nicht erst das annotiere Substantiv object und (room)geo ist vermischt
+Retrospelinal Cortex ist in Probabilistic maps krasser als PPA.
+
+% se_new and se_old
+especially relevant for contrasts 6-8: words belonging to the categories
+\texttt{se\_new} and \texttt{se\_old} were very vague in describing a scene
+compared to the richness of a picture. Hence, we assumed smaller probability of
+successfully isolating the PPA.
+
+\subsection{open question: anterior (AO) vs. posterior (AV) PPA}
 
 \subsection{model-driven vs. data-driven analyses} Due to their continuity,
 complexity, and length, they offer a vast amount of data on a variety of brain
@@ -1408,9 +1469,8 @@ level.
 
 \subsection{confounds in AO and AV}
 
-\subsection{multi-dimensional localizer???}
-feasibility of (multi-dimensional) localizer development with naturalistic
-stimuli.
+\subsection{re-use of existing data for new, independent research questions}
+there is more in a complex naturalistic stimulus.
 
 Natural stimuli like movies \citep{hasson2008neurocinematics,
 sonkusare2019naturalistic} or narratives \citep{honey2012not,
