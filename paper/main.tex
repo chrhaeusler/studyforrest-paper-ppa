@@ -1380,68 +1380,152 @@ soundscape for re-orienting (which still might be a bold claim)}
 %right context.
 
 
-\todo[inline]{taylor it to points mentioned in the introduction (full circle)}
+\todo[inline]{tailor it to points mentioned in the introduction (full circle);
+print intro to avoid constant scrolling}
+
+\subsection{intro}
+\todo[inline]{summary of study goal and methods}
+% what we did
+We used two naturalistic stimuli and their annotations to create a GLM
+presumably correlating with hemodynamic activity in the PPA. We focused on the
+AO stimulus but also build contrasts for the AV stimulus for cross-modal
+control.
+
+\subsubsection{correlation of regressors} Both stimuli were not designed to
+maximize detection power in an fMRI experiment bu to entertain the audience.
+% why we created the correlation matrix in the first place
+We tested for correlation of stimulus features because a high degree of shared
+variance prevents detection power.
+% summary of results
+Results show only minor to no correlations of regressors across all stimulus
+segments
+% statement
+Hence depending on the stimulus features of interest, it is feasible to use
+specific stimulus features of a regular movie or audiobook for neuroscientific
+research questions.
 
 
-\paragrap{intro}
-We used two naturalistic stimuli + annotation + GLM and investigated if we could
-isolate the PPA not just in an group average analysis but also on an individual
-level. We focus on the audio-only stimulus but performed a analysis for the AV
-stimulus as well (not controlling for frame content after cuts).
+\subsection{group analysis}
 
-% Correlation of regressors
-Events/Regressors are of little to no correlation despite stimulus was used as
-designed for entertainment purposes.
+\subsubsection{AO stimulus}
+% AO stimulus cluster location
+The results of the AO stimulus yielded isolated clusters in the anterior part of
+the PPA ROI (overlap of individual PPAs taken from Sengupta et al.).
+% comparison to other studies using ISC
+\todo[inline]{check Wilson (2008), Lerner (2011), Honey (2012), Silbert (2014).
+Do they find ISC in PPA using an auditory stimulus? As far as I remember they
+don't}
+% diff to Aziz (2008)
+Unlike \citep{aziz2008modulation} we did not use whole sentences as events to
+model a hemodynamic response but the length of the word giving the cue about the
+visual content of a scene.
+% no task
+Compared to previous studies (O'Craven \& Kanwisher: mental imagery
+hypothesis)\todo{check this paper out} participants of our study were not
+instructed to form a vivid mental image of the stimulus but to ``enjoy the
+audiobook''.
+% naive to the research question
+Moreover, participants could not infer the perceptual process to be investigated
+by merely being submitted to the stimuli / experimental design.
+% concluding statement
+This suggest the PPA is involved in processing incidental spatial information
+embedded in a rich auditory stream, and this involvement does not rely on
+creating a mental imagery or deliberately paying close attention to spatial
+features.\todo{kinda similar to Wolbers (2011) who checked connectivity between
+    PPA and visual cortex during haptic exploration of LEGO scenes}
 
-
-\subsection{Group analysis}
-
-% AO stimulus
-% cluster location
-AO stimulus isolated spatially concise cluster in anterior part of group overlap mask/roi.
-% confounds
-2h audio-description offering sufficient events such that many confounding
-variables average out (but some anternative contrasts show clusters in auditory
-cortices)
-% summary statement
-This suggest spoken language cues correlate with increased activation in higher
-visual areas bilaterally.
-
-% RSC
-words to clusters in RSC? -> see Aminoff (20xx). What does the retrosplenial
-cortex do?
-
-% theory what the PPA does
-\todo[inline]{aminoff2013: jedoch zu non-spatial stuff: Although the PHC is
-commonly thought of as responding to visual stimuli, it has also been found to
-elicit activity for auditory stimuli [25,26,30,31] and to respond to odor
-stimuli [32–34].}
-% Mental Imagery Hypothesis
-Mental Imagery Hypthesis (s. O'Craven \& Kanwisher, 2000); Lerner (2011), Honey
-(2012), Silbert (2014) finden keine ISC in PPA? vgl. auch DataPaper bzgl.
-Hörbuch??
-% we
-We got not task not time to form a vivid mental image; if at all automatic
-on-the-fly process; further not task to keep subjects attentive to the stimulus
-and espcially spatial cues
-% PPA is not visual exclusively
-results of other studies suggest7 the PPA does not exclusively process the
-``spatial layout''" but ``contextual associations''.
-% difference to Aziz
-Aziz modeled as boxcar from sentence onset to offset.
+% other
+\todo[inline]{Aminoff (2013). PPA's role in cognition regarding non-spatial
+    stuff: ``Although the PHC is commonly thought of as responding to visual
+    stimuli, it has also been found to elicit activity for auditory stimuli
+    [25,26,30,31] and to respond to odor stimuli [32–34]''.}
+% concluding statement
+In summary, our group results suggest that auditory spatial information does not
+just modulate activity in the PPA (depending on other factory like familiarity,
+XY; s. Aziz) but correlates with bilaterally increased
+activation.\todo{``modulate'' suggests causation}
 
 
-% AV stimulus cluster location
-AV middle and posterior part of group overlap mask/roi.
-% confounds
-extending into more posterior regions (which exactly?).
-% not controlled frame content
-putativ function of those regions?
-% number of events?
-confounds to not average out in (early) visual areas.
-% nevertheless
-imo it's cool, that this approach of blindly averaging the frames' content works
-at all.
+\subsubsection{AV stimulus}
+
+% location
+AV anterior, middle and posterior part of group overlap mask/roi.
+
+% difference in location/size to AO und VIS
+extending into more posterior regions; which exactly; known functions of theses
+areas
+% shortcomings + explanation
+shortcoming of not controlling visual content of the frames after the cut;
+% but
+nevertheless it's ``surprising'' that it works at all and the clusters located
+in systematically / bilaterally in (higher) visual areas; lot's of (non) visual
+features average out; and we are not using a dedicated stimulus
+% what should be done to improve
+make an annotation of frame's content
+
+\subsubsection{open question anterior vs. posterior PPA???}
+
+\subsubsection{Retrosplenial cortex}
+\todo[inline]{check location in primary contrast and in overlap of contrasts;
+atlases do not ``know'' RSC as such but provide other term(s)}
+\todo[inline]{cf. Aminoff (20xx). What does the retrosplenial cortex do?}
+Another region that showed significantly increased activity not just in the
+primary contrast but consistently across contrasts is ventral precuneus / RSC
+(check the overlap again to not talk shit; no atlas gives RSC as such)\dots
+
+
+\subsection{individual analyses}
+
+\subsubsection{AO stimulus}
+% intro
+Contrast 1 yielded isolated cluster in the anterior part of individual PPA masks
+in majority of subjects.
+% one threshold for all
+Contrary to Sengupta et al. (2016) results were archieved by using the same
+Z-value and significance threshold for all subjects, and not by visually
+expecting the results and choosing a subjectively best fitting threshold for
+each subject.
+\todo[inline]{what about the info in Bland-Altman-Plots; discussion of that info
+could range from 2 sentences to 2 paragraphs}
+% inter-individual differences
+\todo[inline]{which contrasts work better in some subjects?}
+% AO stimulus vs. AV stimulus
+\todo[inline]{Hanke et al. (2014): Compared to an audio-visual movie, this is a
+    stimulus that leaves a much larger margin for inter-individual differences
+    in imagining scenery, as well as actors' character and personality traits,
+    while still preserving the time-locked presentation of information to a
+    listener. At the same time, an auditory stimulus limits the effect of an
+    attentional focus on the selection of a subset of simultaneously occurring
+    auditory events, in contrast to the selection of different parts of the
+visual field}.
+% sub-xy
+AO yielded bilateral cluster whereas AV stimulus yielded XY and even the
+dedicated localizer yieled just one unilateral custer.\todo{what to do with
+that?}
+% summary statement group results a representative for group
+The individual results suggest that the group results are not driven by a couple
+of subjects.
+% auditory localizer
+Moreover, a complex but naturally engaging auditory stimulus like an audiobook
+might in principle be used as a non-visual localizer for a variety of brain
+functions in subjects who are not willing or able to follow task instructions
+during brain scanning.
+% PPA just an example
+The feature ``auditory spatial information'' is just one
+example of a stimulus feature that can be annotated and used to build a model.
+
+
+\subsubsection{AV stimulus}
+On individual level, mixed results for AV stimulus.
+\todo[inline]{which contrast works better in which subjects?}
+Individual differences when seeing a whole picture with many features vs.
+serialc auditory stream of information providing incidential cues; spatial attention?
+
+\paragraph{shortcomings of AV contrasts}
+visual confounds all over the place; obvious solution: annotate frames and track
+focus of attention (but gist of a frame vs. attentional focus)
+
+
 
 \subsection{stability of contrasts}
 % why we did a couple of contrasts
@@ -1454,58 +1538,11 @@ results are kinda stable and not just an accidental finding. Nevertheless,
 performance of functional isolation is sensitive to amount of data used and
 congruency of contrasts with spatial layout hypothesis.
 
-
-\subsection{individual analyses}
-% AO
-We were able to get isolated cluster in anterior part of individual PPA masks in
-majority of subjects.
-% one threshold for all
-Same threshold for all subjects, PPA ROIs were visually / subjectively chosen.
-% inter-individual differences
-\todo[inline]{which contrasts work better in some subjects?}
-% sub-xy
-AO yielded bilateral cluster whereas AV stimulus yielded XY and even the
-dedicated localizer yieled just one unilateral custer.
-
-% summary statement
-Results suggest naturalistic AO stimulus can be used as an non-visual localizer
-of a visual area in individual subjects.
-% with other words
-a  complex auditory stimulus might allow individual localization of a
-functionally defined brain region.
-% and again other words
-an audio drama might be suitable as ecologically more valid ``localizer'' for a
-variety of brain functions.
-% other example: speech areale
-other possibilities: low level features, stuff annotated in speech annotation
-
-% multiple localizer
-% PPA is just one example
-2h stimulus for just one process is long but chosen cognitive function is just
-one aspect that can be investigated with a complex naturalistic stimulus.
-
-% AV
-On individual level, mixed results for AV stimulus.
-% individual differences
-Individual differences when seeing a whole picture with many features vs.
-serialc auditory stream of information providing incidential cues; spatial attention?
-\todo[inline]{which contrast works better in which subjects?}
-
-% AO vs. AV
-AO vs. AV\dots
-\todo[inline]{Hanke et al. (2014): Compared to an audio-visual movie, this is a
-    stimulus that leaves a much larger margin for inter-individual differences
-    in imagining scenery, as well as actors' character and personality traits,
-    while still preserving the time-locked presentation of information to a
-    listener. At the same time, an auditory stimulus limits the effect of an
-    attentional focus on the selection of a subset of simultaneously occurring
-    auditory events, in contrast to the selection of different parts of the
-visual field}.
-
-
-\subsection{shortcomings}
-
-% spatial cues can belong to different categories
+% spatial cues can belong to different indcategories
+resembling cuts to different scene in the movie by using ``similar'' cues in the
+audio-description did not work well; words are processes ``literally'' and not
+``wholistically'' or put in a wider ``context'' (but Aminoff?)
+%
 setting\_new ist häufig vermischt mit anderer Kategorie "ein Arzt", "ein alter
 Film", "auf einer Straße", "im Fernsehen", "die drei Jungs", "die zwei im Bett",
 "Jenny als Teenager", "Forrest vor einem Buffet", "Kennedy", "Jenny kommt aus
@@ -1521,20 +1558,15 @@ especially relevant for contrasts 6-8: words belonging to the categories
 compared to the richness of a picture. Hence, we assumed smaller probability of
 successfully isolating the PPA.
 
-\subsection{open question: anterior (AO) vs. posterior (AV) PPA}
-
-\subsection{model-driven vs. data-driven analyses} Due to their continuity,
+\subsection{re-use of existing data for new, independent research questions}
+Due to their continuity,
 complexity, and length, they offer a vast amount of data on a variety of brain
 functions like low-level perception, attention, comprehension, memory, emotions,
 or social interactions. This suggests the data can later be reused for variety
 of totally different, independent research questions, possibly on an individual
 level.
 
-\subsection{confounds in AO and AV}
-
-\subsection{re-use of existing data for new, independent research questions}
-there is more in a complex naturalistic stimulus.
-
+\subsection{model-driven vs. data-driven analyses}
 Natural stimuli like movies \citep{hasson2008neurocinematics,
 sonkusare2019naturalistic} or narratives \citep{honey2012not,
 lerner2011topographic, silbert2014coupled} offer an easy to implement,
@@ -1545,14 +1577,14 @@ why naturalistic stimuli are so cool: sonkusare2019, eickhoff2020, hamilton
 
 
 \subsection*{Code availability}
-% wo kommt dieser Abschnitt hin?
-% how to write Code availability statement
+% wo kommt dieser Abschnitt hin?  how to write Code availability statement
 % https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880
-\todo[inline]{provide supporting source code, and explaining how and where others may access all data underlying the analysis}
-\emph{for all studies using custom code in the generation or processing of datasets,
-a statement must be included here, indicating whether and how the code can be
-accessed, including any restrictions to access; include information on the versions
-of any software used, if relevant, and any specific variables or parameters used to
+\todo[inline]{provide supporting source code, and explaining how and where
+others may access all data underlying the analysis} \emph{for all studies using
+    custom code in the generation or processing of datasets, a statement must be
+    included here, indicating whether and how the code can be accessed,
+including any restrictions to access; include information on the versions of any
+software used, if relevant, and any specific variables or parameters used to
 generate, test, or process the current dataset. }
 
 \section*{Acknowledgements}
