@@ -820,20 +820,20 @@ For the AO stimulus, we created eight $t$-contrasts presumably correlating with
 increased hemodynamic activity in the PPA by contrasting different kind of
 descriptive nouns.
 % furniture: blurred border between groom and object
-The category ``furniture'' (\texttt{furn}) was not included in one of the
-contrasts as regressor if interest because it can be considered as an object or
-geometry-defining structure of a room/locale.
+We did not use the category ``furniture'' (\texttt{furn}) as a regressor in one
+of the contrasts of interest because this category was considered to eighter
+count as object or a geometry-defining structure of a room/locale.
 % negative control contrasts
 Five $t$-contrasts (see Table \ref{tab:ao-contrasts}) we created for negative
 control purposes to test if increased activation in the PPA was correlated with
-moment of cuts and therefore correlated with a possible change in the
-soundscape.
+moments of cuts and therefore correlated with a possibly accompanying change in
+the soundscape (anticipating the narrator's cue of a switch to new setting, too).
 
 
 \begin{table*}[t]
     \caption{Contrasts of parameter estimates for the analysis of
         the audio-only stimulus (AO).
-\texttt{all non-geo} = body, bodypart, fahead, object, sex\_f, sex\_m).
+\texttt{all non-geo} = body, bodypart, fahead, object, sex\_f, sex\_m.
 Contrast 1-8 aim to isolate the PPA.
 Contrasts 9-13 serve as negative control at the moments of movie cuts
 with possible changes of the audio tracks soundscape (see Table
@@ -880,8 +880,8 @@ The cinematographic rationale was that movies tend to establish the setting
 Later in the movie, the field sizes of movie shots tend to decrease when
 switching back to already established settings (\texttt{vse\_old}).
 % similarly for shots within a scene
-Moreover, shots within a recurring locale or settings tend to shift to depicting
-persons and objects (\texttt{vpe\_old}) more relevant to the evolved narrative
+Moreover, shots within a recurring locale or setting tend to shift to depicting
+persons and objects (\texttt{vpe\_old}) more relevant to the evolved plot
 \citep{brown2012cinematography, mercado2011filmmakers}.
 % neuroscientific rationale
 The neuroscientific rationale was simply that activity in the PPA is
@@ -917,6 +917,9 @@ Table \ref{tab:av-contrasts}).
 \end{table*}
 
 \paragraph{alignment etc.}
+
+\todo[inline]{give references to the publications explaining the template
+creation; take a look at Sengupta (2016), and maybe speech-anno-paper}
 % single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
 subject and segment was performed in functional space preserving the orientation
@@ -932,7 +935,7 @@ via linear transformation to a subject-specific, study-specific T2* template.
 On the other hand, time series were aligned via non-linear transformation to a
 study-specific T2* group template.
 % MNI152
-This reference image was co-registered to the MNI 152 template with an affine
+This group template was co-registered to the MNI 152 template with an affine
 transformation (12 degrees of freedom) to facilitate visualization and
 identification of cortical structures.
 
@@ -967,16 +970,14 @@ overlaps were created from data provided by \citep{sengupta2016extension}.
 
 \section{Results}
 
-\todo[inline]{at the moment I think it is better to report the primary contrast
-fist and then report the stability of contrast; but that opinion changend twice
-already, so here in the text stability of contrast is still reported first}
-
 % summary of methods: AO
-We used conventional GLM contrast to exploratorily investigate how the PPA
-responds to auditory cues embedded in a naturalistic audio-only stimulus.
+We used conventional GLM contrasts to exploratorily investigate if auditory cues
+embedded in a naturalistic audio-only stimulus correlate with increased
+hemodynamic activity in the PPA.
 % summary of methods: AV
-We compare these results to results to an audio-visual naturalistic stimulus and
-to results from a dedicated visual localizer experiment.
+We compare these results on a group and individual level to results gained from
+an audio-visual naturalistic stimulus and to results from a dedicated visual
+localizer experiment.
 
 % subsequent paragraphs start with a sentence or two
 % that set up the question that the paragraph answers
@@ -989,113 +990,53 @@ to results from a dedicated visual localizer experiment.
 % Each paragraph convinces the reader of answer given in its last sentence.
 % The result of each paragraph is a logical statement
 
-\todo[inline]{I consider tables of significant clusters for every contrast as
-overkill. One contrast, the ``primary contrast'', is appropriate.}
-
-\subsection{stability contrasts}
-
-% why we did different contrasts
-Despite having chosen a primary contrasts which we assumed to give the best
-results, we created a variety of contrasts to test if our approach yielded
-similar results across a variety of contrasts.
-
-% results
-The overlap of significant clusters of the 7 (well actually 8) contrast for the
-audio-description, and 5 contrasts computed for the movie can be found in Figure
-\ref{fig:stability-slices}.
-
-% AO eight contrasts
-For the analysis of the AO stimulus, we combined different event categories to
-create eight contrasts that provided different amount of data/events and
-decreasing congruency with the spatial layout hypothesis.
-% results in PPA
-Six of eight AO contrasts show significant bilateral clusters in anterior
-regions of the group PPA overlap.\todo[inline]{which is temporal occipital
-fusiform gyrus regarding to co-registered Harvard-Oxford Cortical Structural
-Atlas}
-% Precuneus = retrosplenial cortex ?
-Six of eight contrasts show significant clusters in the ventral precuneus /
-retrosplenial cortex (RSC).
-% statement/answer
-This suggest results are reproducible in a variety of contrasts and do not
-depend on the design of one specific contrasts.
-
-% AV intro
-For the analysis of the AV stimulus, we created five contrasts for a cross-modal
-comparison.
-% PPA
-All five AV contrasts yielded significant bilateral clusters in (temporal)
-occipital, fusiform cortex showing congruency with the group overlap of
-individual PPA ROIs.
-% lingual gyrus
-In three contrasts, these homologous clusters extend into the lingual gyri.
-% RSC
-Further, three contrasts show significant homologous clusters in the RSC.
-% LOC
-Lastly, four contrasts show significant homologous clusters in lateral occipital
-cortices.
-% statement/answer
-Here again, we can show that results can in principle be accomplished by varying
-the design of the contrasts. Nevertheless, results are sensible to the amount of
-data used in the contrasts and it's congruency with the spatial layout
-hypothesis.
-
-\begin{figure*} \centering
-    \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption{Stability of contrasts. Overlap of significant clusters (Z>3.4;
-        p<.05, cluster corrected) of contrasts created to isolate the PPA.
-        Contrasts provide decreasing congruency with the spatial layout
-        hypthesis and/or progressively less data/events. The overlap across
-        contrasts is overlaid on the MNI152 T1-weighted head template (gray).
-        Light gray: The audio-description's field-of-view (cf.
-        \citep{hanke2014audiomovie}).  Blue: contrasts 1-7 for the
-        audio-description (see Table \ref{tab:ao-contrasts}.  Red: contrasts 1-5
-        for the audio-visual movie (see Table \ref{tab:av-contrasts}.  Black:
-        outline of overlapping individual PPA ROIs
-        \citep{sengupta2016extension}.} \label{fig:stability-slices}
-    \end{figure*}
-
 
 \subsection{primary contrasts}
-% intro
-For the primary contrast of the AO and AV stimulus, we report results on a group
-level, on an individual level. Finally, we compare individual results of the AO
-stimulus to the dedicated localizer paradigm.
 
-\todo{intro sentence regarding the primary contrasts}
+\todo[inline]{at the moment I think it is better to report the primary contrast
+fist and then report the stability of contrast; but that opinion changend twice
+already.}
+
+\todo[inline]{concluding statement for each paragraphs?}
+
 % the contrast in detail
 The primary $t$-contrast for the audio-description comparing geometry-related
-nouns to non geometry-related nouns spoken by narrator (\texttt{geo, groom > all
-non-geo} yielded six significant clusters (see Table \ref{tab:res-ao-group1},
-Figure \ref{fig:group-slices}).
+nouns to non geometry-related nouns spoken by the narrator (\texttt{geo, groom >
+all non-geo} yielded six significant clusters (see Table
+\ref{tab:res-ao-group1}, Figure \ref{fig:group-slices}).
 % PPA
-First, two fall into the anterior part of the visual localizer group overlap
-mask.
+Two homologous clusters are located in the anterior part of the visual localizer
+group overlap mask.
 % location
-They are located (in part) in the lingual gyrus, occipital and temporal fusiform
-gyrus, and posterior parahippocampal cortex \todo{the clusters are small but
-that's what the Harvard-Oxford Atlas suggests, clusterss are at borders of the
-areas}.
+More specifically, they are partially located in the lingual gyrus, occipital
+and temporal fusiform gyrus, and posterior parahippocampal cortex \todo{the
+    clusters are small but that's what the Harvard-Oxford Atlas suggests,
+    clusters are at borders of the areas; dunno how to report this; sound shitty
+to me}.
 % precuneus
-Second, the contrasts yielded two homologous clusters in the ventral precuneus extending into the retrosplenial cortex.
+Two additional clusters are located in the ventral precuneus extending into the
+retrosplenial cortex.
 % LOC
-Finally, two homologous clusters are located in the superior lateral occipital cortex.
+Finally, the contrast yielded two homologous clusters in the superior lateral
+occipital cortex.
 
 % AV intro
 For cross-modal comparison purposes, we also analyzed data from the audio-visual
-movie.
+movie by contrasting different kinds of movie cuts independent from the frames'
+visual content after the cuts.
 % the primary contrast
-The primary $t$-contrast for the movie comparing cuts to a new setting with cuts
+The movie's primary $t$-contrast that compared cuts to a new setting with cuts
 to a familiar perspective (\texttt{vse\_new > vpe\_old}) yielded three
 significant clusters (see Table \ref{tab:res-av-group1}, Figure
 \ref{fig:group-slices}).
 % PPA + others.
-And one one cluster spanning across the midline and comprising intracalcarine
+One cluster spanning across the midline comprising parts of the intracalcarine
 and cuneal cortex, lingual gyrus and retrosplenial cortex, occipital fusiform
-gyrus and temporal fusiform gyrus, and parahippocampal cortex bilaterally.
+gyrus and temporal fusiform gyrus, and the parahippocampal cortex of both
+hemispheres.
 % LOC
-Two homologous clusters are located in the superior lateral occipital cortex
-(left bigger than right).
+Two additional homologous clusters are located in the superior lateral occipital
+cortex (left bigger than right).
 
 
 \begin{table*}[t]
@@ -1171,19 +1112,23 @@ cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusifo
 \subsection{individual results}
 % why individual results in the first place.
 We also investigated localization performance of both naturalistic paradigms on
-the level of individual subjects. \todo{maybe report reason here, too: which
-subjects influence the group results the most? ``multiple localizer''?}
+the level of individual subjects. \todo{maybe report the other reason here, too:
+which subjects influence the group results the most? ``multiple localizer''?}
 % results in both subject and group space
 Time series of all subjects were analyzed both in subject space and group space.
+% individual z-maps
+Results of the analyses that were performed in each subject's subject-space
+(unthresholded $z$-maps and thresholded $z$-maps with Z>2.3, p<.05) can be
+found in the accompanying dataset.
 % why
-For better comparison of results across participants, we report results of the
-analysis that was performed in group space (Z>3.4, p<.05 cluster-corrected).
+For better comparison of results across participants, we show results ($z$-maps;
+Z>3.4, p<.05 cluster-corrected) of the analyses that was performed in group
+space.
 % ref to figure
-Figure \ref{fig:subs-thresh-ppa} depicts thresholded z-maps of the primary AO
-and AV $t$-contrast and the outline of the individual PPAs
+Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary AO
+and AV $t$-contrast, and the outline of the individual PPAs
 \citep{sengupta2016extension} overlayed on the MNI152 template (horizontal slice
 z=-11 for all subjects).
-
 % results in detail voxels of significant clusters in PPA ROI (and  RSC
 % liberally)
 % sub-01: PPA (l/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (-/-)
@@ -1207,22 +1152,20 @@ right clusters in two subjects (sub-04, sub-20).
 % subjective threshold
 Noteworthy, ROIs were assessed by \citep{sengupta2016extension} by visually
 inspecting the unthresholded $z$-maps, and setting a subjectively best fitting
-$z$-threshold to isolate the PPA.
-
+$z$-threshold to isolate a cluster in the PPA.
 % AO
 In the current analysis of the AO stimulus, we find significant bilateral
 clusters in nine subjects, and one significant cluster in the left hemisphere of sub-09.
 % subj-04
 In sub-04, two homologous clusters are apparent, where the dedicated localizer
 yielded only one cluster in the right hemisphere.
-
 % AV
 For the AV stimulus, results show homologous clusters in five subjects, and
 unilateral right clusters in seven subjects (of which one subjects also yielded
 just a unilateral cluster in the dedicated localizer).
 % difference to dedicated localizer
 In sub-20 bilateral, where the dedicated localizer yielded only one cluster in
-the right hemisphere
+the right hemisphere.
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
@@ -1247,33 +1190,31 @@ degrees of freedom) to facilitate comparisons across subjects.
 \subsection{Bland-Altman-Plots}
 % why
 To better depict the agreement (and difference) between indivudal results of the
-visual localizer and contrast 1 of the AO paradigm, we created
-Bland-Altman-Plots (see Figure \ref{fig:bland-altman}).
-% what do Bland-Altman-Plots show?
-The plots for the 14 subjects show the mean of $z$-values of two spatially
-corresponding voxels in unthresholded z-maps on the x-axis and the difference of
-$z$-values of these two voxels on the y-axis (dedicated localizer minus AO
-stimulus).
+visual localizer and contrast 1 of the AO paradigm, we created one
+Bland-Altman-Plots for each of the 14 subjects (see Figure
+\ref{fig:bland-altman}).
+% x-axis
+The x-axis of every subplot depicts the mean of $z$-values of two spatially
+corresponding voxels taken from a subject's unthresholded $z$-map.
+% y-axis
+The y-axis of every subplot depicts the difference of $z$-values of two
+spatially corresponding voxels (dedicated localizer minus AO stimulus).
 % masking
-We constrained the number of voxels in three ways. Voxels were spatially
-contrained to a) voxels in the occipital and temporal lobes (gray; using the
-(probabilistic) Jülich Histological Atlas \citep{eickhoff2005toolbox,
-eickhoff2007assignment}), b) voxels located in the PPA overlap of all subjects
-(blue), and c) voxels in the individual PPA ROI(s)(red).
-% what we can see
+We constrained the number of voxels in three ways as indicated by three colors
+(grey, blue, red).
+% masking in detail
+Voxels were spatially contrained to a) voxels located in the occipital and
+temporal lobes (gray; using the (probabilistic) Jülich Histological Atlas
+\citep{eickhoff2005toolbox, eickhoff2007assignment}), b) voxels located in the
+PPA overlap of all subjects (blue), and c) voxels located in the individual PPA
+ROI(s)(red).
+% top KDE plot
 A shift of the distribution to voxels with a mean above zero can be seen the
-further we constrain voxels to the individual PPA (KDE plot for the x-axis).
-% but
-Values above the horizontal line depict voxels that show a higher z-value in the
-dedicated localizer, values below the horizontal line depict voxels that show
-higher z-values in the AO stimulus.
-
-\todo[inlin]{concluding statement for the paragraph}
-
-\todo[inline]{the plots are ``biased'' in the PPA mask in such a way that they
-don't take into account that clusters are not 100 perc. congruent, meaning the
-AO stimulus has voxels in regions that are outside of the individual PPA ->
-probably bias to show higher values for the dedicated localizer (red voxels)}
+further we constrain voxels to the individual PPA (see KDE plot for the x-axis).
+% right KDE plot
+Values above the horizontal line depict voxels that show a higher $z$-value in
+the dedicated localizer, values below the horizontal line depict voxels that
+show higher $z$-value in the AO stimulus.
 
 
 \begin{figure*} \centering
@@ -1288,14 +1229,124 @@ probably bias to show higher values for the dedicated localizer (red voxels)}
     \label{fig:bland-altman} \end{figure*}
 
 
-\section{Discussion}
+\subsection{stability contrasts}
 
-\todo[inline]{MIH: discussion should primarily be anchored on the points the
-    introduction concludes with. From my POV there is no need (and likely no
-    space) to discuss results by stimulus type. Issue like different impact of
-    attentional focus etc can be brought up in the joint paragraph that
-    discussed how such a factor could have differentially impacted the results
-    and if that would matter.}
+\todo[inline]{I consider tables of significant clusters for every contrast as
+overkill. One contrast, the ``primary contrast'', is appropriate.}
+
+% all AO contrasts
+% 1 geo, groom > non-geo:               PPA (l/r); RSC (l/r)
+% 2 geo, groom, se_new > non-geo:       PPA (l/r); RSC (l/r)
+% 3 groom, se_new, se_old > non-geo:    PPA (l/r); RSC (l/r)
+% 4 geo > all non-geo PPA               PPA (l/r); RSC (l/r)
+% 5 groom > all non-geo PPA             PPA (l/r); RSC (l/r)
+% 6 se_new > all non-geo PPA            PPA (l/r); RSC (l/r)
+% 7 se_new, se_old > all non-geo PPA               RSC (l/r)
+% 8 se_new > se_old                     nothing
+% 9 vse_new > vpe_old                              RSC (r)
+%10 vse_new, vpe_new > vse_old, vpe_old nothing
+%11 vse_new > vse_old                   nothing
+%12 vse_new > vse_old, vpe_old          nothing
+%13 vse_new, vpe_new > vpe_old          nothing
+
+% all AV contrasts
+% 1 vse_new > vpe_old: big bilateral cluster in PPA but also RSC, visual c.
+% 2 vse_new, vpe_new > vse_old, vpe_old:
+% group results are more more confined here
+% (but individual results were probably worse)
+% 3 vse_new > vse_old: PPA (l/r)
+% 4 vse_new > vse_old, vpe_old: PPA (l/r)
+% 5 vse_new, vpe_new > vpe_old: PPA (l/r) but also visual c.
+% 6 vno_cut > vse_new: nothing
+% 7 vno_cut > vse_old: nothing
+% 8 vno_cut > vse_new, vse_old: nothing
+% 9 vno_cut > vpe_new, vpe_old: nothing
+%10 se_new > se_old: right PPA
+
+% why we did different contrasts
+We created a variety of contrasts to test if our approach yielded
+similar results across similar contrasts and if localization performance
+decreases the further the contrasts deviate from the spatial layout hypothesis
+\todo{and the less data we use}.
+
+% results
+The overlap of significant clusters of 8 contrast for the audio-description, and
+5 contrasts computed for the movie can be found in Figure
+\ref{fig:stability-slices}.
+
+% AO eight contrasts
+For the analysis of the AO stimulus, we combined different event categories to
+create eight contrasts that provided different amount of data/events and
+decreasing congruency with the spatial layout hypothesis.
+% results in PPA
+Six of eight AO contrasts show significant bilateral clusters in anterior
+regions of the group PPA overlap.\todo[inline]{which is temporal occipital
+fusiform gyrus regarding to co-registered Harvard-Oxford Cortical Structural
+Atlas}
+% Precuneus = retrosplenial cortex ?
+Six of eight contrasts show significant clusters in the ventral precuneus /
+retrosplenial cortex (RSC).
+% statement/answer
+This suggest results are reproducible in a variety of contrasts and do not
+depend on the design of one specific contrasts.
+% results get ``worse''
+Further, the ability to functionally isolate the PPA decreases the more a
+contrast depends on (just) using \texttt{se\_new} and \texttt{se\_old}
+\todo{interpretation (-> discussion): this category is essentially filled with
+    nouns from other cateogries but nevertheless primarily cueing a change of
+    setting; setting changes are often anticipated by a change of soundscape,
+meaning the narrator lagges behind; well, and the more a contrasts only relies
+on these, the less data is available, because just two categories the more the
+contrast depends on (just) using se\_new or se\_old}
+
+% AV intro
+For the analysis of the AV stimulus, we created five contrasts for a cross-modal
+comparison.
+% PPA
+All five AV contrasts yielded significant bilateral clusters in (temporal)
+occipital, fusiform cortex showing congruency with the group overlap of
+individual PPA ROIs.
+% lingual gyrus
+In three contrasts, these homologous clusters extend into the lingual gyri.
+% RSC
+Further, three contrasts show significant homologous clusters in the RSC.
+% LOC
+Lastly, four contrasts show significant homologous clusters in lateral occipital
+cortices.
+% statement/answer
+Here again, we can show that results can in principle be accomplished by varying
+the design of the contrasts.
+
+\begin{figure*} \centering
+    \includegraphics[width=\linewidth]{figures/stability-slices}
+    \caption{Stability of contrasts. Overlap of significant clusters (Z>3.4;
+        p<.05, cluster corrected) of contrasts created to isolate the PPA.
+        Contrasts provide decreasing congruency with the spatial layout
+        hypthesis and/or progressively less data/events. The overlap across
+        contrasts is overlaid on the MNI152 T1-weighted head template (gray).
+        Light gray: The audio-description's field-of-view (cf.
+        \citep{hanke2014audiomovie}). Blue: contrasts 1-7 for the
+        audio-description (see Table \ref{tab:ao-contrasts}. Red: contrasts 1-5
+        for the audio-visual movie (see Table \ref{tab:av-contrasts}. Black:
+        outline of overlapping individual PPA ROIs
+        \citep{sengupta2016extension}.} \label{fig:stability-slices}
+    \end{figure*}
+
+
+\subsection{crossmodal and negative controls}
+
+\todo[inline]{shall results of these contrasts be reported as well? imo: the one
+who says a) should say b), too. At the moment the contrasts are just listed in
+the method section}
+
+\todo[inline]{there are only two control contrasts that yield significant
+    clusters: in AO stimulus using annotation of movie cuts (vse\_new >
+    pe\_old): right RSC; and in the AV stimulus using annotation of the narrator
+    (se\_new > se\_old): right PPA; this kinda suggest particpants use the
+soundscape for re-orienting (which still might be a bold claim)}
+
+
+\section{Discussion}
 
 % Discussion explains how results fill gap identified in intro
 % provides caveats to the interpretation
@@ -1307,20 +1358,32 @@ probably bias to show higher values for the dedicated localizer (red voxels)}
 % first discussion paragraph is special in that it generally summarizes the
 % important findings from the results section -> give gist of results
 
-% following paragraphs in the discussion section starts by describing an area of weakness or strength of the paper.
-% It then evaluates the strength or weakness by linking it to the
-% relevant literature.
+% following paragraphs in the discussion section starts by describing an area of
+% weakness or strength of the paper.  It then evaluates the strength or weakness
+% by linking it to the relevant literature.
 
-% Discussion paragraphs often conclude by describing a clever, informal way of perceiving the contribution or by discussing future directions that can extend the contribution.
+% Discussion paragraphs often conclude by describing a clever, informal way of
+% perceiving the contribution or by discussing future directions that can extend
+% the contribution.
 
-% For example, the first paragraph may summarize the results, focusing on their meaning.
+% For example, the first paragraph may summarize the results, focusing on their
+% meaning.
 
-% The second through fourth paragraphs may deal with potential weaknesses and with how the literature alleviates concerns or how future experiments can deal with these weaknesses.
+% The second through fourth paragraphs may deal with potential weaknesses and
+% with how the literature alleviates concerns or how future experiments can deal
+% with these weaknesses.
 
 % The fifth paragraph may then culminate in a description of how the paper moves
 % the field forward.
 
-%Step by step, the reader thus learns to put the paper’s conclusions into the right context.
+%Step by step, the reader thus learns to put the paper’s conclusions into the
+%right context.
+
+
+\todo[inline]{taylor it to points mentioned in the introduction (full circle)}
+
+
+\paragrap{intro}
 We used two naturalistic stimuli + annotation + GLM and investigated if we could
 isolate the PPA not just in an group average analysis but also on an individual
 level. We focus on the audio-only stimulus but performed a analysis for the AV
@@ -1424,9 +1487,9 @@ one aspect that can be investigated with a complex naturalistic stimulus.
 % AV
 On individual level, mixed results for AV stimulus.
 % individual differences
-Individual differences when seeing a whole picture with many features vs. stream
-of serial auditory information providing incidential cues; spatial attention?
-\todo[inlin]{which contrast works better in which subjects?}
+Individual differences when seeing a whole picture with many features vs.
+serialc auditory stream of information providing incidential cues; spatial attention?
+\todo[inline]{which contrast works better in which subjects?}
 
 % AO vs. AV
 AO vs. AV\dots
@@ -1440,7 +1503,7 @@ AO vs. AV\dots
 visual field}.
 
 
-\subsection{shortcommings}
+\subsection{shortcomings}
 
 % spatial cues can belong to different categories
 setting\_new ist häufig vermischt mit anderer Kategorie "ein Arzt", "ein alter
