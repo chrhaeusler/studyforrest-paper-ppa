@@ -181,7 +181,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     legendAxis = fig.add_subplot(grid[12:, :6])
 
     blue = mpl.patches.Patch(color='#2474b7',
-                             label='descriptive nouns (7 contrasts)')
+                             label='descriptive nouns (8 contrasts)')
     red = mpl.patches.Patch(color='#f03523',
                             label='movie cuts (5 contrasts)',)
     black = mpl.patches.Patch(color='#454545',
