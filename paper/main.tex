@@ -126,10 +126,10 @@ multiple clusters in occipital cortex under visual than haptic stimulation
 (Figure 2B; Table S2)''}
 
 \todo[inline]{following phrasing might be strange but necessary to delineate
-from Huth (2016); good voxel-wise semantic modeling regarding places in PPA but
-imo that does not say anything about excitation/inhibition; interestingly Huth
-mentions PPA during talks but it is not discussed in any paper and despite being
-promised none of his group came up with a paper regarding that topic}
+from Huth (2016); they do voxel-wise semantic modeling regarding places in PPA
+but imo that does not say anything about excitation/inhibition; interestingly
+Huth mentions PPA during talks but it is not discussed in any paper and despite
+being promised none of his group came up with a paper regarding that topic}
 % Aziz (2008): place related sentences
 To our knowledge only one study \citep{aziz2008modulation} investigated how
 hemodynamic activity in the PPA differs between stimulus features of spoken
@@ -375,6 +375,7 @@ visual localizer experiment (e.g. \texttt{geo}, \texttt{object}).
 Other categories were created to semantically cluster some remaining nouns into
 additional categories (e.g. \texttt{fname}, \texttt{furniture})
 % problem with hierarchical categories
+\todo[inline]{compare the following with Methods: AO contrasts \& Discussion}
 Notably, the categories \texttt{setting\_new} and \texttt{setting\_rec}
 comprise not just words that describe an abstract location (e.g. ``in
 Greenbow'') or a setting as whole (e.g. ``the platoon wades through a rice
@@ -554,18 +555,17 @@ occipital cortex while minimizing intersection with the eyeballs. The field of
 view was centered on the approximate location of Heschl's gyrus.
 % motion correction
 EPI images were online-corrected for motion and geometric distortions [Oh, S. et
-al. 2012; In, M. \& Speck, O., 2012; Chung, J. et al., 2011]. Auxiliary scans
-for slice alignment and motion- and distortion-correction were performed at the
-beginning of the first fMRI recording session and also after the break at the
-start of the recording for the second half of the movie.\todo{references to bib}
-
+al. 2012; In, M. \& Speck, O., 2012; Chung, J. et al., 2011]\todo{references to
+bib if this paragraph stays in the paper}. Auxiliary scans for slice alignment
+and motion- and distortion-correction were performed at the beginning of the
+first fMRI recording session and also after the break at the start of the
+recording for the second half of the movie.
 % AV & VIS
 In the AV and VIS study, a whole-body \unit[3]{Tesla} Philips Achieva dStream
 MRI scanner equipped with a 32 channel head coil acquired T2*-weighted
-echo-planar images (gradient-echo, \unit[2]{s} repetition time,
-\unit[30]{ms} echo time, \unit[90]{$^{\circ}$} flip angle, \unit[1943]{Hz/Px}
-bandwidth, parallel acquisition with sensitivity encoding (SENSE) reduction
-factor 2).
+echo-planar images (gradient-echo, \unit[2]{s} repetition time, \unit[30]{ms}
+echo time, \unit[90]{$^{\circ}$} flip angle, \unit[1943]{Hz/Px} bandwidth,
+parallel acquisition with sensitivity encoding (SENSE) reduction factor 2).
 % slices
 35 axial slices (thickness \unit[3.0]{mm}, \unit[10]{\%} inter-slice gap) with
 \unit[80 $\times$ 80]{voxels} (\unit[3.0 $\times$ 3.0]{mm} of in-plane
@@ -578,7 +578,8 @@ congruent geometry across paradigms.
 
 % no. of volumes
 A total of 3599 volumes were recorded for each participant in each of the
-naturalistic stimulus paradigms (451, 441, 438, 488, 462, 439, 542, and 338 volumes for segment 1–8).
+naturalistic stimulus paradigms (451, 441, 438, 488, 462, 439, 542, and 338
+volumes for segment 1–8).
 
 
 \subsection{Preprocessing}
@@ -792,10 +793,14 @@ fg\_av\_ger\_ud & +++++???+++++ & \avFgavgerudAll & \avFgavgerudI & \avFgavgerud
 
 % reference to figure ``correlation of regressors''
 We computed the Pearson coefficients of the regressors across the eight segments
-of both naturalistic stimuli. Results demonstrate no to minor correlations
-(s. \ref{fig:reg-corr}) which suggest the models should not suffer from low
-detection power due to shared variance among regressors.\todo{sounds meh but
-don't know how do write it better}
+of both naturalistic stimuli. Results demonstrate no to minor correlations (s.
+\ref{fig:reg-corr}) which suggest the models should not suffer from low
+detection power due to shared variance among regressors.
+%
+\todo{sounds meh but don't know how do write it better; results of correlations
+are given here already; maybe the short discussion (cf. very beginning of
+discussion) of these correlation could be put here too which will saves space in
+the main text; but mixing methods/results/discussion is not absolutely "clean"}
 
 % temporal derivatives
 Temporal derivatives were included in the design matrix to compensate for
@@ -833,13 +838,14 @@ We assumed all contrasts could in principle isolate the PPA. Nevertheless, we
 also assumed contrasts would differ in their isolation performance because they
 differ in how well the included event categories reflect on average the
 preferred stimulus type processed in the PPA.
-%
+% selection of the primary contrast
 Thus for each stimulus, we chose one ``primary contrast'' for a detailed report
 and discussion of the group-level and subject-specific results. Primary
 contrasts were chosen based on how well the used categories on average were
 assumed to match the preferred stimulus type in balance with the amount of
 available data / events.
 
+\todo[inline]{compare the following with annotation \& Discussion}
 % intro
 In context of the AO stimulus, the categories \texttt{se\_new} and
 \texttt{se\_old} were problematic for a couple of reasons and thus are not
@@ -854,11 +860,17 @@ in case the narrator uses these words to indicate a switch from one setting to
 another (e.g. ``Jenny as teenager'', ``near and old bus'')
 % soundscapes forestalls narrator
 (c) the narrator is often lacking behind a short dialogue or a change of the
-soundscape that already cue a change of settings.\todo{cf. contrast that uses
+soundscape that already cue a change of settings.
 cuts but in AO stimulus}
 % conclusion
 Hence, we assumed contrasts that (exclusively) used these two categories would
 induce noise and would be less successful in isolating the PPA.
+
+% negative control contrasts
+Five $t$-contrasts (see Table \ref{tab:ao-contrasts}) we created as negative
+controls to test if increased activation in the PPA was correlated with
+moments of cuts and therefore possibly correlated with a accompanying change in
+the soundscape.\todo{all essentially almost null results}
 
 % furniture
 We did not use the category ``furniture'' (\texttt{furn}) as a
@@ -867,12 +879,6 @@ usually big and heavy. In a serial stream of auditory information, participants
 could perceive furniture-related nouns as either a geometry-defining local scene
 element or as an isolated object. Hence we did not use this category as
 regressor of interest to reduce noise.
-
-% negative control contrasts
-Five $t$-contrasts (see Table \ref{tab:ao-contrasts}) we created as negative
-controls to test if increased activation in the PPA was correlated with
-moments of cuts and therefore possibly correlated with a accompanying change in
-the soundscape.\todo{cf. contrast that uses cuts but in AO stimulus}
 
 
 \begin{table*}[t]
@@ -938,6 +944,10 @@ settings and cuts within a recurring locale.
 % negative control
 Five additional $t$-contrasts we created for negative control purposes (see
 Table \ref{tab:av-contrasts}).
+\todo[inline]{all null results; except cope 10 (nouns of narrator but in movie):
+right PPA, bilat sup. lat. occ. cortec, LOC (l/r), right superior parietal
+lobe).
+
 
 \begin{table*}[t]
     \caption{Contrasts of parameter estimates for the analysis of the audio-visual movie (AV).
@@ -1060,7 +1070,7 @@ and lingual gyrus \todo{the clusters are small but that's what the
 Harvard-Oxford Atlas suggests, clusters are at the border of the reported areas;
 cf. location of PPA in the introduction clusters}.
 % precuneus
-Additionally , two additional clusters are located in the ventral precuneus
+Additionally, two additional clusters are located in the ventral precuneus
 extending into the retrosplenial cortex.
 % LOC
 Finally, the contrast yielded two homologous clusters in the superior lateral
@@ -1288,11 +1298,13 @@ show higher $z$-value in the AO stimulus.
 
 \subsection{stability contrasts}
 
+\todo[inline]{I consider tables of significant clusters for every contrast as
+overkill. Tables for just the ``primary contrast'', seems more appropriate; the
+level of details explained depends on the discussion; atm moment I feel it
+should be discussed more than expected; hence, following some notes as to dos}
+
 \todo[inline]{as mentioned before: this section would also make sense to be at
 the top or middle of the results; I moved it back and forth A LOT already}
-
-\todo[inline]{I consider tables of significant clusters for every contrast as
-overkill. Tables for just the ``primary contrast'', seems more appropriate}
 
 \todo[inline]{s. comments for overview of sign. clusters in all contrasts}
 
@@ -1327,23 +1339,28 @@ In the analysis of the AO stimulus, six of eight contrasts show significant
 bilateral clusters in anterior regions of the group PPA
 overlap.\todo[inline]{temporal occipital fusiform gyrus according to
 Harvard-Oxford Cortical Structural Atlas}
-% Precuneus = retrosplenial cortex ?
-Seven of eight contrasts show bilaterally significant clusters in the
-retrosplenial region (and ventral precuneus).
 % statement/answer
 This suggest results are reproducible in a variety of contrasts and do not
 depend on the design of one specific contrasts.
 % individual results
 Notably, we chose one contrast to look into individual results of all subjects
 but individually a contrast different from the primary contrast might lead to
-better individual localization results.
+better individual localization results.\todo{concluding statements often feel
+like interpretation/discussion to me}
+
+% Precuneus = retrosplenial cortex ?
+\todo[inline]{Seven of eight contrasts show bilaterally significant clusters in
+the retrosplenial region (and ventral precuneus)}.
+
 % transverse occipital sulcus
 \todo[inline]{transverse occipital sulcus / occipital place area? in 6 of 8
-contrasts}
+contrasts (4 bilaterally)}
+
 % confounds
-but confounds: right superior temporal gyrus (4 contrasts); left superior
-temporal gyrus (3 contrasts); some prefrontal clusters that show up in two
-contrasts
+\todo[inline]{``other clusters'' (confounds?): right superior temporal gyrus (4
+contrasts); left superior temporal gyrus (3 contrasts); some prefrontal clusters
+that show up in two contrasts}
+
 % control in AO contrasts
 \todo[inline]{control contrast essentially almost all none results; s. comments}
 
@@ -1367,9 +1384,11 @@ comparison.
 % PPA
 All five AV contrasts yielded significant bilateral clusters in (temporal)
 occipital, fusiform cortex showing congruency with the group overlap of
-individual PPA ROIs.
+individual PPA ROIs.\todo{must be in posterior PPA as well}
 % lingual gyrus
-In three contrasts, these homologous clusters extend into the lingual gyri.
+In three contrasts, these homologous clusters extend into the lingual
+gyri.\todo[inline]{check regions and contrasts that are located outside of the
+PPA; border of lingus belongs to PPA}
 % RSC
 Further, three contrasts show significant homologous clusters in the RSC.
 % LOC
@@ -1377,7 +1396,9 @@ Lastly, four contrasts show significant homologous clusters in lateral occipital
 cortices.
 % statement/answer
 Here again, we can show that results can in principle be accomplished by varying
-the design of the contrasts.
+the design of the contrasts.\todo{concluding statement =
+interpretation/discussion?}
+
 % control AV
 \todo[inline]{control in AV stim: se\_new > se\_old (nouns in AV stim): LOC
 (l/r), right PPA, bilateral sup. lat. occ. c., superior parietal lobe (right)}
@@ -1568,7 +1589,8 @@ that span the group overlap of individual PPAs from anterior to posterior and
 expand into retrosplenial regions.
 % difference in location/size to AO and VIS
 Clusters also expand into more posterior regions (occipital fusiform gyrus,
-lingual gyrus, and intracalcarine cortex) \todo{what overlaps with group ROI?}
+lingual gyrus, and intracalcarine cortex)\todo{which of these regions overlap
+with group ROI? which regions show clusters but do not overlap with PPA?}
 % confound of higher perception
 This can be attributed to the fact that we averaged the content of individual
 frames after a cut and did not control for confounding features like depicted
@@ -1579,7 +1601,7 @@ clusters spanning the intracalcarine cortex.
 % further studies
 Hence, further studies focusing on visual perception should annotate and model
 visual features of naturalistic stimuli more rigorously.
-\todo[inline]{concluding statement to cross-modality of results?}
+\todo[inline]{concluding statement regarding AV vs AO and cross-modality of results?}
 
 
 \subsection{stability of contrasts}
