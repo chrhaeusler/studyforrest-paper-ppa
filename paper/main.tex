@@ -190,7 +190,7 @@ eickhoff2020towards}).
 % open questions
 This raises the question how the PPA behaves under life-like conditions, and how
 group results a driven by individuals subjects especially in response to
-audio-only stimulation\todo{``audio-only'' sounds meh?, MIH: Yes, and comes out of nowhere}.
+auditory stimulus\todo{this comes out of nowhere}.
 
 % naturalistic stimuli
 Paradigms using naturalistic stimuli like movies
@@ -224,8 +224,8 @@ Results revealed that corresponding movie frames depicted indoor and outdoor
 scenes including buildings and open fields.
 % summary naturalistic stimuli
 Nevertheless, both studies used an audio-visual stimulus and again do not
-address the question how the investigated functional areas respond during an
-audio-only stimulus.
+address the question how the investigated functional areas respond during
+auditory stimulation.
 
 \todo[inline]{mih: Possibly cite DuPre (2019) and declare that this study is a
     concrete realization; COH: I read it but don't know what/how to cite it for
@@ -247,7 +247,7 @@ We do this by analyzing our data by constructing GLM contrasts as canonically
 used to analyze data from tightly controlled paradigms.
 % focus on audio-description
 Encouraged by \citep{aziz2008modulation}, we focus on the audio-description as
-an audio-only paradigm. We further test the audio-description's localization
+an exclusively auditory paradigm. We further test the audio-description's localization
 performance of a ``visual area'' in individual study participants by comparing
 our results to results of a dedicated visual localizer experiment done with the
 same participants \citep{sengupta2016extension}.
@@ -1159,13 +1159,14 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
         head template (gray).
         Light gray: The audio-description's field-of-view
         (cf. \citep{hanke2014audiomovie}).
-        Blue: the primary $t$-contrast for the audio-description comparing
-        geometry-related nouns to non geometry-related nouns spoken by the
-        audio-description's narrator (\texttt{geo, groom > all non-geo}).
-        Red: the primary $t$-contrast for the movie comparing cuts to a new
-        setting with cuts to a familiar perspective (\texttt{vse\_new >
-        vpe\_old}).
-        Black: outline of overlapping individual PPA ROIs      \citep{sengupta2016extension}.}
+        Black: outline of overlapping individual PPA ROIs.
+        The results of audio-description's primary $t$-contrast (blue) that
+        compares geometry-related nouns to non geometry-related nouns spoken by
+        the audio-description's narrator (\texttt{geo, groom > all non-geo})
+        are overlaid over the movie's primary $t$-contrast (blue) that compares
+        cuts to a new setting with cuts to a familiar perspective
+        (\texttt{vse\_new > vpe\_old}).
+   \citep{sengupta2016extension}.}
     \label{fig:group-slices}
 \end{figure*}
 
@@ -1241,17 +1242,16 @@ only one cluster in the right hemisphere.
     brains are aligned via non-linear transformation to a study-specific T2*
     group template that is co-registered to the MNI152 template with an affine
     transformation (12 degrees of freedom).
-    Light gray: The
-    audio-description's field-of-view (cf.  \citep{hanke2014audiomovie}).
+    The results of audio-description's primary $t$-contrast (blue) that
+    compares geometry-related nouns to non geometry-related nouns spoken by
+    the audio-description's narrator (\texttt{geo, groom > all non-geo})
+    are overlaid over the movie's primary $t$-contrast (blue) that compares
+    cuts to new setting with cuts to a familiar perspective
+    (\texttt{vse\_new > vpe\_old}).
     Black: outline of the subject-specific PPA ROIs.
-    Blue:
-    the primary $t$-contrast for the audio-description comparing
-    geometry-related nouns to non-geometry-related nouns spoken by the
-    audio-description's narrator (\texttt{geo, groom > all non-geo}).
-    Red: the
-    primary $t$-contrast for the movie comparing cuts to an unfamiliar setting
-    with cuts within an familiar perspective (\texttt{vse\_new > vpe\_old}).
-    } \label{fig:subs-thresh-ppa} \end{figure*}
+    Light gray: The audio-description's field-of-view (cf.
+    \citep{hanke2014audiomovie}).}
+\label{fig:subs-thresh-ppa} \end{figure*}
 
 
 \subsection{Bland-Altman-Plots}
@@ -1412,15 +1412,14 @@ interpretation/discussion?}
     \includegraphics[width=\linewidth]{figures/stability-slices}
     \caption{Stability of contrasts. Overlap of significant clusters (Z>3.4;
         p<.05, cluster corrected) of contrasts created to isolate the PPA.
-        Contrasts provide decreasing congruency with the spatial layout
-        hypothesis and/or progressively less data/events. The overlap across
-        contrasts is overlaid on the MNI152 T1-weighted head template (gray).
+        The audio-description's contrasts 1-8 (blue; \ref{tab:ao-contrasts})
+        are overlaid over the audio-visual movie's contrasts 1-5 (red;
+        \ref{tab:av-contrasts}), both on top of the MNI152 T1-weighted head
+        template (gray).
+        Black: outline of overlapping individual PPA ROIs.
         Light gray: The audio-description's field-of-view (cf.
-        \citep{hanke2014audiomovie}). Blue: contrasts 1-8 for the
-        audio-description (see Table \ref{tab:ao-contrasts}. Red: contrasts 1-5
-        for the audio-visual movie (see Table \ref{tab:av-contrasts}. Black:
-        outline of overlapping individual PPA ROIs
-        \citep{sengupta2016extension}.} \label{fig:stability-slices}
+        \citep{hanke2014audiomovie}).}
+    \label{fig:stability-slices}
     \end{figure*}
 
 
