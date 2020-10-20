@@ -1081,6 +1081,8 @@ Finally, the contrast yielded two homologous clusters in the superior lateral
 occipital cortex.
 \todo[inline]{any concluding statement here or merely report the clusters?}
 
+\todo[inline]{change coordinates of figure to z=-11 as it is in the slices of
+individuals}
 
 % AV intro
 For cross-modal comparison purposes, we also analyzed data from the audio-visual
@@ -1196,7 +1198,7 @@ in the accompanying dataset.
 % results in detail voxels of significant clusters in PPA ROI (and  RSC
 % liberally)
 % sub-01 (m): PPA (l/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (-/-)
-% sub-02 (m): PPA (l/r), AO (-/-), AV (-/r); RSC: AO (-/-), AV (-/-)
+% sub-02 (m): PPA (l/r), AO (-/-), AV (l/-); RSC: AO (-/-), AV (-/-)
 % sub-03 (f): PPA (l/r), AO (-/-), AV (-/r); RSC: AO (-/-), AV (-/-)
 % sub-04 (f): PPA (-/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (-/-) !
 % sub-05 (m): PPA (l/r), AO (-/-), AV (-/-); RSC: AO (-/-), AV (-/-)
@@ -1220,16 +1222,17 @@ the PPA.
 % AO
 In the current analysis of the AO stimulus, we find significant bilateral
 clusters in nine subjects, and one significant cluster in the left hemisphere of
-sub-09.
+sub-09 that within or overlapping with the PPA ROI.
 % subj-04
 In sub-04, two homologous clusters are apparent, whereas the dedicated localizer
-yielded only one cluster in the right hemisphere.
+(and AV stimulus) yielded only one cluster in the right hemisphere.
 % AV
-For the AV stimulus, results show homologous clusters in five subjects, and
-unilateral right clusters in seven subjects (of which one subjects yielded a
-unilateral cluster in the dedicated localizer).
+For the AV stimulus, results show homologous clusters in five subjects,
+unilateral right clusters in sixn subjects (of which one subjects yielded a
+unilateral cluster in the dedicated localizer), and a unilateral left cluster in
+one subject.
 % difference to dedicated localizer
-We find bilateral clusters in sub-20, whereas the dedicated localizer yielded
+We find homologous clusters in sub-20, whereas the dedicated localizer yielded
 only one cluster in the right hemisphere.
 
 \todo[inline]{concluding statements?}
@@ -1238,20 +1241,27 @@ only one cluster in the right hemisphere.
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
     \caption{Fixed-effects individual-level GLM results (Z>3.4, p<.05
-    cluster-corrected). To facilitate comparisons across subjects, individual
-    brains are aligned via non-linear transformation to a study-specific T2*
-    group template that is co-registered to the MNI152 template with an affine
-    transformation (12 degrees of freedom).
-    The results of audio-description's primary $t$-contrast (blue) that
-    compares geometry-related nouns to non geometry-related nouns spoken by
-    the audio-description's narrator (\texttt{geo, groom > all non-geo})
-    are overlaid over the movie's primary $t$-contrast (blue) that compares
-    cuts to new setting with cuts to a familiar perspective
-    (\texttt{vse\_new > vpe\_old}).
-    Black: outline of the subject-specific PPA ROIs.
-    Light gray: The audio-description's field-of-view (cf.
-    \citep{hanke2014audiomovie}).}
-\label{fig:subs-thresh-ppa} \end{figure*}
+        cluster-corrected).
+        Individual brains are aligned via non-linear
+        transformation to a study-specific T2* group template that is
+        co-registered to the MNI152 template with an affine transformation (12
+        degrees of freedom).
+        The results of audio-description's primary
+        $t$-contrast (blue) that compares geometry-related nouns to non
+        geometry-related nouns spoken by the audio-description's narrator
+        (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
+        primary $t$-contrast (blue) that compares cuts to new setting with cuts
+        to a familiar perspective (\texttt{vse\_new > vpe\_old}).
+        Black:
+        outline of subject-specific PPA ROIs.
+        Light gray: The
+        audio-description's field-of-view (cf. \citep{hanke2014audiomovie}).
+        To facilitate comparisons across subjects, we chose the same horizontal
+        slice (x=-11) for all subjects. Thus, the figure does not depict the
+        left cluster of the AV stimulus in sub-09 and sub-18, and the right
+        cluster of the AV stimulus in sub-15.}
+    \label{fig:subs-thresh-ppa}
+\end{figure*}
 
 
 \subsection{Bland-Altman-Plots}
