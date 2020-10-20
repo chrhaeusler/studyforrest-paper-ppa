@@ -155,7 +155,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     # coronal slice
     ax2 = fig.add_subplot(grid[0:12, 4:8])
     mode = 'z'
-    coord = [-9]
+    coord = [-11]
     # call the function that handles details of the plotting
     plot_stability_slice(mode,
                          coord,
@@ -332,7 +332,7 @@ def process_group_averages(outfpath):
     # plot axial / horizontal plane
     ax2 = fig.add_subplot(grid[0:12, 4:8])
     mode = 'z'
-    coord = [-9]
+    coord = [-11]
     plot_grp_slice(mode, coord,
                    BIN_MASK_GRP,
                    MOVIE_GRP,
