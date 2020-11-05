@@ -366,7 +366,7 @@ not just words that describe an abstract location (e.g. ) or a setting as whole
 (e.g. ``in Greenbow'', ``in a disco'', ``the platoon wades through a rice
 field''). They also comprise words that could count as a member of another
 categories in case the narrator uses these words to indicate a switch from one
-setting to another (e.g. ``near an old bus'').
+setting to another (e.g. ``Jenny as a teenager'').
 % reference to table with rules and examples
 A complete overview of all 19 categories, the rule for a word to belong to a
 category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
@@ -653,7 +653,8 @@ pooled resulting in eleven new categories that served as experimental conditions
 % setting beats other category
 Events that fell into one of the two setting-related categories
 (\texttt{se\_new} or \texttt{se\_old}) but also into another category were
-treated as belonging to the setting-related category (e.g. ``near an old bus'').
+treated as belonging to the setting-related category (e.g. ``Jenny as a
+teenager'').
 % modeling as boxcar function
 Events were were modeled as boxcar function from onset to offset of each word.
 % null regressors
@@ -853,7 +854,7 @@ described scene would be perceptually richer,
 % hierarchical categories
 (b) they also comprise words that could count as a member of another category in
 case the narrator uses these words to indicate a switch from one setting to
-another (e.g. ``Jenny as teenager'', ``near an old bus'')
+another (e.g. ``Jenny as a teenager'')
 % soundscapes forestalls narrator
 (c) the narrator is often lacking behind a short dialogue or a change of the
 soundscape that already cue a change of settings.  cuts but in AO stimulus
@@ -1848,6 +1849,10 @@ todo[inline]{in 11 subjects there are voxels of higher z-score (in the PPA ROI)
     all be in the anterior part of the PPA ROI, i.e. the area that belongs to
     the significant cluster of the AO contrast}
 
+\todo[inline]{shortcoming: no task to attend to spatial information}
+
+\todo[inline]{different level of alertness during paradigms}
+
 % intro
 In order to test the audio-description's performance as a functional localizers,
 we also compared the results of the audio-description's primary contrast to
@@ -1917,14 +1922,15 @@ landmarks ((\texttt{geo}; often buildings or other single aspects of a whole
 scene) and elements defining the geometry of a room/locale (\texttt{groom}) to
 non-spatial cues.
 % we did not choose se\_new and se\_old
-Notably, we did not choose the categories that contained switches from one
-setting to another (texttt{se\_new} and texttt{se\_old}) which one might assume
-to contain the auditory equivalent to the ``optimal'' visual stimulus type.
+We did not choose the categories that contained switches from one setting to
+another (\texttt{se\_new} and \texttt{se\_old}) which one might assume to
+contain the auditory equivalent to the ``optimal'' visual stimulus type.
 % why not se\_new or se\_old
-These categories were actually heterogeneous: they rarely contained whole (and
-thus vague) descriptions of landscapes (e.g. ``in a football stadium'',
-``Forrest is running through the jungle'') but mostly landmarks or buildings,
-and also non-spatial cues.\todo{repeat examples from method section}.
+The categories \texttt{se\_new} and \texttt{se\_old} were actually
+heterogeneous: they rarely contained whole and thus a vague verbal descriptions
+of landscapes (e.g. ``in a football stadium'', ``Forrest is running through the
+jungle'') but mostly landmarks or buildings, and also non-spatial
+cues (e.g. ``Jenny as a teenager``).
 % further studies
 Given that humans can identify the gist of a rich visual scene within the
 duration of a single fixation \citep{henderson2003human} further studies might
@@ -1932,14 +1938,20 @@ investigate if categories of holistic but vague verbal descriptions of
 landscapes correlate with differential hemodynamic activity in the PPA compared
 to more concrete spatial cues.
 
-% AO: stimulus categories
-For example in the AO stimulus, nouns of the narrator that cue a switch to
-another setting belong to different categories (s. above).\todo[inline]{Number
-of events in which contrasts?}
+% future studies
+Futures studies should chose a auditory narrative that better samples the
+feature space correlating with the brain process to be investigated.
+% future studies: stimulus material
+Future studies should probably use a different narrative that models the feature
+space of spatial information ``better'' (provides more events that are more
+easily classified to belong to distinctive categories).
+
+\tod[inline]{hypothesis of increased activation correlation with changes in the
+    soundscape; cf. control contrasts (e.g. \texttt{vse\_new} >
+    \texttt{pe\_old}).
 % foreshadowing of narrator by soundscape
 Further, verbal cues are regularly forestalled by changes of the
-soundscape.\todo{cross-modal control contrasts; all negative results at moment
-of cuts but vse\_new > pe\_old): right RSC.}
+soundscape.
 % arnott
 \todo[inline]{e.g. arnott2008crinkling find increased activations of PPA to
 sound made by objects}
@@ -1947,41 +1959,41 @@ sound made by objects}
 We hypothesize that not just semantic information but also the mere changes of a
 soundscape that cues a listener about a setting's spatial layout of could
 correlate with increased activity in the PPA.
-% conclusion: AO and AV stability
-In summary, our results across add further evidence that model-driven analyses
-can be run on data from naturalistic stimuli to isolate brain activity
-correlating with specific perceptual processes.
-% but
-Nevertheless isolation performance relies on how well the model captures
-different aspects of the stimuli's feature space.
 
-% future studies: stimulus material
-Future studies should probably use a different narrative that models the feature
-space of spatial information ``better'' (provides more events that are more
-easily classified to belong to distinctive categories).
+
 
 
 \subsubsection{AV stimulus}
 
+\todo[inline]{imo opening the pandora's box of the AV shortcomings especially at
+the end of the paper should be kept to a minimum of text}
+
+% focus of study
+The focus of the current study was to investigate if signficantly increased
+hemodynamic activity in the PPA correlates with spatial information (compared to
+``non-spatial'' information) during a naturalistic auditory stimulus.
 % shortcomings
-visual confounds all over the place; obvious solution: annotate frames and track
-focus of attention (but gist of a frame vs. attentional focus)
-
-Individual differences when seeing a whole picture with many features vs. serial
-auditory stream of information providing incidental cues; spatial attention?
-
+Results of the AV stimulus that we ran as a conceptual control are tempered by
+using different kind of movie cuts regardless of the visual content of the movie
+frame after the respective cuts.
+% which leads to the ``blurred'' results
+Hence we got visual confounds / clusters extending in to early visual areas.
 % further studies
 Since the capability to isolate clusters or networks correlating with specific
 perceptual (or cognitive) processes is influenced by the amount of annotated
 stimulus features further studies focusing on visual perception should annotate
-and model visual features of naturalistic stimuli more rigorously.\todo{ouf,
-okay...}
+and model visual features of naturalistic stimuli more rigorously.
+% solution
+Future studies that aim to use a movie to localize different visual areas should
+extensively annotate the content of frames (e.g. using the open-source solution
+``Pliers'' for feature extraction from a visual naturalistic stimulus;
+\citep{mcnamara2017developing}) and record the subject's visual attention via
+eye-tracking.
+
 
 \subsubsection{pros \& cons of natural stimuli (esp. narrative) as localizer}
 
-\todo[inline]{shortcoming: no task to attend to spatial information}
 
-\todo[inline]{different level of alertness during paradigms}
 
 
 
@@ -2014,6 +2026,14 @@ Why we used a traditional GLM...
 
 % results
 Results: Our results demonstrate...
+
+% conclusion: AO and AV stability
+In summary, our results across add further evidence that model-driven analyses
+can be run on data from naturalistic stimuli to isolate brain activity
+correlating with specific perceptual processes.
+% but
+Nevertheless isolation performance relies on how well the model captures
+different aspects of the stimuli's feature space.
 
 % conclusion auditory localizer
 Conclusion: Thus, a complex but naturally engaging auditory stimulus like an
