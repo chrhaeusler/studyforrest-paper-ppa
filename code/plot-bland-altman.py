@@ -170,10 +170,14 @@ def process_df(subj, zmaps_df, out_path):
     ppa_ind_masked1 = zmap1.as_matrix()[zmaps_df['ppa_ind'].as_matrix() > 0]
     ppa_ind_masked2 = zmap2.as_matrix()[zmaps_df['ppa_ind'].as_matrix() > 0]
 
+    ao_ind_masked1 = zmap1.as_matrix()[zmaps_df['ao_ind'].as_matrix() > 0]
+    ao_ind_masked2 = zmap2.as_matrix()[zmaps_df['ao_ind'].as_matrix() > 0]
+
     datasets = [
         [zmap1, zmap2],
         [ppa_grp_masked1, ppa_grp_masked2],
-        [ppa_ind_masked1, ppa_ind_masked2]
+        [ppa_ind_masked1, ppa_ind_masked2],
+        [ao_ind_masked1, ao_ind_masked2]
     ]
 
     means_list = [compute_means(data1, data2) for data1, data2 in datasets]
@@ -194,6 +198,7 @@ def process_df(subj, zmaps_df, out_path):
 
     ax_scatter.text(5.1, 5.8, subj, fontsize=16, fontweight='bold')
 
+    # plot voxel within occipitotemporal cortex
     plot_blandaltman(ax_scatter,
                      means_list[0],
                      diffs_list[0],
@@ -201,6 +206,7 @@ def process_df(subj, zmaps_df, out_path):
                      c='darkgrey',
                      s=2)
 
+    # plot voxels within PPA group overlap
     plot_blandaltman(ax_scatter,
                      means_list[1],
                      diffs_list[1],
@@ -208,11 +214,20 @@ def process_df(subj, zmaps_df, out_path):
                      c='royalblue',
                      s=2)
 
+    # plot voxels within individual PPA ROI
     plot_blandaltman(ax_scatter,
                      means_list[2],
                      diffs_list[2],
                      alpha=1,
                      c='r',
+                     s=2)
+
+    # plot voxels within (thresholded) individual AO zmap
+    plot_blandaltman(ax_scatter,
+                     means_list[3],
+                     diffs_list[3],
+                     alpha=0.5,
+                     c='y',
                      s=2)
 
     plot_histogram(ax_xhist, ax_yhist,
@@ -229,6 +244,15 @@ def process_df(subj, zmaps_df, out_path):
                    means_list[2], diffs_list[2],
                    alpha=1,
                    color='r')
+
+    try:
+        plot_histogram(ax_xhist, ax_yhist,
+                       means_list[3], diffs_list[3],
+                       alpha=1,
+                       color='y')
+
+    except ValueError:
+        print(subj, 'has no significant cluster in primary AO contrast')
 
     # save that shit
     out_file = ('%s_bland-altman.png' % subj)
@@ -345,7 +369,7 @@ if __name__ == "__main__":
     subjs = [re.search(r'sub-..', string).group() for string in audio_fpathes]
     subjs = sorted(list(set(subjs)))
 
-    for subj in subjs:  # use subject 14 only [7:8]
+    for subj in subjs[:]:  # use subject 14 only [7:8]
         print('\nProcessing', subj)
         # load subject-specific FOV used during scannign of audio-description
         aoFOVimg = nib.load(AO_FOV_PATTERN.replace('sub-*', subj))
@@ -394,6 +418,19 @@ if __name__ == "__main__":
         ppaIndData = fmri_dataset(ppa_fpathes,
                                   mask=occTempMaskData).samples.sum(axis=0)
         zmaps_df['ppa_ind'] = np.ndarray.flatten(ppaIndData)
+
+        # the current subjects's AO thresholded zmap
+        # get the thresholded z-maps
+        aoThreshFpath = aoFpath.replace('cope1.feat/stats/zstat1.nii.gz',
+                                        'cope1.feat/thresh_zstat1.nii.gz')
+
+        if not os.path.exists(aoThreshFpath):
+            subprocess.call(['datalad', 'get', aoThreshFpath])
+
+        aoIndData = fmri_dataset(aoThreshFpath,
+                                  mask=occTempMaskData).samples.sum(axis=0)
+
+        zmaps_df['ao_ind'] = np.ndarray.flatten(aoIndData)
 
         # process the dataframe and do the plotting
         process_df(subj, zmaps_df, outDir)
