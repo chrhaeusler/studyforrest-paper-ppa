@@ -1028,8 +1028,7 @@ Effects; \citep{beckmann2003general, woolrich2004multilevel}.
 by Z>3.4 and a (corrected) cluster significance threshold of p=.05
 \citep{worsley2001statistical}.
 
-% third level
-% model
+% third level model
 The third level analysis which averaged contrast estimates over subjects was
 carried out using FLAME stage 1 with automatic outlier detection
 \citep{beckmann2003general, woolrich2004multilevel, woolrich2008robust}.
@@ -1042,13 +1041,12 @@ Brain regions associated with observed clusters were determined with the Jülich
 Histological Atlas \citep{eickhoff2005toolbox, eickhoff2007assignment} and the
 Harvard-Oxford Cortical Atlas \citep{desikan2006automated} provided by FSL.
 % PPA masks
-PPA ROI masks for individual subjects and a PPA group mask of individual PPA
-overlaps were created from data provided by \citep{sengupta2016extension}.
+PPA region of interest (ROI) masks for individual subjects and a PPA group mask
+of individual PPA overlaps were created from data provided by
+\citep{sengupta2016extension}.
 
 
 \section{Results}
-
-
 
 % study goal
 The goal of this study was to investigate if increased hemodynamic activity in
@@ -1475,9 +1473,10 @@ section, focusing on their meaning}
 
 % previous studies: visual
 Previous studies reported bilaterally increased hemodynamic activity in the PPA
-when participants were watching static pictures of landscape compared to face or
-objects (e.g. \citep{epstein1998ppa, epstein1999parahippocampal}) whereas one
-study using spoken sentences reported mixed results \citep{aziz2008modulation}.
+when participants were watching static pictures of landscape compared to
+pictures of faces or objects (e.g. \citep{epstein1998ppa,
+epstein1999parahippocampal}) whereas one study using spoken sentences reported
+mixed results \citep{aziz2008modulation}.
 % we use similar statistical models but with naturalistic stimuli
 Here, we use statistical models that are similar to previous studies that used
 small sets of experimentally controlled stimuli to investigate hemodynamic brain
@@ -1493,8 +1492,8 @@ paradigm done with the same subjects \citep{sengupta2016extension}.
 % summary of results main finding
 Results of our whole-brain analyses suggest that the perception of verbal
 ``spatial information'' embedded in an auditory narrative contrasted with
-``non-spatial information'' correlate with increased activation in the PPA of
-both hemispheres.
+``non-spatial information'' is correlated with increased activation in the
+anterior PPA of both hemispheres.
 % to do
 \todo[inline]{this is just the main finding; other possible ``honourable''
 mentions like robustness of results, AV stimulus, individual results?}
@@ -1566,35 +1565,32 @@ Our paradigm is similar in that sense that our participants had no behavioral or
 cognitive task (e.g. forming a mental image of the stimuli; cf.
 \citep{ocraven2000mental})  but just had to ``enjoy the audio-description''.
 % but we are still different
-Our paradigm still differs from previous studies because the relevant stimulus
-features were incidentally embedded in a continuous stream of auditory
+Our paradigm still differs from \citep{epstein1998ppa} because the relevant
+stimulus features were incidentally embedded in a continuous stream of auditory
 information.
 % conclusion
-This embeddedness prevents participants from making assumptions about the
+The embeddedness prevents participants from making assumptions about the
 investigated perceptual process by just being exposed to the paradigm and thus
 mimics experiencing the world outside the lab more closely.
 % concluding statement: kinda automatic process
-The lack of a task further suggests verbal spatial information is processed in
-the PPA in an automatic fashion and does not necessarily rely on deliberately
+The lack of a task further suggests that verbal spatial information is processed
+in the PPA in an automatic fashion and does not necessarily rely on deliberately
 paying attention to spatial information.
 
 \todo[inline]{following: how to frame it (better) that AV merely serves as
 conceptual control?; imo should be a small section anyway}
 % AV stimulus
 Group results of the AV stimulus' primary contrast yielded bilateral clusters
-that span the group overlap of individual PPAs from anterior to posterior and
-expand into retrosplenial regions.
+that span the group overlap of individual PPA ROIs from anterior to posterior.
 % difference in location/size to AO and VIS
 Clusters also expand into more posterior regions (occipital fusiform gyrus,
 lingual gyrus, and intracalcarine cortex).\todo{which of these regions (do not
 overlap) with group ROI?}
 % confound of higher perception
-This can be attributed to the fact that we averaged the content of individual
-frames after a cut and did not control for confounding features like depicted
-faces or objects.
-% confounds of lower perception
-It further suggest low-level visual features were not averaged out leading to
-clusters spanning the intracalcarine cortex.
+This larger extension, especially into the primary visual cortex, can be
+attributed to the fact that we averaged the content of individual frames after a
+cut and did not control for confounding features like depicted faces or
+objects,and low-level visual features.
 % cross-modal control purpose?
 \todo[inline]{concluding statement regarding AV vs AO and cross-modality of
 results?}
@@ -1609,13 +1605,14 @@ categories on average matched the stimulus type that we assumed to be
 preferentially processed in the PPA.
 % PPA AO
 Regarding contrasts of the AO stimulus, six of eight contrasts show significant
-bilateral clusters in the anterior part of the group PPA.
+bilateral clusters in the anterior part of the group PPA overlap.
 % PPA AV
 Regarding contrasts of the AV stimulus, all five contrasts show significant
-bilateral clusters in the PPA but extending into posterior regions.
+bilateral clusters in the PPA but extending into more posterior brain regions.
 % results indicate robustness
-Results of the additional contrasts indicate that our findings are robust across
-contrasts and do not depend on the design of one specific contrasts.
+Thus, the results of the additional contrasts indicate that our findings are
+robust across contrasts and do not depend on the design of one specific
+contrasts.
 
 % but
 Nevertheless, results also suggest that localization performance depends on the
@@ -1624,7 +1621,7 @@ amount of available data and how well the feature space is modeled.
 For example, contrast 8 of the AO stimulus (\texttt{se\_new} > texttt{se\_old})
 that used the most heterogeneous categories comprising the least amount of
 events yielded neither a significant cluster in the right-hemispheric nor
-left-hemispheric PPA ROI.
+left-hemispheric PPA.
 % concluding statement
 Hence, investigators using model-driven analyses have to consider how many
 events a stimulus to be chosen may provide and how homogeneous the events to be
@@ -1647,7 +1644,8 @@ job of nuisance regressors?}
 % averaging vs. nuisance regressors
 This suggests that variance correlating with lower level auditory processes was
 not averaged out across trials and nuisance regressors did not do their fucking
-job (it is still kinda innate in the contrast).
+job (still, it is kinda innate in the contrast).\todo{the word ''fuck`` is not
+acceptable}
 % possible reason
 This could be attributed to a possible change of the soundscape and/or increased
 volume when the narrative switches to a new setting.
@@ -1659,111 +1657,162 @@ and test for correlations among variables.
 
 \subsection{consistencies across contrasts}
 
+
 \subsubsection{anterior vs. posterior PPA}
 
 % intro
 Notably, results of the AO contrasts consistently yielded significant clusters
 spatially constrained to the anterior part of the PPA group overlap (and
 anterior part of significant clusters of the AV contrasts).
+% intro to connectivity and object gradient
+Previous studies suggest that posterior and anterior part of the PPA show both a
+difference in connectivity profiles \citep{baldassano2013differential} and a
+gradient in sensitivity to scene and abstract object stimuli
+\citep{arcaro2009retinotopic, aminoff2007parahippocampal,
+baldassano2013differential}.
+% high level summary: posterior
 
-\todo[inline]{following are quotes from references for brainstorming what might
-theoretically make sense}
+\paragraph{posterior: connectivity \& object sensitivity}
+
+% Baldassano (2013): Our description of posterior PPA is in fact similar to the
+% original proposal of Aguirre et al. for a “lingual landmark area” (LLA),
+% slightly posterior to PPA, which was “specialized for the perception of visual
+% stimuli with orienting value” (Aguirre et al., 1998) and carried out bottom-up
+% perceptual analysis to recognize locations or landmarks (Cant and Goodale,
+% 2007; Epstein et al., 1999). Although the LLA is no longer identified as an
+% independent region from PPA in current studies, it is possible that the
+% posterior portion of PPA corresponds to the properties of the proposed LLA,
+% offering an explanation for why this region was localized more posteriorly
+% than the full PPA.
 
 % connectivity
-\citep{aminoff2013role} regarding \citep{baldassano2013differential}: a
-neuroimaging study examining functional connectivity of differences between
-anterior and posterior regions of the PHC show that anterior regions are more
-functionally connected to retrosplenial complex (RSC) and parietal cortices,
-whereas the posterior regions are more functionally connected to visual
-processing regions.
-
-% Baldassano (2013). Differential connectivity with Parahippocampal Place Area
-\citep{baldassano2013differential} in general: anterior and posterior PPA
-exhibit distinct connectivity patterns; object sensitivity in the PPA also has
-an anterior-posterior gradient of sensitivity to scene and abstract object
-stimuli.
-
-% gradient
-Data suggest that PPA might contain identifiable subregions, but subregions
-should not be considered as completely independent modules. Both subregions
-activate selectively to scenes, and the parahippocampal region (at least in
-macaques) is densely selfconnected (Suzuki, 2009), implying that these
-subregions cooperate to build a complete representation of a scene.
-%
-Their distinct connectivity properties, however, suggests that each may be
-involved in specific aspects of visual and cognitive processing involved in the
-overarching goal of scene understanding.
-
-% from Baldassano discussion
-\citep{baldassano2013differential} regarding posterior PPA: posterior regions
-are more functionally connected to visual processing / occipital visual regions;
-stronger responses to abstract objects in posterior PPA; posterior PPA is
-concerned primarily with perception of low-level visual features and object
-shape.
-
-\citep{baldassano2013differential} discussion of posterior PPA: Posterior PPA
-shows a stronger response to abstract objects than anterior PPA, and is more
-strongly connected to all of occipital visual cortex, including LOC and TOS.
-%
-These regions have well-defined retinotopic maps (Arcaro et al., 2009; Nasr et
+The posterior PPA is more functionally connected to the occipital visual cortex,
+including lateral occipital cortex (LOC) and transverse occipital sulcus (TOS)
+\citep{baldassano2013differential}.
+% LOC and TOS
+[These regions have well-defined retinotopic maps (Arcaro et al., 2009; Nasr et
 al., 2011), and are associated with the perception of low-level visual features
-and object shape.
-%
+and object shape \citep{baldassano2013differential}.]
+% object sensitivity
 Previous work has hinted that posterior PPA is more responsive to both simple
-visual textures and objects; Arcaro et al. (2009) found that a posterior portion
-of PPA responded about four times as strongly to a flickering checker-board
-stimulus compared to an anterior portion, and that the response to objects was
-greater than the response to scrambled images only in the posterior portion =>
-posterior PPA may be more visually responsive than anterior PPA.
+visual textures and (abstract) objects \citep{arcaro2009retinotopic,
+baldassano2013differential}.
 %
-Our description of posterior PPA is in fact similar to the original proposal of
-Aguirre et al. for a “lingual landmark area” (LLA), slightly posterior to PPA,
-which was “specialized for the perception of visual stimuli with orienting
-value” (Aguirre et al., 1998) and carried out bottom-up perceptual analysis to
-recognize locations or landmarks (Cant and Goodale, 2007; Epstein et al., 1999).
-%
-Although the LLA is no longer identified as an independent region from PPA in
-current studies, it is possible that the posterior portion of PPA corresponds to
-the properties of the proposed LLA, offring an explanation for why this region
-was localized more posteriorly than the full PPA.
+The posterior portion of PPA responded about four times as strongly to a
+flickering checker-board stimulus compared to an anterior portion, and that the
+response to objects was greater than the response to scrambled images only in
+the posterior portion => posterior PPA may be more visually responsive than
+anterior PPA \citep{arcaro2009retinotopic}.
+% in summary: posterior
+In summary, the posterior PPA is more concerned with perception of low-level
+visual features and object shape.
 
-\citep{baldassano2013differential} regarding anterior PPA: anterior regions are
-more functionally connected to retrosplenial complex (RSC) and parietal
-cortices; anterior PPA is more strongly connected to regions in the default mode
-network (including the parieto-medial temporal pathway)
-%
-anterior PPA is involved in memory and global contextual processing; anterior
-PPA is specifically connected to RSC, cIPL, medial PFC, and the lateral surface
-of the anterior temporal lobe.
-%
-This portion of PPA is less visually responsive
-to both scenes and objects, with notably low sensitivity to abstract object
-stimuli.
 
-\citep{baldassano2013differential} regarding DMN: the set of regions connected
-more strongly to anterior PPA is strikingly similar to the Default Mode Network
-(DMN) (Buckner et al., 2008; Fox et al., 2005; Raichle et al., 2001), which is
-known to include the parahippocampal region.
+\paragraph{anterior: connectivity \& (non) contextual sensitivity}
+
+The anterior PPA is more functionally connected to the RSC and parietal cortices
+(caudal inferior parietal lobe; cIPL)[, medial PFC, and the lateral surface of
+the anterior temporal lobe] \citep{baldassano2013differential}.
+% default mode network
+[anterior PPA is also more strongly connected to regions in the default mode
+network (including the parieto-medial temporal pathway).
+\citep{baldassano2013differential}.]
+% DMN details
+The set of regions connected more strongly to anterior PPA is strikingly similar
+to the Default Mode Network (DMN) (Buckner et al., 2008; Fox et al., 2005;
+Raichle et al., 2001), which is known to include the parahippocampal region (the
+only portions of the DMN that do not show differential connectivity to anterior
+PPA in our data are the rostral portion of the posterior cingulate cortex (PCC)
+and the superior frontal cortex) \citep{baldassano2013differential}.
+% DMN and contextual association
+DMN has been implicated in a large number of internally-focused tasks, one of
+its key roles involves autobiographical memory (Buckner et al., 2008).  Models
+of recognition memory have previously identified parahippocampal cortex as
+primarily encoding spatial context information (Eichenbaum et al., 2007)
+\citep{baldassano2013differential}.
+% Baldassano regarding Aminoff
+Data from \citep{aminoff2007parahippocampal} has suggested that an anterior
+portion of PPA may be involved in recall based on spatial context
+\citep{baldassano2013differential}.
 %
-The only portions of the DMN that do not show differential connectivity to
-anterior PPA in our data are the rostral portion of the posterior cingulate
-cortex (PCC) and the superior frontal cortex.  DMN has been implicated in a
-large number of internally-focused tasks, one of its key roles involves
-autobiographical memory (Buckner et al., 2008).  Models of recognition memory
-have previously identified parahippocampal cortex as primarily encoding spatial
-context information (Eichenbaum et al., 2007).
+Given anterior PPA's connectivity with the DMN.Our results are consistent with
+anterior PPA playing a more central role in memory than posterior PPA
+\citep{baldassano2013differential}.
+
+% object sensitivity
+The anterior PPA is less visually responsive to both scenes and objects, with
+notably low sensitivity to abstract object stimuli, and more involved in memory
+and global contextual processing \todo{quotes???}
 %
-Data from Aminoff et al. (2007) has suggested that an anterior portion of PPA
-may be involved in recall based on spatial context.
-%
-Our results are consistent with anterior PPA playing a more central role in
-memory than posterior PPA, given anterior PPA's connectivity with the DMN. The
-fact that anterior PPA had a lower sensitivity to our abstract object stimuli
-does not necessarily im ply that this region does not use object information.
+The fact that anterior PPA had a lower sensitivity to our abstract object
+stimuli does not necessarily imply that this region does not use object
+information \citep{baldassano2013differential}.
 %
 Previous work has shown that PPA responds to objects that have spatial
 associations (Aminoff et al., 2007), are space-defining (Mullally and Maguire,
 2011), and are navigationally-relevant (Janzen and Van Turennout, 2004).
+
+
+\paragraph{conclusion: subregions}
+
+\todo[inline]{re-read Baldassano (2013)}
+
+\todo[inline]{discussing PPA in context of contextual associations might provide
+a smooth transition to (possibly) following discussion of RSC}
+
+% Aminoff
+\citep{aminoff2013role} in general (s. also \citep{aminoff2007parahippocampal}:
+processing of strong, long-term, contextual associations elicits activity within
+the PHC, as well as the RSC (which includes regions of the retrosplenial cortex,
+extending into the posterior cingulate cortex, and the precuneus), the medial
+prefrontal cortex (MPFC), and the transverse occipital sulcus (TOS) (Figure 2)
+[2,3,59–67].
+% Aminoff: contextual associations in anterior vs. posterior
+\citep{aminoff2007parahippocampal} propose that a subregion of the posterior PHC
+is particularly optimized to process spatially organized contextual
+associations, whereas more anterior regions of the PHC are optimized to process
+contextual associations in other, non-spatial domains.
+% posterior PPA for visual visual associative information
+Spatial contextual associations are a dominant property of places and scenes,
+and thus scenes consistently activate this posterior subregion of the PHC (e.g.,
+PPA; Epstein, 1998).
+%
+We do not argue that the PHC is not sensitive to spaces, places, and spatial
+information, but rather that it is sensitive to spatial stimuli because of the
+associative information (space-related associations) that such stimuli evoke.
+
+% Aminoff regarding contextual processing in the PHC and beyond
+\citep{aminoff2007parahippocampal}: We compared contextual processing of objects
+that are strongly related to a specific place (e.g., an oven is found in a
+kitchen) with contextual processing of objects that are highly associated with a
+context but not a specific place (e.g., a birthday cake is found at a birthday
+party, but the party can take place anywhere, at home, in a restaurant, at a
+park).
+% method
+Activity elicited by these two types of contextual objects was compared with the
+activity elicited for objects that were only weakly associated with many
+contexts (e.g., a lamp).
+% results
+Differential activity was found in the PHC and the RSC, replicating the previous
+findings (Bar \& Aminoff, 2003, The parahippocampal\dots).
+% results 2
+\citep{aminoff2007parahippocampal} Activity within the PHC, however, was
+distributed along an anterior–posterior axis, with activity related to spatial
+contexts focused in the posterior part of the PHC and activity evoked by
+non-spatial contexts focused in the more anterior part of the PHC (Bar \&
+Aminoff, 2003, Cortical analysis of visual context; Aminoff et al., 2007, The
+parahippocampal cortex mediates spatial and nonspatial associations).
+
+% Baldassano (2013): PPA subregions
+Data suggest that PPA might contain identifiable subregions, but subregions
+should not be considered as completely independent modules. Both subregions
+activate selectively to scenes, implying that these subregions cooperate to
+build a complete representation of a scene [that sentence is taken from
+\citep{baldassano2013differential}].
+% Baldassano (2013): conclusion
+Their distinct connectivity properties, however, suggests that each may be
+involved in specific aspects of visual and cognitive processing involved in the
+overarching goal of scene understanding.
 %
 These types of responses require spatial memory and cannot be based purely on
 visual features like object shape.
@@ -1775,59 +1824,6 @@ context or orientation.
 %
 Further experiments will be required to determine what type of object-related
 information is used in this region.
-
-\subsubsection{anterior vs posterior PPA: contextual associations}
-
-\todo[inline]{discussing PPA in context of contextual associations might provide
-a smooth transition to (possibly) following discussion of RSC}
-
-% Aminoff (2013)
-\citep{aminoff2013role} in general (s. also \citep{aminoff2006parahippocampal}:
-processing of strong, long-term, contextual associations elicits activity within
-the PHC, as well as the RSC (which includes regions of the retrosplenial cortex,
-extending into the posterior cingulate cortex, and the precuneus), the medial
-prefrontal cortex (MPFC), and the transverse occipital sulcus (TOS) (Figure 2)
-[2,3,59–67].
-
-% contextual associations in anterior vs. posterior
-\citep{aminoff2006parahippocampal}: We propose that the general function of the
-PHC can be thought of as processing of contextual associations.
-%
-A subregion of the posterior PHC is particularly optimized to process spatially
-organized contextual associations, whereas more anterior regions of the PHC are
-optimized to process contextual associations in other, non-spatial domains.
-% posterior PPA for visual visual associative information
-Spatial contextual associations are a dominant property of places and scenes,
-and thus scenes consistently activate this posterior subregion of the PHC (e.g.,
-PPA; Epstein, 1998).
-%
-We do not argue that the PHC is not sensitive to spaces,
-places, and spatial information, but rather that it is sensitive to spatial
-stimuli because of the associative information (space-related associations) that
-such stimuli evoke.
-
-% Aminoff regarding contextual processing in the PHC and beyond
-\citep{aminoff2006parahippocampal} regarding contextual associations processing
-in PHC and beyond: We compared contextual processing of objects that are
-strongly related to a specific place (e.g., an oven is found in a kitchen) with
-contextual processing of objects that are highly associated with a context but
-not a specific place (e.g., a birthday cake is found at a birthday party, but
-the party can take place anywhere, at home, in a restaurant, at a park).
-% method
-Activity elicited by these two types of contextual objects was compared with the
-activity elicited for objects that were only weakly associated with many
-contexts (e.g., a lamp).
-% results
-Differential activity was found in the PHC and the RSC,
-replicating the previous findings (Bar \& Aminoff, 2003, The
-parahippocampal\dots).
-% results 2
-\citep{aminoff2006parahippocampal} Activity within the PHC, however, was
-distributed along an anterior–posterior axis, with activity related to spatial
-contexts focused in the posterior part of the PHC and activity evoked by
-non-spatial contexts focused in the more anterior part of the PHC (Bar \&
-Aminoff, 2003, Cortical analysis of visual context; Aminoff et al., 2007, The
-parahippocampal cortex mediates spatial and nonspatial associations).
 
 
 \subsubsection{RSC (in both stimuli)}
@@ -1865,16 +1861,22 @@ her}
 \todo[inline]{conclusion?}
 
 
-\subsubsection{superior lateral occipital cortex (OPA; in both stimuli)}
+\subsubsection{superior lateral occipital cortex (TOC / OPA?)}
 
 \todo[inline]{check location in primary contrast and in overlap of contrasts}
 
-\todo[inline]{give numbers of contrast in AO \& AV that show sign. clusters in
-RSC}
+\todo[inline]{numbers of contrast in AO \& AV that show sign. clusters in
+LOC}
 
 \todo[inline]{e.g. Bettencourt (2013). The Role of Transverse Occipital Sulcus
-in Scene Perception; Dilks, Kanwisher (2013). The Occipital Place Area Is
-Causally and Selectively Involved in Scene Perception?}
+    in Scene Perception; Dilks, Kanwisher (2013). The Occipital Place Area Is
+    Causally and Selectively Involved in Scene Perception; Grill-Spector (2003).
+    The neural basis of object perception; Nakamura (2000). Functional
+    delineation of the human occipito-temporal areas; Nasr (2011).
+    Scene-selective cortical regions in human and nonhuman primates; Hasson
+    (2003). Large-scale mirror-symmetry organization; MacEvoy and Epstein
+    (2007). Position selectivity in scene- and object-responsive\dots; Dilks
+(2011). Mirror-image sensitivity and invariance in object \& scene processing}
 
 
 \subsection{negative controls and cross-modal controls}
@@ -1884,7 +1886,6 @@ much still; better embed somewhere above}
 
 
 \subsection{individual analyses}
-
 
 \subsubsection{AO stimulus}
 
