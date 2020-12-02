@@ -46,6 +46,19 @@ Behaviour (INM-7), Research Centre Jülich, Jülich, Germany, 2. Institute of
 Systems Neuroscience, Medical Faculty, Heinrich Heine University,  Düsseldorf,
 Germany {*}corresponding author: Christian Olaf Häusler (der.haeusler@gmx.net)
 
+
+\todo[inline]{Simon als Autor adden}
+
+\todo[inline]{zweiten Satz: PPA ist die Region im ventral stream, die mehr auf
+    static landscapes denn Gesichter reagiert. Ansonsten klingt es so, als ob
+    PPA unabhängig von der Funktion definiert ist; dritte Satz ist irgendwie
+    falsch konstruiert (narrative... audiovisual movie); ``significant increased
+    activation in PPA'': PPA a priori durch localizer definiert? Oder ist der
+    increase die Definition der PPA; Beschreibungen sind auf der einen seite
+    sehr detailliert, aber der Vergleich mit dem localizer wird nicht explizit
+erwähnt; Clou der ganzen Geschichte ist doch: Man braucht keinen separaten
+Localizer, oder? Das kommt bisher nur bedingt rüber}
+
 \begin{abstract}
 % < 170 words new analysis of existing data of interest to a broad section of
 % our audience highlighting innovative examples of data reuse may be used to
@@ -92,8 +105,37 @@ discussion}\end{abstract}
     \textbackslash{}bibliography and \textbackslash{}bibliographystyle
 commands)}
 
+\todo[inline]{Den Start finde ich etwas komisch. "Cognitive neuroscientists use"
+klingt sehr nach einer aktiven distanzierung}
+
+\todo[inline]{Ich würde am Start definitiv kurz in die funktionelle
+    Spezialisierung des visuellen Systems und die Organisation des ventralen
+Streams einführen. Die kurze Darstellung der PPA ist dann aber gut}
+
+\todo[inline]{Der Schwung zu Sprache (wobei speech auch erst am Satzende kommt)
+ist zu hart, da kommt man als Leser nicht gut mit}
+
+\todo[inline]{ie "Kritik" an bisherigen PPA Studien finde ich insgesamt OK,
+wobei nicht ganz klar wird, was genau das schlechte an "conceptualized" ist. Das
+löst sich erst am Ende mit der "ecological validity" einigermaßen auf}
+
+\todo[inline]{Aus meiner Sicht könnte die Motivation für die aktuelle Studie
+    noch stärker werden. Du nennst zwar einige Schwächen, aber dann geht es sehr
+    unvermittelt in Details der Studie. Meine Präferenz ist es eher, nochmal
+    ganz klar zu sagen, warum es jetzt diese Studie braucht und was sie zum Feld
+beitragen soll}
+
+\todo[inline]{Damit zusammen hängend: Das Konzept der aktuellen Arbeit (place
+information aus einem ongoing context zu verwenden) und warum das die Probleme
+löst, würde ich auch noch etwas klarer darstellen. Du setzt zu viel voraus}
+
+\todo[inline]{Das "then we analyzed publically available data" ist sehr
+verwirrend, da es doch davor auch um StudyForest geht}
+
 
 \section{Introduction}
+
+\todo[inline]{describe ``localize / isolate'' in other words}
 
 \todo[inline]{Limit for main text (intro and discussion) = ca. 3k words;}
 
@@ -271,6 +313,16 @@ results are available under xy as datalad/BIDS dataset''}
 \todo[inline]{Specific data outputs should be explicitly referenced via data
 citation (see Data Records and Data Citations, below)}
 
+\todo[inline]{as mit dem "already used by" verwirrt eher}
+
+\todo[inline]{Der StudyForest datansatz ist gut und knapp beschrieben. Die
+Stimuli im VIS datensatz brauchen aber glaube ich etwas mehr erklärung}
+
+\todo[inline]{Ich würde mal die Frage antizipieren, wie gut passen die
+Annotationen zu den VIS Stimuli. Und die müsste meiner Meinung nach doppelt
+beantwortet werden. a) Durch genauere Beschreibung von VIS, b) durch genauere
+Ausführungen, wie welche Annotation dazu passt}
+
 % intro
 We used data from three publicly available datasets
 (\href{http://www.studyforrest.org}{studyforrest.org}) that have already been
@@ -320,6 +372,9 @@ Otto-von-Guericke University of Magdeburg, Germany.
 
 
 \subsection{Stimuli}
+
+\todo[inline]{merge Stimuli and ``Procedure'' (s. below)}
+
 % AO & AV stimulus name & references
 We used the German DVD release \citep{ForrestGumpDVD} of the audio-visual movie
 ``Forrest Gump'' \citep{ForrestGumpMovie} and its audio-description that was
@@ -359,6 +414,10 @@ images. Mirrored views of these 24 $\times$ 6 images were also used as stimuli.
 
 
 \subsection{Naturalistic stimuli annotation}
+
+\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
+zwischen zwei Gesichtern sein?!?}
+
 % todo stimuli were not designed for research purposes
 Both natural stimuli were not design to isolate a specific brain area but to
 entertain their audiences free from any perceptual or behavioral task.
@@ -410,6 +469,13 @@ annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
 % rationale behind using movie cuts
 Our rationale was that cuts are ``spatially relevant'' events that re-orient the
 viewer within the environment depicted in the movie.
+
+\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
+    ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum
+GLM unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter}
+
+\todo[inline]{Ich merke das mal hier an: Die Tables stehen an ganz merkwürdigen
+Positionen, das passt nicht zum Text und verwirrt ungemein}
 
 
 % table for descriptive nouns: categories, rules, examples counts
@@ -486,6 +552,10 @@ setting\_rec & \anSettingrecAll &
 
 
 \subsection{Procedure}
+
+\todo[inline]{Procedure (2.4.) ist nicht zwingend nötig bzw nicht als
+separater Abschnitt}
+
 % questionnaire
 Participants filled out a questionnaire on their basic demographic information
 and familiarity with the movie.
@@ -547,6 +617,8 @@ at least \unit[20–30]{dB}. Headphones were fed from an Aureon 7.1 USB
 
 
 \subsection{fMRI data acquisition}
+
+\todo[inline]{shorten this subsection a lot}
 
 % AO
 In the AO study, a whole-body \unit[7]{Tesla} Siemens MAGNETOM magnetic
@@ -646,12 +718,33 @@ to improve estimation efficiency.
 
 \subsection{Statistical analysis}
 
+\todo[inline]{Ich würde abschnitt 2.8 teilen (in die regressors, die dann mit
+der beschreibung der annotation kombinieren, und die eigentliche statistik)}
+
+\todo[inline]{Ich weiss nicht, ob es die etwas wild zwischendrin stehenden
+    tables waren, die oft komplizierten Beschreibungen, die Länge des
+    Abschnittes, oder alles zusammen, aber ich habe mich mit 2.8 extrem schwer
+    getan. Bitte lass den Reviewer nicht mit dem selben Gefühl rausgehen. Gut
+strukturiert, einfach und klar ist immer vom Vorteil}
+
 Similarly to the reviewed studies that employed simplified stimuli, we conducted
 a standard two-level general linear model (GLM) analysis to create
 subject-specific results ($Z$-maps) across the 8 segments for every subject. A
 subsequent, third-level analysis averaged contrast estimates over subjects.
 
 \todo[inline]{better speak of conditions than categories?}
+
+\todo[inline]{Das mit den "five additional categories" habe ich nicht
+    verstanden. Überhaupt finde ich die ganze Beschreibung relativ schwer zu
+durchdrungen, und ich glaube damit werde ich nicht alleine sein.}
+
+\todo[inline]{Gab es ein separates null-event für jeden zeitraum zwischen zwei
+annotierten events oder war das ein regressor der immer wieder kam?}
+
+\todo[inline]{Ich würde vorschlagen, dass Du Dich auf die Regressoren / Events
+    konzentrierst, die hier wichtig sind, um die Komplexität zu reduzieren. Die
+    aber dafür besser erklären (was heißt "unfamilar perspective"? Ab wann ist
+ein setting "familiar"?}
 
 % first level analysis
 % regressors
@@ -693,6 +786,8 @@ modeled as impulse events to capture variance of a possibly confounding change
 of the soundscape after a cut, and to create contrasts of cross-modal negative
 control (see details below).
 % nuisance regressors
+\todo[inline]{"Continuous bins lasting 40ms" ?!?}
+%
 Lastly, we used continuous bins of information about two auditory features
 (left-right difference in volume and root mean square energy) that was averaged
 across the length of every movie frame (\unit[40]{ms}) to capture variance
@@ -770,14 +865,20 @@ Events of both stimuli were convolved with a double gamma hemodynamic response
 function (HRF).
 
 \begin{table*}[t]
-    \caption{Overview of events to build the 14 regressors for the analysis of the audio-only (AV) stimulus.
-\texttt{fg\_av\_ger\_lr} (left-right difference in [+++???+++] of
-consecutive movie frames).\texttt{fg\_av\_ger\_pd} (perceptual differences of
-consecutive frames).
-\texttt{fg\_av\_ger\_ud} (up-down difference in [+++???+++] of consecutive movie frames). \texttt{fg\_av\_ger\_lrdiff} (left-right volume difference) and \texttt{fg\_av\_ger\_rms} (root mean square volume) represent one event for every movie frame (\unit[40]{ms}).
-For description of the two event categories of the audio-description's
-narrator (\texttt{se\_new} and \texttt{se\_old}) to build contrast
-of negative control see Table \ref{tab:ao-events}.}
+    \caption{Overview of events to build the 14 regressors for the analysis of
+        the audio-visual (AV) stimulus.
+        \texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames),
+        \texttt{fg\_av\_ger\_ml} (mean luminance of a frame),
+        \texttt{fg\_av\_ger\_lr} (difference in mean luminance of left and
+        right half),
+        \texttt{fg\_av\_ger\_ud} (difference in mean luminance of upper and
+        lower half),
+        \texttt{fg\_av\_ger\_lrdiff} (left-right volume difference), and
+        \texttt{fg\_av\_ger\_rms} (root mean square volume) represent one event
+        for every movie frame (\unit[40]{ms}).
+        For description of the two event categories of the audio-description's
+        narrator (\texttt{se\_new} and \texttt{se\_old}) to build contrast
+        of negative control see Table \ref{tab:ao-events}.}
 \label{tab:av-events}
 \footnotesize
 \begin{tabular}{lp{3.5cm}lllllllll}
@@ -793,16 +894,20 @@ vpe\_old & change of the camera position within a recurring locale & \aoVpeoldAl
 vno\_cut & a continuous frame from the same camera position & \avVnocutAll & \avVnocutI & \avVnocutII & 0 & \avVnocutIII & \avVnocutIV & \avVnocutV & \avVnocutVI & \avVnocutVII \tabularnewline
 se\_new & control for AO narrator & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII \tabularnewline
 se\_old & control for AO narrator & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII \tabularnewline
-fg\_av\_ger\_lr & XYZ & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII & \avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI & \avFgavgerlrVII & \avFgavgerlrVIII \tabularnewline
+fg\_av\_ger\_lr & left-right luminance difference & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII & \avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI & \avFgavgerlrVII & \avFgavgerlrVIII \tabularnewline
 fg\_av\_ger\_lrdiff & left-right volume difference & \avFgavgerlrdiffAll & \avFgavgerlrdiffI & \avFgavgerlrdiffII & \avFgavgerlrdiffIII & \avFgavgerlrdiffIV & \avFgavgerlrdiffV & \avFgavgerlrdiffVI & \avFgavgerlrdiffVII & \avFgavgerlrdiffVIII \tabularnewline
-fg\_av\_ger\_ml & +++++???+++++ & \avFgavgermlAll & \avFgavgermlI & \avFgavgermlII & \avFgavgermlIII & \avFgavgermlIV & \avFgavgermlV & \avFgavgermlVI & \avFgavgermlVII & \avFgavgermlVIII \tabularnewline
-fg\_av\_ger\_pd & +++++???+++++ & \avFgavgerpdAll & \avFgavgerpdI & \avFgavgerpdII & \avFgavgerpdIII & \avFgavgerpdIV & \avFgavgerpdV & \avFgavgerpdVI & \avFgavgerpdVII & \avFgavgerpdVIII \tabularnewline
+fg\_av\_ger\_ml & mean luminance & \avFgavgermlAll & \avFgavgermlI & \avFgavgermlII & \avFgavgermlIII & \avFgavgermlIV & \avFgavgermlV & \avFgavgermlVI & \avFgavgermlVII & \avFgavgermlVIII \tabularnewline
+fg\_av\_ger\_pd & perceptual difference & \avFgavgerpdAll & \avFgavgerpdI & \avFgavgerpdII & \avFgavgerpdIII & \avFgavgerpdIV & \avFgavgerpdV & \avFgavgerpdVI & \avFgavgerpdVII & \avFgavgerpdVIII \tabularnewline
 fg\_av\_ger\_rms & root mean square (loudness) & \avFgavgerrmsAll & \avFgavgerrmsI & \avFgavgerrmsII & \avFgavgerrmsIII & \avFgavgerrmsIV & \avFgavgerrmsV & \avFgavgerrmsVI & \avFgavgerrmsVII & \avFgavgerrmsVIII \tabularnewline
-fg\_av\_ger\_ud & +++++???+++++ & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII & \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII & \avFgavgerudVIII \tabularnewline
+fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII & \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII & \avFgavgerudVIII \tabularnewline
 \end{tabular}
 \end{table*}
 
+%
+\todo[inline]{Die Abkürzungen in Figure 1: Da steigt keiner hinter} 
 
+\todo[inline]{Habe jetzt lange darüber gebrütet: Es gibt also kaum eine
+Korrelation zwischen AO und AV?; Also, außer bei fg\_av\_ger\_lr\_diff (wobei da keiner weiss, was das bedeutet)}
 % reference to figure ``correlation of regressors''
 We computed the Pearson coefficients of the regressors across the eight segments
 of both naturalistic stimuli. Results demonstrate no to minor correlations (s.
@@ -828,10 +933,15 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
     \centering
     \includegraphics[width=\linewidth]{figures/regressor-corr}
     \caption{Pearson
-        correlation coefficients of the regressors used in the analysis of the
+        correlation coefficients  of the regressors used in the analysis of the
         audio-description (blue; see Table \ref{tab:ao-events} for a
         description) and audio-visual movie (red; see Table
-        \ref{tab:av-events}).}
+        \ref{tab:av-events}) rounded to the nearest tenth.
+        The correlation
+        between the two stimuli's root mean square loudness and between their
+        left-right difference in loudness yielded the highest correlation
+        values (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635
+        \texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749).}
     \label{fig:reg-corr}
 \end{figure*}
 
@@ -843,6 +953,9 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
  robustness is a feature, not a problem; COH: did not change a lot of text tbh
  but should be clearer now.}
 
+%
+ \todo[inline]{Das mit den 8 kontrasten und 5 kontrasten habe ich nicht intuitiv
+ durchblickt. Was wurde da gegen was kontrastiert?}
 % we have fixed stimuli
 Compared to previous studies we did not design the stimulus material and
 experimentally controlled conditions for the
@@ -882,7 +995,7 @@ case the narrator uses these words to indicate a switch from one setting to
 another (e.g. ``Jenny as a teenager'')
 % soundscapes forestalls narrator
 (c) the narrator is often lacking behind a short dialogue or a change of the
-soundscape that already cue a change of settings.  cuts but in AO stimulus
+soundscape that already cue a change of settings.
 % conclusion
 Hence, we assumed contrasts that (exclusively) used these two categories would
 induce noise and would be less successful in isolating the PPA.
@@ -1045,6 +1158,41 @@ of individual PPA overlaps were created from data provided by
 
 \section{Results}
 
+\todo[inline]{give reference to Neurovault.com}
+
+\todo[inline]{- Bitte sauber differenzieren zwischen "Lokalisation der PPA" und
+    "Antwortverhalten einer vorab definierten PPA". Ich habe den Eindruck, dass
+Du oft das erste machst es aber als das zweite beschreibst}
+
+\todo[inline]{Der vergleich mit VIS kommt bestenfalls en passant, VIS selber
+wird gar nicht berichtet wäre aber wichtig zum andocken an die Literatur}
+
+\todo[inline]{Es ist zwar hier nicht der Fokus, aber ich würde sehr darauf
+wetten, dass Reviewer danach fragen: Wie sieht es im vergleich dazu mit Faces
+aus?}
+
+\todo[inline]{Figure 2 und 3: ich würde da wahrscheinlich weiter rein zoomen um
+genauer den visuellen Kortex zu zeigen. Vor allem aber muss man sagen, dass bei
+FFA/PPA etc eigentlich flatmaps bzw inflated brains, also surface-darstellungen
+standard sind}
+
+\todo[inline]{Die Anzahl der Überlappungen in Figure 3 ist schwer abzulesen,
+hier lieber eine andere Farbskala (spectral sequence?) nutzen}
+
+\todo[inline]{Das mit den cuts to new vs familar setting wird irgendwie nie so
+richtig in den PPA kontext eingeordnet. Bzw. ich glaube ich bin verwirrt. Warum
+ist das der hauptkontrast und nicht das viel näher liegende places vs faces?}
+
+\todo[inline]{Noch etwas, das wahrscheinlich gefragt wird: Wie sehen die
+Antworten innerhalb der "klassisch definierten" PPA für die verschiedenen
+regressoren bzw.  kategorien derselben (zumindest aber places vs faces) aus?}
+
+\todo[inline]{Wenn ich mir Figure 4 anschaue, würde ich sagen, dass AO besser
+die VIS-PPA "trifft" als AV. Das ist zumindest sehr überraschend, oder?}
+
+\todo[inline]{Figure 5 ist irre kompliziert. Welche Areale habt ihr als masks
+genommen, FFA ist ja kartiert (Julia caspers)}
+
 % study goal
 The goal of this study was to investigate if increased hemodynamic activity in
 the PPA correlates with spatial information presented under more ecological
@@ -1173,6 +1321,8 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \end{figure*}
 
 \subsubsection{AO: robustness of PPA across contrasts}
+
+\todo[inline]{which contrast yielded NO clusters?}
 
 \todo[inline]{I consider tables of significant clusters in PPA for all contrasts
 as overkill. Maybe in ``supporting material'' or reference to dataset? all sign.
@@ -1315,6 +1465,8 @@ category with a cut category).
 
 \subsection{individual results}
 
+\todo[inline]{say why slice -11 was chosen}
+
 \todo[inline]{other reasons than localization performance?}
 
 % why individual results in the first place.
@@ -1446,6 +1598,23 @@ show higher $z$-value in the AO stimulus.
 
 
 \section{Discussion}
+
+\todo[inline]{Ich finde die result-synopsis noch nicht optimal. Vielleicht gehe
+ich aber auch mit der falschen Perspektive ran? Für mich würde der Vergleich
+"localizer vs naturalistic" im vordergrund stehen, AO vs AV dann eine sehr
+spannende aber logisch nachgeschaltete Frage sein.}
+
+\todo[inline]{Bei ergebnissen und Diskussionen zu Stability fehlt mir irgendwie
+immer der Kontext, wie sich die kontraste denn unterschieden haben und welche
+davon z.B. im Ergebnis wo von den anderen abgewichen haben. Das würde ja
+wichtige Hinweise geben}
+
+\todo[inline]{VIS vs AV vs AO: Wer liefert was über die PPA. Dieser Vergleich
+bzw. die Diskussion über gemeinsamkeiten und unterschiede fehlt mir etwas}
+
+\todo[inline]{RSC etc: Irgendwie waren die bis zu diskussion eher ein
+afterthought. Daher etwas überraschend, vielleicht in Einleitung und Results
+schon mehr bringen} 
 
 \todo[inline]{structure is as follows: correlation of
 regressors; AO group; AV group; robustness AO + AV; anterior vs posterior PPA;
@@ -1590,7 +1759,7 @@ objects,and low-level visual features.
 results?}
 
 
-\subsection{stability of contrasts}
+\subsection{robustness of contrasts}
 
 % why we did a couple of contrasts
 For both stimuli we created additional contrasts that varied the amount of
@@ -1885,6 +2054,8 @@ prerequisite)}
 
 \subsection{shortcomings in general}
 
+\todo[inline]{Würde nicht so sehr auf Shortcomings eingehen}
+
 \subsubsection{AO contrast}
 
 \todo[inline]{cf. Methods: annotation \& Methods: AO copes}
@@ -1940,6 +2111,9 @@ correlate with increased activity in the PPA.
 
 \subsubsection{AV stimulus}
 
+\todo[inline]{AV: field size decreases later in the movie; this is a confound
+based on cinematography => the stimulus changes over time}
+
 \todo[inline]{imo opening the pandora's box of the AV shortcomings especially at
 the end of the paper should be kept to a minimum of text}
 
@@ -1976,6 +2150,10 @@ eye-tracking.
 
 \todo[inline]{template has no section ``conclusion'' -> use the last paragraph}
 
+\todo[inline]{Conclusions aber irgendwie frage ich mich das relativ durchgehen):
+Warum ist der Fokus so sehr auf Audiobook / AO, während AV doch eigentlich more
+natural and engaging ist?}
+
 % natural stimulation
 Intro: Natural stimuli like movies \citep{hasson2008neurocinematics,
 sonkusare2019naturalistic} or narratives \citep{honey2012not,
@@ -2002,7 +2180,7 @@ Why we used a traditional GLM...
 % results
 Results: Our results demonstrate...
 
-% conclusion: AO and AV stability
+% conclusion: AO and AV robustness
 In summary, our results across add further evidence that model-driven analyses
 can be run on data from naturalistic stimuli to isolate brain activity
 correlating with specific perceptual processes.
