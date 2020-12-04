@@ -70,14 +70,14 @@ an additional narrator) correlates with increased hemodynamic activity in the
 PPA.
 %
 We use publicly available functional magnetic resonance imaging data
-(studyforrest.org) to build canonical general linear model (GLM) $t$-contrasts
-and compare current results to results that we gained from a dedicated visual
-localizer experiment conducted with the same 14 participants.
+(studyforrest.org) of 14 subjects to build canonical general linear model (GLM)
+$t$-contrasts and compare current results to results that we gained from a
+dedicated visual localizer experiment conducted with same participants.
 % compare to visual localizer experiment group results
-On a group average level, results of our whole brain analyses show
-significantly increased activation restricted to the anterior part of the PPA
-that was defined using the visual localizer [as well as in the retrosplenial
-and lateral occipital cortex] of both hemispheres.
+On a group average level, results of our whole brain analyses show significantly
+increased activation restricted to the anterior part of the PPA that was defined
+using the visual localizer [as well as in the retrosplenial and lateral
+occipital cortex] of both hemispheres.
 % individual results
 On an individual level, results show significant bilateral clusters in the
 anterior PPA of nine subjects and significant unilateral clusters in two
@@ -122,7 +122,7 @@ Studies in the field of neuropsychology and neuroimaging (e.g.
 \citep{penfield1950cerebral, fox1984noninvasive}) have shown that different
 parts of the brain are specialized for different cognitive and perceptual
 functions.
-%%%%%%%%%%%%%%%%%%%%%% trenne diese Sätze %%%%%%%%%%%%%%5
+% occipital cortex for vision -> two pathways
 The occipital cortex is considered to be primarily involved in the early stages
 of visual perception and giving rise to two distinct pathways of processing
 different kind of visual information:
@@ -130,7 +130,7 @@ different kind of visual information:
 a dorsal pathway that leads into the parietal lob (the ``where pathway''), and a
 ventral pathway that leads into into the temporal lobe (the ``what pathway'')
 \citep{goodale1992separat, mishkin1982contribution}.
-%
+% PPA
 A classic example of a higher-level visual area in the ventral pathway is the
 ``parahippocampal place area'' (PPA) \citep{epstein1998ppa,
 epstein1999parahippocampal}.
@@ -225,12 +225,12 @@ stimuli.
 % block-design & task
 Second, studies used block-designed paradigms to maximize detection power.
 Further, they usually employed an explicit perceptual judgment task.
-%
+% conceptualized stimuli and blockl: disadvantages
 Block-design studies that use conceptualized stimuli and a task have the
 advantages of controlling confounding variables (e.g. color, luminance, size,
 spatial frequencies, sentence length), maximizing detection power, and keeping
 participants paying attention to the stimuli.
-% disandvantage of stimuli and block
+% conceptualized stimuli and block: disadvantages
 Nevertheless, small sets of conceptualized stimuli and block-design paradigms
 lack external and ecological validity \citep{westfall2016fixing,
 hasson2004intersubject} because they poorly resemble how we, free of a[n
@@ -348,10 +348,7 @@ Otto-von-Guericke University of Magdeburg, Germany.
 
 \subsection{Stimuli and Procedure}
 
-\todo[inline]{Ich würde mal die Frage antizipieren, wie gut passen die
-Annotationen zu den VIS Stimuli. Und die müsste meiner Meinung nach doppelt
-beantwortet werden. a) Durch genauere Beschreibung von VIS, b) durch genauere
-Ausführungen, wie welche Annotation dazu passt}
+
 
 % AO & AV stimulus name & references
 We used the German DVD release \citep{ForrestGumpDVD} of the audio-visual movie
@@ -510,7 +507,6 @@ Philips' ``SmartExam'' was used to automatically position slices in AC-PC
 orientation such that the topmost slice was located at the superior edge of the
 brain. This automatic slice positioning procedure was identical in the AV and
 VIS study, and yielded a congruent geometry across paradigms.
-
 % no. of volumes
 A total of 3599 volumes were recorded for each participant in each of the
 naturalistic stimulus paradigms (451, 441, 438, 488, 462, 439, 542, and 338
@@ -567,44 +563,41 @@ to improve estimation efficiency.
 
 \subsection{Statistical analysis}
 
+% intro
+Similarly to the reviewed studies that employed simplified stimuli, we conducted
+a standard two-level general linear model (GLM) analysis to create
+subject-specific results ($Z$-maps) across the 8 segments for every subject. A
+subsequent, third-level analysis averaged contrast estimates over subjects.
+
+
+\subsubsection{Annotation of naturalistic stimuli}
+
 \todo[inline]{Ich weiss nicht, ob es die etwas wild zwischendrin stehenden
     tables waren, die oft komplizierten Beschreibungen, die Länge des
     Abschnittes, oder alles zusammen, aber ich habe mich mit 2.8 extrem schwer
     getan. Bitte lass den Reviewer nicht mit dem selben Gefühl rausgehen. Gut
 strukturiert, einfach und klar ist immer vom Vorteil}
 
-\todo[inline]{Ich würde abschnitt 2.8 teilen (in die regressors, die dann mit
-der beschreibung der annotation kombinieren, und die eigentliche statistik)}
+\todo[inline]{SE: focus on the events that are relevant to the analysis to
+reduce complexity and explain these better}
 
-Similarly to the reviewed studies that employed simplified stimuli, we conducted
-a standard two-level general linear model (GLM) analysis to create
-subject-specific results ($Z$-maps) across the 8 segments for every subject. A
-subsequent, third-level analysis averaged contrast estimates over subjects.
+\todo[inline]{Simon suggested to put paragraphs regarding annotation here,
+    followed by a subsection ``Regressors''. Additionally imo, it makes sense to
+    build one subsection ``Stimulus annotations \& regressors'' to have a
+    structure of ``AO (anno \& regressors); AV (anno \& regressors'' instead of
+AO \& AV (annotation), AO \& AV (regressors)``.}
 
-\todo[inline]{better speak of conditions than categories?}
+\todo[inline]{Ich würde mal die Frage antizipieren, wie gut passen die
+Annotationen zu den VIS Stimuli. Und die müsste meiner Meinung nach doppelt
+beantwortet werden. a) Durch genauere Beschreibung von VIS, b) durch genauere
+Ausführungen, wie welche Annotation dazu passt}
 
-\todo[inline]{Ich würde vorschlagen, dass Du Dich auf die Regressoren / Events
-konzentrierst, die hier wichtig sind, um die Komplexität zu reduzieren. Die aber
-dafür besser erklären (was heißt "unfamilar perspective"? Ab wann ist ein
-setting "familiar"?}
-
-\subsubsection{Annotation of naturalistic stimuli}
-
-
-\todo[inline]{Ich würde abschnitt 2.8 (statistical analysis) teilen:
-    a) die regressors, die dann mit der beschreibung der annotation kombinieren
-    b) die eigentliche statistik)}
-
-\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
-zwischen zwei Gesichtern sein?!?}
-
-%
-Since we did not design the given naturalistic stimuli for optimal localization
-performance of the PPA, we operationalized the perception of landscapes and
-landmarks (compared to e.g. faces and objects) by annotating words spoken by the
-narrator of the audio-description as well as cuts and depicted locations in the
-movie.
-% todo stimuli were not designed for research purposes
+% intro
+Since we did not design the naturalistic stimuli for detection power, we
+operationalized the perception of landscapes and landmarks (compared to e.g.
+faces and objects) by annotating words spoken by the narrator of the
+audio-description as well as cuts and depicted locations in the movie.
+% stimuli not designed for research purposes
 Both natural stimuli were not design to isolate a specific brain area but to
 entertain their audiences free from any perceptual or behavioral task.
 % fixed stimuli and operationalization
@@ -649,106 +642,99 @@ Minor corrections due to incorrectly applied rules were done by the author.
 The resulting counts for the whole stimulus and the eight stimulus segments used
 during fMRI scanning can be seen in Table \ref{tab:descr-nouns-counts}.
 
+
+\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
+ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum GLM
+unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter}
+
+% table for descriptive nouns: categories, rules, examples counts
+% table for descriptive nouns: categories, rules, examples counts
+\begin{table*}[h!]
+    \caption{Descriptive nouns spoken by the audio-description's narrator that
+        served as a basis to build the regressors
+(see Table \ref{tab:ao-events}):
+    categories, annotation rules, and examples (given in English).
+    % The category \texttt{++} also contains adverbial of time.
+}
+\label{tab:descr-nouns-rules}
+\begin{tabular}{lll}
+\toprule
+\textbf{category} & \textbf{rule} & \textbf{examples} \\
+\midrule
+body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress, shirt \tabularnewline
+bodypart & limbs and trousers & arm, finger, leg, toe \tabularnewline
+face & face or parts of it & face, ear, nose, mouth \tabularnewline
+female & female person & nurse, mother, woman \tabularnewline
+females & female persons & women \tabularnewline
+fname & female name & Jenny \tabularnewline
+furniture & movable furniture insides \& outsides & bench, bed, table, chair
+\tabularnewline
+geo & immobile landmarks & building, tree, street, alley, meadow, cornfield \tabularnewline
+geo-room & rooms (insides) or  locales (outsides) & living room; wall, door, window, floor, turf \tabularnewline
+head & non-face parts of the head; worn headgear & head, hair, ear, neck,
+helmet \tabularnewline
+male & male person & man, father, soldier \tabularnewline
+males & male persons & boys, opponents \tabularnewline
+mname & male name & Bubba, Kennedy \tabularnewline
+object & countable entity with firm boundaries & telephone, car \tabularnewline
+objects & countable entities & wheels, plants \tabularnewline
+persons & concrete persons of unknown sex & hippies, patients \tabularnewline
+setting\_new & noun cueing an unfamiliar setting &  on a ``bridge'', on an ``alley'', on ``campus'' \tabularnewline
+setting\_rec & noun cueing a recurring setting & at the ``bus stop'' \tabularnewline
+% ++ & cue regarding time & in the ``evening'', it's ``daytime'', ``later'' \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+% table of descriptive nouns counts
+\begin{table*}[h!]
+    \caption{Descriptive nouns spoken by the audio-descriptions narrator:
+        counts for the whole audio-only stimulus and its eight segments used
+        during fMRI scanning.}
+\label{tab:descr-nouns-counts}
+\begin{tabular}{llllllllll}
+\toprule
+\textbf{category} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
+\midrule
+body & \anBodyAll & \anBodyI & \anBodyII & \anBodyIII & \anBodyIV & \anBodyV & \anBodyVI & \anBodyVII & \anBodyVIII \tabularnewline
+bodypart &  \anBodypartAll & \anBodypartI & \anBodypartII & \anBodypartIII & \anBodypartIV & \anBodypartV & \anBodypartVI & \anBodypartVII & \anBodypartVIII \tabularnewline
+face & \anFaceAll & \anFaceI & \anFaceII & \anFaceIII & \anFaceIV & \anFaceV & \anFaceVI & \anFaceVII & \anFaceVIII \tabularnewline
+female & \anFemaleAll & \anFemaleI & \anFemaleII & \anFemaleIII & \anFemaleIV & \anFemaleV & \anFemaleVI & \anFemaleVII & \anFemaleVIII \tabularnewline
+females & \anFemalesAll & \anFemalesI & \anFemalesII & \anFemalesIII & \anFemalesIV & \anFemalesV & \anFemalesVI & \anFemalesVII & \anFemalesVIII \tabularnewline
+fname & \anFnameAll & \anFnameI & \anFnameII & \anFnameIII & \anFnameIV & \anFnameV & \anFnameVI & \anFnameVII & \anFnameVIII \tabularnewline
+furniture & \anFurnitureAll & \anFurnitureI & \anFurnitureII & \anFurnitureIII & \anFurnitureIV & \anFurnitureV & \anFurnitureVI & \anFurnitureVII & \anFurnitureVIII \tabularnewline
+geo & \anGeoAll & \anGeoI & \anGeoII & \anGeoIII & \anGeoIV & \anGeoV & \anGeoVI & \anGeoVII & \anGeoVIII \tabularnewline
+geo-room & \anGeoroomAll & \anGeoroomI & \anGeoroomII & \anGeoroomIII & \anGeoroomIV & \anGeoroomV & \anGeoroomVI & \anGeoroomVII & \anGeoroomVIII \tabularnewline
+head & \anHeadAll & \anHeadI & \anHeadII & \anHeadIII & \anHeadIV & \anHeadV & \anHeadVI & \anHeadVII & \anHeadVIII \tabularnewline
+male & \anMaleAll & \anMaleI & \anMaleII & \anMaleIII & \anMaleIV & \anMaleV & \anMaleVI & \anMaleVII & \anMaleVIII \tabularnewline
+males & \anMalesAll & \anMalesI & \anMalesII & \anMalesIII & \anMalesIV & \anMalesV & \anMalesVI & \anMalesVII & \anMalesVIII \tabularnewline
+mname & \anMnameAll & \anMnameI & \anMnameII & \anMnameIII & \anMnameIV & \anMnameV & \anMnameVI & \anMnameVII & \anMnameVIII \tabularnewline
+object & \anObjectAll & \anObjectI & \anObjectII & \anObjectIII & \anObjectIV & \anObjectV & \anObjectVI & \anObjectVII & \anObjectVIII \tabularnewline
+objects & \anObjectsAll & \anObjectsI & \anObjectsII & \anObjectsIII & \anObjectsIV & \anObjectsV & \anObjectsVI & \anObjectsVII & \anObjectsVIII \tabularnewline
+persons & \anPersonsAll & \anPersonsI & \anPersonsII & \anPersonsIII & \anPersonsIV & \anPersonsV & \anPersonsVI & \anPersonsVII & \anPersonsVIII \tabularnewline
+setting\_new & \anSettingnewAll & \anSettingnewI & \anSettingnewII & \anSettingnewIII & \anSettingnewIV & \anSettingnewV & \anSettingnewVI & \anSettingnewVII & \anSettingnewVIII \tabularnewline
+setting\_rec & \anSettingrecAll &
+\anSettingrecI & \anSettingrecII & \anSettingrecIII & \anSettingrecIV & \anSettingrecV & \anSettingrecVI & \anSettingrecVII & \anSettingrecVIII \tabularnewline
+% ++ & \anAll & \anI & \anII & \anIII & \anIV & \anV & \anVI & \anVII & \anVIII \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+
+\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
+zwischen zwei Gesichtern sein?!?}
+
+\todo[inline]{besser erklären (was heißt "unfamilar perspective"? Ab wann ist
+ein setting "familiar"?)}
+
 % AV anno
 For the analysis of the AV data, we took advantage of a publicly available
 annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
 % rationale behind using movie cuts
 Our rationale was that cuts are ``spatially relevant'' events that re-orient the
 viewer within the environment depicted in the movie.
-
-\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
-ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum GLM
-unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter}
-
-\todo[inline]{Ich merke das mal hier an: Die Tables stehen an ganz merkwürdigen
-Positionen, das passt nicht zum Text und verwirrt ungemein}
-
-
-% table for descriptive nouns: categories, rules, examples counts
-\begin{table*}[t] \caption{Descriptive nouns spoken by the audio-description's
-            narrator: categories, annotation rules, and examples (given in
-            English). The category \texttt{++} also contains adverbial of time.}
-            \label{tab:descr-nouns-rules} \begin{tabular}{lll} \toprule
-                \textbf{category} & \textbf{rule} & \textbf{examples} \\
-                \midrule body & trunk of the body; overlaid clothes & back, hip,
-                shoulder; jacket, dress, shirt \tabularnewline bodypart & limbs
-                and trousers & arm, finger, leg, toe \tabularnewline face & face
-                or parts of it & face, ear, nose, mouth \tabularnewline female &
-                female person & nurse, mother, woman \tabularnewline females &
-                female persons & women \tabularnewline fname & female name &
-                Jenny \tabularnewline furniture & movable furniture insides \&
-                outsides & bench, bed, table, chair \tabularnewline geo &
-                immobile landmarks & building, tree, street, alley, meadow,
-                cornfield \tabularnewline geo-room & rooms (insides) or  locales
-                (outsides) & living room; wall, door, window, floor, turf
-                \tabularnewline head & non-face parts of the head; worn headgear
-                & head, hair, ear, neck, helmet \tabularnewline male & male
-                person & man, father, soldier \tabularnewline males & male
-                persons & boys, opponents \tabularnewline mname & male name &
-                Bubba, Kennedy \tabularnewline object & countable entity with
-                firm boundaries & telephone, car \tabularnewline objects &
-                countable entities & wheels, plants \tabularnewline persons &
-                concrete persons of unknown sex & hippies, patients
-                \tabularnewline setting\_new & noun cueing an unfamiliar setting
-                &  on a ``bridge'', on an ``alley'', on ``campus''
-                \tabularnewline setting\_rec & noun cueing a recurring setting &
-                at the ``bus stop'' \tabularnewline ++ & cue regarding time & in
-                the ``evening'', it's ``daytime'', ``later'' \tabularnewline
-
-\bottomrule \end{tabular} \end{table*}
-
-% table of descriptive nouns counts
-\begin{table*}[t] \caption{Descriptive nouns spoken by the audio-descriptions
-        narrator: counts for the whole audio-only stimulus and its eight
-    segments used during fMRI scanning.} \label{tab:descr-nouns-counts}
-    \begin{tabular}{llllllllll} \toprule \textbf{category} & \textbf{all} &
-        \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} &
-        \textbf{6} & \textbf{7} & \textbf{8} \\ \midrule body & \anBodyAll &
-        \anBodyI & \anBodyII & \anBodyIII & \anBodyIV & \anBodyV & \anBodyVI &
-        \anBodyVII & \anBodyVIII \tabularnewline bodypart &  \anBodypartAll &
-        \anBodypartI & \anBodypartII & \anBodypartIII & \anBodypartIV &
-        \anBodypartV & \anBodypartVI & \anBodypartVII & \anBodypartVIII
-        \tabularnewline face & \anFaceAll & \anFaceI & \anFaceII & \anFaceIII &
-        \anFaceIV & \anFaceV & \anFaceVI & \anFaceVII & \anFaceVIII
-        \tabularnewline female & \anFemaleAll & \anFemaleI & \anFemaleII &
-        \anFemaleIII & \anFemaleIV & \anFemaleV & \anFemaleVI & \anFemaleVII &
-        \anFemaleVIII \tabularnewline females & \anFemalesAll & \anFemalesI &
-        \anFemalesII & \anFemalesIII & \anFemalesIV & \anFemalesV & \anFemalesVI
-        & \anFemalesVII & \anFemalesVIII \tabularnewline fname & \anFnameAll &
-        \anFnameI & \anFnameII & \anFnameIII & \anFnameIV & \anFnameV &
-        \anFnameVI & \anFnameVII & \anFnameVIII \tabularnewline furniture &
-        \anFurnitureAll & \anFurnitureI & \anFurnitureII & \anFurnitureIII &
-        \anFurnitureIV & \anFurnitureV & \anFurnitureVI & \anFurnitureVII &
-        \anFurnitureVIII \tabularnewline geo & \anGeoAll & \anGeoI & \anGeoII &
-        \anGeoIII & \anGeoIV & \anGeoV & \anGeoVI & \anGeoVII & \anGeoVIII
-        \tabularnewline geo-room & \anGeoroomAll & \anGeoroomI & \anGeoroomII &
-        \anGeoroomIII & \anGeoroomIV & \anGeoroomV & \anGeoroomVI &
-        \anGeoroomVII & \anGeoroomVIII \tabularnewline head & \anHeadAll &
-        \anHeadI & \anHeadII & \anHeadIII & \anHeadIV & \anHeadV & \anHeadVI &
-        \anHeadVII & \anHeadVIII \tabularnewline male & \anMaleAll & \anMaleI &
-        \anMaleII & \anMaleIII & \anMaleIV & \anMaleV & \anMaleVI & \anMaleVII &
-        \anMaleVIII \tabularnewline males & \anMalesAll & \anMalesI & \anMalesII
-        & \anMalesIII & \anMalesIV & \anMalesV & \anMalesVI & \anMalesVII &
-        \anMalesVIII \tabularnewline mname & \anMnameAll & \anMnameI &
-        \anMnameII & \anMnameIII & \anMnameIV & \anMnameV & \anMnameVI &
-        \anMnameVII & \anMnameVIII \tabularnewline object & \anObjectAll &
-        \anObjectI & \anObjectII & \anObjectIII & \anObjectIV & \anObjectV &
-        \anObjectVI & \anObjectVII & \anObjectVIII \tabularnewline objects &
-        \anObjectsAll & \anObjectsI & \anObjectsII & \anObjectsIII &
-        \anObjectsIV & \anObjectsV & \anObjectsVI & \anObjectsVII &
-        \anObjectsVIII \tabularnewline persons & \anPersonsAll & \anPersonsI &
-        \anPersonsII & \anPersonsIII & \anPersonsIV & \anPersonsV & \anPersonsVI
-        & \anPersonsVII & \anPersonsVIII \tabularnewline
-
-setting\_new & \anSettingnewAll & \anSettingnewI & \anSettingnewII &
-\anSettingnewIII & \anSettingnewIV & \anSettingnewV & \anSettingnewVI &
-\anSettingnewVII & \anSettingnewVIII \tabularnewline
-
-setting\_rec & \anSettingrecAll & \anSettingrecI & \anSettingrecII &
-\anSettingrecIII & \anSettingrecIV & \anSettingrecV & \anSettingrecVI &
-\anSettingrecVII & \anSettingrecVIII \tabularnewline ++ & \anAll & \anI & \anII
-& \anIII & \anIV & \anV & \anVI & \anVII & \anVIII \tabularnewline \bottomrule
-\end{tabular} \end{table*}
 
 
 
@@ -811,68 +797,71 @@ five movie cut-related categories, and the two low-level confounds can be found
 in Table \ref{tab:ao-events}.
 
 
-\begin{table*}[t] \caption{Overview of events to build the 18 regressors for the
+\begin{table*}[h!]
+    \caption{Overview of events to build the 18 regressors for the
         analysis of the audio-only (AO) stimulus. Some of the annotation's
         original categories (female, females, fname; male, males, mname; face,
         head; object, objects; see Table\ref{tab:descr-nouns-rules}) were pooled
         into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m};
         \texttt{fahead}; \texttt{object}).  \texttt{fg\_ad\_lrdiff} (left-right
         volume difference) and \texttt{fg\_ad\_rms} (root mean square volume)
-        represent one event for every movie frame (\unit[40]{ms}).  For a
+        represent one event for every movie frame (\unit[40]{ms}). For a
         description of the five control conditions for movie cuts see Table
-        \ref{tab:av-events}.} \label{tab:ao-events} \footnotesize
-        \begin{tabular}{lp{3.5cm}lllllllll} \toprule \textbf{label} &
-            \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} &
-            \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} &
-            \textbf{8} \\ \midrule body & trunk of the body or overlaid clothes
-            & \aoBodyAll & \aoBodyI & \aoBodyII & \aoBodyIII & \aoBodyIV &
-            \aoBodyV & \aoBodyVI & \aoBodyVII & \aoBodyVIII \tabularnewline
-            bpart & limbs and trousers & \aoBpartAll & \aoBpartI & \aoBpartII &
-            \aoBpartIII & \aoBpartIV & \aoBpartV & \aoBpartVI & \aoBpartVII &
-            \aoBpartVIII \tabularnewline fahead & face(parts) or head(parts) &
-            \aoFaheadAll & \aoFaheadI & \aoFaheadII & \aoFaheadIII & \aoFaheadIV
-            & \aoFaheadV & \aoFaheadVI & \aoFaheadVII & \aoFaheadVIII
-            \tabularnewline furn & moveable furniture insides \& outsides &
-            \aoFurnAll & \aoFurnI & \aoFurnII & \aoFurnIII & \aoFurnIV &
-            \aoFurnV & \aoFurnVI & \aoFurnVII & \aoFurnVIII \tabularnewline geo
-            & immobile landmarks & \aoGeoAll & \aoGeoI & \aoGeoII & \aoGeoIII &
-            \aoGeoIV & \aoGeoV & \aoGeoVI & \aoGeoVII & \aoGeoVIII
-            \tabularnewline groom & elements defining geometry of room &
-            \aoGroomAll & \aoGroomI & \aoGroomII & \aoGroomIII & \aoGroomIV &
-            \aoGroomV & \aoGroomVI & \aoGroomVII & \aoGroomVIII \tabularnewline
-            object & inanimate entities with firm boundaries & \aoObjAll &
-            \aoObjI & \aoObjII & \aoObjIII & \aoObjIV & \aoObjV & \aoObjVI &
-            \aoObjVII & \aoObjVIII \tabularnewline se\_new & noun cueing an
-            unfamiliar setting & \aoSenewAll & \aoSenewI & \aoSenewII &
-            \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII &
-            \aoSenewVIII \tabularnewline se\_old & noun cueing a recurring
-            setting & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII &
-            \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
-            \tabularnewline sex\_f & female person(s), name & \aoSexfAll &
-            \aoSexfI & \aoSexfII & \aoSexfIII & \aoSexfIV & \aoSexfV & \aoSexfVI
-            & \aoSexfVII & \aoSexfVIII \tabularnewline sex\_m & male person(s),
-            name & \aoSexmAll & \aoSexmI & \aoSexmII & \aoSexmIII & \aoSexmIV &
-            \aoSexmV & \aoSexmVI & \aoSexmVII & \aoSexmVIII \tabularnewline
+        \ref{tab:av-events}.}
+\label{tab:ao-events} \footnotesize
+\begin{tabular}{lp{3.5cm}lllllllll}
+\toprule \textbf{label} & \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
+\midrule
+body & trunk of the body or overlaid clothes & \aoBodyAll & \aoBodyI & \aoBodyII
+& \aoBodyIII & \aoBodyIV & \aoBodyV & \aoBodyVI & \aoBodyVII & \aoBodyVIII
+\tabularnewline
+bpart & limbs and trousers & \aoBpartAll & \aoBpartI & \aoBpartII & \aoBpartIII & \aoBpartIV & \aoBpartV & \aoBpartVI & \aoBpartVII & \aoBpartVIII
+\tabularnewline
+fahead & face(parts) or head(parts) & \aoFaheadAll & \aoFaheadI & \aoFaheadII & \aoFaheadIII & \aoFaheadIV & \aoFaheadV & \aoFaheadVI & \aoFaheadVII & \aoFaheadVIII
+\tabularnewline
+furn & moveable furniture insides \& outsides & \aoFurnAll & \aoFurnI & \aoFurnII & \aoFurnIII & \aoFurnIV & \aoFurnV & \aoFurnVI & \aoFurnVII & \aoFurnVIII
+\tabularnewline
+geo & immobile landmarks & \aoGeoAll & \aoGeoI & \aoGeoII & \aoGeoIII & \aoGeoIV & \aoGeoV & \aoGeoVI & \aoGeoVII & \aoGeoVIII
+\tabularnewline
+groom & elements defining geometry of room & \aoGroomAll & \aoGroomI & \aoGroomII & \aoGroomIII & \aoGroomIV & \aoGroomV & \aoGroomVI & \aoGroomVII & \aoGroomVIII
+\tabularnewline
+object & inanimate entities with firm boundaries & \aoObjAll & \aoObjI & \aoObjII & \aoObjIII & \aoObjIV & \aoObjV & \aoObjVI & \aoObjVII & \aoObjVIII
+\tabularnewline
+se\_new & noun cueing an unfamiliar setting & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
+\tabularnewline
+se\_old & noun cueing a recurring setting & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
+\tabularnewline
+sex\_f & female person(s), name & \aoSexfAll & \aoSexfI & \aoSexfII & \aoSexfIII & \aoSexfIV & \aoSexfV & \aoSexfVI & \aoSexfVII & \aoSexfVIII
+\tabularnewline
+sex\_m & male person(s), name & \aoSexmAll & \aoSexmI & \aoSexmII & \aoSexmIII & \aoSexmIV & \aoSexmV & \aoSexmVI & \aoSexmVII & \aoSexmVIII
+\tabularnewline
 % vlo_ch has no events in segment 5. So indices are shifted
 vse\_new & control for movie cut & \aoVsenewAll & \aoVsenewI & \aoVsenewII &
 \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII &
-\aoVsenewVIII \tabularnewline vse\_old & control for movie cut & \aoVseoldAll &
-\aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI
-& \aoVseoldVII & \aoVseoldVIII \tabularnewline vlo\_ch & control for movie cut &
+\aoVsenewVIII
+\tabularnewline
+vse\_old & control for movie cut & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII
+\tabularnewline
+vlo\_ch & control for movie cut &
 \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV
-& \aoVlochVI & \aoVlochVII \tabularnewline vpe\_new & control for movie cut &
-\aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV &
-\aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII \tabularnewline
+& \aoVlochVI & \aoVlochVII
+\tabularnewline
+vpe\_new & control for movie cut & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII
+\tabularnewline
 % vpe_old has no events in 3. So the indices are shifted
 vpe\_old & control for movie cut & \aoVpeoldAll & \aoVpeoldI & \aoVpeoldII & 0 &
 \aoVpeoldIII & \aoVpeoldIV & \aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII
-\tabularnewline fg\_ad\_lrdiff & left-right volume difference & \aoFgadlrdiffAll
-& \aoFgadlrdiffI & \aoFgadlrdiffII & \aoFgadlrdiffIII & \aoFgadlrdiffIV &
+\tabularnewline
+fg\_ad\_lrdiff & left-right volume difference & \aoFgadlrdiffAll & \aoFgadlrdiffI & \aoFgadlrdiffII & \aoFgadlrdiffIII & \aoFgadlrdiffIV &
 \aoFgadlrdiffV & \aoFgadlrdiffVI & \aoFgadlrdiffVII & \aoFgadlrdiffVIII
-\tabularnewline fg\_ad\_rms & root mean square (loudness) & \aoFgadrmsAll &
+\tabularnewline
+fg\_ad\_rms & root mean square (loudness) & \aoFgadrmsAll &
 \aoFgadrmsI & \aoFgadrmsII & \aoFgadrmsIII & \aoFgadrmsIV & \aoFgadrmsV &
-\aoFgadrmsVI & \aoFgadrmsVII & \aoFgadrmsVIII \tabularnewline \bottomrule
-\end{tabular} \end{table*}
+\aoFgadrmsVI & \aoFgadrmsVII & \aoFgadrmsVIII
+\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table*}
 
 % AV regressors/events
 To create regressors for the AV analysis, we categorized the depicted location
@@ -900,65 +889,58 @@ found in Table \ref{tab:av-events}.
 Events of both stimuli were convolved with a double gamma hemodynamic response
 function (HRF).
 
-\begin{table*}[t] \caption{Overview of events to build the 14 regressors for the
-        analysis of the audio-visual (AV) stimulus.  \texttt{fg\_av\_ger\_pd}
-        (perceptual differences of consecutive frames), \texttt{fg\_av\_ger\_ml}
-        (mean luminance of a frame), \texttt{fg\_av\_ger\_lr} (difference in
-        mean luminance of left and right half), \texttt{fg\_av\_ger\_ud}
-        (difference in mean luminance of upper and lower half),
+\begin{table*}[h!]
+    \caption{Overview of events to build the 14 regressors for the analysis of
+        the audio-visual (AV) stimulus.
+        \texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames),
+        \texttt{fg\_av\_ger\_ml} (mean luminance of a frame),
+        \texttt{fg\_av\_ger\_lr} (difference in mean luminance of left and right
+        half),
+        \texttt{fg\_av\_ger\_ud} (difference in mean luminance of upper and
+        lower half),
         \texttt{fg\_av\_ger\_lrdiff} (left-right volume difference), and
         \texttt{fg\_av\_ger\_rms} (root mean square volume) represent one event
-        for every movie frame (\unit[40]{ms}).  For description of the two event
-        categories of the audio-description's narrator (\texttt{se\_new} and
-        \texttt{se\_old}) to build contrast of negative control see Table
-        \ref{tab:ao-events}.} \label{tab:av-events} \footnotesize
-        \begin{tabular}{lp{3.5cm}lllllllll} \toprule \textbf{label} &
-            \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} &
-            \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} &
-            \textbf{8} \\ \midrule vse\_new &  change of the camera position to
-            a setting not depicted before & \aoVsenewAll & \aoVsenewI &
-            \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI
-            & \aoVsenewVII & \aoVsenewVIII \tabularnewline vse\_old & change of
-            the camera position to a recurring setting & \aoVseoldAll &
-            \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV &
-            \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII \tabularnewline vlo\_ch &
-            change of the camera position to another locale within the same
-            setting & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII &
-            \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII
-            \tabularnewline vpe\_new & change of the camera position within a
-            locale not depicted before & \aoVpenewAll & \aoVpenewI & \aoVpenewII
-            & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI &
-            \aoVpenewVII & \aoVpenewVIII \tabularnewline
+        for every movie frame (\unit[40]{ms}).
+        For description of the two event categories of the audio-description's
+        narrator (\texttt{se\_new} and \texttt{se\_old}) to build contrast of
+        negative control see Table
+\ref{tab:ao-events}.}
+\label{tab:av-events}
+\footnotesize
+\begin{tabular}{lp{3.5cm}lllllllll} \toprule \textbf{label} & \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
+\midrule
+vse\_new &  change of the camera position to a setting not depicted before & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII
+\tabularnewline vse\_old & change of the camera position to a recurring setting & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII
+\tabularnewline
+vlo\_ch & change of the camera position to another locale within the same setting & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII
+\tabularnewline
+vpe\_new & change of the camera position within a locale not depicted before & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII
+\tabularnewline
 % vpe_old has no events in 3. So the indices are shifted
 vpe\_old & change of the camera position within a recurring locale &
 \aoVpeoldAll & \aoVpeoldI & \aoVpeoldII & 0 & \aoVpeoldIII & \aoVpeoldIV &
-\aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII \tabularnewline vno\_cut & a continuous
-frame from the same camera position & \avVnocutAll & \avVnocutI & \avVnocutII &
-0 & \avVnocutIII & \avVnocutIV & \avVnocutV & \avVnocutVI & \avVnocutVII
-\tabularnewline se\_new & control for AO narrator & \aoSenewAll & \aoSenewI &
-\aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII &
-\aoSenewVIII \tabularnewline se\_old & control for AO narrator & \aoSeoldAll &
-\aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI &
-\aoSeoldVII & \aoSeoldVIII \tabularnewline fg\_av\_ger\_lr & left-right
-luminance difference & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII &
-\avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI &
-\avFgavgerlrVII & \avFgavgerlrVIII \tabularnewline fg\_av\_ger\_lrdiff &
-left-right volume difference & \avFgavgerlrdiffAll & \avFgavgerlrdiffI &
-\avFgavgerlrdiffII & \avFgavgerlrdiffIII & \avFgavgerlrdiffIV &
-\avFgavgerlrdiffV & \avFgavgerlrdiffVI & \avFgavgerlrdiffVII &
-\avFgavgerlrdiffVIII \tabularnewline fg\_av\_ger\_ml & mean luminance &
-\avFgavgermlAll & \avFgavgermlI & \avFgavgermlII & \avFgavgermlIII &
-\avFgavgermlIV & \avFgavgermlV & \avFgavgermlVI & \avFgavgermlVII &
-\avFgavgermlVIII \tabularnewline fg\_av\_ger\_pd & perceptual difference &
-\avFgavgerpdAll & \avFgavgerpdI & \avFgavgerpdII & \avFgavgerpdIII &
-\avFgavgerpdIV & \avFgavgerpdV & \avFgavgerpdVI & \avFgavgerpdVII &
-\avFgavgerpdVIII \tabularnewline fg\_av\_ger\_rms & root mean square (loudness)
-& \avFgavgerrmsAll & \avFgavgerrmsI & \avFgavgerrmsII & \avFgavgerrmsIII &
-\avFgavgerrmsIV & \avFgavgerrmsV & \avFgavgerrmsVI & \avFgavgerrmsVII &
-\avFgavgerrmsVIII \tabularnewline fg\_av\_ger\_ud & upper-lower luminance
-difference & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII
-& \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII &
-\avFgavgerudVIII \tabularnewline \end{tabular} \end{table*}
+\aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII
+\tabularnewline
+vno\_cut & a continuous frame from the same camera position & \avVnocutAll & \avVnocutI & \avVnocutII & 0 & \avVnocutIII & \avVnocutIV & \avVnocutV & \avVnocutVI & \avVnocutVII
+\tabularnewline
+se\_new & control for AO narrator & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
+\tabularnewline
+se\_old & control for AO narrator & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
+\tabularnewline
+fg\_av\_ger\_lr & left-right luminance difference & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII & \avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI & \avFgavgerlrVII & \avFgavgerlrVIII
+\tabularnewline
+fg\_av\_ger\_lrdiff & left-right volume difference & \avFgavgerlrdiffAll & \avFgavgerlrdiffI & \avFgavgerlrdiffII & \avFgavgerlrdiffIII & \avFgavgerlrdiffIV & \avFgavgerlrdiffV & \avFgavgerlrdiffVI & \avFgavgerlrdiffVII & \avFgavgerlrdiffVIII
+\tabularnewline
+fg\_av\_ger\_ml & mean luminance & \avFgavgermlAll & \avFgavgermlI & \avFgavgermlII & \avFgavgermlIII & \avFgavgermlIV & \avFgavgermlV & \avFgavgermlVI & \avFgavgermlVII & \avFgavgermlVIII
+\tabularnewline
+fg\_av\_ger\_pd & perceptual difference & \avFgavgerpdAll & \avFgavgerpdI & \avFgavgerpdII & \avFgavgerpdIII & \avFgavgerpdIV & \avFgavgerpdV & \avFgavgerpdVI & \avFgavgerpdVII & \avFgavgerpdVIII
+\tabularnewline
+fg\_av\_ger\_rms & root mean square (loudness) & \avFgavgerrmsAll & \avFgavgerrmsI & \avFgavgerrmsII & \avFgavgerrmsIII & \avFgavgerrmsIV & \avFgavgerrmsV & \avFgavgerrmsVI & \avFgavgerrmsVII & \avFgavgerrmsVIII
+\tabularnewline
+fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII & \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII & \avFgavgerudVIII
+\tabularnewline
+\end{tabular}
+\end{table*}
 
 %
 \todo[inline]{Die Abkürzungen in Figure 1: Da steigt keiner hinter} 
@@ -1065,30 +1047,6 @@ controls to test if increased activation in the PPA was correlated with moments
 of cuts and therefore possibly correlated with a accompanying change in the
 soundscape.
 
-
-\begin{table*}[t] \caption{Contrasts of parameter estimates for the analysis of
-        the audio-only stimulus (AO). Contrast 1-8 aim to isolate the PPA
-        (\texttt{all non-geo} = body, bodypart, fahead, object, sex\_f, sex\_m).
-        Contrasts 9-13 serve as negative control at the moments of movie cuts
-        that could correlate with changes of the audio tracks soundscape (see
-        Table \ref{tab:av-contrasts}).} \label{tab:ao-contrasts} \footnotesize
-        \begin{tabular}{lll} \toprule \textbf{nr.} &  \textbf{contrast} &
-            \textbf{purpose} \\ \midrule 1 & geo, groom > all non-geo & PPA
-            \tabularnewline 2 & geo, groom, se\_new > all non-geo & PPA
-            \tabularnewline 3 & groom, se\_new, se\_old > all non-geo & PPA
-            \tabularnewline 4 & geo > all non-geo & PPA \tabularnewline 5 &
-            groom > all non-geo & PPA \tabularnewline 6 & se\_new > all non-geo
-            & PPA \tabularnewline 7 & se\_new, se\_old > all non-geo & PPA
-            \tabularnewline 8 & se\_new > se\_old & PPA \tabularnewline 9 &
-            vse\_new > vpe\_old & control at moments of cuts \tabularnewline 10
-            & vse\_new, vpe\_new > vse\_old, vpe\_old & control at moments of
-            cuts \tabularnewline 11 & vse\_new > vse\_old & control at moments
-            of cuts \tabularnewline 12 & vse\_new > vse\_old, vpe\_old & control
-            at moments of cuts \tabularnewline 13 & vse\_new, vpe\_new >
-            vpe\_old & control at moments of cuts \tabularnewline \end{tabular}
-    \end{table*}
-
-
 \todo[inline]{MH: I think it's better to explain the rationale of the regressors
     here in the context of the contrasts and not already above in the list of
     created regressors: COH: yes, I checked that. Above is just a short
@@ -1126,22 +1084,60 @@ Table \ref{tab:av-contrasts}) by using regressors based on regressors of the AO
 stimulus.
 
 
-\begin{table*}[t] \caption{Contrasts of parameter estimates for the analysis of
-        the audio-visual movie (AV).  Contrast 1-5 aim to isolate the PPA.
-        Contrast 6-9 serve as negative control.  Contrast 10 serves as control
-        for moments when the narrator cues the listener about a switch of
-    settings, events that could be correlated with a switch of the soundscape.}
-    \label{tab:av-contrasts} \footnotesize \begin{tabular}{lll} \toprule
-        \textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\ \midrule 1 &
-        vse\_new > vpe\_old & PPA \tabularnewline 2 & vse\_new, vpe\_new >
-        vse\_old, vpe\_old & PPA \tabularnewline 3 & vse\_new > vse\_old & PPA
-        \tabularnewline 4 & vse\_new > vse\_old, vpe\_old & PPA \tabularnewline
-        5 & vse\_new, vpe\_new > vpe\_old & PPA \tabularnewline 6 & vno\_cut >
-        vse\_new & negative control \tabularnewline 7 & vno\_cut > vse\_old &
-        negative control \tabularnewline 8 & vno\_cut > vse\_new, vse\_old &
-        negative control \tabularnewline 9 & vno\_cut > vpe\_new, vpe\_old &
-        negative control \tabularnewline 10 & se\_new > se\_old & control for
-        narrator \tabularnewline \end{tabular} \end{table*}
+\begin{table*}[h!]
+\caption{Contrasts of parameter estimates for the analysis of the audio-only stimulus (AO).
+Contrast 1-8 aim to isolate the PPA (\texttt{all non-geo} = body, bodypart,
+    fahead, object, sex\_f, sex\_m).
+Contrasts 9-13 serve as negative control at the moments of movie cuts that could
+    correlate with changes of the audio tracks soundscape (see Table \ref{tab:av-contrasts}).}
+\label{tab:ao-contrasts}
+\footnotesize
+\begin{tabular}{lll}
+\toprule
+\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
+\midrule
+1 & geo, groom > all non-geo & PPA \tabularnewline
+2 & geo, groom, se\_new > all non-geo & PPA \tabularnewline
+3 & groom, se\_new, se\_old > all non-geo & PPA \tabularnewline
+4 & geo > all non-geo & PPA \tabularnewline
+5 & groom > all non-geo & PPA \tabularnewline
+6 & se\_new > all non-geo & PPA \tabularnewline
+7 & se\_new, se\_old > all non-geo & PPA \tabularnewline
+8 & se\_new > se\_old & PPA \tabularnewline
+9 & vse\_new > vpe\_old & control at moments of cuts \tabularnewline
+10 & vse\_new, vpe\_new > vse\_old, vpe\_old & control at moments of cuts \tabularnewline
+11 & vse\_new > vse\_old & control at moments of cuts \tabularnewline
+12 & vse\_new > vse\_old, vpe\_old & control at moments of cuts \tabularnewline
+13 & vse\_new, vpe\_new > vpe\_old & control at moments of cuts \tabularnewline
+\end{tabular}
+\end{table*}
+
+
+\begin{table*}[h!]
+    \caption{Contrasts of parameter estimates for the analysis of the audio-visual movie (AV).
+Contrast 1-5 aim to isolate the PPA.
+    Contrast 6-9 serve as negative control.
+    Contrast 10 serves as control for moments when the narrator cues the
+    listener about a switch of settings, events that could be correlated with a
+    switch of the soundscape.}
+\label{tab:av-contrasts}
+\footnotesize
+\begin{tabular}{lll}
+\toprule
+\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
+\midrule
+1 & vse\_new > vpe\_old & PPA \tabularnewline
+2 & vse\_new, vpe\_new > vse\_old, vpe\_old & PPA \tabularnewline
+3 & vse\_new > vse\_old & PPA \tabularnewline
+4 & vse\_new > vse\_old, vpe\_old & PPA \tabularnewline
+5 & vse\_new, vpe\_new > vpe\_old & PPA \tabularnewline
+6 & vno\_cut > vse\_new & negative control \tabularnewline
+7 & vno\_cut > vse\_old & negative control \tabularnewline
+8 & vno\_cut > vse\_new, vse\_old & negative control \tabularnewline
+9 & vno\_cut > vpe\_new, vpe\_old & negative control \tabularnewline
+10 & se\_new > se\_old & control for narrator \tabularnewline
+\end{tabular}
+\end{table*}
 
 % alignments single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
