@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
+\usepackage{comment}
 \usepackage{svg}
 \usepackage{caption, booktabs}
 \usepackage{amsmath}
@@ -101,8 +102,6 @@ commands)}
 
 
 \section{Introduction}
-
-\todo[inline]{describe ``localize / isolate'' in other words}
 
 \todo[inline]{Limit for main text (intro and discussion) = ca. 3k words;}
 
@@ -225,7 +224,7 @@ stimuli.
 % block-design & task
 Second, studies used block-designed paradigms to maximize detection power.
 Further, they usually employed an explicit perceptual judgment task.
-% conceptualized stimuli and blockl: disadvantages
+% conceptualized stimuli and block: disadvantages
 Block-design studies that use conceptualized stimuli and a task have the
 advantages of controlling confounding variables (e.g. color, luminance, size,
 spatial frequencies, sentence length), maximizing detection power, and keeping
@@ -242,13 +241,13 @@ environment that our brains are accommodated to
 % paradigm.
 Lastly, the reviewed studies averaged results across 7-11 subjects.
 % averaging pros and cons
-The averaging approch improves signal-to-noise ratio (SNR) but does not
+The averaging approach improves signal-to-noise ratio (SNR) but does not
 characterize brain functions at an individual level, a prerequisite for the
 application of brain imaging methods in individual diagnostics (cf.
 \cite{dubois2016building, eickhoff2020towards}).
 
 \todo[inline]{SE: make motivation of study clearer; gap in research; how it
-    (might) adance(s) the field; make clearer how current study solves the
+    (might) advance(s) the field; make clearer how current study solves the
     problem; COH: I revised this part, it's clearer at least
 if I read it now}
 
@@ -532,7 +531,6 @@ participant-specific BOLD template image \citep{sengupta2016extension}.
 % exclusion of VP 10
 Data of one participant were dropped to due to invalid distortion correction
 during scanning of the AO stimulus.
-
 % preprocessing intro
 All further analysis steps of the current study were carried out using tools of
 FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
@@ -570,124 +568,133 @@ subject-specific results ($Z$-maps) across the 8 segments for every subject. A
 subsequent, third-level analysis averaged contrast estimates over subjects.
 
 
-\subsubsection{Annotation of naturalistic stimuli}
+\subsubsection{Stimulus annotation and regressors}
 
-\todo[inline]{Ich weiss nicht, ob es die etwas wild zwischendrin stehenden
-    tables waren, die oft komplizierten Beschreibungen, die Länge des
-    Abschnittes, oder alles zusammen, aber ich habe mich mit 2.8 extrem schwer
-    getan. Bitte lass den Reviewer nicht mit dem selben Gefühl rausgehen. Gut
-strukturiert, einfach und klar ist immer vom Vorteil}
+\todo[inline]{SE: habe mich mit 2.8 extrem schwer getan: Länge des Abschnitts,
+oft komplizierten Beschreibungen}
 
 \todo[inline]{SE: focus on the events that are relevant to the analysis to
 reduce complexity and explain these better}
 
-\todo[inline]{Simon suggested to put paragraphs regarding annotation here,
-    followed by a subsection ``Regressors''. Additionally imo, it makes sense to
-    build one subsection ``Stimulus annotations \& regressors'' to have a
-    structure of ``AO (anno \& regressors); AV (anno \& regressors'' instead of
-AO \& AV (annotation), AO \& AV (regressors)``.}
-
-\todo[inline]{Ich würde mal die Frage antizipieren, wie gut passen die
-Annotationen zu den VIS Stimuli. Und die müsste meiner Meinung nach doppelt
-beantwortet werden. a) Durch genauere Beschreibung von VIS, b) durch genauere
+\todo[inline]{SE: wie gut passen die Annotationen zu den VIS Stimuli -> genauere
 Ausführungen, wie welche Annotation dazu passt}
 
 % intro
 Since we did not design the naturalistic stimuli for detection power, we
-operationalized the perception of landscapes and landmarks (compared to e.g.
-faces and objects) by annotating words spoken by the narrator of the
-audio-description as well as cuts and depicted locations in the movie.
-% stimuli not designed for research purposes
-Both natural stimuli were not design to isolate a specific brain area but to
-entertain their audiences free from any perceptual or behavioral task.
-% fixed stimuli and operationalization
-We annotated the temporal structure of the fixed stimuls material to
-operationalize the perception of different stimulus features (e.g. the
-perception of landmarks and faces) and create GLM contrasts in the subsequent
-data analysis.
+annotated the temporal structure of the fixed stimuls material to operationalize
+the perception of different stimulus features and create regressors for the
+following GLM analysis.
+
+
+\paragraph{audio-description: annotation}
+
 % AO annotation
-For the analysis of the AO data, we extended an publicly available annotation of
+For the analysis of the AO data, we extended a publicly available annotation of
 speech \citep{haeusler2020speechanno} by further annotating words spoken by the
 audio-description's narrator.
 % annotation procedure
 Two persons performed a categorization of nouns that the narrator uses to
-describe the movie's missing visual content.
-% categories in detail
-Nouns were categorized by the verbal clue they provide about the cinematographic
-scene's environment (\texttt{geo}, \texttt{geo-room}; \texttt{setting\_new},
-\texttt{setting\_old}), its inherent persons (e.g. \texttt{female},
-\texttt{male}, \texttt{persons}), a person's body or worn clothes
-(\texttt{face}, \texttt{head}, \texttt{body}, \texttt{bodypart}), and a scene's
-inherent objects (\texttt{object}, \texttt{furniture}).
+describe the movie's missing visual content based on a set of rules.
+% reference to table with rules and examples
+A complete overview of all 18 categories, the rule for a word to belong to a
+category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
+% procedure
+A preliminary annotation was performed by one person according to the rules.
+Minor corrections due to incorrectly applied rules were done by the author.
 % why and how of categories 1
-Some categories were created to reflect the six stimulus categories used in the
-visual localizer experiment (e.g. \texttt{geo}, \texttt{object}).
+Some categories reflect the verbal counterpart of the stimulus categories that
+were used in the visual localizer experiment (e.g. \texttt{body}, \texttt{face},
+\texttt{head}, \texttt{object}, \texttt{setting\_new}, and
+\texttt{setting\_rec}).
 % why and how of categories 2
 Other categories were created to semantically cluster some remaining nouns into
-additional categories (e.g. \texttt{fname}, \texttt{furniture})
-% problem with hierarchical categories
+categories that had no counterpart in the visual localizer experiment (e.g.
+\texttt{bodypart}, \texttt{female}, \texttt{fname}, \texttt{furniture},
+\texttt{geo}, \texttt{geo-room}, \texttt{male}, and \texttt{persons}).
+% categories in detail
+%Nouns were categorized by the verbal clue they provide about the
+%cinematographic scene's environment (\texttt{geo}, \texttt{geo-room};
+%\texttt{setting\_new}, \texttt{setting\_old}), its inherent persons (e.g.
+%\texttt{female}, \texttt{male}, \texttt{persons}), a person's body or worn
+%clothes (\texttt{face}, \texttt{head}, \texttt{body}, \texttt{bodypart}), and a
+%scene's inherent objects (\texttt{object}, \texttt{furniture}).  problem with
+%hierarchical categories
 Notably, the categories \texttt{setting\_new} and \texttt{setting\_rec} comprise
 not just words that describe a setting as a whole (e.g. ``in Greenbow'', ``in a
 disco'', ``the platoon wades through a rice field''). They also comprise words
 that could count as a member of another categories in case the narrator uses
 these words to indicate a switch from one setting to another (e.g. ``Jenny as a
 teenager'').
-% reference to table with rules and examples
-A complete overview of all 19 categories, the rule for a word to belong to a
-category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
-% procedure
-A preliminary annotation was performed by one person according to the rules.
-Minor corrections due to incorrectly applied rules were done by the author.
-% reference to table with counts
-The resulting counts for the whole stimulus and the eight stimulus segments used
-during fMRI scanning can be seen in Table \ref{tab:descr-nouns-counts}.
 
 
-\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
-ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum GLM
-unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter}
-
-% table for descriptive nouns: categories, rules, examples counts
 % table for descriptive nouns: categories, rules, examples counts
 \begin{table*}[h!]
-    \caption{Descriptive nouns spoken by the audio-description's narrator that
-        served as a basis to build the regressors
-(see Table \ref{tab:ao-events}):
-    categories, annotation rules, and examples (given in English).
-    % The category \texttt{++} also contains adverbial of time.
+    \caption{Categories and rules to categorize the descriptive nouns spoken by
+        the audio-description's narrator. These categories served as a basis to
+        build the regressors of the GLM (cf. Table \ref{tab:ao-events}).
+        Examples are given in English.
+        % The category \texttt{++} also contains adverbial of time.
 }
 \label{tab:descr-nouns-rules}
 \begin{tabular}{lll}
 \toprule
 \textbf{category} & \textbf{rule} & \textbf{examples} \\
 \midrule
-body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress, shirt \tabularnewline
-bodypart & limbs and trousers & arm, finger, leg, toe \tabularnewline
-face & face or parts of it & face, ear, nose, mouth \tabularnewline
-female & female person & nurse, mother, woman \tabularnewline
-females & female persons & women \tabularnewline
-fname & female name & Jenny \tabularnewline
+body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress, shirt
+\tabularnewline
+bodypart & limbs and trousers & arm, finger, leg, toe
+\tabularnewline
+face & face or parts of it & face, ear, nose, mouth
+\tabularnewline
+female & female person & nurse, mother, woman
+\tabularnewline
+females & female persons & women
+\tabularnewline
+fname & female name & Jenny
+\tabularnewline
 furniture & movable furniture insides \& outsides & bench, bed, table, chair
 \tabularnewline
 geo & immobile landmarks & building, tree, street, alley, meadow, cornfield \tabularnewline
-geo-room & rooms (insides) or  locales (outsides) & living room; wall, door, window, floor, turf \tabularnewline
+geo-room & rooms (insides) or  locales (outsides) & living room; wall, door,
+window, floor, turf
+\tabularnewline
 head & non-face parts of the head; worn headgear & head, hair, ear, neck,
-helmet \tabularnewline
-male & male person & man, father, soldier \tabularnewline
-males & male persons & boys, opponents \tabularnewline
-mname & male name & Bubba, Kennedy \tabularnewline
-object & countable entity with firm boundaries & telephone, car \tabularnewline
-objects & countable entities & wheels, plants \tabularnewline
-persons & concrete persons of unknown sex & hippies, patients \tabularnewline
-setting\_new & noun cueing an unfamiliar setting &  on a ``bridge'', on an ``alley'', on ``campus'' \tabularnewline
-setting\_rec & noun cueing a recurring setting & at the ``bus stop'' \tabularnewline
+helmet
+\tabularnewline
+male & male person & man, father, soldier
+\tabularnewline
+males & male persons & boys, opponents
+\tabularnewline
+mname & male name & Bubba, Kennedy
+\tabularnewline
+object & countable entity with firm boundaries & telephone, car
+\tabularnewline
+objects & countable entities & wheels, plants
+\tabularnewline
+persons & concrete persons of unknown sex & hippies, patients
+\tabularnewline
+setting\_new & a setting occurring for the first time & on a ``bridge'', on an ``alley'', on ``campus''
+\tabularnewline
+setting\_rec & a recurring setting & at the ``bus stop'' \tabularnewline
 % ++ & cue regarding time & in the ``evening'', it's ``daytime'', ``later'' \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table*}
 
 
-% table of descriptive nouns counts
+\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
+    ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum
+    GLM unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter;
+    COH: I dropped the table of counts per segment.  The information is
+    redundant since the counts are not the count of events of the actual
+regressors (cf. Table \ref{tab:av-events})}
+
+
+\begin{comment}
+% nouns counts
+The resulting counts for the whole stimulus and the eight stimulus segments used
+during fMRI scanning can be seen in Table \ref{tab:descr-nouns-counts}.
+
 \begin{table*}[h!]
     \caption{Descriptive nouns spoken by the audio-descriptions narrator:
         counts for the whole audio-only stimulus and its eight segments used
@@ -721,82 +728,10 @@ setting\_rec & \anSettingrecAll &
 \end{tabular}
 \end{table*}
 
+\end{comment}
 
 
-\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
-zwischen zwei Gesichtern sein?!?}
-
-\todo[inline]{besser erklären (was heißt "unfamilar perspective"? Ab wann ist
-ein setting "familiar"?)}
-
-% AV anno
-For the analysis of the AV data, we took advantage of a publicly available
-annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
-% rationale behind using movie cuts
-Our rationale was that cuts are ``spatially relevant'' events that re-orient the
-viewer within the environment depicted in the movie.
-
-
-
-\subsubsection{Regressors}
-
-% first level analysis regressors AO: events
-For the analysis of the AO stimulus, we created regressors correlating with the
-occurrence of descriptive nouns spoken by the narrator that were added to the
-original annotation of speech \citep{haeusler2020speechanno}.
-% AV events
-For the AV stimulus, we created regressors correlating with movie cuts provided
-by another previously published annotation \citep{haeusler2016cutanno}.
-% https://github.com/psychoinformatics-de/studyforrest-data-annotations/blob/master/code/researchcut2segments.py}
-
-% procedure
-Both annotations were split into eight parts corresponding to the eight stimulus
-segments.
-% AO events
-To create regressors for the AO analysis, we used all of the original 19
-categories of descriptive nouns except ``\texttt{++}'' (i.e. cues regarding
-time).
-% pooling
-Some categories that were similar but offered only a small amount of counts were
-pooled resulting in eleven new categories that served as experimental conditions
-(see Table \ref{tab:ao-events}).
-% setting beats other category
-Events that fell into one of the two setting-related categories
-(\texttt{se\_new} or \texttt{se\_old}) but also into another category were
-treated as belonging to the setting-related category (e.g. ``Jenny as a
-teenager'').
-% modeling as boxcar function
-Events were were modeled as boxcar function from onset to offset of each word.
-
-\todo[inline]{Gab es ein separates null-event für jeden zeitraum zwischen zwei
-annotierten events oder war das ein regressor der immer wieder kam?}
-% null regressors
-If a segment did not contain an event of a category, a null regressor was chosen
-for that category in that segment.\todo{wenn ich "null regressor" nehme, darf
-ich den ganzen Run, glaube ich, in der 2nd level Analyse gar nicht benutzen?
-Hatte, glaube ich, Jeanette Mumford in einem ihren Videos mal gesagt}
-
-\todo[inline]{Das mit den "five additional categories" habe ich nicht
-verstanden. Überhaupt finde ich die ganze Beschreibung relativ schwer zu
-durchdrungen, und ich glaube damit werde ich nicht alleine sein.}
-% categories taken from movie cut annotation
-Five additional categories were created from the annotation of movie cuts and
-modeled as impulse events to capture variance of a possibly confounding change
-of the soundscape after a cut, and to create contrasts of cross-modal negative
-control (see details below).
-% nuisance regressors
-\todo[inline]{"Continuous bins lasting 40ms" ?!?}
-%
-Lastly, we used continuous bins of information about two auditory features
-(left-right difference in volume and root mean square energy) that was averaged
-across the length of every movie frame (\unit[40]{ms}) to capture variance
-correlating with low-level perceptual processes.
-% Reference to table
-An explanation and counts of the eleven speech-related event categories, the
-five movie cut-related categories, and the two low-level confounds can be found
-in Table \ref{tab:ao-events}.
-
-
+% AO regressors
 \begin{table*}[h!]
     \caption{Overview of events to build the 18 regressors for the
         analysis of the audio-only (AO) stimulus. Some of the annotation's
@@ -863,32 +798,91 @@ fg\_ad\_rms & root mean square (loudness) & \aoFgadrmsAll &
 \end{tabular}
 \end{table*}
 
-% AV regressors/events
-To create regressors for the AV analysis, we categorized the depicted location
-in the frame following one of the 869 cuts into five categories (see Table
-\ref{tab:av-events}): 1) a cut into an unfamiliar setting (\texttt{vse\_new}),
-2) a cut into a familiar setting (\texttt{vse\_old}), 3) a switch of room/locale
-within a setting (\texttt{vlo\_ch}), 4) a cut to an unfamiliar perspective
-(\texttt{vpe\_new}), and 5) a cut to a familiar perspective (\texttt{vpe\_old}).
-% null regressor
-Here again, a null regressor was chosen for segment if it did not contain an
-event of specific category.
-% no cut condition: intro
-A sixth regressors (\texttt{no\_cut}) serving a control condition and to create
-negative control contrasts. Frames within movie shots lasting at least
-\unit[20]{s} were pseudo-randomly chosen by the following rationale:
-% how they were fitted
-a \texttt{no\_cut} event had to have a minimum distance of \unit[10]{s} to a
-movie cut and to another \texttt{no\_cut} event.
-% reference to table
-A short explanation and counts of these six categories modeled as impulse
-events, and six additional event categories for low-level auditory and visual
-features of the movie (here again continuous bins lasting \unit[40]{ms}) can be
-found in Table \ref{tab:av-events}.
+
+
+\paragraph{audio-description: regressors}
+% first level analysis regressors AO: events
+For the analysis of the AO stimulus, we created regressors correlating with the
+occurrence of descriptive nouns spoken by the narrator that were added to the
+original annotation of speech \citep{haeusler2020speechanno}.
+% AV events
+For the AV stimulus, we created regressors correlating with movie cuts provided
+by another previously published annotation \citep{haeusler2016cutanno}.
+% https://github.com/psychoinformatics-de/studyforrest-data-annotations/blob/master/code/researchcut2segments.py}
+
+% procedure
+Both annotations were split into eight parts corresponding to the eight stimulus
+segments.
+% AO events
+To create regressors for the AO analysis, we used all of the original 19
+categories of descriptive nouns except ``\texttt{++}'' (i.e. cues regarding
+time).
+% pooling
+Some categories that were similar but offered only a small amount of counts were
+pooled resulting in eleven new categories that served as experimental conditions
+(see Table \ref{tab:ao-events}).
+% setting beats other category
+Events that fell into one of the two setting-related categories
+(\texttt{se\_new} or \texttt{se\_old}) but also into another category were
+treated as belonging to the setting-related category (e.g. ``Jenny as a
+teenager'').
+% modeling as boxcar function
+Events were were modeled as boxcar function from onset to offset of each word.
+
+\todo[inline]{Gab es ein separates null-event für jeden zeitraum zwischen zwei
+annotierten events oder war das ein regressor der immer wieder kam?}
+% null regressors
+If a segment did not contain an event of a category, a null regressor was chosen
+for that category in that segment.\todo{wenn ich "null regressor" nehme, darf
+ich den ganzen Run, glaube ich, in der 2nd level Analyse gar nicht benutzen?
+Hatte, glaube ich, Jeanette Mumford in einem ihren Videos mal gesagt}
+
+\todo[inline]{Das mit den "five additional categories" habe ich nicht
+verstanden. Überhaupt finde ich die ganze Beschreibung relativ schwer zu
+durchdrungen, und ich glaube damit werde ich nicht alleine sein.}
+% categories taken from movie cut annotation
+Five additional categories were created from the annotation of movie cuts and
+modeled as impulse events to capture variance of a possibly confounding change
+of the soundscape after a cut, and to create contrasts of cross-modal negative
+control (see details below).
+% nuisance regressors
+\todo[inline]{"Continuous bins lasting 40ms" ?!?}
+%
+Lastly, we used continuous bins of information about two auditory features
+(left-right difference in volume and root mean square energy) that was averaged
+across the length of every movie frame (\unit[40]{ms}) to capture variance
+correlating with low-level perceptual processes.
+% Reference to table
+An explanation and counts of the eleven speech-related event categories, the
+five movie cut-related categories, and the two low-level confounds can be found
+in Table \ref{tab:ao-events}.
+
 % modeling of regressors from events
 Events of both stimuli were convolved with a double gamma hemodynamic response
 function (HRF).
 
+
+\paragraph{movie: annotation}
+
+% AV anno
+For the analysis of the AV data, we took advantage of a publicly available
+annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
+% rationale behind using movie cuts
+Our rationale was that cuts are ``spatially relevant'' events that re-orient the
+viewer within the environment depicted in the movie.
+
+\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
+zwischen zwei Gesichtern sein?!?; COH: that should be clearer now as the
+explanation of the regressors immediately follows the description of the
+annotation}
+
+\todo[inline]{besser erklären (was heißt "unfamilar perspective"? Ab wann ist
+ein setting "familiar"?)}
+
+
+\paragraph{movie: regressors}
+
+% AV regressors
 \begin{table*}[h!]
     \caption{Overview of events to build the 14 regressors for the analysis of
         the audio-visual (AV) stimulus.
@@ -942,12 +936,36 @@ fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavge
 \end{tabular}
 \end{table*}
 
-%
-\todo[inline]{Die Abkürzungen in Figure 1: Da steigt keiner hinter} 
 
-\todo[inline]{Habe jetzt lange darüber gebrütet: Es gibt also kaum eine
-Korrelation zwischen AO und AV?; Also, außer bei fg\_av\_ger\_lr\_diff (wobei da
-keiner weiss, was das bedeutet)}
+% AV regressors/events
+To create regressors for the AV analysis, we categorized the depicted location
+in the frame following one of the 869 cuts into five categories (see Table
+\ref{tab:av-events}): 1) a cut into an unfamiliar setting (\texttt{vse\_new}),
+2) a cut into a familiar setting (\texttt{vse\_old}), 3) a switch of room/locale
+within a setting (\texttt{vlo\_ch}), 4) a cut to an unfamiliar perspective
+(\texttt{vpe\_new}), and 5) a cut to a familiar perspective (\texttt{vpe\_old}).
+% null regressor
+Here again, a null regressor was chosen for segment if it did not contain an
+event of specific category.
+% no cut condition: intro
+A sixth regressors (\texttt{no\_cut}) serving a control condition and to create
+negative control contrasts. Frames within movie shots lasting at least
+\unit[20]{s} were pseudo-randomly chosen by the following rationale:
+% how they were fitted
+a \texttt{no\_cut} event had to have a minimum distance of \unit[10]{s} to a
+movie cut and to another \texttt{no\_cut} event.
+% reference to table
+A short explanation and counts of these six categories modeled as impulse
+events, and six additional event categories for low-level auditory and visual
+features of the movie (here again continuous bins lasting \unit[40]{ms}) can be
+found in Table \ref{tab:av-events}.
+% modeling of regressors from events
+Events of both stimuli were convolved with a double gamma hemodynamic response
+function (HRF).
+
+
+\paragraph{regressor correlations}
+
 % reference to figure ``correlation of regressors''
 We computed the Pearson coefficients of the regressors across the eight segments
 of both naturalistic stimuli. Results demonstrate no to minor correlations (s.
@@ -960,6 +978,7 @@ detection power due to shared variance among regressors.
     will saves space in the main text; but mixing methods/results/discussion is
 not absolutely "clean"}
 
+
 % temporal derivatives
 Temporal derivatives were included in the design matrix to compensate for
 regional differences between modeled and actual HRF \citep{friston1998event}.
@@ -969,6 +988,14 @@ Six motion parameters were also used as additional nuisance regressors.
 Finally, designs were filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
 
+
+\todo[inline]{Die Abkürzungen in Figure 1: Da steigt keiner hinter} 
+
+\todo[inline]{Habe jetzt lange darüber gebrütet: Es gibt also kaum eine
+Korrelation zwischen AO und AV?; Also, außer bei fg\_av\_ger\_lr\_diff (wobei da
+keiner weiss, was das bedeutet)}
+
+
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/regressor-corr} \caption{Pearson
         correlation coefficients  of the regressors used in the analysis of the
@@ -976,22 +1003,17 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
         description) and audio-visual movie (red; see Table \ref{tab:av-events})
         rounded to the nearest tenth.  The correlation between the two stimuli's
         root mean square loudness and between their left-right difference in
-        loudness yielded the highest correlation values (\texttt{fg\_ad\_rms}
-        and \texttt{fg\_av\_ger\_rms}, r=.7635 \texttt{fg\_ad\_lrdiff} and
-        \texttt{fg\_av\_ger\_lrdiff}, r=.7749).} \label{fig:reg-corr}
-    \end{figure*}
+        loudness yielded the highest correlation values
+        (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
+        \texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749).}
+\label{fig:reg-corr}
+\end{figure*}
 
-\todo[inline]{MH: construction of contrasts of interests feels "messy";
-    consequence of the inability to filter the stimulus material. That "messy"
-    part is usually not obvious from a manuscript. Here we have a fixed, complex
-    stimulus, and we have to operationalize our questions with whatever we have
-at hand. This is not necessarily exact, and looking at the robustness is a
-feature, not a problem; COH: did not change a lot of text tbh but should be
-clearer now.}
 
-%
- \todo[inline]{Das mit den 8 kontrasten und 5 kontrasten habe ich nicht intuitiv
- durchblickt. Was wurde da gegen was kontrastiert?}
+\subsubsection{Contrasts}
+
+\todo[inline]{Das mit den 8 kontrasten und 5 kontrasten habe ich nicht intuitiv
+durchblickt. Was wurde da gegen was kontrastiert?}
 % we have fixed stimuli
 Compared to previous studies we did not design the stimulus material and
 experimentally controlled conditions for the purpose of optimal localization
