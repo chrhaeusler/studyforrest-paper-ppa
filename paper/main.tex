@@ -410,9 +410,9 @@ scenes, and phase scrambled images.
 % mirror images
 Mirrored views of these 24 $\times$ 6 images were also used as stimuli.
 % controlled luminance and size
-Images were matched in luminance and size of 400 $\times$\unit[400]{px}
+Images were matched in luminance and size of 400$\times$\unit[400]{px}
 (displayed at a size of approximately
-\unit[10]{$^{\circ}$}$\times$\unit[10]{$^{\circ}$} visual angle.
+\unit[10]{$^{\circ}$}$\times$\unit[10]{$^{\circ}$} visual angle).
 % procedure: presentation & instructions
 During the experiment, subjects were presented with four block-design runs, with
 two \unit[16]{s} blocks per stimulus category in each run.
@@ -421,168 +421,6 @@ Each image was shown for \unit[900]{ms} and images were separated by a fixation
 cross lasting \unit[100]{ms}.
 % task
 Subjects also performed a one-back matching task to keep them attentive.
-
-
-\subsection{Naturalistic stimuli annotation}
-
-\todo[inline]{Ich würde abschnitt 2.8 (statistical analysis) teilen:
-    a) die regressors, die dann mit der beschreibung der annotation kombinieren
-    b) die eigentliche statistik)}
-
-\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
-zwischen zwei Gesichtern sein?!?}
-
-%
-Since we did not design the given naturalistic stimuli for optimal localization
-performance of the PPA, we operationalized the perception of landscapes and
-landmarks (compared to e.g. faces and objects) by annotating words spoken by the
-narrator of the audio-description as well as cuts and depicted locations in the
-movie.
-% todo stimuli were not designed for research purposes
-Both natural stimuli were not design to isolate a specific brain area but to
-entertain their audiences free from any perceptual or behavioral task.
-% fixed stimuli and operationalization
-We annotated the temporal structure of the fixed stimuls material to
-operationalize the perception of different stimulus features (e.g. the
-perception of landmarks and faces) and create GLM contrasts in the subsequent
-data analysis.
-% AO annotation
-For the analysis of the AO data, we extended an publicly available annotation of
-speech \citep{haeusler2020speechanno} by further annotating words spoken by the
-audio-description's narrator.
-% annotation procedure
-Two persons performed a categorization of nouns that the narrator uses to
-describe the movie's missing visual content.
-% categories in detail
-Nouns were categorized by the verbal clue they provide about the cinematographic
-scene's environment (\texttt{geo}, \texttt{geo-room}; \texttt{setting\_new},
-\texttt{setting\_old}), its inherent persons (e.g. \texttt{female},
-\texttt{male}, \texttt{persons}), a person's body or worn clothes
-(\texttt{face}, \texttt{head}, \texttt{body}, \texttt{bodypart}), and a scene's
-inherent objects (\texttt{object}, \texttt{furniture}).
-% why and how of categories 1
-Some categories were created to reflect the six stimulus categories used in the
-visual localizer experiment (e.g. \texttt{geo}, \texttt{object}).
-% why and how of categories 2
-Other categories were created to semantically cluster some remaining nouns into
-additional categories (e.g. \texttt{fname}, \texttt{furniture})
-% problem with hierarchical categories
-Notably, the categories \texttt{setting\_new} and \texttt{setting\_rec} comprise
-not just words that describe a setting as a whole (e.g. ``in Greenbow'', ``in a
-disco'', ``the platoon wades through a rice field''). They also comprise words
-that could count as a member of another categories in case the narrator uses
-these words to indicate a switch from one setting to another (e.g. ``Jenny as a
-teenager'').
-% reference to table with rules and examples
-A complete overview of all 19 categories, the rule for a word to belong to a
-category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
-% procedure
-A preliminary annotation was performed by one person according to the rules.
-Minor corrections due to incorrectly applied rules were done by the author.
-% reference to table with counts
-The resulting counts for the whole stimulus and the eight stimulus segments used
-during fMRI scanning can be seen in Table \ref{tab:descr-nouns-counts}.
-
-% AV anno
-For the analysis of the AV data, we took advantage of a publicly available
-annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
-% rationale behind using movie cuts
-Our rationale was that cuts are ``spatially relevant'' events that re-orient the
-viewer within the environment depicted in the movie.
-
-\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
-ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum GLM
-unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter}
-
-\todo[inline]{Ich merke das mal hier an: Die Tables stehen an ganz merkwürdigen
-Positionen, das passt nicht zum Text und verwirrt ungemein}
-
-
-% table for descriptive nouns: categories, rules, examples counts
-\begin{table*}[t] \caption{Descriptive nouns spoken by the audio-description's
-            narrator: categories, annotation rules, and examples (given in
-            English). The category \texttt{++} also contains adverbial of time.}
-            \label{tab:descr-nouns-rules} \begin{tabular}{lll} \toprule
-                \textbf{category} & \textbf{rule} & \textbf{examples} \\
-                \midrule body & trunk of the body; overlaid clothes & back, hip,
-                shoulder; jacket, dress, shirt \tabularnewline bodypart & limbs
-                and trousers & arm, finger, leg, toe \tabularnewline face & face
-                or parts of it & face, ear, nose, mouth \tabularnewline female &
-                female person & nurse, mother, woman \tabularnewline females &
-                female persons & women \tabularnewline fname & female name &
-                Jenny \tabularnewline furniture & movable furniture insides \&
-                outsides & bench, bed, table, chair \tabularnewline geo &
-                immobile landmarks & building, tree, street, alley, meadow,
-                cornfield \tabularnewline geo-room & rooms (insides) or  locales
-                (outsides) & living room; wall, door, window, floor, turf
-                \tabularnewline head & non-face parts of the head; worn headgear
-                & head, hair, ear, neck, helmet \tabularnewline male & male
-                person & man, father, soldier \tabularnewline males & male
-                persons & boys, opponents \tabularnewline mname & male name &
-                Bubba, Kennedy \tabularnewline object & countable entity with
-                firm boundaries & telephone, car \tabularnewline objects &
-                countable entities & wheels, plants \tabularnewline persons &
-                concrete persons of unknown sex & hippies, patients
-                \tabularnewline setting\_new & noun cueing an unfamiliar setting
-                &  on a ``bridge'', on an ``alley'', on ``campus''
-                \tabularnewline setting\_rec & noun cueing a recurring setting &
-                at the ``bus stop'' \tabularnewline ++ & cue regarding time & in
-                the ``evening'', it's ``daytime'', ``later'' \tabularnewline
-
-\bottomrule \end{tabular} \end{table*}
-
-% table of descriptive nouns counts
-\begin{table*}[t] \caption{Descriptive nouns spoken by the audio-descriptions
-        narrator: counts for the whole audio-only stimulus and its eight
-    segments used during fMRI scanning.} \label{tab:descr-nouns-counts}
-    \begin{tabular}{llllllllll} \toprule \textbf{category} & \textbf{all} &
-        \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} &
-        \textbf{6} & \textbf{7} & \textbf{8} \\ \midrule body & \anBodyAll &
-        \anBodyI & \anBodyII & \anBodyIII & \anBodyIV & \anBodyV & \anBodyVI &
-        \anBodyVII & \anBodyVIII \tabularnewline bodypart &  \anBodypartAll &
-        \anBodypartI & \anBodypartII & \anBodypartIII & \anBodypartIV &
-        \anBodypartV & \anBodypartVI & \anBodypartVII & \anBodypartVIII
-        \tabularnewline face & \anFaceAll & \anFaceI & \anFaceII & \anFaceIII &
-        \anFaceIV & \anFaceV & \anFaceVI & \anFaceVII & \anFaceVIII
-        \tabularnewline female & \anFemaleAll & \anFemaleI & \anFemaleII &
-        \anFemaleIII & \anFemaleIV & \anFemaleV & \anFemaleVI & \anFemaleVII &
-        \anFemaleVIII \tabularnewline females & \anFemalesAll & \anFemalesI &
-        \anFemalesII & \anFemalesIII & \anFemalesIV & \anFemalesV & \anFemalesVI
-        & \anFemalesVII & \anFemalesVIII \tabularnewline fname & \anFnameAll &
-        \anFnameI & \anFnameII & \anFnameIII & \anFnameIV & \anFnameV &
-        \anFnameVI & \anFnameVII & \anFnameVIII \tabularnewline furniture &
-        \anFurnitureAll & \anFurnitureI & \anFurnitureII & \anFurnitureIII &
-        \anFurnitureIV & \anFurnitureV & \anFurnitureVI & \anFurnitureVII &
-        \anFurnitureVIII \tabularnewline geo & \anGeoAll & \anGeoI & \anGeoII &
-        \anGeoIII & \anGeoIV & \anGeoV & \anGeoVI & \anGeoVII & \anGeoVIII
-        \tabularnewline geo-room & \anGeoroomAll & \anGeoroomI & \anGeoroomII &
-        \anGeoroomIII & \anGeoroomIV & \anGeoroomV & \anGeoroomVI &
-        \anGeoroomVII & \anGeoroomVIII \tabularnewline head & \anHeadAll &
-        \anHeadI & \anHeadII & \anHeadIII & \anHeadIV & \anHeadV & \anHeadVI &
-        \anHeadVII & \anHeadVIII \tabularnewline male & \anMaleAll & \anMaleI &
-        \anMaleII & \anMaleIII & \anMaleIV & \anMaleV & \anMaleVI & \anMaleVII &
-        \anMaleVIII \tabularnewline males & \anMalesAll & \anMalesI & \anMalesII
-        & \anMalesIII & \anMalesIV & \anMalesV & \anMalesVI & \anMalesVII &
-        \anMalesVIII \tabularnewline mname & \anMnameAll & \anMnameI &
-        \anMnameII & \anMnameIII & \anMnameIV & \anMnameV & \anMnameVI &
-        \anMnameVII & \anMnameVIII \tabularnewline object & \anObjectAll &
-        \anObjectI & \anObjectII & \anObjectIII & \anObjectIV & \anObjectV &
-        \anObjectVI & \anObjectVII & \anObjectVIII \tabularnewline objects &
-        \anObjectsAll & \anObjectsI & \anObjectsII & \anObjectsIII &
-        \anObjectsIV & \anObjectsV & \anObjectsVI & \anObjectsVII &
-        \anObjectsVIII \tabularnewline persons & \anPersonsAll & \anPersonsI &
-        \anPersonsII & \anPersonsIII & \anPersonsIV & \anPersonsV & \anPersonsVI
-        & \anPersonsVII & \anPersonsVIII \tabularnewline
-
-setting\_new & \anSettingnewAll & \anSettingnewI & \anSettingnewII &
-\anSettingnewIII & \anSettingnewIV & \anSettingnewV & \anSettingnewVI &
-\anSettingnewVII & \anSettingnewVIII \tabularnewline
-
-setting\_rec & \anSettingrecAll & \anSettingrecI & \anSettingrecII &
-\anSettingrecIII & \anSettingrecIV & \anSettingrecV & \anSettingrecVI &
-\anSettingrecVII & \anSettingrecVIII \tabularnewline ++ & \anAll & \anI & \anII
-& \anIII & \anIV & \anV & \anVI & \anVII & \anVIII \tabularnewline \bottomrule
-\end{tabular} \end{table*}
 
 
 \subsection{Stimulation setup}
@@ -751,6 +589,168 @@ dafür besser erklären (was heißt "unfamilar perspective"? Ab wann ist ein
 setting "familiar"?}
 
 \subsubsection{Annotation of naturalistic stimuli}
+
+
+\todo[inline]{Ich würde abschnitt 2.8 (statistical analysis) teilen:
+    a) die regressors, die dann mit der beschreibung der annotation kombinieren
+    b) die eigentliche statistik)}
+
+\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
+zwischen zwei Gesichtern sein?!?}
+
+%
+Since we did not design the given naturalistic stimuli for optimal localization
+performance of the PPA, we operationalized the perception of landscapes and
+landmarks (compared to e.g. faces and objects) by annotating words spoken by the
+narrator of the audio-description as well as cuts and depicted locations in the
+movie.
+% todo stimuli were not designed for research purposes
+Both natural stimuli were not design to isolate a specific brain area but to
+entertain their audiences free from any perceptual or behavioral task.
+% fixed stimuli and operationalization
+We annotated the temporal structure of the fixed stimuls material to
+operationalize the perception of different stimulus features (e.g. the
+perception of landmarks and faces) and create GLM contrasts in the subsequent
+data analysis.
+% AO annotation
+For the analysis of the AO data, we extended an publicly available annotation of
+speech \citep{haeusler2020speechanno} by further annotating words spoken by the
+audio-description's narrator.
+% annotation procedure
+Two persons performed a categorization of nouns that the narrator uses to
+describe the movie's missing visual content.
+% categories in detail
+Nouns were categorized by the verbal clue they provide about the cinematographic
+scene's environment (\texttt{geo}, \texttt{geo-room}; \texttt{setting\_new},
+\texttt{setting\_old}), its inherent persons (e.g. \texttt{female},
+\texttt{male}, \texttt{persons}), a person's body or worn clothes
+(\texttt{face}, \texttt{head}, \texttt{body}, \texttt{bodypart}), and a scene's
+inherent objects (\texttt{object}, \texttt{furniture}).
+% why and how of categories 1
+Some categories were created to reflect the six stimulus categories used in the
+visual localizer experiment (e.g. \texttt{geo}, \texttt{object}).
+% why and how of categories 2
+Other categories were created to semantically cluster some remaining nouns into
+additional categories (e.g. \texttt{fname}, \texttt{furniture})
+% problem with hierarchical categories
+Notably, the categories \texttt{setting\_new} and \texttt{setting\_rec} comprise
+not just words that describe a setting as a whole (e.g. ``in Greenbow'', ``in a
+disco'', ``the platoon wades through a rice field''). They also comprise words
+that could count as a member of another categories in case the narrator uses
+these words to indicate a switch from one setting to another (e.g. ``Jenny as a
+teenager'').
+% reference to table with rules and examples
+A complete overview of all 19 categories, the rule for a word to belong to a
+category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
+% procedure
+A preliminary annotation was performed by one person according to the rules.
+Minor corrections due to incorrectly applied rules were done by the author.
+% reference to table with counts
+The resulting counts for the whole stimulus and the eight stimulus segments used
+during fMRI scanning can be seen in Table \ref{tab:descr-nouns-counts}.
+
+% AV anno
+For the analysis of the AV data, we took advantage of a publicly available
+annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
+% rationale behind using movie cuts
+Our rationale was that cuts are ``spatially relevant'' events that re-orient the
+viewer within the environment depicted in the movie.
+
+\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
+ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum GLM
+unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter}
+
+\todo[inline]{Ich merke das mal hier an: Die Tables stehen an ganz merkwürdigen
+Positionen, das passt nicht zum Text und verwirrt ungemein}
+
+
+% table for descriptive nouns: categories, rules, examples counts
+\begin{table*}[t] \caption{Descriptive nouns spoken by the audio-description's
+            narrator: categories, annotation rules, and examples (given in
+            English). The category \texttt{++} also contains adverbial of time.}
+            \label{tab:descr-nouns-rules} \begin{tabular}{lll} \toprule
+                \textbf{category} & \textbf{rule} & \textbf{examples} \\
+                \midrule body & trunk of the body; overlaid clothes & back, hip,
+                shoulder; jacket, dress, shirt \tabularnewline bodypart & limbs
+                and trousers & arm, finger, leg, toe \tabularnewline face & face
+                or parts of it & face, ear, nose, mouth \tabularnewline female &
+                female person & nurse, mother, woman \tabularnewline females &
+                female persons & women \tabularnewline fname & female name &
+                Jenny \tabularnewline furniture & movable furniture insides \&
+                outsides & bench, bed, table, chair \tabularnewline geo &
+                immobile landmarks & building, tree, street, alley, meadow,
+                cornfield \tabularnewline geo-room & rooms (insides) or  locales
+                (outsides) & living room; wall, door, window, floor, turf
+                \tabularnewline head & non-face parts of the head; worn headgear
+                & head, hair, ear, neck, helmet \tabularnewline male & male
+                person & man, father, soldier \tabularnewline males & male
+                persons & boys, opponents \tabularnewline mname & male name &
+                Bubba, Kennedy \tabularnewline object & countable entity with
+                firm boundaries & telephone, car \tabularnewline objects &
+                countable entities & wheels, plants \tabularnewline persons &
+                concrete persons of unknown sex & hippies, patients
+                \tabularnewline setting\_new & noun cueing an unfamiliar setting
+                &  on a ``bridge'', on an ``alley'', on ``campus''
+                \tabularnewline setting\_rec & noun cueing a recurring setting &
+                at the ``bus stop'' \tabularnewline ++ & cue regarding time & in
+                the ``evening'', it's ``daytime'', ``later'' \tabularnewline
+
+\bottomrule \end{tabular} \end{table*}
+
+% table of descriptive nouns counts
+\begin{table*}[t] \caption{Descriptive nouns spoken by the audio-descriptions
+        narrator: counts for the whole audio-only stimulus and its eight
+    segments used during fMRI scanning.} \label{tab:descr-nouns-counts}
+    \begin{tabular}{llllllllll} \toprule \textbf{category} & \textbf{all} &
+        \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} &
+        \textbf{6} & \textbf{7} & \textbf{8} \\ \midrule body & \anBodyAll &
+        \anBodyI & \anBodyII & \anBodyIII & \anBodyIV & \anBodyV & \anBodyVI &
+        \anBodyVII & \anBodyVIII \tabularnewline bodypart &  \anBodypartAll &
+        \anBodypartI & \anBodypartII & \anBodypartIII & \anBodypartIV &
+        \anBodypartV & \anBodypartVI & \anBodypartVII & \anBodypartVIII
+        \tabularnewline face & \anFaceAll & \anFaceI & \anFaceII & \anFaceIII &
+        \anFaceIV & \anFaceV & \anFaceVI & \anFaceVII & \anFaceVIII
+        \tabularnewline female & \anFemaleAll & \anFemaleI & \anFemaleII &
+        \anFemaleIII & \anFemaleIV & \anFemaleV & \anFemaleVI & \anFemaleVII &
+        \anFemaleVIII \tabularnewline females & \anFemalesAll & \anFemalesI &
+        \anFemalesII & \anFemalesIII & \anFemalesIV & \anFemalesV & \anFemalesVI
+        & \anFemalesVII & \anFemalesVIII \tabularnewline fname & \anFnameAll &
+        \anFnameI & \anFnameII & \anFnameIII & \anFnameIV & \anFnameV &
+        \anFnameVI & \anFnameVII & \anFnameVIII \tabularnewline furniture &
+        \anFurnitureAll & \anFurnitureI & \anFurnitureII & \anFurnitureIII &
+        \anFurnitureIV & \anFurnitureV & \anFurnitureVI & \anFurnitureVII &
+        \anFurnitureVIII \tabularnewline geo & \anGeoAll & \anGeoI & \anGeoII &
+        \anGeoIII & \anGeoIV & \anGeoV & \anGeoVI & \anGeoVII & \anGeoVIII
+        \tabularnewline geo-room & \anGeoroomAll & \anGeoroomI & \anGeoroomII &
+        \anGeoroomIII & \anGeoroomIV & \anGeoroomV & \anGeoroomVI &
+        \anGeoroomVII & \anGeoroomVIII \tabularnewline head & \anHeadAll &
+        \anHeadI & \anHeadII & \anHeadIII & \anHeadIV & \anHeadV & \anHeadVI &
+        \anHeadVII & \anHeadVIII \tabularnewline male & \anMaleAll & \anMaleI &
+        \anMaleII & \anMaleIII & \anMaleIV & \anMaleV & \anMaleVI & \anMaleVII &
+        \anMaleVIII \tabularnewline males & \anMalesAll & \anMalesI & \anMalesII
+        & \anMalesIII & \anMalesIV & \anMalesV & \anMalesVI & \anMalesVII &
+        \anMalesVIII \tabularnewline mname & \anMnameAll & \anMnameI &
+        \anMnameII & \anMnameIII & \anMnameIV & \anMnameV & \anMnameVI &
+        \anMnameVII & \anMnameVIII \tabularnewline object & \anObjectAll &
+        \anObjectI & \anObjectII & \anObjectIII & \anObjectIV & \anObjectV &
+        \anObjectVI & \anObjectVII & \anObjectVIII \tabularnewline objects &
+        \anObjectsAll & \anObjectsI & \anObjectsII & \anObjectsIII &
+        \anObjectsIV & \anObjectsV & \anObjectsVI & \anObjectsVII &
+        \anObjectsVIII \tabularnewline persons & \anPersonsAll & \anPersonsI &
+        \anPersonsII & \anPersonsIII & \anPersonsIV & \anPersonsV & \anPersonsVI
+        & \anPersonsVII & \anPersonsVIII \tabularnewline
+
+setting\_new & \anSettingnewAll & \anSettingnewI & \anSettingnewII &
+\anSettingnewIII & \anSettingnewIV & \anSettingnewV & \anSettingnewVI &
+\anSettingnewVII & \anSettingnewVIII \tabularnewline
+
+setting\_rec & \anSettingrecAll & \anSettingrecI & \anSettingrecII &
+\anSettingrecIII & \anSettingrecIV & \anSettingrecV & \anSettingrecVI &
+\anSettingrecVII & \anSettingrecVIII \tabularnewline ++ & \anAll & \anI & \anII
+& \anIII & \anIV & \anV & \anVI & \anVII & \anVIII \tabularnewline \bottomrule
+\end{tabular} \end{table*}
+
+
 
 \subsubsection{Regressors}
 
