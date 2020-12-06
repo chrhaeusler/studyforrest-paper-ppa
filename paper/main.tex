@@ -589,9 +589,9 @@ following GLM analysis.
 \paragraph{audio-description: annotation}
 
 % AO annotation
-For the analysis of the AO data, we extended a publicly available annotation of
-speech \citep{haeusler2020speechanno} by further annotating words spoken by the
-audio-description's narrator.
+For the analysis of the AO stumulus, we extended a publicly available annotation
+of speech \citep{haeusler2020speechanno} by further annotating words spoken by
+the audio-description's narrator.
 % annotation procedure
 Two persons performed a categorization of nouns that the narrator uses to
 describe the movie's missing visual content based on a set of rules.
@@ -620,11 +620,11 @@ categories that had no counterpart in the visual localizer experiment (e.g.
 %scene's inherent objects (\texttt{object}, \texttt{furniture}).  problem with
 %hierarchical categories
 Notably, the categories \texttt{setting\_new} and \texttt{setting\_rec} comprise
-not just words that describe a setting as a whole (e.g. ``in Greenbow'', ``in a
-disco'', ``the platoon wades through a rice field''). They also comprise words
-that could count as a member of another categories in case the narrator uses
-these words to indicate a switch from one setting to another (e.g. ``Jenny as a
-teenager'').
+not just words that describe a setting as a whole (e.g. ``[in] Greenbow'', ``[in
+a] disco'', ``[the platoon wades through a] rice field''). They also comprise
+words that could count as a member of another categories in case the narrator
+uses these words to indicate a switch from one setting to another (e.g. ``[a]
+physician'').
 
 
 % table for descriptive nouns: categories, rules, examples counts
@@ -682,7 +682,7 @@ setting\_rec & a recurring setting & at the ``bus stop'' \tabularnewline
 \end{table*}
 
 
-\todo[inline]{Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
+\todo[inline]{SE: Table 2 ist relativ kryptisch bzw für jemanden, der sich zum
     ersten Mal damit auseinander setzt kaum zu verstehen. Auch ist der Bezug zum
     GLM unklar, d.h., was davon wird verwendet und was verbirgt sich dahinter;
     COH: I dropped the table of counts per segment.  The information is
@@ -799,67 +799,51 @@ fg\_ad\_rms & root mean square (loudness) & \aoFgadrmsAll &
 \end{table*}
 
 
-
 \paragraph{audio-description: regressors}
-% first level analysis regressors AO: events
-For the analysis of the AO stimulus, we created regressors correlating with the
-occurrence of descriptive nouns spoken by the narrator that were added to the
-original annotation of speech \citep{haeusler2020speechanno}.
-% AV events
-For the AV stimulus, we created regressors correlating with movie cuts provided
-by another previously published annotation \citep{haeusler2016cutanno}.
-% https://github.com/psychoinformatics-de/studyforrest-data-annotations/blob/master/code/researchcut2segments.py}
 
-% procedure
-Both annotations were split into eight parts corresponding to the eight stimulus
-segments.
-% AO events
-To create regressors for the AO analysis, we used all of the original 19
-categories of descriptive nouns except ``\texttt{++}'' (i.e. cues regarding
-time).
-% pooling
-Some categories that were similar but offered only a small amount of counts were
-pooled resulting in eleven new categories that served as experimental conditions
-(see Table \ref{tab:ao-events}).
-% setting beats other category
-Events that fell into one of the two setting-related categories
+% pooling of categories
+To create the regressor for the GLM of the AO stimulus, some of
+the original 18 categories that were similar but offered only a small amount of
+counts were pooled resulting in eleven new categories [that served as
+experimental conditionso] (see Table \ref{tab:ao-events}).
+% handling of se_new and se_old
+Moreover, events that fell into one of the two setting-related categories
 (\texttt{se\_new} or \texttt{se\_old}) but also into another category were
-treated as belonging to the setting-related category (e.g. ``Jenny as a
-teenager'').
+treated as belonging to the setting-related category (e.g. ``[a] physician'').
 % modeling as boxcar function
 Events were were modeled as boxcar function from onset to offset of each word.
 
 \todo[inline]{Gab es ein separates null-event für jeden zeitraum zwischen zwei
-annotierten events oder war das ein regressor der immer wieder kam?}
+annotierten events oder war das ein regressor der immer wieder kam? COH: uhm,
+sorry, what? the following explanation must be misleading?}
 % null regressors
-If a segment did not contain an event of a category, a null regressor was chosen
-for that category in that segment.\todo{wenn ich "null regressor" nehme, darf
-ich den ganzen Run, glaube ich, in der 2nd level Analyse gar nicht benutzen?
-Hatte, glaube ich, Jeanette Mumford in einem ihren Videos mal gesagt}
+If a stimulus segment did not contain an event of a category, a null regressor
+was chosen for that category in that segment.\todo{wenn ich "null regressor"
+    nehme, darf ich den ganzen Run, glaube ich, in der 2nd level Analyse gar
+    nicht benutzen?  Hatte, glaube ich, Jeanette Mumford in einem ihren Videos
+mal gesagt}
 
-\todo[inline]{Das mit den "five additional categories" habe ich nicht
+\todo[inline]{SE: das mit den "five additional categories" habe ich nicht
 verstanden. Überhaupt finde ich die ganze Beschreibung relativ schwer zu
-durchdrungen, und ich glaube damit werde ich nicht alleine sein.}
+durchdrungen, und ich glaube damit werde ich nicht alleine sein. COH: }
 % categories taken from movie cut annotation
-Five additional categories were created from the annotation of movie cuts and
-modeled as impulse events to capture variance of a possibly confounding change
-of the soundscape after a cut, and to create contrasts of cross-modal negative
-control (see details below).
+To create contrasts of cross-modal negative control and to capture variance of a
+possibly confounding change of the soundscape after a cut, we also implemented
+the five movie cut-related regressors used in the GLM of the AV stimulus (see
+details below) in the model of the AO stimulus.
 % nuisance regressors
-\todo[inline]{"Continuous bins lasting 40ms" ?!?}
+\todo[inline]{"Continuous bins lasting 40ms" ?!?; COH: goddamnit! I've rewritten
+    this explanation a lot and finally stuck to the phrasing written in
+    \citep{wilson2008beyond} who did the same}
 %
-Lastly, we used continuous bins of information about two auditory features
-(left-right difference in volume and root mean square energy) that was averaged
-across the length of every movie frame (\unit[40]{ms}) to capture variance
-correlating with low-level perceptual processes.
+Lastly, we created two nuisance regressors based on left-right difference in
+volume and root mean square energy averaged across the length of every movie
+frame (\unit[40]{ms}) to capture variance correlating with low-level perceptual
+processes.
 % Reference to table
-An explanation and counts of the eleven speech-related event categories, the
-five movie cut-related categories, and the two low-level confounds can be found
-in Table \ref{tab:ao-events}.
-
-% modeling of regressors from events
-Events of both stimuli were convolved with a double gamma hemodynamic response
-function (HRF).
+An overview and the respective counts of the eleven speech-related event
+categories, the five movie cut-related categories, and the two low-level
+confounds can be found in Table \ref{tab:ao-events}.
 
 
 \paragraph{movie: annotation}
@@ -871,16 +855,15 @@ annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
 Our rationale was that cuts are ``spatially relevant'' events that re-orient the
 viewer within the environment depicted in the movie.
 
-\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
-zwischen zwei Gesichtern sein?!?; COH: that should be clearer now as the
-explanation of the regressors immediately follows the description of the
-annotation}
-
-\todo[inline]{besser erklären (was heißt "unfamilar perspective"? Ab wann ist
-ein setting "familiar"?)}
 
 
 \paragraph{movie: regressors}
+
+% AV events
+For the analysis of the AV stimulus, we used a previously published annotation
+[of the 869] movie cuts and depicted locations \citep{haeusler2016cutanno} to
+created regressors based on the kind of location that is depicted in the movie
+frame after each cut.
 
 % AV regressors
 \begin{table*}[h!]
@@ -936,14 +919,59 @@ fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavge
 \end{tabular}
 \end{table*}
 
-
+% todo
+\todo[inline]{besser erklären (was heißt "unfamilar perspective"? Ab wann ist
+ein setting "familiar"?; COH: should be clearer now; maybe rephrase into a
+couple of sentences to improve readability}
 % AV regressors/events
-To create regressors for the AV analysis, we categorized the depicted location
-in the frame following one of the 869 cuts into five categories (see Table
-\ref{tab:av-events}): 1) a cut into an unfamiliar setting (\texttt{vse\_new}),
-2) a cut into a familiar setting (\texttt{vse\_old}), 3) a switch of room/locale
-within a setting (\texttt{vlo\_ch}), 4) a cut to an unfamiliar perspective
-(\texttt{vpe\_new}), and 5) a cut to a familiar perspective (\texttt{vpe\_old}).
+Each location was put into one of the following five categories (see Table
+\ref{tab:av-events}):
+%
+1) a cut switching to a setting that was depicted for the first time
+(\texttt{vse\_new}),
+%
+2) a cut switching to a setting that was already depicted earlier in the movie
+(\texttt{vse\_old}; e.g. a cut to the recurring waiting bench at the bus stop),
+%
+3) a cut switching to another locale within a setting (\texttt{vlo\_ch}; e.g. a
+cut from first to the second floor in Forrest's house),
+%
+4) a cut to another camera position within a setting or locale that was depicted
+for the first time (\texttt{vpe\_new}), and
+%
+5) a cut to another camera position within a setting or locale that was already
+depicted before (\texttt{vpe\_old}).
+
+% to do
+\todo[inline]{Bei AV habt ihr cuts und locations benutzt? Cuts können doch auch
+zwischen zwei Gesichtern sein?!?; COH: that should be clearer now as the
+explanation of the regressors immediately follows the description of the
+annotation}
+% irrespectible of visual content
+Notably, categorization was performed irrespectively of a movie frame's precise
+content and thus without controlling confounding variables (e.g. presence of
+faces).
+
+%%%%%% do not speak of isolate %%%%%%
+% AV COPEs: intro
+The rationale that this procedure would still be able to isolate the PPA was
+twofold.
+% cinematographic rationale cut to new scenes: establishing shots
+The cinematographic rationale was that movies tend to establish the setting
+(\texttt{vse\_new}) and the spatial relationships within a setting
+(\texttt{vpe\_new}) at the beginning of a movie.
+% cut to recurrent scene
+Later in the movie, the field sizes of movie shots tend to decrease when
+switching back to already established settings (\texttt{vse\_old}).
+% similarly for shots within a scene
+Moreover, shots within a recurring locale or setting tend to shift to depicting
+persons and objects (\texttt{vpe\_old}) more relevant to the evolved plot
+\citep{brown2012cinematography, mercado2011filmmakers}.
+% neuroscientific rationale
+The neuroscientific rationale was simply that activity in the PPA is greater
+when participants view novel versus repeated scenes or view-points.
+\citep{epstein1999parahippocampal, grill2006repetition}.
+
 % null regressor
 Here again, a null regressor was chosen for segment if it did not contain an
 event of specific category.
@@ -1076,28 +1104,8 @@ soundscape.
 explain it there but maybe I cannot get the reason why you think it fits here
 better}
 
-% AV COPEs: intro
-In context of the AV stimulus, we categorized the frames following a movie cut
-irrespective of their concrete visual content and thus without controlling
-confounding variables (e.g. presence of faces). The rationale that this
-procedure would still be able to isolate the PPA was twofold.
-% cinematographic rationale cut to new scenes: establishing shots
-The cinematographic rationale was that movies tend to establish the setting
-(\texttt{vse\_new}) and the spatial relationships within a setting
-(\texttt{vpe\_new}) at the beginning of a movie.
-% cut to recurrent scene
-Later in the movie, the field sizes of movie shots tend to decrease when
-switching back to already established settings (\texttt{vse\_old}).
-% similarly for shots within a scene
-Moreover, shots within a recurring locale or setting tend to shift to depicting
-persons and objects (\texttt{vpe\_old}) more relevant to the evolved plot
-\citep{brown2012cinematography, mercado2011filmmakers}.
-% neuroscientific rationale
-The neuroscientific rationale was simply that activity in the PPA is greater
-when participants view novel versus repeated scenes or view-points.
-\citep{epstein1999parahippocampal}.
-% hence, the following contrasts
-Hence, we created varying contrasts comparing a setting occurring for the first
+% following contrasts
+We created varying contrasts comparing a setting occurring for the first
 time and cuts within a locale depicted for the first time to cuts into recurring
 settings and cuts within a recurring locale.
 % negative control
