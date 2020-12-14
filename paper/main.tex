@@ -850,8 +850,6 @@ Events for all regressors of the AV stimulus were convolved with a
 double gamma hemodynamic response function (HRF).
 
 
-
-
 \paragraph{movie: annotation}
 
 % AV anno
@@ -1514,7 +1512,9 @@ the design of the contrasts.
 \paragraph{AV: other signficant clusters across contrasts}
 
 \begin{itemize}
-\item lateral occipital cortex: 4 contrasts (all bilateral)
+    \item RSC: 3 contrasts (all bilat; vse\_new > vpe\_old; vse\_new >
+        vse\_old, vpe\_old; vse\_new, vpe\_new > vpe\_old)
+    \item lateral occipital cortex: 4 contrasts (all except vse\_new > vse\_old; all bilateral)
 \end{itemize}
 
 
@@ -1708,7 +1708,9 @@ etwas}
 afterthought. Daher etwas überraschend, vielleicht in Einleitung und Results
 schon mehr bringen; COH: afterthought, for sure; It was highly probable that RSC
 would show up but it wasn't aim of the study (had no ROIs for it anyway); imo
-this is an issue of ``nice story telling'' vs. HARKing} 
+this is an issue of ``nice story telling'' vs. HARKing}
+
+\todo[inline]{convey better that we do not have lots of ``random clusters''} 
 
 \todo[inline]{discussion explains how results fill gap identified in
 intro}
@@ -1746,8 +1748,11 @@ Results of our whole-brain analyses suggest that the perception of verbal
 ``spatial information'' embedded in an auditory narrative contrasted with
 ``non-spatial information'' is correlated with increased activation in the
 anterior PPA of both hemispheres.
+
 % to do
-Other possible ``honourable'' mentions (here? and in the following discussion?)
+\todo[inline]{Other possible ``honourable'' mentions; here (?), and in the
+following discussion?}
+
 \begin{itemize}
     \item RSC
     \item what could be LOC / OPA
@@ -1773,8 +1778,8 @@ have been correlated leading to shared variance that lowers detection power.
 Hence, we first tested for correlation of regressors within and across both
 naturalistic stimuli (s. Figure \ref{fig:reg-corr})
 % results of computing feature correlation
-Results show no to minor correlations of regressors with regressors of the same
-stimulus.
+Results reveal no to minor correlations of regressors with regressors of the
+same stimulus.
 % encouraged by that we build contrasts (statement)
 Thus, we felt encouraged to create traditional/canonical voxel-wise GLMs that
 modeled and contrasted hemodynamic activity similarly to previous studies that
@@ -1905,8 +1910,8 @@ in single contrasts or even systematically across contrasts that hamper the
 interpretation of results.\todo{ouff\dots}
 % AV: null results regarding attention and eye movements
 For example in the AV results, we do not find significant clusters that could be
-attributed to cognitive processes like attention or eye movements\todo{should
-already be mentioned in disc. of primary contrasts}
+attributed to cognitive processes like attention or eye movements\todo{could
+    already already be mentioned in discussion of primary contrasts}
 % AO: auditory cortices
 Nevertheless, contrasts of the AO stimulus that compare verbal cues about the
 change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all non-spatial
@@ -2001,75 +2006,64 @@ verbal stimuli.
 
 \subsubsection{retrosplenial cortex (RSC)}
 
-\todo[inline]{check location in primary contrast and overlap across contrasts}
-
-\todo[inline]{report numbers of contrast in AO \& AV that show sign. clusters in
-RSC}
-
 % but RSC
-Apart from the PPA, we find significantly increased activity consistently across
-contrasts of both stimuli in the retrosplenial cortex (RSC).
+Apart from the PPA, we find significantly increased activity in the
+retrosplenial cortex (RSC) consistently across contrasts of both stimuli (AO
+stimulus: 7 contrasts; AV stimulus: 3 contrasts).
 % location functionally defined
-As a scene-responsive region, the RSC is functionally defined and not
-necessarily identical to the anatomically defined retrosplenial cortex [26]
-\citep{epstein2008parahippocampal}.
-% function
-The RSC is strongly active during scene viewing, scene imagery [25] and mental
-imagination of navigation through familiar environments [8]
+The RSC as a scene-selective region is not necessarily spatially congruent with
+the anatomically defined retrosplenial cortex [26] (BA 29 and 30)
+\citep{epstein2008parahippocampal} but functionally defined as the posterior
+medial region that exhibits increased hemodynamic activity to visual scenes and
+during mental imagination trough familiar environments [8]
 \citep{epstein2008parahippocampal}.
 % location
-The RSC is located in the retrosplenial cortex, and posterior cingulate region,
-near to the point where the calcarine sulcus joins the parietal-occipital sulcus
-\citep{epstein2008parahippocampal}.
-% anatomy of real RSC
-The Retrosplenial cortex (BA 29 and 30) adjoins and is partially encircled by
-the posterior cingulate (BA 23 and 31) [51–56]
+This functionally defined RSC is located in the retrosplenial cortex, and
+posterior cingulate region (BA 23 and 31) [51–56], near to the point where the
+calcarine sulcus joins the parietal-occipital sulcus
 \citep{epstein2008parahippocampal}.
 
 % discussion of what the RSC does
-interpretation cf.: \citep{vann2009what, chrastil2018heterogeneity,
-silson2019posterior}
-% conclusion
-
-
-% baldassano2016two
-\citep{baldassano2016two}: RSC appears to be most directly involved in orienting
-the viewer to the structure of the environment (both within and beyond the
-borders of the presented image) for the purpose of navigational planning; it
-encodes both absolute location and facing direction [Vass and Epstein, 2013;
-Epstein and Vass, 2014; Marchette et al., 2014], integrates across views
-presented in a panoramic sequence [Park and Chun, 2009], and shows strong
-familiarity effects [Epstein et al., 2007a,b] \citep{baldassano2016two}.
+interpretation cf.:
+\begin{itemize}
+    \item \citep{chrastil2018heterogeneity}
+    \item \citep{vann2009what}
+    \item \citep{silson2019posterior}
+    \item \citep{baldassano2016two}: RSC appears to be most directly involved in orienting the viewer to the structure of the environment (both within and beyond the borders of the presented image) for the purpose of navigational planning; it encodes both absolute location and facing direction [Vass and Epstein, 2013; Epstein and Vass, 2014; Marchette et al., 2014], integrates across views presented in a panoramic sequence [Park and Chun, 2009], and shows strong familiarity effects [Epstein et al., 2007a,b].
+\end{itemize}
 
 
 \subsubsection{superior lateral occipital cortex (TOC / OPA?)}
 
 \begin{itemize}
-
 \item Bettencourt (2013). The Role of Transverse Occipital Sulcus in Scene
-Perception \item Dilks, Kanwisher (2013). The Occipital Place Area Is Causally
-and Selectively Involved in Scene Perception \item Nasr (2011). Scene-selective
-    cortical regions in human and nonhuman primates \item Dilks (2011).
-    Mirror-image sensitivity and invariance in object \& scene processing \item
-    MacEvoy and Epstein (2007). Position selectivity in scene- and
-object-responsive \item Grill-Spector (2003). The neural basis of object
-    perception \item Hasson (2003). Large-scale mirror-symmetry organization
-    \item Nakamura (2000). Functional delineation of the human occipito-temporal
-        areas \end{itemize}
-
-%
-\citep{baldassano2016two} regarding functional difference pPPA vs. OPA: The
-functional distinction between pPPA and OPA is currently unclear. Previous work
-has speculated about the purpose of the apparent ventral and dorsal
-``duplication'' of regions sensitive to large landmarks, proposing that it may
-be related to different output goals (e.g., action planning in OPA, object
-recognition in pPPA)[Konkle and Caramazza, 2013], or to different input
-connections (e.g., lower visual field processing in OPA, upper visual field
-processing in pPPA)[Kravitz et al., 2013; Silson et al., 2015]. OPA and pPPA may
-also use information from different visual eccentricities: OPA processing less
-peripheral, relatively high-resolution environmental features. pPPA processing
-more peripheral, large-scale geometry, and context [Baldassano et al., 2016a]
-\citep{baldassano2016two}.
+    Perception
+\item Dilks, Kanwisher (2013). The Occipital Place Area Is Causally and
+    Selectively Involved in Scene Perception
+\item Nasr (2011). Scene-selective cortical regions in human and nonhuman
+    primates
+\item Dilks (2011). Mirror-image sensitivity and invariance in object \& scene
+    processing
+\item MacEvoy and Epstein (2007). Position selectivity in scene- and
+    object-responsive
+\item Grill-Spector (2003). The neural basis of object perception
+\item Hasson (2003). Large-scale mirror-symmetry organization
+\item Nakamura (2000). Functional delineation of the human occipito-temporal
+    areas
+\item \citep{baldassano2016two} regarding functional difference pPPA vs. OPA:
+    The functional distinction is unclear.
+    Previous work has speculated about the purpose of the apparent ventral and
+    dorsal ``duplication'' of regions sensitive to large landmarks, proposing
+    that it may be related to different output goals (e.g., action planning in
+    OPA, object recognition in pPPA)[Konkle and Caramazza, 2013], or to
+    different input connections (e.g., lower visual field processing in OPA,
+    upper visual field processing in pPPA)[Kravitz et al., 2013; Silson et al.,
+    2015].
+    OPA and pPPA may also use information from different visual
+    eccentricities: OPA processing less peripheral, relatively high-resolution
+    environmental features. pPPA processing more peripheral, large-scale
+    geometry, and context [Baldassano et al., 2016a]
+\end{itemize}
 
 
 \subsection{negative controls and cross-modal controls}
@@ -2080,65 +2074,41 @@ much still; better embed somewhere above}
 
 \subsection{individual analyses}
 
-An examination of these results on an individual participant basis reveals that
-this pattern remains highly reliable and, therefore, does not appear to be a
-by-product of group averaging across slightly offset discrete functional
-subregions[aminoff2015associative].
+\todo[inline]{how to discuss Bland-Altman-Plots???}
 
-
-\subsubsection{AO stimulus}
-
-\todo[inline]{how to discuss Bland-Altman-Plots? Let's talk about that
-shortly please}
-
-\todo[inline]{in 11 subjects there are voxels of higher z-score (in the PPA ROI)
-    in the AO contrast than in the contrast of the visual localizer -> should
-    all be in the anterior part of the PPA ROI, i.e. the area that belongs to
-    the significant cluster of the AO contrast}
-
-\todo[inline]{shortcoming: no task to attend to spatial information}
-
-\todo[inline]{different level of alertness during paradigms}
+\todo[inline]{dunno if this is meaningful: z-scores in the anterior part of
+    PPA are higher in AO contrasts than in contrast of localizer}
 
 % intro
-In order to test the audio-description's performance as a functional localizers,
-we also compared the results of the audio-description's primary contrast to
-results of the dedicated visualizer on the level of individual subjects.
+To test if an auditory narrative could substitute a visual localizer experiment,
+we also examined the results of the primary AO contrast on the level of
+individual subjects.
 % results of dedicated localizer
-The dedicated localizer \citep{sengupta2016extension} yielded bilateral ROIs in
-12 of 14 subjects and a unilateral right ROI in two subjects (sub-04, sub-20).
+The visual localizer \citep{sengupta2016extension} revealed bilateral ROIs in 12
+of 14 subjects and a unilateral right ROI in two subjects (sub-04, sub-20).
 % in the current study
 The audio-description's primary contrast yielded significant bilateral clusters
-in 9 of 14 subjects (of which sub-04 shows just right-lateralized PPA ROI)  and
-a unilateral significant cluster in one subject.
+in 9 of 14 subjects (of which sub-04 shows just right-lateralized PPA ROI) and a
+unilateral significant cluster in one subject.
+%
+Whereas \citep{sengupta2016extension} chose the subjectively ``best fitting
+$z$-threshold in a subject's unthresholded $z$-map by visual judgment, we used a
+``one threshold fits all approach`` (Z>3.4, p<.05 cluster-corrected).
+% group vs individual
+Results on an inidividual level reveal that significant cluster are located in
+the anterior part of individual PPA ROIs. Thus, the pattern that was revealed on
+a group level is not just a by-product of the averaging process but can reliably
+be found in individual study participants.
 % conclusion
-Results of our exploratory analyses suggest that a naturalistic auditory
-stimulus is suitable to localize (the anterior part) of a higher-level visual
-area in the majority of subjects.
-
-% one threshold for all
-Here we used a ``one threshold fits all approach`` whereas
-\citep{sengupta2016extension} chose the best fitting $z$-threshold in a
-subject's unthresholded $z$-maps by visual judgment and the ``best fitting''
-threshold.
-% one contrast for all
-Moreover, we chose the same contrast to look at individual results of all
-subjects.
+Lastly, our exploratory analyses suggest that a naturalistic auditory stimulus
+is in principle suitable to localize (the anterior part) of a higher-level
+visual area in the majority of subjects.
 % chose the best contrast in the future
 Similarly to \citep{sengupta2016extension} that chose the ``best'' of three
 alternative contrasts (strict, relaxed, or simple contrast), future studies that
 aim for individual diagnostics / ROI localization should also test more than one
 contrast to gain the ``best'' individual ROIs.\todo{``best'' sounds pretty
 shitty}
-
-% quote from Hanke (2014)
-\citep{hanke2014audiomovie}: Compared to AV stimulus, the AO stimulus leaves a
-much larger margin for inter-individual differences in imagining scenery, as
-well as actors' character and personality traits, while still preserving the
-time-locked presentation of information to a listener. At the same time, the AO
-stimulus limits the effect of an attentional focus on the selection of a subset
-of simultaneously occurring auditory events, in contrast to the selection of
-different parts of the visual field.
 
 \todo[inline]{discussion of individual differences? what do the results
 suggest? Differences in alterness, attention to spatial information,
@@ -2148,15 +2118,18 @@ predisposition? ``capability'' to process auditory spatial information?}
 spatial infos (which contradicts statement above that attention is not a
 prerequisite)}
 
-
 \subsubsection{AV stimulus}
 
-\todo[inline]{was not aim of the study; AV ROIs are in the plot of individual
-    slices but not in the Bland-Altman-Plots}
+\todo[inline]{was not aim of study; results of primary AV contrasts are in plots
+    if individual; Bland-Altman-Plots focus on primary AO contrast alone}
 
 \subsection{shortcomings in general}
 
 \todo[inline]{Würde nicht so sehr auf Shortcomings eingehen}
+
+\todo[inline]{shortcoming: no task to attend to spatial information}
+
+\todo[inline]{different level of alertness during paradigms}
 
 \subsubsection{AO contrast}
 
@@ -2240,8 +2213,14 @@ extensively annotate the content of frames (e.g. using the open-source solution
 eye-tracking.
 
 
-\subsubsection{pros \& cons of natural stimuli (esp. narrative) as localizer}
+\subsubsection{zpros \& cons of natural stimuli (esp. narrative) as localizer}
 
+% quote from Hanke (2014)
+\citep{hanke2014audiomovie}: the AO stimulus leaves a much larger margin for
+inter-individual differences in imagining scenery.  The AO stimulus limits the
+effect of an attentional focus on the selection of a subset of simultaneously
+occurring auditory events, in contrast to the selection of different parts of
+the visual field.
 
 \section{Conclusions}
 
