@@ -2123,17 +2123,14 @@ prerequisite)}
 \todo[inline]{was not aim of study; results of primary AV contrasts are in plots
     if individual; Bland-Altman-Plots focus on primary AO contrast alone}
 
-\subsection{shortcomings in general}
+\subsection{shortcomings}
 
-\todo[inline]{Würde nicht so sehr auf Shortcomings eingehen}
-
-\todo[inline]{shortcoming: no task to attend to spatial information}
+\todo[inline]{SE: Würde nicht so sehr auf Shortcomings eingehen}
 
 \todo[inline]{different level of alertness during paradigms}
 
 \subsubsection{AO contrast}
 
-\todo[inline]{cf. Methods: annotation \& Methods: AO copes}
 % optimal stimulus type in vision
 In the visual domain, landscapes and not pictures of landmarks or buildings are
 considered to be the ``optimal'' stimulus type (cf. Epstein (1998, 1999, 2003,
@@ -2141,8 +2138,7 @@ considered to be the ``optimal'' stimulus type (cf. Epstein (1998, 1999, 2003,
 % cateogries in primary contrasts
 In the current study's primary contrast, we compared verbal cues regarding
 landmarks ((\texttt{geo}; often buildings or other single aspects of a whole
-scene) and elements defining the geometry of a room/locale (\texttt{groom}) to
-non-spatial cues.
+scene) and elements defining the geometry of a room or locale (\texttt{groom}) to non-spatial cues.
 % we did not choose se\_new and se\_old
 We did not choose the categories that contained switches from one setting to
 another (\texttt{se\_new} and \texttt{se\_old}) which one might assume to
@@ -2159,27 +2155,28 @@ duration of a single fixation \citep{henderson2003human} further studies might
 investigate if categories of holistic but vague verbal descriptions of
 landscapes correlate with differential hemodynamic activity in the PPA compared
 to more concrete spatial cues.
-
 % future studies
-Futures studies should chose a auditory narrative that better samples the
-feature space correlating with the brain process to be investigated.
-% future studies: stimulus material
-Future studies should probably use a different narrative that models the feature
-space of spatial information ``better'' (provides more events that are more
-easily classified to belong to distinctive categories).
+Hence, future studies might investigate if a homogenous category of wholistic
+but vague verbal descriptions (e.g. ``a mountain landscape'') compared to a
+homogenous categories of more specific verbal descriptions of landmarks (e.g.
+``a beacon'') or houses (e.g. ``farmhouse'', ``apartment building'') lead to
+different levels of hemodynamic activity.
 
-\todo[inline]{hypothesis of increased activation correlation with changes in the
-    soundscape; cf. control contrasts (e.g. \texttt{vse\_new} >
-    \texttt{pe\_old}).}
-% foreshadowing of narrator by soundscape
-Further, verbal cues are regularly forestalled by changes of the soundscape.
+%
+\todo[inline]{shortcoming but nice hypothesis imo}
+%
+Cuts probably correlate with change in setting; change in soundscape anticipates
+narrator (would lower detection power) or occurs in parallel with narrator; cf.
+correlation of cuts to other setting (independent of familiarity) with nouns
+that cue change of setting; cf. control contrasts [which ones?]
 % arnott
-\todo[inline]{e.g. arnott2008crinkling find increased activations of PPA to
-sound made by objects}
 % hypothesis
 We hypothesize that not just semantic information but also the mere changes of a
 soundscape that cues a listener about a setting's spatial layout of could
 correlate with increased activity in the PPA.
+% arnott
+\todo[inline]{e.g. arnott2008crinkling finds increased activations in PPA to
+sounds made by objects (that reveil object's material/identity)}
 
 
 \subsubsection{AV stimulus}
@@ -2213,62 +2210,45 @@ extensively annotate the content of frames (e.g. using the open-source solution
 eye-tracking.
 
 
-\subsubsection{zpros \& cons of natural stimuli (esp. narrative) as localizer}
-
-% quote from Hanke (2014)
-\citep{hanke2014audiomovie}: the AO stimulus leaves a much larger margin for
-inter-individual differences in imagining scenery.  The AO stimulus limits the
-effect of an attentional focus on the selection of a subset of simultaneously
-occurring auditory events, in contrast to the selection of different parts of
-the visual field.
-
 \section{Conclusions}
+
+\todo[inline]{SE: frage ich mich das beim Durchgehen: Warum ist der Fokus so
+sehr auf Audiobook / AO, während AV doch eigentlich more natural and engaging
+ist? COH: at the moment, the discussion is not tailored to the topic
+``naturalistic stimulus as substitute to localizer'' as it is not and should not
+be the main focus}
 
 \todo[inline]{template has no section ``conclusion'' -> use the last paragraph}
 
-\todo[inline]{Conclusions aber irgendwie frage ich mich das relativ durchgehen):
-Warum ist der Fokus so sehr auf Audiobook / AO, während AV doch eigentlich more
-natural and engaging ist?}
-
 % natural stimulation
-Intro: Natural stimuli like movies \citep{hasson2008neurocinematics,
-sonkusare2019naturalistic} or narratives \citep{honey2012not,
-lerner2011topographic, silbert2014coupled} offer an easy to implement,
-(continuous,) complex, immersive, task-free paradigm that more closely resembles
-our natural dynamic environment than traditional experimental designs.
-% why naturalisti stimuli are so cool
-(see also \citep{sonkusare2019naturalistic, eickhoff2020towards,hamilton2018revolution})
-% re-use of data for independent research question
-Due to their continuity, complexity, and length, they offer a vast amount of
-data on a variety of brain functions like low-level perception, attention,
-comprehension, memory, emotions, or social interactions. This suggests the data
-can later be reused for variety of totally different, independent research
-questions, possibly on an individual level; increased compliance in individual
-diagnostics in ``special'' populations where compliance is more difficult to
-archive (pediatric or psychiatric)
+Natural stimuli like movies \citep{eickhoff2020towards,
+hasson2008neurocinematics, sonkusare2019naturalistic} or narratives
+\citep{hamilton2018revolution, honey2012not, lerner2011topographic,
+silbert2014coupled, wilson2008beyond} offer an easy to implement, (continuous,)
+complex, immersive, task-free paradigm that more closely resembles our natural
+dynamic environment than traditional experimental designs.
 
-% we annotated a couple of features to build contrasts
-Method: The feature ``auditory spatial information'' is just one example of a
-stimulus feature that can be annotated and used to build a model.
-% data-driven vs. model-driven
-Why we used a traditional GLM...
-
-% results
-Results: Our results demonstrate...
-
-% conclusion: AO and AV robustness
-In summary, our results across add further evidence that model-driven analyses
-can be run on data from naturalistic stimuli to isolate brain activity
+\begin{itemize}
+\item We reuse public data for independent research question
+\item GLM based on annotations to operationalize ``spatial perception''
+\item Our results add evidence that model-driven analyses based in annotations
+can be run on data from naturalistic stimuli to ``localize'' brain activity
 correlating with specific perceptual processes.
-% but
-Nevertheless isolation performance relies on how well the model captures
+\item ``localization performance'' relies on how well the model captures
 different aspects of the stimuli's feature space.
-
-% conclusion auditory localizer
-Conclusion: Thus, a complex but naturally engaging auditory stimulus like an
+\item PPA is functionally heterogenous region
+\item a complex but naturally engaging auditory stimulus like an
 audiobook might in principle be used as a non-visual localizer for a variety of
 brain functions in subjects who are not willing or able to follow task
-instructions during brain scanning.
+instructions during brain scanning [would state that explicitly in the summary
+at the end].
+\end{itemize}
+
+% \citep{hanke2014audiomovie}: the AO stimulus leaves a much larger margin for
+% inter-individual differences in imagining scenery. The AO stimulus limits the
+% effect of an attentional focus on the selection of a subset of simultaneously
+% occurring auditory events, in contrast to the selection of different parts of
+% the visual field.
 
 
 \subsection*{Code availability}
