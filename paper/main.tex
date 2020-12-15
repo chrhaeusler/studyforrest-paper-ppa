@@ -238,16 +238,16 @@ rich/multidimensional and continuous naturalistic stimuli (see
 \citep{hamilton2018revolution, hasson2008neurocinematics,
 sonkusare2019naturalistic} for reviews):
 % audio-description
-a) the audio-description of the Hollywood movie ``Forrest Gump'' (i.e. the
-audio-only variant of the movie), and
+a) the audio-description (AD) of the Hollywood movie ``Forrest Gump'',
+and
 % audio-visual
-b) the [actual] audio-visual movie [itself].
+b) the original audio-visual (AV) movie.
 % studyforrest dataset
 We then analyzed corresponding fMRI data from the same subjects that listened
 to the audio-description and watched the audio-visual movie as part of the
 publicly available studyforrest dataset
 (\href{http://www.studyforrest.org}{studyforrest.org}).
-% first: group level AO
+% first: group level AD
 First on a group average level, general linear model (GLM) contrasts based on
 the audio-description's annotation are used to test if spatial information
 embedded in an exclusively auditory stimulus correlates with increased
@@ -279,8 +279,8 @@ used by other research groups for independent research questions
 lettieri2019emotionotopy, nguyen2016integration}).
 % used studies
 The same subjects were
-% AO
-a) listening to the audio-description (AO study; \citep{hanke2014audiomovie}) of
+% AD
+a) listening to the audio-description (AD study; \citep{hanke2014audiomovie}) of
 the movie ``Forrest Gump'',
 % AV
 b) watching the actual audio-visual movie (AV study;
@@ -295,14 +295,14 @@ publications. Following is a summary of the most important aspects.
 
 
 \subsection{Participants}
-% AO study
-In the AO study \citep{hanke2014audiomovie}, 20 German native speakers (all
+% AD study
+In the AD study \citep{hanke2014audiomovie}, 20 German native speakers (all
 right-handed, age 21–38 years, mean age 26.6 years, 12 male) listened to the
 German audio-description \citep{ForrestGumpGermanAD} of the movie ``Forrest
 Gump'' \citep{ForrestGumpMovie}.
 % AV study
 In the AV study \citep{hanke2016simultaneous}, 15 participants (21–39 years,
-mean age 29.4, six female) of the prior AO study watched the audio-visual movie
+mean age 29.4, six female) of the prior AD study watched the audio-visual movie
 with dubbed German audio track \citep{ForrestGumpDVD}.
 % VIS study
 In the VIS study \citep{sengupta2016extension}, the same 15 participants took
@@ -322,7 +322,7 @@ Otto-von-Guericke University of Magdeburg, Germany.
 
 
 
-% AO & AV stimulus name & references
+% AD & AV stimulus name & references
 We used the German DVD release \citep{ForrestGumpDVD} of the audio-visual movie
 ``Forrest Gump'' \citep{ForrestGumpMovie} and its audio-description that was
 broadcast as an additional audio track for visually impaired listeners on Swiss
@@ -330,12 +330,12 @@ public television \citep{ForrestGumpGermanAD}.
 % AV: voice-over
 The plot of the movie is already carried by a voice-over of the main character
 Forrest Gump.
-% AO: additional narrator
+% AD: additional narrator
 In the largely identical audio-description, an additional male narrator
 describes essential aspects of the visual scenery when there is no off-screen
 voice, dialog, or other relevant auditory content.
 
-% AO & AV: stimulus creation
+% AD & AV: stimulus creation
 The audio-description was temporally aligned to the audio track of the German
 DVD release. A few scenes less relevant to the major plot were removed to create
 the ``research cut'' lasting $\approx$ \unit[2]{h} \citep{hanke2014audiomovie,
@@ -353,11 +353,11 @@ segments (see Figure 3a in \citep{hanke2014audiomovie}).
 % procedure: questionnaire
 Subjects filled out a questionnaire on their basic demographic information
 and familiarity with the movie.
-% AO & AV: instructions
+% AD & AV: instructions
 Before the experiment, participants were instructed to inhibit physical
 movements except for eye-movements, and otherwise to simply ``enjoy the
 audiobook'' or ``enjoy the movie'' respectively.
-% AO & AV: presentation & instructions
+% AD & AV: presentation & instructions
 Audio-description and movie segments were presented in chronological order with
 four segments in two fMRI sessions. Between sessions, participants left the
 scanner for a break with a flexible duration. Structural images were obtained
@@ -399,8 +399,8 @@ In all three studies, stimulation was implemented with
 \href{http://www.psychopy.org}{PsychoPy} \citep{peirce2007psychopy} running on a
 computer with the NeuroDebian operating system \citep{halchenko2012open}.
 
-% AO
-In the AO study, visual instructions were presented on a rear-projection screen
+% AD
+In the AD study, visual instructions were presented on a rear-projection screen
 inside scanner bore using an LCD projector (DLA-G150CL, JVC Ltd.). During the
 functional scans, the projector presented a medium gray screen with the primary
 purpose to illuminate a participant's visual field in order to prevent premature
@@ -424,10 +424,10 @@ horizontal gray bars.
 In the VIS study, stimulus images were displayed at a size of approximately
 \unit[10]$^{\circ}$ $\times$ \unit[10]$^{\circ}$ of visual angle.
 
-\todo[inline]{auditory stimulation was the same in AO and AV?}
+\todo[inline]{auditory stimulation was the same in AD and AV?}
 
-% AO & AV: auditory stimulation
-In the AO and AV study, auditory stimulation was delivered through an MR confon
+% AD & AV: auditory stimulation
+In the AD and AV study, auditory stimulation was delivered through an MR confon
 mkII+ driving custom-built in-ear headphones (HP-M01, MR confon GmbH, Magdeburg,
 Germany; \citep{baumgart1998electrodynamic}) that reduced the scanner noise by
 at least \unit[20–30]{dB}. Headphones were fed from an Aureon 7.1 USB (Terratec)
@@ -438,8 +438,8 @@ sound card through an optical connection.
 
 \todo[inline]{shorten this subsection a lot}
 
-% AO
-In the AO study, a whole-body \unit[7]{Tesla} Siemens MAGNETOM magnetic
+% AD
+In the AD study, a whole-body \unit[7]{Tesla} Siemens MAGNETOM magnetic
 resonance scanner equipped with a local circularly polarized head transmit and a
 32 channel brain receive coil (Nova Medical, Inc., Wilmington, MA, USA) acquired
 T2*-weighted echo-planar images (gradient-echo, \unit[2]{s} repetition time
@@ -490,7 +490,7 @@ volumes for segment 1–8).
 \todo[inline]{part regarding motion correction/co-registration might be
 incorrect}
 
-\todo[inline]{what is missing: As I see it, AO must have been downsampled to
+\todo[inline]{what is missing: As I see it, AD must have been downsampled to
 2.5x2.5x2.5 mm and AV must have been upsampled from 3.0 to 2.5mm??}
 
 % data sources
@@ -503,7 +503,7 @@ Data were already corrected for motion and aligned by non-linear warping to a
 participant-specific BOLD template image \citep{sengupta2016extension}.
 % exclusion of VP 10
 Data of one participant were dropped to due to invalid distortion correction
-during scanning of the AO stimulus.
+during scanning of the AD stimulus.
 % preprocessing intro
 All further analysis steps of the current study were carried out using tools of
 FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
@@ -560,8 +560,8 @@ following GLM analysis.
 
 \paragraph{audio-description: annotation}
 
-% AO annotation
-For the analysis of the AO stumulus, we extended a publicly available annotation
+% AD annotation
+For the analysis of the AD stumulus, we extended a publicly available annotation
 of speech \citep{haeusler2020speechanno} by further annotating words spoken by
 the audio-description's narrator.
 % annotation procedure
@@ -702,10 +702,10 @@ setting\_rec & \anSettingrecAll &
 \end{comment}
 
 
-% AO regressors
+% AD regressors
 \begin{table*}[h!]
     \caption{Overview of events to build the 18 regressors for the
-        analysis of the audio-only (AO) stimulus. Some of the annotation's
+        analysis of the audio-only (AD) stimulus. Some of the annotation's
         original categories (female, females, fname; male, males, mname; face,
         head; object, objects; see Table\ref{tab:descr-nouns-rules}) were pooled
         into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m};
@@ -773,7 +773,7 @@ fg\_ad\_rms & root mean square (loudness) & \aoFgadrmsAll &
 \paragraph{audio-description: regressors}
 
 % pooling of categories
-To create the regressor for the GLM of the AO stimulus, some of
+To create the regressor for the GLM of the AD stimulus, some of
 the original 18 categories that were similar but offered only a small amount of
 counts were pooled resulting in eleven new categories [that served as
 experimental conditionso] (see Table \ref{tab:ao-events}).
@@ -798,7 +798,7 @@ mal gesagt}
 To create contrasts of cross-modal negative control and to capture variance of a
 possibly confounding change of the soundscape after a cut, we also implemented
 the five movie cut-related regressors used in the GLM of the AV stimulus (see
-details below) in the model of the AO stimulus.
+details below) in the model of the AD stimulus.
 % nuisance regressors
 \todo[inline]{"Continuous bins lasting 40ms?"; COH: goddamnit! I've rewritten
     this explanation a lot and finally stuck to the phrasing written in
@@ -871,9 +871,9 @@ vpe\_old & change of the camera position within a recurring locale &
 \tabularnewline
 vno\_cut & frames within a continuous movie shot & \avVnocutAll & \avVnocutI & \avVnocutII & 0 & \avVnocutIII & \avVnocutIV & \avVnocutV & \avVnocutVI & \avVnocutVII
 \tabularnewline
-se\_new & control for AO narrator & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
+se\_new & control for AD narrator & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
 \tabularnewline
-se\_old & control for AO narrator & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
+se\_old & control for AD narrator & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
 \tabularnewline
 fg\_av\_ger\_lr & left-right luminance difference & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII & \avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI & \avFgavgerlrVII & \avFgavgerlrVIII
 \tabularnewline
@@ -937,7 +937,7 @@ The neuroscientific rationale was that activity in the PPA is greater when
 participants view novel versus repeated scenes or view-points.
 \citep{epstein1999parahippocampal, grill2006repetition}.
 % null regressor
-As for the regressors for AO stimulus, a null regressor was chosen for a
+As for the regressors for AD stimulus, a null regressor was chosen for a
 regressor in a segment if that segment did not contain an event of the
 corresponding category.
 % no cut condition: intro
@@ -984,7 +984,7 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 
 
 \todo[inline]{SE: Die Abkürzungen in Figure 1: Da steigt keiner hinter; habe
-jetzt lange darüber gebrütet: Es gibt also kaum eine Korrelation zwischen AO und
+jetzt lange darüber gebrütet: Es gibt also kaum eine Korrelation zwischen AD und
 AV?; Also, außer bei fg\_av\_ger\_lr\_diff (wobei da keiner weiss, was das
 bedeutet); COH: what is better: reference to table as it is now (more precise,
 but harder to read) or use non-cryptic words in the figure?}
@@ -1013,7 +1013,7 @@ maybe still not optimal}
 % intro
 To test the robustness our approach, we operationalized the perception of
 spatial information compared to the perception of ``non-spatial'' information
-differently in eight $t$-contrasts for the AO stimulus (see Table
+differently in eight $t$-contrasts for the AD stimulus (see Table
 \ref{tab:ao-contrasts}) and five $t$-contrasts for the AV stimulus (see Table
 \ref{tab:av-contrasts}).
 % reason: robustness
@@ -1033,8 +1033,8 @@ subjectively good balance between a) how well categories on average were assumed
 to match the preferred stimulus type, and b) the amount of available data /
 events.\todo{oh, lord!}
 
-% AO: primary contrast
-In the primary contrast of the AO stimulus, we contrasted landmarks
+% AD: primary contrast
+In the primary contrast of the AD stimulus, we contrasted landmarks
 \texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all non-geometry related categories (\texttt{body},
 \texttt{bodypart}, \texttt{fahead}, \texttt{object}, \texttt{sex\_f},
 \texttt{sex\_m}) except \texttt{furniture}.
@@ -1067,26 +1067,26 @@ previously (\texttt{vpe\_old}).
 We assumed that movie frames in these categories on average best represent
 events that trigger perception of space versus objects or faces.\todo{syntax?}
 
-\paragraph{control contrasts: AO \& AV}
+\paragraph{control contrasts: AD \& AV}
 
 % intro
 Finally, we created several contrasts as negative control for both stimuli.
-% AO stimulus
-For the AO stimulus, we created five $t$-contrasts (see Table
+% AD stimulus
+For the AD stimulus, we created five $t$-contrasts (see Table
 \ref{tab:ao-contrasts}) to test if increased activation in the PPA was
 correlated with moments of cuts possibly correlated with a accompanying change
 in the soundscape.
 % AV stimulus
 For the AV stimulus, four $t$-contrasts were created contrasting the no-cut
 condition (texttt{vno\_cut} for negative control purposes (see Table
-\ref{tab:av-contrasts}) by using regressors based on regressors of the AO
+\ref{tab:av-contrasts}) by using regressors based on regressors of the AD
 stimulus. One contrast (\texttt{vs\_new} > \texttt{vpe\_old})  was created by
 contrasting nouns spoken by the narrator.
 
 
 \begin{table*}[h!]
 \caption{Contrasts of parameter estimates for the analysis of the audio-only
-    stimulus (AO).
+    stimulus (AD).
     Contrast 1-8 aim to isolate the PPA.
     \texttt{non-spatial categories} refers to the to the categories
     \texttt{body}, \texttt{bodypart}, \texttt{fahead},
@@ -1227,7 +1227,7 @@ revision of method section}
 PPA für die verschiedenen regressoren bzw. kategorien derselben (zumindest aber
 places vs faces) aus? COH: ???}
 
-\todo[inline]{individual results: AO trifft besser die VIS-PPA "trifft" als AV.
+\todo[inline]{individual results: AD trifft besser die VIS-PPA "trifft" als AV.
     Das ist zumindest sehr überraschend, oder?; COH: actually it isn't because
     of blindly averaging the actual frame content in the categories of movie
     cuts (cf. methods/regressors, discussion/shortcomings); this ``cross-modal
@@ -1259,7 +1259,7 @@ results of the primary $t$-contrasts for both naturalistic stimuli can be found
 at \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.\todo{still
 private collection}
 
-% all AO contrasts
+% all AD contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r)
 % 2 PPA (l/r); RSC (l/r), LOC (l/r), r. sup.temp.C., r.fr.pole; putamen; etc
 % 3 PPA (l/r); RSC (l/r), LOC (l/r),l&r sup.temp.C., anterior cing., paracing.
@@ -1293,13 +1293,13 @@ private collection}
 
 \subsection{Group results}
 
-\subsubsection{AO: PPA in primary contrast}
+\subsubsection{AD: PPA in primary contrast}
 
 % intro
 First on a group average level, we tested if results of a whole-brain analysis
 based on the audio-description's annotation would lead to increased hemodynamic
 activity in the PPA.
-% primary AO contrast
+% primary AD contrast
 The primary $t$-contrast for the audio-description (\texttt{geo, groom} >
 non-spatial noun categories) yielded six significant clusters (see Table
 \ref{tab:res-ao-group1}, Figure \ref{fig:group-slices}).
@@ -1319,7 +1319,7 @@ cortex.
 % concluding statement
 \todo[inline]{any concluding statement here or merely report the clusters?}
 
-% table group results primary AO contrast
+% table group results primary AD contrast
 \begin{table*}[t]
     \caption{Significant clusters (z-threshold Z>3.4; p<.05 cluster-corrected)
         of the primary $t$-contrast for the audio-description comparing
@@ -1346,7 +1346,7 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \end{tabular}
 \end{table*}
 
-% figure group results primary AO & AV contrasts
+% figure group results primary AD & AV contrasts
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/group-slices}
     \caption{Mixed-effects group-level (N=14) GLM results. Significant clusters
@@ -1365,13 +1365,13 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
     \label{fig:group-slices}
 \end{figure*}
 
-\subsubsection{AO: robustness of PPA across contrasts}
+\subsubsection{AD: robustness of PPA across contrasts}
 
 \todo[inline]{tables of significant clusters all contrasts = overkill!? Link to NeuoVault is added; sign. clusters of all contrasts are listed in the comments}
 
-% all eight AO PPA contrasts
+% all eight AD PPA contrasts
 In order to test the robustness of our findings, we created overall eight
-$t$-contrasts for the AO stimulus (see Table \ref{tab:ao-contrasts}).
+$t$-contrasts for the AD stimulus (see Table \ref{tab:ao-contrasts}).
 % results
 All contrasts except contrast 7 (\texttt{se\_new}, \texttt{se\_old} >
 non-spatial categories) and contrast 8 (\texttt{se\_new} > non-spatial
@@ -1385,7 +1385,7 @@ are robust across differently designed contrasts.
 %
 \todo[inline]{Discussion: discuss that contrasts make ``less and less'' sense}
 
-% figure group results of robustness across all AO & AV contrasts
+% figure group results of robustness across all AD & AV contrasts
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/stability-slices}
     \caption{Overlap of significant clusters (Z>3.4; p<.05, cluster corrected)
@@ -1400,7 +1400,7 @@ are robust across differently designed contrasts.
     \label{fig:stability-slices}
     \end{figure*}
 
-\paragraph{AO: other significant clusters across contrasts}
+\paragraph{AD: other significant clusters across contrasts}
 % precuneus = retrosplenial cortex ?
 \todo[inline]{significant clusters in other regions than PPA could or should (?)
 also be reported? Following is a short list; depends on the discussion I guess;
@@ -1410,8 +1410,8 @@ naturalistic stimuli}
 \begin{itemize}
 \item RSC (and ventral precuneus): 7 contrasts (all bilateral)
 \item lateral occipiatal cortex: 6 contrasts (4 bilateral, 2 unilateral =
-    transverse occipital sulcus / occipiatal place area?; AO \& AV clusters
-    overlap but AO clusters are more lateral, AV cluster are more medial \&
+    transverse occipital sulcus / occipiatal place area?; AD \& AV clusters
+    overlap but AD clusters are more lateral, AV cluster are more medial \&
     caudal)
 \item right superior temporal gyrus (auditory cortices): 4 contrasts
 \item (smallish) prefrontal clusters: 3 contrasts (non-overlapping)
@@ -1486,13 +1486,13 @@ the design of the contrasts.
 \end{itemize}
 
 
-\subsubsection{AO \& AV: (negative) control contrasts}
+\subsubsection{AD \& AV: (negative) control contrasts}
 
 \todo[inline]{for completeness, contrasts are mentioned in the method section.
 Shall results be reported (and later discussed)?}
 
-% AO stimulus
-AO stimulus (using annotation of movie cuts) all null results except: contrast 9
+% AD stimulus
+AD stimulus (using annotation of movie cuts) all null results except: contrast 9
 (vse\_new > pe\_old): right RSC.
 % correlation of these nouns with cuts
 Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new setting are
@@ -1526,7 +1526,7 @@ For better comparison of results across participants, we here report results
 ($z$-maps; Z>3.4, p<.05 cluster-corrected) of the analyses that was performed in
 group space.
 % ref to figure
-Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary AO
+Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary AD
 and AV $t$-contrast, and the outline of the individual PPAs
 \citep{sengupta2016extension} overlayed on the MNI152 template (transversal
 slice z=-11 for all subjects was chosen as it depicts voxels of significant
@@ -1541,20 +1541,20 @@ private collection} .
 
 % results in detail voxels of significant clusters in PPA ROI (and  RSC
 % liberally)
-% sub-01 (m): PPA (l/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (-/-)
-% sub-02 (m): PPA (l/r), AO (-/-), AV (l/-); RSC: AO (-/-), AV (-/-)
-% sub-03 (f): PPA (l/r), AO (-/-), AV (-/r); RSC: AO (-/-), AV (-/-)
-% sub-04 (f): PPA (-/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (-/-) !
-% sub-05 (m): PPA (l/r), AO (-/-), AV (-/-); RSC: AO (-/-), AV (-/-)
-% sub-06 (m): PPA (l/r), AO (l/r), AV (-/-); RSC: AO (l/-), AV (-/-)
-% sub-09 (m): PPA (l/r), AO (l/-), AV (l/r); RSC: AO (l/r), AV (l/r)
-% sub-14 (f): PPA (l/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (-/-)
-% sub-15 (m): PPA (l/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (l/r)
-% sub-16 (m): PPA (l/r), AO (l/r), AV (l/r); RSC: AO (l/r), AV (l/-)
-% sub-17 (m): PPA (l/r), AO (l/r), AV (l/r); RSC: AO (l/r), AV (l/r)
-% sub-18 (m): PPA (l/r), AO (l/r), AV (l/r); RSC: AO (l/r), AV (-/r)
-% sub-19 (f): PPA (l/r), AO (l/r), AV (-/r); RSC: AO (l/r), AV (l/r)
-% sub-20 (f): PPA (-/r), AO (-/-), AV (l/r); RSC: AO (-/-), AV (-/-)
+% sub-01 (m): PPA (l/r), AD (l/r), AV (-/r); RSC: AD (l/r), AV (-/-)
+% sub-02 (m): PPA (l/r), AD (-/-), AV (l/-); RSC: AD (-/-), AV (-/-)
+% sub-03 (f): PPA (l/r), AD (-/-), AV (-/r); RSC: AD (-/-), AV (-/-)
+% sub-04 (f): PPA (-/r), AD (l/r), AV (-/r); RSC: AD (l/r), AV (-/-) !
+% sub-05 (m): PPA (l/r), AD (-/-), AV (-/-); RSC: AD (-/-), AV (-/-)
+% sub-06 (m): PPA (l/r), AD (l/r), AV (-/-); RSC: AD (l/-), AV (-/-)
+% sub-09 (m): PPA (l/r), AD (l/-), AV (l/r); RSC: AD (l/r), AV (l/r)
+% sub-14 (f): PPA (l/r), AD (l/r), AV (-/r); RSC: AD (l/r), AV (-/-)
+% sub-15 (m): PPA (l/r), AD (l/r), AV (-/r); RSC: AD (l/r), AV (l/r)
+% sub-16 (m): PPA (l/r), AD (l/r), AV (l/r); RSC: AD (l/r), AV (l/-)
+% sub-17 (m): PPA (l/r), AD (l/r), AV (l/r); RSC: AD (l/r), AV (l/r)
+% sub-18 (m): PPA (l/r), AD (l/r), AV (l/r); RSC: AD (l/r), AV (-/r)
+% sub-19 (f): PPA (l/r), AD (l/r), AV (-/r); RSC: AD (l/r), AV (l/r)
+% sub-20 (f): PPA (-/r), AD (-/-), AV (l/r); RSC: AD (-/-), AV (-/-)
 
 % PPA ROI (Sengupta et al., 2016)
 The visual localizer experiment \citep{sengupta2016extension} yielded bilateral
@@ -1566,8 +1566,8 @@ Individual PPAs were assessed by visually inspecting unthresholded $z$-maps of
 three different contrasts, and setting a subjectively best fitting $z$-threshold
 to define an area in the parahippocampal gyrus [and adjacent regions of the
 fusiform gyrus and anterior lingual gyrus].
-% AO
-In the current analysis of the AO stimulus, we use the same AO (and AV) contrast
+% AD
+In the current analysis of the AD stimulus, we use the same AD (and AV) contrast
 for all subjects. We find statistically significant bilateral clusters in nine
 subjects, and one cluster in the left hemisphere of sub-09 that are within or
 overlapping with the individual PPA.
@@ -1618,7 +1618,7 @@ interpretation/discussion?}
 like just an explanation of the plots}
 % Bland-Altman-Plots: why they were done
 To better depict/convey the agreement and difference between individual results
-of the visual localizer and the primary AO contrast, we created one
+of the visual localizer and the primary AD contrast, we created one
 Bland-Altman-Plots for each of the 14 subjects (see Figure
 \ref{fig:bland-altman}).
 % x-axis
@@ -1626,7 +1626,7 @@ The x-axis of every subplot depicts the mean of $z$-values of two spatially
 corresponding voxels taken from a subject's unthresholded $z$-map.
 % y-axis
 The y-axis of every subplot depicts the difference of $z$-values of two
-spatially corresponding voxels (dedicated localizer minus AO stimulus).
+spatially corresponding voxels (dedicated localizer minus AD stimulus).
 % masking
 Voxels were spatially constrained to a) voxels located in the occipital and
 temporal lobes (gray; using the probabilistic Jülich Histological Atlas
@@ -1639,14 +1639,14 @@ further we constrain voxels to the individual PPA (see KDE plot for the x-axis).
 % right KDE plot
 Values above the horizontal line depict voxels that show a higher $z$-value in
 the dedicated localizer, values below the horizontal line depict voxels that
-show higher $z$-value in the AO stimulus.
+show higher $z$-value in the AD stimulus.
 
 \begin{figure*} \centering
     \includegraphics[scale=0.28]{figures/subjs_bland-altman.png}
     \caption{Bland-Altman-Plots for individual subjects. The x-axis depicts the
         mean of two spatially corresponding voxels in the unthresholded z-map of
         the visual localizer and in the unthresholded z-map of contrast 1 of the
-        AO stimulus (KDE plot on the top). The y-axis depicts the difference of
+        AD stimulus (KDE plot on the top). The y-axis depicts the difference of
         two voxels (KDE plot on the right).
         The overlays depict voxels spatially contrained to be located in the
         temporal and occipital cortex (gray),
@@ -1659,7 +1659,7 @@ show higher $z$-value in the AO stimulus.
 
 \todo[inline]{SE: die result-synopsis noch nicht optimal. Vielleicht gehe ich
 aber auch mit der falschen Perspektive ran? Für mich würde der Vergleich
-"localizer vs naturalistic" im vordergrund stehen, AO vs AV dann eine sehr
+"localizer vs naturalistic" im vordergrund stehen, AD vs AV dann eine sehr
 spannende aber logisch nachgeschaltete Frage sein.}
 
 \todo[inline]{SE: Bei Ergebnissen \& Diskussionen zu Stability fehlt mir
@@ -1668,7 +1668,7 @@ welche davon z.B. im Ergebnis wo von den anderen abgewichen haben. Das würde ja
 wichtige Hinweise geben; COH: imo discussing that will let the paper get way out
 of hand}
 
-\todo[inline]{SE: VIS vs AV vs AO: Wer liefert was über die PPA. Dieser
+\todo[inline]{SE: VIS vs AV vs AD: Wer liefert was über die PPA. Dieser
 Vergleich bzw. die Diskussion über Gemeinsamkeiten \& Unterschiede fehlt mir
 etwas}
 
@@ -1769,7 +1769,7 @@ used conceptualized stimuli.
 %right context.
 
 
-\subsection{group level: AO \& AV (PPA only)}
+\subsection{group level: AD \& AV (PPA only)}
 
 \todo[inline]{I read Aziz again: visual localizer: radius of 16 mm around peak
     voxel in each hemisphere = PPA; sentence experiment: reduced activity only
@@ -1777,8 +1777,8 @@ used conceptualized stimuli.
     their f-test on the average of the PPA voxels! anyway: their analysis is
 complicated, yet not sophisticated}
 
-% AO stimulus
-Group results of the AO stimulus' primary contrast yielded spatially concise
+% AD stimulus
+Group results of the AD stimulus' primary contrast yielded spatially concise
 clusters in the anterior part of the PPA group overlap that we gained from a
 visual localizer experiment \citep{sengupta2016extension}.
 % diff to Aziz (2008)
@@ -1824,7 +1824,7 @@ closely.
 % AV stimulus
 Group results of the AV stimulus' primary contrast yielded bilateral clusters
 that span the group overlap of individual PPA ROIs from anterior to posterior.
-% difference in location/size to AO and VIS
+% difference in location/size to AD and VIS
 Clusters also expand into more posterior regions (occipital fusiform gyrus,
 lingual gyrus, and intracalcarine cortex).\todo{which of these regions (do not
 overlap) with group ROI?}
@@ -1836,7 +1836,7 @@ objects,and low-level visual features.
 % cross-modal control purpose?
 \todo[inline]{better frame that it is conceptual/cross-modal control; but what
 do the results tell us? yes, it ``kinda works'' but \dots?}
-\todo[inline]{concluding statement regarding AV vs AO and cross-modality of
+\todo[inline]{concluding statement regarding AV vs AD and cross-modality of
 results?}
 
 
@@ -1847,8 +1847,8 @@ For both stimuli we created several contrasts that varied the amount of events
 available for the analysis and how well the annotated events within categories
 on average matched the stimulus type that we assumed to be preferentially
 processed in the PPA.
-% PPA AO
-Regarding contrasts of the AO stimulus, six of eight contrasts show significant
+% PPA AD
+Regarding contrasts of the AD stimulus, six of eight contrasts show significant
 bilateral clusters in the anterior part of the group PPA overlap.
 % PPA AV
 Regarding contrasts of the AV stimulus, all five contrasts show significant
@@ -1863,7 +1863,7 @@ contrasts.
 Nevertheless, results are still influcended by [sensitive to] the amount of
 available data and how well the feature space is modeled.
 % example
-For example, contrast 8 of the AO stimulus (\texttt{se\_new} > texttt{se\_old})
+For example, contrast 8 of the AD stimulus (\texttt{se\_new} > texttt{se\_old})
 that used the most heterogeneous categories comprising the least amount of
 events yielded neither a significant cluster in the right-hemispheric nor
 left-hemispheric PPA.
@@ -1880,8 +1880,8 @@ interpretation of results.\todo{ouff\dots}
 For example in the AV results, we do not find significant clusters that could be
 attributed to cognitive processes like attention or eye movements\todo{could
     already already be mentioned in discussion of primary contrasts}
-% AO: auditory cortices
-Nevertheless, contrasts of the AO stimulus that compare verbal cues about the
+% AD: auditory cortices
+Nevertheless, contrasts of the AD stimulus that compare verbal cues about the
 change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all non-spatial
 categories (cf. contrasts 2, 3, 6, 7) show significant clusters in (primary and
 secondary) auditory cortices.
@@ -1915,7 +1915,7 @@ and test for correlations among variables.
     ignore Aminoff (2015) due to various reasons}
 
 % intro
-Results of the AO contrasts consistently yielded significant clusters spatially
+Results of the AD contrasts consistently yielded significant clusters spatially
 constrained to the anterior part of the PPA group overlap [and to the anterior
 part of significant clusters of the AV contrasts].
 % PPA might have submodules
@@ -1976,7 +1976,7 @@ verbal stimuli.
 
 % but RSC
 Apart from the PPA, we find significantly increased activity in the
-retrosplenial cortex (RSC) consistently across contrasts of both stimuli (AO
+retrosplenial cortex (RSC) consistently across contrasts of both stimuli (AD
 stimulus: 7 contrasts; AV stimulus: 3 contrasts).
 % location functionally defined
 The RSC as a scene-selective region is not necessarily spatially congruent with
@@ -2045,11 +2045,11 @@ much still; better embed somewhere above}
 \todo[inline]{how to discuss Bland-Altman-Plots???}
 
 \todo[inline]{dunno if this is meaningful: z-scores in the anterior part of
-    PPA are higher in AO contrasts than in contrast of localizer}
+    PPA are higher in AD contrasts than in contrast of localizer}
 
 % intro
 To test if an auditory narrative could substitute a visual localizer experiment,
-we also examined the results of the primary AO contrast on the level of
+we also examined the results of the primary AD contrast on the level of
 individual subjects.
 % results of dedicated localizer
 The visual localizer \citep{sengupta2016extension} revealed bilateral ROIs in 12
@@ -2089,7 +2089,7 @@ prerequisite)}
 \subsubsection{AV stimulus}
 
 \todo[inline]{was not aim of study; results of primary AV contrasts are in plots
-    if individual; Bland-Altman-Plots focus on primary AO contrast alone}
+    if individual; Bland-Altman-Plots focus on primary AD contrast alone}
 
 \subsection{shortcomings}
 
@@ -2097,7 +2097,7 @@ prerequisite)}
 
 \todo[inline]{different level of alertness during paradigms}
 
-\subsubsection{AO contrast}
+\subsubsection{AD contrast}
 
 % optimal stimulus type in vision
 In the visual domain, landscapes and not pictures of landmarks or buildings are
@@ -2181,7 +2181,7 @@ eye-tracking.
 \section{Conclusions}
 
 \todo[inline]{SE: frage ich mich das beim Durchgehen: Warum ist der Fokus so
-sehr auf Audiobook / AO, während AV doch eigentlich more natural and engaging
+sehr auf Audiobook / AD, während AV doch eigentlich more natural and engaging
 ist? COH: at the moment, the discussion is not tailored to the topic
 ``naturalistic stimulus as substitute to localizer'' as it is not and should not
 be the main focus}
@@ -2212,8 +2212,8 @@ instructions during brain scanning [would state that explicitly in the summary
 at the end].
 \end{itemize}
 
-% \citep{hanke2014audiomovie}: the AO stimulus leaves a much larger margin for
-% inter-individual differences in imagining scenery. The AO stimulus limits the
+% \citep{hanke2014audiomovie}: the AD stimulus leaves a much larger margin for
+% inter-individual differences in imagining scenery. The AD stimulus limits the
 % effect of an attentional focus on the selection of a subset of simultaneously
 % occurring auditory events, in contrast to the selection of different parts of
 % the visual field.
