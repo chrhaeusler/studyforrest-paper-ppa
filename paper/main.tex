@@ -433,33 +433,30 @@ naturalistic stimulus paradigms (AD and AV).
 
 \subsection{Preprocessing}
 
-\todo[inline]{part regarding motion correction/co-registration might be
-incorrect}
-
-\todo[inline]{what is missing: As I see it, AD must have been downsampled to
-2.5x2.5x2.5 mm and AV must have been upsampled from 3.0 to 2.5mm??}
-
 % data sources
 % https://github.com/psychoinformatics-de/studyforrest-data-aligned/tree/master/code
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms}
-fMRI time series of those 15 participants in the studyforrest dataset that took
-part in all three experiments were obtained from
-\href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{GitHub}.
-Data were already corrected for motion and aligned by non-linear warping to a
-participant-specific BOLD template image \citep{sengupta2016extension}.
+All analyses presented here are based on previously published fMRI data
+(\url{https://github.com/psychoinformatics-de/studyforrest-data-aligned}).
+Of those 15 participants in the studyforrest dataset that took
+part in all three experiments,
 % exclusion of VP 10
-Data of one participant were dropped to due to invalid distortion correction
+data of one participant were dropped to due to invalid distortion correction
 during scanning of the AD stimulus.
+Data were previously corrected for motion, aligned with and re-sliced onto a
+participant-specific BOLD template image \citep{sengupta2016extension}
+(uniform spatial resolution of \unit[2.5$\times$2.5$\times$2.5]{mm} for both
+AD and AV data).
 % preprocessing intro
-All further analysis steps of the current study were carried out using tools of
+All analyses presented here were carried out using
 FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
 \citep{smith2004fsl}) on a computer cluster running the Debian GNU/Linux
 operating system. Software packages were obtained from repositories of
 \href{http://neuro.debian.net}{NeuroDebian} \citep{halchenko2012open}.
 
 % my preprocessing
-Preprocessing was carried out using FEAT v6.00 (FMRI Expert Analysis Tool;
-\citep{woolrich2001autocorr}) as part of FSL.
+Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool;
+\citep{woolrich2001autocorr}) as shipped with FSL.
 % temporal filtering
 High-pass temporal filtering was applied to every stimulus segment using a
 Gaussian-weighted least-squares straight line with a cutoff period of
