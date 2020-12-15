@@ -272,9 +272,9 @@ discussion and conclusion} Our results demonstrate that (a), (b), (c).
 citation (see Data Records and Data Citations, below)}
 
 % intro
-We used three subdatasets of the publicly available studyforrest dataset
-(\href{http://www.studyforrest.org}{studyforrest.org}) that has already been
-used by other research groups for independent research questions
+We used three components of the publicly available
+\href{http://www.studyforrest.org}{studyforrest.org} dataset that has already been
+used by other research groups in independent studies
 (e.g. \citep{ben2018hippocampal, jiahui2019predicting, hu2017decoding,
 lettieri2019emotionotopy, nguyen2016integration}).
 % used studies
@@ -283,7 +283,7 @@ The same subjects were
 a) listening to the audio-description (AD study; \citep{hanke2014audiomovie}) of
 the movie ``Forrest Gump'',
 % AV
-b) watching the actual audio-visual movie (AV study;
+b) watching the original movie (AV study;
 \citep{hanke2016simultaneous}), and
 % VIS
 c) participating in a dedicated six-category block-design visual localizer (VIS
@@ -337,34 +337,22 @@ voice, dialog, or other relevant auditory content.
 
 % AD & AV: stimulus creation
 The audio-description was temporally aligned to the audio track of the German
-DVD release. A few scenes less relevant to the major plot were removed to create
-the ``research cut'' lasting $\approx$ \unit[2]{h} \citep{hanke2014audiomovie,
+DVD release. A few scenes, less relevant to the main plot, were removed to create
+the ``research cut'' lasting \unit[$\approx$2]{h} \citep{hanke2014audiomovie,
 hanke2016simultaneous}.
 % further processing
 Both stimuli were further processed (filtering, volume adjustments) to improve
-audibility during MRI scanning. Black horizontal bars at the top and bottom of
-the movie were replaced with medium-gray bars of the same size in order to
-increase background illumination for a more pleasant experience.
+audibility during MRI scanning.
 % splitting
-Each stimulus was split into eight segments of approximately 15 minutes. Except
-for the first segment, each segment started with a snippet of at least six
-seconds immediately preceding the movie scene boundary used to split the
-segments (see Figure 3a in \citep{hanke2014audiomovie}).
-% procedure: questionnaire
-Subjects filled out a questionnaire on their basic demographic information
-and familiarity with the movie.
+Each stimulus was split into eight segments of approximately \unit[15]{minutes}.
 % AD & AV: instructions
 Before the experiment, participants were instructed to inhibit physical
-movements except for eye-movements, and otherwise to simply ``enjoy the
-audiobook'' or ``enjoy the movie'' respectively.
+movements except for eye-movements, and otherwise to simply ``enjoy''.
 % AD & AV: presentation & instructions
 Audio-description and movie segments were presented in chronological order with
 four segments in two fMRI sessions. Between sessions, participants left the
 scanner for a break with a flexible duration. Structural images were obtained
 during the first study on a day different from the fMRI session.
-
-\todo[inline]{contrary to claims in Sengupta, the pictures are NOT the same
-as used in Haxby, 2011; sets might have an intersection though}
 
 % VIS study picture categories
 All stimuli of the VIS study were already used in a previous study
@@ -376,8 +364,6 @@ bodies (female and male without heads in clothes; medium-gray background),
 objects (e.g. binoculars, screw, chair, mug; medium-gray background), houses
 (medium-gray background) and outdoor scenes comprising of nature and street
 scenes, and phase scrambled images.
-% mirror images
-Mirrored views of these 24 $\times$ 6 images were also used as stimuli.
 % controlled luminance and size
 Images were matched in luminance and size of 400$\times$\unit[400]{px}
 (displayed at a size of approximately
@@ -394,96 +380,56 @@ Subjects also performed a one-back matching task to keep them attentive.
 
 \subsection{Stimulation setup}
 
-% paradigm implementation
-In all three studies, stimulation was implemented with
-\href{http://www.psychopy.org}{PsychoPy} \citep{peirce2007psychopy} running on a
-computer with the NeuroDebian operating system \citep{halchenko2012open}.
-
 % AD
 In the AD study, visual instructions were presented on a rear-projection screen
-inside scanner bore using an LCD projector (DLA-G150CL, JVC Ltd.). During the
+inside scanner bore. During the
 functional scans, the projector presented a medium gray screen with the primary
 purpose to illuminate a participant's visual field in order to prevent premature
 fatigue.
-
 % AV & VIS
 In the AV and VIS study, visual instructions and stimuli were presented on a
-rear-projection screen using an LCD projector (JVC DLA RS66E, JVC Ltd., light
-transmission reduced to \unit[13.7]{\%} with a gray filter) connected to the
-stimulus computer.
+rear-projection screen
 % screen size
-The movie was shown at a viewing distance of \unit[63]{cm} in \unit[720]{p}
-resolution at full width on a \unit[1280 $\times$ 1024]{pixel} screen with
-\unit[60]{Hz} video refresh rate and screen dimension of \unit[26.5 $\times$
-21.2]{cm}.
-% angle of view: AV
-In the AV study, this corresponded to \unit[23.75 $\times$ 13.5] or \unit[23.75
-$\times$ 10.25]{cm} when considering only the movie content and excluding the
-horizontal gray bars.
+at a viewing distance of \unit[63]{cm}, with a movie frame projection size of
+\unit[23.75 $\times$ 10.25]{cm}.\todo{replace with visual angle size, in line with VIS}
 % angle of view: VIS
 In the VIS study, stimulus images were displayed at a size of approximately
 \unit[10]$^{\circ}$ $\times$ \unit[10]$^{\circ}$ of visual angle.
 
-\todo[inline]{auditory stimulation was the same in AD and AV?}
-
 % AD & AV: auditory stimulation
-In the AD and AV study, auditory stimulation was delivered through an MR confon
-mkII+ driving custom-built in-ear headphones (HP-M01, MR confon GmbH, Magdeburg,
-Germany; \citep{baumgart1998electrodynamic}) that reduced the scanner noise by
-at least \unit[20–30]{dB}. Headphones were fed from an Aureon 7.1 USB (Terratec)
-sound card through an optical connection.
+Auditory stimulation was implemented using custom in-ear (AD), or over-the-ear
+headphones (AV), which reduced the scanner noise by
+at least \unit[20–30]{dB}.
 
 
 \subsection{fMRI data acquisition}
 
-\todo[inline]{shorten this subsection a lot}
-
-% AD
-In the AD study, a whole-body \unit[7]{Tesla} Siemens MAGNETOM magnetic
-resonance scanner equipped with a local circularly polarized head transmit and a
-32 channel brain receive coil (Nova Medical, Inc., Wilmington, MA, USA) acquired
-T2*-weighted echo-planar images (gradient-echo, \unit[2]{s} repetition time
-(TR), \unit[22]{ms} echo time, \unit[0.78]{ms} echo spacing, \unit[1488]{Hz/Px}
-bandwidth, generalized autocalibrating partially parallel acquisition,
-acceleration factor 3, \unit[2]{Hz/Px} bandwidth in phase encoding direction).
-% slices
-36 axial slices (thickness \unit[1.4]{mm}, \unit[1.4 $\times$ 1.4]{mm} in-plane
-resolution, \unit[224]{mm} field-of-view, anterior-to-posterior phase encoding
-direction) with a \unit[10]{\%} inter-slice gap were recorded in ascending
-order.
+Gradient-echo fMRI data for the AD study were acquired using a \unit[7]{Tesla}
+Siemens MAGNETOM magnetic resonance scanner equipped with a 32 channel brain
+receive coil at \unit[2]{s} repetition time (TR) with 36 axial slices (thickness
+\unit[1.4]{mm}, \unit[1.4 $\times$ 1.4]{mm} in-plane resolution, \unit[224]{mm}
+field-of-view, anterior-to-posterior phase encoding direction) and a
+\unit[10]{\%} inter-slice gap, recorded in ascending order.
 % slice orientation
 Slices were oriented to include the ventral portions of frontal and occipital
 cortex while minimizing intersection with the eyeballs.
 % FOV
 The field of view was centered on the approximate location of Heschl's gyrus.
 % motion correction
-EPI images were online-corrected for motion and geometric distortions [+++Oh, S.
-et al. 2012; In, M. \& Speck, O., 2012; Chung, J. et al., 2011+++]
-% auxiliary scans
-Auxiliary scans for slice alignment and motion- and distortion-correction were
-performed at the beginning of the first fMRI recording session and also after
-the break at the start of the recording for the second half of the movie.
+EPI images were online-corrected for motion and geometric distortions.
+
 % AV & VIS
-In the AV and VIS study, a whole-body \unit[3]{Tesla} Philips Achieva dStream
-MRI scanner equipped with a 32 channel head coil acquired T2*-weighted
-echo-planar images (gradient-echo, \unit[2]{s} repetition time, \unit[30]{ms}
-echo time, \unit[90]{$^{\circ}$} flip angle, \unit[1943]{Hz/Px} bandwidth,
-parallel acquisition with sensitivity encoding (SENSE) reduction factor 2).
+In the AV and VIS study, a \unit[3]{Tesla} Philips Achieva dStream
+MRI scanner with a 32 channel head coil acquired gradient-echo fMRI data
+at \unit[2]{s} repetition time with
 % slices
 35 axial slices (thickness \unit[3.0]{mm}, \unit[10]{\%} inter-slice gap) with
 \unit[80 $\times$ 80]{voxels} (\unit[3.0 $\times$ 3.0]{mm} of in-plane
 resolution, \unit[240]{mm} field-of-view) and an anterior-to-posterior phase
-encoding direction were recorded in ascending order.
-% slice positioning
-Philips' ``SmartExam'' was used to automatically position slices in AC-PC
-orientation such that the topmost slice was located at the superior edge of the
-brain. This automatic slice positioning procedure was identical in the AV and
-VIS study, and yielded a congruent geometry across paradigms.
+encoding direction, recorded in ascending order.
 % no. of volumes
 A total of 3599 volumes were recorded for each participant in each of the
-naturalistic stimulus paradigms (451, 441, 438, 488, 462, 439, 542, and 338
-volumes for segment 1–8).
-
+naturalistic stimulus paradigms (AD and AV).
 
 \subsection{Preprocessing}
 
