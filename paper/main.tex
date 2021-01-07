@@ -74,10 +74,10 @@ landscapes compared to pictures of faces or objects.
 % AV, AD: operationalization
 In this study, we explore different ways to operationalize spatial perception in
 14 subjects that were watching an audio-visual Hollywood movie and listened to
-the audio-description of the same movie (studyforrest.org).
+the movie's audio-description (studyforrest.org).
 % auditory localizer?
 Focussing on the audio-description, we further test if an auditory narrative
-could substitute localize a ``visual area'' in individual subjects.
+could localize a ``visual area'' in individual subjects.
 % GLM
 For each naturalistic stimulus, we model hemodynamic activity via several
 general linear model (GLM) $t$-contrasts that are based on stimulus annotations
@@ -129,37 +129,12 @@ narrative, studyforrest
 
 \section*{Plan}
 
-\noindent Abstract:
-
-\begin{itemize}
-\item missing: the exact (!) presumed PPA function? spatial perception, scene
-    representation, spatial layout hypothesis, associative processing? the list
-    is endless when it comes what the PPA processes exactly (in pictures)
-\item operationalization in two naturalistic stimuli (ecological validity not
-    mentioned anymore)
-\item AV: ?
-\item AD: also as functional localizers
-\item Results: ``spatial perception'' can differently operationalized via
-    naturalistic stimuli -> we get similar results; AD is restricted to
-    anterior PPA; narrative as ``visual localizer''(??)
-\end{itemize}
-
 \noindent Intro:
 
 \begin{itemize}
-\item presumed function of the PPA? -> spatial layout hypothesis and,
-    unfortunately, others
-\item question: is localization of proposed PPA function using visual localizer
-    valid?
-\item why do we use three datasets? To answer question (of presumed function of
-    PPA?) that is usually operationalized using pictures (but: big controversy
-what exactly in pictures the PPA processes; Aminoff tries to unify the
-    arguments)
-\item VIS: connection to literature; problem: stimulus validity re PPA function
-\item AV: more ecologically valid; problem: of operationalization; why did we do
-    it the done way (-> probably issue of method section)
-\item AD: alternative stimulus for proposed function but verbal/semantic
-    information
+\item Struktur des letzten Absatzes finde ich
+    bisher nicht so geil (Hypothesen kommen recht spät (d.h. nach Methode),
+    Results folgen direkt darauf
 \end{itemize}
 
 
@@ -167,6 +142,9 @@ what exactly in pictures the PPA processes; Aminoff tries to unify the
 
 \begin{itemize}
 \item key strategy to address this question
+\item auch VIS hat mehrere Kontraste
+\item neuer Abschnitt 2.6: all regressoren und Kontraste; Kontraste sind abiträr
+    aber ist ok; 2.7: eigentliche Statistische Analyse
 \item which specific cognitive processing do we contrast in AD vs. AV?
 \item ``ingredients'' to make it happen? we have some annotations at hand;
     define congruent contrasts based on regressors that are built from
@@ -176,6 +154,20 @@ what exactly in pictures the PPA processes; Aminoff tries to unify the
 \item what do we need to check to ensure subsequent analyses are valid (COH:
     this is the part that is the most elusive to me when it comes to precise
     phrasing)? a) correlation of regressors, b) negative controls
+\end{itemize}
+
+
+\noindent Results
+
+\begin{itemize}
+\item mehrere Kontraste in VIS genommen, hier einer berichtet: Teil aus
+    Discussion in Results hochnehmen
+\end{itemize}
+
+\noindent Discussion
+\begin{itemize}
+    \item \citep{bartels2004mapping, hasson2004intersubject}
+    \item VIS: "best contrast was chosen"
 \end{itemize}
 
 
@@ -303,42 +295,64 @@ characterize brain functions at an individual level, a prerequisite for the
 application of brain imaging methods in individual diagnostics (cf.
 \cite{dubois2016building, eickhoff2020towards}).
 
-% Open research question
-In this study, we investigate if increased hemodynamic activity in the PPA
-correlates with ``spatial information'' presented under more ecologically valid
-conditions.
-% we are different We used two naturalistic
-Therefore, we annotated perceptual information embedded in two [perceptual]
-rich/multidimensional and continuous naturalistic stimuli (see
+% open question
+In this study, we investigate if increased hemodynamic activity in the PPA that
+is usually revealed by contrasting blocks of pictures can also be revealed by
+contrasting selected stimulus features that incidentially occur under more
+ecologically conditions.
+% we use 2 naturalistic stimuli
+To answer this question, we operationalized the perception of both visual and
+auditory spatial information using two naturalistic stimuli (see
 \citep{hamilton2018revolution, hasson2008neurocinematics,
-sonkusare2019naturalistic} for reviews):
-% audio-description
-a) the audio-description (AD) of the Hollywood movie ``Forrest Gump'',
-and
-% audio-visual
-b) the original audio-visual (AV) movie.
-% studyforrest dataset
-We then analyzed corresponding fMRI data from the same subjects that listened
-to the audio-description and watched the audio-visual movie as part of the
-publicly available studyforrest dataset
-(\href{http://www.studyforrest.org}{studyforrest.org}).
-% first: group level AD
-First on a group average level, general linear model (GLM) contrasts based on
-the audio-description's annotation are used to test if spatial information
-embedded in an exclusively auditory stimulus correlates with increased
-hemodynamic activity in the PPA that we defined using a block-designed visual
-localizer experiment done with the same subjects \citep{sengupta2016extension}.
-% second: group level AV
-Second as conceptual/cross-modal control, we compare results of the
-audio-description to GLM results based on the annotation of the movie.
-% individual results
-Lastly on the level of individual subjects and focussing on the
-audio-description [as a possible substitute for a visual localizer], we compare
-results of the naturalistic stimuli to results of the visual localizer
+sonkusare2019naturalistic} for reviews).
+% AV stimulus
+The operationalization of visual perception is based on an annotation of cuts
+and depicted locations in the audio-visual movie ``Forrest Gump'' (AV stimulus).
+% AO stimulus
+The operationalization of auditory perception is based on an annotation of
+speech occurring in the movie's audio-description (AD stimulus).
+% GLM contrasts
+Based on these annotations, we created several general linear model (GLM)
+contrast to analyze the corresponding publicly available fMRI datasets
+(\href{http://www.studyforrest.org}{studyforrest.org}) of each naturalistic
+stimulus \citep{hanke2016simultaneous, hanke2014audiomovie}.
+% varying amount of data
+Contrasts vary in HOW WELL / HOW MUCH DATA.\todo{rewrite if it should be
+mentioned}
+
+% hypo a
+We hypothesize[d] that whole-brain analyses will/would reveal increased
+hemodynamic activity in the PPA as functionally defined by a visual localizer
+experiment using static pictures done with the same subjects
 \citep{sengupta2016extension}.
-% results
-\todo[inline]{following paragraph will be similar to abstract, intro to
-discussion and conclusion} Our results demonstrate that (a), (b), (c).
+% hypo b
+Focussing on the [``cleaner operationalization'' of the] audio-description, we
+further hypothesize[d] that an exclusively auditory stimulus can/could
+substitute a block-design experiment using pictures to localize a ``visual
+area'' in individual subjects.
+% results: group
+On a group average level,
+% operationalization in naturalistic stimuli
+results demonstrate that our approach based on annotations [of two ecologically
+more valid stimuli] to operationalize spatial perception lead to increased
+hemodynamic activity in [roughly] the same brain regions as a block-designed
+visual localizer experiment.\todo{interpretation?}
+% anterior vs. posterior
+On both a group and individual subject level, a comparison of results from the
+three datasets also suggests functional differences between the anterior and
+posterior PPA.
+% what does it mean
+The current data add evidence to the hypothesis that the PPA might consist of
+submodules that work together during visual perception of landscapes (cf.
+\citep{baldassano2013differential}).
+%
+Lasty, our results suggest that the PPA's anterior part can be localized in
+individual subjects by contrasting high-level semantic information occurring in
+an auditory naturalistic stimulus.
+
+\todo[inline]{the topic anteriorer vs. posterior is mentioned first at the very
+and of the intro and occurrs as "surprising" in the intro as in our results
+(it's mentioned in the abstract though)}
 
 
 \section{Methods}
@@ -394,8 +408,6 @@ Otto-von-Guericke University of Magdeburg, Germany.
 
 
 \subsection{Stimuli and Procedure}
-
-
 
 % AD & AV stimulus name & references
 We used the German DVD release \citep{ForrestGumpDVD} of the audio-visual movie
@@ -551,8 +563,6 @@ to improve estimation efficiency.
 
 
 \subsection{Statistical analysis}
-
-
 
 % intro
 Similarly to the reviewed studies that employed simplified stimuli, we conducted
@@ -1404,6 +1414,8 @@ are robust across differently designed contrasts.
 \todo[inline]{concluding statement often feels like interpretation/discussion}
 %
 \todo[inline]{Discussion: discuss that contrasts make ``less and less'' sense}
+
+\todo[inline]{figure caption: mention / explain other clusters}
 
 % figure group results of robustness across all AD & AV contrasts
 \begin{figure*} \centering
