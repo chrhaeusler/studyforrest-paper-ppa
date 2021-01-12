@@ -54,11 +54,7 @@ separaten Localizer, oder? Das kommt bisher nur bedingt rüber; COH: well, if yo
 also want to have the ``visual part'' of the PPA then you need a visual
 paradigm}
 
-\todo[inline]{doing the
-    revision of the result section I realized that we probably should
-    ``somehow'' add that clusters should not be all over the place but spatially
-    constrained to the parahippocampal and neighbouring cortices, because
-    naturalistic stimulus / possibly confounding variables}
+
 
 \begin{abstract}
 % < 170 words new analysis of existing data of interest to a broad section of
@@ -132,28 +128,30 @@ narrative, studyforrest
 \noindent Intro:
 
 \begin{itemize}
-\item Struktur des letzten Absatzes finde ich
-    bisher nicht so geil (Hypothesen kommen recht spät (d.h. nach Methode),
-    Results folgen direkt darauf
+    \item structure of last paragraph might be meh: methods/our approach
+-> hypotheses -> results; readers might assume HARKing?
 \end{itemize}
 
 
-\noindent Method (after stimulus description):
+\noindent Method:
 
 \begin{itemize}
-\item key strategy to address this question
-\item auch VIS hat mehrere Kontraste
-\item neuer Abschnitt 2.6: all regressoren und Kontraste; Kontraste sind abiträr
-    aber ist ok; 2.7: eigentliche Statistische Analyse
-\item which specific cognitive processing do we contrast in AD vs. AV?
-\item ``ingredients'' to make it happen? we have some annotations at hand;
-    define congruent contrasts based on regressors that are built from
-    annotations; available annotations could be described in a dedicated
-    section (COH: should be shorty and very high-level; details probably will
-    confuse the shit out of readers)
-\item what do we need to check to ensure subsequent analyses are valid (COH:
-    this is the part that is the most elusive to me when it comes to precise
-    phrasing)? a) correlation of regressors, b) negative controls
+
+\item at the moment "Annotation, Regressors and Contrasts" follows
+    "Preprocessing" (right before "Statistical Analysis" as we agreed on); going
+        back and forth a couple of times, imo there is no perfect location (at
+        least in case we do not split that part into "Annotation" and
+        "Regressors \& Contrasts" again.
+
+\item structure of ``Annotation, Regressors \& Contrasts'' !! -> everything has
+    pros and cons (at the moment lots of subheading since easier to navigate);
+    at the moment I think (again) it makes more sense to mention AD first since
+    it is the focus of the movie and the AV serves as, well, what exactly?
+
+\item what do we need to check to ensure subsequent analyses are valid;
+    a) correlation of regressors (first "sanity check" but more a prerequisite)
+    b) negative controls (actual sanity check)
+
 \end{itemize}
 
 
@@ -236,10 +234,9 @@ compared to haptically explored abstract geometric objects.
 % Aziz (2008): place related sentences
 To our knowledge only one study \citep{aziz2008modulation} investigated how
 hemodynamic activity in the PPA differs between different semantic stimulus
-categories occurring in spoken language.
-\todo{phrasing might be strange but aims to delineate
-from Huth (2016); they do voxel-wise semantic modeling regarding places in PPA
-but imo that does not say anything about excitation/inhibition}
+categories occurring in spoken language.\todo{phrasing to delineate from Huth
+(2016); imo voxel-wise semantic modeling says nothing about
+excitation/inhibition}
 % Aziz' stimuli
 \cite{aziz2008modulation} used sentences that described generic or famous places
 (e.g. ``The Taj Mahal faces a long thin reflecting pool''), faces (``Marilyn
@@ -298,7 +295,7 @@ application of brain imaging methods in individual diagnostics (cf.
 % open question
 In this study, we investigate if increased hemodynamic activity in the PPA that
 is usually revealed by contrasting blocks of pictures can also be revealed by
-contrasting selected stimulus features that incidentially occur under more
+contrasting selected stimulus features that incidentally occur under more
 ecologically conditions.
 % we use 2 naturalistic stimuli
 To answer this question, we operationalized the perception of both visual and
@@ -322,9 +319,9 @@ mentioned}
 
 % hypo a
 We hypothesize[d] that whole-brain analyses will/would reveal increased
-hemodynamic activity in the PPA as functionally defined by a visual localizer
-experiment using static pictures done with the same subjects
-\citep{sengupta2016extension}.
+hemodynamic activity spatially constrained \todo{i.e. not activity all over the
+place} to the PPA as functionally defined by a visual localizer experiment using
+pictures done with the same subjects.  \citep{sengupta2016extension}.
 % hypo b
 Focussing on the [``cleaner operationalization'' of the] audio-description, we
 further hypothesize[d] that an exclusively auditory stimulus can/could
@@ -335,8 +332,8 @@ On a group average level,
 % operationalization in naturalistic stimuli
 results demonstrate that our approach based on annotations [of two ecologically
 more valid stimuli] to operationalize spatial perception lead to increased
-hemodynamic activity in [roughly] the same brain regions as a block-designed
-visual localizer experiment.\todo{interpretation?}
+hemodynamic activity in [roughly] the same brain regions the block-designed
+visual localizer.\todo{interpretation?}
 % anterior vs. posterior
 On both a group and individual subject level, a comparison of results from the
 three datasets also suggests functional differences between the anterior and
@@ -346,14 +343,13 @@ The current data add evidence to the hypothesis that the PPA might consist of
 submodules that work together during visual perception of landscapes (cf.
 \citep{baldassano2013differential}).
 %
-Lasty, our results suggest that the PPA's anterior part can be localized in
+Lastly, our results suggest that the PPA's anterior part can be localized in
 individual subjects by contrasting high-level semantic information occurring in
 an auditory naturalistic stimulus.
 
-\todo[inline]{the topic anteriorer vs. posterior is mentioned first at the very
-and of the intro and occurrs as "surprising" in the intro as in our results
-(it's mentioned in the abstract though)}
-
+\todo[inline]{the topic anterior vs. posterior is mentioned at the end of the
+intro for the first time; might be "surprising" but that is in line how the
+story went (it's mentioned in the abstract though)}
 
 \section{Methods}
 
@@ -362,9 +358,9 @@ citation (see Data Records and Data Citations, below)}
 
 % intro
 We used three components of the publicly available
-\href{http://www.studyforrest.org}{studyforrest.org} dataset that has already been
-used by other research groups in independent studies
-(e.g. \citep{ben2018hippocampal, jiahui2019predicting, hu2017decoding,
+\href{http://www.studyforrest.org}{studyforrest.org} dataset that has already
+been used by other research groups in independent studies (e.g.
+\citep{ben2018hippocampal, jiahui2019predicting, hu2017decoding,
 lettieri2019emotionotopy, nguyen2016integration}).
 % used studies
 The same subjects were
@@ -372,8 +368,7 @@ The same subjects were
 a) listening to the audio-description (AD study; \citep{hanke2014audiomovie}) of
 the movie ``Forrest Gump'',
 % AV
-b) watching the original movie (AV study;
-\citep{hanke2016simultaneous}), and
+b) watching the original movie (AV study; \citep{hanke2016simultaneous}), and
 % VIS
 c) participating in a dedicated six-category block-design visual localizer (VIS
 study; \citep{sengupta2016extension}).
@@ -443,8 +438,11 @@ during the first study on a day different from the fMRI session.
 
 % VIS study picture categories
 All stimuli of the VIS study were already used in a previous study
-\citep{haxby2011common}. There were 24 unique grayscale images (s. Figure 2 in
-\citep{sengupta2016extension}) ) for each of six stimulus categories:
+\citep{haxby2011common}.\todo{I guess they only report the ones they
+designed themselves in detail? -> check again}
+%
+There were 24 unique grayscale images (s. Figure 2 in
+\citep{sengupta2016extension}) for each of six stimulus categories:
 % category details
 faces (cropped from original background presented on a medium-gray background),
 bodies (female and male without heads in clothes; medium-gray background),
@@ -476,13 +474,12 @@ fatigue.
 % AV & VIS
 In the AV and VIS study, visual instructions and stimuli were presented on a
 rear-projection screen
-% screen size
-at a viewing distance of \unit[63]{cm}, with a movie frame projection size of
-\unit[23.75 $\times$ 10.25]{cm}.\todo{replace with visual angle size, in line with VIS}
+% screen size \unit[23.75 $\times$ 10.25]{cm}
+at a viewing distance of \unit[63]{cm}, with a movie frame projection size
+approximately \unit[21.3]$^{\circ}$ $\times$ \unit[9.3]$^{\circ}$.
 % angle of view: VIS
 In the VIS study, stimulus images were displayed at a size of approximately
 \unit[10]$^{\circ}$ $\times$ \unit[10]$^{\circ}$ of visual angle.
-
 % AD & AV: auditory stimulation
 Auditory stimulation was implemented using custom in-ear (AD), or over-the-ear
 headphones (AV), which reduced the scanner noise by
@@ -562,36 +559,42 @@ applied using FILM (FMRIB's Improved Linear Model; \citep{woolrich2001autocorr})
 to improve estimation efficiency.
 
 
-\subsection{Statistical analysis}
-
-% intro
-Similarly to the reviewed studies that employed simplified stimuli, we conducted
-a standard two-level general linear model (GLM) analysis to create
-subject-specific results ($Z$-maps) across the 8 segments for every subject. A
-subsequent, third-level analysis averaged contrast estimates over subjects.
-
-
-\subsubsection{Stimulus annotation and regressors}
-
-\todo[inline]{SE: focus on the events that are relevant to the analysis to
-reduce complexity and explain these better; COH: revised but maybe still not
-``optimal''}
+\subsection{Annotation, regressors, contrasts}
 
 \todo[inline]{SE: wie gut passen die Annotationen zu den VIS Stimuli -> genauere
 Ausführungen, wie welche Annotation dazu passt; COH: revised but maybe still not
 ``optimal''}
 
-% intro
-Since we did not design the naturalistic stimuli for detection power, we
-annotated the temporal structure of the fixed stimuls material to operationalize
-the perception of different stimulus features and create regressors for the
-following GLM analysis.
+\todo[inline]{SE: focus on the events that are relevant to the analysis to
+reduce complexity and explain these better; COH: revised but maybe still not
+``optimal''}
 
+\todo[inline]{key strategy to address research question -> operationalize
+    perception of spatial information in naturalistic stimuli that are
+ecologically more valid}
 
-\paragraph{audio-description: annotation}
+% traditionally
+Traditionally, researchers specifically design stimuli that presumably would
+trigger the perceptual process of interest while also controlling confounding
+variables (e.g. color, luminance).
+% our approach: annotation and regressors
+Naturalistic stimuli [might] more closely mimic how we experience the world
+around us but have the drawback that they are usually fix and that their
+temporal structure of embedded stimulus features is unknown.\todo{phrasing}
+% annotation ftw
+Hence, we annotated a variety of stimulus features that later served as a basis
+for GLM regressors.
+% contrasts
+Based on these regressors, we then created $t$-contrasts that we presumed to
+subtract variance correlating with the perception of non-spatial information
+from variance correlating with the perception of spatial information.
+
+\subsubsection{Annotations \& regressors}
+
+\paragraph{Audio-description: annotation}
 
 % AD annotation
-For the analysis of the AD stumulus, we extended a publicly available annotation
+For the analysis of the AD stimulus, we extended a publicly available annotation
 of speech \citep{haeusler2020speechanno} by further annotating words spoken by
 the audio-description's narrator.
 % annotation procedure
@@ -600,8 +603,9 @@ describe the movie's missing visual content based on a set of rules.
 % reference to table with rules and examples
 A complete overview of all 18 categories, the rule for a word to belong to a
 category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
-% procedure
+% preliminary annotation
 A preliminary annotation was performed by one person according to the rules.
+% corrections
 Minor corrections due to incorrectly applied rules were done by the author.
 % why and how of categories 1
 Some categories reflect the verbal counterpart of the stimulus categories that
@@ -803,10 +807,10 @@ fg\_ad\_rms & root mean square (loudness) & \aoFgadrmsAll &
 \paragraph{audio-description: regressors}
 
 % pooling of categories
-To create the regressor for the GLM of the AD stimulus, some of
-the original 18 categories that were similar but offered only a small amount of
-counts were pooled resulting in eleven new categories [that served as
-experimental conditionso] (see Table \ref{tab:ao-events}).
+To create the regressor for the GLM of the AD stimulus, some of the original 18
+categories that were similar but offered only a small amount of counts were
+pooled resulting in eleven new categories [that served as experimental
+conditionso] (see Table \ref{tab:ao-events}).
 % handling of se_new and se_old
 Moreover, events that fell into one of the two setting-related categories
 (\texttt{se\_new} or \texttt{se\_old}) but also into another category were
@@ -850,21 +854,17 @@ double gamma hemodynamic response function (HRF).
 \paragraph{movie: annotation}
 
 % AV anno
-For the analysis of the AV data, we took advantage of a publicly available
-annotation of movie cuts and depicted locations \citep{haeusler2016cutanno}.
-% rationale behind using movie cuts
-Our rationale was that cuts are ``spatially relevant'' events that re-orient the
-viewer within the environment depicted in the movie.
-
+For the analysis of the AV stimulus, we took advantage of a previously published
+annotation of [the 869] movie cuts and the depicted location after each cut
+\citep{haeusler2016cutanno}.
 
 
 \paragraph{movie: regressors}
 
-% AV events
-For the analysis of the AV stimulus, we used a previously published annotation
-[of the 869] movie cuts and depicted locations \citep{haeusler2016cutanno} to
-created regressors based on the kind of location that is depicted in the movie
-frame after a cut.
+% rationale behind using movie cuts
+Our rationale was that cuts are ``spatially relevant'' events that re-orient the
+viewer within the environment of the movie by either by changing the perspective
+within a setting or switching to another setting.
 
 % AV regressors
 \begin{table*}[h!]
@@ -926,7 +926,7 @@ ein setting "familiar"?; COH: should be clearer now; maybe rephrase into a
 couple of sentences to improve readability}
 
 % AV regressors/events
-Each location was put into one of the following five categories (see Table
+Each cut was put into one of the following five categories (see Table
 \ref{tab:av-events}):
 %
 1) a cut switching to a setting that was depicted for the first time
@@ -938,13 +938,13 @@ Each location was put into one of the following five categories (see Table
 3) a cut switching to another locale within a setting (\texttt{vlo\_ch}; e.g. a
 cut from first to the second floor in Forrest's house),
 %
-4) a cut to another camera position within a setting or locale that was depicted
-for the first time (\texttt{vpe\_new}), and
+4) a cut to another camera position within a setting or locale (e.g. room) that
+was depicted for the first time (\texttt{vpe\_new}), and
 %
 5) a cut to another camera position within a setting or locale that was already
 depicted before (\texttt{vpe\_old}).
 
-% irrespectible of visual content
+% irrespective of visual content
 Notably, categorization was performed irrespectively of a movie frame's precise
 content and thus without controlling confounding variables (e.g. presence of
 faces).
@@ -964,7 +964,7 @@ persons and objects (\texttt{vpe\_old}) more relevant to the evolved plot
 \citep{brown2012cinematography, mercado2011filmmakers}.
 % neuroscientific rationale
 The neuroscientific rationale was that activity in the PPA is greater when
-participants view novel versus repeated scenes or view-points.
+participants view novel versus repeated scenes or view-points
 \citep{epstein1999parahippocampal, grill2006repetition}.
 % null regressor
 As for the regressors for AD stimulus, a null regressor was chosen for a
@@ -989,20 +989,6 @@ features of the movie can be found in Table \ref{tab:av-events}.
 Events for all regressors of the AV stimulus were convolved with a
 double gamma hemodynamic response function (HRF).
 
-
-\paragraph{regressor correlations}
-
-% reference to figure ``correlation of regressors''
-We computed the Pearson coefficients of the regressors across the eight segments
-of both naturalistic stimuli. Results demonstrate no to minor correlations (s.
-Figure \ref{fig:reg-corr}) which suggest the models should not suffer from low
-detection power due to shared variance among regressors.
-%
-\todo[inline]{discussion of the regressors correlation at the very beginning of
-discussion could be pasted here; will save space there but will mix methods/
-results/ discussion here}
-
-
 % temporal derivatives
 Temporal derivatives were included in the design matrix to compensate for
 regional differences between modeled and actual HRF \citep{friston1998event}.
@@ -1012,6 +998,32 @@ Six motion parameters were also used as additional nuisance regressors.
 Finally, designs were filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
 
+
+\paragraph{regressor correlations}
+
+% stimuli not designed for research purposes
+The audio-description and the movie were not designed to be used in a BOLD fMRI
+experiment but to entertain their audiences.
+% fixed time course; detection power
+Since we annotated events in fixed time courses that could not experimentally
+manipulated, regressors that are based on these events could be correlated
+leading to shared variance and thus low detection power of subsequent analyses.
+% correlations within stimuli and across stimuli
+Hence, we first tested for correlation of regressors across the eight segments
+of each stimulus and correlations of regressors across both stimuli (s. Figure
+\ref{fig:reg-corr})
+% correlations within each stimulus
+The computed Pearson correlation coefficients demonstrate no to minor
+correlations of regressors of the same stimulus [which suggest the models should
+not suffer from low detection power due to shared variance among regressors].
+% correlations across stimuli
+The highest correlations are apparent between auditory low-level confounds
+across stimuli. This was expected and served as ``sanity check'' since the
+audio-track of the audio-description is the audio-track of the movie but
+featuring the additional narrator (s. Figure \ref{fig:reg-corr}).
+% encouraged by that we build contrasts (statement)
+As a result, we felt encouraged to create voxel-wise GLM $t$-contrasts similarly
+to previous studies that used controlled stimuli.
 
 \todo[inline]{SE: Die Abkürzungen in Figure 1: Da steigt keiner hinter; habe
 jetzt lange darüber gebrütet: Es gibt also kaum eine Korrelation zwischen AD und
@@ -1036,14 +1048,26 @@ but harder to read) or use non-cryptic words in the figure?}
 
 \subsubsection{Contrasts}
 
-\todo[inline]{SE: Das mit den 8 kontrasten und 5 kontrasten habe ich nicht
-intuitiv durchblickt. Was wurde da gegen was kontrastiert? COH: revised but
-maybe still not optimal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ingredients" to answer our questions (cf. intro); we have annotations; define
+% congruent contrasts based on regressors based on annotations
 
+\todo[inline]{I am currently stuck here}
+% repeat key question (cf. end of intro)
+The key question of the current study was if a) we could operationalize the
+perceptual processes in an audio-visual and exclusively auditory
+naturalistic stimulus and if b) contrasting that fcompared to an
+operationalization of non-spatial perception  would yield to increased
+hemodynamic activity in the PPA as defined by a visual localizer experiment.
+% difference (kinda repetition)
+Instead of carefully selecting and designing conceptualized/simplified stimuli
+that we assumed to match the proposed perceptual processes, we selected and
+categorized stimulus features (movie cuts and spoken nouns) that are embedded in
+two naturalistic stimuli.
 % intro
-To test the robustness our approach, we operationalized the perception of
-spatial information compared to the perception of ``non-spatial'' information
-differently in eight $t$-contrasts for the AD stimulus (see Table
+To test the robustness of our approach, we operationalized the
+perception of spatial information compared to the perception of ``non-spatial''
+information differently in eight $t$-contrasts for the AD stimulus (see Table
 \ref{tab:ao-contrasts}) and five $t$-contrasts for the AV stimulus (see Table
 \ref{tab:av-contrasts}).
 % reason: robustness
@@ -1053,21 +1077,24 @@ activity in the PPA.
 Nevertheless, we also assumed contrasts would differ in [?] \todo{differ in
 what?  ``localization performance'' isn't well phrased. How ``well'', ``nice''
 the results are?} since the event categories differed a) in how well the
-averaged events reflected spatial information, and b) in event counts.
+averaged events reflected spatial information, and b) in available data (i.e.
+event counts).\todo{make ref to what is no "Audio-description: annotation"}
 % thus: primary contrasts
-We chose one ``primary contrast'' for every stimulus before running the
-analyses.
+For each stimulus, we chose one contrast to be ``primary contrast'' for further
+inspection and a detailed report.
 % selection criteria for primary contrast.
 The selection criterion for the primary contrast of each stimulus was a
 subjectively good balance between a) how well categories on average were assumed
 to match the preferred stimulus type, and b) the amount of available data /
-events.\todo{oh, lord!}
+events.
+
 
 % AD: primary contrast
 In the primary contrast of the AD stimulus, we contrasted landmarks
-\texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all non-geometry related categories (\texttt{body},
-\texttt{bodypart}, \texttt{fahead}, \texttt{object}, \texttt{sex\_f},
-\texttt{sex\_m}) except \texttt{furniture}.
+\texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all
+non-geometry related categories (\texttt{body}, \texttt{bodypart},
+\texttt{fahead}, \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}) except
+\texttt{furniture}.
 % why se_new & se_old were not used in the primary contrasts
 The categories of nouns cueing a setting that occured for the first time
 (\texttt{se\_new}) or a setting that recurred during the plot (\texttt{se\_old})
@@ -1096,6 +1123,20 @@ previously (\texttt{vpe\_old}).
 % why
 We assumed that movie frames in these categories on average best represent
 events that trigger perception of space versus objects or faces.\todo{syntax?}
+
+
+\todo[inline]{one could write more about the different contrast in Segupta et
+al. here, but imo it's sufficient to point that out in the results given that
+all subjects except two used the strict set given contrasts of VIS study and
+that the ``best working'' will be used}
+
+\todo[inline]{Nevertheless, state it in one sentence and check Berman, M. G. et al. Evaluating functional localizers: The case of the FFA. NeuroImage 50, 56–71 (2010)}
+
+Similarly to \citep{sengupta2016extension} that chose the ``best'' of three
+alternative contrasts (strict, relaxed, or simple contrast), future studies that
+aim for individual diagnostics / ROI localization should also test more than one
+contrast to gain the ``best'' individual ROIs.\todo{``best'' sounds pretty
+shitty}
 
 \paragraph{control contrasts: AD \& AV}
 
@@ -1172,6 +1213,15 @@ contrasting nouns spoken by the narrator.
 10 & se\_new > se\_old & control for (missing) narrator \tabularnewline
 \end{tabular}
 \end{table*}
+
+
+\subsection{Statistical analysis}
+
+% intro
+Similarly to the reviewed studies that employed simplified stimuli, we conducted
+a standard two-level general linear model (GLM) analysis to create
+subject-specific results ($Z$-maps) across the 8 segments for every subject. A
+subsequent, third-level analysis averaged contrast estimates over subjects.
 
 % alignments single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
@@ -1441,7 +1491,7 @@ naturalistic stimuli}
 
 \begin{itemize}
 \item RSC (and ventral precuneus): 7 contrasts (all bilateral)
-\item lateral occipiatal cortex: 6 contrasts (4 bilateral, 2 unilateral =
+\item lateral occipital cortex: 6 contrasts (4 bilateral, 2 unilateral =
     transverse occipital sulcus / occipiatal place area?; AD \& AV clusters
     overlap but AD clusters are more lateral, AV cluster are more medial \&
     caudal)
@@ -1509,7 +1559,7 @@ the design of the contrasts.
 \todo[inline]{concluding statement = interpretation/discussion?}
 
 
-\paragraph{AV: other signficant clusters across contrasts}
+\paragraph{AV: other significant clusters across contrasts}
 
 \begin{itemize}
     \item RSC: 3 contrasts (all bilat; vse\_new > vpe\_old; vse\_new >
@@ -1535,7 +1585,7 @@ correlation of a verbal cue category with a cut category.
 AV stimulus. All contrasts using ``no cut condition'' > XY yield null results.
 The contrast that uses the narrator's nouns but in the AV stimulus (se\_new >
 se\_old): right PPA, bilateral sup. lat. occ. cortex; LOC (l/r), right superior
-parietal lobe. Compate Figure \ref{fig:reg-corr}: nouns that cue change to a new
+parietal lobe. Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new
 setting are correlated  with cuts to a new setting (vse\_new; r$\approx$0.3;
 second highest correlation of a verbal cue category with a cut category; AND:
 nouns that cue change to a familiar setting are somewhat correlated with cuts to
@@ -1763,29 +1813,6 @@ following discussion?}
     \item discuss negative contrasts?
 \end{itemize}
 
-\subsection{correlation of regressors}
-
-\todo[inline]{Following paragraph could pasted into method section to save space
-here; a short interpretation is given there already; so methods/ results/
-discussion are not absolutely separated there already}
-% stimuli not designed for research purposes
-The audio-description and the movie were not designed to be used in a BOLD fMRI
-experiment but to entertain their audiences.
-%
-As a results, stimulus features that we annotated to create the regressors could
-have been correlated leading to shared variance that lowers detection power.
-% computing the correlations
-Hence, we first tested for correlation of regressors within and across both
-naturalistic stimuli (s. Figure \ref{fig:reg-corr})
-% results of computing feature correlation
-Results reveal no to minor correlations of regressors with regressors of the
-same stimulus.
-% encouraged by that we build contrasts (statement)
-Thus, we felt encouraged to create traditional/canonical voxel-wise GLMs that
-modeled and contrasted hemodynamic activity similarly to previous studies that
-used conceptualized stimuli.
-
-
 % The second through fourth paragraphs may deal with potential weaknesses
 % linking it to the relevant literature or how future experiments can deal
 % with these weaknesses.
@@ -1848,7 +1875,7 @@ The lack of a task suggests that verbal spatial information is processed in the
 anterior PPA in an automatic fashion and does not necessarily rely on
 deliberately paying attention to verbal spatial information.
 %
-Further, the incidential occurrence of modeled features prevents participants
+Further, the incidental occurrence of modeled features prevents participants
 from making assumptions about the investigated perceptual process by just being
 exposed to the paradigm which mimics experiencing the world outside the lab more
 closely.
@@ -1892,7 +1919,7 @@ robust across contrasts do not depend on the design of one specific
 contrasts.
 
 % but
-Nevertheless, results are still influcended by [sensitive to] the amount of
+Nevertheless, results are still influenced by [sensitive to] the amount of
 available data and how well the feature space is modeled.
 % example
 For example, contrast 8 of the AD stimulus (\texttt{se\_new} > texttt{se\_old})
@@ -2095,7 +2122,7 @@ Whereas \citep{sengupta2016extension} chose the subjectively ``best fitting
 $z$-threshold in a subject's unthresholded $z$-map by visual judgment, we used a
 ``one threshold fits all approach`` (Z>3.4, p<.05 cluster-corrected).
 % group vs individual
-Results on an inidividual level reveal that significant cluster are located in
+Results on an individual level reveal that significant cluster are located in
 the anterior part of individual PPA ROIs. Thus, the pattern that was revealed on
 a group level is not just a by-product of the averaging process but can reliably
 be found in individual study participants.
@@ -2111,7 +2138,7 @@ contrast to gain the ``best'' individual ROIs.\todo{``best'' sounds pretty
 shitty}
 
 \todo[inline]{discussion of individual differences? what do the results
-suggest? Differences in alterness, attention to spatial information,
+suggest? Differences in alertness, attention to spatial information,
 predisposition? ``capability'' to process auditory spatial information?}
 
 \todo[inline]{individual ``preference'' to pay attention to
@@ -2138,7 +2165,8 @@ considered to be the ``optimal'' stimulus type (cf. Epstein (1998, 1999, 2003,
 % cateogries in primary contrasts
 In the current study's primary contrast, we compared verbal cues regarding
 landmarks ((\texttt{geo}; often buildings or other single aspects of a whole
-scene) and elements defining the geometry of a room or locale (\texttt{groom}) to non-spatial cues.
+scene) and elements defining the geometry of a room or locale (\texttt{groom})
+to non-spatial cues.
 % we did not choose se\_new and se\_old
 We did not choose the categories that contained switches from one setting to
 another (\texttt{se\_new} and \texttt{se\_old}) which one might assume to
@@ -2147,8 +2175,8 @@ contain the auditory equivalent to the ``optimal'' visual stimulus type.
 The categories \texttt{se\_new} and \texttt{se\_old} were actually
 heterogeneous: they rarely contained whole and thus a vague verbal descriptions
 of landscapes (e.g. ``in a football stadium'', ``Forrest is running through the
-jungle'') but mostly landmarks or buildings, and also non-spatial
-cues (e.g. ``Jenny as a teenager``).
+jungle'') but mostly landmarks or buildings, and also non-spatial cues (e.g.
+``Jenny as a teenager``).
 % further studies
 Given that humans can identify the gist of a rich visual scene within the
 duration of a single fixation \citep{henderson2003human} further studies might
@@ -2182,13 +2210,14 @@ sounds made by objects (that reveil object's material/identity)}
 \subsubsection{AV stimulus}
 
 \todo[inline]{AV: field size decreases later in the movie; this is a confound
-based on cinematography => the stimulus changes over time}
+based on cinematography => the stimulus changes over time; AV analysis exploits
+confound structure}
 
 \todo[inline]{imo opening the pandora's box of the AV shortcomings especially at
 the end of the paper should be kept to a minimum of text}
 
 % focus of study
-The focus of the current study was to investigate if signficantly increased
+The focus of the current study was to investigate if significantly increased
 hemodynamic activity in the PPA correlates with spatial information (compared to
 ``non-spatial'' information) during a naturalistic auditory stimulus.
 % shortcomings
