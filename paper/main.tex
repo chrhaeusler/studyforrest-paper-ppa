@@ -868,17 +868,17 @@ wahrscheinlich auch in den unterschiedlichen Counts der Events je Segment wider
 (AV Bild vs AV Sound vs AO Sound)}
 
 % intro
-Lastly, we algorithmically annotated the temporal
-structure of low-level perceptual features to create nuisance regressors.
+Lastly, we algorithmically annotated the temporal structure of low-level
+perceptual features to create nuisance regressors.
 % visual shit
 For the AV stimulus, we computed the mean luminance of a movie frame
 (\unit[40]{ms}), the difference in mean luminance of each frame's left and right
 half, the difference in mean luminance of the lower and upper half, and finally
-the perceptual differene of consecutive frames.
+the perceptual difference of consecutive frames.
 % auditory shit
-Finally, we computed the left-right difference in volume and root mean
-square energy averaged across the length of every movie frame (\unit[40]{ms}) of
-both audio-tracks.
+Finally, we computed the left-right difference in volume and root mean square
+energy averaged across the length of every movie frame (\unit[40]{ms}) of both
+audio-tracks.
 
 
 \subsubsection{Hemodynamic Modeling}
@@ -886,61 +886,40 @@ both audio-tracks.
 % movie events
 The events of the movie cut related categories and \texttt{no\_cut} events were
 modeled as impulse events [lenght = 20 ms?].\todo{actually, that might not be
-true}
-
-AV:
-% convolving
-
-AO:
+true}.
+%
+Nouns were modeled from onset to offset of each word, low-level confounds from
+onset to offset of the corresponding movie frame AO:
 % modeling as boxcar function
 Events were were modeled as boxcar function from onset to offset of each word.
-
-\todo[inline]{SE: gab es ein separates null-event für jeden zeitraum zwischen
-zwei annotierten events oder war das ein regressor der immer wieder kam?}
-
-% AD: null regressors
-If a stimulus segment did not contain an event of a category, a null regressor
-was chosen for that category in that segment.
-% AV: null regressor
-As for the regressors for AD stimulus, a null regressor was chosen for a
-regressor in a segment if that segment did not contain an event of the
-corresponding category.
-
 % convolving
-Events for all regressors of the AV and AO timulus were convolved with a
-double gamma hemodynamic response function (HRF).
-% temporal derivatives
-Temporal derivatives were included in the design matrix to compensate for
-regional differences between modeled and actual HRF \citep{friston1998event}.
-% motion parameters
-Six motion parameters were also used as additional nuisance regressors.
-% high-pass filtering
-Finally, designs were filtered with the same high-pass filter (cutoff period of
-\unit[150]{s}) as the BOLD time series.
-
-
-\paragraph{regressor correlations}
-
-% stimuli not designed for research purposes
-The audio-description and the movie were not designed to be used in a BOLD fMRI
-experiment but to entertain their audiences.
+Events for all regressors of the AV and AO stimulus were convolved with a double
+gamma hemodynamic response function (HRF).
+% we checked correlations
+Since the time-series of modeled hemodynamic activity were based on events in
+stimuli that were not designed for research, we then tested if time-series were
+correlated (i.e. share variance) leading to low detection power in subsequent
+analyses\todo{pick your favorite}.
 % fixed time course; detection power
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Since we annotated events in fixed time courses that could not experimentally
-manipulated, regressors that are based on these events could be correlated
-leading to shared variance and thus low detection power of subsequent analyses.
+manipulated, the modeled time-series [of hemodynamic activity] based on these
+events could be correlated leading to shared variance and thus low detection
+power of subsequent analyses.
 % correlations within stimuli and across stimuli
-Hence, we first tested for correlation of regressors across the eight segments
-of each stimulus and correlations of regressors across both stimuli (s. Figure
+Hence, we tested for correlation of regressors across the eight segments of each
+stimulus and also for correlations of regressors across both stimuli (s. Figure
 \ref{fig:reg-corr})
 % correlations within each stimulus
 The computed Pearson correlation coefficients demonstrate no to minor
-correlations of regressors of the same stimulus [which suggest the models should
-not suffer from low detection power due to shared variance among regressors].
+correlations of modeled hemodynamic time-series belonging to the same stimulus.
 % correlations across stimuli
 The highest correlations are apparent between auditory low-level confounds
-across stimuli. This was expected and served as ``sanity check'' since the
-audio-track of the audio-description is the audio-track of the movie but
-featuring the additional narrator (s. Figure \ref{fig:reg-corr}).
+across stimuli (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
+\texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749). This was
+expected and served as ``sanity check'' since the audio-track of the
+audio-description is the audio-track of the movie but featuring the additional
+narrator (s. Figure \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
 As a result, we felt encouraged to create voxel-wise GLM $t$-contrasts similarly
 to previous studies that used controlled stimuli.
@@ -954,17 +933,17 @@ but harder to read) or use non-cryptic words in the figure?}
 
 \begin{figure*} \centering
     \includegraphics[width=\linewidth]{figures/regressor-corr} \caption{Pearson
-        correlation coefficients  of the regressors used in the analysis of the
+        correlation coefficients of the regressors used in the analysis of the
         audio-description (blue; see Table \ref{tab:ao-events} for a
         description) and audio-visual movie (red; see Table \ref{tab:av-events})
-        rounded to the nearest tenth.  The correlation between the two stimuli's
+        rounded to the nearest tenth.
+        The correlation between the two stimuli's
         root mean square loudness and between their left-right difference in
         loudness yielded the highest correlation values
         (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
         \texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749).}
 \label{fig:reg-corr}
 \end{figure*}
-
 
 
 \subsection{Statistical analysis}
@@ -997,11 +976,28 @@ that we assumed to match the proposed perceptual processes, we selected and
 categorized stimulus features (movie cuts and spoken nouns) that are embedded in
 two naturalistic stimuli.
 
-\paragraph{included regressors}
+\paragraph{Design Matrix}
 
-% AO events in AV
+\todo[inline]{I created the part "design matrix" cause following parts are
+usually written in the "regressor paragraph" in publications but do not really
+fit in the subsection above}
 
-% AV events in AO
+\todo[inline]{SE: gab es ein separates null-event für jeden zeitraum zwischen
+zwei annotierten events oder war das ein regressor der immer wieder kam?}
+
+% null regressors
+If a stimulus segment did not contain an event of a category (e.g. no event of
+\texttt{vpe\_old} in segment 3 of the movie; cf. Table \ref{tab:ao-events}), a
+null regressor was chosen for that category in that segment.
+
+% temporal derivatives
+Temporal derivatives were included in the design matrix to compensate for
+regional differences between modeled and actual HRF \citep{friston1998event}.
+% motion parameters
+Six motion parameters were also used as additional nuisance regressors.
+% high-pass filtering
+Finally, designs were filtered with the same high-pass filter (cutoff period of
+\unit[150]{s}) as the BOLD time series.
 
 
 \subsubsection{Contrasts}
