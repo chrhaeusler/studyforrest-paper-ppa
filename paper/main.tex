@@ -885,8 +885,8 @@ audio-tracks.
 
 % movie events
 The events of the movie cut related categories and \texttt{no\_cut} events were
-modeled as impulse events [lenght = 20 ms?].\todo{actually, that might not be
-true}.
+modeled as impulse events.\todo{actually, it was a box car of 200 ms after
+starting with the cut}.
 %
 Nouns were modeled from onset to offset of each word, low-level confounds from
 onset to offset of the corresponding movie frame AO:
@@ -896,16 +896,10 @@ Events were were modeled as boxcar function from onset to offset of each word.
 Events for all regressors of the AV and AO stimulus were convolved with a double
 gamma hemodynamic response function (HRF).
 % we checked correlations
-Since the time-series of modeled hemodynamic activity were based on events in
-stimuli that were not designed for research, we then tested if time-series were
-correlated (i.e. share variance) leading to low detection power in subsequent
-analyses\todo{pick your favorite}.
-% fixed time course; detection power
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Since we annotated events in fixed time courses that could not experimentally
-manipulated, the modeled time-series [of hemodynamic activity] based on these
-events could be correlated leading to shared variance and thus low detection
-power of subsequent analyses.
+Since we annotated events in naturalistic stimuli and thus fixed time courses
+that could not experimentally manipulated, the modeled time-series [of
+hemodynamic activity] based on these events could be correlated leading to
+shared variance and thus low detection power of subsequent analyses.
 % correlations within stimuli and across stimuli
 Hence, we tested for correlation of regressors across the eight segments of each
 stimulus and also for correlations of regressors across both stimuli (s. Figure
@@ -917,7 +911,7 @@ correlations of modeled hemodynamic time-series belonging to the same stimulus.
 The highest correlations are apparent between auditory low-level confounds
 across stimuli (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
 \texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749). This was
-expected and served as ``sanity check'' since the audio-track of the
+expected and served as a ``sanity check'' since the audio-track of the
 audio-description is the audio-track of the movie but featuring the additional
 narrator (s. Figure \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
@@ -931,7 +925,8 @@ bedeutet); COH: what is better: reference to table as it is now (more precise,
 but harder to read) or use non-cryptic words in the figure?}
 
 
-\begin{figure*} \centering
+\begin{figure*}[h!]
+\centering
     \includegraphics[width=\linewidth]{figures/regressor-corr} \caption{Pearson
         correlation coefficients of the regressors used in the analysis of the
         audio-description (blue; see Table \ref{tab:ao-events} for a
@@ -948,48 +943,40 @@ but harder to read) or use non-cryptic words in the figure?}
 
 \subsection{Statistical analysis}
 
-\todo[inline]{regressors of other stimulus in GLM of other stimulus}
-% categories taken from movie cut annotation
-Maybe only say in table caption: To create contrasts of cross-modal negative
-control and to capture variance of a possibly confounding change of the
-soundscape after a cut, we also implemented the five movie cut-related
-regressors used in the GLM of the AV stimulus (see details below) in the model
-of the AD stimulus.
+% level 1 and 2; similarly to the reviewed studies that employed designed
+% stimuli; we "based on stimulus annotations"
+We then tested our modeled hemodynamic responses by conducting standard
+two-level general linear model (GLM) analyses to create subject-specific results
+($Z$-maps) across the 8 segments for every subject and each stimulus.
+% level 3
+Subsequent, third-level analyses averaged contrast estimates over subjects.
 
-% contrasts
-Based on these regressors, we then created $t$-contrasts that we presumed to
-subtract variance correlating with the perception of non-spatial information
-from variance correlating with the perception of spatial information.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% "ingredients" to answer our questions (cf. intro); we have annotations; define
-% congruent contrasts based on regressors based on annotations
-
-% repeat key question (cf. end of intro)
-The key question of the current study was if a) we could operationalize the
-perceptual processes in an audio-visual and exclusively auditory
-naturalistic stimulus and if b) contrasting that fcompared to an
-operationalization of non-spatial perception  would yield to increased
-hemodynamic activity in the PPA as defined by a visual localizer experiment.
-% difference (kinda repetition)
-Instead of carefully selecting and designing conceptualized/simplified stimuli
-that we assumed to match the proposed perceptual processes, we selected and
-categorized stimulus features (movie cuts and spoken nouns) that are embedded in
-two naturalistic stimuli.
 
 \paragraph{Design Matrix}
 
-\todo[inline]{I created the part "design matrix" cause following parts are
-usually written in the "regressor paragraph" in publications but do not really
-fit in the subsection above}
-
-\todo[inline]{SE: gab es ein separates null-event für jeden zeitraum zwischen
-zwei annotierten events oder war das ein regressor der immer wieder kam?}
-
-% null regressors
-If a stimulus segment did not contain an event of a category (e.g. no event of
-\texttt{vpe\_old} in segment 3 of the movie; cf. Table \ref{tab:ao-events}), a
-null regressor was chosen for that category in that segment.
-
+% AV design matrix
+For the first level analysis of the AV stimulus, the modeled hemodynamic
+responses related to all movie cuts (including \texttt{no\_cut}) and six
+low-level perceptual confounds were included as regressors in the design matrix
+(s. Table \ref{tab:av-events}).
+% AD regressors in AV AD design matrix
+For the first level analysis of the AD stimulus, the modeled hemodynamic
+responses related to all noun categories and the two low-level perceptual
+confounds were included (s. Table \ref{tab:ao-events}).
+% AD regressors in AV
+To create a contrasts of cross-modal control in the analysis of the AV stimulus,
+we also implemented the regressors based on nouns used by the
+audio-description's narrator to cue switches to another setting (categories
+\texttt{se\_new} and \texttt{se\_old}).
+% AV regressors in AV
+To create contrasts of cross-modal negative control in the analysis of the AD
+stimulus [and to capture variance of a possibly confounding change of the
+soundscape after a cut], we implemented the movie cut-related regressors
+(excluding \texttt{no\_cut}).
+% both stimuli: null regressors
+In analyses of both stimuli, a null regressor was chosen for a event category in
+a segment, if that segment did not contain an event of the category (e.g. no
+event of \texttt{vpe\_old} in segment 3; cf. Table \ref{tab:ao-events}).
 % temporal derivatives
 Temporal derivatives were included in the design matrix to compensate for
 regional differences between modeled and actual HRF \citep{friston1998event}.
@@ -1000,10 +987,10 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
 
 
-\subsubsection{Contrasts}
+\paragraph{PPA Contrasts} \todo{maybe repeat key questions (cf. intro) here}
 
 % intro
-To test the robustness of our approach, we operationalized the
+To test the robustness of our approach, we then operationalized the
 perception of spatial information compared to the perception of ``non-spatial''
 information differently in eight $t$-contrasts for the AD stimulus (see Table
 \ref{tab:ao-contrasts}) and five $t$-contrasts for the AV stimulus (see Table
@@ -1026,6 +1013,15 @@ subjectively good balance between a) how well categories on average were assumed
 to match the preferred stimulus type, and b) the amount of available data /
 events.
 
+% AV primary contrast
+In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
+was not depicted before (\texttt{vs\_new}) to cuts that we accompanied with a
+change of the camera position within a setting that was already occurring
+previously (\texttt{vpe\_old}).
+% why
+We assumed that movie frames in these categories on average best represent
+events that trigger perception of space versus e.g. objects or
+faces.
 
 % AD: primary contrast
 In the primary contrast of the AD stimulus, we contrasted landmarks
@@ -1053,15 +1049,6 @@ interest in any contrast because these nouns could be perceived differently by
 different subjects as either a geometry-defining scene element or as an isolated
 object.
 
-% AV primary contrast
-In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
-was not depicted before (\texttt{vs\_new}) to cuts that we accompanied with a
-change of the camera position within a setting that was already occurring
-previously (\texttt{vpe\_old}).
-% why
-We assumed that movie frames in these categories on average best represent
-events that trigger perception of space versus objects or faces.\todo{syntax?}
-
 
 \todo[inline]{one could write more about the different contrast in Segupta et
 al. here, but imo it's sufficient to point that out in the results given that
@@ -1076,7 +1063,7 @@ aim for individual diagnostics / ROI localization should also test more than one
 contrast to gain the ``best'' individual ROIs.\todo{``best'' sounds pretty
 shitty}
 
-\paragraph{control contrasts: AD \& AV}
+\paragraph{Control contrasts}
 
 % intro
 Finally, we created several contrasts as negative control for both stimuli.
@@ -1155,14 +1142,7 @@ contrasting nouns spoken by the narrator.
 
 \subsubsection{model testing / GLM computations}
 
-To test our model, we ran several $t$-contrasts as part of a GLM for each
-stimulus.
 
-% intro
-Similarly to the reviewed studies that employed simplified stimuli, we conducted
-a standard two-level general linear model (GLM) analysis to create
-subject-specific results ($Z$-maps) across the 8 segments for every subject. A
-subsequent, third-level analysis averaged contrast estimates over subjects.
 
 % alignments single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
