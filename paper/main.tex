@@ -137,13 +137,11 @@ narrative, studyforrest
 
 \begin{itemize}
 
-\item revise captions of Table 1 + 3; regressors that are based on the other
-    stimulus for control purposes are now dropped from the table; but mention in
-        Statistical Analysis / Statistical Model)
+    \item Zwischenüberschriften rausnehmen, wenn Struktur so in Ordnung
 
-\item what do we need to check to ensure subsequent analyses are valid;
-    a) correlation of regressors (first "sanity check" but more a prerequisite)
-    b) negative controls (actual sanity check)
+    \item revise captions of Table 1 + 3 (regressors based on annotation of
+    the other FG stimulus are now dropped from the table but mentioned in
+    section "statistial model / contrasts")
 
 \end{itemize}
 
@@ -151,14 +149,16 @@ narrative, studyforrest
 \noindent Results
 
 \begin{itemize}
-\item mehrere Kontraste in VIS genommen, hier einer berichtet: Teil aus
-    Discussion in Results hochnehmen
+\item adjust structure of results to structure of discussion
+\item ggf. berichten welcher der drei VIS Kontraste für welche VP genommen
+    wurde
 \end{itemize}
 
 \noindent Discussion
 \begin{itemize}
+\item umschreiben gemäß neuer Schwerpunktsetzung in Intro \& Method-Section
     \item \citep{bartels2004mapping, hasson2004intersubject}
-    \item VIS: "best contrast was chosen"
+    \item mehr zum Thema VIS( "best contrast was chosen")
 \end{itemize}
 
 
@@ -885,8 +885,8 @@ audio-tracks.
 
 % movie events
 The events of the movie cut related categories and \texttt{no\_cut} events were
-modeled as impulse events.\todo{actually, it was a box car of 200 ms after
-starting with the cut}.
+modeled as impulse events.\todo{actually, it was a box car of 200 ms starting
+with the cut}.
 %
 Nouns were modeled from onset to offset of each word, low-level confounds from
 onset to offset of the corresponding movie frame AO:
@@ -907,11 +907,12 @@ stimulus and also for correlations of regressors across both stimuli (s. Figure
 % correlations within each stimulus
 The computed Pearson correlation coefficients demonstrate no to minor
 correlations of modeled hemodynamic time-series belonging to the same stimulus.
-% correlations across stimuli
+% (highest) correlations across stimuli
 The highest correlations are apparent between auditory low-level confounds
-across stimuli (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
-\texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749). This was
-expected and served as a ``sanity check'' since the audio-track of the
+across stimuli (\texttt{fg\_av\_ger\_rms} and \texttt{fg\_ad\_rms}, r=.7635;
+\texttt{fg\_av\_ger\_lrdiff} and \texttt{fg\_ad\_lrdiff} and , r=.7749).
+% no surprise
+This was expected and served as a ``sanity check'' since the audio-track of the
 audio-description is the audio-track of the movie but featuring the additional
 narrator (s. Figure \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
@@ -987,12 +988,16 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
 
 
-\paragraph{PPA Contrasts} \todo{maybe repeat key questions (cf. intro) here}
+\paragraph{PPA Contrasts}
 
+In this study, we investigated if increased hemodynamic activty in the PPA that
+is usually defined by contrasting blocks of pictures can also be revealed by
+contrasting selected stimulus features that we annotated in a audio-visual movie
+and its audio-description.
 % intro
-To test the robustness of our approach, we then operationalized the
-perception of spatial information compared to the perception of ``non-spatial''
-information differently in eight $t$-contrasts for the AD stimulus (see Table
+To test the robustness of our approach, we operationalized the perception of
+spatial information compared to the perception of ``non-spatial'' information
+differently in eight $t$-contrasts for the AD stimulus (see Table
 \ref{tab:ao-contrasts}) and five $t$-contrasts for the AV stimulus (see Table
 \ref{tab:av-contrasts}).
 % reason: robustness
@@ -1003,26 +1008,30 @@ Nevertheless, we also assumed contrasts would differ in [?] \todo{differ in
 what?  ``localization performance'' isn't well phrased. How ``well'', ``nice''
 the results are?} since the event categories differed a) in how well the
 averaged events reflected spatial information, and b) in available data (i.e.
-event counts).\todo{make ref to what is no "Audio-description: annotation"}
+event counts).
+% difference to Sengupta; Berman et al. (2010). Evaluating functional localizers
+(2010) Notably, localization of the PPA in individual subjects that was done by
+\citep{sengupta2016extension} using the established approach of contrasting
+blocks of pictures is based on one contrast for each subjects (cf. Table 3 in
+\citep{sengupta2016extension}) that was chosen post-hoc from a set of three
+contrasts (\textit{strict}, \textit{relaxed}, and \textit{simple} contrast
+\citep{sengupta2016extension}).\todo{maybe add note regarding Berman (2010);
+but they did FFA}
 % thus: primary contrasts
-For each stimulus, we chose one contrast to be ``primary contrast'' for further
-inspection and a detailed report.
+Here, we chose one contrast to be ``primary contrast'' for later detailed
+inspection and report.
 % selection criteria for primary contrast.
 The selection criterion for the primary contrast of each stimulus was a
 subjectively good balance between a) how well categories on average were assumed
 to match the preferred stimulus type, and b) the amount of available data /
-events.
-
-% AV primary contrast
+% AV: primary contrast
 In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
 was not depicted before (\texttt{vs\_new}) to cuts that we accompanied with a
 change of the camera position within a setting that was already occurring
 previously (\texttt{vpe\_old}).
 % why
 We assumed that movie frames in these categories on average best represent
-events that trigger perception of space versus e.g. objects or
-faces.
-
+events that trigger perception of space versus e.g. objects or faces.
 % AD: primary contrast
 In the primary contrast of the AD stimulus, we contrasted landmarks
 \texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all
@@ -1050,34 +1059,52 @@ different subjects as either a geometry-defining scene element or as an isolated
 object.
 
 
-\todo[inline]{one could write more about the different contrast in Segupta et
-al. here, but imo it's sufficient to point that out in the results given that
-all subjects except two used the strict set given contrasts of VIS study and
-that the ``best working'' will be used}
-
-\todo[inline]{Nevertheless, state it in one sentence and check Berman, M. G. et al. Evaluating functional localizers: The case of the FFA. NeuroImage 50, 56–71 (2010)}
-
-Similarly to \citep{sengupta2016extension} that chose the ``best'' of three
-alternative contrasts (strict, relaxed, or simple contrast), future studies that
-aim for individual diagnostics / ROI localization should also test more than one
-contrast to gain the ``best'' individual ROIs.\todo{``best'' sounds pretty
-shitty}
-
 \paragraph{Control contrasts}
 
 % intro
 Finally, we created several contrasts as negative control for both stimuli.
+% AV: no cut > cut
+For the AV stimulus, four $t$-contrasts were created contrasting the no-cut
+regressor (texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
+% AV: narrator
+One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by
+contrasting nouns spoken by the narrator.
+\todo[inline]{why was done? narrator and cuts to other setting are "somewhat"
+correlated; and now what? -> cf. results and discussion}
 % AD stimulus
 For the AD stimulus, we created five $t$-contrasts (see Table
 \ref{tab:ao-contrasts}) to test if increased activation in the PPA was
-correlated with moments of cuts possibly correlated with a accompanying change
-in the soundscape.
-% AV stimulus
-For the AV stimulus, four $t$-contrasts were created contrasting the no-cut
-condition (texttt{vno\_cut} for negative control purposes (see Table
-\ref{tab:av-contrasts}) by using regressors based on regressors of the AD
-stimulus. One contrast (\texttt{vs\_new} > \texttt{vpe\_old})  was created by
-contrasting nouns spoken by the narrator.
+correlated with moments of cuts as cuts might possibly be correlated with a
+change of the soundscape also giving an auditory cue of switching to another
+setting.
+
+
+\begin{table*}[h!]
+\caption{Contrasts of parameter estimates for the analysis of the
+    audio-visual movie (AV).
+    Contrast 1-5 aim to isolate the PPA.
+    Contrast 6-9 serve as negative control.
+    Contrast 10 serves as control for moments when the narrator cues the
+    listener about a switch of settings, events that could be correlated with a
+    change of the soundscape.}
+\label{tab:av-contrasts}
+\footnotesize
+\begin{tabular}{lll}
+\toprule
+\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
+\midrule
+1 & vse\_new > vpe\_old & PPA \tabularnewline
+2 & vse\_new, vpe\_new > vse\_old, vpe\_old & PPA \tabularnewline
+3 & vse\_new > vse\_old & PPA \tabularnewline
+4 & vse\_new > vse\_old, vpe\_old & PPA \tabularnewline
+5 & vse\_new, vpe\_new > vpe\_old & PPA \tabularnewline
+6 & vno\_cut > vse\_new & negative control \tabularnewline
+7 & vno\_cut > vse\_old & negative control \tabularnewline
+8 & vno\_cut > vse\_new, vse\_old & negative control \tabularnewline
+9 & vno\_cut > vpe\_new, vpe\_old & negative control \tabularnewline
+10 & se\_new > se\_old & control for (missing) narrator \tabularnewline
+\end{tabular}
+\end{table*}
 
 
 \begin{table*}[h!]
@@ -1112,37 +1139,7 @@ contrasting nouns spoken by the narrator.
 \end{table*}
 
 
-\begin{table*}[h!]
-\caption{Contrasts of parameter estimates for the analysis of the
-    audio-visual movie (AV).
-    Contrast 1-5 aim to isolate the PPA.
-    Contrast 6-9 serve as negative control.
-    Contrast 10 serves as control for moments when the narrator cues the
-    listener about a switch of settings, events that could be correlated with a
-    change of the soundscape.}
-\label{tab:av-contrasts}
-\footnotesize
-\begin{tabular}{lll}
-\toprule
-\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
-\midrule
-1 & vse\_new > vpe\_old & PPA \tabularnewline
-2 & vse\_new, vpe\_new > vse\_old, vpe\_old & PPA \tabularnewline
-3 & vse\_new > vse\_old & PPA \tabularnewline
-4 & vse\_new > vse\_old, vpe\_old & PPA \tabularnewline
-5 & vse\_new, vpe\_new > vpe\_old & PPA \tabularnewline
-6 & vno\_cut > vse\_new & negative control \tabularnewline
-7 & vno\_cut > vse\_old & negative control \tabularnewline
-8 & vno\_cut > vse\_new, vse\_old & negative control \tabularnewline
-9 & vno\_cut > vpe\_new, vpe\_old & negative control \tabularnewline
-10 & se\_new > se\_old & control for (missing) narrator \tabularnewline
-\end{tabular}
-\end{table*}
-
-
-\subsubsection{model testing / GLM computations}
-
-
+\paragraph{GLM computations \& stuff}
 
 % alignments single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
