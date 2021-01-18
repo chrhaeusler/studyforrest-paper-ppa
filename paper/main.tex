@@ -136,27 +136,26 @@ narrative, studyforrest
 \noindent Method:
 
 \begin{itemize}
-
     \item Zwischenüberschriften rausnehmen, wenn Struktur so in Ordnung
-
     \item revise captions of Table 1 + 3 (regressors based on annotation of
     the other FG stimulus are now dropped from the table but mentioned in
     section "statistial model / contrasts")
-
 \end{itemize}
 
 
 \noindent Results
 
 \begin{itemize}
-\item adjust structure of results to structure of discussion
-\item ggf. berichten welcher der drei VIS Kontraste für welche VP genommen
+    \item Simons Kommentare, bei denen ich mitunter anderer Meinung bin
+    \item ggf. berichten welcher der drei VIS Kontraste für welche VP genommen
     wurde
+    \item location of tables \& figures is pretty confusing at the moment
 \end{itemize}
+
 
 \noindent Discussion
 \begin{itemize}
-\item umschreiben gemäß neuer Schwerpunktsetzung in Intro \& Method-Section
+    \item umschreiben gemäß neuer Schwerpunktsetzung in Intro \& Method-Section
     \item \citep{bartels2004mapping, hasson2004intersubject}
     \item mehr zum Thema VIS( "best contrast was chosen")
 \end{itemize}
@@ -988,6 +987,18 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
 
 
+\todo[inline]{SE: würde wetten, dass Reviewer fragen: Wie sieht es im vergleich
+dazu mit Faces aus? COH: yeah, well, I made the contrasts similar to Sengupta
+and considered the contrast to an average of all ``non-spatial'' stuff
+appropriate; should be cleare in the method section (s. ``Contrasts'')}
+
+\todo[inline]{SE: cuts to new vs familar setting wird irgendwie nie so
+richtig in den PPA kontext eingeordnet. Warum ist das Hauptkontrast und nicht
+das viel näher liegende places vs faces? COH: places vs. face = simple set in
+Sengupta; here, we follow the strict set used in Sengupta; tbh, not mentioned in
+detail}
+
+
 \paragraph{PPA Contrasts}
 
 In this study, we investigated if increased hemodynamic activty in the PPA that
@@ -1190,7 +1201,6 @@ of individual PPA overlaps were created from data provided by
 
 
 \section{Results}
-\todo[inline]{we have to decide how we want to present this: a) by stimulus or b) by analysis type. With the present abstract I am leaning towards (a), but we should debate that}
 
 \todo[inline]{SE: sauber differenzieren zwischen "Lokalisation der PPA" und
     "Antwortverhalten einer vorab definierten PPA". Ich habe den Eindruck, dass
@@ -1202,24 +1212,14 @@ wird gar nicht berichtet, wäre aber wichtig zum Andocken an Literatur; COH: yes
 maybe reference Sengupta who are interested in the details? en passant makes
 more sense here imo}
 
-\todo[inline]{SE: würde wetten, dass Reviewer fragen: Wie sieht es im vergleich
-dazu mit Faces aus? COH: yeah, well, I made the contrasts similar to Sengupta
-and considered the contrast to an average of all ``non-spatial'' stuff
-appropriate; should be cleare in the method section (s. ``Contrasts'')}
-
 \todo[inline]{SE: Figures with group results: würde da wahrscheinlich weiter
 rein zoomen, um genauer den visuellen Kortex zu zeigen; vor allem muss man
-sagen: bei FFA/PPA etc sind flatmaps/inflated brains standard; imo it is
+sagen: bei FFA/PPA etc sind flatmaps/inflated brains standard; COH: imo it is
 important that we do not have clusters all over the brain}
 
 \todo[inline]{SE: overlap of clusters/contrasts: Anzahl der Überlappungen ist
 schwer abzulesen; lieber eine andere Farbskala (spectral sequence?) nutzen; COH:
 yes, I know it is kinda difficult, tried my best to choose/tweak the color map}
-
-\todo[inline]{SE: cuts to new vs familar setting wird irgendwie nie so
-richtig in den PPA kontext eingeordnet. Warum ist das Hauptkontrast und nicht
-das viel näher liegende places vs faces? COH: should at least be clearer after
-revision of method section}
 
 \todo[inline]{SE: Wie sehen die Antworten innerhalb der "klassisch definierten"
 PPA für die verschiedenen regressoren bzw. kategorien derselben (zumindest aber
@@ -1289,15 +1289,34 @@ private collection}
 % LOC (l/r) right PPA, bilateral sup. lat. occ. c., sup. parietal lobe (right)
 
 
-\subsection{Group results}
-
-\subsubsection{AD: PPA in primary contrast}
+\subsection{Primary contrasts}
 
 % intro
 First on a group average level, we tested if results of a whole-brain analysis
 based on the audio-description's annotation would lead to increased hemodynamic
 activity in the PPA.
-% primary AD contrast
+
+
+\subsubsection{group}
+% AV intro
+As conceptual/cross-modal control of the group average results, we also analyzed
+data from the audio-visual movie by contrasting different kinds of movie cuts
+independent(ly) from the frames' visual content following the cut.
+% AV primary contrast
+The movie's primary $t$-contrast that compared cuts to a setting that was not
+depicted before to a recurring setting (\texttt{vse\_new > vpe\_old}) yielded
+three significant clusters (see Table \ref{tab:res-av-group1}, Figure
+\ref{fig:group-slices}).
+% PPA (others the clusters extend into).
+One cluster spans across the midline and comprises, parts of the intracalcarine
+and cuneal cortex, the lingual gyrus and retrosplenial cortex, the occipital and
+temporal fusiform gyrus and the parahippocampal cortex (reported from posterior
+to anterior) in both hemispheres.
+% LOC
+Two additional homologous clusters are located in the superior lateral occipital
+cortex (left bigger than right).
+
+% AD
 The primary $t$-contrast for the audio-description (\texttt{geo, groom} >
 non-spatial noun categories) yielded six significant clusters (see Table
 \ref{tab:res-ao-group1}, Figure \ref{fig:group-slices}).
@@ -1317,8 +1336,53 @@ cortex.
 % concluding statement
 \todo[inline]{any concluding statement here or merely report the clusters?}
 
+
+% figure group results primary AD & AV contrasts
+\begin{figure*}[h!] \centering
+    \includegraphics[width=\linewidth]{figures/group-slices}
+    \caption{Mixed-effects group-level (N=14) GLM results. Significant clusters
+        (Z>3.4, p<.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
+        head template (gray).
+        Light gray: The audio-description's field-of-view
+        (cf. \citep{hanke2014audiomovie}).
+        Black: outline of overlapping individual PPA ROIs.
+        The results of audio-description's primary $t$-contrast (blue) that
+        compares geometry-related nouns to non geometry-related nouns spoken by
+        the audio-description's narrator (\texttt{geo, groom > all non-geo})
+        are overlaid over the movie's primary $t$-contrast (blue) that compares
+        cuts to a new setting with cuts to a familiar perspective
+        (\texttt{vse\_new > vpe\_old})
+   \citep{sengupta2016extension}.}
+    \label{fig:group-slices}
+\end{figure*}
+
+
+\begin{table*}[h!]
+\caption{Significant clusters (z-threshold Z>3.4; p<.05 cluster-corrected)
+    of the primary $t$-contrast for the audio-visual movie comparing cuts to a
+    setting that was not depicted before to a recurring setting
+    (\texttt{vse\_new > vpe\_old}).
+    Clusters sorted by voxel size.
+    The first brain structure given contains the voxel with the maximum Z-Value,
+    followed by brain structures from posterior to anterior, and partially
+    covered areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
+\label{tab:res-av-group1}
+\begin{tabular}{rrrrrrrrrp{3cm}}
+\toprule
+& & & \multicolumn{3}{r}{max location (MNI)} & \multicolumn{3}{r}{center of gravity (MNI)} &
+\\ \cmidrule{4-6} \cmidrule{7-9}
+voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
+\midrule
+3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r. cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusiform c., posterior parahippocampal c.  \\
+154 & 6.56E-07 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior lateral occipital c. \\
+121 & 7.69E-06 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior lateral occipital cortex \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
 % table group results primary AD contrast
-\begin{table*}[t]
+\begin{table*}[h!]
     \caption{Significant clusters (z-threshold Z>3.4; p<.05 cluster-corrected)
         of the primary $t$-contrast for the audio-description comparing
         geometry-related nouns to non geometry-related nouns spoken by the
@@ -1344,176 +1408,11 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \end{tabular}
 \end{table*}
 
-% figure group results primary AD & AV contrasts
-\begin{figure*} \centering
-    \includegraphics[width=\linewidth]{figures/group-slices}
-    \caption{Mixed-effects group-level (N=14) GLM results. Significant clusters
-        (Z>3.4, p<.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
-        head template (gray).
-        Light gray: The audio-description's field-of-view
-        (cf. \citep{hanke2014audiomovie}).
-        Black: outline of overlapping individual PPA ROIs.
-        The results of audio-description's primary $t$-contrast (blue) that
-        compares geometry-related nouns to non geometry-related nouns spoken by
-        the audio-description's narrator (\texttt{geo, groom > all non-geo})
-        are overlaid over the movie's primary $t$-contrast (blue) that compares
-        cuts to a new setting with cuts to a familiar perspective
-        (\texttt{vse\_new > vpe\_old})
-   \citep{sengupta2016extension}.}
-    \label{fig:group-slices}
-\end{figure*}
-
-\subsubsection{AD: robustness of PPA across contrasts}
-
-\todo[inline]{tables of significant clusters all contrasts = overkill!? Link to NeuoVault is added; sign. clusters of all contrasts are listed in the comments}
-
-% all eight AD PPA contrasts
-In order to test the robustness of our findings, we created overall eight
-$t$-contrasts for the AD stimulus (see Table \ref{tab:ao-contrasts}).
-% results
-All contrasts except contrast 7 (\texttt{se\_new}, \texttt{se\_old} >
-non-spatial categories) and contrast 8 (\texttt{se\_new} > non-spatial
-categories) yielded significant bilateral clusters in anterior regions of the
-group PPA overlap (see Figure \ref{fig:stability-slices}).
-% statement/answer
-Results suggest that our findings do not depend on one specific contrasts but
-are robust across differently designed contrasts.
-% question
-\todo[inline]{concluding statement often feels like interpretation/discussion}
-%
-\todo[inline]{Discussion: discuss that contrasts make ``less and less'' sense}
-
-\todo[inline]{figure caption: mention / explain other clusters}
-
-% figure group results of robustness across all AD & AV contrasts
-\begin{figure*} \centering
-    \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption{Overlap of significant clusters (Z>3.4; p<.05, cluster corrected)
-        The audio-description's contrasts 1-8 (blue; \ref{tab:ao-contrasts})
-        are overlaid over the audio-visual movie's contrasts 1-5 (red;
-        \ref{tab:av-contrasts}) that were used to [isolate] the PPA
-        Cluster are overlaid on top of the MNI152 T1-weighted head template
-        (gray).
-        Black: outline of overlapping individual PPA ROIs.
-        Light gray: The audio-description's field-of-view (cf.
-        \citep{hanke2014audiomovie}).}
-    \label{fig:stability-slices}
-    \end{figure*}
-
-\paragraph{AD: other significant clusters across contrasts}
-% precuneus = retrosplenial cortex ?
-\todo[inline]{significant clusters in other regions than PPA could or should (?)
-also be reported? Following is a short list; depends on the discussion I guess;
-anyhow: clusters are not ``random'' but make sense which speaks for the use of
-naturalistic stimuli}
-
-\begin{itemize}
-\item RSC (and ventral precuneus): 7 contrasts (all bilateral)
-\item lateral occipital cortex: 6 contrasts (4 bilateral, 2 unilateral =
-    transverse occipital sulcus / occipiatal place area?; AD \& AV clusters
-    overlap but AD clusters are more lateral, AV cluster are more medial \&
-    caudal)
-\item right superior temporal gyrus (auditory cortices): 4 contrasts
-\item (smallish) prefrontal clusters: 3 contrasts (non-overlapping)
-\end{itemize}
-
-\subsubsection{AV: PPA in primary contrast}
-% AV intro
-As conceptual/cross-modal control of the group average results, we also analyzed
-data from the audio-visual movie by contrasting different kinds of movie cuts
-independent(ly) from the frames' visual content following the cut.
-% AV primary contrast
-The movie's primary $t$-contrast that compared cuts to a setting that was not
-depicted before to a recurring setting (\texttt{vse\_new > vpe\_old}) yielded
-three significant clusters (see Table \ref{tab:res-av-group1}, Figure
-\ref{fig:group-slices}).
-% PPA (others the clusters extend into).
-One cluster spans across the midline and comprises, parts of the intracalcarine
-and cuneal cortex, the lingual gyrus and retrosplenial cortex, the occipital and
-temporal fusiform gyrus and the parahippocampal cortex (reported from posterior
-to anterior) in both hemispheres.
-% LOC
-Two additional homologous clusters are located in the superior lateral occipital
-cortex (left bigger than right).
-
-
-\begin{table*}[t]
-\caption{Significant clusters (z-threshold Z>3.4; p<.05 cluster-corrected)
-    of the primary $t$-contrast for the audio-visual movie comparing cuts to a
-    setting that was not depicted before to a recurring setting
-    (\texttt{vse\_new > vpe\_old}).
-    Clusters sorted by voxel size.
-    The first brain structure given contains the voxel with the maximum Z-Value,
-    followed by brain structures from posterior to anterior, and partially
-    covered areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
-\label{tab:res-av-group1}
-\begin{tabular}{rrrrrrrrrp{3cm}}
-\toprule
-& & & \multicolumn{3}{r}{max location (MNI)} & \multicolumn{3}{r}{center of gravity (MNI)} &
-\\ \cmidrule{4-6} \cmidrule{7-9}
-voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
-\midrule
-3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r. cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusiform c., posterior parahippocampal c.  \\
-154 & 6.56E-07 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior lateral occipital c. \\
-121 & 7.69E-06 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior lateral occipital cortex \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-\subsubsection{AV: robustness of PPA across contrasts}
-
-% all eight AV PPA contrasts
-Here again in order to test the robustness of our findings, we created four
-additional $t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}).
-%% results: PPA
-All of the overall five AV contrasts yielded significant bilateral clusters that
-overlap with the PPA group overlap (see Figure \ref{fig:stability-slices}).
-[biggest overlap in posterior part of PPA group overlap  = temporal occipital
-fusiform cortex] .
-% concluding statement
-Here again, we can show that results can in principle be accomplished by varying
-the design of the contrasts.
-% question
-\todo[inline]{concluding statement = interpretation/discussion?}
-
-
-\paragraph{AV: other significant clusters across contrasts}
-
-\begin{itemize}
-    \item RSC: 3 contrasts (all bilat; vse\_new > vpe\_old; vse\_new >
-        vse\_old, vpe\_old; vse\_new, vpe\_new > vpe\_old)
-    \item lateral occipital cortex: 4 contrasts (all except vse\_new > vse\_old; all bilateral)
-\end{itemize}
-
-
-\subsubsection{AD \& AV: (negative) control contrasts}
-
-\todo[inline]{for completeness, contrasts are mentioned in the method section.
-Shall results be reported (and later discussed)?}
-
-% AD stimulus
-AD stimulus (using annotation of movie cuts) all null results except: contrast 9
-(vse\_new > pe\_old): right RSC.
-% correlation of these nouns with cuts
-Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new setting are
-correlated  with cuts to a new setting (vse\_new; r$\approx$0.3; second highest
-correlation of a verbal cue category with a cut category.
-
-% AV stimulus
-AV stimulus. All contrasts using ``no cut condition'' > XY yield null results.
-The contrast that uses the narrator's nouns but in the AV stimulus (se\_new >
-se\_old): right PPA, bilateral sup. lat. occ. cortex; LOC (l/r), right superior
-parietal lobe. Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new
-setting are correlated  with cuts to a new setting (vse\_new; r$\approx$0.3;
-second highest correlation of a verbal cue category with a cut category; AND:
-nouns that cue change to a familiar setting are somewhat correlated with cuts to
-a familiar setting (se\_old; r$\approx$0.4; highest correlation of a verbal
-category with a cut category).
-
-
-\subsection{individual results}
+\subsubsection{individuals}
 
 \todo[inline]{other reasons than localization performance?}
+
+\todo[inline]{make focus on AD clearer}
 
 % why individual results in the first place.
 We also investigated [localization performance] of both naturalistic paradigms
@@ -1587,7 +1486,8 @@ yielded only one cluster in the right hemisphere.
 interpretation/discussion?}
 
 
-\begin{figure*} \centering
+\begin{figure*}[h!]
+\centering
     \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
     \caption{Fixed-effects individual-level GLM results (Z>3.4, p<.05
         cluster-corrected).
@@ -1641,7 +1541,8 @@ Values above the horizontal line depict voxels that show a higher $z$-value in
 the dedicated localizer, values below the horizontal line depict voxels that
 show higher $z$-value in the AD stimulus.
 
-\begin{figure*} \centering
+\begin{figure*}[h!]
+\centering
     \includegraphics[scale=0.28]{figures/subjs_bland-altman.png}
     \caption{Bland-Altman-Plots for individual subjects. The x-axis depicts the
         mean of two spatially corresponding voxels in the unthresholded z-map of
@@ -1652,7 +1553,122 @@ show higher $z$-value in the AD stimulus.
         temporal and occipital cortex (gray),
         PPA overlap of all subjects (blue),
         and individual PPA(s) (red).}
-    \label{fig:bland-altman} \end{figure*}
+    \label{fig:bland-altman}
+\end{figure*}
+
+
+\subsection{Robustness of PPA across contrasts}
+
+\subsubsection{AV}
+
+% all eight AV PPA contrasts
+Here again in order to test the robustness of our findings, we created four
+additional $t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}).
+%% results: PPA
+All of the overall five AV contrasts yielded significant bilateral clusters that
+overlap with the PPA group overlap (see Figure \ref{fig:stability-slices}).
+[biggest overlap in posterior part of PPA group overlap  = temporal occipital
+fusiform cortex] .
+% concluding statement
+Here again, we can show that results can in principle be accomplished by varying
+the design of the contrasts.
+% question
+\todo[inline]{concluding statement = interpretation/discussion?}
+
+
+\subsubsection{AD}
+
+\todo[inline]{tables of significant clusters all contrasts = overkill!? Link to NeuoVault is added; sign. clusters of all contrasts are listed in the comments}
+
+% all eight AD PPA contrasts
+In order to test the robustness of our findings, we created overall eight
+$t$-contrasts for the AD stimulus (see Table \ref{tab:ao-contrasts}).
+% results
+All contrasts except contrast 7 (\texttt{se\_new}, \texttt{se\_old} >
+non-spatial categories) and contrast 8 (\texttt{se\_new} > non-spatial
+categories) yielded significant bilateral clusters in anterior regions of the
+group PPA overlap (see Figure \ref{fig:stability-slices}).
+% statement/answer
+Results suggest that our findings do not depend on one specific contrasts but
+are robust across differently designed contrasts.
+% question
+\todo[inline]{concluding statement often feels like interpretation/discussion}
+%
+\todo[inline]{Discussion: discuss that contrasts make ``less and less'' sense}
+
+\todo[inline]{figure caption: mention / explain other clusters}
+
+% figure group results of robustness across all AD & AV contrasts
+\begin{figure*}[h!]
+\centering
+    \includegraphics[width=\linewidth]{figures/stability-slices}
+    \caption{Overlap of significant clusters (Z>3.4; p<.05, cluster corrected)
+        The audio-description's contrasts 1-8 (blue; \ref{tab:ao-contrasts})
+        are overlaid over the audio-visual movie's contrasts 1-5 (red;
+        \ref{tab:av-contrasts}) that were used to [isolate] the PPA
+        Cluster are overlaid on top of the MNI152 T1-weighted head template
+        (gray).
+        Black: outline of overlapping individual PPA ROIs.
+        Light gray: The audio-description's field-of-view (cf.
+        \citep{hanke2014audiomovie}).}
+    \label{fig:stability-slices}
+\end{figure*}
+
+
+\subsection{Non-PPA clusters across contrasts}
+
+% precuneus = retrosplenial cortex ?
+\todo[inline]{significant clusters in other regions than PPA could or should (?)
+also be reported? Following is a short list; depends on the discussion I guess;
+anyhow: clusters are not ``random'' but make sense which speaks for the use of
+naturalistic stimuli}
+
+\subsubsection{AV}
+
+\begin{itemize}
+    \item RSC: 3 contrasts (all bilat; vse\_new > vpe\_old; vse\_new >
+        vse\_old, vpe\_old; vse\_new, vpe\_new > vpe\_old)
+    \item lateral occipital cortex: 4 contrasts (all except vse\_new > vse\_old; all bilateral)
+\end{itemize}
+
+
+\subsubsection{AD}
+
+\begin{itemize}
+\item RSC (and ventral precuneus): 7 contrasts (all bilateral)
+\item lateral occipital cortex: 6 contrasts (4 bilateral, 2 unilateral =
+    transverse occipital sulcus / occipiatal place area?; AD \& AV clusters
+    overlap but AD clusters are more lateral, AV cluster are more medial \&
+    caudal)
+\item right superior temporal gyrus (auditory cortices): 4 contrasts
+\item (smallish) prefrontal clusters: 3 contrasts (non-overlapping)
+\end{itemize}
+
+
+\subsection{control contrasts (AV \& AD)}
+
+\todo[inline]{for completeness, contrasts are mentioned in the method section.
+Shall results be reported (and later discussed)?}
+
+% AD stimulus
+AD stimulus (using annotation of movie cuts) all null results except: contrast 9
+(vse\_new > pe\_old): right RSC.
+% correlation of these nouns with cuts
+Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new setting are
+correlated  with cuts to a new setting (vse\_new; r$\approx$0.3; second highest
+correlation of a verbal cue category with a cut category.
+
+% AV stimulus
+AV stimulus. All contrasts using ``no cut condition'' > XY yield null results.
+The contrast that uses the narrator's nouns but in the AV stimulus (se\_new >
+se\_old): right PPA, bilateral sup. lat. occ. cortex; LOC (l/r), right superior
+parietal lobe. Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new
+setting are correlated  with cuts to a new setting (vse\_new; r$\approx$0.3;
+second highest correlation of a verbal cue category with a cut category; AND:
+nouns that cue change to a familiar setting are somewhat correlated with cuts to
+a familiar setting (se\_old; r$\approx$0.4; highest correlation of a verbal
+category with a cut category).
+
 
 
 \section{Discussion}
