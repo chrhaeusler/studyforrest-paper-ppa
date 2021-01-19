@@ -114,39 +114,34 @@ narrative, studyforrest
 \noindent Intro:
 
 \begin{itemize}
-    \item structure of last paragraph might be meh: methods/our approach
--> hypotheses -> results; readers might assume HARKing?
+    \item make more concise if applicable
 \end{itemize}
 
 
 \noindent Method:
 
 \begin{itemize}
-    \item Zwischenüberschriften rausnehmen, wenn Struktur so in Ordnung
-    \item revise captions of Table 1 + 3 (regressors based on annotation of
-    the other FG stimulus are now dropped from the table but mentioned in
-    section "statistial model / contrasts")
+    \item -
 \end{itemize}
 
 
 \noindent Results
 
 \begin{itemize}
+    \item allgemein kürzen; insb. individual results kürzen
+    \item consistencies across contrasts ausformulieren
+    \item control contrasts ausformulieren
     \item Simons Kommentare, bei denen ich mitunter anderer Meinung bin
-    \item ggf. berichten welcher der drei VIS Kontraste für welche VP genommen
-    wurde
-    \item location of tables \& figures is pretty confusing at the moment
-    \item length of report of other reliably significant cluster across
-        contrasts and report of control contrasts depends on if/how long they
-        should be discussed
+    \item ggf. berichten welcher VIS Kontraste jeweils genommen wurde
 \end{itemize}
 
 
 \noindent Discussion
 \begin{itemize}
-    \item umschreiben gemäß neuer Schwerpunktsetzung in Intro \& Method-Section
-    \item \citep{bartels2004mapping, hasson2004intersubject}
+    \item umstrukturieren \& ggf. schon kürzen gemäß neuer Schwerpunktsetzung
+    \item umschreiben gemäß neuer Schwerpunktsetzung
     \item mehr zum Thema VIS( "best contrast was chosen")
+    \item \citep{bartels2004mapping, hasson2004intersubject}
 \end{itemize}
 
 
@@ -552,9 +547,12 @@ Hence, we annotated a variety of stimulus features that later served as a basis
 (for GLM regressors) to model hemodynamic responses.
 
 
-\subsubsection{Events}
+\subsubsection{Events related to high-level perception}
 
-\paragraph{movie}
+\todo[inline]{imo the subheadings for 2.6.1 and 2.6.2 can be dropped because
+2.6.2 is super short}
+
+
 % AV anno
 For the analysis of the AV stimulus, we took advantage of a previously published
 annotation of [the 869] movie cuts and the depicted location after each cut
@@ -616,17 +614,19 @@ temporal distance of at least \unit[10]{s} to a movie cut and to another
 
 % AV regressors
 \begin{table*}[h!]
-    \caption{Overview of annotations and event counts in the whole audio-visual
-    movie and individual stimulus segments.
-    \texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames),
-    \texttt{fg\_av\_ger\_ml} (mean luminance of a frame),
-    \texttt{fg\_av\_ger\_lr} (difference in mean luminance of left and right
-    half),
-    \texttt{fg\_av\_ger\_ud} (difference in mean luminance of upper and
-    lower half),
-    \texttt{fg\_av\_ger\_lrdiff} (left-right volume difference), and
-    \texttt{fg\_av\_ger\_rms} (root mean square volume) represent one event
-    for every movie frame (\unit[40]{ms}).
+    \caption{Overview of annotated stimulus features of audio-visual
+    movie.
+    Respective event counts are given for the whole stimulus (\texttt{all} and
+    the segments that were used for the eight sessions of fMRI scanning.
+    %\texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames),
+    %\texttt{fg\_av\_ger\_ml} (mean luminance of a frame),
+    %\texttt{fg\_av\_ger\_lr} (difference in mean luminance of left and right
+    %half),
+    %\texttt{fg\_av\_ger\_ud} (difference in mean luminance of upper and
+    %lower half),
+    %\texttt{fg\_av\_ger\_lrdiff} (left-right volume difference), and
+    %\texttt{fg\_av\_ger\_rms} (root mean square volume) represent one event
+    %for every movie frame (\unit[40]{ms}).
     % For description of the two event categories of the audio-description's
     % narrator (\texttt{se\_new} and \texttt{se\_old}) to build contrast of
     % negative control see Table \ref{tab:ao-events}.
@@ -668,8 +668,6 @@ fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavge
 \end{tabular}
 \end{table*}
 
-
-\paragraph{audio-description}
 
 % AD annotation
 For the analysis of the AD stimulus, we extended a publicly available annotation
@@ -780,8 +778,9 @@ setting\_rec & a recurring setting & at the ``bus stop'' \tabularnewline
 
 % AD regressors
 \begin{table*}[h!]
-    \caption{Overview of annotations and event counts in the whole
-    audio-description and individual stimulus segments.
+    \caption{Overview of annotated stimulus features of the audio-description.
+    Respective event counts are given for the whole stimulus (\texttt{all} and
+    the segments that were used for the eight sessions of fMRI scanning.
     Some of the annotation's original categories (female, females, fname; male,
     males, mname; face, head; object, objects;
     see Table\ref{tab:descr-nouns-rules}) were pooled
@@ -843,12 +842,11 @@ fg\_ad\_rms & root mean square volume & \aoFgadrmsAll &
 \end{table*}
 
 
-\paragraph{Confounds for both}
+\subsubsection{Events related to low-level perception / perceptual confounds}
 
-\todo[inline]{Die Events für die low-level confounds habe erstmal hier
-beschrieben; btw: Das Verschieben des Sounds in den Segmenten spiegelt sich
-wahrscheinlich auch in den unterschiedlichen Counts der Events je Segment wider
-(AV Bild vs AV Sound vs AO Sound)}
+\todo[inline]{das Verschieben des Sounds in den Segmenten spiegelt sich auch in
+den unterschiedlichen Counts der Events je Segment wider (AV Bild vs AV Sound vs
+AO Sound)}
 
 % intro
 Lastly, we algorithmically annotated the temporal structure of low-level
@@ -864,7 +862,7 @@ energy averaged across the length of every movie frame (\unit[40]{ms}) of both
 audio-tracks.
 
 
-\subsubsection{Hemodynamic Modeling}
+\subsection{Hemodynamic Modeling}
 
 % movie events
 The events of the movie cut related categories and \texttt{no\_cut} events were
@@ -925,24 +923,11 @@ but harder to read) or use non-cryptic words in the figure?}
 \end{figure*}
 
 
-\subsection{Statistical analysis}
-
-% level 1 and 2; similarly to the reviewed studies that employed designed
-% stimuli; we "based on stimulus annotations"
-We then tested our modeled hemodynamic responses by conducting standard
-two-level general linear model (GLM) analyses to create subject-specific results
-($Z$-maps) across the 8 segments for every subject and each stimulus.
-% level 3
-Subsequent, third-level analyses averaged contrast estimates over subjects.
-
-
-\paragraph{Design Matrix}
-
 % AV design matrix
-For the first level analysis of the AV stimulus, the modeled hemodynamic
-responses related to all movie cuts (including \texttt{no\_cut}) and six
-low-level perceptual confounds were included as regressors in the design matrix
-(s. Table \ref{tab:av-events}).
+For the subsequent first level GLM analysis, the modeled hemodynamic responses
+related to all movie cuts (including \texttt{no\_cut}) and six low-level
+perceptual confounds (s. Table \ref{tab:av-events}) were included as regressors
+in the design matrix.
 % AD regressors in AV AD design matrix
 For the first level analysis of the AD stimulus, the modeled hemodynamic
 responses related to all noun categories and the two low-level perceptual
@@ -958,9 +943,9 @@ stimulus [and to capture variance of a possibly confounding change of the
 soundscape after a cut], we implemented the movie cut-related regressors
 (excluding \texttt{no\_cut}).
 % both stimuli: null regressors
-In analyses of both stimuli, a null regressor was chosen for a event category in
-a segment, if that segment did not contain an event of the category (e.g. no
-event of \texttt{vpe\_old} in segment 3; cf. Table \ref{tab:ao-events}).
+For both stimuli, a null regressor was chosen for a event category in a segment,
+if that segment did not contain an event of the category (e.g. no event of
+\texttt{vpe\_old} in segment 3; cf. Table \ref{tab:ao-events}).
 % temporal derivatives
 Temporal derivatives were included in the design matrix to compensate for
 regional differences between modeled and actual HRF \citep{friston1998event}.
@@ -969,6 +954,20 @@ Six motion parameters were also used as additional nuisance regressors.
 % high-pass filtering
 Finally, designs were filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
+
+
+\subsection{Statistical analysis}
+
+% level 1 and 2; similarly to the reviewed studies that employed designed
+% stimuli; we "based on stimulus annotations"
+We tested our modeled hemodynamic responses by conducting standard
+two-level general linear model (GLM) analyses to create subject-specific results
+($Z$-maps) across the 8 segments for every subject and each stimulus.
+% level 3
+Subsequent, third-level analyses averaged contrast estimates over subjects.
+
+
+\paragraph{PPA Contrasts}
 
 \todo[inline]{SE: würde wetten, dass Reviewer fragen: Wie sieht es im vergleich
 dazu mit Faces aus? COH: yeah, well, I made the contrasts similar to Sengupta
@@ -981,15 +980,13 @@ das viel näher liegende places vs faces? COH: places vs. face = simple set in
 Sengupta; here, we follow the strict set used in Sengupta; tbh, not mentioned in
 detail}
 
-
-\paragraph{PPA Contrasts}
-
-In this study, we investigated if increased hemodynamic activty in the PPA that
-is usually defined by contrasting blocks of pictures can also be revealed by
-contrasting selected stimulus features that we annotated in a audio-visual movie
-and its audio-description.
+% similar to previous studies
+On the first level, we created GLM contrasts like studies that contrasted
+blocks of pictures.
+% dissimilar
+But unlike previous studies, our approach was to contrast selected stimulus features that we annotated in the audio-visual movie and its audio-description.
 % intro
-To test the robustness of our approach, we operationalized the perception of
+To test the robustness of this approach, we operationalized the perception of
 spatial information compared to the perception of ``non-spatial'' information
 differently in eight $t$-contrasts for the AD stimulus (see Table
 \ref{tab:ao-contrasts}) and five $t$-contrasts for the AV stimulus (see Table
@@ -1009,8 +1006,8 @@ event counts).
 blocks of pictures is based on one contrast for each subjects (cf. Table 3 in
 \citep{sengupta2016extension}) that was chosen post-hoc from a set of three
 contrasts (\textit{strict}, \textit{relaxed}, and \textit{simple} contrast
-\citep{sengupta2016extension}).\todo{maybe add note regarding Berman (2010);
-but they did FFA}
+\citep{sengupta2016extension}).\todo{maybe add note regarding Berman (2010); but
+they did FFA}
 % thus: primary contrasts
 Here, we chose one contrast to be ``primary contrast'' for later detailed
 inspection and report.
@@ -1133,27 +1130,29 @@ setting.
 \end{table*}
 
 
-\paragraph{GLM computations \& stuff}
-
 % alignments single subjects (for Bland-Altman-Plots) 1st level
 The GLM analysis that fitted each voxel's time course separately for each
 subject and segment was performed in functional space preserving the orientation
 of the EPI images.
 % two ways of co-registration
-We co-registered the subjects in two ways.
+Subject-specific BOLD T2* time series were anatomically co-registered in two
+ways:
 % subject template (for Bland-Altman-Plot of unthresholded maps)
 % \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
-On the one hand, subject-specific BOLD T2* time series were anatomically aligned
-via linear transformation to a subject-specific, study-specific T2* template
-(cf. \citep{sengupta2016extension}).
+a) [time series were aligned to] via linear transformation to a
+subject-specific, study-specific T2* template (cf.
+\citep{sengupta2016extension}) and,
 % group template (for group and individual brain slices)
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"
-On the other hand, time series were aligned via non-linear transformation to a
-study-specific T2* group template (cf. \citep{hanke2014audiomovie}).
+b) via non-linear transformation to a study-specific T2* group template (cf.
+\citep{hanke2014audiomovie}).
 % MNI152
 This group template was co-registered to the MNI 152 template with an affine
 transformation (12 degrees of freedom) to facilitate visualization and
 identification of cortical structures.
+
+
+\paragraph{2nd level}
 
 % second level model
 The second level analyses which averaged contrast estimates over the eight
@@ -1164,6 +1163,9 @@ Effects; \citep{beckmann2003general, woolrich2004multilevel}.
 (Gaussianised T/F) statistic images were thresholded using clusters determined
 by Z>3.4 and a (corrected) cluster significance threshold of p=.05
 \citep{worsley2001statistical}.
+
+
+\paragraph{3rd level}
 
 % third level model
 The third level analysis which averaged contrast estimates over subjects was
@@ -1192,10 +1194,8 @@ of individual PPA overlaps were created from data provided by
 Du oft das erste machst es aber als das zweite beschreibst; COH: ??? we do
 whole-brain analysies, so probably ``localization'', }
 
-\todo[inline]{SE: Vergleich mit VIS kommt bestenfalls en passant; VIS selber
-wird gar nicht berichtet, wäre aber wichtig zum Andocken an Literatur; COH: yes,
-maybe reference Sengupta who are interested in the details? en passant makes
-more sense here imo}
+\todo[inline]{SE: VIS wird selbst gar nicht/en passant berichtet, wäre aber
+wichtig zum Andocken an Literatur}
 
 \todo[inline]{SE: Figures with group results: würde da wahrscheinlich weiter
 rein zoomen, um genauer den visuellen Kortex zu zeigen; vor allem muss man
@@ -1213,8 +1213,7 @@ places vs faces) aus? COH: ???}
 \todo[inline]{individual results: AD trifft besser die VIS-PPA "trifft" als AV.
     Das ist zumindest sehr überraschend, oder?; COH: actually it isn't because
     of blindly averaging the actual frame content in the categories of movie
-    cuts (cf. methods/regressors, discussion/shortcomings); this ``cross-modal
-    control things'' seems to more confuse than having its merits}
+    cuts (cf. methods/regressors, discussion/shortcomings)}
 
 \todo[inline]{Bland-Altman-Plots: Welche Areale habt ihr als masks
 genommen, FFA ist ja kartiert (Julia Caspers); COH: probaly the caption was
