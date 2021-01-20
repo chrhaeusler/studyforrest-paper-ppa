@@ -131,6 +131,7 @@ narrative, studyforrest
     \item allgemein kürzen; insb. individual results kürzen
     \item consistencies across contrasts ausformulieren
     \item control contrasts ausformulieren
+    \item adapt captions of result tables to new phrasing in intro / method
     \item Simons Kommentare, bei denen ich mitunter anderer Meinung bin
     \item ggf. berichten welcher VIS Kontraste jeweils genommen wurde
 \end{itemize}
@@ -958,17 +959,6 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 
 \subsection{Statistical analysis}
 
-% level 1 and 2; similarly to the reviewed studies that employed designed
-% stimuli; we "based on stimulus annotations"
-We tested our modeled hemodynamic responses by conducting standard
-two-level general linear model (GLM) analyses to create subject-specific results
-($Z$-maps) across the 8 segments for every subject and each stimulus.
-% level 3
-Subsequent, third-level analyses averaged contrast estimates over subjects.
-
-
-\paragraph{PPA Contrasts}
-
 \todo[inline]{SE: würde wetten, dass Reviewer fragen: Wie sieht es im vergleich
 dazu mit Faces aus? COH: yeah, well, I made the contrasts similar to Sengupta
 and considered the contrast to an average of all ``non-spatial'' stuff
@@ -980,11 +970,20 @@ das viel näher liegende places vs faces? COH: places vs. face = simple set in
 Sengupta; here, we follow the strict set used in Sengupta; tbh, not mentioned in
 detail}
 
+% intro
+We tested our modeled hemodynamic responses based on stimulus annotations by
+conducting standard two-level general linear model (GLM) analyses to create
+subject-specific results ($Z$-maps) across the 8 segments for every subject and
+each stimulus.
+% level 3
+Subsequent, third-level analyses averaged contrast estimates over subjects.
+
 % similar to previous studies
-On the first level, we created GLM contrasts like studies that contrasted
-blocks of pictures.
+On the first level, we created GLM contrasts like studies that contrasted blocks
+of pictures.
 % dissimilar
-But unlike previous studies, our approach was to contrast selected stimulus features that we annotated in the audio-visual movie and its audio-description.
+But unlike previous studies, our approach was to contrast selected stimulus
+features that we annotated in the audio-visual movie and its audio-description.
 % intro
 To test the robustness of this approach, we operationalized the perception of
 spatial information compared to the perception of ``non-spatial'' information
@@ -1015,6 +1014,7 @@ inspection and report.
 The selection criterion for the primary contrast of each stimulus was a
 subjectively good balance between a) how well categories on average were assumed
 to match the preferred stimulus type, and b) the amount of available data /
+
 % AV: primary contrast
 In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
 was not depicted before (\texttt{vs\_new}) to cuts that we accompanied with a
@@ -1049,19 +1049,16 @@ interest in any contrast because these nouns could be perceived differently by
 different subjects as either a geometry-defining scene element or as an isolated
 object.
 
-
-\paragraph{Control contrasts}
-
-% intro
+\todo[inline]{why was done? narrator and cuts to other setting are "somewhat"
+correlated; and now what? -> cf. results and discussion}
+% control contrasts
 Finally, we created several contrasts as negative control for both stimuli.
 % AV: no cut > cut
 For the AV stimulus, four $t$-contrasts were created contrasting the no-cut
-regressor (texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
+regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
 % AV: narrator
 One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by
 contrasting nouns spoken by the narrator.
-\todo[inline]{why was done? narrator and cuts to other setting are "somewhat"
-correlated; and now what? -> cf. results and discussion}
 % AD stimulus
 For the AD stimulus, we created five $t$-contrasts (see Table
 \ref{tab:ao-contrasts}) to test if increased activation in the PPA was
@@ -1139,9 +1136,8 @@ Subject-specific BOLD T2* time series were anatomically co-registered in two
 ways:
 % subject template (for Bland-Altman-Plot of unthresholded maps)
 % \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
-a) [time series were aligned to] via linear transformation to a
-subject-specific, study-specific T2* template (cf.
-\citep{sengupta2016extension}) and,
+a) via linear transformation to a subject-specific, study-specific T2* template
+(cf. \citep{sengupta2016extension}) and,
 % group template (for group and individual brain slices)
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"
 b) via non-linear transformation to a study-specific T2* group template (cf.
@@ -1150,9 +1146,6 @@ b) via non-linear transformation to a study-specific T2* group template (cf.
 This group template was co-registered to the MNI 152 template with an affine
 transformation (12 degrees of freedom) to facilitate visualization and
 identification of cortical structures.
-
-
-\paragraph{2nd level}
 
 % second level model
 The second level analyses which averaged contrast estimates over the eight
@@ -1163,9 +1156,6 @@ Effects; \citep{beckmann2003general, woolrich2004multilevel}.
 (Gaussianised T/F) statistic images were thresholded using clusters determined
 by Z>3.4 and a (corrected) cluster significance threshold of p=.05
 \citep{worsley2001statistical}.
-
-
-\paragraph{3rd level}
 
 % third level model
 The third level analysis which averaged contrast estimates over subjects was
@@ -1221,25 +1211,23 @@ invisible in the version Simon got? changed the size of the figure so the
 caption is now on the page}
 
 % study goal
-The goal of this study was to investigate if cues about the spatial layout
-embedded in two naturalistic stimuli correlate with increased hemodynamic
-activity in the PPA that was defined using a visual localizer experiment
-within the same subjects \citep{sengupta2016extension}.
-% what we did We
-We annotated a \unit[2]{h} movie and its temporally aligned audio-description to
-create GLM contrasts similar to previous studies that used static pictures.
+The goal of this study was to investigate if annotated cues about the spatial
+layout embedded in two naturalistic stimuli correlate with increased hemodynamic
+activity in the PPA that was defined using a visual localizer experiment within
+the same subjects \citep{sengupta2016extension}.
 % group level
-On a group average level, we compare results gained from both naturalistic
-stimuli to results gained from the visual localizer.
+On a group average level, we compare results gained from whole-brain GLM
+analyses  of the movie and the audio-description (Z>3.4; p<.05, cluster
+corrected) to results gained from the visual localizer.
 % individual level
-On the level single subjects, we also assess the performance of a naturalistic
-auditory stimulus as a substitute for a visual paradigm to localize the
-PPA.\todo{``localize''}
+On the level single subjects (Z>3.4; p<.05, cluster corrected), we also assess
+the performance of the exclusively auditory naturalistic stimulus as a
+substitute for a visual paradigm to localize the PPA.\todo{``localize''}
 % NeuroVault
-Unthreholded $z$-maps of all contrasts on a group level as well as individual
-results of the primary $t$-contrasts for both naturalistic stimuli can be found
-at \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.\todo{still
-private collection}
+Unthresholded $z$-maps of all contrasts on a group level as well as individual
+results of the primary $t$-contrasts co-registered to the group-template can
+found at \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
+\todo{still private collection}
 
 % all AD contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r)
@@ -1275,22 +1263,16 @@ private collection}
 
 \subsection{Primary contrasts}
 
-% intro
-First, we tested if results of a whole-brain analysis based stimulus annotations
-would lead to increased hemodynamic activity in the PPA.
-
-
-\subsubsection{group}
 % AV intro
-First, we analyzed data from the audio-visual movie offering visual but
+First, we analyzed data from the audio-visual movie offering a visual but
 ecologically more valid stimulation.
 % AV primary contrast
 The movie's primary $t$-contrast that compared cuts to a setting that was not
-depicted before to a recurring setting (\texttt{vse\_new > vpe\_old}) yielded
-three significant clusters (see Table \ref{tab:res-av-group1}, Figure
+depicted before to cuts to a recurring setting (\texttt{vse\_new > vpe\_old})
+yielded three significant clusters (see Table \ref{tab:res-av-group1}, Figure
 \ref{fig:group-slices}).
 % PPA (others the clusters extend into).
-One cluster spans across the midline and comprises, parts of the intracalcarine
+One cluster spans across the midline and comprises parts of the intracalcarine
 and cuneal cortex, the lingual gyrus and retrosplenial cortex, the occipital and
 temporal fusiform gyrus and the parahippocampal cortex (reported from posterior
 to anterior) in both hemispheres.
@@ -1299,7 +1281,7 @@ Two additional homologous clusters are located in the superior lateral occipital
 cortex (left bigger than right).
 
 % AD intro
-Second, we analyzed data from the movie's audio-description offering exclusively
+Second, we analyzed data from the audio-description offering exclusively
 auditory stimulation.
 % AD primary contrast
 The primary $t$-contrast for the audio-description (\texttt{geo, groom} >
@@ -1309,11 +1291,11 @@ non-spatial noun categories) yielded six significant clusters (see Table
 Two homologous clusters are located in the anterior part of the PPA group
 overlap that we gained from the visual localizer experiment.
 % in detail
-Specifically, the clusters of the current analysis are at the borders of the
-posterior parahippocampal cortex, the occipital and temporal fusiform gyrus and
-lingual gyrus.
+Specifically, these clusters are located at the borders of the posterior
+parahippocampal cortex, the occipital and temporal fusiform gyrus and lingual
+gyrus.
 % precuneus
-Two additional clusters are located in the ventral precuneus extending into the
+Two additional clusters are apparent in the ventral precuneus extending into the
 retrosplenial cortex.
 % LOC
 Finally, two homologous clusters are located in the superior lateral occipital
@@ -1394,10 +1376,12 @@ voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \end{table*}
 
 
-\subsubsection{individuals}
+\paragraph{individual results}
 
-\todo[inline]{imo no need to mention it here but mention in discussion that
-results are not driven by outliers when discussing ``localization'' performance}
+\todo[inline]{if we here report procedure of Sengupta as detailed as it is now
+(imo too long), we probably need to explain the differences between strict,
+relaxed, simple in more detail in the method section and not just reference to
+Sengupta}
 
 % results in detail voxels of significant clusters in PPA ROI (and RSC
 % liberally)
@@ -1418,18 +1402,12 @@ results are not driven by outliers when discussing ``localization'' performance}
 
 % intro
 Third, we investigated result from both naturalistic paradigms on the level of
-individual subjects.
-%
+individual subjects to ensure that the group results are not just a by-product
+of the averaging process.\todo{if you know what I mean}
+% AD is the real shit
 Focussing on the AD stimulus, we hypothesize[d] that an exclusively auditory
-stimulus can/could localize ``visual area'' in individual subjects and thus
-possibly substitute a visual paradigm using blocks of pictures.
-
-\todo[inline]{following is probably the part that Simon considered as en
-passant}
-
-\todo[inline]{if we here report procedure of Sengupta as detailed as
-it is now, we probably need to explain the differences between strict, relaxed,
-simple in more detail in the method section and not just reference to Sengupta}
+stimulus can/could localize the PPA in individual subjects and thus
+possibly substitute a visual paradigm [using blocks of pictures].
 
 % Sengupta et al., 2016
 The visual localizer experiment \citep{sengupta2016extension} yielded bilateral
@@ -1440,10 +1418,10 @@ Individual PPAs were assessed by visually inspecting thresholded $z$-maps
 (Z>1.64, p<.05 cluster corrected) of three different $t$-contrasts
 (\textit{strict}, \textit{relaxed}, and \textit{simple} stimulus set, cf.
 \citep{sengupta2016extension}).
-% Sengupta: procedure a)
+% procedure a)
 Starting with the most conservative contrast (strict set) and a threshold of t =
 2.5, we looked for clusters with at least 20 voxels (using AFNI).
-%
+% procedure b)
 We titrated [?] the threshold in the range of [2, 3] until we found an isolated
 cluster for the PPA.
 % Sengupta: procedure b)
@@ -1454,20 +1432,19 @@ cluster that matched the expected anatomical location based on literature
 
 % naturalisti stimuli: intro
 In the current study, time series of all subjects were analyzed both in subject
-space and group space.
+space (Z>2.3, p<.05 cluster-corrected) and group space ).
 % subject space -> NeuroVault
 Results of the analyses that were performed in each subject's [subject-]space
 (unthresholded $z$-maps and thresholded $z$-maps, Z>2.3, p<.05 cluster
-corrected) can be found at
-\href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}. \todo{still
-private collection}
+corrected) can be found in the accompanying datset \todo{Neurvault does not like
+unstandardized spaces}
 % here report in group space
 For better comparions of subjects, we here report results from the analyses
-performed in group space. % ($z$-maps; Z>3.4, p<.05 cluster-corrected).
+performed in group space (Z>3.4, p<.05 cluster-corrected)
 % one contrast to localize them all; "...and Z>3.4 for all"
 Contrary to the procedure in \citep{sengupta2016extension}, we used the same
-contrast of each naturalistic stimulus and the same threshold (Z>3.4, p<.05
-cluster corrected) for all subjects.
+contrast of each naturalistic stimulus and the same threshold [(Z>3.4, p<.05
+cluster corrected)] for all subjects.
 
 % AV
 Results of the primary AV contrast yielded statistically significant bilateral
