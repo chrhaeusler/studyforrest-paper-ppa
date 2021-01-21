@@ -115,6 +115,7 @@ narrative, studyforrest
 
 \begin{itemize}
     \item make more concise if applicable
+    \item add counts of intro, results, discussion respectively
 \end{itemize}
 
 
@@ -129,7 +130,6 @@ narrative, studyforrest
 
 \begin{itemize}
     \item kürzen (war nicht ganz einfach)
-    \item control contrasts ausformulieren
     \item adapt captions of result tables to new phrasing in intro / method
     \item Simons Kommentare, bei denen ich mitunter anderer Meinung bin
     \item ggf. berichten welcher VIS Kontraste jeweils genommen wurde
@@ -213,8 +213,7 @@ compared to haptically explored abstract geometric objects.
 To our knowledge only one study \citep{aziz2008modulation} investigated how
 hemodynamic activity in the PPA differs between different semantic stimulus
 categories occurring in spoken language.\todo{phrasing to delineate from Huth
-(2016); imo voxel-wise semantic modeling says nothing about
-excitation/inhibition}
+(2016)}
 % Aziz' stimuli
 \cite{aziz2008modulation} used sentences that described generic or famous places
 (e.g. ``The Taj Mahal faces a long thin reflecting pool''), faces (``Marilyn
@@ -284,8 +283,7 @@ contrast to analyze the corresponding publicly available fMRI datasets
 (\href{http://www.studyforrest.org}{studyforrest.org}) of each naturalistic
 stimulus \citep{hanke2016simultaneous, hanke2014audiomovie}.
 % varying amount of data
-Contrasts vary in HOW WELL / HOW MUCH DATA.\todo{rewrite if it should be
-mentioned}
+Contrasts vary in HOW WELL / HOW MUCH DATA.\todo{intro too long already}
 
 % hypo a
 We hypothesize[d] that whole-brain analyses will/would reveal increased
@@ -985,9 +983,9 @@ features that we annotated in the audio-visual movie and its audio-description.
 % intro
 To test the robustness of this approach, we operationalized the perception of
 spatial information compared to the perception of ``non-spatial'' information
-differently in eight $t$-contrasts for the AD stimulus (see Table
-\ref{tab:ao-contrasts}) and five $t$-contrasts for the AV stimulus (see Table
-\ref{tab:av-contrasts}).
+differently in five $t$-contrasts for the AV stimulus (see Table
+\ref{tab:av-contrasts}) and eight $t$-contrasts for the AD stimulus (see Table
+\ref{tab:ao-contrasts})
 % reason: robustness
 We assumed all contrasts could in principle correlate with increased hemodynamic
 activity in the PPA.
@@ -1175,9 +1173,6 @@ of individual PPA overlaps were created from data provided by
 
 \section{Results}
 
-\todo[inline]{~1300 words (some sections incomplete)}
-
-
 \todo[inline]{SE: VIS wird selbst gar nicht/en passant berichtet, wäre aber
 wichtig zum Andocken an Literatur}
 
@@ -1188,7 +1183,7 @@ important that we do not have clusters all over the brain}
 
 \todo[inline]{SE: overlap of clusters/contrasts: Anzahl der Überlappungen ist
 schwer abzulesen; lieber eine andere Farbskala (spectral sequence?) nutzen; COH:
-yes, I know it is kinda difficult, tried my best to choose/tweak the color map}
+yes, I know it is kinda difficult, figures will be honed at the very end}
 
 \todo[inline]{SE: Wie sehen die Antworten innerhalb der "klassisch definierten"
 PPA für die verschiedenen regressoren bzw. kategorien derselben (zumindest aber
@@ -1221,38 +1216,7 @@ substitute for a visual paradigm to localize the PPA.\todo{``localize''}
 Unthresholded $z$-maps of all contrasts on a group level as well as individual
 results of the primary $t$-contrasts co-registered to the group-template can
 found at \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
-\todo{still private collection}
-
-% all AD contrasts
-% 1 PPA (l/r); RSC (l/r), LOC (l/r)
-% 2 PPA (l/r); RSC (l/r), LOC (l/r), r. sup.temp.C., r.fr.pole; putamen; etc
-% 3 PPA (l/r); RSC (l/r), LOC (l/r),l&r sup.temp.C., anterior cing., paracing.
-% 4 PPA (l/r); RSC (l/r), LOC (l/r)
-% 5 PPA (l/r); RSC (l/r), LOC (-/-)
-% 6 PPA (l/r); RSC (l/r), LOC (l/-), l&r sup.temp.C.; medial pref. c., precun
-% 7 PPA (-/-); RSC (l/r), LOC (l/-), l&r sup.temp.C
-% 8 PPA (-/-); RSC (-/-), LOC (-/-)
-% ---------- control contrasts ----------
-% 9 PPA (-/-); RSC (-/r), LOC (-/-), left pars triangularis
-%10 PPA (-/-); RSC (-/-), LOC (-/-)
-%11 PPA (-/-); RSC (-/-), LOC (-/-),
-%12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
-%13 PPA (-/-); RSC (-/-), LOC (-/-) results: PPA
-
-% all AV contrasts
-% 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
-% intracalcarine, cuneal, ling.c
-% 2 PPA (l/r); RSC (-/-), LOC (l/r), VisC (-/-)
-% 3 PPA (l/r); RSC (-/-), LOC (-/-), VisC (-/r), occ. fusisf. g.
-% 4 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), lingual g., occ. fusif. g.
-% 5 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), occ. fusif. g.
-% ---------- control contrasts ----------
-% 6 nothing
-% 7 nothing
-% 8 nothing
-% 9 nothing
-%10 se_new > se_old (nouns but in AV stimulus):
-% LOC (l/r) right PPA, bilateral sup. lat. occ. c., sup. parietal lobe (right)
+\todo{private collection}
 
 
 \subsection{Primary contrasts}
@@ -1335,8 +1299,8 @@ cortex.
 voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \midrule
 3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r. cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusiform c., posterior parahippocampal c.  \\
-154 & 6.56E-07 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior lateral occipital c. \\
-121 & 7.69E-06 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior lateral occipital cortex \\
+154 & 0.000000656 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior lateral occipital c. \\
+121 & 0.00000769 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior lateral occipital cortex \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -1359,8 +1323,8 @@ areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
 \\ \cmidrule{4-6} \cmidrule{7-9}
 voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \midrule
-188 & 5.96E-08 & 4.48 & -17.5 & -65.5 & 25.5 & -14.7 & -59.1 & 15.2 & l. precuneus \\
-164 & 2.38E-07 & 4.47 & 17.5 & -58 & 23 & 15.6 & -55.6 & 16 & r. precuneus; \\
+188 & 0.0000000596 & 4.48 & -17.5 & -65.5 & 25.5 & -14.7 & -59.1 & 15.2 & l. precuneus \\
+164 & 0.000000238 & 4.47 & 17.5 & -58 & 23 & 15.6 & -55.6 & 16 & r. precuneus; \\
 83 & 0.000128 & 4.48 & 27.5 & -43 & -17 & 27.2 & -41.1 & -14 & r. temporal (occipital) fusiform c.; posterior parahippocampal g. \\
 73 & 0.000318 & 3.93 & -22.5 & -43 & -12 & -23.9 & -43.6 & -11.2 & l. lingual g.; temporal (occipital) fusiform g., posterior parahippocampal c. \\
 63 & 0.000824 & 4.1 & 40 & -75.5 & 30.5 & 40.9 & -76.3 & 28.6 & r. superior lateral occipital c. \\
@@ -1531,6 +1495,17 @@ show higher $z$-value in the AD stimulus.
 % unthresholded $z$-maps of all contrasts on a group level:
 % \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
 
+\todo[inline]{I tried to keep it concise but detailed; if individual contrasts
+are mentioned (enumerated at the moment)}
+
+% AV PPA contrasts
+% 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
+% intracalcarine, cuneal, ling.c
+% 2 PPA (l/r); RSC (-/-), LOC (l/r), VisC (-/-)
+% 3 PPA (l/r); RSC (-/-), LOC (-/-), VisC (-/r), occ. fusisf. g.
+% 4 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), lingual g., occ. fusif. g.
+% 5 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), occ. fusif. g.
+
 % AV
 In order to test the robustness of our findings, we created four additional
 $t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}) to be
@@ -1552,18 +1527,36 @@ Results suggest that our findings do not depend on one specific contrasts but
 are robust across differently designed contrasts.\todo{concluding statement
 often feels like interpretation}
 
-% AV
-Reliably across the five contrasts of the AV stimulus, we also find bilaterally
-significant clusters also in the precuneal cortex (contrasts 1, 3, 4; all
-bilateral)\todo{and? -> fsleyes} and lateral occipital cortex (all contrasts
-except contrast 3)
+% AD PPA contrasts
+% 1 PPA (l/r); RSC (l/r), LOC (l/r)
+% 2 PPA (l/r); RSC (l/r), LOC (l/r), r. sup.temp.C., r.fr.pole; putamen; etc
+% 3 PPA (l/r); RSC (l/r), LOC (l/r),l&r sup.temp.C., anterior cing., paracing.
+% 4 PPA (l/r); RSC (l/r), LOC (l/r)
+% 5 PPA (l/r); RSC (l/r), LOC (-/-)
+% 6 PPA (l/r); RSC (l/r), LOC (l/-), l&r sup.temp.C.; medial pref. c., precun
+% 7 PPA (-/-); RSC (l/r), LOC (l/-), l&r sup.temp.C
+% 8 PPA (-/-); RSC (-/-), LOC (-/-)
+
+% AD
+Reliably across the five contrasts of the AV stimulus, we find bilaterally
+significant clusters also in the ventral precuneal cortex / posterior cingulate
+gyrus (i.e. restrosplenial region; contrasts 1, 4, 5) and lateral occipital
+cortex (contrasts 1, 2, 4, 5)
 % AD; LOC: AV cluster are more medial, AD clusters are more lateral
-Reliably across the five contrasts of the AD, we find bilaterally significant
-clusters in the ventral precuneus (7 contrasts), lateral occipital cortex
-(bilateral in 4 contrasts, unilateral in 2 contrasts), superior temporal
-cortices (4 contrasts)\todo{uni/bilateral?}.
+Reliably across the five contrasts of the AD stimulus, we find bilaterally
+significant clusters in the ventral precuneus (all except contrasts 8), lateral
+occipital cortex (bilateral in 4 contrasts 1 to 4, unilateral in contrasts 6 and
+7), and superior temporal cortices (bilateral in contrasts 3, 6, 7; unilateral
+right in contrast 2).
+% non-systematic
+Contrast 2 also shows bilateral clusters in the anterior cingulate gyrus and
+right paracingulate gyrus (frontal medial cortex), right putamen, and right
+frontal pole.
 %
-\todo[inline]{(smallish) prefrontal clusters: 3 contrasts (non-overlapping)}
+Contrast 3 shows clusters bilaterally in the anterior cingulate gyrus and
+left frontal pole.
+%
+Contrast 6 shows one additional cluster also in the right medial frontal cortex.
 
 
 \begin{figure*}[h!]
@@ -1587,28 +1580,50 @@ cortices (4 contrasts)\todo{uni/bilateral?}.
 
 \subsection{control contrasts}
 
-% AV stimulus
-AV stimulus. All contrasts using ``no cut condition'' > XY yield null results.
-The contrast that uses the narrator's nouns but in the AV stimulus (se\_new >
-se\_old): right PPA, bilateral sup. lat. occ. cortex; LOC (l/r), right superior
-parietal lobe. Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new
-setting are correlated  with cuts to a new setting (vse\_new; r$\approx$0.3;
-second highest correlation of a verbal cue category with a cut category; AND:
-nouns that cue change to a familiar setting are somewhat correlated with cuts to
-a familiar setting (se\_old; r$\approx$0.4; highest correlation of a verbal
-category with a cut category).
+% ---------- AV control contrasts ----------
+% 6 nothing
+% 7 nothing
+% 8 nothing
+% 9 nothing
+%10 se_new > se_old (nouns but in AV stimulus):
+% LOC (l/r) right PPA, bilateral sup. lat. occ. c., sup. parietal lobe (right)
+
+% ---------- AD control contrasts ----------
+% 9 PPA (-/-); RSC (-/r), LOC (-/-), left pars triangularis
+%10 PPA (-/-); RSC (-/-), LOC (-/-)
+%11 PPA (-/-); RSC (-/-), LOC (-/-),
+%12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
+%13 PPA (-/-); RSC (-/-), LOC (-/-)
+
+% intro
+Lastly, we implemented five contrasts for every stimulus for the purpose of
+negative control.
+% AV: no_cut > x
+In the analysis of the AV data, none of the contrasts that compared the ``no cut
+condition''  to a movie cut category (contrasts 6, 7, 8, 9) yielded significant
+clusters.
+% AV using nouns
+The contrast that used the narrator's nouns but in the AV stimulus (se\_new >
+se\_old) yielded a significant cluster in the right PPA and bilateral clusters
+in the superior lateral occipital cortices (the right hemispheric cluster
+extending into the superior parietal cortex).
 
 % AD stimulus
-AD stimulus (using annotation of movie cuts) all null results except: contrast 9
-(vse\_new > pe\_old): right RSC.
-% correlation of these nouns with cuts
-Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new setting are
-correlated  with cuts to a new setting (vse\_new; r$\approx$0.3; second highest
-correlation of a verbal cue category with a cut category.
+In the analysis of the AD data, we created control contrasts based on events of
+the annotated movie cuts (cf. Table \ref{tab:ao-contrasts})
+% contrast 9
+Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
+inferior prefrontal cortex (pars triangularis) and right ventral
+precuneus/posterior cingulate gyrus.
+% contrast 12
+Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
+one cluster in the right posterior hippocampus. \todo{dorsally of PPA}
+
+\todo[inline]{there is no table/figure for negative control contrasts; we could
+add a reference to NeuroVault (here again) or point to the dataset}
+
 
 \section{Discussion}
-
-\todo[inline]{~2100 words (some sections incomplete)}
 
 \todo[inline]{SE: die result-synopsis noch nicht optimal. Vielleicht gehe ich
 aber auch mit der falschen Perspektive ran? Für mich würde der Vergleich
@@ -2035,6 +2050,18 @@ interpretation cf.:
 \todo[inline]{could be mentioned in a few sentences. But above topics a far too
 much still; better embed somewhere above}
 
+% AV: contrast with AV nouns
+Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new
+setting are correlated  with cuts to a new setting (vse\_new; r$\approx$0.3;
+second highest correlation of a verbal cue category with a cut category; AND:
+nouns that cue change to a familiar setting are somewhat correlated with cuts to
+a familiar setting (se\_old; r$\approx$0.4; highest correlation of a verbal
+category with a cut category).
+
+% AD: correlation of these nouns with cuts
+Compare Figure \ref{fig:reg-corr}: nouns that cue change to a new setting are
+correlated  with cuts to a new setting (vse\_new; r$\approx$0.3; second highest
+correlation of a verbal cue category with a cut category.
 
 \subsection{shortcomings}
 
