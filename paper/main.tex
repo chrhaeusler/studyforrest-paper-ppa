@@ -1309,7 +1309,8 @@ cortex.
 \\ \cmidrule{4-6} \cmidrule{7-9}
 voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \midrule
-3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r. cuneal c., intracalcarine c., bilaterally occipital fusiform g., temporal fusiform c., posterior parahippocampal c.  \\
+3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r.
+cuneal c., intracalcarine c., bilaterally occipital fusiform g., precuneus,temporal fusiform c., posterior parahippocampal c.  \\
 154 & 0.000000656 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior lateral occipital c. \\
 121 & 0.00000769 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior lateral occipital cortex \\
 \bottomrule
@@ -1393,9 +1394,9 @@ We titrated [?] the threshold in the range of [2, 3] until we found an isolated
 cluster for the PPA.
 % Sengupta: procedure b)
 If a cluster was not found or not isolated, we used a contrast from the
-\textit{relaxed} set, or finally the \textit{simple} set\todo{not used for PPA},
-and repeated the process until we found a cluster that matched the expected
-anatomical location based on literature \citep{epstein1998ppa}.
+\textit{relaxed} set, or finally the \textit{simple} \todo{not used in any VP
+for PPA}set, and repeated the process until we found a cluster that matched the
+expected anatomical location based on literature \citep{epstein1998ppa}.
 
 % one contrast to localize them all; "...and Z>3.4 for all"
 Contrary to \citep{sengupta2016extension}, we used the same contrast of each
@@ -1469,10 +1470,11 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
 % Bland-Altman-Plots
 To better depict the agreement and difference between the results of the visual
 localizer and the primary AD contrast, we created a Bland-Altman-Plot for every
-subject (see Figure \ref{fig:bland-altman}).
+subject (see ).
 % what it depicts
-Each subplot visualizes the mean value and difference (localizer minus AD) of
-two spatially corresponding voxels in the unthresholded $z$-maps.
+Each subplot of Figure \ref{fig:bland-altman} visualizes the mean value and
+difference (localizer minus AD) of two spatially corresponding voxels in the
+unthresholded $z$-maps.
 % top KDE plot
 A shift of the distribution to voxels with a mean above zero can be seen the
 further we constrain voxels to the individual PPA (see KDE plot for the x-axis).
@@ -1666,9 +1668,10 @@ epstein1999parahippocampal}) whereas one study using spoken sentences reported
 mixed results \citep{aziz2008modulation}.
 % current study: similar
 In line with previous studies, we use here also operationalize spatial
-perception via general linear model (GLM) $t$-contrasts.
+perception via general linear model (GLM) $t$-contrasts in two naturalistic
+stimuli.
 % current study: dissimilar
-Contrary to previous studies, our current operationalization is not based on
+Contrary to previous studies, our current approach is not based on
 carefully designed sets of stimuli but based on annotated stimulus features
 incidentially occurring in an audio-visual movie and its audio-description.
 % group AV
@@ -1694,55 +1697,59 @@ the PPAs anterior part in visually impaired subjects.
 
 \subsection{PPA; AV \& AD; group \& individuals}
 
-
-\subsubsection{AV: group}
-
-\todo[inline]{AV is "intermediate step": natural but still visual; similar:
-\citep{bartels2004mapping, hasson2004intersubject} (mention here already or at
-the end of topic)}
-
-% AV stimulus
-Group results of the AV stimulus' primary contrast yielded bilateral clusters
-that span the group overlap of individual PPA ROIs from anterior to posterior.
-% difference in location/size to AD and VIS
-Clusters also expand into more posterior regions (occipital fusiform gyrus,
-lingual gyrus, and intracalcarine cortex).\todo{which of these regions do (not)
-overlap with group ROI?}
-
-\todo[inline]{bigger size of clusters is not surprising; imo still impressive
-low amount of random clusters in the brain)}
-
-% confound of higher perception
-This larger extension, especially into the primary visual cortex, can be
-attributed to the fact that we averaged the content of individual frames after a
-cut and did not control for confounding features like depicted faces or objects
-or attentional focus of subjects.
-% shortcomings
-m.a.W.: Results of the AV stimulus that we ran as a conceptual control are
-tempered by using different kind of movie cuts regardless of the visual content
-of the movie frame after the respective cuts.
-% which leads to the ``blurred'' results
-
-\todo[inline]{we exploit a confound induced by cinematography; field size
-decreases later in the movie; this is a confound based on cinematography => the
-stimulus changes over time; (ergo: man sollte sich bißchen mit Cinematographie
-auskennen und/oder stimulus annotation in model nehmen, wenn man was mit movies
-machen will)}
-
 \todo[inline]{SE: VIS vs AV vs AD: Wer liefert was über die PPA. Dieser
 Vergleich bzw. die Diskussion über Gemeinsamkeiten \& Unterschiede fehlt mir
 etwas}
 
-% summary: nevertheless
-\todo[inline]{Nevertheless, group results from analysis using more natural
-visual stimulation suggest that... (cf. \citep{bartels2004mapping,
-hasson2004intersubject})}
+\subsubsection{AV: group}
 
-\todo[inline]{approach of contrasting cuts was adventorous, annotation of speech
-suited better in the first place, and the auditory thing ist more interesting
-anyway, we did not aim for a substition of classic localizer via movie; but if
-you wanna do it, you should...:}
 
+% intro
+First, we analyzed data from the movie stimulus offering ecologically more valid
+but still visual stimulation.
+%
+An early study \citep{bartels2004mapping} that manually annotated the content
+(color, faces, language, and human bodies) of movie frames found that
+specialization of functional areas is preserved during movie watching.
+%
+Contrary to \citep{bartels2004mapping}, we categorized the frames after movie
+cuts independent of the frames' content.\todo{PPA in
+    \citep{hasson2004intersubject} but do reverse ISC}
+% hypo
+Despite this ``adventurous'' / ad hoc approach, we hypothesized that
+[confounding variables could/would average out and] our whole-brain analyses
+would lead to significant clusters in the PPA.
+% results
+Group results of the AV stimulus' primary contrast yielded a clusters that span
+the group overlap of individual PPA ROIs from anterior to posterior.
+% difference in location/size to AD and VIS
+The cluster also extends into medial regions (dorsal precuneus and dorsal
+posterior cingulate cortices), and into more posterior regions (occipital
+fusiform gyrus and intracalcarine cortex) bilaterally.
+% confound of higher perception
+The larger extension into more posterior, primary visual areas can be attributed
+to the fact that we averaged the content of individual frames after a cut and
+did not control for confounding features like depicted faces or objects or
+attentional focus of subjects.
+%
+\todo[inline]{bigger size of clusters is not surprising;  imo still impressive
+low amount of random clusters in the brain (and not one third of brain
+significant); Clusters in Bartels (2004) are actually kinda big, too;)}
+%
+Noteworthy, we here exploited a confound in the stimulus structure induced by
+cinematographic tendencies (cf. method section;
+% a)
+a) movies tend to establish the setting and the spatial relationships within a
+setting at the beginning of a movie;
+% b)
+b) the field sizes of movie shots tend to decrease when switching back to
+already established settings
+% c)
+c) shots within a recurring locale or setting tend to shift to depicting persons
+and objects \citep{brown2012cinematography, mercado2011filmmakers}.
+% interpretation
+-> concluding statement?
+% shortcomings
 Since the capability to isolate clusters or networks correlating with specific
 perceptual (or cognitive) processes is influenced by the amount of annotated
 stimulus features further studies focusing on visual perception should annotate
@@ -1754,18 +1761,33 @@ extensively annotate the content of frames (e.g. using the open-source solution
 \citep{mcnamara2017developing}) and record the subject's visual attention via
 eye-tracking.
 
+\todo[inline]{Nevertheless: that this simple approach works actually suprisingly
+well; shows that a lot of confounds average out, since we clusters are not super
+big or all over the brain (and that across contrasts)}
+
+\todo[inline]{on the other hand: movies are nice but have idiosyncrasies; so,
+maybe you should be aware of these idiosyncrasies (and control for it) in case
+you wanna use movies for research}
+
+% summary: nevertheless
+\todo[inline]{Summary: so, yes, what is the main message of this
+``cross-modal-control-movie-thing''?? cf. intro: ``works'' but clusters more
+widespread}
+
 
 \subsubsection{AD: group}
-
-\todo[inline]{since the picture of PPA is far more unclear in auditory
-domain and we have a pretty nice stimulus with a narrator and a
-pretty nice annotation, we focussed on the audio-description}
 
 \todo[inline]{Aziz: reduced activity only in left PPA, and only for famous
 places vs famous faces; I think they ran their f-test on the average of the PPA
 voxels! anyway: their analysis is complicated, yet not sophisticated}
 
-% AD stimulus
+% intro
+Second, we analyzed data from the audio-description.
+% hypothesis
+Encouraged by \citep{aziz2008modulation}, we also hypothesized that spatial
+information embedded in an exclusively auditory stimulus would correlate with
+increased hemodynamic activity in the PPA.
+% results
 Group results of the AD stimulus' primary contrast yielded spatially concise
 clusters in the anterior part of the PPA group overlap that we gained from a
 visual localizer experiment \citep{sengupta2016extension}.
@@ -1777,14 +1799,16 @@ listener).
 % conclusion
 \citep{aziz2008modulation} found significantly increased activity in only the
 left PPA and only for sentences describing famous places compared to famous
-faces. Contrary, our group results suggest that auditory spatial information
+faces.\todo{averaged across voxels in PPA/FFA defined by localizer}
+%
+Contrary, our group results suggest that auditory spatial information
 compared to non-spatial information correlates with bilaterally increased
-activation in its anterior.\todo{nice! and\dots?}
+activation in its anterior.\todo{any concluding statement?}
 
-% tasks in previous studies
+% previous studies: no task
 Usually studies that use small sets of experimentally controlled stimuli also
 employ a task to keep subjects attentive to the stimuli.
-% but epstein1998
+% but: Epstein (1998)
 Nevertheless, one early block-design study \citep{epstein1998ppa} compared
 results from a paradigm that employed a (perceptual) judgment task of static
 pictures to the same paradigm but without that task.
@@ -1795,32 +1819,33 @@ participants had no task to keep them alert and attentive to the stimuli.
 Our paradigm is similar in that sense that our participants had no behavioral or
 cognitive task (e.g. forming a mental image of the stimuli; cf.
 \citep{ocraven2000mental})  but just had to ``enjoy the audio-description''.
-% but we are still different
+% but still: we are different
 Our paradigm still differs from \citep{epstein1998ppa} because the modeled
 stimulus features were incidentally embedded in a continuous stream of auditory
-information.
+information preventing participants from making assumptions about the
+investigated perceptual process.
 % concluding statement: kinda automatic process
-The lack of a task suggests that verbal spatial information is processed in the
-anterior PPA in an automatic fashion and does not necessarily rely on
-deliberately paying attention to verbal spatial information.
-%
-Further, the incidental occurrence of modeled features prevents participants
-from making assumptions about the investigated perceptual process by just being
-exposed to the paradigm which mimics experiencing the world outside the lab more
-closely.
+Hence, current results from our paradigm also suggest that verbal spatial
+information is processed in the anterior PPA casually and does not [necessarily]
+rely on [deliberately] paying attention to verbal spatial information.
 
 
 \subsubsection{AD: individuals}
 
-\todo[inline]{how to discuss Bland-Altman-Plots???}
-
-\todo[inline]{dunno if this is meaningful: z-scores in the anterior part of
-    PPA are higher in AD contrasts than in contrast of localizer}
+\todo[inline]{how to discuss Bland-Altman-Plots???; dunno if this is meaningful:
+z-scores in the anterior part of PPA are higher in AD contrasts than in contrast
+of localizer}
 
 \todo[inline]{We hypothesize[d] that an exclusively auditory stimulus can/could
 localize the PPA in individual subjects, and thus substitute a visual experiment
 be which would be more practicable to assess brain functions in visually
 impaired persons.}
+
+%
+Since the annotation of the narrator's voice allowed us to better/cleaner/nicer
+operationalize spatial perception than the movie's annotation, we here
+hypothesized
+% AD stimulus
 
 % intro
 To test if an auditory narrative could substitute a visual localizer experiment,
