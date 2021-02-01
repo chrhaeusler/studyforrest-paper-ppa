@@ -861,15 +861,12 @@ Finally, we computed the left-right difference in volume and root mean square
 energy averaged across the length of every movie frame (\unit[40]{ms}) of both
 audio-tracks.
 
-\todo[inline]{das Verschieben des Sounds in den Segmenten spiegelt sich auch in
-den unterschiedlichen Counts der Events je Segment (s. Tabelle 1 \& 3) wider (AV
-Bild vs AV Sound vs AO Sound)}
 
 \subsection{Hemodynamic Modeling}
 
 % movie events
 The events of the movie cut related categories and \texttt{no\_cut} events were
-modeled as impulse events.\todo{box car of 200 ms starting with the cut}.
+modeled as box car events of 200 ms duration.
 %
 Nouns were modeled from onset to offset of each word, low-level confounds from
 onset to offset of the corresponding movie frame AO:
@@ -1258,9 +1255,6 @@ retrosplenial cortex.
 % LOC
 Finally, two homologous clusters are located in the superior lateral occipital
 cortex.
-% concluding statement
-\todo[inline]{any concluding statement here or merely report the clusters?}
-
 
 % figure group results primary AD & AV contrasts
 \begin{figure*}[h!] \centering
@@ -1396,7 +1390,7 @@ cluster-corrected for the analysis in subject-space; Z>3.4, p<.05 for the
 analysis in group-space).
 % subject space -> NeuroVault
 Results of the analyses that were performed in subject-space can be found in the
-accompanying dataset. \todo{Neurovault does not like unstandardized spaces}
+accompanying dataset.
 % here report in group space
 For better comparisons of subjects, we here report results from the analyses
 performed in group space.
@@ -1457,7 +1451,6 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
     \label{fig:subs-thresh-ppa}
 \end{figure*}
 
-\todo[inline]{BA-plots only shortly mentioned now}
 % Bland-Altman-Plots
 To better depict the agreement and difference between the results of the visual
 localizer and the primary AD contrast, we created a Bland-Altman-Plot for every
@@ -1497,9 +1490,6 @@ show higher $z$-value in the AD stimulus.
 % unthresholded $z$-maps of all contrasts on a group level:
 % \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
 
-\todo[inline]{I tried to keep following part concise but detailed; individual
-contrasts are given but as numbers}
-
 % AV PPA contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
 % intracalcarine, cuneal, ling.c
@@ -1523,11 +1513,8 @@ For the AD stimulus, we created overall eight $t$-contrasts (see Table
 All contrasts except contrast 7 (\texttt{se\_new}, \texttt{se\_old} >
 non-spatial categories) and contrast 8 (\texttt{se\_new} > non-spatial
 categories) yielded significant bilateral clusters in anterior regions of the
-group PPA overlap (see Figure \ref{fig:stability-slices}).
-% statement/answer
-Results suggest that our findings are robust across differently designed
-contrasts.\todo{concluding statement
-often feels like interpretation}
+group PPA overlap (see Figure \ref{fig:stability-slices}), suggesting
+a certain robustness of this result.
 
 % AD PPA contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r)
@@ -1629,10 +1616,7 @@ inferior prefrontal cortex (pars triangularis) and right ventral
 precuneus/posterior cingulate gyrus.
 % contrast 12
 Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
-one cluster in the right posterior hippocampus. \todo{definitively hippocampus,
-dorsally of PPA}
-
-
+one cluster in the right posterior hippocampus.
 
 
 \section{Discussion}
@@ -1820,7 +1804,7 @@ positions; not sure yet}
 % optimal stimulus type in vision
 In the visual domain, landscapes and not pictures of landmarks or buildings are
 considered to be the ``optimal'' stimulus type
-\citep{epstein2008parahippocampal}.\todo{a review}
+\citep{epstein2008parahippocampal}.
 % we did not choose se\_new and se\_old
 We did not include the categories that contained switches from one setting to
 another (\texttt{se\_new} and \texttt{se\_old}) which one might assume to
@@ -2143,17 +2127,7 @@ and test for correlations among variables.
 
 \subsubsection{naturalistic stimuli + data re-use, fuck yeah}
 
-lore ipsum
-
-\section{Conclusions}
-
-\todo[inline]{SE: frage ich mich das beim Durchgehen: Warum ist der Fokus so
-sehr auf Audiobook / AD, während AV doch eigentlich more natural and engaging
-ist? COH: at the moment, the discussion is not tailored to the topic
-``naturalistic stimulus as substitute to localizer'' as it is not and should not
-be the main focus}
-
-\todo[inline]{template has no section ``conclusion'' -> use the last paragraph}
+\ldots
 
 % natural stimulation
 Natural stimuli like movies \citep{eickhoff2020towards,
