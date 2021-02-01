@@ -546,7 +546,7 @@ applied using FILM (FMRIB's Improved Linear Model; \citep{woolrich2001autocorr})
 to improve estimation efficiency.
 
 
-\subsection{Event modeling}
+\subsection{Event selection}
 
 % traditionally
 Traditionally, researchers specifically design stimuli that presumably would
@@ -559,13 +559,6 @@ temporal structure of embedded stimulus features is unknown.
 % annotation ftw
 Hence, we annotated a variety of stimulus features that later served as a basis
 (for GLM regressors) to model hemodynamic responses.
-
-
-\subsubsection{Events related to high-level perception} \label{rationale}
-
-\todo[inline]{imo the subheadings for 2.6.1 and 2.6.2 can be dropped because
-2.6.2 is super short}
-
 
 % AV anno
 For the analysis of the AV stimulus, we took advantage of a previously published
@@ -854,10 +847,6 @@ fg\_ad\_rms & root mean square volume & \aoFgadrmsAll &
 \bottomrule
 \end{tabular}
 \end{table*}
-
-
-\subsubsection{Events related to low-level perception / low-level perceptual
-confounds}
 
 % low-leve confounds: intro
 Lastly, we algorithmically annotated the temporal structure of low-level
