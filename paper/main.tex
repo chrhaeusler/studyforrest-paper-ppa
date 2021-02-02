@@ -301,8 +301,6 @@ Based on these annotations, we created several general linear model (GLM)
 contrast to analyze the corresponding publicly available fMRI datasets
 (\href{http://www.studyforrest.org}{studyforrest.org}) of each naturalistic
 stimulus \citep{hanke2016simultaneous, hanke2014audiomovie}.
-% varying amount of data
-Contrasts vary in HOW WELL / HOW MUCH DATA.\todo{intro too long already}
 
 % hypo a
 We hypothesize[d] that whole-brain analyses will/would reveal increased
@@ -324,7 +322,7 @@ On a group average level,
 results demonstrate that our approach based on annotations [of two ecologically
 more valid stimuli] to operationalize spatial perception lead to increased
 hemodynamic activity in [roughly] the same brain regions the block-designed
-visual localizer.\todo{give an interpretation?}
+visual localizer.
 % anterior vs. posterior
 On both a group and individual subject level, a comparison of results from the
 three datasets also suggests functional differences between the anterior and
@@ -912,7 +910,8 @@ to previous studies that used controlled stimuli.
         loudness yielded the highest correlation values
         (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
         \texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749).
-        \todo[inline]{not all labels are actually listed in that table}
+        \todo[inline]{not all labels are actually listed in that table; which
+        ones are not listed? checked it, all labels listed}
       }
 \label{fig:reg-corr}
 \end{figure*}
@@ -999,8 +998,7 @@ event counts).
 blocks of pictures is based on one contrast for each subjects (cf. Table 3 in
 \citep{sengupta2016extension}) that was chosen post-hoc from a set of three
 contrasts (\textit{strict}, \textit{relaxed}, and \textit{simple} contrast
-\citep{sengupta2016extension}).\todo{maybe add note regarding Berman (2010); but
-they did FFA}
+\citep{sengupta2016extension}).
 % thus: primary contrasts
 Here, we chose one contrast to be ``primary contrast'' for later detailed
 inspection and report.
@@ -1059,8 +1057,6 @@ correlated with moments of cuts as cuts might possibly be correlated with a
 change of the soundscape also giving an auditory hint of switching to another
 setting.
 
-\todo[inline]{nouns indicating switch to setting  and cuts to other setting are
-"somewhat" correlated; cf. results -> discussion, part "random shower thoughts"}
 
 \begin{table*}[h!]
 \caption{Contrasts of parameter estimates for the analysis of the
@@ -1173,9 +1169,6 @@ of individual PPA overlaps were created from data provided by
 \section{Results}
 \todo[inline]{1400 words}
 
-\todo[inline]{SE: VIS wird selbst gar nicht/en passant berichtet, wäre aber
-wichtig zum Andocken an Literatur}
-
 \todo[inline]{SE: in Figure weiter reinoomen; bei FFA/PPA etc sind
 flatmaps/inflated brains standard; COH: imo it is important that we do not have
 clusters all over the brain}
@@ -1188,18 +1181,9 @@ this figure is my end game boss}
 PPA für die verschiedenen regressoren bzw. kategorien derselben (zumindest aber
 places vs faces) aus? COH: ???}
 
-\todo[inline]{individual results: AD trifft besser die VIS-PPA "trifft" als AV.
-    Das ist zumindest sehr überraschend, oder?; COH: actually it isn't because
-    of blindly averaging the actual frame content in the categories of movie
-    cuts (cf. methods/regressors, discussion/shortcomings)}
-
-\todo[inline]{Bland-Altman-Plots: Welche Areale habt ihr als masks
-genommen, FFA ist ja kartiert (Julia Caspers)}
-
 % study goal
-The goal of this study was to investigate if annotated hints about the spatial
-layout embedded in two naturalistic stimuli correlate with increased hemodynamic
-activity in the PPA.
+We investigated if spatial information embedded in two naturalistic stimuli
+correlate with increased hemodynamic activity in the PPA.
 % group level
 On a group average level, we compare results gained from whole-brain GLM
 analyses of the movie and the audio-description (Z>3.4; p<.05, cluster
@@ -1208,13 +1192,12 @@ corrected) to results gained from a traditional visual localizer
 % individual level
 On the level single subjects (Z>3.4; p<.05, cluster corrected), we also assess
 the performance of the exclusively auditory naturalistic stimulus as a
-substitute for a visual paradigm to "localize" [?] the PPA.
+substitute for a visual paradigm to localize the PPA.
 % NeuroVault
 Unthresholded $z$-maps of all contrasts on a group level as well as individual
-results of the primary $t$-contrasts co-registered to the group-template (MNI152 space) can found at
-\href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.  \todo{private
-collection}
-
+results of the primary $t$-contrasts co-registered to the group-template (MNI152
+space) can found at
+\href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
 
 \subsection{Primary contrasts}
 
@@ -1229,11 +1212,11 @@ yielded three significant clusters (see Table \ref{tab:res-av-group1}, Figure
 % PPA (others the clusters extend into).
 One cluster spans across the midline and comprises parts of the intracalcarine
 and cuneal cortex, the lingual gyrus and retrosplenial cortex, the occipital and
-temporal fusiform gyrus and the parahippocampal cortex (reported from posterior
+temporal fusiform gyrus, and the parahippocampal cortex (reported from posterior
 to anterior) in both hemispheres.
 % LOC
 Two additional homologous clusters are located in the superior lateral occipital
-cortex (left bigger than right).
+cortex.
 
 % AD intro
 Second, we analyzed data from the audio-description offering exclusively
@@ -1244,7 +1227,7 @@ non-spatial noun categories) yielded six significant clusters (see Table
 \ref{tab:res-ao-group1}, Figure \ref{fig:group-slices}).
 % overlap with ROI
 Two homologous clusters are located in the anterior part of the PPA group
-overlap that we gained from the visual localizer experiment.
+overlap..
 % in detail
 Specifically, these clusters are located at the borders of the posterior
 parahippocampal cortex, the occipital and temporal fusiform gyrus and lingual
@@ -1354,35 +1337,22 @@ Third, we investigated result from both naturalistic paradigms on the level of
 individual subjects to ensure that the group results are not just a by-product
 of the averaging process.
 % AD is the real shit
-Focussing on the AD stimulus, we hypothesize[d] that an exclusively auditory
-stimulus can/could localize the PPA in individual subjects and thus
-possibly substitute a visual paradigm [using blocks of pictures].
+Furtherm, we hypothesized that an exclusively auditory
+stimulus could localize the PPA in individual subjects and thus
+possibly substitute a classic visual localizer experiment.
 
-\todo[inline]{if we report procedure of Sengupta as detailed as it is now in the
-following paragraph (imo it's too long), we probably need to explain the
-differences between strict, relaxed, simple set in more detail in the method
-section}
+\todo[inline]{part regarding Sengupta is shortened; they used $t$-maps???}
 % Sengupta et al., 2016
 The visual localizer experiment \citep{sengupta2016extension} yielded bilateral
 [parahippocampal] clusters in 12 of 14 subjects and an unilateral right clusters
 in two subjects (sub-04, sub-20).
 % Sengupta: 1 of 3
-Individual PPAs were assessed by visually inspecting thresholded $z$-maps
-(Z>1.64, p<.05 cluster corrected) of three different $t$-contrasts
-(\textit{strict}, \textit{relaxed}, and \textit{simple} stimulus set, cf.
-\citep{sengupta2016extension}).
-% procedure a)
-Starting with the most conservative contrast (\textit{strict} set) and a
-threshold of t = 2.5, we looked for clusters with at least 20 voxels (using
-AFNI).
-% procedure b)
-We titrated [?] the threshold in the range of [2, 3] until we found an isolated
-cluster for the PPA.
-% Sengupta: procedure b)
-If a cluster was not found or not isolated, we used a contrast from the
-\textit{relaxed} set, or finally the \textit{simple} \todo{not used in any VP
-for PPA}set, and repeated the process until we found a cluster that matched the
-expected anatomical location based on literature \citep{epstein1998ppa}.
+Individual PPAs were assessed by titrating [?] the $t$-threshold in the range
+of [2, 3] in the thresholded $t$-maps (Z>1.64, p<.05 cluster corrected) of three
+different $t$-contrasts (\textit{strict}, \textit{relaxed}, and \textit{simple}
+stimulus set cf.  \citep{sengupta2016extension}) until we found an isolated
+cluster that matched the expected anatomical location based on literature
+\citep{epstein1998ppa}.
 
 % one contrast to localize them all; "...and Z>3.4 for all"
 Contrary to \citep{sengupta2016extension}, we used the same contrast of each
@@ -1892,6 +1862,19 @@ spatial perception.
 
 \subsubsection{PPA}
 
+\begin{comment}
+    the mother of total confusion: Aminoff shifts the PPA along the
+    anterior-poster axis depending on publication;
+    in Aminoff (2007, 2013):
+    anterior PPA = spatial associations,
+    region anterior to (!) PPA = non-spatial associations;
+    in Aminoff (2015):
+    posterior PPA = spatial associations,
+    anterior PPA = non-spatial associations;
+    hence: complete bullshit;
+    ignore Aminoff (2015) due to various reasons
+\end{comment}
+
 % PPA AV
 Regarding contrasts of the AV stimulus (see Table \ref{tab:av-contrasts}), all
 five AV contrasts show significant bilateral clusters in the PPA but also
@@ -1916,16 +1899,7 @@ Hence, investigators that use model-driven analyses have to consider how many
 events a naturalistic stimulus may provide and how homogeneous the events to be
 averaged might be.
 
-\todo[inline]{the mother of total confusion: Aminoff shifts the PPA along the
-    anterior-poster axis depending on publication;
-    in Aminoff (2007, 2013):
-    anterior PPA = spatial associations,
-    region anterior to (!) PPA = non-spatial associations;
-    in Aminoff (2015):
-    posterior PPA = spatial associations,
-    anterior PPA = non-spatial associations;
-    hence: complete bullshit;
-    ignore Aminoff (2015) due to various reasons}
+
 
 % anterior vs posterior pattern
 In contrasts 1 to 6 of the AD stimulus, we find consistently significant
