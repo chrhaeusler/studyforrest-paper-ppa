@@ -1167,7 +1167,7 @@ of individual PPA overlaps were created from data provided by
 
 
 \section{Results}
-\todo[inline]{1400 words}
+\todo[inline]{800 words}
 
 \todo[inline]{SE: in Figure weiter reinoomen; bei FFA/PPA etc sind
 flatmaps/inflated brains standard; COH: imo it is important that we do not have
@@ -1198,8 +1198,6 @@ Unthresholded $z$-maps of all contrasts on a group level as well as individual
 results of the primary $t$-contrasts co-registered to the group-template (MNI152
 space) can found at
 \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
-
-\subsection{Primary contrasts}
 
 % AV intro
 First, we analyzed data from the movie offering a visual but ecologically more
@@ -1456,143 +1454,10 @@ show higher $z$-value in the AD stimulus.
 \end{figure*}
 
 
-\subsection{Robustness of group results across contrasts}
-
-% unthresholded $z$-maps of all contrasts on a group level:
-% \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
-
-% AV PPA contrasts
-% 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
-% intracalcarine, cuneal, ling.c
-% 2 PPA (l/r); RSC (-/-), LOC (l/r), VisC (-/-)
-% 3 PPA (l/r); RSC (-/-), LOC (-/-), VisC (-/r), occ. fusisf. g.
-% 4 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), lingual g., occ. fusif. g.
-% 5 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), occ. fusif. g.
-
-% AV
-In order to test the robustness of our findings, we created four additional
-$t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}) to be
-investigated on a group level.
-% results: PPA; biggest overlap in posterior part of PPA group overlap  =
-%temporal occipital fusiform cortex
-All of the overall five AV contrasts yielded significant bilateral clusters that
-overlap with the PPA group overlap (see Figure \ref{fig:stability-slices}).
-% AD
-For the AD stimulus, we created overall eight $t$-contrasts (see Table
-\ref{tab:ao-contrasts}).
-% results
-All contrasts except contrast 7 (\texttt{se\_new}, \texttt{se\_old} >
-non-spatial categories) and contrast 8 (\texttt{se\_new} > non-spatial
-categories) yielded significant bilateral clusters in anterior regions of the
-group PPA overlap (see Figure \ref{fig:stability-slices}), suggesting
-a certain robustness of this result.
-
-% AD PPA contrasts
-% 1 PPA (l/r); RSC (l/r), LOC (l/r)
-% 2 PPA (l/r); RSC (l/r), LOC (l/r), r. sup.temp.C., r.fr.pole; putamen; etc
-% 3 PPA (l/r); RSC (l/r), LOC (l/r),l&r sup.temp.C., anterior cing., paracing.
-% 4 PPA (l/r); RSC (l/r), LOC (l/r)
-% 5 PPA (l/r); RSC (l/r), LOC (-/-)
-% 6 PPA (l/r); RSC (l/r), LOC (l/-), l&r sup.temp.C.; medial pref. c., precun
-% 7 PPA (-/-); RSC (l/r), LOC (l/-), l&r sup.temp.C.; left frontal pole
-% 8 PPA (-/-); RSC (-/-), LOC (-/-)
-
-% AD
-Reliably across the five contrasts of the AV stimulus, we find bilaterally
-significant clusters also in the ventral precuneal cortex and posterior
-cingulate gyrus (i.e. restrosplenial region; contrasts 1, 4, 5) and lateral
-occipital cortex (contrasts 1, 2, 4, 5).
-% AD; LOC: AV cluster are more medial, AD clusters are more lateral
-Across the five contrasts of the AD stimulus, we find bilaterally
-significant clusters in the ventral precuneus (all except contrasts 8), lateral
-occipital cortex (bilateral in contrasts 1 to 4; unilateral in contrasts 6 and
-7), and superior temporal cortices (bilateral in contrasts 3, 6, 7; unilateral
-right in contrast 2).
-
-% non-systematic
-Lastly, some contrasts of the AD stimulus yielded signficant clusters in regions
-that were not statistically signficant in three or more contrasts.
-%
-Contrast 2 yielded clusters in the anterior cingulate gyrus
-(bilateral), right frontal pole, right frontal medial cortex, and right
-putamen.
-%
-Contrast 3 shows clusters in the anterior cingulate gyrus (bilateral), left
-frontal pole, and left insular.
-%
-Contrast 7 shows clusters in the left frontal pole and left frontal operculum
-[border to triangularis], left insular.
-%
-Contrast 6 shows one additional cluster in the right medial frontal cortex.
-
-
-\begin{figure*}[h!]
-\centering
-    \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption{Overlap of significant clusters (Z>3.4; p<.05, cluster corrected)
-        The audio-description's contrasts 1-8 (blue; \ref{tab:ao-contrasts})
-        are overlaid over the audio-visual movie's contrasts 1-5 (red;
-        \ref{tab:av-contrasts}).
-        Cluster are overlaid on top of the MNI152 T1-weighted head template
-        (gray).
-        Black: outline of overlapping individual PPA ROIs.
-        Light gray: The audio-description's field-of-view (cf.
-        \citep{hanke2014audiomovie}).
-        The figure shows that some contrasts yielded significant clusters
-        also in the lateral temporal and prefrontal cortex.
-        }
-    \label{fig:stability-slices}
-\end{figure*}
-
-
-\subsection{control contrasts}
-
-% ---------- AV control contrasts ----------
-% 6 nothing
-% 7 nothing
-% 8 nothing
-% 9 nothing
-%10 se_new > se_old (nouns but in AV stimulus):
-% LOC (l/r) right PPA, bilateral sup. lat. occ. c., sup. parietal lobe (right)
-
-% ---------- AD control contrasts ----------
-% 9 PPA (-/-); RSC (-/r), LOC (-/-), left pars triangularis
-%10 PPA (-/-); RSC (-/-), LOC (-/-)
-%11 PPA (-/-); RSC (-/-), LOC (-/-),
-%12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
-%13 PPA (-/-); RSC (-/-), LOC (-/-)
-
-\todo[inline]{there is no table/figure for negative control contrasts; we could
-add a reference to NeuroVault (here again) or point to the dataset}
-
-% intro
-Lastly, we implemented five contrasts for every stimulus for the purpose of
-negative control.
-% AV: no_cut > x
-In the analysis of the AV data, none of the contrasts that compared the ``no cut
-condition''  to a movie cut category (contrasts 6, 7, 8, 9) yielded significant
-clusters.
-% AV using nouns
-The contrast that used the narrator's nouns but in the AV stimulus
-(\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
-PPA and bilateral clusters in the superior lateral occipital cortices (the right
-hemispheric cluster extending into the superior parietal cortex).
-
-% AD stimulus
-In the analysis of the AD data, we created control contrasts based on events of
-the annotated movie cuts (cf. Table \ref{tab:ao-contrasts})
-% contrast 9
-Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
-inferior prefrontal cortex (pars triangularis) and right ventral
-precuneus/posterior cingulate gyrus.
-% contrast 12
-Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
-one cluster in the right posterior hippocampus.
-
 
 \section{Discussion}
 
-\todo[inline]{2500 chars}
+\todo[inline]{1700 words}
 % Discussion: explains how results fill gap identified in intro
 
 % typically done by recapitulating the results, discussing limitations, and then
@@ -1844,7 +1709,303 @@ regarding individual differences?  Differences in alertness, attention to
 spatial information, predisposition?  ``capability'' to process auditory spatial
 information?}
 
-\subsection{Robust results across contrasts}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%
+%%%
+
+\subsubsection{not many random cluster + naturalistic stimuli are cool}
+
+% ``confounding'' clusters
+Despite performing a whole brain analysis, we do not find many [random] clusters
+in single contrasts or even systematically across contrasts that hamper the
+interpretation of results.\todo{ouff\dots}
+% AV: null results regarding attention and eye movements
+For example in the AV results, we do not find significant clusters that could be
+attributed to cognitive processes like attention or eye movements.
+% AD: auditory cortices
+Nevertheless, contrasts of the AD stimulus that compare (among others) verbal
+hints of the change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all
+non-spatial categories (cf. contrasts 2, 3, 6, 7) show significant clusters in
+(primary and secondary) auditory cortices.
+% averaging vs. nuisance regressors
+This suggests that variance correlating with lower level auditory processes was
+not averaged out across trials and nuisance regressors did not capture enough
+variance.\todo{ouf\dots}
+% possible reason
+Significant clusters in auditory cortices could be correlating with a possible
+change of the soundscape when the narrator of the audio-description (or a cut in
+the movie) switches to a another setting.
+% concluding statement
+Thus, investigators that use model-driven methods to investigate brain functions
+using naturalistic stimuli should (extensively) annotate the stimulus material
+and test for correlations among variables.
+
+
+\subsubsection{naturalistic stimuli + data re-use, fuck yeah}
+
+\ldots
+
+% natural stimulation
+Natural stimuli like movies \citep{eickhoff2020towards,
+hasson2008neurocinematics, sonkusare2019naturalistic} or narratives
+\citep{hamilton2018revolution, honey2012not, lerner2011topographic,
+silbert2014coupled, wilson2008beyond} offer an easy to implement, (continuous,)
+complex, immersive, task-free paradigm that more closely resembles our natural
+dynamic environment than traditional experimental designs.
+
+\begin{itemize}
+\item We reuse public data for independent research question
+\item GLM based on annotations to operationalize ``spatial perception''
+\item Our results add evidence that model-driven analyses based in annotations
+can be run on data from naturalistic stimuli to ``localize'' brain activity
+correlating with specific perceptual processes.
+\item ``localization performance'' relies on how well the model captures
+different aspects of the stimuli's feature space.
+\item PPA is functionally heterogeneous region
+\item a complex but naturally engaging auditory stimulus like an
+audiobook might in principle be used as a non-visual localizer for a variety of
+brain functions in subjects who are not willing or able to follow task
+instructions during brain scanning [would state that explicitly in the summary
+at the end].
+\end{itemize}
+
+% \citep{hanke2014audiomovie}: the AD stimulus leaves a much larger margin for
+% inter-individual differences in imagining scenery. The AD stimulus limits the
+% effect of an attentional focus on the selection of a subset of simultaneously
+% occurring auditory events, in contrast to the selection of different parts of
+% the visual field.
+
+
+\subsection*{Code availability}
+% wo kommt dieser Abschnitt hin?  how to write Code availability statement
+% https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880
+\todo[inline]{provide supporting source code, and explaining how and where
+others may access all data underlying the analysis} \emph{for all studies using
+    custom code in the generation or processing of datasets, a statement must be
+    included here, indicating whether and how the code can be accessed,
+including any restrictions to access; include information on the versions of any
+software used, if relevant, and any specific variables or parameters used to
+generate, test, or process the current dataset. }
+
+\section*{Acknowledgements}
+% Text acknowledging non-author contributors. Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
+% Author contributions Please describe briefly the contributions of each author to this work on a separate line.
+\emph{COH did this and that.
+MH did this and that.
+We are grateful to \href{www.florianschurz.de}{Florian Schurz} who initiated doing the annotation of the descriptive nouns, and performed the preliminary annotation of nouns.}
+
+\section*{Competing financial interests}
+\emph{A competing financial interests statement is required for all accepted
+papers published in \emph{Scientific Data}. If none exist simply write,
+``The author(s) declare no competing financial interests''.}
+
+\section*{Figures Legends}
+\emph{Figure should be referred to using a consistent numbering scheme through
+the entire Data Descriptor. For initial submissions, authors may choose
+to supply this document as a single PDF with embedded figures, but
+separate figure image files must be provided for revisions and accepted
+manuscripts. In most cases, a Data Descriptor should not contain more
+than three figures, but more may be allowed when needed. We discourage
+the inclusion of figures in the Supplementary Information \textendash{}
+all key figures should be included here in the main Figure section.}
+
+\emph{Figure legends begin with a brief title sentence for the whole figure
+and continue with a short description of what is shown in each panel,
+as well as explaining any symbols used. Legend must total no more
+than 350 words, and may contain literature references.}
+
+\section*{Tables}
+
+\emph{Tables supporting the Data Descriptor. These can provide summary information
+(sample numbers, demographics, etc.), but they should generally not
+be used to present primary data (i.e. measurements). Tables containing
+primary data should be submitted to an appropriate data repository.}
+
+\emph{Tables may be provided within the \LaTeX{} document or as separate
+files (tab-delimited text or Excel files). Legends, where needed,
+should be included here. Generally, a Data Descriptor should have
+fewer than ten Tables, but more may be allowed when needed. Tables
+may be of any size, but only Tables which fit onto a single printed
+page will be included in the PDF version of the article (up to a maximum
+of three).}
+
+{\small\bibliographystyle{unsrtnat}
+\bibliography{references}}
+
+%\begin{thebibliography}{1}
+%\expandafter\ifx\csname url\endcsname\relax
+%  \def\url#1{\texttt{#1}}\fi
+%\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+%\providecommand{\bibinfo}[2]{#2}
+%\providecommand{\eprint}[2][]{\url{#2}}
+%
+%\bibitem{cite1}
+%\bibinfo{author}{Califano, A.}, \bibinfo{author}{Butte, A.~J.},
+%  \bibinfo{author}{Friend, S.}, \bibinfo{author}{Ideker, T.} \&
+%  \bibinfo{author}{Schadt, E.}
+%\newblock \bibinfo{title}{{Leveraging models of cell regulation and GWAS data
+%  in integrative network-based association studies}}.
+%\newblock \emph{\bibinfo{journal}{Nature Genetics}}
+%  \textbf{\bibinfo{volume}{44}}, \bibinfo{pages}{841--847}
+%  (\bibinfo{year}{2012}).
+%
+%\bibitem{cite2}
+%\bibinfo{author}{Wang, R.} \emph{et~al.}
+%\newblock \bibinfo{title}{{PRIDE Inspector: a tool to visualize and validate MS
+%  proteomics data.}}
+%\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
+%  \textbf{\bibinfo{volume}{30}}, \bibinfo{pages}{135--137}
+%  (\bibinfo{year}{2012}).
+%\end{thebibliography}
+
+\section{Data Citations}
+
+Bibliographic information for the data records described in the manuscript.
+
+1. Lastname1, Initial1., Lastname2, Initial2., ...\& LastnameN, InitialN. \emph{Repository name} Dataset accession number or DOI (YYYY).
+
+\appendix
+
+\section{Supplementary Materials}
+
+\subsection{Robustness of group results across contrasts}
+
+% unthresholded $z$-maps of all contrasts on a group level:
+% \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
+
+% AV PPA contrasts
+% 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
+% intracalcarine, cuneal, ling.c
+% 2 PPA (l/r); RSC (-/-), LOC (l/r), VisC (-/-)
+% 3 PPA (l/r); RSC (-/-), LOC (-/-), VisC (-/r), occ. fusisf. g.
+% 4 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), lingual g., occ. fusif. g.
+% 5 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), occ. fusif. g.
+
+% AV
+In order to test the robustness of our findings, we created four additional
+$t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}) to be
+investigated on a group level.
+% results: PPA; biggest overlap in posterior part of PPA group overlap  =
+%temporal occipital fusiform cortex
+All of the overall five AV contrasts yielded significant bilateral clusters that
+overlap with the PPA group overlap (see Figure \ref{fig:stability-slices}).
+% AD
+For the AD stimulus, we created overall eight $t$-contrasts (see Table
+\ref{tab:ao-contrasts}).
+% results
+All contrasts except contrast 7 (\texttt{se\_new}, \texttt{se\_old} >
+non-spatial categories) and contrast 8 (\texttt{se\_new} > non-spatial
+categories) yielded significant bilateral clusters in anterior regions of the
+group PPA overlap (see Figure \ref{fig:stability-slices}), suggesting
+a certain robustness of this result.
+
+% AD PPA contrasts
+% 1 PPA (l/r); RSC (l/r), LOC (l/r)
+% 2 PPA (l/r); RSC (l/r), LOC (l/r), r. sup.temp.C., r.fr.pole; putamen; etc
+% 3 PPA (l/r); RSC (l/r), LOC (l/r),l&r sup.temp.C., anterior cing., paracing.
+% 4 PPA (l/r); RSC (l/r), LOC (l/r)
+% 5 PPA (l/r); RSC (l/r), LOC (-/-)
+% 6 PPA (l/r); RSC (l/r), LOC (l/-), l&r sup.temp.C.; medial pref. c., precun
+% 7 PPA (-/-); RSC (l/r), LOC (l/-), l&r sup.temp.C.; left frontal pole
+% 8 PPA (-/-); RSC (-/-), LOC (-/-)
+
+% AD
+Reliably across the five contrasts of the AV stimulus, we find bilaterally
+significant clusters also in the ventral precuneal cortex and posterior
+cingulate gyrus (i.e. restrosplenial region; contrasts 1, 4, 5) and lateral
+occipital cortex (contrasts 1, 2, 4, 5).
+% AD; LOC: AV cluster are more medial, AD clusters are more lateral
+Across the five contrasts of the AD stimulus, we find bilaterally
+significant clusters in the ventral precuneus (all except contrasts 8), lateral
+occipital cortex (bilateral in contrasts 1 to 4; unilateral in contrasts 6 and
+7), and superior temporal cortices (bilateral in contrasts 3, 6, 7; unilateral
+right in contrast 2).
+
+% non-systematic
+Lastly, some contrasts of the AD stimulus yielded signficant clusters in regions
+that were not statistically signficant in three or more contrasts.
+%
+Contrast 2 yielded clusters in the anterior cingulate gyrus
+(bilateral), right frontal pole, right frontal medial cortex, and right
+putamen.
+%
+Contrast 3 shows clusters in the anterior cingulate gyrus (bilateral), left
+frontal pole, and left insular.
+%
+Contrast 7 shows clusters in the left frontal pole and left frontal operculum
+[border to triangularis], left insular.
+%
+Contrast 6 shows one additional cluster in the right medial frontal cortex.
+
+
+\begin{figure*}[h!]
+\centering
+    \includegraphics[width=\linewidth]{figures/stability-slices}
+    \caption{Overlap of significant clusters (Z>3.4; p<.05, cluster corrected)
+        The audio-description's contrasts 1-8 (blue; \ref{tab:ao-contrasts})
+        are overlaid over the audio-visual movie's contrasts 1-5 (red;
+        \ref{tab:av-contrasts}).
+        Cluster are overlaid on top of the MNI152 T1-weighted head template
+        (gray).
+        Black: outline of overlapping individual PPA ROIs.
+        Light gray: The audio-description's field-of-view (cf.
+        \citep{hanke2014audiomovie}).
+        The figure shows that some contrasts yielded significant clusters
+        also in the lateral temporal and prefrontal cortex.
+        }
+    \label{fig:stability-slices}
+\end{figure*}
+
+
+\subsection{control contrasts}
+
+% ---------- AV control contrasts ----------
+% 6 nothing
+% 7 nothing
+% 8 nothing
+% 9 nothing
+%10 se_new > se_old (nouns but in AV stimulus):
+% LOC (l/r) right PPA, bilateral sup. lat. occ. c., sup. parietal lobe (right)
+
+% ---------- AD control contrasts ----------
+% 9 PPA (-/-); RSC (-/r), LOC (-/-), left pars triangularis
+%10 PPA (-/-); RSC (-/-), LOC (-/-)
+%11 PPA (-/-); RSC (-/-), LOC (-/-),
+%12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
+%13 PPA (-/-); RSC (-/-), LOC (-/-)
+
+\todo[inline]{there is no table/figure for negative control contrasts; we could
+add a reference to NeuroVault (here again) or point to the dataset}
+
+% intro
+Lastly, we implemented five contrasts for every stimulus for the purpose of
+negative control.
+% AV: no_cut > x
+In the analysis of the AV data, none of the contrasts that compared the ``no cut
+condition''  to a movie cut category (contrasts 6, 7, 8, 9) yielded significant
+clusters.
+% AV using nouns
+The contrast that used the narrator's nouns but in the AV stimulus
+(\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
+PPA and bilateral clusters in the superior lateral occipital cortices (the right
+hemispheric cluster extending into the superior parietal cortex).
+
+% AD stimulus
+In the analysis of the AD data, we created control contrasts based on events of
+the annotated movie cuts (cf. Table \ref{tab:ao-contrasts})
+% contrast 9
+Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
+inferior prefrontal cortex (pars triangularis) and right ventral
+precuneus/posterior cingulate gyrus.
+% contrast 12
+Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
+one cluster in the right posterior hippocampus.
+
+
+\subsection{Discussion: Robust results across contrasts}
 
 \todo[inline]{SE: Bei Ergebnissen \& Diskussionen zu Stability fehlt mir
 irgendwie immer der Kontext, wie sich die Kontraste denn unterschieden haben und
@@ -2073,156 +2234,6 @@ hippocampus.
 that}
 
 
-\subsubsection{not many random cluster + naturalistic stimuli are cool}
-
-% ``confounding'' clusters
-Despite performing a whole brain analysis, we do not find many [random] clusters
-in single contrasts or even systematically across contrasts that hamper the
-interpretation of results.\todo{ouff\dots}
-% AV: null results regarding attention and eye movements
-For example in the AV results, we do not find significant clusters that could be
-attributed to cognitive processes like attention or eye movements.
-% AD: auditory cortices
-Nevertheless, contrasts of the AD stimulus that compare (among others) verbal
-hints of the change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all
-non-spatial categories (cf. contrasts 2, 3, 6, 7) show significant clusters in
-(primary and secondary) auditory cortices.
-% averaging vs. nuisance regressors
-This suggests that variance correlating with lower level auditory processes was
-not averaged out across trials and nuisance regressors did not capture enough
-variance.\todo{ouf\dots}
-% possible reason
-Significant clusters in auditory cortices could be correlating with a possible
-change of the soundscape when the narrator of the audio-description (or a cut in
-the movie) switches to a another setting.
-% concluding statement
-Thus, investigators that use model-driven methods to investigate brain functions
-using naturalistic stimuli should (extensively) annotate the stimulus material
-and test for correlations among variables.
-
-
-\subsubsection{naturalistic stimuli + data re-use, fuck yeah}
-
-\ldots
-
-% natural stimulation
-Natural stimuli like movies \citep{eickhoff2020towards,
-hasson2008neurocinematics, sonkusare2019naturalistic} or narratives
-\citep{hamilton2018revolution, honey2012not, lerner2011topographic,
-silbert2014coupled, wilson2008beyond} offer an easy to implement, (continuous,)
-complex, immersive, task-free paradigm that more closely resembles our natural
-dynamic environment than traditional experimental designs.
-
-\begin{itemize}
-\item We reuse public data for independent research question
-\item GLM based on annotations to operationalize ``spatial perception''
-\item Our results add evidence that model-driven analyses based in annotations
-can be run on data from naturalistic stimuli to ``localize'' brain activity
-correlating with specific perceptual processes.
-\item ``localization performance'' relies on how well the model captures
-different aspects of the stimuli's feature space.
-\item PPA is functionally heterogeneous region
-\item a complex but naturally engaging auditory stimulus like an
-audiobook might in principle be used as a non-visual localizer for a variety of
-brain functions in subjects who are not willing or able to follow task
-instructions during brain scanning [would state that explicitly in the summary
-at the end].
-\end{itemize}
-
-% \citep{hanke2014audiomovie}: the AD stimulus leaves a much larger margin for
-% inter-individual differences in imagining scenery. The AD stimulus limits the
-% effect of an attentional focus on the selection of a subset of simultaneously
-% occurring auditory events, in contrast to the selection of different parts of
-% the visual field.
-
-
-\subsection*{Code availability}
-% wo kommt dieser Abschnitt hin?  how to write Code availability statement
-% https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880
-\todo[inline]{provide supporting source code, and explaining how and where
-others may access all data underlying the analysis} \emph{for all studies using
-    custom code in the generation or processing of datasets, a statement must be
-    included here, indicating whether and how the code can be accessed,
-including any restrictions to access; include information on the versions of any
-software used, if relevant, and any specific variables or parameters used to
-generate, test, or process the current dataset. }
-
-\section*{Acknowledgements}
-% Text acknowledging non-author contributors. Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
-% Author contributions Please describe briefly the contributions of each author to this work on a separate line.
-\emph{COH did this and that.
-MH did this and that.
-We are grateful to \href{www.florianschurz.de}{Florian Schurz} who initiated doing the annotation of the descriptive nouns, and performed the preliminary annotation of nouns.}
-
-\section*{Competing financial interests}
-\emph{A competing financial interests statement is required for all accepted
-papers published in \emph{Scientific Data}. If none exist simply write,
-``The author(s) declare no competing financial interests''.}
-
-\section*{Figures Legends}
-\emph{Figure should be referred to using a consistent numbering scheme through
-the entire Data Descriptor. For initial submissions, authors may choose
-to supply this document as a single PDF with embedded figures, but
-separate figure image files must be provided for revisions and accepted
-manuscripts. In most cases, a Data Descriptor should not contain more
-than three figures, but more may be allowed when needed. We discourage
-the inclusion of figures in the Supplementary Information \textendash{}
-all key figures should be included here in the main Figure section.}
-
-\emph{Figure legends begin with a brief title sentence for the whole figure
-and continue with a short description of what is shown in each panel,
-as well as explaining any symbols used. Legend must total no more
-than 350 words, and may contain literature references.}
-
-\section*{Tables}
-
-\emph{Tables supporting the Data Descriptor. These can provide summary information
-(sample numbers, demographics, etc.), but they should generally not
-be used to present primary data (i.e. measurements). Tables containing
-primary data should be submitted to an appropriate data repository.}
-
-\emph{Tables may be provided within the \LaTeX{} document or as separate
-files (tab-delimited text or Excel files). Legends, where needed,
-should be included here. Generally, a Data Descriptor should have
-fewer than ten Tables, but more may be allowed when needed. Tables
-may be of any size, but only Tables which fit onto a single printed
-page will be included in the PDF version of the article (up to a maximum
-of three).}
-
-{\small\bibliographystyle{unsrtnat}
-\bibliography{references}}
-
-%\begin{thebibliography}{1}
-%\expandafter\ifx\csname url\endcsname\relax
-%  \def\url#1{\texttt{#1}}\fi
-%\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-%\providecommand{\bibinfo}[2]{#2}
-%\providecommand{\eprint}[2][]{\url{#2}}
-%
-%\bibitem{cite1}
-%\bibinfo{author}{Califano, A.}, \bibinfo{author}{Butte, A.~J.},
-%  \bibinfo{author}{Friend, S.}, \bibinfo{author}{Ideker, T.} \&
-%  \bibinfo{author}{Schadt, E.}
-%\newblock \bibinfo{title}{{Leveraging models of cell regulation and GWAS data
-%  in integrative network-based association studies}}.
-%\newblock \emph{\bibinfo{journal}{Nature Genetics}}
-%  \textbf{\bibinfo{volume}{44}}, \bibinfo{pages}{841--847}
-%  (\bibinfo{year}{2012}).
-%
-%\bibitem{cite2}
-%\bibinfo{author}{Wang, R.} \emph{et~al.}
-%\newblock \bibinfo{title}{{PRIDE Inspector: a tool to visualize and validate MS
-%  proteomics data.}}
-%\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
-%  \textbf{\bibinfo{volume}{30}}, \bibinfo{pages}{135--137}
-%  (\bibinfo{year}{2012}).
-%\end{thebibliography}
-
-\section*{Data Citations}
-
-Bibliographic information for the data records described in the manuscript.
-
-1. Lastname1, Initial1., Lastname2, Initial2., ...\& LastnameN, InitialN. \emph{Repository name} Dataset accession number or DOI (YYYY).
 
 \end{document}
 \documentclass[english]{article}
