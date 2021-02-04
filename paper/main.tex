@@ -126,12 +126,6 @@ narrative, studyforrest
         ask Alex
 \end{itemize}
 
-\noindent Intro:
-
-\begin{itemize}
-    \item make more concise if applicable
-\end{itemize}
-
 
 \noindent Method:
 
@@ -144,9 +138,6 @@ narrative, studyforrest
 \noindent Results
 
 \begin{itemize}
-    \item how much details regarding procedure in Sengupta?
-    \item ggf. berichten welcher VIS Kontraste jeweils genommen wurde
-    \item results allg. kürzen (war nicht ganz einfach)
     \item check if captions of figs and tables now (really) match phrasing
         in intro / method
     \item Simons Kommentare, bei denen ich mitunter anderer Meinung bin
@@ -156,11 +147,9 @@ narrative, studyforrest
 
 \noindent Discussion
 \begin{itemize}
-    \item Discussion is restructured \& most paragraphs adopted to new structure
     \item as Simon stated I would be interesting to discuss differences between
         contrasts (and make wild assumptions) but this will exceed the word
     limit by far
-    \item mehr zum Thema VIS? ("best contrast was chosen")
     \item overall conclusion as a last paragraph or independent section
 \end{itemize}
 
@@ -542,12 +531,11 @@ Traditionally, researchers specifically design stimuli that presumably would
 trigger the perceptual process of interest while also controlling confounding
 variables (e.g. color, luminance).
 % our approach: annotation and regressors
-Naturalistic stimuli [might] more closely mimic how we experience the world
-around us but have the drawback that they are usually fix and that their
-temporal structure of embedded stimulus features is unknown.
+Naturalistic stimuli mimic how we experience the world more closely but have the
+drawback that they are usually fix and that their temporal structure is unknown.
 % annotation ftw
-Hence, we annotated a variety of stimulus features that later served as a basis
-(for GLM regressors) to model hemodynamic responses.
+Hence, we annotated a the temporal structure of a various stimulus features that
+later served as a basis (for GLM regressors) to model hemodynamic responses.
 
 % AV anno
 For the analysis of the AV stimulus, we took advantage of a previously published
@@ -578,26 +566,27 @@ depicted before (\texttt{vpe\_old}).
 
 % irrespective of visual content
 Notably, categorization was performed irrespectively of a movie frame's precise
-content and thus without controlling confounding variables (e.g. presence of
-faces).
+content and thus without controlling confounding variables.
 % AV COPEs: intro
-The rationale that this approach would still yield categories correlating with
-increased hemodynamic activity in the PPA was twofold.
+The rationale that this approach would yield categories that - on average - show
+different stimulus features.
 % cinematographic rationale cut to new scenes: establishing shots
-The cinematographic rationale was that movies tend to establish the setting
+The cinematographic rationale was that movie shots tend to establish the setting
 (\texttt{vse\_new}) and the spatial relationships within a setting
 (\texttt{vpe\_new}) at the beginning of a movie.
 % cut to recurrent scene
 Later in the movie, the field sizes of movie shots tend to decrease when
 switching back to already established settings (\texttt{vse\_old}).
 % similarly for shots within a scene
-Moreover, shots within a recurring locale or setting tend to shift to depicting
-persons and objects (\texttt{vpe\_old}) more relevant to the evolved plot
+Later in the movie when the spatial layout of a setting is already established,
+shots within a setting shift to objects more relevant to the evolved plot and or
+to switching between faces of persons talking to each others (\texttt{vpe\_old})
 \citep{brown2012cinematography, mercado2011filmmakers}.
 % neuroscientific rationale
 The neuroscientific rationale was that activity in the PPA is greater when
 participants view novel versus repeated scenes or view-points
-\citep{epstein1999parahippocampal, grill2006repetition}.
+\citep{epstein1999parahippocampal, grill2006repetition}.\todo[inline]{doesn't
+make sense not 'cause this should be true to the face of forrest too}
 % no cut condition: intro
 In order to create a control condition, a sixth category (\texttt{no\_cut}) was
 created by pseudo-randomly drawing movie frames from continuous movie shots that
@@ -1000,22 +989,29 @@ to match the preferred stimulus type, and b) the amount of available data /
 
 % AV: primary contrast
 In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
-was not depicted before (\texttt{vs\_new}) to cuts that we accompanied with a
+was not depicted before (\texttt{vse\_new}) to cuts that we accompanied with a
 change of the camera position within a setting that was already occurring
 previously (\texttt{vpe\_old}).
 % why
-We assumed that movie frames in these categories on average best represent
-events that trigger perception of space versus e.g. objects or faces.
+We assumed that category \texttt{vse\_new} on average comprised the most movie
+frames depicting a landscape or the geometry of a setting, and the category
+\texttt{vpe\_old} the most frames depicting persons, faces, or
+objects.\todo{maybe speak of ratio}
 % AD: primary contrast
 In the primary contrast of the AD stimulus, we contrasted landmarks
 \texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all
 non-geometry related categories (\texttt{body}, \texttt{bodypart},
 \texttt{fahead}, \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}) except
-\texttt{furniture}.
+\texttt{furniture} to get a sufficient amount of events per stimulus
+segment.
+% furniture
+The category ``furniture'' (\texttt{furn}) was not used as a regressor of
+interest in any contrast because these nouns could be perceived as either a
+geometry-defining scene element or as an isolated object.
 % why se_new & se_old were not used in the primary contrasts
-The categories of nouns indicating a switch to a setting that occurred for the first time
-(\texttt{se\_new}) or a setting that recurred during the plot (\texttt{se\_old})
-were not included in the primary contrast because
+The categories of nouns indicating a switch to a setting that occurred for the
+first time (\texttt{se\_new}) or a setting that recurred during the plot
+(\texttt{se\_old}) were not included in the primary contrast because
 % heterogeneous category
 a) categories comprise words that could count as a member of another category
 (e.g. ``[a] physician''),
@@ -1026,13 +1022,9 @@ richer pictures], and
 % hierarchical categories
 c) the narrator is often lacking behind a short dialogue or a change of the
 soundscape that might already indicate a change of settings.
-% furniture
-The category ``furniture'' (\texttt{furn}) was not used as a regressor of
-interest in any contrast because these nouns could be perceived differently by
-different subjects as either a geometry-defining scene element or as an isolated
-object.
-
-
+\todo[inline]{paragraph above could state that ``fahead'', just N=83; mostly
+    just parts (``ear'', ``nose'') of face, or vague description ``his/her
+face''}.
 % control contrasts
 Finally, we created several contrasts as negative control for both stimuli.
 % AV: no cut > cut
@@ -1700,7 +1692,61 @@ regarding individual differences?  Differences in alertness, attention to
 spatial information, predisposition?  ``capability'' to process auditory spatial
 information?}
 
-
+% question
+This raises the question if the different activation patterns can be attributed
+to different features inherent in visual compared to verbal stimuli.
+% visual scenes: probably submodules
+In the domain of visual scene perception, previous studies provide evidence that
+the PPA can be divided into functionally subregions that might process different
+stimulus features.
+% posterior: functionality
+The posterior PPA (pPPA) is functionally more responsive than the anterior PPA
+(aPPA) to low-level features of scenes or (abstract) objects
+\citep{baldassano2013differential, nasr2014thinking,
+rajimehr2011parahippocampal}.
+% anterior cIPL is defined using the Eickhoff–Zilles PGp probabilistic
+% cytoarchitectonic map
+The aPPA is functionally more responsive than the pPPA to high-level features of
+scenes (e.g. real-word size \citep{park2015parametric}; a scene's abstract
+identity/category \citep{marchette2015outside, watson2016patterns}) and objects
+(e.g. spatial contextual associations \citep{aminoff2007parahippocampal,
+aminoff2013role}).
+% connectivity
+Moreover, pPPA and aPPA show differences in connectivity profiles.
+% posterior
+The pPPA is more strongly functionally connected to the occipital visual cortex
+than the aPPA \citep{baldassano2013differential, baldassano2016two}.
+% including lateral occipital cortex (LOC) and transverse occipital sulcus (TOS)
+% anterior
+The aPPA is more strongly functionally connected to portions of the default mode
+network, including caudal inferior parietal lobe (cIPL), the restrosplenial
+complex (RSC), medial PFC and the lateral surface of the anterior temporal lobe
+\citep{baldassano2013differential, baldassano2016two}.
+% conclusion: subregions
+According to the hypothesis by \citep{baldassano2013differential} the PPA
+consists of subregions that activate selectively to scenes and ``cooperate to
+build a complete representation of a scene''.
+% Their distinct connectivity properties do suggest that each may be involved in
+% specific aspects of visual and cognitive processing involved in the
+% overarching goal of scene understanding \citep{baldassano2013differential}.
+% The fact that anterior PPA had a lower sensitivity to our abstract object
+% stimuli does not necessarily imply that this region does not use object
+% information \citep{baldassano2013differential}. Previous work has shown that
+% PPA responds to objects that have spatial associations [Aminoff et al. 2007],
+% are space-defining [Mullally and Maguire 2011], and are
+% navigationally-relevant [Janzen and Van Turennout 2004]. These types of
+% responses require spatial memory and cannot be based purely on visual features
+% like object shape. \citep{baldassano2013differential}.
+Our results add further evidence that the PPA is not a homogeneous area but can
+be divided into functionally subregions.
+% pPPA
+Our results suggest that the pPPA is more concerned with visual aspects immanent
+in pictures or movie shots of landscapes.
+% aPPA
+The aPPA might be more concerned with non-visual aspects of spatial information
+(e.g. spatial contextual information \citep{aminoff2013role,
+aminoff2015associative, baumann2016functional}) as immanent/inherent in both
+visual and verbal stimuli.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2056,61 +2102,7 @@ averaged might be.
 % anterior vs posterior pattern
 In contrasts 1 to 6 of the AD stimulus, we find consistently significant
 clusters spatially constrained to the anterior part of the PPA group overlap.
-% question
-This raises the question if the different activation patterns can be attributed
-to different features inherent in visual compared to verbal stimuli.
-% visual scenes: probably submodules
-In the domain of visual scene perception, previous studies provide evidence that
-the PPA can be divided into functionally subregions that might process different
-stimulus features.
-% posterior: functionality
-The posterior PPA (pPPA) is functionally more responsive than the anterior PPA
-(aPPA) to low-level features of scenes or (abstract) objects
-\citep{baldassano2013differential, nasr2014thinking,
-rajimehr2011parahippocampal}.
-% anterior cIPL is defined using the Eickhoff–Zilles PGp probabilistic
-% cytoarchitectonic map
-The aPPA is functionally more responsive than the pPPA to high-level features of
-scenes (e.g. real-word size \citep{park2015parametric}; a scene's abstract
-identity/category \citep{marchette2015outside, watson2016patterns}) and objects
-(e.g. spatial contextual associations \citep{aminoff2007parahippocampal,
-aminoff2013role}).
-% connectivity
-Moreover, pPPA and aPPA show differences in connectivity profiles.
-% posterior
-The pPPA is more strongly functionally connected to the occipital visual cortex
-than the aPPA \citep{baldassano2013differential, baldassano2016two}.
-% including lateral occipital cortex (LOC) and transverse occipital sulcus (TOS)
-% anterior
-The aPPA is more strongly functionally connected to portions of the default mode
-network, including caudal inferior parietal lobe (cIPL), the restrosplenial
-complex (RSC), medial PFC and the lateral surface of the anterior temporal lobe
-\citep{baldassano2013differential, baldassano2016two}.
-% conclusion: subregions
-According to the hypothesis by \citep{baldassano2013differential} the PPA
-consists of subregions that activate selectively to scenes and ``cooperate to
-build a complete representation of a scene''.
-% Their distinct connectivity properties do suggest that each may be involved in
-% specific aspects of visual and cognitive processing involved in the
-% overarching goal of scene understanding \citep{baldassano2013differential}.
-% The fact that anterior PPA had a lower sensitivity to our abstract object
-% stimuli does not necessarily imply that this region does not use object
-% information \citep{baldassano2013differential}. Previous work has shown that
-% PPA responds to objects that have spatial associations [Aminoff et al. 2007],
-% are space-defining [Mullally and Maguire 2011], and are
-% navigationally-relevant [Janzen and Van Turennout 2004]. These types of
-% responses require spatial memory and cannot be based purely on visual features
-% like object shape. \citep{baldassano2013differential}.
-Our results add further evidence that the PPA is not a homogeneous area but can
-be divided into functionally subregions.
-% pPPA
-Our results suggest that the pPPA is more concerned with visual aspects immanent
-in pictures or movie shots of landscapes.
-% aPPA
-The aPPA might be more concerned with non-visual aspects of spatial information
-(e.g. spatial contextual information \citep{aminoff2013role,
-aminoff2015associative, baumann2016functional}) as immanent/inherent in both
-visual and verbal stimuli.
+
 
 
 \subsubsection{RSC \& LOC}
