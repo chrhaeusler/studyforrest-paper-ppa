@@ -120,6 +120,8 @@ narrative, studyforrest
 \noindent Generally
 
 \begin{itemize}
+    \item in case the additional contrast stay in supplemental material, just
+        speak of contrast not ``primary contrast''
     \item adopt some phrasing from the Speech-Anno-Paper
     \item there is no "cue about" in the English language? Alternatives are
         "give a hint on/about", "indicate"; changed the sentences but should
@@ -1002,8 +1004,7 @@ In the primary contrast of the AD stimulus, we contrasted landmarks
 \texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all
 non-geometry related categories (\texttt{body}, \texttt{bodypart},
 \texttt{fahead}, \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}) except
-\texttt{furniture} to get a sufficient amount of events per stimulus
-segment.
+\texttt{furniture} to get a sufficient amount of events per stimulus segment.
 % furniture
 The category ``furniture'' (\texttt{furn}) was not used as a regressor of
 interest in any contrast because these nouns could be perceived as either a
@@ -1031,14 +1032,17 @@ Finally, we created several contrasts as negative control for both stimuli.
 For the AV stimulus, four $t$-contrasts were created contrasting the no-cut
 regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
 % AV: narrator
-One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by
-contrasting nouns spoken by the narrator.
+One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by contrasting
+nouns spoken by the narrator.
 % AD stimulus
 For the AD stimulus, we created five $t$-contrasts (see Table
 \ref{tab:ao-contrasts}) to test if increased activation in the PPA was
 correlated with moments of cuts as cuts might possibly be correlated with a
 change of the soundscape also giving an auditory hint of switching to another
 setting.
+%
+\todo[inline]{it's probally not about the soundscape anymore (to speculative)
+but about the somewhat correlation of nouns and cuts}
 
 
 \begin{table*}[h!]
@@ -1169,13 +1173,12 @@ We investigated if spatial information embedded in two naturalistic stimuli
 correlate with increased hemodynamic activity in the PPA.
 % group level
 On a group average level, we compare results gained from whole-brain GLM
-analyses of the movie and the audio-description (Z>3.4; p<.05, cluster
-corrected) to results gained from a traditional visual localizer
-\citep{sengupta2016extension}.
+analyses of the movie and the audio-description to results gained from a
+traditional visual localizer \citep{sengupta2016extension}.
 % individual level
-On the level single subjects (Z>3.4; p<.05, cluster corrected), we also assess
-the performance of the exclusively auditory naturalistic stimulus as a
-substitute for a visual paradigm to localize the PPA.
+On the level single subjects, we also assess the performance of the exclusively
+auditory naturalistic stimulus as a substitute for a visual paradigm to localize
+the PPA.
 % NeuroVault
 Unthresholded $z$-maps of all contrasts on a group level as well as individual
 results of the primary $t$-contrasts co-registered to the group-template (MNI152
@@ -1187,7 +1190,7 @@ First, we analyzed data from the movie offering a visual but ecologically more
 valid stimulation than static pictures.
 % AV primary contrast
 The movie's primary $t$-contrast that compared cuts to a setting that was not
-depicted before to cuts to a recurring setting (\texttt{vse\_new > vpe\_old})
+depicted before to cuts withn a recurring setting (\texttt{vse\_new > vpe\_old})
 yielded three significant clusters (see Table \ref{tab:res-av-group1}, Figure
 \ref{fig:group-slices}).
 % PPA (others the clusters extend into).
@@ -1208,12 +1211,12 @@ non-spatial noun categories) yielded six significant clusters (see Table
 \ref{tab:res-ao-group1}, Figure \ref{fig:group-slices}).
 % overlap with ROI
 Two homologous clusters are located in the anterior part of the PPA group
-overlap..
+overlap.
 % in detail
 Specifically, these clusters are located at the borders of the posterior
 parahippocampal cortex, the occipital and temporal fusiform gyrus and lingual
-gyrus.\todo{Havard-Oxford atlas gives 3 different most prob. locations depen.
-on voxel}
+gyrus.\todo{Havard-Oxford atlas: 3 different most prob. locations depen.  on
+voxel}
 % precuneus
 Two additional clusters are apparent in the ventral precuneus extending into the
 retrosplenial cortex.
@@ -1318,26 +1321,25 @@ Third, we investigated result from both naturalistic paradigms on the level of
 individual subjects to ensure that the group results are not just a by-product
 of the averaging process.
 % AD is the real shit
-Furtherm, we hypothesized that an exclusively auditory
-stimulus could localize the PPA in individual subjects and thus
-possibly substitute a classic visual localizer experiment.
+Further, we hypothesized that an exclusively auditory stimulus could localize
+the PPA in individual subjects and thus possibly substitute a classic visual
+localizer experiment.
 
 \todo[inline]{part regarding Sengupta is shortened; they used $t$-maps???}
 % Sengupta et al., 2016
-The visual localizer experiment \citep{sengupta2016extension} yielded bilateral
-[parahippocampal] clusters in 12 of 14 subjects and an unilateral right clusters
+The visual localizer \citep{sengupta2016extension} yielded bilateral
+parahippocampal clusters in 12 of 14 subjects and an unilateral right clusters
 in two subjects (sub-04, sub-20).
 % Sengupta: 1 of 3
-Individual PPAs were assessed by titrating [?] the $t$-threshold in the range
-of [2, 3] in the thresholded $t$-maps (Z>1.64, p<.05 cluster corrected) of three
-different $t$-contrasts (\textit{strict}, \textit{relaxed}, and \textit{simple}
-stimulus set cf.  \citep{sengupta2016extension}) until we found an isolated
-cluster that matched the expected anatomical location based on literature
-\citep{epstein1998ppa}.
-
+Individual PPAs were assessed by visually inspecting unthresholded $t$-maps
+(Z>1.64, p<.05 cluster corrected)  of three different $t$-contrasts
+(\textit{strict}, \textit{relaxed}, and \textit{simple} stimulus set cf.
+\citep{sengupta2016extension}), and titrating [?] the $t$-threshold in the range
+of [2, 3] in until we found an isolated cluster that matched the expected
+anatomical location based on literature \citep{epstein1998ppa}.
 % one contrast to localize them all; "...and Z>3.4 for all"
-Contrary to \citep{sengupta2016extension}, we used the same contrast of each
-naturalistic stimulus and the same threshold for all subjects (Z>2.3, p<.05
+Contrary to \citep{sengupta2016extension}, we here used the same contrast of
+each naturalistic stimulus and the same threshold for all subjects (Z>2.3, p<.05
 cluster-corrected for the analysis in subject-space; Z>3.4, p<.05 for the
 analysis in group-space).
 % subject space -> NeuroVault
@@ -1349,9 +1351,7 @@ performed in group space.
 % ref to figure
 Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary AV
 and AD $t$-contrast, and the outline of overlapped, individual PPAs
-\citep{sengupta2016extension}.
-% MNI space
-The $z$-maps and PPA outline are overlayed on the co-registered MNI152 template.
+\citep{sengupta2016extension} co-registed to the MNI152 template.
 % one slice to show them all
 Transversal slice of z=-11 was chosen as it depicts [at least some] voxels of
 significant clusters in almost all subjects.
@@ -1406,11 +1406,10 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
 % Bland-Altman-Plots
 To better depict the agreement and difference between the results of the visual
 localizer and the primary AD contrast, we created a Bland-Altman-Plot for every
-subject (see ).
+subject (see \ref{fig:bland-altman}).
 % what it depicts
-Each subplot of Figure \ref{fig:bland-altman} visualizes the mean value and
-difference (localizer minus AD) of two spatially corresponding voxels in the
-unthresholded $z$-maps.
+Each subplot visualizes the mean value and difference (localizer minus AD) of
+two spatially corresponding voxels in the unthresholded $z$-maps.
 % top KDE plot
 A shift of the distribution to voxels with a mean above zero can be seen the
 further we constrain voxels to the individual PPA (see KDE plot for the x-axis).
@@ -1456,26 +1455,25 @@ Du oft das erste machst es aber als das zweite beschreibst; COH: ??? we do
 whole-brain analysies, so probably ``localization'', }
 
 % previous studies
-Previous studies reported bilaterally increased hemodynamic activity in the PPA
-when participants were watching static pictures of landscape compared to
-pictures of faces or objects (e.g. \citep{epstein1998ppa,
-epstein1999parahippocampal}) whereas one study using spoken sentences reported
-mixed results \citep{aziz2008modulation}.
+Previous studies reported increased hemodynamic activity in the PPA when
+participants were watching static pictures of landscape compared to pictures of
+faces or objects (e.g. \citep{epstein1998ppa, epstein1999parahippocampal})
+whereas one study using spoken sentences reported mixed results
+\citep{aziz2008modulation}.
 % current study: similar
-In line with previous studies, we use here also operationalize spatial
-perception via general linear model (GLM) $t$-contrasts in two naturalistic
-stimuli.
+In line with previous studies, we also operationalized spatial perception via
+general linear model (GLM) $t$-contrasts.
 % current study: dissimilar
 Contrary to previous studies, our current approach is not based on carefully
 designed sets of stimuli but based on annotated stimulus features incidentially
-occurring in an audio-visual movie and its audio-description.
+occurring in two naturalistic stimuli.
 % group AV
 On a group level, whole brain-analysis results for the movie stimulus show
 signifcantly increased hemodynamic activity spatially overlapping with a
 traditionally localized PPA but also extending into earlier visual cortices.
 % group AD
 Results for the audio-description reveal significant activation in the PPA but
-restricted its anterior part.
+restricted to its anterior part.
 % individual level
 On an individual level, results of the audio-description show significant
 bilateral clusters in the anterior PPA of nine subjects and significant
@@ -1490,14 +1488,11 @@ subregions. An auditory narrative might substitute a visual paradigm to localize
 the PPAs anterior part in visually impaired subjects.
 
 
-\subsection{PPA; AV \& AD; group \& individuals}
+\subsection{PPA group}
 
 \todo[inline]{SE: VIS vs AV vs AD: Wer liefert was über die PPA. Dieser
 Vergleich bzw. die Diskussion über Gemeinsamkeiten \& Unterschiede fehlt mir
 etwas}
-
-\subsubsection{AV: group}
-
 
 % intro
 First, we analyzed data from the movie stimulus offering ecologically more valid
@@ -1509,8 +1504,7 @@ specialization of functional areas is preserved during movie watching.
 %
 Contrary to \citep{bartels2004mapping} who annotated the movie frames' content
 (color, faces, language and human bodies), we categorized each frame after a cut
-independent of its content. \todo{PPA in \citep{hasson2004intersubject} but do
-reverse ISC; Bartels' clusters are actually pretty big too}
+independent of its content. \todo{Bartels' clusters are actually pretty big too}
 % hypo
 Despite this ad hoc approach, we hypothesized that [confounding variables
 could/would average out and] our whole-brain analyses would lead to significant
@@ -1526,40 +1520,34 @@ fusiform gyrus and intracalcarine cortex) bilaterally.
 The larger extension into more posterior, primary visual areas can be attributed
 to the averaging process that did not control for confounding visual features or
 the attentional focus of study participants.
-
+%
 \todo[inline]{I am pretty surprised the clusters are not all over the brain.  I
 do not know where/how do phrase it but should be mentioned imo}
-
-% shortcomings
-Since the capability to isolate clusters or networks correlating with specific
-perceptual (or cognitive) processes is influenced by the amount of annotated
-stimulus features further studies focusing on visual perception should annotate
-and model visual features of naturalistic stimuli more rigorously.
 % solution
-Future studies that aim to use a movie to localize different visual areas should
+Future studies that aim to use a movie to localize visual areas should
 extensively annotate the content of frames (e.g. using the open-source solution
 ``Pliers'' for feature extraction from a visual naturalistic stimulus;
 \citep{mcnamara2017developing}) and record the subject's visual attention via
 eye-tracking.
 
-\todo[inline]{nice that the following is mentioned but what to do with it?
-Movies are nice but have idiosyncrasies; so, maybe you should be aware of these
-idiosyncrasies (and control for it) in case you wanna use movies for research?}
 % exploited cinematographic tendencies
 We here exploited a cinematographic confound in the stimulus structure (cf.
 \ref{rationale}).
-%
+% establishing shots vs. e.g. over-the-shoulder shots
 Film directors tend to establish the geometry of locations earlier in the movie
-and to later focus more on persons and objects relevant to the evolved plot
-later  \citep{brown2012cinematography, mercado2011filmmakers}.
+and tend to later focus more on persons and objects relevant to the evolved
+\citep{brown2012cinematography, mercado2011filmmakers}.
+%
+\todo[inline]{nice that exploited confound structure is mentioned but what to do
+with it? hey, look, it works? movies are nice but have idiosyncrasies? so, maybe
+you should be aware of these idiosyncrasies (and control for it) in case you
+wanna use movies for research?}
 
 % summary: nevertheless
-\todo[inline]{Overall summary for AV: so, yes, what is the main message of this
-``cross-modal-control-movie-thing''?? cf. intro: ``works'' but clusters more
-widespread}
+\todo[inline]{Overall summary for AV \& concluding statement!?!}
 
-
-\subsubsection{AD: group}
+\todo[inline]{so, yes, what is the main message of this
+``cross-modal-control-movie-thing''??}
 
 \todo[inline]{Aziz: reduced activity only in left PPA, and only for famous
 places vs famous faces; I think they ran their f-test on the average of PPA
@@ -1574,14 +1562,14 @@ increased hemodynamic activity in the PPA.
 % diff to Aziz (2008)
 \citep{aziz2008modulation} modeled events from on- to offset of sentences
 (describing unknown and famous places and faces), and compared activity levels
-that were averaged across voxels of ROIs (PPA and fusiform face
+that were averaged across voxels of ROIs (PPA and fusiform face area, FFA
 \citep{kanwisher1997ffa}) defined by a localizer experiment.
 % Aziz results
 Study results revealed significantly decreased activity in only the left PPA
 compared to activity in the FFA, and only for sentences describing famous places
 compared to famous faces.
 % we: model & whole brain
-Here we modeled events from on- to offset of single words and performed an
+Here we modeled events from on- to offset of single words and performed a
 whole-brain analysis.
 % our results
 Group results of audio-description's primary contrast yielded spatially concise
@@ -1616,10 +1604,7 @@ information is processed in the anterior PPA casually and does not [necessarily]
 rely on [deliberately] paying attention to verbal spatial information.
 
 
-\subsubsection{AD: shortcoming}
-
-\todo[inline]{at the moment positioned here; makes sense at a couple of other
-positions; not sure yet}
+% AD shortcomings
 
 % optimal stimulus type in vision
 In the visual domain, landscapes and not pictures of landmarks or buildings are
@@ -1644,7 +1629,7 @@ hemodynamic activity level than descriptions of more concrete parts of a scene
 (e.g.``[a] beacon'', [a] ``farmhouse'').
 
 
-\subsubsection{AD: individuals}
+\subsection{PPA individuals (AD)}
 
 \todo[inline]{how to discuss Bland-Altman-Plots???; dunno if this is meaningful:
 z-scores in the anterior part of PPA are higher in AD contrasts than in contrast
@@ -1672,26 +1657,12 @@ in 9 of 14 subjects (of which sub-04 shows only a right-lateralized PPA ROI),
 and a unilateral significant cluster in one subject.
 % similar: anterior part
 Similarly to the group average results, results on an individual level also
-reveal that clusters are spatially restricted to the anterior part of individual
-PPAs.
+revealed that clusters are spatially restricted to the anterior part of
+individual PPAs.
 % conclusion
-Thus, the increased hemodynamic activity in the anterior part of the PPA
-revealed on the group level is not just a by-product of the averaging process
-[as it can reliably be found in individual study participants.]
-% conclusion
-Lastly, our exploratory analysis suggests that a naturalistic auditory stimulus
-can [in principle] be applied to localize (the anterior part) of an higher-level
-visual area in the majority of subjects.
-% one threshold (and contrast) to rule them all
-Further studies that aim for individual diagnostics / ROI localization should
-nevertheless test more than one contrast to gain the ``best'' individual
-ROIs.\todo{..ouff}
-
-\todo[inline]{probably not important but: what do results suggest
-regarding individual differences?  Differences in alertness, attention to
-spatial information, predisposition?  ``capability'' to process auditory spatial
-information?}
-
+Thus, the cluster location and size is not just a by-product of the averaging
+process but the same pattern can can reliably be found in individual study
+participants.
 % question
 This raises the question if the different activation patterns can be attributed
 to different features inherent in visual compared to verbal stimuli.
@@ -1748,42 +1719,45 @@ The aPPA might be more concerned with non-visual aspects of spatial information
 aminoff2015associative, baumann2016functional}) as immanent/inherent in both
 visual and verbal stimuli.
 
+% conclusion
+Lastly, our exploratory analysis suggests that a naturalistic auditory stimulus
+can [in principle] be applied to localize (the anterior part) of an higher-level
+visual area in the majority of subjects.
+% one threshold (and contrast) to rule them all
+Further studies that aim for individual diagnostics / ROI localization should
+nevertheless test more than one contrast to gain the ``best'' individual
+ROIs.\todo{..ouff}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%
-%%%
+\todo[inline]{probably not important but: what do results suggest
+regarding individual differences?  Differences in alertness, attention to
+spatial information, predisposition?  ``capability'' to process auditory spatial
+information?}
 
-\subsubsection{not many random cluster + naturalistic stimuli are cool}
+\subsection{RSC \& LOC = non random clusters => naturalistic stimuli are
+cool}
 
-% ``confounding'' clusters
+% no random clusers
 Despite performing a whole brain analysis, we do not find many [random] clusters
 in single contrasts or even systematically across contrasts that hamper the
-interpretation of results.\todo{ouff\dots}
+interpretation of results.
 % AV: null results regarding attention and eye movements
 For example in the AV results, we do not find significant clusters that could be
 attributed to cognitive processes like attention or eye movements.
-% AD: auditory cortices
-Nevertheless, contrasts of the AD stimulus that compare (among others) verbal
-hints of the change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all
-non-spatial categories (cf. contrasts 2, 3, 6, 7) show significant clusters in
-(primary and secondary) auditory cortices.
-% averaging vs. nuisance regressors
-This suggests that variance correlating with lower level auditory processes was
-not averaged out across trials and nuisance regressors did not capture enough
-variance.\todo{ouf\dots}
-% possible reason
-Significant clusters in auditory cortices could be correlating with a possible
-change of the soundscape when the narrator of the audio-description (or a cut in
-the movie) switches to a another setting.
-% concluding statement
-Thus, investigators that use model-driven methods to investigate brain functions
-using naturalistic stimuli should (extensively) annotate the stimulus material
-and test for correlations among variables.
+
+% intro
+Apart from the PPA, we find significantly increased activity in the dorsal
+precuneus and posterior cingulate region (e.g. retrosplenial cortex; RSC) and
+lateral occipital cortex (LOC) across contrasts of both naturalistic stimuli.
+% RSC intro
+Like the PPA, the RSC and LOC are known to be scene-selective regions (see
+\citep{chrastil2018heterogeneity, bettencourt2013role} for reviews).
+% conclusion
+\todo[inline]{concluding statement}
 
 
-\subsubsection{naturalistic stimuli + data re-use, fuck yeah}
+\section{conlusion}
 
-\ldots
+\todo[inline]{scientific data has no conclusion -> last paragraph}
 
 % natural stimulation
 Natural stimuli like movies \citep{eickhoff2020towards,
@@ -2098,16 +2072,9 @@ events a naturalistic stimulus may provide and how homogeneous the events to be
 averaged might be.
 
 
-
-% anterior vs posterior pattern
-In contrasts 1 to 6 of the AD stimulus, we find consistently significant
-clusters spatially constrained to the anterior part of the PPA group overlap.
-
-
-
 \subsubsection{RSC \& LOC}
 
-\todo[inline]{this part is now super short}
+\todo[inline]{same part as in the main text but with number of contrasts}
 
 % intro
 Apart from the PPA, we find significantly increased activity in the dorsal
@@ -2120,7 +2087,6 @@ unilateral in 2, bilateral in 4 of 8 contrasts) are known to be scene-selective
 regions (see \citep{chrastil2018heterogeneity, bettencourt2013role} for
 reviews).
 % conclusion
-
 
 % some backup text for RSC & LOC
 \begin{comment}
@@ -2183,6 +2149,34 @@ panoramic sequence [Park and Chun, 2009], and shows strong familiarity effects
 
 \end{comment}
 
+
+
+
+\subsubsection{confounding clusters}
+% ``confounding'' clusters
+Despite performing a whole brain analysis, we do not find many [random] clusters
+in single contrasts or even systematically across contrasts that hamper the
+interpretation of results.\todo{ouff\dots}
+% AV: null results regarding attention and eye movements
+For example in the AV results, we do not find significant clusters that could be
+attributed to cognitive processes like attention or eye movements.
+% AD: auditory cortices
+Nevertheless, contrasts of the AD stimulus that compare (among others) verbal
+hints of the change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all
+non-spatial categories (cf. contrasts 2, 3, 6, 7) show significant clusters in
+(primary and secondary) auditory cortices.
+% averaging vs. nuisance regressors
+This suggests that variance correlating with lower level auditory processes was
+not averaged out across trials and nuisance regressors did not capture enough
+variance.\todo{ouf\dots}
+% possible reason
+Significant clusters in auditory cortices could be correlating with a possible
+change of the soundscape when the narrator of the audio-description (or a cut in
+the movie) switches to a another setting.
+% concluding statement
+Thus, investigators that use model-driven methods to investigate brain functions
+using naturalistic stimuli should (extensively) annotate the stimulus material
+and test for correlations among variables.
 
 \subsection{negative controls and cross-modal controls}
 
