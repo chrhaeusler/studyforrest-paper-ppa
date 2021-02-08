@@ -56,55 +56,51 @@ Germany {*}corresponding author: Christian Olaf Häusler (der.haeusler@gmx.net)
 
 \begin{abstract}
 % < 170 words new analysis of existing data of interest to a broad section of
-    % our audience highlighting innovative examples of data reuse may be used to
-    % present compelling new findings & conclusions derived from published.
-    % intro
+% our audience highlighting innovative examples of data reuse may be used to
+% present compelling new findings & conclusions derived from published.  intro
 Neuroimaging studies have parcellated the human brain into distinct functional
-    areas.
+areas.
 % PPA
 A region in the human hippocampal cortex termed ``parahippocampal place area''
-    is classically considered to be a higher visual area as increased
-    hemodynamic activity in the PPA correlates with the perception of static
-    pictures of landscapes compared to pictures of faces or objects.
+is classically considered to be a higher visual area as increased hemodynamic
+activity in the PPA correlates with the perception of static pictures of
+landscapes compared to pictures of faces or objects.
 % AV, AD: operationalization
-In this study, we explore different ways to operationalize spatial
-    perception\todo{not sure if this is just perception} in 14 subjects that
-    were watching an audio-visual Hollywood movie and listened to the movie's
-    audio-description (studyforrest.org).
+In this study, we explore different ways to operationalize the perception of
+spatial information in 14 subjects that were watching an audio-visual Hollywood
+movie and listened to the movie's audio-description (studyforrest.org).
 % auditory localizer?
 Focussing on the audio-description, we test if an auditory narrative could
-    localize a ``visual area'' in individual subjects.
+localize a ``visual area'' in individual subjects.
 % GLM
 For each naturalistic stimulus, we model hemodynamic activity via several
-    general linear model (GLM) $t$-contrasts that are based on annotations of
-    selected stimulus features.
+general linear model (GLM) $t$-contrasts that are based on annotations of
+selected stimulus features.
 % VIS
 Current results are compared to results of classic visual localizer experiment
-    that we conducted previously to localize the PPA in the same participants.
+that we conducted previously to localize the PPA in the same participants.
 % no refs in abstract (probably)
 %\citep{sengupata2016extension}.  results: group AV
 On a group level, results for a visual movie stimulus show significantly
-    increased hemodynamic activity spatially overlapping with a traditionally
-    localized PPA but also extending into earlier visual cortices.
+increased hemodynamic activity spatially overlapping with a traditionally
+localized PPA but also extending into earlier visual cortices.
 % results: group AD
 Results for the audio-description stimulus reveal significant activation
-    restricted to the anterior part of the PPA.
+restricted to the anterior part of the PPA.
 % results: individual AD
 On an individual level, results of the audio-description show significant
-    bilateral clusters in the anterior PPA of nine subjects and significant
-    unilateral clusters in two subjects.
+bilateral clusters in the anterior PPA of nine subjects and significant
+unilateral clusters in two subjects.
 % conclusion: generalizability
 Results suggest that increased activation in the PPA during the perception of
-    static pictures generalizes to the perception of spatial information
-    embedded in an audio-visual movie and an exclusively auditory stimulus.
+static pictures generalizes to the perception of spatial information embedded in
+an audio-visual movie and an exclusively auditory stimulus.
 % conclusion: PPA has subregions
 Our results provide further evidence that the PPA can be divided into functional
-    subregions.
+subregions.
 % localizer substitute
-An auditory narrative might substitute a visual paradigm to localize the PPAs
-    anterior part in visually impaired subjects.\todo{very bold claim to be
-    written in the abstract}
-
+[An auditory narrative might substitute a visual paradigm to localize the PPAs
+anterior part in visually impaired subjects.]
 \end{abstract}
 
 \section*{Keywords}
@@ -122,7 +118,7 @@ narrative, studyforrest
 \begin{itemize}
     \item in case the additional contrast stay in supplemental material, just
         speak of contrast not ``primary contrast''
-    \item adopt some phrasing from the Speech-Anno-Paper
+    \item in main text, add references to supplemental material
     \item there is no "cue about" in the English language? Alternatives are
         "give a hint on/about", "indicate"; changed the sentences but should
         ask Alex
@@ -149,10 +145,7 @@ narrative, studyforrest
 
 \noindent Discussion
 \begin{itemize}
-    \item as Simon stated I would be interesting to discuss differences between
-        contrasts (and make wild assumptions) but this will exceed the word
-    limit by far
-    \item overall conclusion as a last paragraph or independent section
+    \item summary \& overall conclusion (last paragraph or independent section)
 \end{itemize}
 
 
@@ -225,9 +218,12 @@ categories occurring in spoken language.
 % Aziz' stimuli; ``The Taj Mahal faces a long thin reflecting pool'', ``Marilyn
 % Monroe has a large square jaw'', ``The television has a long antenna''
 \cite{aziz2008modulation} used sentences that described famous or generic places
-and faces, or objects.\todo{judgment task not mentioned anymore}
-% Aziz' tasks: Participants were instructed to press a button whenever the
-% sentence described an inaccurate or improbable fact. Aziz' results:
+and faces, or objects.
+% Aziz' tasks:
+Participants were instructed to press a button whenever the sentence described
+an inaccurate or improbable fact (e.g. ``Marilyn Monroe has a large square
+jaw'')
+% Aziz' results:
 Activation in the left, but not right, PPA was significantly reduced when
 participants listened to place-related sentences compared to listening to
 face-related sentences. Moreover, this effect was only observed in sentences
@@ -243,7 +239,7 @@ First, they employed a small sets of carefully chosen and conceptualized
 stimuli.
 % block-design & task
 Second, studies used block-design paradigms to maximize detection power.
-Further, they usually employed an explicit (perceptual) judgment task.
+Further, they usually employed an explicit (perceptual) judgement task.
 % conceptualized stimuli and block: disadvantages
 Block-design studies that use conceptualized stimuli and a task have the
 advantage of controlling confounding variables (e.g. color, luminance, size,
@@ -526,7 +522,7 @@ applied using FILM (FMRIB's Improved Linear Model; \citep{woolrich2001autocorr})
 to improve estimation efficiency.
 
 
-\subsection{Event selection}
+\subsection{Event selection} \label{rationale}
 
 % traditionally
 Traditionally, researchers specifically design stimuli that presumably would
@@ -587,8 +583,11 @@ to switching between faces of persons talking to each others (\texttt{vpe\_old})
 % neuroscientific rationale
 The neuroscientific rationale was that activity in the PPA is greater when
 participants view novel versus repeated scenes or view-points
-\citep{epstein1999parahippocampal, grill2006repetition}.\todo[inline]{doesn't
-make sense not 'cause this should be true to the face of forrest too}
+\citep{epstein1999parahippocampal, grill2006repetition}.
+%
+\todo{imo its better to focus on the cinematographic rationale and drop the last
+sentence 'cause activity in e.g. FFA adopts too -> we might substract an on
+average smaller response}
 % no cut condition: intro
 In order to create a control condition, a sixth category (\texttt{no\_cut}) was
 created by pseudo-randomly drawing movie frames from continuous movie shots that
@@ -661,8 +660,9 @@ For the analysis of the AD stimulus, we extended a publicly available annotation
 of speech \citep{haeusler2020speechanno} by further annotating words spoken by
 the audio-description's narrator.
 % annotation procedure
-Two persons performed a categorization of nouns that the narrator uses to
-describe the movie's missing visual content based on a set of rules.
+Two persons performed a categorization of (concrete and countable) nouns that
+the narrator uses to describe the movie's missing visual content based on a set
+of rules.
 % preliminary annotation
 A preliminary annotation was performed by one person according to the rules.
 % corrections
@@ -700,10 +700,10 @@ procedure. In context of the current analyses these word are considered to
 belong exclusively to the higher-level category of changing a setting
 (\texttt{se\_new} or \texttt{se\_old}).
 % pooling of categories
-Some noun categories that were semantically similar and offered only a
-small amount of counts were pooled resulting in 11 final event categories (see
-Table \ref{tab:ao-events}). These event categories were then used to model
-hemodynamic responses.
+Some noun categories that were semantically similar and offered only a small
+amount of counts were pooled resulting in 11 final event categories (see Table
+\ref{tab:ao-events}). These event categories were then used to model hemodynamic
+responses.
 
 
 % table for descriptive nouns: categories, rules, examples counts
@@ -934,10 +934,8 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 
 \subsection{Statistical analysis}
 
-\todo[inline]{SE: würde wetten, dass Reviewer fragen: Wie sieht es im vergleich
-dazu mit Faces aus? COH: yeah, well, I made the contrasts similar to Sengupta
-and considered the contrast to an average of all ``non-spatial'' stuff
-appropriate; should be cleare in the method section (s. ``Contrasts'')}
+\todo[inline]{SE: Vergleich zu Faces aus? COH: should be clearer now why we did
+not do it}
 
 \todo[inline]{SE: cuts to new vs familar setting wird irgendwie nie so
 richtig in den PPA kontext eingeordnet. Warum ist das Hauptkontrast und nicht
@@ -954,11 +952,8 @@ each stimulus.
 Subsequent, third-level analyses averaged contrast estimates over subjects.
 
 % similar to previous studies
-On the first level, we created GLM contrasts like studies that contrasted blocks
-of pictures.
-% dissimilar
-But unlike previous studies, our approach was to contrast selected stimulus
-features that we annotated in the audio-visual movie and its audio-description.
+On the first level, we created GLM contrasts based on annotated stimulus
+features embedded in the in the audio-visual movie and its audio-description.
 % intro
 To test the robustness of this approach, we operationalized the perception of
 spatial information compared to the perception of ``non-spatial'' information
@@ -975,7 +970,8 @@ the results are?} since the event categories differed a) in how well the
 averaged events reflected spatial information, and b) in available data (i.e.
 event counts).
 % difference to Sengupta; Berman et al. (2010). Evaluating functional localizers
-(2010) Notably, localization of the PPA in individual subjects that was done by
+% (2010)
+Notably, localization of the PPA in individual subjects that was done by
 \citep{sengupta2016extension} using the established approach of contrasting
 blocks of pictures is based on one contrast for each subjects (cf. Table 3 in
 \citep{sengupta2016extension}) that was chosen post-hoc from a set of three
@@ -986,9 +982,9 @@ Here, we chose one contrast to be ``primary contrast'' for later detailed
 inspection and report.
 % selection criteria for primary contrast.
 The selection criterion for the primary contrast of each stimulus was a
-subjectively good balance between a) how well categories on average were assumed
-to match the preferred stimulus type, and b) the amount of available data /
-
+subjectively good balance between a) the amount of available data, b) how
+well the average of events within represented spatial information and
+non-spatial information respectively (cf. section \ref{rationale}).
 % AV: primary contrast
 In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
 was not depicted before (\texttt{vse\_new}) to cuts that we accompanied with a
@@ -997,15 +993,17 @@ previously (\texttt{vpe\_old}).
 % why
 We assumed that category \texttt{vse\_new} on average comprised the most movie
 frames depicting a landscape or the geometry of a setting, and the category
-\texttt{vpe\_old} the most frames depicting persons, faces, or
-objects.\todo{maybe speak of ratio}
+\texttt{vpe\_old} the most frames depicting persons, faces, or objects [(cf.
+rationale to categorize the cuts in section \ref{rationale})].
 % AD: primary contrast
 In the primary contrast of the AD stimulus, we contrasted landmarks
 \texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all
 non-geometry related categories (\texttt{body}, \texttt{bodypart},
 \texttt{fahead}, \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}) except
 \texttt{furniture} to get a sufficient amount of events per stimulus segment.
-% furniture
+\todo[inline]{in detail: \texttt{fahead}: just N=83; mostly parts
+ of face (``ear'', ``nose''), or vague description (``his/her face''; N=10)}
+% why furniture was not used
 The category ``furniture'' (\texttt{furn}) was not used as a regressor of
 interest in any contrast because these nouns could be perceived as either a
 geometry-defining scene element or as an isolated object.
@@ -1021,11 +1019,9 @@ b) nouns only vaguely described a scene (e.g. ``[in] Greenbow'', ``[in a]
 disco'', ''[black and white] film recordings'') [compared to whole, perceptually
 richer pictures], and
 % hierarchical categories
-c) the narrator is often lacking behind a short dialogue or a change of the
-soundscape that might already indicate a change of settings.
-\todo[inline]{paragraph above could state that ``fahead'', just N=83; mostly
-    just parts (``ear'', ``nose'') of face, or vague description ``his/her
-face''}.
+[c) the narrator is often lacking behind a short dialogue or a change of the
+soundscape that might already indicate a change of settings.] \todo[inline]{for
+sake of conciseness, it is imo better to drop that ``soundscape-thing''}
 % control contrasts
 Finally, we created several contrasts as negative control for both stimuli.
 % AV: no cut > cut
@@ -1406,13 +1402,14 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
 % Bland-Altman-Plots
 To better depict the agreement and difference between the results of the visual
 localizer and the primary AD contrast, we created a Bland-Altman-Plot for every
-subject (see \ref{fig:bland-altman}).
+subject (see Figure \ref{fig:bland-altman}).
 % what it depicts
 Each subplot visualizes the mean value and difference (localizer minus AD) of
 two spatially corresponding voxels in the unthresholded $z$-maps.
 % top KDE plot
 A shift of the distribution to voxels with a mean above zero can be seen the
-further we constrain voxels to the individual PPA (see KDE plot for the x-axis).
+further we constrain voxels to the individual PPA (see KDE plot for the x-axes
+in Figure \ref{fig:bland-altman}).
 % right KDE plot
 Values above the horizontal line depict voxels that show a higher $z$-value in
 the dedicated localizer, values below the horizontal line depict voxels that
@@ -1908,10 +1905,26 @@ Bibliographic information for the data records described in the manuscript.
 
 \section{Supplementary Materials}
 
-\subsection{Robustness of group results across contrasts}
+\todo[inline]{I think it makes sense to report results of AV and discuss AV,
+and then report results of AD and discuss AD}
 
-% unthresholded $z$-maps of all contrasts on a group level:
-% \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
+\subsection{Results}
+
+\subsubsection{Robustness of group results across contrasts}
+
+% intro
+In order to test the robustness of our approach, we created overall five
+$t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}), and
+overall eight $t$-contrast for the AD stimulus (see Table
+\ref{tab:av-contrasts}) by varying the contrasted categories (and thus the
+amount of available data), and how well the annotated events within categories
+on average matched a stimulus type that we assumed to correlate with spatial
+perception.
+% NeuroVault
+Unthresholded z -maps of all contrasts on a group level as well as individual
+results of the primary t-contrasts co-registered to the group-template (MNI152
+space) can found at NeuroVault
+\href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
 
 % AV PPA contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
@@ -1921,23 +1934,15 @@ Bibliographic information for the data records described in the manuscript.
 % 4 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), lingual g., occ. fusif. g.
 % 5 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), occ. fusif. g.
 
-% AV
-In order to test the robustness of our findings, we created four additional
-$t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}) to be
-investigated on a group level.
-% results: PPA; biggest overlap in posterior part of PPA group overlap  =
-%temporal occipital fusiform cortex
-All of the overall five AV contrasts yielded significant bilateral clusters that
+% AV results: PPA; biggest overlap in posterior part of PPA group overlap  =
+% temporal occipital fusiform cortex
+All five AV contrasts yielded significant bilateral clusters that
 overlap with the PPA group overlap (see Figure \ref{fig:stability-slices}).
-% AD
-For the AD stimulus, we created overall eight $t$-contrasts (see Table
-\ref{tab:ao-contrasts}).
-% results
-All contrasts except contrast 7 (\texttt{se\_new}, \texttt{se\_old} >
-non-spatial categories) and contrast 8 (\texttt{se\_new} > non-spatial
-categories) yielded significant bilateral clusters in anterior regions of the
-group PPA overlap (see Figure \ref{fig:stability-slices}), suggesting
-a certain robustness of this result.
+% AV: RSC & LOC
+Reliably across contrasts of the AV stimulus, we find bilaterally
+significant clusters also in the ventral precuneal cortex and posterior
+cingulate gyrus (i.e. restrosplenial complex; contrasts 1, 4, 5), and lateral
+occipital cortex (contrasts 1, 2, 4, 5).
 
 % AD PPA contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r)
@@ -1949,18 +1954,18 @@ a certain robustness of this result.
 % 7 PPA (-/-); RSC (l/r), LOC (l/-), l&r sup.temp.C.; left frontal pole
 % 8 PPA (-/-); RSC (-/-), LOC (-/-)
 
-% AD
-Reliably across the five contrasts of the AV stimulus, we find bilaterally
-significant clusters also in the ventral precuneal cortex and posterior
-cingulate gyrus (i.e. restrosplenial region; contrasts 1, 4, 5) and lateral
-occipital cortex (contrasts 1, 2, 4, 5).
-% AD; LOC: AV cluster are more medial, AD clusters are more lateral
-Across the five contrasts of the AD stimulus, we find bilaterally
-significant clusters in the ventral precuneus (all except contrasts 8), lateral
+% AD: results
+In results of the AD stimulus, all contrasts except contrast 7
+(\texttt{se\_new}, \texttt{se\_old} > non-spatial categories) and contrast 8
+(\texttt{se\_new} > non-spatial categories) yielded significant bilateral
+clusters in anterior regions of the group PPA overlap (see Figure
+\ref{fig:stability-slices}).
+% AD: RSC & LOC
+Reliably across contrast of the AD stimulus, we find bilaterally significant
+clusters also in the ventral precuneus (all except contrasts 8), lateral
 occipital cortex (bilateral in contrasts 1 to 4; unilateral in contrasts 6 and
 7), and superior temporal cortices (bilateral in contrasts 3, 6, 7; unilateral
 right in contrast 2).
-
 % non-systematic
 Lastly, some contrasts of the AD stimulus yielded signficant clusters in regions
 that were not statistically signficant in three or more contrasts.
@@ -1997,7 +2002,11 @@ Contrast 6 shows one additional cluster in the right medial frontal cortex.
 \end{figure*}
 
 
-\subsection{control contrasts}
+\subsubsection{control contrasts}
+
+% intro
+For the purpose of negative control, we implemented five contrasts for every
+stimulus.
 
 % ---------- AV control contrasts ----------
 % 6 nothing
@@ -2014,21 +2023,16 @@ Contrast 6 shows one additional cluster in the right medial frontal cortex.
 %12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
 %13 PPA (-/-); RSC (-/-), LOC (-/-)
 
-\todo[inline]{there is no table/figure for negative control contrasts; we could
-add a reference to NeuroVault (here again) or point to the dataset}
-
-% intro
-Lastly, we implemented five contrasts for every stimulus for the purpose of
-negative control.
 % AV: no_cut > x
-In the analysis of the AV data, none of the contrasts that compared the ``no cut
-condition''  to a movie cut category (contrasts 6, 7, 8, 9) yielded significant
-clusters.
+In the analysis of the AV data, none of the four contrasts that compared the
+\texttt{no\_cut} categorie to a movie cut category (see Table
+\ref{tab:av-contrasts}) yielded significant clusters.
 % AV using nouns
 The contrast that used the narrator's nouns but in the AV stimulus
 (\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
 PPA and bilateral clusters in the superior lateral occipital cortices (the right
-hemispheric cluster extending into the superior parietal cortex).
+hemispheric cluster extending into the superior parietal cortex).\todo{cuts
+correlate with the nouns}
 
 % AD stimulus
 In the analysis of the AD data, we created control contrasts based on events of
@@ -2039,26 +2043,12 @@ inferior prefrontal cortex (pars triangularis) and right ventral
 precuneus/posterior cingulate gyrus.
 % contrast 12
 Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
-one cluster in the right posterior hippocampus.
+one cluster in the right posterior hippocampus.\todo{odd imo}
 
 
-\subsection{Discussion: Robust results across contrasts}
+\subsection{Discussion}
 
-\todo[inline]{SE: Bei Ergebnissen \& Diskussionen zu Stability fehlt mir
-irgendwie immer der Kontext, wie sich die Kontraste denn unterschieden haben und
-welche davon z.B. im Ergebnis wo von den anderen abgewichen haben. Das würde ja
-wichtige Hinweise geben; COH: indeed very interesting but discussing that will
-let the paper get way out of hand}
-
-% why we did a couple of contrasts
-To test the robustness of our approach, we created several additional contrasts
-for each naturalistic stimulus by varying the contrasted categories (and thus
-the amount of available data), and how well the annotated events within
-categories on average matched a stimulus type that we assumed to correlate with
-spatial perception.
-
-
-\subsubsection{PPA}
+\subsubsection{congruencies (PPA, RSC, LOC, others)}
 
 \begin{comment}
     the mother of total confusion: Aminoff shifts the PPA along the
@@ -2072,6 +2062,12 @@ spatial perception.
     hence: complete bullshit;
     ignore Aminoff (2015) due to various reasons
 \end{comment}
+
+
+\todo[inline]{SE: Bei Ergebnissen \& Diskussionen zu Stability fehlt mir
+irgendwie immer der Kontext, wie sich die Kontraste denn unterschieden haben und
+welche davon z.B. im Ergebnis wo von den anderen abgewichen haben. Das würde ja
+wichtige Hinweise geben}
 
 % PPA AV
 Regarding contrasts of the AV stimulus (see Table \ref{tab:av-contrasts}), all
@@ -2098,10 +2094,7 @@ events a naturalistic stimulus may provide and how homogeneous the events to be
 averaged might be.
 
 
-\subsubsection{RSC \& LOC}
-
 \todo[inline]{same part as in the main text but with number of contrasts}
-
 % intro
 Apart from the PPA, we find significantly increased activity in the dorsal
 precuneus and posterior cingulate region (e.g. retrosplenial cortex; RSC) and
@@ -2112,7 +2105,6 @@ stimulus: 7 of 8 contrasts) and LOC (AV stimulus: 4 of 5 contrasts; AD stimulus:
 unilateral in 2, bilateral in 4 of 8 contrasts) are known to be scene-selective
 regions (see \citep{chrastil2018heterogeneity, bettencourt2013role} for
 reviews).
-% conclusion
 
 % some backup text for RSC & LOC
 \begin{comment}
@@ -2176,9 +2168,6 @@ panoramic sequence [Park and Chun, 2009], and shows strong familiarity effects
 \end{comment}
 
 
-
-
-\subsubsection{confounding clusters}
 % ``confounding'' clusters
 Despite performing a whole brain analysis, we do not find many [random] clusters
 in single contrasts or even systematically across contrasts that hamper the
@@ -2206,11 +2195,15 @@ and test for correlations among variables.
 
 \subsection{negative controls and cross-modal controls}
 
-\todo[inline]{hm, so why did I build contrasts of the no\_cut condition compared
-to the movie cuts categories????}
 
 The four control contrasts of the AV stimulus that compared the
 \texttt{no\_cuts} to categories of movie cuts all lead to null results.
+
+\todo[inline]{hm, so why did I build contrasts of the no\_cut condition compared
+to the movie cuts categories????}
+
+\todo[inline]{discussion \& concluding statement}
+
 
 % AD anno in AV data
 The AV contrast using nouns (\texttt{se\_new} > \texttt{se\_old}): PPA
@@ -2229,13 +2222,11 @@ triangularis) and right ventral precuneus/posterior cingulate gyrus.
 vse\_new > vse\_old, vpe\_old (contrast 12): one cluster in the right posterior
 hippocampus.
 
-\todo[inline]{shower thought: changes of a soundscape that indicate a setting's
-    spatial layout could correlate with increased activity in the PPA
-    (arnott2008crinkling finds increased activations in PPA to sounds made by
-    objects (that reveil object's material/identity); but at the moment when
-    looking at the data I see no systematic in the results that let me assume
-that}
-
+\todo[inline]{changes of a soundscape that indicate a setting's spatial layout
+    could correlate with increased activity in the PPA (arnott2008crinkling
+    finds increased activations in PPA to sounds made by objects that reveal
+    object's material/identity); but: when looking at the data I see no
+systematic in the results that let me assume that}
 
 
 \end{document}
