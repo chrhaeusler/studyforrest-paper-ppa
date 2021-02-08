@@ -934,14 +934,8 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 
 \subsection{Statistical analysis}
 
-\todo[inline]{SE: Vergleich zu Faces aus? COH: should be clearer now why we did
-not do it}
-
-\todo[inline]{SE: cuts to new vs familar setting wird irgendwie nie so
-richtig in den PPA kontext eingeordnet. Warum ist das Hauptkontrast und nicht
-das viel näher liegende places vs faces? COH: places vs. face = simple set in
-Sengupta; here, we follow the strict set used in Sengupta; tbh, not mentioned in
-detail}
+\todo[inline]{COH: tried to make clear why we did not/could not use ``places vs.
+faces''}
 
 % intro
 We tested our modeled hemodynamic responses based on stimulus annotations by
@@ -1003,10 +997,6 @@ non-geometry related categories (\texttt{body}, \texttt{bodypart},
 \texttt{furniture} to get a sufficient amount of events per stimulus segment.
 \todo[inline]{in detail: \texttt{fahead}: just N=83; mostly parts
  of face (``ear'', ``nose''), or vague description (``his/her face''; N=10)}
-% why furniture was not used
-The category ``furniture'' (\texttt{furn}) was not used as a regressor of
-interest in any contrast because these nouns could be perceived as either a
-geometry-defining scene element or as an isolated object.
 % why se_new & se_old were not used in the primary contrasts
 The categories of nouns indicating a switch to a setting that occurred for the
 first time (\texttt{se\_new}) or a setting that recurred during the plot
@@ -1022,6 +1012,10 @@ richer pictures], and
 [c) the narrator is often lacking behind a short dialogue or a change of the
 soundscape that might already indicate a change of settings.] \todo[inline]{for
 sake of conciseness, it is imo better to drop that ``soundscape-thing''}
+% why furniture was not used
+The category ``furniture'' (\texttt{furn}) was not used as a regressor of
+interest in any contrast because these nouns could be perceived as either a
+geometry-defining scene element or as an isolated object.
 % control contrasts
 Finally, we created several contrasts as negative control for both stimuli.
 % AV: no cut > cut
@@ -1156,13 +1150,9 @@ of individual PPA overlaps were created from data provided by
 flatmaps/inflated brains standard; COH: imo it is important that we do not have
 clusters all over the brain}
 
-\todo[inline]{SE: overlap of clusters/contrasts: Anzahl der Überlappungen ist
-schwer abzulesen; lieber eine andere Farbskala (spectral sequence?) nutzen; COH:
-this figure is my end game boss}
-
-\todo[inline]{SE: Wie sehen die Antworten innerhalb der "klassisch definierten"
+\todo[inline]{SE: Antworten innerhalb "klassisch definierter"
 PPA für die verschiedenen regressoren bzw. kategorien derselben (zumindest aber
-places vs faces) aus? COH: ???}
+places vs faces) aus? -> Peristimulus plots}
 
 % study goal
 We investigated if spatial information embedded in two naturalistic stimuli
@@ -1321,11 +1311,12 @@ Further, we hypothesized that an exclusively auditory stimulus could localize
 the PPA in individual subjects and thus possibly substitute a classic visual
 localizer experiment.
 
-\todo[inline]{part regarding Sengupta is shortened; they used $t$-maps???}
+
 % Sengupta et al., 2016
 The visual localizer \citep{sengupta2016extension} yielded bilateral
 parahippocampal clusters in 12 of 14 subjects and an unilateral right clusters
-in two subjects (sub-04, sub-20).
+in two subjects (sub-04, sub-20).\todo{I shortened the following part (maybe too
+much)}
 % Sengupta: 1 of 3
 Individual PPAs were assessed by visually inspecting unthresholded $t$-maps
 (Z>1.64, p<.05 cluster corrected)  of three different $t$-contrasts
@@ -1333,6 +1324,7 @@ Individual PPAs were assessed by visually inspecting unthresholded $t$-maps
 \citep{sengupta2016extension}), and titrating [?] the $t$-threshold in the range
 of [2, 3] in until we found an isolated cluster that matched the expected
 anatomical location based on literature \citep{epstein1998ppa}.
+\todo{they used $t$-maps???}
 % one contrast to localize them all; "...and Z>3.4 for all"
 Contrary to \citep{sengupta2016extension}, we here used the same contrast of
 each naturalistic stimulus and the same threshold for all subjects (Z>2.3, p<.05
@@ -1911,6 +1903,10 @@ and then report results of AD and discuss AD}
 \subsection{Results}
 
 \subsubsection{Robustness of group results across contrasts}
+
+\todo[inline]{SE: overlap of clusters/contrasts: Anzahl der Überlappungen ist
+schwer abzulesen; lieber eine andere Farbskala (spectral sequence?) nutzen; COH:
+this figure is my end game boss}
 
 % intro
 In order to test the robustness of our approach, we created overall five
