@@ -116,19 +116,15 @@ narrative, studyforrest
 \noindent Generally
 
 \begin{itemize}
-    \item in case the additional contrast stay in supplemental material, just
-        speak of contrast not ``primary contrast''
-    \item in main text, add references to supplemental material
-    \item there is no "cue about" in the English language? Alternatives are
-        "give a hint on/about", "indicate"; changed the sentences but should
-        ask Alex
+    \item speaking of "primary contrast" probably not necessary anymore.
+    \item main text: add references to supplemental material
 \end{itemize}
 
 
 \noindent Method:
 
 \begin{itemize}
-    \item Figure of regressor correlations: maybe write out in full the name of
+    \item Fig regressor correlations: maybe write out in full the name of
         regressors (instead of pointing to the table)
 \end{itemize}
 
@@ -585,9 +581,8 @@ The neuroscientific rationale was that activity in the PPA is greater when
 participants view novel versus repeated scenes or view-points
 \citep{epstein1999parahippocampal, grill2006repetition}.
 %
-\todo{imo its better to focus on the cinematographic rationale and drop the last
-sentence 'cause activity in e.g. FFA adopts too -> we might substract an on
-average smaller response}
+\todo{better focus on cinematographic rationale \& drop last sentence; activity
+in e.g. FFA adopts too -> we might substract an on average smaller response}
 % no cut condition: intro
 In order to create a control condition, a sixth category (\texttt{no\_cut}) was
 created by pseudo-randomly drawing movie frames from continuous movie shots that
@@ -892,8 +887,7 @@ to previous studies that used controlled stimuli.
         loudness yielded the highest correlation values
         (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
         \texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749).
-        \todo[inline]{not all labels are actually listed in that table; which
-        ones are not listed? checked it, all labels listed}
+        \todo[inline]{checked it, all labels listed}
       }
 \label{fig:reg-corr}
 \end{figure*}
@@ -934,9 +928,6 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 
 \subsection{Statistical analysis}
 
-\todo[inline]{COH: tried to make clear why we did not/could not use ``places vs.
-faces''}
-
 % intro
 We tested our modeled hemodynamic responses based on stimulus annotations by
 conducting standard two-level general linear model (GLM) analyses to create
@@ -950,40 +941,24 @@ On the first level, we created GLM contrasts based on annotated stimulus
 features embedded in the in the audio-visual movie and its audio-description.
 % intro
 To test the robustness of this approach, we operationalized the perception of
-spatial information compared to the perception of ``non-spatial'' information
+spatial information compared to the perception of non-spatial information
 differently in five $t$-contrasts for the AV stimulus (see Table
 \ref{tab:av-contrasts}) and eight $t$-contrasts for the AD stimulus (see Table
 \ref{tab:ao-contrasts})
 % reason: robustness
 We assumed all contrasts could in principle correlate with increased hemodynamic
-activity in the PPA.
-% but we expect differences because
-Nevertheless, we also assumed contrasts would differ in [?] \todo{differ in
-what?  ``localization performance'' isn't well phrased. How ``well'', ``nice''
-the results are?} since the event categories differed a) in how well the
-averaged events reflected spatial information, and b) in available data (i.e.
-event counts).
-% difference to Sengupta; Berman et al. (2010). Evaluating functional localizers
-% (2010)
-Notably, localization of the PPA in individual subjects that was done by
-\citep{sengupta2016extension} using the established approach of contrasting
-blocks of pictures is based on one contrast for each subjects (cf. Table 3 in
-\citep{sengupta2016extension}) that was chosen post-hoc from a set of three
-contrasts (\textit{strict}, \textit{relaxed}, and \textit{simple} contrast
-\citep{sengupta2016extension}).
-% thus: primary contrasts
-Here, we chose one contrast to be ``primary contrast'' for later detailed
-inspection and report.
+activity in the PPA but chose one contrast to be the ``primary contrast'' for
+later detailed inspection and report.
 % selection criteria for primary contrast.
 The selection criterion for the primary contrast of each stimulus was a
-subjectively good balance between a) the amount of available data, b) how
-well the average of events within represented spatial information and
-non-spatial information respectively (cf. section \ref{rationale}).
+subjectively good balance between a) how well the average of events within
+categories represented spatial information and non-spatial information
+respectively (cf. section \ref{rationale}), and b) the amount of available data.
 % AV: primary contrast
 In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
-was not depicted before (\texttt{vse\_new}) to cuts that we accompanied with a
-change of the camera position within a setting that was already occurring
-previously (\texttt{vpe\_old}).
+was not depicted before (\texttt{vse\_new}) to cuts merely switching the camera
+position within a setting that was already established earlier in the movie
+(\texttt{vpe\_old}).
 % why
 We assumed that category \texttt{vse\_new} on average comprised the most movie
 frames depicting a landscape or the geometry of a setting, and the category
@@ -991,12 +966,16 @@ frames depicting a landscape or the geometry of a setting, and the category
 rationale to categorize the cuts in section \ref{rationale})].
 % AD: primary contrast
 In the primary contrast of the AD stimulus, we contrasted landmarks
-\texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with all
-non-geometry related categories (\texttt{body}, \texttt{bodypart},
-\texttt{fahead}, \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}) except
-\texttt{furniture} to get a sufficient amount of events per stimulus segment.
-\todo[inline]{in detail: \texttt{fahead}: just N=83; mostly parts
- of face (``ear'', ``nose''), or vague description (``his/her face''; N=10)}
+\texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with not
+just nouns referring to a person's head or face (\texttt{fahead}, N=83; e.g.
+``eyes'', ``face'', or ``head'') but also all non-geometry related categories
+(\texttt{body}, \texttt{bodypart}, \texttt{fahead}, \texttt{object},
+\texttt{sex\_f}, \texttt{sex\_m}) except \texttt{furniture} to get more events
+per stimulus segment.
+% why furniture was not used
+The category ``furniture'' (\texttt{furn}) was not used as a regressor of
+interest in any contrast because these nouns could be perceived as either a
+geometry-defining scene element or as an isolated object.
 % why se_new & se_old were not used in the primary contrasts
 The categories of nouns indicating a switch to a setting that occurred for the
 first time (\texttt{se\_new}) or a setting that recurred during the plot
@@ -1008,14 +987,9 @@ a) categories comprise words that could count as a member of another category
 b) nouns only vaguely described a scene (e.g. ``[in] Greenbow'', ``[in a]
 disco'', ''[black and white] film recordings'') [compared to whole, perceptually
 richer pictures], and
-% hierarchical categories
-[c) the narrator is often lacking behind a short dialogue or a change of the
-soundscape that might already indicate a change of settings.] \todo[inline]{for
-sake of conciseness, it is imo better to drop that ``soundscape-thing''}
-% why furniture was not used
-The category ``furniture'' (\texttt{furn}) was not used as a regressor of
-interest in any contrast because these nouns could be perceived as either a
-geometry-defining scene element or as an isolated object.
+% c) the narrator is often lacking behind a short dialogue or a change of the
+% soundscape that might already indicate a change of settings.
+%
 % control contrasts
 Finally, we created several contrasts as negative control for both stimuli.
 % AV: no cut > cut
@@ -1030,9 +1004,13 @@ For the AD stimulus, we created five $t$-contrasts (see Table
 correlated with moments of cuts as cuts might possibly be correlated with a
 change of the soundscape also giving an auditory hint of switching to another
 setting.
-%
-\todo[inline]{it's probally not about the soundscape anymore (to speculative)
-but about the somewhat correlation of nouns and cuts}
+% difference to Sengupta; Berman et al. (2010). Evaluating functional localizers
+% (2010)
+In the VIS study \citep{sengupta2016extension} using the established approach of
+contrasting blocks of pictures, assessment of individual PPAs was based on
+chosing post-hoc one from a set of three contrasts (\textit{strict},
+\textit{relaxed}, and \textit{simple} contrast \citep{sengupta2016extension};
+cf. Table 3 in \citep{sengupta2016extension}).
 
 
 \begin{table*}[h!]
@@ -1145,10 +1123,6 @@ of individual PPA overlaps were created from data provided by
 
 \section{Results}
 \todo[inline]{800 words}
-
-\todo[inline]{SE: in Figure weiter reinoomen; bei FFA/PPA etc sind
-flatmaps/inflated brains standard; COH: imo it is important that we do not have
-clusters all over the brain}
 
 \todo[inline]{SE: Antworten innerhalb "klassisch definierter"
 PPA für die verschiedenen regressoren bzw. kategorien derselben (zumindest aber
@@ -1315,8 +1289,7 @@ localizer experiment.
 % Sengupta et al., 2016
 The visual localizer \citep{sengupta2016extension} yielded bilateral
 parahippocampal clusters in 12 of 14 subjects and an unilateral right clusters
-in two subjects (sub-04, sub-20).\todo{I shortened the following part (maybe too
-much)}
+in two subjects (sub-04, sub-20).
 % Sengupta: 1 of 3
 Individual PPAs were assessed by visually inspecting unthresholded $t$-maps
 (Z>1.64, p<.05 cluster corrected)  of three different $t$-contrasts
