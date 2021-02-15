@@ -110,18 +110,18 @@ narrative, studyforrest
 
 \pagebreak[4]
 
-\section*{Plan}
 
+\section*{Plan}
 
 \noindent Generally
 
 \begin{itemize}
-    \item [text in brackets] can probably be deleted
+    \item text in [brackets] can probably be deleted
     \item imo AD and AV can be written as movie and audio-description
 \end{itemize}
 
 
-\noindent Method:
+\noindent Method
 
 \begin{itemize}
     \item Fig regressor correlations: maybe write out in full the name of
@@ -140,28 +140,20 @@ narrative, studyforrest
 \begin{itemize}
     \item "Lokalisation der PPA" vs. "Antwortverhalten einer vorab definierten
         PPA". Machst wohl das erste, beschreibst es aber als das zweite
-    \item Summary / Concluding statement
-        (data reuse to present compelling new findings \& conclusions derived
-        from published.)
 \end{itemize}
 
 
 \noindent Supplemental Material
 \begin{itemize}
-    \item restructure (results + discussion AV, then AD)
-    \item discuss differences of contrasts (s. Simons comment)
+    \item discuss differences of contrasts (s. Simons comment)?
 \end{itemize}
 
 
-\noindent Code Availability
+\noindent Data Citations, Code Availability, Data Availability
+
 \begin{itemize}
     \item https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880i
-\end{itemize}
-
-
-\noindent Data Availability
-\begin{itemize}
-    \item s. other psyinfo paper
+    \item cf. other Scienctific Data analysis paper
 \end{itemize}
 
 \pagebreak[4]
@@ -1831,11 +1823,11 @@ Bibliographic information for the data records described in the manuscript.
 
 \appendix
 
+\pagebreak[4]
+
 \section{Supplementary Materials}
 
-\subsection{Results}
-
-\subsubsection{Robustness of group results across contrasts}
+\subsection{Congruencies across contrasts}
 
 \todo[inline]{SE: use different colormap for overlap of contrasts' clusters}
 
@@ -1928,54 +1920,6 @@ Contrast 6 shows one additional cluster in the right medial frontal cortex.
 \end{figure*}
 
 
-\subsubsection{control contrasts}
-
-% intro
-For the purpose of negative control, we implemented five contrasts for every
-stimulus.
-
-% ---------- AV control contrasts ----------
-% 6 nothing
-% 7 nothing
-% 8 nothing
-% 9 nothing
-%10 se_new > se_old (nouns but in AV stimulus):
-% LOC (l/r) right PPA, bilateral sup. lat. occ. c., sup. parietal lobe (right)
-
-% ---------- AD control contrasts ----------
-% 9 PPA (-/-); RSC (-/r), LOC (-/-), left pars triangularis
-%10 PPA (-/-); RSC (-/-), LOC (-/-)
-%11 PPA (-/-); RSC (-/-), LOC (-/-),
-%12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
-%13 PPA (-/-); RSC (-/-), LOC (-/-)
-
-% AV: no_cut > x
-In the analysis of the AV data, none of the four contrasts that compared the
-\texttt{no\_cut} category to a movie cut category (see Table
-\ref{tab:av-contrasts}) yielded significant clusters.
-% AV using nouns
-The contrast that used the narrator's nouns but in the AV stimulus
-(\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
-PPA and bilateral clusters in the superior lateral occipital cortices (the right
-hemispheric cluster extending into the superior parietal cortex).\todo{cuts
-correlate with the nouns}
-
-% AD stimulus
-In the analysis of the AD data, we created control contrasts based on events of
-the annotated movie cuts (cf. Table \ref{tab:ao-contrasts})
-% contrast 9
-Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
-inferior prefrontal cortex (pars triangularis) and right ventral
-precuneus/posterior cingulate gyrus.
-% contrast 12
-Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
-one cluster in the right posterior hippocampus.\todo{odd imo}
-
-
-\subsection{Discussion}
-
-\subsubsection{congruencies (PPA, RSC, LOC, others)}
-
 \begin{comment}
     the mother of total confusion: Aminoff shifts the PPA along the
     anterior-poster axis depending on publication;
@@ -2016,7 +1960,6 @@ left-hemispheric PPA.
 Hence, investigators that use model-driven analyses have to consider how many
 events a naturalistic stimulus may provide and how homogeneous the events to be
 averaged might be.
-
 
 
 % intro
@@ -2118,12 +2061,53 @@ using naturalistic stimuli should (extensively) annotate the stimulus material
 and test for correlations among variables.
 
 
-\subsection{negative controls and cross-modal controls}
+
+\subsection{Control contrasts}
+
+% intro
+For the purpose of negative control, we implemented five contrasts for every
+stimulus.
+
+% ---------- AV control contrasts ----------
+% 6 nothing
+% 7 nothing
+% 8 nothing
+% 9 nothing
+%10 se_new > se_old (nouns but in AV stimulus):
+% LOC (l/r) right PPA, bilateral sup. lat. occ. c., sup. parietal lobe (right)
+
+% ---------- AD control contrasts ----------
+% 9 PPA (-/-); RSC (-/r), LOC (-/-), left pars triangularis
+%10 PPA (-/-); RSC (-/-), LOC (-/-)
+%11 PPA (-/-); RSC (-/-), LOC (-/-),
+%12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
+%13 PPA (-/-); RSC (-/-), LOC (-/-)
+
+% AV: no_cut > x
+In the analysis of the AV data, none of the four contrasts that compared the
+\texttt{no\_cut} category to a movie cut category (see Table
+\ref{tab:av-contrasts}) yielded significant clusters.
+% AV using nouns
+The contrast that used the narrator's nouns but in the AV stimulus
+(\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
+PPA and bilateral clusters in the superior lateral occipital cortices (the right
+hemispheric cluster extending into the superior parietal cortex).\todo{cuts
+correlate with the nouns}
+
+% AD stimulus
+In the analysis of the AD data, we created control contrasts based on events of
+the annotated movie cuts (cf. Table \ref{tab:ao-contrasts})
+% contrast 9
+Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
+inferior prefrontal cortex (pars triangularis) and right ventral
+precuneus/posterior cingulate gyrus.
+% contrast 12
+Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
+one cluster in the right posterior hippocampus.\todo{odd imo}
+
 
 \todo[inline]{why did I build contrasts of the no\_cut condition compared
 to the movie cuts categories????}
-
-\todo[inline]{discussion \& concluding statement}
 
 The four control contrasts of the AV stimulus that compared the
 \texttt{no\_cuts} to categories of movie cuts all lead to null results.
