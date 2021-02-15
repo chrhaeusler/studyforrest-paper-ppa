@@ -116,9 +116,8 @@ narrative, studyforrest
 \noindent Generally
 
 \begin{itemize}
-    \item main text: add references to supplemental material
-    \item imo AD and AV can be written as movie and audio-description
     \item [text in brackets] can probably be deleted
+    \item imo AD and AV can be written as movie and audio-description
 \end{itemize}
 
 
@@ -134,8 +133,7 @@ narrative, studyforrest
 \noindent Results
 
 \begin{itemize}
-    \item check if captions of figs and tables now (really) match phrasing
-        in intro / method
+    \item tables: round p-values to ?
 \end{itemize}
 
 \noindent Discussion
@@ -887,13 +885,15 @@ to previous studies that used controlled stimuli.
 \begin{figure*}[h!]
 \centering
     \includegraphics[width=\linewidth]{figures/regressor-corr} \caption{Pearson
-        correlation coefficients of the regressors used in the analysis of the
+        correlation coefficients of modeled time series used as regressors in
+        the GLM analysis of the
         audio-description (blue; see Table \ref{tab:ao-events} for a
-        description) and audio-visual movie (red; see Table \ref{tab:av-events})
-        rounded to the nearest tenth.
+        description) and audio-visual movie (red; see Table
+        \ref{tab:av-events}).
+        Values are rounded to the nearest tenth.
         The correlation between the two stimuli's
-        root mean square loudness and between their left-right difference in
-        loudness yielded the highest correlation values
+        root mean square volume and between their left-right difference in
+        volume yielded the highest correlation values
         (\texttt{fg\_ad\_rms} and \texttt{fg\_av\_ger\_rms}, r=.7635;
         \texttt{fg\_ad\_lrdiff} and \texttt{fg\_av\_ger\_lrdiff}, r=.7749).
         \todo[inline]{checked it, all labels listed}
@@ -1134,7 +1134,7 @@ places vs faces) aus? -> Peristimulus plots}
 
 % study goal
 We investigated if spatial information embedded in two naturalistic stimuli
-correlate with increased hemodynamic activity in the PPA.
+correlates with increased hemodynamic activity in the PPA.
 % group level
 On a group average level, we compare results gained from whole-brain GLM
 analyses of the movie and the audio-description to results gained from a
@@ -1148,6 +1148,9 @@ Unthresholded $z$-maps of all contrasts on a group level as well as individual
 results of the primary $t$-contrasts co-registered to the group-template (MNI152
 space) can found at
 \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
+% reference to supplemental material
+Results and discussion of the additional contrasts (PPA and negative controls)
+can be found in the supplemental material
 
 % AV intro
 First, we analyzed data from the movie offering a visual but ecologically more
@@ -1182,8 +1185,8 @@ parahippocampal cortex, the occipital and temporal fusiform gyrus and lingual
 gyrus.\todo{Havard-Oxford atlas: 3 different most prob. locations depen. on
 voxel}
 % precuneus
-Two additional clusters are apparent in the ventral precuneus extending into the
-retrosplenial cortex.
+Two additional homologous clusters are apparent in the ventral precuneus
+extending into the retrosplenial cortex.
 % LOC
 Finally, two homologous clusters are located in the superior lateral occipital
 cortex.
@@ -1194,7 +1197,7 @@ cortex.
     \caption{Mixed-effects group-level (N=14) GLM results. Significant clusters
         (Z>3.4, p<.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
         head template (gray).
-        Light gray: The audio-description's field-of-view
+        Light gray: The audio-description's field of view
         (cf. \citep{hanke2014audiomovie}).
         Black: outline of overlapping individual PPA ROIs
         \citep{sengupta2016extension}.
@@ -1203,7 +1206,8 @@ cortex.
         nouns (\texttt{geo, groom} > all non-spatial
         categories)
         are overlaid over the movie's primary $t$-contrast (blue) that compares
-        cuts to a new setting with cuts to a familiar perspective
+        cuts to a setting depicted for the first time with cuts within a
+        recurring setting
         (\texttt{vse\_new > vpe\_old}).
         }
     \label{fig:group-slices}
@@ -1213,7 +1217,7 @@ cortex.
 \begin{table*}[h!]
 \caption{Significant clusters (z-threshold Z>3.4; p<.05 cluster-corrected)
     of the primary $t$-contrast for the audio-visual movie comparing cuts to a
-    setting that was not depicted before to a recurring setting
+    setting depicted for the first time with cuts within a recurring setting
     (\texttt{vse\_new > vpe\_old}).
     Clusters sorted by voxel size.
     The first brain structure given contains the voxel with the maximum Z-Value,
@@ -1288,32 +1292,30 @@ of the averaging process.
 Further, we hypothesized that an exclusively auditory stimulus could localize
 the PPA in individual subjects and thus possibly substitute a classic visual
 localizer experiment.
-
 % Sengupta et al., 2016; unilateral in sub-04 and sub-20
-The visual localizer \citep{sengupta2016extension} yielded bilateral
-parahippocampal clusters in 12 of 14 subjects and an unilateral right clusters
-in two subjects (cf. Table 3 in \citep{sengupta2016extension}).
+The visual localizer yielded bilateral parahippocampal clusters in 12 of 14
+subjects and an unilateral right clusters in two subjects (cf. Table 3 in
+\citep{sengupta2016extension}).
 % Sengupta: 1 of 3
-Individual PPAs were assessed by visually inspecting unthresholded $t$-maps
-(Z>1.64, p<.05 cluster corrected) of three different $t$-contrasts, and titrating [?] the $t$-threshold in the range
-of [2, 3] in until we found an isolated cluster (cf. Table 3 in  that matched the expected
-anatomical location based on literature \citep{epstein1998ppa}.
-\todo{they used $t$-maps???}
+Individual PPAs were assessed by visually inspecting thresholded $t$-maps
+(Z>1.64, p<.05 cluster corrected) of three different $t$-contrasts, and
+titrating\todo{??} the $t$-threshold in the range of [2, 3] in until we found an
+isolated cluster (cf. Table 3 in that matched the expected anatomical location
+based on literature \citep{epstein1998ppa}.
+
 % one contrast to localize them all; "...and Z>3.4 for all"
 Contrary to \citep{sengupta2016extension}, we here used the same contrast of
-each naturalistic stimulus and the same threshold for all subjects (Z>2.3, p<.05
-cluster-corrected for the analysis in subject-space; Z>3.4, p<.05 for the
-analysis in group-space).
+each naturalistic stimulus and the same threshold for all subjects.
 % subject space -> NeuroVault
 Results of the analyses that were performed in subject-space can be found in the
-accompanying dataset.
+accompanying dataset (Z>2.3, p<.05 cluster-corrected).
 % here report in group space
 For better comparisons of subjects, we here report results from the analyses
-performed in group space.
+performed in group space (Z>3.4, p<.05 cluster-corrected).
 % ref to figure
 Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary AV
 and AD $t$-contrast, and the outline of overlapped, individual PPAs
-\citep{sengupta2016extension} co-registered to the MNI152 template.
+co-registered to the MNI152 template.
 % one slice to show them all
 Transversal slice of z=-11 was chosen as it depicts [at least some] voxels of
 significant clusters in almost all subjects.
@@ -1346,22 +1348,23 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
         transformation to a study-specific T2* group template that is
         co-registered to the MNI152 template with an affine transformation (12
         degrees of freedom).
-        The results of audio-description's primary
-        $t$-contrast (blue) that compares geometry-related nouns to non
-        geometry-related nouns spoken by the audio-description's narrator
+        The results of the audio-description's primary
+        $t$-contrast (blue) that compares geometry related nouns to non-
+        geometry related nouns spoken by the narrator
         (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
-        primary $t$-contrast (blue) that compares cuts to new setting with cuts
-        to a familiar perspective (\texttt{vse\_new > vpe\_old}).
+        primary $t$-contrast (blue) that compares cuts to setting depicted for
+        the first time with cuts within a recurring setting
+        (\texttt{vse\_new > vpe\_old}).
         Black:
         outline of subject-specific PPA ROIs.
         Light gray: The
-        audio-description's field-of-view (cf. \citep{hanke2014audiomovie}).
+        audio-description's field of view (cf. \citep{hanke2014audiomovie}).
         To facilitate comparisons across subjects, we chose the same horizontal
         slice (x=-11) for all subjects as this slice depicts voxels of
         significant clusters in almost all subjects.
         The figure does not show voxels of the left cluster of the AV stimulus
-        in sub-09 and sub-18, and voxels of right cluster of the AV stimulus in
-        sub-15.}
+        in sub-09 and sub-18, and voxels of the right cluster of the AV
+        stimulus in sub-15.}
     \label{fig:subs-thresh-ppa}
 \end{figure*}
 
@@ -1374,12 +1377,11 @@ Each subplot visualizes the mean value and difference (localizer minus AD) of
 two spatially corresponding voxels in the unthresholded $z$-maps.
 % top KDE plot
 A shift of the distribution to voxels with a mean above zero can be seen the
-further we constrain voxels to the individual PPA (see KDE plot for the x-axes
-in Figure \ref{fig:bland-altman}).
+further we constrain voxels to the individual PPA (cf. KDE plot for the x-axes).
 % right KDE plot
 Values above the horizontal line depict voxels that show a higher $z$-value in
 the dedicated localizer, values below the horizontal line depict voxels that
-show higher $z$-value in the AD stimulus.
+show a higher $z$-value in the AD stimulus.
 
 \begin{figure*}[h!]
 \centering
@@ -1391,7 +1393,7 @@ show higher $z$-value in the AD stimulus.
     The y-axes show the difference of two voxels (localizer minus
     audio-description; KDE plot on the right).
     The overlays depict voxels spatially constrained to the
-    temporal and occipital cortex (gray; based on the probabilistic Jülich
+    temporal and occipital cortex (gray; based on probabilistic Jülich
     Histological Atlas \citep{eickhoff2005toolbox, eickhoff2007assignment}),
     PPA overlap of all subjects (blue),
     and individual PPA(s) (red).}
@@ -1409,7 +1411,6 @@ show higher $z$-value in the AD stimulus.
 
 % provides caveats to the interpretation describes how the paper
 % advances the field by providing new opportunities
-
 
 
 % previous studies
