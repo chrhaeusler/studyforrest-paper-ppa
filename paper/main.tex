@@ -117,6 +117,8 @@ narrative, studyforrest
 
 \begin{itemize}
     \item main text: add references to supplemental material
+    \item imo AD and AV can be written as movie and audio-description
+    \item [text in brackets] can probably be deleted
 \end{itemize}
 
 
@@ -341,13 +343,12 @@ lettieri2019emotionotopy, nguyen2016integration}).
 % used studies
 The same subjects were
 % AD
-a) listening to the audio-description (AD study; \citep{hanke2014audiomovie}) of
+a) listening to the audio-description \citep{hanke2014audiomovie} of
 the movie ``Forrest Gump'',
 % AV
-b) watching the original movie (AV study; \citep{hanke2016simultaneous}), and
+b) watching the audio-visual movie \citep{hanke2016simultaneous}, and
 % VIS
-c) participating in a dedicated six-category block-design visual localizer (VIS
-study; \citep{sengupta2016extension}).
+c) participating in a dedicated six-category block-design visual localizer (VIS; \citep{sengupta2016extension}).
 % see corresponding papers for details
 An exhaustive description of the participants, stimulus creation, procedure,
 stimulation setup, and fMRI acquisition can be found in the corresponding
@@ -381,10 +382,10 @@ Otto-von-Guericke University of Magdeburg, Germany.
 \subsection{Stimuli and Procedure}
 
 % AD & AV stimulus name & references
-We used the German DVD release \citep{ForrestGumpDVD} of the audio-visual movie
-``Forrest Gump'' \citep{ForrestGumpMovie} and its audio-description that was
-broadcast as an additional audio track for visually impaired listeners on Swiss
-public television \citep{ForrestGumpGermanAD}.
+We used the German DVD release \citep{ForrestGumpDVD} of the movie ``Forrest
+Gump'' \citep{ForrestGumpMovie} and its audio-description that was broadcast as
+an additional audio track for visually impaired listeners on Swiss public
+television \citep{ForrestGumpGermanAD}.
 % AV: voice-over
 The plot of the movie is already carried by a voice-over of the main character
 Forrest Gump.
@@ -405,7 +406,8 @@ audibility during MRI scanning.
 Each stimulus was split into eight segments of approximately \unit[15]{minutes}.
 % AD & AV: instructions
 Before the experiment, participants were instructed to inhibit physical
-movements except for eye-movements, and otherwise to simply ``enjoy''.
+movements except for eye-movements, and otherwise to simply ``enjoy'' the
+stimulus.
 % AD & AV: presentation & instructions
 Audio-description and movie segments were presented in chronological order with
 four segments in two fMRI sessions. Between sessions, participants left the
@@ -425,7 +427,7 @@ objects (e.g. binoculars, screw, chair, mug; medium-gray background), houses
 (medium-gray background) and outdoor scenes comprising of nature and street
 scenes, and phase scrambled images.
 % controlled luminance and size
-Images were matched in luminance and size of 400$\times$\unit[400]{px}
+Images were matched in luminance and size of 400$\times$\unit[400]{px}.
 % procedure: presentation & instructions
 During the experiment, subjects were presented with four block-design runs, with
 two \unit[16]{s} blocks per stimulus category in each run.
@@ -535,15 +537,15 @@ to improve estimation efficiency.
 \subsection{Event selection} \label{rationale}
 
 % traditionally
-Traditionally, researchers specifically design stimuli that presumably would
-trigger the perceptual process of interest while also controlling confounding
-variables (e.g. color, luminance).
+Traditionally, researchers design stimuli that presumably would trigger the
+perceptual process of interest while also controlling confounding variables
+(e.g. color, luminance).
 % our approach: annotation and regressors
 Naturalistic stimuli mimic how we experience the world more closely but have the
 drawback that they are usually fix and that their temporal structure is unknown.
 % annotation ftw
-Hence, we annotated the temporal structure of a various stimulus features that
-later served as a basis (for GLM regressors) to model hemodynamic responses.
+Hence, we annotated the temporal structure of various stimulus features that
+later served as basis [for GLM regressors] to model hemodynamic responses.
 
 % AV anno
 For the analysis of the AV stimulus, we took advantage of a previously published
@@ -551,8 +553,8 @@ annotation of [the 869] movie cuts and the depicted location after each cut
 \citep{haeusler2016cutanno}.
 % rationale to use that annotation rationale behind using movie cuts
 Our rationale was that cuts are ``spatially relevant'' events that re-orient the
-viewer within the environment of the movie by either changing the perspective
-within a setting or switching to another setting.
+viewer within the environment of the movie by either switching to another
+setting or switching the perspective within the same setting.
 % AV regressors/events
 Each cut was put into one of the following five categories (see Table
 \ref{tab:av-events}):
@@ -561,13 +563,13 @@ Each cut was put into one of the following five categories (see Table
 (\texttt{vse\_new}),
 %
 2) a cut switching to a setting that was already depicted earlier in the movie
-(\texttt{vse\_old}; e.g. a cut to the recurring waiting bench at the bus stop),
+(\texttt{vse\_old}),
 %
 3) a cut switching to another locale within a setting (\texttt{vlo\_ch}; e.g. a
 cut from first to the second floor in Forrest's house),
 %
-4) a cut to another camera position within a setting or locale (e.g. room) that
-was depicted for the first time (\texttt{vpe\_new}), and
+4) a cut to another camera position within a setting or locale that was depicted
+for the first time (\texttt{vpe\_new}), and
 %
 5) a cut to another camera position within a setting or locale that was already
 depicted before (\texttt{vpe\_old}).
@@ -575,29 +577,25 @@ depicted before (\texttt{vpe\_old}).
 % irrespective of visual content
 Notably, categorization was performed irrespectively of a movie frame's precise
 content and thus without controlling confounding variables.
-% AV COPEs: intro
-The rationale that this approach would yield categories that - on average - show
-different stimulus features.
+% assumption
+We assumed that different categories would - on average - depict different
+stimulus features.
 % cinematographic rationale cut to new scenes: establishing shots
 The cinematographic rationale was that movie shots tend to establish the setting
-(\texttt{vse\_new}) and the spatial relationships within a setting
-(\texttt{vpe\_new}) at the beginning of a movie.
+(\texttt{vse\_new}) and the spatial layout within a setting (\texttt{vpe\_new})
+at the beginning of a movie.
 % cut to recurrent scene
 Later in the movie, the field sizes of movie shots tend to decrease when
-switching back to already established settings (\texttt{vse\_old}).
+switching back to an already established settings (\texttt{vse\_old}).
 % similarly for shots within a scene
-Later in the movie when the spatial layout of a setting is already established,
-shots within a setting shift to objects more relevant to the evolved plot and or
-to switching between faces of persons talking to each others (\texttt{vpe\_old})
-\citep{brown2012cinematography, mercado2011filmmakers}.
-% neuroscientific rationale
-The neuroscientific rationale was that activity in the PPA is greater when
-participants view novel versus repeated scenes or view-points
-\citep{epstein1999parahippocampal, grill2006repetition}.
-%
-\todo{drop last sentence \& better focus on cinematographic rationale; activity
-in e.g. FFA adopts too -> we might subtract an on average smaller response}
-% no cut condition: intro
+When the spatial layout within a setting is already established, shots tend to
+more often depict (faces of) persons talking to each others or objects more
+relevant to the evolved plot (\texttt{vpe\_old}) \citep{brown2012cinematography,
+mercado2011filmmakers}.
+% neuroscientific rationale The neuroscientific rationale was that activity in
+% the PPA is greater when participants view novel versus repeated scenes or
+% view-points \citep{epstein1999parahippocampal, grill2006repetition}.  no cut
+% condition: intro
 In order to create a control condition, a sixth category (\texttt{no\_cut}) was
 created by pseudo-randomly drawing movie frames from continuous movie shots that
 lasted longer than \unit[20]{s}.
@@ -666,7 +664,7 @@ fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavge
 
 % AD annotation
 For the analysis of the AD stimulus, we extended a publicly available annotation
-of speech \citep{haeusler2020speechanno} by further annotating words spoken by
+of speech \citep{hausler2021studyforrest} by further annotating words spoken by
 the audio-description's narrator.
 % annotation procedure
 Two persons performed a categorization of (concrete and countable) nouns that
