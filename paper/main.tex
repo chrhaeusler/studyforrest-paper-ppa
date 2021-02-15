@@ -855,17 +855,15 @@ The events of the movie cut related categories and \texttt{no\_cut} events were
 modeled as box car events of 200 ms duration.
 %
 Nouns were modeled from onset to offset of each word, low-level confounds from
-onset to offset of the corresponding movie frame AO:
-% modeling as boxcar function
-Events were were modeled as boxcar function from onset to offset of each word.
+onset to offset of the corresponding movie frame
 % convolving
 Events for all regressors of the AV and AO stimulus were convolved with a double
 gamma hemodynamic response function (HRF).
+
 % we checked correlations
-Since we annotated events in naturalistic stimuli and thus fixed time courses
-that could not experimentally manipulated, the modeled time-series [of
-hemodynamic activity] based on these events could be correlated leading to
-shared variance and thus low detection power of subsequent analyses.
+Since we annotated events in fixed time courses, the modeled hemodynamic
+time-series could be correlated leading to shared variance and thus low
+detection power of subsequent analyses.
 % correlations within stimuli and across stimuli
 Hence, we tested for correlation of regressors across the eight segments of each
 stimulus and also for correlations of regressors across both stimuli (s. Figure
@@ -905,14 +903,14 @@ to previous studies that used controlled stimuli.
 
 
 % AV design matrix
-For the subsequent first level GLM analysis, the modeled hemodynamic responses
-related to all movie cuts (including \texttt{no\_cut}) and six low-level
-perceptual confounds (s. Table \ref{tab:av-events}) were included as regressors
-in the design matrix.
+For the subsequent first level GLM analysis of the AV stimulus, the modeled
+hemodynamic responses related to all movie cuts (including \texttt{no\_cut}) and
+six low-level perceptual confounds were included as regressors in the design
+matrix.
 % AD regressors in AV AD design matrix
 For the first level analysis of the AD stimulus, the modeled hemodynamic
 responses related to all noun categories and the two low-level perceptual
-confounds were included (s. Table \ref{tab:ao-events}).
+confounds were included.
 % AD regressors in AV
 To create a contrasts of cross-modal control in the analysis of the AV stimulus,
 we also implemented the regressors based on nouns used by the
@@ -920,8 +918,7 @@ audio-description's narrator to indicate a switch to another setting (categories
 \texttt{se\_new} and \texttt{se\_old}).
 % AV regressors in AV
 To create contrasts of cross-modal negative control in the analysis of the AD
-stimulus [and to capture variance of a possibly confounding change of the
-soundscape after a cut], we implemented the movie cut-related regressors
+stimulus, we also implemented the movie cut-related regressors
 (excluding \texttt{no\_cut}).
 % both stimuli: null regressors
 For both stimuli, a null regressor was chosen for a event category in a segment,
@@ -931,7 +928,7 @@ if that segment did not contain an event of the category (e.g. no event of
 Temporal derivatives were included in the design matrix to compensate for
 regional differences between modeled and actual HRF \citep{friston1998event}.
 % motion parameters
-Six motion parameters were also used as additional nuisance regressors.
+Six motion parameters were also included.
 % high-pass filtering
 Finally, designs were filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
@@ -942,8 +939,8 @@ Finally, designs were filtered with the same high-pass filter (cutoff period of
 % intro
 We tested our modeled hemodynamic responses based on stimulus annotations by
 conducting standard two-level general linear model (GLM) analyses to create
-subject-specific results ($Z$-maps) across the 8 segments for every subject and
-each stimulus.
+subject-specific results across the 8 segments for every subject and each
+stimulus.
 % level 3
 Subsequent, third-level analyses averaged contrast estimates over subjects.
 
@@ -955,7 +952,7 @@ To test the robustness of this approach, we operationalized the perception of
 spatial information compared to the perception of non-spatial information
 differently in five $t$-contrasts for the AV stimulus (see Table
 \ref{tab:av-contrasts}) and eight $t$-contrasts for the AD stimulus (see Table
-\ref{tab:ao-contrasts})
+\ref{tab:ao-contrasts}).
 % reason: robustness
 We assumed all contrasts could in principle correlate with increased hemodynamic
 activity in the PPA but chose one contrast to be the ``primary contrast'' for
@@ -971,18 +968,18 @@ was not depicted before (\texttt{vse\_new}) to cuts merely switching the camera
 position within a setting that was already established earlier in the movie
 (\texttt{vpe\_old}).
 % why
-We assumed that category \texttt{vse\_new} on average comprised the most movie
-frames depicting a landscape or the geometry of a setting, and the category
-\texttt{vpe\_old} the most frames depicting persons, faces, or objects [(cf.
-rationale to categorize the cuts in section \ref{rationale})].
+We assumed that the category \texttt{vse\_new} on average comprised the most
+movie frames depicting a landscape or the geometry of a setting, and the
+category \texttt{vpe\_old} the most frames depicting persons, faces, or objects
+[(cf.  rationale to categorize the cuts in section \ref{rationale})].
 % AD: primary contrast
-In the primary contrast of the AD stimulus, we contrasted landmarks
-\texttt{geo}, and rooms and geometry-defining objects \texttt{geo-room} with not
-just nouns referring to a person's head or face (\texttt{fahead}, N=83; e.g.
-``eyes'', ``face'', or ``head'') but also all non-geometry related categories
-(\texttt{body}, \texttt{bodypart}, \texttt{fahead}, \texttt{object},
-\texttt{sex\_f}, \texttt{sex\_m}) except \texttt{furniture} to get more events
-per stimulus segment.
+In the primary contrast of the AD stimulus, we contrasted buildings and
+landmarks (\texttt{geo}), and rooms and geometry-defining objects
+(\texttt{geo-room}) with not just nouns referring to a person's head or face
+(\texttt{fahead}, N=83; e.g.  ``eyes'', ``face'', or ``head'') but also all
+non-geometry related categories (\texttt{body}, \texttt{bodypart},
+\texttt{fahead}, \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}) except
+\texttt{furniture} to get more events per stimulus segment.\todo{ouff}
 % why furniture was not used
 The category ``furniture'' (\texttt{furn}) was not used as a regressor of
 interest in any contrast because these nouns could be perceived as either a
@@ -992,19 +989,20 @@ The categories of nouns indicating a switch to a setting that occurred for the
 first time (\texttt{se\_new}) or a setting that recurred during the plot
 (\texttt{se\_old}) were not included in the primary contrast because
 % heterogeneous category
-a) categories comprise words that could count as a member of another category
-(e.g. ``[a] physician''),
+a) categories comprise nouns that could count as a member of another category
+(e.g. ``[a] physician''; section \ref{rationale}), and
 % richness of verbal description vs. picture
-b) nouns only vaguely described a scene (e.g. ``[in] Greenbow'', ``[in a]
+b) nouns that only vaguely describe a scene (e.g. ``[in] Greenbow'', ``[in a]
 disco'', ''[black and white] film recordings'') [compared to whole, perceptually
-richer pictures], and
-% c) the narrator is often lacking behind a short dialogue or a change of the
-% soundscape that might already indicate a change of settings.
-%
+richer pictures].
+% and c) the narrator is often lacking behind a short dialogue or a change of
+% the soundscape that might already indicate a change of settings.
+
 % control contrasts
-Finally, we created several contrasts as negative control for both stimuli.
+Finally, we created several $t$-contrasts as negative controls for both stimuli
+(see Tables \ref{tab:av-contrasts} and \ref{tab:ao-contrasts}).
 % AV: no cut > cut
-For the AV stimulus, four $t$-contrasts were created contrasting the no-cut
+For the AV stimulus, four contrasts were created contrasting the no-cut
 regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
 % AV: narrator
 One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by contrasting
@@ -1012,26 +1010,22 @@ nouns spoken by the narrator.
 % AD stimulus
 For the AD stimulus, we created five $t$-contrasts (see Table
 \ref{tab:ao-contrasts}) to test if increased activation in the PPA was
-correlated with moments of cuts as cuts might possibly be correlated with a
-change of the soundscape also giving an auditory hint of switching to another
-setting.
+correlated with moments of cuts.
+
 % difference to Sengupta; Berman et al. (2010). Evaluating functional localizers
 % (2010)
-In the VIS study \citep{sengupta2016extension} using the established approach of
-contrasting blocks of pictures, assessment of individual PPAs was based on
-chosing post-hoc one from a set of three contrasts (\textit{strict},
-\textit{relaxed}, and \textit{simple} contrast \citep{sengupta2016extension};
-cf. Table 3 in \citep{sengupta2016extension}).
+In the VIS study using the established approach of contrasting blocks of
+pictures, a set of three contrasts (\textit{strict}, \textit{relaxed}, and
+\textit{simple} was created contrast (cf. \citep{sengupta2016extension}).
 
 
 \begin{table*}[h!]
 \caption{Contrasts of parameter estimates for the analysis of the
-    audio-visual movie (AV).
+    audio-visual movie.
     Contrast 1-5 aim to isolate the PPA.
     Contrast 6-9 serve as negative control.
-    Contrast 10 serves as control for moments when the narrator indicates the
-    a switch of settings, events that could be correlated with a
-    change of the soundscape.}
+    Contrast 10 serves as control for moments when the narrator indicates
+    a switch of settings.}
 \label{tab:av-contrasts}
 \footnotesize
 \begin{tabular}{lll}
@@ -1054,7 +1048,7 @@ cf. Table 3 in \citep{sengupta2016extension}).
 
 \begin{table*}[h!]
 \caption{Contrasts of parameter estimates for the analysis of the audio-only
-    stimulus (AD).
+    stimulus.
     Contrast 1-8 aim to isolate the PPA.
     \texttt{non-spatial categories} refers to the categories
     \texttt{body}, \texttt{bodypart}, \texttt{fahead},
@@ -1094,7 +1088,7 @@ ways:
 % subject template (for Bland-Altman-Plot of unthresholded maps)
 % \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
 a) via linear transformation to a subject-specific, study-specific T2* template
-(cf. \citep{sengupta2016extension}) and,
+(cf. \citep{sengupta2016extension}), and
 % group template (for group and individual brain slices)
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"
 b) via non-linear transformation to a study-specific T2* group template (cf.
@@ -1111,7 +1105,7 @@ random effects variance to zero in FLAME (FMRIB's Local Analysis of Mixed
 Effects; \citep{beckmann2003general, woolrich2004multilevel}.
 % thresholding (Z>2.3 in subject-space; Z>3.4 in group space)
 (Gaussianised T/F) statistic images were thresholded using clusters determined
-by Z>3.4 and a (corrected) cluster significance threshold of p=.05
+by Z>3.4 and a cluster-corrected significance threshold of p=.05
 \citep{worsley2001statistical}.
 
 % third level model
@@ -1127,8 +1121,8 @@ Brain regions associated with observed clusters were determined with the Jülich
 Histological Atlas \citep{eickhoff2005toolbox, eickhoff2007assignment} and the
 Harvard-Oxford Cortical Atlas \citep{desikan2006automated} provided by FSL.
 % PPA masks
-PPA region of interest (ROI) masks for individual subjects and a PPA group mask
-of individual PPA overlaps were created from data provided by
+Regions of interest (ROI) masks for individual PPAs and a PPA group mask of
+individual PPA overlaps were created from data provided by
 \citep{sengupta2016extension}.
 
 
@@ -1295,17 +1289,14 @@ Further, we hypothesized that an exclusively auditory stimulus could localize
 the PPA in individual subjects and thus possibly substitute a classic visual
 localizer experiment.
 
-
-% Sengupta et al., 2016
+% Sengupta et al., 2016; unilateral in sub-04 and sub-20
 The visual localizer \citep{sengupta2016extension} yielded bilateral
 parahippocampal clusters in 12 of 14 subjects and an unilateral right clusters
-in two subjects (sub-04, sub-20).
+in two subjects (cf. Table 3 in \citep{sengupta2016extension}).
 % Sengupta: 1 of 3
 Individual PPAs were assessed by visually inspecting unthresholded $t$-maps
-(Z>1.64, p<.05 cluster corrected)  of three different $t$-contrasts
-(\textit{strict}, \textit{relaxed}, and \textit{simple} stimulus set cf.
-\citep{sengupta2016extension}), and titrating [?] the $t$-threshold in the range
-of [2, 3] in until we found an isolated cluster that matched the expected
+(Z>1.64, p<.05 cluster corrected) of three different $t$-contrasts, and titrating [?] the $t$-threshold in the range
+of [2, 3] in until we found an isolated cluster (cf. Table 3 in  that matched the expected
 anatomical location based on literature \citep{epstein1998ppa}.
 \todo{they used $t$-maps???}
 % one contrast to localize them all; "...and Z>3.4 for all"
