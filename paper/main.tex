@@ -610,7 +610,7 @@ temporal distance of at least \unit[10]{s} to a movie cut and to another
     \caption{Overview of annotated stimulus features of audio-visual
     movie.
     Respective event counts are given for the whole stimulus (\texttt{all} and
-    the segments that were used for the eight sessions of fMRI scanning.
+    the segments that were used for the eight sessions of fMRI scanning).
     %\texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames),
     %\texttt{fg\_av\_ger\_ml} (mean luminance of a frame),
     %\texttt{fg\_av\_ger\_lr} (difference in mean luminance of left and right
@@ -698,7 +698,7 @@ categories that had no counterpart in the visual localizer experiment (e.g.
 The categories \texttt{setting\_new} and \texttt{setting\_rec} comprise not just
 words that describe a setting as a whole (e.g. ``[in] Greenbow'', ``[in a]
 disco'', ``[the platoon wades through a] rice field''). They also comprise words
-that could count as a member of another categories in case the narrator uses
+that could count as a member of another category in case the narrator uses
 these words to indicate a switch from one setting to another (e.g. ``[a]
 physician'').
 % how it was handled
@@ -715,11 +715,11 @@ responses.
 
 % table for descriptive nouns: categories, rules, examples counts
 \begin{table*}[h!]
-    \caption{Categories and rules to categorize the descriptive nouns spoken by
+    \caption{Categories and rules to categorize the nouns spoken by
         the audio-description's narrator.
         Examples are given in English.
         Some of these initial 18 noun categories were pooled resulting in 11
-        event categories that served as a basis to build the regressors of the
+        event categories that served as basis to build the regressors of the
         GLM
         (cf. Table \ref{tab:ao-events}).
         % The category \texttt{++} also contains adverbial of time.
@@ -731,7 +731,7 @@ responses.
 \midrule
 body & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress, shirt
 \tabularnewline
-bodypart & limbs and trousers & arm, finger, leg, toe
+bodypart & limbs & arm, finger, leg, toe
 \tabularnewline
 face & face or parts of it & face, ear, nose, mouth
 \tabularnewline
@@ -741,12 +741,13 @@ females & female persons & women
 \tabularnewline
 fname & female name & Jenny
 \tabularnewline
-furniture & movable furniture insides \& outsides & bench, bed, table, chair
+    furniture & movable furniture (insides \& outsides) & bench, bed, table,
+    chair
 \tabularnewline
 geo & immobile landmarks & building, tree, street, alley, meadow, cornfield \tabularnewline
 geo-room & rooms \& locales or geometry-defining elements & living room; wall, door, window, floor
 \tabularnewline
-head & non-face parts of the head; worn headgear & head, hair, ear, neck,
+head & non-face parts of the head; worn headgear & head, hair, ear, neck;
 helmet
 \tabularnewline
 male & male person & man, father, soldier
@@ -778,10 +779,8 @@ setting\_rec & a recurring setting & at the ``bus stop'' \tabularnewline
     Some of the annotation's original categories (female, females, fname; male,
     males, mname; face, head; object, objects;
     see Table\ref{tab:descr-nouns-rules}) were pooled
-    into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead};
-    \texttt{object}), \texttt{fg\_ad\_lrdiff} (left-right volume difference)
-    and \texttt{fg\_ad\_rms} (root mean square volume) represent one event for
-    every movie frame (\unit[40]{ms}).
+    into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead},
+    \texttt{object}).
     % For a description of the five control conditions for movie cuts see
     % Table \ref{tab:av-events}.
     }
@@ -789,24 +788,24 @@ setting\_rec & a recurring setting & at the ``bus stop'' \tabularnewline
 \begin{tabular}{lp{3.5cm}lllllllll}
 \toprule \textbf{label} & \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
-body & trunk of the body or overlaid clothes & \aoBodyAll & \aoBodyI & \aoBodyII
+body & trunk of the body; overlaid clothes & \aoBodyAll & \aoBodyI & \aoBodyII
 & \aoBodyIII & \aoBodyIV & \aoBodyV & \aoBodyVI & \aoBodyVII & \aoBodyVIII
 \tabularnewline
 bpart & limbs and trousers & \aoBpartAll & \aoBpartI & \aoBpartII & \aoBpartIII & \aoBpartIV & \aoBpartV & \aoBpartVI & \aoBpartVII & \aoBpartVIII
 \tabularnewline
 fahead & face(parts) or head(parts) & \aoFaheadAll & \aoFaheadI & \aoFaheadII & \aoFaheadIII & \aoFaheadIV & \aoFaheadV & \aoFaheadVI & \aoFaheadVII & \aoFaheadVIII
 \tabularnewline
-furn & moveable furniture insides \& outsides & \aoFurnAll & \aoFurnI & \aoFurnII & \aoFurnIII & \aoFurnIV & \aoFurnV & \aoFurnVI & \aoFurnVII & \aoFurnVIII
+furn & moveable furniture (insides \& outsides) & \aoFurnAll & \aoFurnI & \aoFurnII & \aoFurnIII & \aoFurnIV & \aoFurnV & \aoFurnVI & \aoFurnVII & \aoFurnVIII
 \tabularnewline
 geo & immobile landmarks & \aoGeoAll & \aoGeoI & \aoGeoII & \aoGeoIII & \aoGeoIV & \aoGeoV & \aoGeoVI & \aoGeoVII & \aoGeoVIII
 \tabularnewline
 groom & rooms \& locales or geometry-defining elements & \aoGroomAll & \aoGroomI & \aoGroomII & \aoGroomIII & \aoGroomIV & \aoGroomV & \aoGroomVI & \aoGroomVII & \aoGroomVIII
 \tabularnewline
-object & inanimate entities with firm boundaries & \aoObjAll & \aoObjI & \aoObjII & \aoObjIII & \aoObjIV & \aoObjV & \aoObjVI & \aoObjVII & \aoObjVIII
+object & countable entities with firm boundaries & \aoObjAll & \aoObjI & \aoObjII & \aoObjIII & \aoObjIV & \aoObjV & \aoObjVI & \aoObjVII & \aoObjVIII
 \tabularnewline
-se\_new & noun describing an unfamiliar setting & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
+se\_new & a setting occurring for the first time & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
 \tabularnewline
-se\_old & noun describing a recurring setting & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
+se\_old & a recurring setting & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
 \tabularnewline
 sex\_f & female person(s), name & \aoSexfAll & \aoSexfI & \aoSexfII & \aoSexfIII & \aoSexfIV & \aoSexfV & \aoSexfVI & \aoSexfVII & \aoSexfVIII
 \tabularnewline
@@ -844,9 +843,9 @@ For the AV stimulus, we computed the mean luminance of a movie frame
 half, the difference in mean luminance of the lower and upper half, and finally
 the perceptual difference of consecutive frames.
 % auditory shit
-Finally, we computed the left-right difference in volume and root mean square
-energy averaged across the length of every movie frame (\unit[40]{ms}) of both
-audio-tracks.
+Finally for both audio tracks, we computed the left-right difference in volume
+and root mean square energy averaged across the length of every movie frame
+(\unit[40]{ms}).
 
 
 \subsection{Hemodynamic Modeling}
@@ -879,8 +878,8 @@ The highest correlations are apparent between auditory low-level confounds
 across stimuli (\texttt{fg\_av\_ger\_rms} and \texttt{fg\_ad\_rms}, r=.7635;
 \texttt{fg\_av\_ger\_lrdiff} and \texttt{fg\_ad\_lrdiff} and , r=.7749).
 % no surprise
-This was expected and served as a ``sanity check'' since the audio-track of the
-audio-description is the audio-track of the movie but featuring the additional
+This was expected and served as a ``sanity check'' since the audio track of the
+audio-description is the audio track of the movie but featuring the additional
 narrator (s. Figure \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
 As a result, we felt encouraged to create voxel-wise GLM $t$-contrasts similarly
