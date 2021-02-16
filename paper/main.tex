@@ -151,9 +151,6 @@ narrative, studyforrest
 % Limit for main text (intro, results and discussion) = ca. 3k words
 
 % brain mapping via fMRI
-Humans can perceive and make sense of their daily environment casually and
-seemingly without any effort.
-%
 Studies in the field of neuropsychology and neuroimaging (e.g.
 \citep{penfield1950cerebral, fox1984noninvasive}) have shown that different
 parts of the brain are specialized for different perceptual and cognitive
@@ -184,7 +181,9 @@ epstein1998ppa, troiani2012object}.
 % literature review overview 1: imagination & haptic exploration
 Increased hemodynamic activity in the PPA generalizes to mental imagination of
 landscapes \citep{ocraven2000mental} and haptic exploration of scenes
-constructed from LEGO blocks \citep{wolbers2011modality}.
+constructed from LEGO blocks \citep{wolbers2011modality}.\todo{cite Lescroart \&Gallant,
+Human Scene-Selective Areas Represent 3D Configurations of Surfaces, Neuron, 2019;
+semi-naturalistic, but not taskfree, 800+ stimulus, not "a small set", 6 subjects}
 % O'Craven: watching pictures
 In a study conducted by \cite{ocraven2000mental} participants viewed alternating
 blocks of pictures showing familiar places and famous faces during an initial
@@ -256,7 +255,7 @@ application of brain imaging methods in individual diagnostics (cf.
 
 % open question
 In this study, we investigate if increased hemodynamic activity in the PPA that
-is usually revealed by contrasting blocks of pictures can also be revealed under
+is usually detected by contrasting blocks of pictures can also be revealed under
 more ecologically conditions.
 % we use 2 naturalistic stimuli
 To answer this question, we operationalized the perception of both visual and
@@ -264,46 +263,49 @@ auditory spatial information using two naturalistic stimuli (see
 \citep{hamilton2018revolution, hasson2008neurocinematics,
 sonkusare2019naturalistic} for reviews).
 % AV stimulus
-The operationalization of visual perception is based on an annotation of cuts
-and depicted locations in the audio-visual movie ``Forrest Gump''.
+The operationalization of visual spatial perception is based on an annotation of cuts
+and depicted locations in the audio-visual movie ``Forrest Gump'', while
 % AD stimulus
-The operationalization of auditory perception is based on an annotation of
-speech occurring in the movie's audio-description.
+non-visual spatial perception is investigated using an annotation of
+spatial references in the speech occurring in the movie's audio-description.
 % GLM contrasts
-We then created several general linear model (GLM) contrasts to analyze the
-corresponding publicly available fMRI datasets of each naturalistic stimulus
-\citep{hanke2016simultaneous, hanke2014audiomovie}
-(\href{http://www.studyforrest.org}{studyforrest.org}).
+We applied model-based, mass-univariate analyses to a series of datasets
+with BOLD fMRI data from naturalistic and conventional block-design stimulation
+from the same set of participants, available from the open-data resource
+\href{http://www.studyforrest.org}{studyforrest.org}
+\citep{hanke2016simultaneous, hanke2014audiomovie, sengupta2016extension}.
 
 % hypo a
 We hypothesized that whole-brain analyses would reveal increased hemodynamic
-activity spatially constrained to the PPA as functionally defined by a
-traditional visual localizer experiment done with the same subjects
-\citep{sengupta2016extension}.
+activity in the PPA as functionally defined by a
+conventional visual localizer for each individual, because all three operationalization capitalize
+on events that should evoke the cognitive processing of spatial information.
 % hypo b: individuals
-Further, we hypothesized that an exclusively auditory stimulus could localize a
-``visual area'' in individual subjects.
+We hypothesized further that an exclusively auditory stimulus could localize a
+``visual area'' in individual subjects,
 % application in individuals
-An auditory stimulus substituting a visual experiment would be more practicable
-to asses brain functions in visually impaired persons.
-% results: group
-On a group average level,
-% operationalization in naturalistic stimuli
-results demonstrate that our approach to operationalize spatial perception
-during two naturalistic stimuli lead to increased hemodynamic activity in the
-PPA.
-% anterior vs. posterior
-On both a group and individual subject level, the comparison of results from the
-three datasets also suggests functional differences between the anterior and
-posterior PPA.
-% what does it mean
-The current data add evidence to the hypothesis that the PPA might consist of
-submodules that work together during visual perception of landscapes (cf.
-\citep{baldassano2013differential}).
-%
-Lastly, our results suggest that the PPA's anterior part can be localized in
-individual subjects by contrasting high-level semantic information occurring in
-an auditory naturalistic stimulus.
+and may offer an alternative paradigm to assess this aspect of brain function
+in visually impaired individuals.
+
+% DISABLE RESULTS
+%% results: group
+%On a group average level,
+%% operationalization in naturalistic stimuli
+%results demonstrate that our approach to operationalize spatial perception
+%during two naturalistic stimuli lead to increased hemodynamic activity in the
+%PPA.
+%% anterior vs. posterior
+%On both a group and individual subject level, the comparison of results from the
+%three datasets also suggests functional differences between the anterior and
+%posterior PPA.
+%% what does it mean
+%The current data add evidence to the hypothesis that the PPA might consist of
+%submodules that work together during visual perception of landscapes (cf.
+%\citep{baldassano2013differential}).
+%%
+%Lastly, our results suggest that the PPA's anterior part can be localized in
+%individual subjects by contrasting high-level semantic information occurring in
+%an auditory naturalistic stimulus.
 
 
 \section{Methods}
