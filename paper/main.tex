@@ -110,13 +110,6 @@ narrative, studyforrest
 
 \section*{Plan}
 
-\noindent Generally
-
-\begin{itemize}
-    \item imo AD and AV can be written as movie and audio-description
-\end{itemize}
-
-
 \noindent Method
 
 \begin{itemize}
@@ -275,10 +268,10 @@ auditory spatial information using two naturalistic stimuli (see
 sonkusare2019naturalistic} for reviews).
 % AV stimulus
 The operationalization of visual perception is based on an annotation of cuts
-and depicted locations in the audio-visual movie ``Forrest Gump'' (AV stimulus).
-% AO stimulus
+and depicted locations in the audio-visual movie ``Forrest Gump''.
+% AD stimulus
 The operationalization of auditory perception is based on an annotation of
-speech occurring in the movie's audio-description (AD stimulus).
+speech occurring in the movie's audio-description.
 % GLM contrasts
 We then created several general linear model (GLM) contrasts to analyze the
 corresponding publicly available fMRI datasets of each naturalistic stimulus
@@ -344,13 +337,13 @@ publications. Following is a summary of the most important aspects.
 
 \subsection{Participants}
 % AD study
-In the AD study \citep{hanke2014audiomovie}, 20 German native speakers (all
+In the audio-description study \citep{hanke2014audiomovie}, 20 German native speakers (all
 right-handed, age 21–38 years, mean age 26.6 years, 12 male) listened to the
 German audio-description \citep{ForrestGumpGermanAD} of the movie ``Forrest
 Gump'' \citep{ForrestGumpMovie}.
 % AV study
-In the AV study \citep{hanke2016simultaneous}, 15 participants (21–39 years,
-mean age 29.4, six female) of the prior AD study watched the audio-visual movie
+In the movie study \citep{hanke2016simultaneous}, 15 participants (21–39 years,
+mean age 29.4, six female) of the prior audio-description study watched the audio-visual movie
 with dubbed German audio track \citep{ForrestGumpDVD}.
 % VIS study
 In the VIS study \citep{sengupta2016extension}, the same 15 participants took
@@ -428,13 +421,13 @@ Subjects also performed a one-back matching task to keep them attentive.
 \subsection{Stimulation setup}
 
 % AD
-In the AD study, visual instructions were presented on a rear-projection screen
+In the audio-description study, visual instructions were presented on a rear-projection screen
 inside scanner bore. During the
 functional scans, the projector presented a medium gray screen with the primary
 purpose to illuminate a participant's visual field in order to prevent premature
 fatigue.
 % AV & VIS
-In the AV and VIS study, visual instructions and stimuli were presented on a
+In the movie and VIS study, visual instructions and stimuli were presented on a
 rear-projection screen
 % screen size \unit[23.75 $\times$ 10.25]{cm}
 at a viewing distance of \unit[63]{cm}, with a movie frame projection size
@@ -443,14 +436,14 @@ approximately \unit[21.3]$^{\circ}$ $\times$ \unit[9.3]$^{\circ}$.
 In the VIS study, stimulus images were displayed at a size of approximately
 \unit[10]$^{\circ}$ $\times$ \unit[10]$^{\circ}$ of visual angle.
 % AD & AV: auditory stimulation
-Auditory stimulation was implemented using custom in-ear (AD), or over-the-ear
-headphones (AV), which reduced the scanner noise by
+Auditory stimulation was implemented using custom in-ear (audio-description), or over-the-ear
+headphones (movie), which reduced the scanner noise by
 at least \unit[20–30]{dB}.
 
 
 \subsection{fMRI data acquisition}
 
-Gradient-echo fMRI data for the AD study were acquired using a \unit[7]{Tesla}
+Gradient-echo fMRI data for the audio-description study were acquired using a \unit[7]{Tesla}
 Siemens MAGNETOM magnetic resonance scanner equipped with a 32 channel brain
 receive coil at \unit[2]{s} repetition time (TR) with 36 axial slices (thickness
 \unit[1.4]{mm}, \unit[1.4 $\times$ 1.4]{mm} in-plane resolution, \unit[224]{mm}
@@ -465,7 +458,7 @@ The field of view was centered on the approximate location of Heschl's gyrus.
 EPI images were online-corrected for motion and geometric distortions.
 
 % AV & VIS
-In the AV and VIS study, a \unit[3]{Tesla} Philips Achieva dStream
+In the movie and VIS study, a \unit[3]{Tesla} Philips Achieva dStream
 MRI scanner with a 32 channel head coil acquired gradient-echo fMRI data
 at \unit[2]{s} repetition time with
 % slices
@@ -475,7 +468,7 @@ resolution, \unit[240]{mm} field-of-view) and an anterior-to-posterior phase
 encoding direction, recorded in ascending order.
 % no. of volumes
 A total of 3599 volumes were recorded for each participant in each of the
-naturalistic stimulus paradigms (AD and AV).
+naturalistic stimulus paradigms (audio-description and movie).
 
 \subsection{Preprocessing}
 
@@ -488,11 +481,11 @@ Of those 15 participants in the studyforrest dataset that took
 part in all three experiments,
 % exclusion of VP 10
 data of one participant were dropped to due to invalid distortion correction
-during scanning of the AD stimulus.
+during scanning of the audio-description stimulus.
 Data were previously corrected for motion, aligned with and re-sliced onto a
 participant-specific BOLD template image \citep{sengupta2016extension}
 (uniform spatial resolution of \unit[2.5$\times$2.5$\times$2.5]{mm} for both
-AD and AV data).
+audio-description and movie data).
 % preprocessing intro
 All analyses presented here were carried out using
 FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
@@ -535,7 +528,7 @@ Hence, we annotated the temporal structure of various stimulus features that
 later served as basis for modeling hemodynamic responses.
 
 % AV anno
-For the analysis of the AV stimulus, we took advantage of a previously published
+For the analysis of the movie stimulus, we took advantage of a previously published
 annotation of 869 movie cuts and the depicted location after each cut
 \citep{haeusler2016cutanno}.
 % rationale to use that annotation rationale behind using movie cuts
@@ -650,7 +643,7 @@ fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavge
 
 
 % AD annotation
-For the analysis of the AD stimulus, we extended a publicly available annotation
+For the analysis of the audio-description stimulus, we extended a publicly available annotation
 of speech \citep{hausler2021studyforrest} by further annotating words spoken by
 the audio-description's narrator.
 % annotation procedure
@@ -825,7 +818,7 @@ fg\_ad\_rms & root mean square volume & \aoFgadrmsAll &
 Lastly, we algorithmically annotated the temporal structure of low-level
 perceptual features to create nuisance regressors.
 % visual shit
-For the AV stimulus, we computed the mean luminance of a movie frame
+For the movie stimulus, we computed the mean luminance of a movie frame
 (\unit[40]{ms}), the difference in mean luminance of each frame's left and right
 half, the difference in mean luminance of the lower and upper half, and finally
 the perceptual difference of consecutive frames.
@@ -844,7 +837,7 @@ modeled as box car events of 200 ms duration.
 Nouns were modeled from onset to offset of each word, low-level confounds from
 onset to offset of the corresponding movie frame
 % convolving
-Events for all regressors of the AV and AO stimulus were convolved with a double
+Events for all regressors of the movie and audio-description stimulus were convolved with a double
 gamma hemodynamic response function (HRF).
 
 % we checked correlations
@@ -891,21 +884,21 @@ to previous studies that used controlled stimuli.
 
 
 % AV design matrix
-For the subsequent first level GLM analysis of the AV stimulus, the modeled
+For the subsequent first level GLM analysis of the movie stimulus, the modeled
 hemodynamic responses related to all movie cuts (including \texttt{no\_cut}) and
 six low-level perceptual confounds were included as regressors in the design
 matrix.
 % AD regressors in AV AD design matrix
-For the first level analysis of the AD stimulus, the modeled hemodynamic
+For the first level analysis of the audio-description stimulus, the modeled hemodynamic
 responses related to all noun categories and the two low-level perceptual
 confounds were included.
 % AD regressors in AV
-To create a contrasts of cross-modal control in the analysis of the AV stimulus,
+To create a contrasts of cross-modal control in the analysis of the movie stimulus,
 we also implemented the regressors based on nouns used by the
 audio-description's narrator to indicate a switch to another setting (categories
 \texttt{se\_new} and \texttt{se\_old}).
 % AV regressors in AV
-To create contrasts of cross-modal negative control in the analysis of the AD
+To create contrasts of cross-modal negative control in the analysis of the audio-description
 stimulus, we also implemented the movie cut-related regressors
 (excluding \texttt{no\_cut}).
 % both stimuli: null regressors
@@ -938,8 +931,8 @@ features embedded in the in the audio-visual movie and its audio-description.
 % intro
 To test the robustness of this approach, we operationalized the perception of
 spatial information compared to the perception of non-spatial information
-differently in five $t$-contrasts for the AV stimulus (see Table
-\ref{tab:av-contrasts}) and eight $t$-contrasts for the AD stimulus (see Table
+differently in five $t$-contrasts for the movie stimulus (see Table
+\ref{tab:av-contrasts}) and eight $t$-contrasts for the audio-description stimulus (see Table
 \ref{tab:ao-contrasts}).
 % reason: robustness
 We assumed all contrasts could in principle correlate with increased hemodynamic
@@ -951,7 +944,7 @@ subjectively good balance between a) how well the average of events within
 categories represented spatial information and non-spatial information
 respectively (cf. section \ref{rationale}), and b) the amount of available data.
 % AV: primary contrast
-In the primary contrast of the AV stimulus, we contrasted cuts to a setting that
+In the primary contrast of the movie stimulus, we contrasted cuts to a setting that
 was not depicted before (\texttt{vse\_new}) to cuts merely switching the camera
 position within a setting that was already established earlier in the movie
 (\texttt{vpe\_old}).
@@ -961,7 +954,7 @@ movie frames depicting a landscape or the geometry of a setting, and the
 category \texttt{vpe\_old} the most frames depicting persons, faces, or objects
 [(cf.  rationale to categorize the cuts in section \ref{rationale})].
 % AD: primary contrast
-In the primary contrast of the AD stimulus, we contrasted buildings and
+In the primary contrast of the audio-description stimulus, we contrasted buildings and
 landmarks (\texttt{geo}), and rooms and geometry-defining objects
 (\texttt{geo-room}) with not just nouns referring to a person's head or face
 (\texttt{fahead}, N=83; e.g.  ``eyes'', ``face'', or ``head'') but also all
@@ -990,13 +983,13 @@ richer pictures].
 Finally, we created several $t$-contrasts as negative controls for both stimuli
 (see Tables \ref{tab:av-contrasts} and \ref{tab:ao-contrasts}).
 % AV: no cut > cut
-For the AV stimulus, four contrasts were created contrasting the no-cut
+For the movie stimulus, four contrasts were created contrasting the no-cut
 regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
 % AV: narrator
 One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by contrasting
 nouns spoken by the narrator.
 % AD stimulus
-For the AD stimulus, we created five $t$-contrasts (see Table
+For the audio-description stimulus, we created five $t$-contrasts (see Table
 \ref{tab:ao-contrasts}) to test if increased activation in the PPA was
 correlated with moments of cuts.
 
@@ -1301,15 +1294,15 @@ accompanying dataset (Z>2.3, p<.05 cluster-corrected).
 For better comparisons of subjects, we here report results from the analyses
 performed in group space (Z>3.4, p<.05 cluster-corrected).
 % ref to figure
-Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary AV
-and AD $t$-contrast, and the outline of overlapped, individual PPAs
+Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary movie
+and audio-description $t$-contrast, and the outline of overlapped, individual PPAs
 co-registered to the MNI152 template.
 % one slice to show them all
 Transversal slice of z=-11 was chosen as it depicts voxels of
 significant clusters in almost all subjects.
 
 % AV
-Results of the primary AV contrast yielded bilateral clusters in five subjects,
+Results of the primary movie contrast yielded bilateral clusters in five subjects,
 a unilateral right cluster in six subjects (of which one subjects yielded a
 unilateral cluster in the visual localizer), and a unilateral left cluster in
 one subject.
@@ -1318,11 +1311,11 @@ We find homologous clusters in sub-20, whereas the dedicated visual localizer
 yielded only one cluster in the right hemisphere.
 
 % report here in group
-Results of the primary AD contrast yielded bilateral clusters in nine subjects
+Results of the primary audio-description contrast yielded bilateral clusters in nine subjects
 that are within or overlapping with the individual PPA.
 % subj-04
 In sub-04, two homologous clusters are apparent, whereas the dedicated localizer
-(and AV stimulus) yielded only one cluster in the right hemisphere.
+(and movie stimulus) yielded only one cluster in the right hemisphere.
 % sub-09
 In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
 
@@ -1350,18 +1343,18 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
         To facilitate comparisons across subjects, we chose the same horizontal
         slice (x=-11) for all subjects as this slice depicts voxels of
         significant clusters in almost all subjects.
-        The figure does not show voxels of the left cluster of the AV stimulus
-        in sub-09 and sub-18, and voxels of the right cluster of the AV
+        The figure does not show voxels of the left cluster of the movie stimulus
+        in sub-09 and sub-18, and voxels of the right cluster of the movie
         stimulus in sub-15.}
     \label{fig:subs-thresh-ppa}
 \end{figure*}
 
 % Bland-Altman-Plots
 To better depict the agreement and difference between the results of the visual
-localizer and the primary AD contrast, we created a Bland-Altman-Plot for every
+localizer and the primary audio-description contrast, we created a Bland-Altman-Plot for every
 subject (see Figure \ref{fig:bland-altman}).
 % what it depicts
-Each subplot visualizes the mean value and difference (localizer minus AD) of
+Each subplot visualizes the mean value and difference (localizer minus audio-description) of
 two spatially corresponding voxels in the unthresholded $z$-maps.
 % top KDE plot
 A shift of the distribution to voxels with a mean above zero can be seen the
@@ -1369,7 +1362,7 @@ further we constrain voxels to the individual PPA (cf. KDE plot for the x-axes).
 % right KDE plot
 Values above the horizontal line depict voxels that show a higher $z$-value in
 the dedicated localizer, values below the horizontal line depict voxels that
-show a higher $z$-value in the AD stimulus.
+show a higher $z$-value in the audio-description stimulus.
 
 \begin{figure*}[h!]
 \centering
@@ -1461,7 +1454,7 @@ Despite our ad hoc approach, we hypothesized that confounding variables would
 average out, and our whole-brain analyses would lead to significant clusters in
 the PPA.
 % results
-Group results of the AV stimulus' primary contrast yielded one cluster that
+Group results of the movie stimulus' primary contrast yielded one cluster that
 spans the group overlap of individual PPA ROIs from anterior to posterior.
 % confound of higher perception
 The cluster's extension into more posterior, early visual areas can be
@@ -1489,7 +1482,7 @@ Second, we analyzed data from the audio-description offering exclusively
 auditory stimulation.
 % hypothesis
 Encouraged by \citep{aziz2008modulation}, we hypothesized that spatial
-information embedded in the AD stimulus would correlate with increased
+information embedded in the audio-description stimulus would correlate with increased
 hemodynamic activity in the PPA.
 % diff to Aziz (2008)
 \citep{aziz2008modulation} modeled events from on- to offset of sentences
@@ -1544,7 +1537,7 @@ In the visual domain, pictures of landscapes and not pictures of landmarks or
 buildings are considered to be the ``optimal'' stimulus type
 \citep{epstein2008parahippocampal}.
 % we did not choose se\_new and se\_old
-In the AD's primary contrast, we did not include the categories that contained
+In the audio-description's primary contrast, we did not include the categories that contained
 switches from one setting to another (\texttt{se\_new} and \texttt{se\_old})
 which one might assume to contain the auditory equivalent to pictures of
 landscapes.
@@ -1599,7 +1592,7 @@ threshold or a sphere around the local maximum \citep{poldrack2007region} in the
 parahippocampal region.
 
 \todo[inline]{discussion of Bland-Altman-Plots?; dunno if this is meaningful:
-z-scores in the anterior part of PPA are higher in AD contrasts than in contrast
+z-scores in the anterior part of PPA are higher in audio-description contrasts than in contrast
 of localizer}
 
 % question
@@ -1661,8 +1654,8 @@ verbal stimuli.
 % RSC + LOC
 Apart from the PPA, results revealed significantly increased activity in the
 dorsal precuneus and posterior cingulate region (e.g. retrosplenial complex;
-RSC) and lateral occipital cortex (LOC; more lateral in the AV stimulus, more
-medial in the AD stimulus) across contrasts of both naturalistic stimuli.
+RSC) and lateral occipital cortex (LOC; more lateral in the movie stimulus, more
+medial in the audio-description stimulus) across contrasts of both naturalistic stimuli.
 % RSC intro
 Like the PPA, the RSC and LOC repeatedly showed increased hemodynamic activity
 in studies investigating visual spatial perception or navigation (see
@@ -1810,8 +1803,8 @@ Bibliographic information for the data records described in the manuscript.
 
 % intro
 In order to test the robustness of our approach, we created overall five
-$t$-contrasts for the AV stimulus (see Table \ref{tab:av-contrasts}), and
-overall eight $t$-contrast for the AD stimulus (see Table
+$t$-contrasts for the movie stimulus (see Table \ref{tab:av-contrasts}), and
+overall eight $t$-contrast for the audio-description stimulus (see Table
 \ref{tab:av-contrasts}) by varying the contrasted categories (and thus the
 amount of available data), and how well the annotated events within categories
 on average matched a stimulus type that we assumed to correlate with spatial
@@ -1832,10 +1825,10 @@ space) can found at NeuroVault
 
 % AV results: PPA; biggest overlap in posterior part of PPA group overlap  =
 % temporal occipital fusiform cortex
-All five AV contrasts yielded significant bilateral clusters that
+All five movie contrasts yielded significant bilateral clusters that
 overlap with the PPA group overlap (see Figure \ref{fig:stability-slices}).
 % AV: RSC & LOC
-Reliably across contrasts of the AV stimulus, we find bilaterally
+Reliably across contrasts of the movie stimulus, we find bilaterally
 significant clusters also in the ventral precuneal cortex and posterior
 cingulate gyrus (i.e. restrosplenial complex; contrasts 1, 4, 5), and lateral
 occipital cortex (contrasts 1, 2, 4, 5).
@@ -1851,19 +1844,19 @@ occipital cortex (contrasts 1, 2, 4, 5).
 % 8 PPA (-/-); RSC (-/-), LOC (-/-)
 
 % AD: results
-In results of the AD stimulus, all contrasts except contrast 7
+In results of the audio-description stimulus, all contrasts except contrast 7
 (\texttt{se\_new}, \texttt{se\_old} > non-spatial categories) and contrast 8
 (\texttt{se\_new} > non-spatial categories) yielded significant bilateral
 clusters in anterior regions of the group PPA overlap (see Figure
 \ref{fig:stability-slices}).
 % AD: RSC & LOC
-Reliably across contrast of the AD stimulus, we find bilaterally significant
+Reliably across contrast of the audio-description stimulus, we find bilaterally significant
 clusters also in the ventral precuneus (all except contrasts 8), lateral
 occipital cortex (bilateral in contrasts 1 to 4; unilateral in contrasts 6 and
 7), and superior temporal cortices (bilateral in contrasts 3, 6, 7; unilateral
 right in contrast 2).
 % non-systematic
-Lastly, some contrasts of the AD stimulus yielded significant clusters in
+Lastly, some contrasts of the audio-description stimulus yielded significant clusters in
 regions that were not statistically significant in three or more contrasts.
 %
 Contrast 2 yielded clusters in the anterior cingulate gyrus (bilateral), right
@@ -1912,14 +1905,14 @@ Contrast 6 shows one additional cluster in the right medial frontal cortex.
 
 
 % Discussion
-The results across the contrasts of the AV and AD stimulus indicate that our
+The results across the contrasts of the movie and audio-description stimulus indicate that our
 findings regarding the PPA but also RSC and LOC are robust and do not depend on
 the design of one specific contrasts.
 % but
 Nevertheless, results are sensitive to the contrasted categories and the amount
 of available data.
 % example
-For example, contrast 8 of the AD stimulus (\texttt{se\_new} > \texttt{se\_old})
+For example, contrast 8 of the audio-description stimulus (\texttt{se\_new} > \texttt{se\_old})
 that used the most heterogeneous categories comprising the least amount of
 events yielded neither a significant cluster in the right-hemispheric nor
 left-hemispheric PPA.
@@ -1934,10 +1927,10 @@ Despite performing a whole brain analysis, we do not find [many] clusters
 in a single contrasts or systematically across contrasts that are scattered
 across the brain and hamper the interpretation of results.
 % AV: null results regarding attention and eye movements
-For example in the AV results, we do not find significant clusters that could be
+For example in the movie results, we do not find significant clusters that could be
 attributed to cognitive processes like attention or eye movements.
 % AD: auditory cortices
-Nevertheless, contrasts of the AD stimulus that compare (among others) verbal
+Nevertheless, contrasts of the audio-description stimulus that compare (among others) verbal
 hints of the change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all
 non-spatial categories (cf. contrasts 2, 3, 6, 7) show significant clusters in
 (primary and secondary) auditory cortices.
@@ -1954,7 +1947,7 @@ Thus, investigators that use model-driven methods to investigate brain functions
 using naturalistic stimuli should (extensively) annotate the stimulus material
 and test for correlations among variables.
 
-\todo[inline]{random [?] prefrontal cluster in 2-3 AO contrasts; at the moment
+\todo[inline]{random [?] prefrontal cluster in 2-3 AD contrasts; at the moment
 no idea what the correlating process could be; be aware of reverse inferences}
 
 
@@ -1979,16 +1972,16 @@ purpose)}
 For the purpose of negative control, we implemented five contrasts for every
 stimulus.
 % AV: no_cut > x
-In the analysis of the AV data, none of the four contrasts that compared the
+In the analysis of the movie data, none of the four contrasts that compared the
 \texttt{no\_cut} category to a movie cut category (see Table
 \ref{tab:av-contrasts}) yielded significant clusters.
 % AV using nouns
-The contrast that used the narrator's nouns but in the AV stimulus
+The contrast that used the narrator's nouns but in the movie stimulus
 (\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
 PPA and bilateral clusters in the superior lateral occipital cortices (the right
 hemispheric cluster extending into the superior parietal cortex).
 % AD stimulus
-In the analysis of the AD data, we created control contrasts based on events of
+In the analysis of the audio-description data, we created control contrasts based on events of
 the annotated movie cuts (cf. Table \ref{tab:ao-contrasts})
 % contrast 9
 Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
@@ -2002,17 +1995,17 @@ one cluster in the right posterior hippocampus.\todo{odd imo}
 \todo[inline]{why did I build contrasts of the no\_cut condition compared
 to the movie cuts categories????}
 
-The four control contrasts of the AV stimulus that compared the
+The four control contrasts of the movie stimulus that compared the
 \texttt{no\_cuts} to categories of movie cuts all lead to null results.
 % AD anno in AV data
-The AV contrast using nouns (\texttt{se\_new} > \texttt{se\_old}): PPA
+The movie contrast using nouns (\texttt{se\_new} > \texttt{se\_old}): PPA
 (unilateral), LOC (bilateral); These noun categories show highest correlation
 among nouns with their cut counterpart \texttt{se\_new} (nouns) is r$\approx$0.3
 correlated with \texttt{vse\_new} (cuts); \texttt{se\_old} (nouns) is
 r$\approx$0.4 correlated with \texttt{vse\_old}.
 
 % AV anno in AV data
-The the 5 AV PPA contrasts but with the AV data using cuts. All null results
+The the 5 movie PPA contrasts but with the movie data using cuts. All null results
 except:
 % contrast 9
 vse\_new > pe\_old (conrast 9): left inferior prefrontal cortex (pars
