@@ -99,6 +99,17 @@ narrative, studyforrest
 
 \section*{Plan}
 
+
+\noindent General
+\begin{itemize}
+    \item van den Hurk (2017): uses sounds (1.8sec); one-back-task; no
+        significant results; but ``sensitivity maps'' and cross-modal and
+        cross-subject classification; mentions in a half sentence ``the auditory
+        trials might activate only a subset of voxels that contain categorical
+        information, whereas the visual trials activate the majority of VTC
+        voxels''.
+\end{itemize}
+
 \noindent Method
 
 \begin{itemize}
@@ -111,10 +122,7 @@ narrative, studyforrest
 \noindent Results
 
 \begin{itemize}
-    \item tables: round p-values to ? MIH: I would say 4 digits, but I can find internet
-      recommendations for 3. That would mean anything less than 0.001 is reported as '<.001',
-      and the rest as the precise value. This should only apply to corrected p-values.
-      For an uncorrected p-value 0.001 is very high.
+    \item tables: I (initially) rounded p-values to <.00001
 \end{itemize}
 
 \noindent Discussion
@@ -131,11 +139,12 @@ narrative, studyforrest
 \end{itemize}
 
 
-\noindent Data Citations, Code Availability, Data Availability
-
+\noindent Data Citations, Code Availability
 \begin{itemize}
-    \item https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880i
-    \item cf. other Scientific Data analysis paper
+    \item draft for Data Citation is done
+    \item draft for Code and Data Availability is done (other analysis paper do
+        it pretty amateurish); will look at the ``how to write an excellent
+        data availability statement'' at springernature.com
 \end{itemize}
 
 \pagebreak[4]
@@ -694,8 +703,7 @@ females & female persons & women
 \tabularnewline
 fname & female name & Jenny
 \tabularnewline
-    furniture & movable furniture (insides \& outsides) & bench, bed, table,
-    chair
+furniture & movable furniture (insides \& outsides) & bench, bed, table, chair
 \tabularnewline
 geo & immobile landmarks & building, tree, street, alley, meadow, cornfield \tabularnewline
 geo-room & rooms \& locales or geometry-defining elements & living room; wall, door, window, floor
@@ -862,17 +870,17 @@ hemodynamic responses related to all movie cuts (including \texttt{no\_cut}) and
 six low-level perceptual confounds were included as regressors in the design
 matrix.
 % AD regressors in AV AD design matrix
-For the first level analysis of the audio-description stimulus, the modeled hemodynamic
-responses related to all noun categories and the two low-level perceptual
-confounds were included.
+For the first level analysis of the audio-description stimulus, the modeled
+hemodynamic responses related to all noun categories and the two low-level
+perceptual confounds were included.
 % AD regressors in AV
-To create a contrasts of cross-modal control in the analysis of the movie stimulus,
-we also implemented the regressors based on nouns used by the
+To create a contrasts of cross-modal control in the analysis of the movie
+stimulus, we also implemented the regressors based on nouns used by the
 audio-description's narrator to indicate a switch to another setting (categories
 \texttt{se\_new} and \texttt{se\_old}).
 % AV regressors in AV
-To create contrasts of cross-modal negative control in the analysis of the audio-description
-stimulus, we also implemented the movie cut-related regressors
+To create contrasts of cross-modal negative control in the analysis of the
+audio-description stimulus, we also implemented the movie cut-related regressors
 (excluding \texttt{no\_cut}).
 % both stimuli: null regressors
 For both stimuli, a null regressor was chosen for a event category in a segment,
@@ -1180,10 +1188,12 @@ cortex.
 \\ \cmidrule{4-6} \cmidrule{7-9}
 voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \midrule
-3003 & 0 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r.
+3003 & <.00001 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r.
 cuneal c., intracalcarine c., bilaterally occipital fusiform g., precuneus,temporal fusiform c., posterior parahippocampal c.  \\
-154 & 0.000000656 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior lateral occipital c. \\
-121 & 0.00000769 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior lateral occipital cortex \\
+154 & <.00001 & 4.46 & -35 & -83 & 28 & -32.8 & -86.2 & 21.4 & l. superior
+lateral occipital c. \\ % 0.000000656
+121 & <.00001 & 4.65 & 25 & -80.5 & 25.5 & 23.7 & -83.8 & 25.4 & r. superior
+lateral occipital cortex \\ % 0.00000769
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -1206,12 +1216,18 @@ areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
 \\ \cmidrule{4-6} \cmidrule{7-9}
 voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
 \midrule
-188 & 0.0000000596 & 4.48 & -17.5 & -65.5 & 25.5 & -14.7 & -59.1 & 15.2 & l. precuneus \\
-164 & 0.000000238 & 4.47 & 17.5 & -58 & 23 & 15.6 & -55.6 & 16 & r. precuneus; \\
-83 & 0.000128 & 4.48 & 27.5 & -43 & -17 & 27.2 & -41.1 & -14 & r. temporal (occipital) fusiform c.; posterior parahippocampal g. \\
-73 & 0.000318 & 3.93 & -22.5 & -43 & -12 & -23.9 & -43.6 & -11.2 & l. lingual g.; temporal (occipital) fusiform g., posterior parahippocampal c. \\
-63 & 0.000824 & 4.1 & 40 & -75.5 & 30.5 & 40.9 & -76.3 & 28.6 & r. superior lateral occipital c. \\
-37 & 0.0129 & 4.24 & -37.5 & -78 & 33 & -38.4 & -79.5 & 28.9 & l. superior lateral occipital c. \\
+188 & <.00001 & 4.48 & -17.5 & -65.5 & 25.5 & -14.7 & -59.1 & 15.2 & l.
+precuneus \\ % 0.0000000596
+164 & <.00001 & 4.47 & 17.5 & -58 & 23 & 15.6 & -55.6 & 16 & r. precuneus;
+\\ % 0.000000238
+83 & .00013 & 4.48 & 27.5 & -43 & -17 & 27.2 & -41.1 & -14 & r. temporal
+(occipital) fusiform c.; posterior parahippocampal g. \\ % 0.000128
+73 & .00031 & 3.93 & -22.5 & -43 & -12 & -23.9 & -43.6 & -11.2 & l. lingual
+g.; temporal (occipital) fusiform g., posterior parahippocampal c. \\ % 0.000128
+63 & .00082 & 4.1 & 40 & -75.5 & 30.5 & 40.9 & -76.3 & 28.6 & r. superior
+lateral occipital c. \\ % 0.000824
+37 & .0129 & 4.24 & -37.5 & -78 & 33 & -38.4 & -79.5 & 28.9 & l. superior
+lateral occipital c. \\ % 0.0129
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -1376,7 +1392,7 @@ Contrary to previous studies, our current approach is not based on carefully
 designed sets of stimuli but based on annotated stimulus features incidentally
 occurring in two naturalistic stimuli.
 % group AV
-On a group level, whole brain-analysis results for the audio-visual movie show
+On a group level, results for the audio-visual movie show
 significantly increased hemodynamic activity spatially overlapping with a
 traditionally localized PPA but also extending into earlier visual cortices.
 % group AD
@@ -1449,9 +1465,9 @@ information at the moment of cuts in an audio-visual movie.
 Second, we analyzed data from the audio-description offering exclusively
 auditory stimulation.
 % hypothesis
-Encouraged by \citep{aziz2008modulation}, we hypothesized that spatial
-information embedded in the audio-description stimulus would correlate with increased
-hemodynamic activity in the PPA.
+Encouraged by \citep{aziz2008modulation}, we hypothesized that semantic spatial
+information embedded in the audio-description stimulus would correlate with
+increased hemodynamic activity in the PPA.
 % diff to Aziz (2008)
 \citep{aziz2008modulation} modeled events from on- to offset of sentences
 (describing unknown and famous places and faces), and compared activity levels
@@ -1505,10 +1521,10 @@ In the visual domain, pictures of landscapes and not pictures of landmarks or
 buildings are considered to be the ``optimal'' stimulus type
 \citep{epstein2008parahippocampal}.
 % we did not choose se\_new and se\_old
-In the audio-description's primary contrast, we did not include the categories that contained
-switches from one setting to another (\texttt{se\_new} and \texttt{se\_old})
-which one might assume to contain the auditory equivalent to pictures of
-landscapes.
+In the audio-description's primary contrast, we did not include the categories
+that contained switches from one setting to another (\texttt{se\_new} and
+\texttt{se\_old}) which one might assume to contain the auditory equivalent to
+pictures of landscapes.
 % why
 The reason was that the categories \texttt{se\_new} and \texttt{se\_old} were
 heterogeneous: they rarely contained holistic (but also vague) descriptions of
@@ -1666,17 +1682,13 @@ individuals with conditions that make them unable to follow task instructions
 during brain scanning.
 
 
-\subsection*{Code availability}
+\subsection*{Data and code availability}
 
-\todo[inline]{provide supporting source code; explain how/where other may
-access data underlying the analysis}
-
-\todo[inline]{if using custom code for dataset generation/processing: indicate
-how code can be accessed (including restrictions to access)}
-
-\todo[inline]{include infos on versions of used software}
-
-\todo[inline]{any specific variables or parameters used to generate, test, or process the current dataset?}
+% Zenodo (registered but zipped) vs. OSF (datalad dataset but probably
+% unregistered)
+The fMRI and annotation data, analysis scripts to generate the results as well
+as results are available in the [NAME] repository, [PERSISTENT WEB LINK],
+accessible as Datalad (RRID:SCR_003931) datasets.
 
 
 \section*{Acknowledgements}
@@ -1730,24 +1742,26 @@ The authors declare no competing financial interests.
 %  (\bibinfo{year}{2012}).
 %\end{thebibliography}
 
+
 \section{Data Citations}
 
-\todo[inline]{clean the PPA dataset; upload as zip to zalando again?}
-
-Bibliographic information for the data records described in the manuscript.
-
-1. Lastname1, Initial1., Lastname2, Initial2., ...\& LastnameN, InitialN. \emph{Repository name} Dataset accession number or DOI (YYYY).
-
 % cut anno
-\citep{haeusler2016cutanno}
+1. Häusler, C. O. \& Hanke M. Dataset 1 in: An annotation of cuts, depicted
+locations, and temporal progression in the motion picture "Forrest Gump".
+\emph{F1000Research}
+\href{https://doi.org/10.5256/f1000research.9536.d134823}{10.5256/f1000research.9536.d134823}
+(2016)
+
 % speech anno
-\citep{hausler2021studyforrest}
+2. Häusler, C. O. \& Hanke M. \emph{OSF}
+\href{https://doi.org/10.17605/OSF.IO/GFRME}{10.5256/f1000research.9536.d134823}
+(2020).
+
 % audio-description
-\citep{hanke2014audiomovie}
-% movie
-\citep{hanke2016simultaneous}
-% localizer
-\citep{sengupta2016extension}
+3. Hanke, M., Baumgartner, F. J., Ibe, P., Kaule, F. R., Pollmann, S., Speck,
+O., Zinke, W. \& Stadler, J. \emph{OpenNEURO}
+\href{https://openneuro.org/datasets/ds000113}{ds000113} (2014). \todo{4
+datasets \& using authors/year of the audio-description}
 
 
 \appendix
