@@ -619,19 +619,16 @@ to any other \texttt{no\_cut} event.
 
 % AD annotation
 For the analysis of the audio-description stimulus, we extended a publicly available annotation
-of speech \citep{hausler2021studyforrest} by further annotating words spoken by
-the audio-description's narrator.
+of its speech content \citep{hausler2021studyforrest} by classifying
+concrete and countable nouns that the narrator uses to describe the movie's absent visual content.
 % annotation procedure
-Two persons performed a categorization of (concrete and countable) nouns that
-the narrator uses to describe the movie's missing visual content based on a set
-of rules.
-% preliminary annotation
-A preliminary annotation was performed by one person according to the rules.
+An initial annotation was performed by one individual,
 % corrections
-Minor corrections due to incorrectly applied rules were done by the author.
+and minor corrections were applied after comparing with a second categorization
+done by the author.
 % reference to table with rules and examples
-A complete overview of all 18 noun categories, the rule for a word to belong to
-a category, and examples can be seen in Table \ref{tab:descr-nouns-rules}.
+A complete overview of all 18 noun categories, their inclusion criteria, and examples
+can be seen in Table \ref{tab:descr-nouns-rules}.
 % why and how of categories 1
 Some categories reflect the verbal counterpart of the stimulus categories that
 were used in the visual localizer experiment (e.g. \texttt{body}, \texttt{face},
@@ -684,7 +681,7 @@ responses.
 \toprule
 \textbf{category} & \textbf{rule} & \textbf{examples} \\
 \midrule
-\texttt{body} & trunk of the body; overlaid clothes & back, hip, shoulder; jacket, dress, shirt
+\texttt{body} & trunk of the body; possibly clothed & back, hip, shoulder; jacket, dress, shirt
 \tabularnewline
 \texttt{bodypart} & limbs & arm, finger, leg, toe
 \tabularnewline
@@ -794,10 +791,15 @@ helmet
 Lastly, we algorithmically annotated the temporal structure of low-level
 perceptual features to create nuisance regressors.
 % visual shit
-For the movie stimulus, we computed the mean luminance of a movie frame
-(\unit[40]{ms}), the difference in mean luminance of each frame's left and right
-half, the difference in mean luminance of the lower and upper half, and finally
-the perceptual difference of consecutive frames.
+For the movie stimulus, we computed the mean luminance (arbitrary units,
+average pixel brightness) of a movie frame (\unit[40]{ms}), the difference in
+mean luminance of each frame's left and right half, the difference in mean
+luminance of the lower and upper half.  As an indiciator of visual change, we
+compute perceptual fingerprints for each movie frame using the pHash library
+\todo{cite Zauner, Christoph: Implementation and Benchmarking of Perceptual
+Image Hash Functions. Master's thesis, Upper Austria University of Applied
+Sciences, Hagenberg Campus, 2010.} and recorded the commulative bitwise
+difference to the previous frame.
 % auditory shit
 Finally for both audio tracks, we computed the left-right difference in volume
 and root mean square energy averaged across the length of every movie frame
