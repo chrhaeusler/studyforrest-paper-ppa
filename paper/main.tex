@@ -560,7 +560,7 @@ to any other \texttt{no\_cut} event.
 \begin{table*}[tbp]
     \caption{Overview of annotated stimulus features of audio-visual
     movie.
-    Respective event counts are given for the whole stimulus (\texttt{all} and
+    Respective event counts are given for the whole stimulus (\texttt{All} and
     the segments that were used for the eight sessions of fMRI scanning).
     Event counts for frame-based features are reported in units of a thousand.
     %\texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames),
@@ -578,7 +578,7 @@ to any other \texttt{no\_cut} event.
     }
 \label{tab:av-events}
 \small
-\begin{tabular}{lp{3.7cm}lllllllll} \toprule \textbf{label} & \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
+\begin{tabular}{lp{3.7cm}lllllllll} \toprule \textbf{Label} & \textbf{Description} & \textbf{All} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
 \texttt{vse\_new} &  change of the camera position to a setting not depicted before & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII
 \tabularnewline
@@ -678,7 +678,7 @@ responses.
 \label{tab:descr-nouns-rules}
 \begin{tabular}{lp{61mm}p{61mm}}
 \toprule
-\textbf{category} & \textbf{rule} & \textbf{examples} \\
+\textbf{Category} & \textbf{Rule} & \textbf{Examples} \\
 \midrule
 \texttt{body} & trunk of the body; possibly clothed & back, hip, shoulder; jacket, dress, shirt
 \tabularnewline
@@ -725,7 +725,7 @@ helmet
 % AD regressors
 \begin{table*}[tbp]
     \caption{Overview of annotated stimulus features of the audio-description.
-    Respective event counts are given for the whole stimulus (\texttt{all} and
+    Respective event counts are given for the whole stimulus (\texttt{All} and
     the segments that were used for the eight sessions of fMRI scanning.
     Some of the annotation's original categories (female, females, fname; male,
     males, mname; face, head; object, objects;
@@ -738,7 +738,7 @@ helmet
     }
 \label{tab:ao-events}
 \begin{tabular}{lp{3.8cm}lllllllll}
-\toprule \textbf{label} & \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
+\toprule \textbf{Label} & \textbf{Description} & \textbf{All} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
 \texttt{body} & trunk of the body; overlaid clothes & \aoBodyAll & \aoBodyI & \aoBodyII
 & \aoBodyIII & \aoBodyIV & \aoBodyV & \aoBodyVI & \aoBodyVII & \aoBodyVIII
@@ -884,7 +884,7 @@ The design matrices were temporally filtered with the same high-pass filter (cut
 \subsection{Statistical analysis}
 
 % intro
-We performed standard two-level GLM analyses to aggregate results across the 8
+We performed standard two-level GLM analyses to aggregate results across the eight
 segments for every participant and each stimulus separately.
 % level 3
 Subsequently, we conducted third-level analyses to average contrast estimates
@@ -969,7 +969,7 @@ pictures, a set of three contrasts (\textit{strict}, \textit{relaxed}, and
 \label{tab:av-contrasts}
 \begin{tabular}{lll}
 \toprule
-\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
+\textbf{Nr.} &  \textbf{Contrast} & \textbf{Purpose} \\
 \midrule
 1 & \texttt{vse\_new > vpe\_old} & spatial processing \tabularnewline
 2 & \texttt{vse\_new, vpe\_new > vse\_old, vpe\_old} & spatial processing \tabularnewline
@@ -994,7 +994,7 @@ pictures, a set of three contrasts (\textit{strict}, \textit{relaxed}, and
 \label{tab:ao-contrasts}
 \begin{tabular}{lll}
 \toprule
-\textbf{nr.} &  \textbf{contrast} & \textbf{purpose} \\
+\textbf{Nr.} &  \textbf{Contrast} & \textbf{Purpose} \\
 \midrule
 1 & \texttt{geo, groom > non-spatial} & spatial processing \tabularnewline
 2 & \texttt{geo, groom, se\_new > non-spatial} & spatial processing \tabularnewline
@@ -1154,13 +1154,14 @@ cortex.
     Clusters sorted by voxel size.
     The first brain structure given contains the voxel with the maximum Z-Value,
     followed by brain structures from posterior to anterior, and partially
-    covered areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
+    covered areas (l. = left; r. = right; c. = cortex; g. = gyrus).
+    CoG: Center of Gravity}
 \label{tab:res-av-group1}
-\begin{tabular}{rrrrrrrrrp{3cm}}
+\begin{tabular}{rrrrrrrrrp{3.5cm}}
 \toprule
-& & & \multicolumn{3}{r}{max location (MNI)} & \multicolumn{3}{r}{center of gravity (MNI)} &
+& & & \multicolumn{3}{r}{Max (MNI)} & \multicolumn{3}{r}{CoG (MNI)} &
 \\ \cmidrule{4-6} \cmidrule{7-9}
-voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
+Voxels & $p_{corr.}$ & Z-max & X & Y & Z  & X & Y & Z & Structure \\
 \midrule
 3003 & <.00001 & 5.31 & 22.5 & -45.5 & -12 & 4.53 & -63.3 & -3.72 & r. lingual g.; r.
 cuneal c., intracalcarine c., bilaterally occipital fusiform g., precuneus,temporal fusiform c., posterior parahippocampal c.  \\
@@ -1182,13 +1183,14 @@ lateral occipital cortex \\ % 0.00000769
         Clusters sorted by voxel size.
     The first brain structure given contains the voxel with the maximum Z-Value,
 followed by brain structures from posterior to anterior, and partially covered
-areas (l. = left; r. = right; c. = cortex; g. = gyrus).}
+areas (l. = left; r. = right; c. = cortex; g. = gyrus).
+    CoG: Center of Gravity}
     \label{tab:res-ao-group1}
-\begin{tabular}{rrrrrrrrrp{3cm}}
+    \begin{tabular}{rrrrrrrrrp{3.5cm}}
 \toprule
-& & & \multicolumn{3}{r}{max location (MNI)} & \multicolumn{3}{r}{center of gravity (MNI)} &
+& & & \multicolumn{3}{r}{Max (MNI)} & \multicolumn{3}{r}{CoG (MNI)} &
 \\ \cmidrule{4-6} \cmidrule{7-9}
-voxels & $p_{corr.}$ & Z-max & x & y & z  & x & y & z & structure \\
+Voxels & $p_{corr.}$ & Z-max & X & Y & Z  & X & Y & Z & Structure \\
 \midrule
 188 & <.00001 & 4.48 & -17.5 & -65.5 & 25.5 & -14.7 & -59.1 & 15.2 & l.
 precuneus \\ % 0.0000000596
