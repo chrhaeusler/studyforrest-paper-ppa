@@ -515,8 +515,7 @@ that require viewers to re-orient themselves within the movie environment by
 switching to a new perspective within the same setting, or to a position in an
 entirely different setting.
 % AV regressors/events
-We assigned each cut to one of five categories (see Table
-\ref{tab:av-events}):
+We assigned each cut to one of five categories (Tab.~\ref{tab:av-events}):
 %
 1) a cut switching to a setting that was depicted for the first time
 (\texttt{vse\_new}),
@@ -575,7 +574,7 @@ to any other \texttt{no\_cut} event.
     %for every movie frame (\unit[40]{ms}).
     % For description of the two event categories of the audio-description's
     % narrator (\texttt{se\_new} and \texttt{se\_old}) to build contrast of
-    % negative control see Table \ref{tab:ao-events}.
+    % negative control Tab.~\ref{tab:ao-events}.
     }
 \label{tab:av-events}
 \small
@@ -628,7 +627,7 @@ and minor corrections were applied after comparing with a second categorization
 done by the author.
 % reference to table with rules and examples
 A complete overview of all 18 noun categories, their inclusion criteria, and examples
-can be seen in Table \ref{tab:descr-nouns-rules}.
+can be seen in Table~\ref{tab:descr-nouns-rules}.
 % why and how of categories 1
 Some categories reflect the verbal counterpart of the stimulus categories that
 were used in the visual localizer experiment (e.g. \texttt{body}, \texttt{face},
@@ -660,8 +659,8 @@ belong exclusively to the higher-level category of changing a setting
 (\texttt{se\_new} or \texttt{se\_old}).
 % pooling of categories
 Some noun categories that were semantically similar and offered only a small
-amount of counts were pooled resulting in 11 final event categories (see Table
-\ref{tab:ao-events}). These event categories were then used to model hemodynamic
+amount of counts were pooled resulting in 11 final event categories (Tab.~\ref{tab:ao-events}).
+These event categories were then used to model hemodynamic
 responses.
 
 
@@ -673,7 +672,7 @@ responses.
         Some of these initial 18 noun categories were pooled resulting in 11
         event categories that served as basis to build the regressors of the
         GLM
-        (cf. Table \ref{tab:ao-events}).
+        (Tab.~\ref{tab:ao-events}).
         % The category \texttt{++} also contains adverbial of time.
 }
 \label{tab:descr-nouns-rules}
@@ -730,12 +729,12 @@ helmet
     the segments that were used for the eight sessions of fMRI scanning.
     Some of the annotation's original categories (female, females, fname; male,
     males, mname; face, head; object, objects;
-    see Table\ref{tab:descr-nouns-rules}) were pooled
+    Tab.~\ref{tab:descr-nouns-rules}) were pooled
     into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead},
     \texttt{object}).
     Event counts for frame-based features are reported in units of a thousand.
     % For a description of the five control conditions for movie cuts see
-    % Table \ref{tab:av-events}.
+    % Tab.~\ref{tab:av-events}.
     }
 \label{tab:ao-events}
 \begin{tabular}{lp{3.8cm}lllllllll}
@@ -820,7 +819,7 @@ hemodynamic response function (HRF), as implemented in FSL.
 Given the unknown confound structure of the naturalistic stimuli we inspected
 % correlations within stimuli and across stimuli
 the correlation of regressors across the eight segments of each stimulus and
-also across both stimuli (Figure \ref{fig:reg-corr}).
+also across both stimuli (Fig.~\ref{fig:reg-corr}).
 % correlations within each stimulus
 The computed Pearson correlation coefficients show only minor correlations of
 feature regressors for the same stimulus.
@@ -830,7 +829,7 @@ Maximum correlations are found for auditory low-level confounds across stimuli
 \texttt{fg\_a(v|d)\_ger\_lrdiff}, r=.77),
 % no surprise
 which is to be expected, as the audio-description contains the audio track of
-the movie plus the additional narrator (s. Figure \ref{fig:reg-corr}).
+the movie plus the additional narrator (Fig. \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
 Given that all planned voxel-wise general linear models (GLM) exclusively involve
 regressors from one of the naturalistic stimuli, the observed correlation
@@ -843,9 +842,8 @@ regressors of interest.
     \includegraphics[width=\linewidth]{figures/regressor-corr} \caption{Pearson
         correlation coefficients of modeled time series used as regressors in
         the GLM analysis of the
-        audio-description (blue; see Table \ref{tab:ao-events} for a
-        description) and audio-visual movie (red; see Table
-        \ref{tab:av-events}).
+        audio-description (blue; Tab.~\ref{tab:ao-events} for a
+        description) and audio-visual movie (red; Tab.~\ref{tab:av-events}).
         Values are rounded to the nearest tenth.
         The correlation between the two stimuli's
         root mean square volume and between their left-right difference in
@@ -878,7 +876,7 @@ audio-description stimulus, we also implemented the movie cut-related regressors
 % both stimuli: null regressors
 For both stimuli, a null regressor was chosen for a event category in a segment,
 if that segment did not contain an event of the category (e.g. no event of
-\texttt{vpe\_old} in segment 3; cf. Table \ref{tab:ao-events}).
+\texttt{vpe\_old} in segment 3; Tab.~\ref{tab:ao-events}).
 % temporal derivatives
 Temporal derivatives were included in the design matrix to compensate for
 regional differences between modeled and actual HRF \citep{friston1998event}.
@@ -905,9 +903,8 @@ features embedded in the in the audio-visual movie and its audio-description.
 % intro
 To test the robustness of this approach, we operationalized the perception of
 spatial information compared to the perception of non-spatial information
-differently in five $t$-contrasts for the movie stimulus (see Table
-\ref{tab:av-contrasts}) and eight $t$-contrasts for the audio-description stimulus (see Table
-\ref{tab:ao-contrasts}).
+differently in five $t$-contrasts for the movie stimulus (Tab.~\ref{tab:av-contrasts})
+and eight $t$-contrasts for the audio-description stimulus (Tab.~\ref{tab:ao-contrasts}).
 % reason: robustness
 We assumed all contrasts could in principle correlate with increased hemodynamic
 activity in the PPA but chose one contrast to be the ``primary contrast'' for
@@ -955,7 +952,7 @@ richer pictures].
 
 % control contrasts
 Finally, we created several $t$-contrasts as negative controls for both stimuli
-(see Tables \ref{tab:av-contrasts} and \ref{tab:ao-contrasts}).
+(Tab.~\ref{tab:av-contrasts} and Tab.~\ref{tab:ao-contrasts}).
 % AV: no cut > cut
 For the movie stimulus, four contrasts were created contrasting the no-cut
 regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
@@ -963,8 +960,8 @@ regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
 One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by contrasting
 nouns spoken by the narrator.
 % AD stimulus
-For the audio-description stimulus, we created five $t$-contrasts (see Table
-\ref{tab:ao-contrasts}) to test if increased activation in the PPA was
+For the audio-description stimulus, we created five $t$-contrasts
+(Tab.~\ref{tab:ao-contrasts}) to test if increased activation in the PPA was
 correlated with moments of cuts.
 
 % difference to Sengupta; Berman et al. (2010). Evaluating functional localizers
@@ -1009,7 +1006,7 @@ pictures, a set of three contrasts (\textit{strict}, \textit{relaxed}, and
     \texttt{body}, \texttt{bodypart}, \texttt{fahead},
     \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}.
     Contrasts 9-13 serve as negative control contrasts at the moments of movie
-    cuts (see Table \ref{tab:av-contrasts}).}
+    cuts (Tab.~\ref{tab:av-contrasts}).}
 \label{tab:ao-contrasts}
 \footnotesize
 \begin{tabular}{lll}
@@ -1109,8 +1106,8 @@ valid stimulation than static pictures.
 % AV primary contrast
 The movie's primary $t$-contrast that compared cuts to a setting that was not
 depicted before to cuts within a recurring setting (\texttt{vse\_new >
-vpe\_old}) yielded three significant clusters (see Table
-\ref{tab:res-av-group1}, Figure \ref{fig:group-slices}).
+vpe\_old}) yielded three significant clusters (Tab.~\ref{tab:res-av-group1},
+Fig.~\ref{fig:group-slices}).
 % PPA (others the clusters extend into).
 One cluster spans across the midline and comprises parts of the intracalcarine
 and cuneal cortex, the lingual gyrus and retrosplenial cortex, the occipital and
@@ -1125,8 +1122,8 @@ Second, we analyzed data from the audio-description offering exclusively
 auditory stimulation.
 % AD primary contrast
 The primary $t$-contrast for the audio-description (\texttt{geo, groom} >
-non-spatial noun categories) yielded six significant clusters (see Table
-\ref{tab:res-ao-group1}, Figure \ref{fig:group-slices}).
+non-spatial noun categories) yielded six significant clusters
+(Tab.~\ref{tab:res-ao-group1}, Fig.~\ref{fig:group-slices}).
 % overlap with ROI
 Two homologous clusters are located in the anterior part of the PPA group
 overlap.
@@ -1253,13 +1250,13 @@ the PPA in individual participants and thus possibly substitute a classic visual
 localizer experiment.
 % Sengupta et al., 2016; unilateral in sub-04 and sub-20
 The visual localizer yielded bilateral parahippocampal clusters in 12 of 14
-participants and an unilateral right clusters in two participants (cf. Table 3 in
+participants and an unilateral right clusters in two participants (Tab.~3 in
 \citep{sengupta2016extension}).
 % Sengupta: 1 of 3
 Individual PPAs were assessed by visually inspecting thresholded $t$-maps
 (Z>1.64, p<.05 cluster corrected) of three different $t$-contrasts, and
 titrating\todo{??} the $t$-threshold in the range of [2, 3] in until we found an
-isolated cluster (cf. Table 3 in that matched the expected anatomical location
+isolated cluster (Tab.~3 in that matched the expected anatomical location
 based on literature \citep{epstein1998ppa}.
 
 % one contrast to localize them all; "...and Z>3.4 for all"
@@ -1272,7 +1269,7 @@ accompanying dataset (Z>2.3, p<.05 cluster-corrected).
 For better comparisons of participants, we here report results from the analyses
 performed in group space (Z>3.4, p<.05 cluster-corrected).
 % ref to figure
-Figure \ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary movie
+Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary movie
 and audio-description $t$-contrast, and the outline of overlapped, individual PPAs
 co-registered to the MNI152 template.
 % one slice to show them all
@@ -1330,7 +1327,7 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
 % Bland-Altman-Plots
 To better depict the agreement and difference between the results of the visual
 localizer and the primary audio-description contrast, we created a Bland-Altman-Plot for every
-participant (see Figure \ref{fig:bland-altman}).
+participant (Fig.~\ref{fig:bland-altman}).
 % what it depicts
 Each subplot visualizes the mean value and difference (localizer minus audio-description) of
 two spatially corresponding voxels in the unthresholded $z$-maps.
@@ -1772,9 +1769,9 @@ datasets \& using authors/year of the audio-description}
 
 % intro
 In order to test the robustness of our approach, we created overall five
-$t$-contrasts for the movie stimulus (see Table \ref{tab:av-contrasts}), and
-overall eight $t$-contrast for the audio-description stimulus (see Table
-\ref{tab:av-contrasts}) by varying the contrasted categories (and thus the
+$t$-contrasts for the movie stimulus (Tab.~\ref{tab:av-contrasts}), and
+overall eight $t$-contrast for the audio-description stimulus (Tab.~\ref{tab:av-contrasts})
+by varying the contrasted categories (and thus the
 amount of available data), and how well the annotated events within categories
 on average matched a stimulus type that we assumed to correlate with spatial
 perception.
@@ -1795,7 +1792,7 @@ space) can found at NeuroVault
 % AV results: PPA; biggest overlap in posterior part of PPA group overlap  =
 % temporal occipital fusiform cortex
 All five movie contrasts yielded significant bilateral clusters that
-overlap with the PPA group overlap (see Figure \ref{fig:stability-slices}).
+overlap with the PPA group overlap (Fig.~\ref{fig:stability-slices}).
 % AV: RSC & LOC
 Reliably across contrasts of the movie stimulus, we find bilaterally
 significant clusters also in the ventral precuneal cortex and posterior
@@ -1816,8 +1813,7 @@ occipital cortex (contrasts 1, 2, 4, 5).
 In results of the audio-description stimulus, all contrasts except contrast 7
 (\texttt{se\_new}, \texttt{se\_old} > non-spatial categories) and contrast 8
 (\texttt{se\_new} > non-spatial categories) yielded significant bilateral
-clusters in anterior regions of the group PPA overlap (see Figure
-\ref{fig:stability-slices}).
+clusters in anterior regions of the group PPA overlap (Fig.~\ref{fig:stability-slices}).
 % AD: RSC & LOC
 Reliably across contrast of the audio-description stimulus, we find bilaterally significant
 clusters also in the ventral precuneus (all except contrasts 8), lateral
@@ -1942,8 +1938,8 @@ For the purpose of negative control, we implemented five contrasts for every
 stimulus.
 % AV: no_cut > x
 In the analysis of the movie data, none of the four contrasts that compared the
-\texttt{no\_cut} category to a movie cut category (see Table
-\ref{tab:av-contrasts}) yielded significant clusters.
+\texttt{no\_cut} category to a movie cut category (Tab.~\ref{tab:av-contrasts})
+yielded significant clusters.
 % AV using nouns
 The contrast that used the narrator's nouns but in the movie stimulus
 (\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
@@ -1951,7 +1947,7 @@ PPA and bilateral clusters in the superior lateral occipital cortices (the right
 hemispheric cluster extending into the superior parietal cortex).
 % AD stimulus
 In the analysis of the audio-description data, we created control contrasts based on events of
-the annotated movie cuts (cf. Table \ref{tab:ao-contrasts})
+the annotated movie cuts (Tab.~\ref{tab:ao-contrasts})
 % contrast 9
 Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
 inferior prefrontal cortex (pars triangularis) and right ventral
