@@ -808,36 +808,34 @@ and root mean square energy averaged across the length of every movie frame
 
 % movie events
 The events of the movie cut related categories and \texttt{no\_cut} events were
-modeled as box car events of 200 ms duration.
+modeled as box car events of \unit[200]{ms} duration,
 %
-Nouns were modeled from onset to offset of each word, low-level confounds from
-onset to offset of the corresponding movie frame
+speech events from onset to offset of each word, and frame-based confounds from
+onset to offset of the corresponding movie frame.
 % convolving
-Events for all regressors of the movie and audio-description stimulus were convolved with a double
-gamma hemodynamic response function (HRF).
+For all regressors, the stimulus models were convolved with a double-gamma
+hemodynamic response function (HRF), as implemented in FSL.
 
 % we checked correlations
-Since we annotated events in fixed time courses, the modeled hemodynamic
-time-series could be correlated leading to shared variance and thus low
-detection power of subsequent analyses.
+Given the unknown confound structure of the naturalistic stimuli we inspected
 % correlations within stimuli and across stimuli
-Hence, we tested for correlation of regressors across the eight segments of each
-stimulus and also for correlations of regressors across both stimuli (s. Figure
-\ref{fig:reg-corr})
+the correlation of regressors across the eight segments of each stimulus and
+also across both stimuli (Figure \ref{fig:reg-corr}).
 % correlations within each stimulus
-The computed Pearson correlation coefficients demonstrate no to minor
-correlations of modeled hemodynamic time-series belonging to the same stimulus.
+The computed Pearson correlation coefficients show only minor correlations of
+feature regressors for the same stimulus.
 % (highest) correlations across stimuli
-The highest correlations are apparent between auditory low-level confounds
-across stimuli (\texttt{fg\_av\_ger\_rms} and \texttt{fg\_ad\_rms}, r=.7635;
-\texttt{fg\_av\_ger\_lrdiff} and \texttt{fg\_ad\_lrdiff} and , r=.7749).
+Maximum correlations are found for auditory low-level confounds across stimuli
+(\texttt{fg\_a(v|d)\_ger\_rms}, r=.76;
+\texttt{fg\_a(v|d)\_ger\_lrdiff}, r=.77),
 % no surprise
-This was expected and served as a ``sanity check'' since the audio track of the
-audio-description is the audio track of the movie but featuring the additional
-narrator (s. Figure \ref{fig:reg-corr}).
+which is to be expected, as the audio-description contains the audio track of
+the movie plus the additional narrator (s. Figure \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
-As a result, we felt encouraged to create voxel-wise general linear model (GLM)
-$t$-contrasts similarly to previous studies that used controlled stimuli.
+Given that all planned voxel-wise general linear models (GLM) exclusively involve
+regressors from one of the naturalistic stimuli, the observed correlation
+pattern does not indicate problematic confounds of nuissance variables and
+regressors of interest.
 
 
 \begin{figure*}[h!]
