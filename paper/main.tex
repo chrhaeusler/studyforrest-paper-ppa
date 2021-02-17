@@ -18,7 +18,8 @@ colorlinks=true,
   urlcolor=black,
 	linkcolor=black
 ]{hyperref}
-\newcommand{\scidatalogo}{\includegraphics[height=36pt]{SciData_logo.jpg}}
+%\newcommand{\scidatalogo}{\includegraphics[height=36pt]{SciData_logo.jpg}}
+\newcommand{\scidatalogo}{}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
@@ -485,26 +486,27 @@ to improve estimation efficiency.
 \subsection{Event selection} \label{rationale}
 
 % traditionally
-Traditionally, researchers design stimuli that presumably would trigger the
-perceptual process of interest while also controlling confounding variables
-(e.g. color, luminance).
+In contrast to stimuli designed to trigger a perceptual process of interest,
+while controlling for confounding variables (e.g., color and luminance),
 % our approach: annotation and regressors
-Naturalistic stimuli mimic how we experience the world more closely but have the
-drawback that they are usually fix and that their temporal structure is unknown.
+naturalistic stimuli have an initially unknown temporal structure
+of stimulus features of interest, as well as an equally unknown confound structure.
 % annotation ftw
-Hence, we annotated the temporal structure of various stimulus features that
-later served as basis for modeling hemodynamic responses.
+In order to evaluate the suitability of the stimulus for the targeted analyses,
+and well as to inform the required hemodynamic models, we annotated the temporal
+structure of a range of stimulus features.
 
 % AV anno
-For the analysis of the movie stimulus, we took advantage of a previously published
-annotation of 869 movie cuts and the depicted location after each cut
+For the analysis of the movie stimulus, we took advantage of a previously
+published annotation of 869 movie cuts and the depicted location after each cut
 \citep{haeusler2016cutanno}.
 % rationale to use that annotation rationale behind using movie cuts
-Our rationale was that cuts are ``spatially relevant'' events that re-orient the
-viewer within the environment of the movie by either switching to another
-setting or switching the perspective within the same setting.
+We conceptualized cuts as events with information on the depicted environment
+that require viewers to re-orient themselves within the movie environment by
+switching to a new perspective within the same setting, or to a position in an
+entirely different setting.
 % AV regressors/events
-Each cut was put into one of the following five categories (see Table
+We assigned each cut to one of five categories (see Table
 \ref{tab:av-events}):
 %
 1) a cut switching to a setting that was depicted for the first time
@@ -576,36 +578,38 @@ temporal distance of at least \unit[10]{s} to a movie cut and to another
 \footnotesize
 \begin{tabular}{lp{3.5cm}lllllllll} \toprule \textbf{label} & \textbf{description} & \textbf{all} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
-vse\_new &  change of the camera position to a setting not depicted before & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII
-\tabularnewline vse\_old & change of the camera position to a recurring setting & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII
+\texttt{vse\_new} &  change of the camera position to a setting not depicted before & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII
 \tabularnewline
-vlo\_ch & change of the camera position to another locale within the same setting & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII
+\texttt{vse\_old} & change of the camera position to a recurring setting & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII
 \tabularnewline
-vpe\_new & change of the camera position within a locale not depicted before & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII
+\texttt{vlo\_ch} & change of the camera position to another locale within the same setting & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII
+\tabularnewline
+\texttt{vpe\_new} & change of the camera position within a locale not depicted before & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII
 \tabularnewline
 % vpe_old has no events in 3. So the indices are shifted
-vpe\_old & change of the camera position within a recurring locale &
+\texttt{vpe\_old} & change of the camera position within a recurring locale &
 \aoVpeoldAll & \aoVpeoldI & \aoVpeoldII & 0 & \aoVpeoldIII & \aoVpeoldIV &
 \aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII
 \tabularnewline
-vno\_cut & frames within a continuous movie shot & \avVnocutAll & \avVnocutI & \avVnocutII & 0 & \avVnocutIII & \avVnocutIV & \avVnocutV & \avVnocutVI & \avVnocutVII
+\texttt{vno\_cut} & frames within a continuous movie shot & \avVnocutAll & \avVnocutI & \avVnocutII & 0 & \avVnocutIII & \avVnocutIV & \avVnocutV & \avVnocutVI & \avVnocutVII
 \tabularnewline
 % se\_new & control for AD narrator & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
 % \tabularnewline
 % se\_old & control for AD narrator & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
 % \tabularnewline
-fg\_av\_ger\_lr & left-right luminance difference & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII & \avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI & \avFgavgerlrVII & \avFgavgerlrVIII
+\texttt{fg\_av\_ger\_lr} & left-right luminance difference & \avFgavgerlrAll & \avFgavgerlrI & \avFgavgerlrII & \avFgavgerlrIII & \avFgavgerlrIV & \avFgavgerlrV & \avFgavgerlrVI & \avFgavgerlrVII & \avFgavgerlrVIII
 \tabularnewline
-fg\_av\_ger\_lrdiff & left-right volume difference & \avFgavgerlrdiffAll & \avFgavgerlrdiffI & \avFgavgerlrdiffII & \avFgavgerlrdiffIII & \avFgavgerlrdiffIV & \avFgavgerlrdiffV & \avFgavgerlrdiffVI & \avFgavgerlrdiffVII & \avFgavgerlrdiffVIII
+\texttt{fg\_av\_ger\_lrdiff} & left-right volume difference & \avFgavgerlrdiffAll & \avFgavgerlrdiffI & \avFgavgerlrdiffII & \avFgavgerlrdiffIII & \avFgavgerlrdiffIV & \avFgavgerlrdiffV & \avFgavgerlrdiffVI & \avFgavgerlrdiffVII & \avFgavgerlrdiffVIII
 \tabularnewline
-fg\_av\_ger\_ml & mean luminance & \avFgavgermlAll & \avFgavgermlI & \avFgavgermlII & \avFgavgermlIII & \avFgavgermlIV & \avFgavgermlV & \avFgavgermlVI & \avFgavgermlVII & \avFgavgermlVIII
+\texttt{fg\_av\_ger\_ml} & mean luminance & \avFgavgermlAll & \avFgavgermlI & \avFgavgermlII & \avFgavgermlIII & \avFgavgermlIV & \avFgavgermlV & \avFgavgermlVI & \avFgavgermlVII & \avFgavgermlVIII
 \tabularnewline
-fg\_av\_ger\_pd & perceptual difference & \avFgavgerpdAll & \avFgavgerpdI & \avFgavgerpdII & \avFgavgerpdIII & \avFgavgerpdIV & \avFgavgerpdV & \avFgavgerpdVI & \avFgavgerpdVII & \avFgavgerpdVIII
+\texttt{fg\_av\_ger\_pd} & perceptual difference & \avFgavgerpdAll & \avFgavgerpdI & \avFgavgerpdII & \avFgavgerpdIII & \avFgavgerpdIV & \avFgavgerpdV & \avFgavgerpdVI & \avFgavgerpdVII & \avFgavgerpdVIII
 \tabularnewline
-fg\_av\_ger\_rms & root mean square volume & \avFgavgerrmsAll & \avFgavgerrmsI & \avFgavgerrmsII & \avFgavgerrmsIII & \avFgavgerrmsIV & \avFgavgerrmsV & \avFgavgerrmsVI & \avFgavgerrmsVII & \avFgavgerrmsVIII
+\texttt{fg\_av\_ger\_rms} & root mean square volume & \avFgavgerrmsAll & \avFgavgerrmsI & \avFgavgerrmsII & \avFgavgerrmsIII & \avFgavgerrmsIV & \avFgavgerrmsV & \avFgavgerrmsVI & \avFgavgerrmsVII & \avFgavgerrmsVIII
 \tabularnewline
-fg\_av\_ger\_ud & upper-lower luminance difference & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII & \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII & \avFgavgerudVIII
+\texttt{fg\_av\_ger\_ud} & upper-lower luminance difference & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII & \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII & \avFgavgerudVIII
 \tabularnewline
+\bottomrule
 \end{tabular}
 \end{table*}
 
