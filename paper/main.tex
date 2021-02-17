@@ -1039,9 +1039,9 @@ The second level analyses which averaged contrast estimates over the eight
 stimulus segments were carried out using a fixed effects model by forcing the
 random effects variance to zero in FLAME (FMRIB's Local Analysis of Mixed
 Effects; \citep{beckmann2003general, woolrich2004multilevel}.
-% thresholding (Z>2.3 in subject-space; Z>3.4 in group space)
+% thresholding ($Z$>2.3 in subject-space; $Z$>3.4 in group space)
 (Gaussianised T/F) statistic images were thresholded using clusters determined
-by Z>3.4 and a cluster-corrected significance threshold of p=.05
+by $Z$>3.4 and a cluster-corrected significance threshold of $p$<.05
 \citep{worsley2001statistical}.
 
 % third level model
@@ -1050,7 +1050,7 @@ carried out using FLAME stage 1 with automatic outlier detection
 \citep{beckmann2003general, woolrich2004multilevel, woolrich2008robust}.
 % thresholding
 Here again, Z (Gaussianised T/F) statistic images were thresholded using
-clusters determined by Z>3.4 and a (corrected) cluster significance threshold of
+clusters determined by $Z$>3.4 and a (corrected) cluster significance threshold of
 p=.05 \citep{worsley2001statistical}.
 % brain region identification
 Brain regions associated with observed clusters were determined with the Jülich
@@ -1076,7 +1076,7 @@ For each individual, we also compared the activation pattern from
 naturalistic auditory stimulation to the individual PPA localization
 with a block-design stimulus.
 % NeuroVault
-Unthresholded $z$-maps of all contrasts on a group level as well as individual
+Unthresholded $Z$-maps of all contrasts on a group level as well as individual
 results of the primary $t$-contrasts co-registered to the group-template (MNI152
 space) can found at
 \href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}.
@@ -1127,7 +1127,7 @@ cortex.
 \begin{figure*}[tbp] \centering
     \includegraphics[width=\linewidth]{figures/group-slices}
     \caption{Mixed-effects group-level (N=14) GLM results. Significant clusters
-        (Z>3.4, p<.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
+        ($Z$>3.4, $p$<.05 cluster-corrected) are overlaid on the MNI152 T1-weighted
         head template (gray).
         Light gray: The audio-description's field of view
         (cf. \citep{hanke2014audiomovie}).
@@ -1147,7 +1147,7 @@ cortex.
 
 
 \begin{table*}[tbp]
-\caption{Significant clusters (z-threshold Z>3.4; p<.05 cluster-corrected)
+\caption{Significant clusters ($Z$-threshold $Z$>3.4; $p$<.05 cluster-corrected)
     of the primary $t$-contrast for the audio-visual movie comparing cuts to a
     setting depicted for the first time with cuts within a recurring setting
     (\texttt{vse\_new > vpe\_old}).
@@ -1176,7 +1176,7 @@ lateral occipital cortex \\ % 0.00000769
 
 % table group results primary AD contrast
 \begin{table*}[tbp]
-    \caption{Significant clusters (z-threshold Z>3.4; p<.05 cluster-corrected)
+    \caption{Significant clusters ($Z$-threshold $Z$>3.4; $p$<.05 cluster-corrected)
         of the primary $t$-contrast for the audio-description comparing
         geometry-related nouns to non geometry-related nouns spoken by the
         audio-description's narrator (\texttt{geo, groom > all non-geo}).
@@ -1240,22 +1240,22 @@ participants and an unilateral right clusters in two participants (Tab.~3 in
 \citep{sengupta2016extension}).
 % Sengupta: 1 of 3
 Individual PPAs were assessed by visually inspecting thresholded $t$-maps
-(Z>1.64, p<.05 cluster corrected) of three different $t$-contrasts, and
+($Z$>1.64, $p$<.05 cluster corrected) of three different $t$-contrasts, and
 titrating\todo{??} the $t$-threshold in the range of [2, 3] in until we found an
 isolated cluster (Tab.~3 in that matched the expected anatomical location
 based on literature \citep{epstein1998ppa}.
 
-% one contrast to localize them all; "...and Z>3.4 for all"
+% one contrast to localize them all; "...and $Z$>3.4 for all"
 Contrary to \citep{sengupta2016extension}, we here used the same contrast of
 each naturalistic stimulus and the same threshold for all participants.
 % subject space -> NeuroVault
 Results of the analyses that were performed in participant-space can be found in the
-accompanying dataset (Z>2.3, p<.05 cluster-corrected).
+accompanying dataset ($Z$>2.3, $p$<.05 cluster-corrected).
 % here report in group space
 For better comparisons of participants, we here report results from the analyses
-performed in group space (Z>3.4, p<.05 cluster-corrected).
+performed in group space ($Z$>3.4, $p$<.05 cluster-corrected).
 % ref to figure
-Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $z$-maps of the primary movie
+Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $Z$-maps of the primary movie
 and audio-description $t$-contrast, and the outline of overlapped, individual PPAs
 co-registered to the MNI152 template.
 % one slice to show them all
@@ -1284,7 +1284,7 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
-    \caption{Fixed-effects individual-level GLM results (Z>3.4, p<.05
+    \caption{Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
         cluster-corrected).
         Individual brains are aligned via non-linear
         transformation to a study-specific T2* group template that is
@@ -1316,22 +1316,22 @@ localizer and the primary audio-description contrast, we created a Bland-Altman-
 participant (Fig.~\ref{fig:bland-altman}).
 % what it depicts
 Each subplot visualizes the mean value and difference (localizer minus audio-description) of
-two spatially corresponding voxels in the unthresholded $z$-maps.
+two spatially corresponding voxels in the unthresholded $Z$-maps.
 % top KDE plot
 A shift of the distribution to voxels with a mean above zero can be seen the
 further we constrain voxels to the individual PPA (cf. KDE plot for the x-axes).
 % right KDE plot
-Values above the horizontal line depict voxels that show a higher $z$-value in
+Values above the horizontal line depict voxels that show a higher $Z$-value in
 the dedicated localizer, values below the horizontal line depict voxels that
-show a higher $z$-value in the audio-description stimulus.
+show a higher $Z$-value in the audio-description stimulus.
 
 \begin{figure*}[tbp]
 \centering
     \includegraphics[scale=0.27]{figures/subjs_bland-altman.png}
     \caption{Bland-Altman-Plots for individual participants.
     The x-axes show the means of two spatially corresponding voxels in the
-    unthresholded $z$-map of the audio-description's primary contrast and
-    unthresholded $z$-map of the visual localizer (KDE plot on the top).
+    unthresholded $Z$-map of the audio-description's primary contrast and
+    unthresholded $Z$-map of the visual localizer (KDE plot on the top).
     The y-axes show the difference of two voxels (localizer minus
     audio-description; KDE plot on the right).
     The overlays depict voxels spatially constrained to the
@@ -1527,7 +1527,7 @@ of 14 participants and a unilateral right ROI in two participants (sub-04, sub-2
 %
 Whereas \citep{sengupta2016extension} chose the subjectively ``best fitting''
 $t$-threshold in $t$-map from one of three contrasts by visual judgment, we used
-the same contrast and threshold (Z>3.4, p<.05 cluster-corrected) for all
+the same contrast and threshold ($Z$>3.4, $p$<.05 cluster-corrected) for all
 participants.
 % in the current study
 The audio-description yielded significant bilateral clusters in 9 of 14 participants
@@ -1552,7 +1552,7 @@ threshold or a sphere around the local maximum \citep{poldrack2007region} in the
 parahippocampal region.
 
 \todo[inline]{discussion of Bland-Altman-Plots?; dunno if this is meaningful:
-z-scores in the anterior part of PPA are higher in audio-description contrasts than in contrast
+$Z$-scores in the anterior part of PPA are higher in audio-description contrasts than in contrast
 of localizer}
 
 % question
@@ -1763,7 +1763,7 @@ on average matched a stimulus type that we assumed to correlate with spatial
 perception.
 % NeuroVault
 Unthresholded z -maps of all contrasts on a group level as well as individual
-results of the primary t-contrasts co-registered to the group-template (MNI152
+results of the primary $t$-contrasts co-registered to the group-template (MNI152
 space) can found at NeuroVault
 \href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
 
@@ -1825,7 +1825,7 @@ Contrast 6 shows one additional cluster in the right medial frontal cortex.
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption{Overlap of significant clusters (Z>3.4; p<.05, cluster corrected)
+    \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster corrected)
         The audio-description's contrasts 1-8 (blue; \ref{tab:ao-contrasts})
         are overlaid over the audio-visual movie's contrasts 1-5 (red;
         \ref{tab:av-contrasts}).
