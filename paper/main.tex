@@ -831,10 +831,9 @@ Maximum correlations are found for auditory low-level confounds across stimuli
 which is to be expected, as the audio-description contains the audio track of
 the movie plus the additional narrator (Fig. \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
-Given that all planned voxel-wise general linear models (GLM) exclusively involve
-regressors from one of the naturalistic stimuli, the observed correlation
-pattern does not indicate problematic confounds of nuissance variables and
-regressors of interest.
+The observed correlation pattern did not indicate problematic confounds of
+nuisance variables and regressors of interest for any of the planned
+analyses.
 
 
 \begin{figure*}[h!]
@@ -856,34 +855,29 @@ regressors of interest.
 
 
 % AV design matrix
-For the subsequent first level GLM analysis of the movie stimulus, the modeled
-hemodynamic responses related to all movie cuts (including \texttt{no\_cut}) and
-six low-level perceptual confounds were included as regressors in the design
-matrix.
-% AD regressors in AV AD design matrix
-For the first level analysis of the audio-description stimulus, the modeled
-hemodynamic responses related to all noun categories and the two low-level
-perceptual confounds were included.
+The design matrices of the first-level time-series GLM analysis comprised the
+regressors for the stimulus features listed in Tables~\ref{tab:av-events} and
+\ref{tab:ao-events} for the movie and audio-description stimulus, respectively.
 % AD regressors in AV
-To create a contrasts of cross-modal control in the analysis of the movie
-stimulus, we also implemented the regressors based on nouns used by the
-audio-description's narrator to indicate a switch to another setting (categories
-\texttt{se\_new} and \texttt{se\_old}).
+Additionally, the design for the movie stimulus also contained the 
+regressors based on nouns used by the audio-description's narrator to indicate
+a switch to another setting (categories \texttt{se\_new} and \texttt{se\_old}),
+in order to be able to implement cross-modal control contrasts.
 % AV regressors in AV
-To create contrasts of cross-modal negative control in the analysis of the
-audio-description stimulus, we also implemented the movie cut-related regressors
-(excluding \texttt{no\_cut}).
+Likewise, the audio-description design matrix included movie cut-related regressors
+listed Table~\ref{tab:av-events} (excluding \texttt{no\_cut}).
 % both stimuli: null regressors
-For both stimuli, a null regressor was chosen for a event category in a segment,
-if that segment did not contain an event of the category (e.g. no event of
+For both stimuli, a null regressor was used for any event category in a segment
+for which no event of a category was present (e.g. no event of
 \texttt{vpe\_old} in segment 3; Tab.~\ref{tab:ao-events}).
 % temporal derivatives
-Temporal derivatives were included in the design matrix to compensate for
-regional differences between modeled and actual HRF \citep{friston1998event}.
+Temporal derivatives of all regressors were added to the design matrix to compensate for
+regional differences \citep{friston1998event}.
 % motion parameters
-Six motion parameters were also included.
+Lastly, six participant and run specific motion estimated (translation and rotation)
+were also included.
 % high-pass filtering
-Finally, designs were filtered with the same high-pass filter (cutoff period of
+The design matrices were temporally filtered with the same high-pass filter (cutoff period of
 \unit[150]{s}) as the BOLD time series.
 
 
