@@ -458,15 +458,12 @@ participant-specific BOLD template image \citep{sengupta2016extension}
 (uniform spatial resolution of \unit[2.5$\times$2.5$\times$2.5]{mm} for both
 audio-description and movie data).
 % preprocessing intro
-All analyses presented here were carried out using
+Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool;
+\citep{woolrich2001autocorr}) as shipped with
 FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
-\citep{smith2004fsl}) on a computer cluster running the Debian GNU/Linux
-operating system. Software packages were obtained from repositories of
+\citep{smith2004fsl}) on a compute-cluster running
 \href{http://neuro.debian.net}{NeuroDebian} \citep{halchenko2012open}.
 
-% my preprocessing
-Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool;
-\citep{woolrich2001autocorr}) as shipped with FSL.
 % temporal filtering
 High-pass temporal filtering was applied to every stimulus segment using a
 Gaussian-weighted least-squares straight line with a cutoff period of
