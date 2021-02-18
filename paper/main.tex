@@ -76,12 +76,12 @@ and compare results to a block-design visual localizer.
 % no refs in abstract (probably)
 %\citep{sengupta2016extension}.  results: group AV
 On a group level, increased activation correlating with spatial information
-occcuring in the movie is overlapping with a traditionally localized PPA.
+occurring in the movie is overlapping with a traditionally localized PPA.
 % results: group AD
 Activation correlating with semantic spatial information occurring in the
 audio-description is more restricted to the anterior PPA.
 % results: individual AD
-On an individual level, we find signficant bilateral activity in the PPA
+On an individual level, we find significant bilateral activity in the PPA
 of nine individuals and unilateral activity in one individual.
 % conclusion: generalizability
 Results suggest that activation in the PPA generalizes to spatial information
@@ -471,7 +471,7 @@ audio-description and movie data).
 Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool;
 \citep{woolrich2001autocorr}) as shipped with
 FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
-\citep{smith2004fsl}) on a compute-cluster running
+\citep{smith2004fsl}) on a computer-cluster running
 \href{http://neuro.debian.net}{NeuroDebian} \citep{halchenko2012open}.
 
 % temporal filtering
@@ -536,7 +536,7 @@ Note that this categorization is not necessarily evident from the visual content
 of the first movie frame after a cut.
 % cinematographic rationale cut to new scenes: establishing shots
 The cinematographic rationale was that movie shots tend to establish the setting
-and their spatial layout at their for occurence in a movie.
+and their spatial layout at their first occurence in a movie.
 % cut to recurrent scene
 On revisiting an already established setting later in the movie, the field sizes
 of movie shots tend to decrease (\texttt{vse\_old}), and shots tend to
@@ -558,7 +558,7 @@ to any other \texttt{no\_cut} event.
 
 % AV regressors
 \begin{table*}[tbp]
-    \caption{Overview of annotated stimulus features of audio-visual
+    \caption{Overview of annotated stimulus features of the audio-visual
     movie.
     Respective event counts are given for the whole stimulus (\texttt{All} and
     the segments that were used for the eight sessions of fMRI scanning).
@@ -696,7 +696,7 @@ responses.
 \tabularnewline
 \texttt{geo} & immobile landmarks & building, tree, street, alley, meadow, cornfield
 \tabularnewline
-\texttt{groom} & rooms \& locales or geometry-defining elements & living room; wall, door, window, floor
+\texttt{groom} & rooms \& locales, or geometry-defining elements & living room; wall, door, window, floor
 \tabularnewline
 \texttt{head} & non-face parts of the head; worn headgear & head, hair, ear, neck;
 helmet
@@ -786,20 +786,20 @@ helmet
 \end{tabular}
 \end{table*}
 
-% low-leve confounds: intro
+% low-level confounds: intro
 Lastly, we algorithmically annotated the temporal structure of low-level
 perceptual features to create nuisance regressors.
 % visual shit
 For the movie stimulus, we computed the mean luminance (arbitrary units,
 average pixel brightness) of a movie frame (\unit[40]{ms}), the difference in
 mean luminance of each frame's left and right half, the difference in mean
-luminance of the lower and upper half.  As an indiciator of visual change, we
+luminance of the lower and upper half.  As an indicator of visual change, we
 compute perceptual fingerprints for each movie frame using the pHash library
-\citep{zauner2010implementation} and recorded the commulative bitwise
+\citep{zauner2010implementation} and recorded the cummulative bitwise
 difference to the previous frame.
 % auditory shit
 Finally for both audio tracks, we computed the left-right difference in volume
-and root mean square energy averaged across the length of every movie frame
+and root mean square volume averaged across the length of every movie frame
 (\unit[40]{ms}).
 
 
@@ -816,7 +816,7 @@ For all regressors, the stimulus models were convolved with a double-gamma
 hemodynamic response function (HRF), as implemented in FSL.
 
 % we checked correlations
-Given the unknown confound structure of the naturalistic stimuli we inspected
+Given the unknown confound structure of the naturalistic stimuli, we inspected
 % correlations within stimuli and across stimuli
 the correlation of regressors across the eight segments of each stimulus and
 also across both stimuli (Fig.~\ref{fig:reg-corr}).
@@ -864,7 +864,7 @@ regressors based on nouns used by the audio-description's narrator to indicate
 a switch to another setting (categories \texttt{se\_new} and \texttt{se\_old}),
 in order to be able to implement cross-modal control contrasts.
 % AV regressors in AV
-Likewise, the audio-description design matrix included movie cut-related regressors
+Likewise, the audio-description design matrix included movie cut related regressors
 listed Table~\ref{tab:av-events} (excluding \texttt{no\_cut}).
 % both stimuli: null regressors
 For both stimuli, a null regressor was used for any event category in a segment
@@ -914,7 +914,7 @@ afford to depict details of a scene.
 % AD: primary contrast
 In the primary contrast of the audio-description stimulus, we contrasted
 mentions of buildings and landmarks (\texttt{geo}), and rooms and
-geometry-defining objects (\texttt{groom}) with noun occurence referring to a
+geometry-defining objects (\texttt{groom}) with nouns referring to a
 person's head or face (\texttt{fahead}), and other non-geometry related
 categories (\texttt{body}, \texttt{bodypart}, \texttt{fahead}, \texttt{object},
 \texttt{sex\_f}, \texttt{sex\_m}).
