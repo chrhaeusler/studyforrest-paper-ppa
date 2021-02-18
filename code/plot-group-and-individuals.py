@@ -185,7 +185,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     red = mpl.patches.Patch(color='#f03523',
                             label='movie cuts (5 contrasts)',)
     black = mpl.patches.Patch(color='#454545',
-                              label='overlap of individual PPA masks (Sengupta et al., 2016)')
+                              label='union of individual PPA masks (Sengupta et al., 2016)')
 
     legendAxis.legend(handles=[blue, red, black],
                       loc='upper center',
@@ -358,7 +358,7 @@ def process_group_averages(outfpath):
     red = mpl.patches.Patch(color='#f03523',
                             label='vse_new > vpe_old (movie)')
     black = mpl.patches.Patch(color='#454545',
-                              label='overlap of individual PPA masks (Sengupta et al., 2016)')
+                              label='union of individual PPA masks (Sengupta et al., 2016)')
 
     legendAxis.legend(handles=[blue, red, black],
                       loc='upper center',
@@ -496,7 +496,7 @@ def process_individuals(AUDIO_IN_PATTERN):
                             figsize=fsize,
                             constrained_layout=False)
     # set the space between sublots/subjects in a way that title and legend
-    # to not overlapt
+    # to not overlap
 
     plt.subplots_adjust(wspace=0.0, hspace=0)
     # trim the axis using the helper function
