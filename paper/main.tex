@@ -1216,37 +1216,27 @@ participants and a unilateral right clusters in two participants
 Unlike \cite{sengupta2016extension}, who determined PPA clusters using three
 candidate contrasts and a variable threshold, we used a single contrast for
 each naturalistic stimulus and a uniform threshold for all participants.
-% subject space -> NeuroVault
-Results of the analyses that were performed in participant-space can be found in the
-accompanying dataset ($Z$>2.3, $p$<.05 cluster-corrected).
-% here report in group space
-For better comparisons of participants, we here report results from the analyses
-performed in group space ($Z$>3.4, $p$<.05 cluster-corrected).
 % ref to figure
 Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $Z$-maps of the primary movie
-and audio-description $t$-contrast, and the outline of overlapped, individual PPAs
-co-registered to the MNI152 template.
-% one slice to show them all
-Transversal slice of $Z$=-11 was chosen as it depicts voxels of
-significant clusters in almost all participants.
-
+and audio-description $t$-contrasts, in comparison to the results of a conventional
+block-design localizer (unthresholded $Z$-maps are provided on NeuroVault).
 % AV
 Results of the primary movie contrast yielded bilateral clusters in five participants,
 a unilateral right cluster in six participants (of which one participant yielded a
 unilateral cluster in the visual localizer), and a unilateral left cluster in
 one participant.
 % difference to dedicated localizer
-We find homologous clusters in sub-20, whereas the dedicated visual localizer
-yielded only one cluster in the right hemisphere.
-
+We find bilateral clusters for participant \texttt{sub-20}, whereas the block-design
+localizer yielded only one cluster in the right hemisphere.
 % report here in group
-Results of the primary audio-description contrast yielded bilateral clusters in nine participants
-that are within or overlapping with the individual PPA.
+Results of the primary audio-description contrast yielded bilateral clusters in nine participants that are within or overlapping with the block-design localizer results.
 % subj-04
-In sub-04, two homologous clusters are apparent, whereas the dedicated localizer
-(and movie stimulus) yielded only one cluster in the right hemisphere.
+In participant \texttt{sub-04}, two bilateral clusters are apparent, whereas
+block-design localizer, and movie stimulus yielded only one cluster in the right
+hemisphere.
 % sub-09
-In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
+For another participant (\texttt{sub-09}) the analysis yielded one cluster in the
+left-hemispheric PPA.
 
 
 \begin{figure*}[tbp]
@@ -1279,19 +1269,18 @@ In sub-09 the analysis yielded one cluster in the left-hemispheric PPA.
 \end{figure*}
 
 % Bland-Altman-Plots
-To better depict the agreement and difference between the results of the visual
-localizer and the primary audio-description contrast, we created a Bland-Altman-Plot for every
-participant (Fig.~\ref{fig:bland-altman}).
+To illustrate the similarity of correlates of spatial processing in
+naturalistic (audio-description) and conventional stimulation, independent of a
+particular cluster-forming threshold, Bland-Altman plots for all participants
+are shown in Figure.~\ref{fig:bland-altman}).
 % what it depicts
-Each subplot visualizes the mean value and difference (localizer minus audio-description) of
-two spatially corresponding voxels in the unthresholded $Z$-maps.
-% top KDE plot
-A shift of the distribution to voxels with a mean above zero can be seen the
-further we constrain voxels to the individual PPA (cf. KDE plot for the x-axes).
-% right KDE plot
-Values above the horizontal line depict voxels that show a higher $Z$-value in
-the dedicated localizer, values below the horizontal line depict voxels that
-show a higher $Z$-value in the audio-description stimulus.
+Each subplot visualizes the mean value and difference (localizer minus audio-description) of all voxels in temporal and occipital cortices. The marginal distributions
+of the mean scores indicate a general agreement of both contrast scores across
+voxels in the PPA localization overlap as a probabilistic indicator (blue), and the
+individual block-design localizer results (red). Notably, 11 participants exhibit
+a pattern of increased $Z$-scores for the naturalistic stimulus (lower right
+quadrant) that includes voxels labeled by the block-design localizer, but
+also additional voxels.
 
 \begin{figure*}[tbp]
 \centering
@@ -1634,6 +1623,9 @@ The fMRI and annotation data, analysis scripts to generate the results as well
 as results are available in the [NAME] repository, [PERSISTENT WEB LINK],
 accessible as Datalad (RRID:SCR\_003931) datasets.
 
+% subject space -> NeuroVault
+Results of the analyses that were performed in participant-space can be found in the
+accompanying dataset ($Z$>2.3, $p$<.05 cluster-corrected).
 
 \section*{Acknowledgements}
 
