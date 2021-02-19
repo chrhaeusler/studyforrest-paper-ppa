@@ -1675,10 +1675,10 @@ amount of available data), and how well the annotated events within categories
 on average matched a stimulus type that we assumed to correlate with spatial
 perception.
 % NeuroVault
-Unthresholded z -maps of all contrasts on a group level as well as individual
+Unthresholded $Z$-maps of all contrasts on a group level as well as individual
 results of the primary $t$-contrasts co-registered to the group-template (MNI152
 space) can found at NeuroVault
-\href{https://neurovault.org/collections/KADGMGVZ/}{NeuroVault}.
+\href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZNeuroVault}}.
 
 % AV PPA contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
@@ -1709,7 +1709,7 @@ occipital cortex (contrasts 1, 2, 4, 5).
 % 8 PPA (-/-); RSC (-/-), LOC (-/-)
 
 % AD: results
-In results of the audio-description stimulus, all contrasts except contrast 7
+For the audio-description stimulus, all contrasts except contrast 7
 (\texttt{se\_new}, \texttt{se\_old} > non-spatial categories) and contrast 8
 (\texttt{se\_new} > non-spatial categories) yielded significant bilateral
 clusters in anterior regions of the group PPA overlap (Fig.~\ref{fig:stability-slices}).
@@ -1729,8 +1729,7 @@ frontal pole, right frontal medial cortex, and right putamen.
 Contrast 3 shows clusters in the anterior cingulate gyrus (bilateral), left
 frontal pole, and left insular.
 %
-Contrast 7 shows clusters in the left frontal pole and left frontal operculum
-[border to triangularis], left insular.
+Contrast 7 shows clusters in the left frontal pole and left frontal operculum, left insular.
 %
 Contrast 6 shows one additional cluster in the right medial frontal cortex.
 
@@ -1786,28 +1785,25 @@ averaged might be.
 
 
 % ``confounding'' clusters
-Despite performing a whole brain analysis, we do not find [many] clusters
-in a single contrasts or systematically across contrasts that are scattered
-across the brain and hamper the interpretation of results.
+Our whole brain analysis did not identify systematically occuring clusters pointing
+to confounding cognitive processes like attention or eye movements
 % AV: null results regarding attention and eye movements
-For example in the movie results, we do not find significant clusters that could be
-attributed to cognitive processes like attention or eye movements.
 % AD: auditory cortices
-Nevertheless, contrasts of the audio-description stimulus that compare (among others) verbal
+Nevertheless, for the audio-description stimulus contrasts that compare verbal
 hints of the change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all
-non-spatial categories (cf. contrasts 2, 3, 6, 7) show significant clusters in
+non-spatial categories (cf. contrasts 2, 3, 6, 7) show clusters in
 (primary and secondary) auditory cortices.
 % averaging vs. nuisance regressors
 This suggests that variance correlating with lower level auditory processes was
-not averaged out across trials and nuisance regressors did not capture enough
-variance.
+not averaged out across events and the employed nuisance regressors did not
+capture this variance appropriately.
 % possible reason
-Significant clusters in auditory cortices could be correlating with a possible
-change of the soundscape when the narrator of the audio-description (or a cut in
-the movie) switches to a another setting.
+Activity in such clusters could be correlated with a possible
+change of the soundscape when the narrator of the audio-description,
+corresponding to a cut in the movie, switches udio-description stimulusto a another setting.
 % concluding statement
 Thus, investigators that use model-driven methods to investigate brain functions
-using naturalistic stimuli should (extensively) annotate the stimulus material
+using naturalistic stimuli should extensively annotate the stimulus material
 and test for correlations among variables.
 
 \todo[inline]{random [?] prefrontal cluster in 2-3 AD contrasts; at the moment
@@ -1816,8 +1812,9 @@ no idea what the correlating process could be; be aware of reverse inferences}
 
 \subsection{Control contrasts}
 
-\todo[inline]{discuss results in light of ``negative control'' (-> definition \&
-purpose)}
+\todo[inline]{This section feels incomplete. Some explanation (attempts) are
+missing.  Sometimes it is simply unclear which data were analyzed with which
+designs. Maybe subheadings would help?}
 
 % ---------- AV control contrasts ----------
 % 6 nothing 7 nothing 8 nothing 9 nothing
@@ -1832,31 +1829,28 @@ purpose)}
 %13 PPA (-/-); RSC (-/-), LOC (-/-)
 
 % intro
-For the purpose of negative control, we implemented five contrasts for every
-stimulus.
+We implemented five contrasts for every stimulus.
 % AV: no_cut > x
 In the analysis of the movie data, none of the four contrasts that compared the
 \texttt{no\_cut} category to a movie cut category (Tab.~\ref{tab:av-contrasts})
 yielded significant clusters.
 % AV using nouns
-The contrast that used the narrator's nouns but in the movie stimulus
+The contrast that used the narrator's nouns that did not actually exist in the movie stimulus
 (\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
 PPA and bilateral clusters in the superior lateral occipital cortices (the right
-hemispheric cluster extending into the superior parietal cortex).
+hemispheric cluster extending into the superior parietal cortex).\todo{explanation?}
+
 % AD stimulus
-In the analysis of the audio-description data, we created control contrasts based on events of
-the annotated movie cuts (Tab.~\ref{tab:ao-contrasts})
+For the analysis of the audio-description, we created control contrasts based on events of
+the annotated movie cuts (Tab.~\ref{tab:ao-contrasts}), which although invisible
+were nevertheless frequently perceivable due to changes in the soundscape.
 % contrast 9
-Contrast 9 (vse\_new > pe\_old) revealed one significant cluster in the left
+Contrast 9 (\texttt{vse\_new > pe\_old}) revealed one significant cluster in the left
 inferior prefrontal cortex (pars triangularis) and right ventral
 precuneus/posterior cingulate gyrus.
 % contrast 12
 Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
-one cluster in the right posterior hippocampus.\todo{odd imo}
-
-
-\todo[inline]{why did I build contrasts of the no\_cut condition compared
-to the movie cuts categories????}
+one cluster in the right posterior hippocampus.\todo{explanation?}
 
 The four control contrasts of the movie stimulus that compared the
 \texttt{no\_cuts} to categories of movie cuts all lead to null results.
