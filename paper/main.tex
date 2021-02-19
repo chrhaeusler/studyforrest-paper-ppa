@@ -1304,24 +1304,6 @@ also additional voxels.
 
 \section{Discussion}
 
-Outline:
-\begin{enumerate}
-\item Speech is new
-\item No frame-wise info, but high-level cinematographic semantics -- however, only for the movie stimulus
-\item Conclusion: stimuli are suitable, and on-par for conventional ones
-\item Compare the naturalistic results with each other, anterior bias (already hint on audio localizer)
-\item issues with visual model, call for more confounds
-\item how different from aziz?
-\item impact of no task?
-\item particular composition of audio contrast vs optimal visual stimuli
-\item compare audio results to block-design localizer, again anterior bias, not an averaging effect
-\item cite poldrack2007 to state that the procedure in sengupta was better, but we nevertheless did not do it...
-\item actual discussion of anterior bias
-\item other results RSC LOC
-\item concluding statement
-\end{enumerate}
-
-
 % Discussion: explains how results fill gap identified in intro
 
 % typically done by recapitulating the results, discussing limitations, and then
@@ -1332,6 +1314,7 @@ Outline:
 % advances the field by providing new opportunities
 
 
+%#1
 % previous studies
 Several studies have reported increased hemodynamic activity in the PPA
 attributed to the processing of spatial information, for example, when
@@ -1346,27 +1329,16 @@ spatial information using a model-based, mass-univariate approach.
 % current study: dissimilar
 However, instead of using a conventional set of stimuli, assembled to
 specifically and predominantly evoke the processing of spatial information, we
-employed a naturalistic movie stimulus that was designed for entertainment.
+employed a naturalistic movie stimuli that were designed for entertainment.
 
-% PPA: intro
-In an earlier study, \cite{bartels2004mapping} manually annotated the content of
-individual movie frames (color, faces, language, and human bodies) and found
-that the functional specialization of brain areas is preserved during movie
-watching.
-%
-In contrast, we aimed to exploit a cinematographic confound in the structure of
-movies, where
-% establishing shots vs. e.g. over-the-shoulder shots
-film directors tend to establish the spatial layout of locations in earlier
-shots and later focus more on detailed depictions of people and objects
-\citep{brown2012cinematography, katz1991film, mascelli1998five}.
+%#3
 % hypo
-We hypothesized that due to the complex nature of the naturalistic stimulus,
+We hypothesized that due to the complex nature of a naturalistic stimulus,
 unrelated factors would be balanced across a large number of events, and make
 the bias of spatial information accessible to a convential model-based
 statistical analysis of BOLD fMRI data.
 % we need a detailed description -> annotation
-The current model-driven approach required a detailed annotation of the
+This model-driven approach required a detailed annotation of the
 occurence of relevant stimulus features.
 % event counts ftw
 The annotation of both types of naturalistic stimuli, a movie and its
@@ -1374,64 +1346,94 @@ audio-description, revealed the respective number of incidentally occurring
 events to be similar to those of a conventional experimental paradigm used to
 localize functional regions of interest.
 
+%#4
+We attempted to find hemodynamic responses to spatial information embedded in
+the naturalistic stimuli, capitalizing on conceptually similar, but perceptually
+different stimulation events.
 % group AV
-On a group-average level, results for the audio-visual movie show significantly
+On a group-average level, results for the movie show significantly
 increased hemodynamic activity spatially overlapping with a conventionally
 localized PPA but also extending into earlier visual cortices.
 % group AD
 Likewise, results for the audio-description identify significant activation in
 the PPA but restricted to its anterior part.
 % individual level
-Moroever, the group averages are representative for the majority of individual
-results, where, for example, the audio-description stimulus yields bilateral
-clusters in the anterior PPA of nine participants and a unilateral cluster in
-one participant.
+Bilateral clusters in 9 of 14
+participants (of which \texttt{sub-04} shows only a right-lateralized PPA ROI
+in the block-design localizer results), and a unilateral
+significant cluster in one participant, indicate that the group average results
+are representative for the majority of individual participants.
 % meaning: generalization to naturalistic stimuli
 These findings suggest that increased activation in the PPA during the
 perception of static pictures generalizes to the perception of spatial
-information embedded in a movie or a purely auditory narrative.
-% narrative as substitute
-The presented evidence on the in-principle suitability of a purely auditory
-paradigm for localizing the PPA may offer a path to the development of
-diagnostic procedures more suitable for individuals with visual impairments or
-conditions like nystagmus.
-% meaning: aPPA vs. pPPA
-Our results provide further evidence that the PPA can be divided into functional
-subregions \citep{aminoff2007parahippocampal, aminoff2015associative,
-baldassano2013differential, baldassano2016two,
-baumann2016functional}.\todo{claim hängt hier etwas in der Luft; wird später
-ausführlicher diskutiert}
+information embedded in a movie or a purely auditory narrative, even though the
+results may partially deviate from \cite{sengupta2016extension}, due to
+the uniform cluster forming threshold employed in this study versus their
+adaptive procedure (bilateral clusters in 12 of 14 participants and a unilateral
+right cluster in two participants (\texttt{sub-04}, \texttt{sub-20}).
 
-% results
-Group results of the movie stimulus' primary contrast yielded a large cluster
-that spans the group overlap of individual PPA ROIs from anterior to posterior.
-% confound of higher perception
-The cluster's extension into more posterior, earlier visual areas could be
-attributed to the temporal averaging across events that did not control for
-confounding visual features.
-% solution
-Future studies that aim to use a movie to localize visual areas in individual
-participants should extensively annotate the content of frames \citep[e.g.,
-using the open-source solution ``Pliers'' for feature extraction from a visual
-naturalistic stimulus;][]{mcnamara2017developing}.
+%#11 question
+The fact that clusters from the auditory stimulus are spatially restricted to
+the anterior part of clusters from both visual paradigms raises the question if
+the revealed correlation patterns can be attributed to different features
+inherent in the visual stimuli compared to a purely auditory stimulus.
+% visual scenes: probably submodules
+In the domain of visual scene perception, previous studies provide evidence
+that the PPA can be divided into functionally subregions that might process
+different stimulus features.
+% posterior: functionality
+The posterior PPA (pPPA) is functionally more responsive than the anterior PPA
+(aPPA) to low-level features of scenes or (abstract) objects
+\citep{baldassano2013differential, nasr2014thinking,
+rajimehr2011parahippocampal}.
+% anterior cIPL is defined using the Eickhoff–Zilles PGp probabilistic
+% cytoarchitectonic map
+In contrast, the aPPA responds more to high-level features of scenes (e.g.
+real-word size \citep{park2015parametric}; a scene's abstract category
+\citep{marchette2015outside, watson2016patterns}) and objects (e.g. spatial
+contextual associations \citep{aminoff2007parahippocampal, aminoff2013role})
+than the pPPA.
+% connectivity
+Moreover, pPPA and aPPA show differences in connectivity profiles.
+% posterior
+The pPPA exhibits more coactivation with the occipital visual cortex than the
+aPPA \citep{baldassano2013differential, baldassano2016two}.
+% including lateral occipital cortex (LOC) and transverse occipital sulcus
+% (TOS) anterior
+Activity in the aPPA, on the other hand, is found to be correlated with
+components of the default mode network, including caudal inferior parietal lobe
+(cIPL), the restrosplenial complex (RSC), medial PFC and the lateral surface of
+the anterior temporal lobe \citep{baldassano2013differential,
+baldassano2016two}.
+% conclusion: subregions
+\cite{baldassano2013differential} proposes PPA function to be the formation of
+a complete scene representation, based on the processing of different aspects
+of a visual scene in its subregions.
+% Their distinct connectivity properties do suggest that each may be involved
+% in specific aspects of visual and cognitive processing involved in the
+% overarching goal of scene understanding \citep{baldassano2013differential}.
+% The fact that anterior PPA had a lower sensitivity to our abstract object
+% stimuli does not necessarily imply that this region does not use object
+% information \citep{baldassano2013differential}. Previous work has shown that
+% PPA responds to objects that have spatial associations [Aminoff et al. 2007],
+% are space-defining [Mullally and Maguire 2011], and are
+% navigationally-relevant [Janzen and Van Turennout 2004]. These types of
+% responses require spatial memory and cannot be based purely on visual
+% features like object shape. \citep{baldassano2013differential}.  pPPA
+Similarly, our results suggest that the pPPA is more concerned with visual
+aspects immanent in pictures or movie shots of landscapes.
+% aPPA
+The aPPA might be more concerned with non-visual aspects of spatial information
+(e.g. spatial contextual information \citep{aminoff2007parahippocampal}) as
+immanent in both visual and verbal stimuli.
 
-% MIH: second time this notion is coming up in the discussion
-%% we took advantage of cinematography
-%We here took advantage of an idiosyncrasy of movie directing to shift from
-%depicting the spatial layout to to later depicting persons and objects.
-%% know your stimulus
-%Given that this shift is common in movies, investigators should be aware that
-%cinematographic tendencies are part of movie's confound structure that might,
-%depending on the research question, influence the results.
-%% conclusion
-%In summary, results from the visual localizer paradigm using blocks of pictures
-%generalize to an ad hoc approach to operationalize the perception of spatial
-%information at the moment of cuts in an audio-visual movie.
 
+%#6
 % hypothesis
 Based on the report by \cite{aziz2008modulation}, we hypothesized that semantic spatial
 information embedded in the audio-description would correlate with
-increased hemodynamic activity in the PPA.
+increased hemodynamic activity in the PPA. However, methods and results presented
+here differ from this previous study in key aspects.
 % diff to Aziz (2008)
 \cite{aziz2008modulation} modeled events from onset to offset of sentences,
 describing unknown and famous places and faces, and compared activity levels
@@ -1442,17 +1444,18 @@ Their results showed decreased activity in only the left PPA
 compared to activity in the FFA for sentences describing famous places in contrast
 to famous faces.
 % we: model & whole brain
-In the current study, we modeled events from onset to offset of single words and performed a
+Here, we modeled events from onset to offset of single words and performed a
 voxelwise whole-brain analysis.
 % our results
 Group results of the audio-description's primary contrast yielded significantly
 increased hemodynamic activity spatially restricted to the anterior part of the
 PPA group overlap.
 % concluding statement
-Contrary to \cite{aziz2008modulation}, our group results suggest that auditory
+Contrary to \cite{aziz2008modulation}, our results suggest that auditory
 spatial information compared to non-spatial information correlates with
 bilaterally increased activation in the anterior part of the PPA.
 
+%#7
 % previous studies: no task
 It is common for conventional localizer paradigms to
 employ a task to keep participants attentive to the stimuli.
@@ -1478,10 +1481,25 @@ is processed, in the anterior PPA, automatically and without specifically
 guided attention.
 
 
-% AD shortcomings
-
+% shortcomings
+%#2
+Our approach to stimulus annotation and event selection
+differs from previous reports in the literature.
+% PPA: intro
+In an earlier study, \cite{bartels2004mapping} manually annotated the content of
+individual movie frames (color, faces, language, and human bodies) and found
+that the functional specialization of brain areas is preserved during movie
+watching.
+%
+In contrast, we aimed to exploit a cinematographic confound in the structure of
+movies, where
+% establishing shots vs. e.g. over-the-shoulder shots
+film directors tend to establish the spatial layout of locations in earlier
+shots and later focus more on detailed depictions of people and objects
+\citep{brown2012cinematography, katz1991film, mascelli1998five}.
+%#8
 % optimal stimulus type in vision
-In the visual domain, pictures of landscapes and not pictures of landmarks or
+Moreover, in the visual domain, pictures of landscapes and not pictures of landmarks or
 buildings are considered to be the ``optimal'' stimulus type
 \citep{epstein2008parahippocampal}.
 % we did not choose se\_new and se\_old
@@ -1502,97 +1520,35 @@ single fixation \citep{henderson2003human}.
 Hence, further studies might investigate if vague verbal descriptions of
 landscapes lead to a different hemodynamic activity level than descriptions of
 more concrete parts of a scene (e.g.``[a] beacon'', [a] ``farmhouse'').
+%#5
+% results
+Lastly, the group results of the movie stimulus' primary contrast yielded a large cluster
+that spans the group overlap of individual PPA ROIs from anterior to posterior.
+% confound of higher perception
+The cluster's extent into more posterior, earlier visual areas could be
+an indication that the temporal averaging across events suffered from
+insufficient controlling for confounding visual features.
+% solution
+Future studies that aim to use a movie to localize visual areas in individual
+participants should extensively annotate the content of frames \citep[e.g.,
+using the open-source solution ``Pliers'' for feature extraction from a visual
+naturalistic stimulus;][]{mcnamara2017developing}.
+
+% MIH: second time this notion is coming up in the discussion
+%% we took advantage of cinematography
+%We here took advantage of an idiosyncrasy of movie directing to shift from
+%depicting the spatial layout to to later depicting persons and objects.
+%% know your stimulus
+%Given that this shift is common in movies, investigators should be aware that
+%cinematographic tendencies are part of movie's confound structure that might,
+%depending on the research question, influence the results.
+%% conclusion
+%In summary, results from the visual localizer paradigm using blocks of pictures
+%generalize to an ad hoc approach to operationalize the perception of spatial
+%information at the moment of cuts in an audio-visual movie.
 
 
-% AD annotation > AV annotation
-Given that the annotation of nouns offered a more precise way to operationalize
-the perception of spatial information than the annotation of cuts and locations,
-we also hypothesized that analyzing the data from the audio-description could
-localize the PPA in individual persons.
-% results of dedicated localizer
-The visual localizer \citep{sengupta2016extension} revealed bilateral ROIs in 12
-of 14 participants and a unilateral right ROI in two participants (sub-04, sub-20).
-%
-Whereas \cite{sengupta2016extension} chose the subjectively ``best fitting''
-$t$-threshold in a $t$-map from one of three contrasts by visual judgment, we used
-the same contrast and threshold ($Z$>3.4, $p$<.05 cluster-corrected) for all
-participants.
-% in the current study
-The audio-description yielded significant bilateral clusters in 9 of 14 participants
-(of which sub-04 shows only a right-lateralized PPA ROI), and a unilateral
-significant cluster in one participant.
-% similar: anterior part
-Similarly to the group average results, results on an individual level also
-revealed that clusters are spatially restricted to the anterior part of
-individual PPAs.
-% conclusion
-Thus, the cluster location and size found on the group level is not just a
-by-product of the averaging process but a reliable pattern across results of
-individual study participants.
-% concluding statement
-Further, our exploratory analysis suggests that a naturalistic auditory stimulus
-can, in principle, be applied to localize (the anterior part) of a higher-level
-visual area in the majority of participants.
-% one threshold (and contrast) to rule them all
-Nevertheless, further studies that aim for individual diagnostics / ROI
-localization should inspect more than one contrast, and use an individual
-threshold or a sphere around the local maximum \citep{poldrack2007region} in the
-parahippocampal region.
-
-% question
-The fact that clusters from the auditory stimulus are spatially restricted to
-the anterior part of clusters from the visual paradigms raises the question if
-the revealed correlation patterns can be attributed to different features
-inherent in the visual stimuli compared to the purely auditory stimulus.
-% visual scenes: probably submodules
-In the domain of visual scene perception, previous studies provide evidence that
-the PPA can be divided into functionally subregions that might process different
-stimulus features.
-% posterior: functionality
-The posterior PPA (pPPA) is functionally more responsive than the anterior PPA
-(aPPA) to low-level features of scenes or (abstract) objects
-\citep{baldassano2013differential, nasr2014thinking,
-rajimehr2011parahippocampal}.
-% anterior cIPL is defined using the Eickhoff–Zilles PGp probabilistic
-% cytoarchitectonic map
-Contrary, the aPPA is functionally more responsive than the pPPA to high-level
-features of scenes (e.g. real-word size \citep{park2015parametric}; a scene's
-abstract category \citep{marchette2015outside, watson2016patterns}) and
-objects (e.g. spatial contextual associations \citep{aminoff2007parahippocampal, aminoff2013role}).
-% connectivity
-Moreover, pPPA and aPPA show differences in connectivity profiles.
-% posterior
-The pPPA is more strongly functionally connected to the occipital visual cortex
-than the aPPA \citep{baldassano2013differential, baldassano2016two}.
-% including lateral occipital cortex (LOC) and transverse occipital sulcus (TOS)
-% anterior
-Contrary, the aPPA is more strongly functionally connected to portions of the
-default mode network, including caudal inferior parietal lobe (cIPL), the
-restrosplenial complex (RSC), medial PFC and the lateral surface of the anterior
-temporal lobe \citep{baldassano2013differential, baldassano2016two}.
-% conclusion: subregions
-According to a hypothesis by \citep{baldassano2013differential} the PPA consists
-of subregions that process different aspects of a visual scene and cooperate to
-build a complete scene representation.
-% Their distinct connectivity properties do suggest that each may be involved in
-% specific aspects of visual and cognitive processing involved in the
-% overarching goal of scene understanding \citep{baldassano2013differential}.
-% The fact that anterior PPA had a lower sensitivity to our abstract object
-% stimuli does not necessarily imply that this region does not use object
-% information \citep{baldassano2013differential}. Previous work has shown that
-% PPA responds to objects that have spatial associations [Aminoff et al. 2007],
-% are space-defining [Mullally and Maguire 2011], and are
-% navigationally-relevant [Janzen and Van Turennout 2004]. These types of
-% responses require spatial memory and cannot be based purely on visual features
-% like object shape. \citep{baldassano2013differential}.  pPPA
-Similarly, our results suggest that the pPPA is more concerned with visual
-aspects immanent in pictures or movie shots of landscapes.
-% aPPA
-The aPPA might be more concerned with non-visual aspects of spatial information
-(e.g. spatial contextual information \citep{aminoff2007parahippocampal}) as immanent in both visual and
-verbal stimuli.
-
-
+%#12
 % RSC + LOC
 Apart from the PPA, results show significantly increased activity in the
 dorsal precuneus and posterior cingulate region (e.g. retrosplenial complex;
@@ -1607,23 +1563,23 @@ Thus, our model-driven approach to operationalize spatial perception based on st
 annotations reveals focussed activation patterns in networks that are implicated
 in visual spatial perception and cognition.
 
-% natural stimulation
+%#13 natural stimulation
 In summary, natural stimuli like movies \citep{eickhoff2020towards,
 hasson2008neurocinematics, sonkusare2019naturalistic} or narratives
 \citep{hamilton2018revolution, honey2012not, lerner2011topographic,
-silbert2014coupled, wilson2008beyond} offer an easy to implement, continuous,
-complex, immersive, task-free paradigm that more closely resembles our natural
-dynamic environment than traditional experimental paradigms.
+silbert2014coupled, wilson2008beyond} can be used as a continuous, complex,
+immersive, task-free paradigm that more closely resembles our natural dynamic
+environment than traditional experimental paradigms.
 % method
 We took advantage of three fMRI datasets and two stimulus annotations that are
-part of the studyforrest dataset
+part of the open-data resource
 \href{http://www.studyforrest.org}{studyforrest.org} to operationalize the
-perception of spatial information embedded an audio-visual movie and an auditory
-narrative, and compare current results to results gained from a traditional
-visual localizer.
+perception of spatial information embedded an audio-visual movie and an
+auditory narrative, and compare current results to a previous report of a
+conventional, block-design localizer.
 % results
-In general, results add evidence that a model-driven GLM analysis based on
-annotations can be run on data from naturalistic stimuli to localize concise
+This report offers evidence that a model-driven GLM analysis based on
+annotations can be applied to naturalistic paradigm to localize concise
 functional areas and networks correlating with specific perceptual processes.
 % interpretation
 More specifically, our results demonstrate that increased activation in the PPA
@@ -1631,10 +1587,15 @@ during the perception of static pictures generalizes to the perception of
 spatial information embedded in a movie and an exclusively auditory stimulus.
 % interpretation: aPPA vs. pPPA
 Further, our results provide evidence that the PPA can be divided into
-functional subregions that coactivate during the perception of visual
-scenes.
+functional subregions that coactivate during the perception of visual scenes.
 % interpretation
-Lastly, a naturally engaging auditory narrative might - in principle -
+Finally, the presented evidence on the in-principle suitability of a naturally
+engaging, purely auditory paradigm for localizing the PPA may offer a path to
+the development of diagnostic procedures more suitable for individuals with
+visual impairments or conditions like nystagmus.
+
+the present results suggest that a naturally engaging auditory narrative
+could, in principle,
 substitute a visual paradigm to localize the anterior part of the PPA in
 individuals with conditions that make them unable to follow task instructions
 during brain scanning.
