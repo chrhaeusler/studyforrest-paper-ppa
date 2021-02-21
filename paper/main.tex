@@ -1660,11 +1660,16 @@ locations, and temporal progression in the motion picture "Forrest Gump".
 
 \section{Supplementary Materials}
 
-\subsection{Additional contrasts: PPA, RSC, and LOC (AV \& AV)}
+
+\subsection{additional contrasts}
+
+\todo{print contrasts; count per category? -> pattern "average of events" and
+counts vs. significant clusters?}
+
+\subsubsection{PPA, RSC, and LOC (AV \& AV)}
 
 \todo[inline]{SE: use different colormap for overlap of contrasts' clusters}
-\todo[inline]{SE: wie unterscheiden sich die Kontraste?}
-\todo[inline]{Wo sind welche Kontraste (z.B. im Ergebnis) von anderen abgewichen?}
+lche Kontraste (z.B. im Ergebnis) von anderen abgewichen?}
 
 % intro
 In order to test the robustness of our approach, we created overall five
@@ -1672,13 +1677,12 @@ $t$-contrasts for the movie stimulus (Tab.~\ref{tab:av-contrasts}), and overall
 eight $t$-contrast for the audio-description stimulus
 (Tab.~\ref{tab:av-contrasts}).
 % how
-Contrasts differ in contrasted categeories based on ``how well'' averaged
-events within categories were considered to represent spatial and non-spatial
+Contrasts differ in contrasted categeories based on ``how well'' averaged events
+within categories were considered to represent spatial and non-spatial
 information, and the number of events in the stimulus.
 % NeuroVault
-Unthresholded $Z$-maps of all contrasts on a group level as well as individual
-results of the primary $t$-contrasts co-registered to the group-template (MNI152
-space) can found at NeuroVault
+Unthresholded $Z$-maps of all contrasts on a group level co-registered to the
+group-template (MNI152 space) can found at NeuroVault
 \href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZNeuroVault}}.
 
 % AV PPA contrasts
@@ -1691,13 +1695,13 @@ space) can found at NeuroVault
 
 % AV results: PPA; biggest overlap in posterior part of PPA group overlap  =
 % temporal occipital fusiform cortex
-All five movie contrasts yielded significant bilateral clusters that
-overlap with the PPA group overlap (Fig.~\ref{fig:stability-slices}).
+Reliably across all five movie contrasts, we find bilaterally significant
+clusters that overlap with the PPA group overlap
+(Fig.~\ref{fig:stability-slices}).
 % AV: RSC & LOC
-Also reliably across contrasts of the movie stimulus, we find bilaterally
-significant clusters in the ventral precuneal cortex and posterior
-cingulate gyrus (i.e. restrosplenial complex; contrasts 1, 4, 5), and lateral
-occipital cortex (contrasts 1, 2, 4, 5).
+Results of the movie also yielded significant clusters in the ventral precuneal
+cortex and posterior cingulate gyrus (i.e. restrosplenial complex; contrasts 1,
+4, 5), and lateral occipital cortex (contrasts 1, 2, 4, 5).
 
 % AD PPA contrasts
 % 1 PPA (l/r); RSC (l/r), LOC (l/r)
@@ -1710,32 +1714,84 @@ occipital cortex (contrasts 1, 2, 4, 5).
 % 8 PPA (-/-); RSC (-/-), LOC (-/-)
 
 % AD: results
-For the audio-description stimulus, all contrasts except contrast 7
-(\texttt{se\_new}, \texttt{se\_old} > non-spatial categories) and contrast 8
-(\texttt{se\_new} > non-spatial categories) yielded significant bilateral
-clusters in anterior regions of the group PPA overlap
+In results from the analysis of the audio-description, all contrasts except
+contrast 7 (\texttt{se\_new}, \texttt{se\_old} > non-spatial categories) and
+contrast 8 (\texttt{se\_new} > non-spatial categories) yielded significant
+bilateral clusters in anterior regions of the group PPA overlap
 (Fig.~\ref{fig:stability-slices}).
 % AD: RSC & LOC
-We find bilaterally significant clusters also in the ventral precuneus (all
-except contrasts 8), lateral occipital cortex (bilateral in contrasts 1 to 4;
-unilateral in contrasts 6 and 7).
-% "Discussion" of PPA, RSC, and LOC
-The results across the contrasts of the movie and audio-description stimulus
-indicate that our findings regarding the PPA but also RSC and LOC are robust and
-do not depend on the design of one specific contrasts.
+Results from the analysis of the audio-description also yielded bilaterally
+significant clusters in the ventral precuneus (all contrasts except contrasts 8)
+and lateral occipital cortex (bilateral in contrasts 1 to 4; unilateral in
+contrasts 6 and 7).
+% concluding stament regarding PPA, RSC, and LOC
+The results across the contrasts of the movie and audio-description indicate
+that our findings regarding the PPA but also RSC and LOC are robust and do not
+depend on the design of one specific contrasts.
+%
+\todo[inline]{print contrasts; counts per contrasted categories? "fit of
+averaged events"?}
 % but
 Nevertheless, results are sensitive to the contrasted categories and the amount
 of available data.
 % example
-For example, contrast 8 of the audio-description stimulus (\texttt{se\_new} > \texttt{se\_old})
-that used the most heterogeneous categories comprising the least amount of
-events yielded neither a significant cluster in the right-hemispheric nor
-left-hemispheric PPA.
+For example, contrast 8 of the audio-description stimulus (\texttt{se\_new} >
+\texttt{se\_old}) that used the most heterogeneous categories comprising the
+least amount of events yielded neither a significant cluster in the
+right-hemispheric nor left-hemispheric PPA.
 % concluding statement
 Hence, investigators that use model-driven analyses have to consider how many
 events a naturalistic stimulus may provide and how homogeneous the events to be
 averaged might be.
 
+
+\subsubsection{auditory cortices}
+
+Further, some contrasts yielded bilaterally significant clusters in superior
+temporal cortices (contrasts 3, 6, 7) and one contrast a unilateral right
+cluster (contrast 2).
+% AD: auditory cortices
+Thus, increased hemodynamic activity in the superior temporal cortex is apparent
+in that compare verbal hints of the change of a setting (\texttt{se\_new} or
+\texttt{se\_old}) to all non-spatial categories (cf. contrasts 2, 3, 6, 7) show
+clusters in (primary and secondary) auditory cortices.
+% soundscape
+Activity in such clusters could be correlated with a possible change of the
+soundscape when the narrator of the audio-description, corresponding to a cut in
+the movie, switches udio-description stimulusto a another setting.
+% interpretation 1
+This suggests that variance correlating with lower level auditory processes was
+not averaged out across events and the employed nuisance regressors did not
+capture this variance appropriately.\todo{this sounds shitty}
+% interpretation 2
+Increased hemodynamic activity in superior temporal cortices suggest a bias
+towards lower-level auditory perceptual processes on the positive side of the
+GLM contrasts.
+
+
+\subsubsection{``random clusters''}
+
+\todo[inline]{following list probaly exhaustive but probably too long}
+%
+Lastly, some contrasts of the audio-description stimulus yielded significant
+clusters in regions that were not statistically significant in three or more
+contrasts.
+% details
+In detail, contrast 2 yielded clusters in the anterior cingulate gyrus
+(bilateral), right frontal pole, right frontal medial cortex, and right putamen.
+%
+Contrast 3 shows clusters in the anterior cingulate gyrus (bilateral), left
+frontal pole, and left insular.
+%
+Contrast 7 shows clusters in the left frontal pole and left frontal operculum,
+left insular.
+%
+Contrast 6 shows one additional cluster in the right medial frontal cortex.
+% concludion statement
+Here again, significantly increased activation beyond areas known to be involved
+in processing of spatial information can be attributed to stimulus features of
+the naturalistic stimulus that were not sufficiently controlled leading to a
+bias in the contrasts.
 
 
 \begin{figure*}[tbp]
@@ -1756,85 +1812,10 @@ averaged might be.
 \end{figure*}
 
 
-\begin{comment}
-    the mother of total confusion: Aminoff shifts the PPA along the
-    anterior-poster axis depending on publication;
-    in Aminoff (2007, 2013):
-    anterior PPA = spatial associations,
-    region anterior to (!) PPA = non-spatial associations;
-    in Aminoff (2015):
-    posterior PPA = spatial associations,
-    anterior PPA = non-spatial associations;
-    hence: complete bullshit;
-    ignore Aminoff (2015) due to various reasons
-\end{comment}
-
-
-\subsection{Additional contrasts: let's talk about left overs}
-
-\todo[inline]{look at the events within categories \& give some counts}
-
-\todo[inline]{compare with Michaels make over of text regarding confound
-structure
-
-\todo[inline]{main message here again: you need events! (and be aware of biases)}
-
-%
-Three contrasts yielded bilaterally significant clusters in superior temporal
-cortices (contrasts 3, 6, 7), one contrast a unilateral right cluster (contrast
-2).
-%
-\todo{following is (probably too) exhaustive}
-%
-Lastly, some contrasts of the audio-description stimulus yielded significant
-clusters in regions that were not statistically significant in three or more
-contrasts.
-%
-Contrast 2 yielded clusters in the anterior cingulate gyrus (bilateral), right
-frontal pole, right frontal medial cortex, and right putamen.
-%
-Contrast 3 shows clusters in the anterior cingulate gyrus (bilateral), left
-frontal pole, and left insular.
-%
-Contrast 7 shows clusters in the left frontal pole and left frontal operculum,
-left insular.
-%
-Contrast 6 shows one additional cluster in the right medial frontal cortex.
-% concludion statement
-Conclusion: This can be attributed to the uncontrolled nature of averaged events.
-
-
-
-% ``confounding'' clusters
-Our whole brain analysis did not identify systematically occuring clusters pointing
-to confounding cognitive processes like attention or eye movements
-% AV: null results regarding attention and eye movements
-% AD: auditory cortices
-Nevertheless, for the audio-description stimulus contrasts that compare verbal
-hints of the change of a setting (\texttt{se\_new} or \texttt{se\_old}) to all
-non-spatial categories (cf. contrasts 2, 3, 6, 7) show clusters in
-(primary and secondary) auditory cortices.
-% averaging vs. nuisance regressors
-This suggests that variance correlating with lower level auditory processes was
-not averaged out across events and the employed nuisance regressors did not
-capture this variance appropriately.
-% possible reason
-Activity in such clusters could be correlated with a possible
-change of the soundscape when the narrator of the audio-description,
-corresponding to a cut in the movie, switches udio-description stimulusto a another setting.
-% concluding statement
-Thus, investigators that use model-driven methods to investigate brain functions
-using naturalistic stimuli should extensively annotate the stimulus material
-and test for correlations among variables.
-
-\todo[inline]{random [?] prefrontal cluster in 2-3 AD contrasts; at the moment
-no idea what the correlating process could be; be aware of reverse inferences}
-
-
 \subsection{Control contrasts}
 
 \todo[inline]{This section feels incomplete. Some explanation (attempts) are
-missing.  Sometimes it is simply unclear which data were analyzed with which
+missing. Sometimes it is simply unclear which data were analyzed with which
 designs. Maybe subheadings would help?}
 
 % ---------- AV control contrasts ----------
@@ -1856,18 +1837,20 @@ In the analysis of the movie data, none of the four contrasts that compared the
 \texttt{no\_cut} category to a movie cut category (Tab.~\ref{tab:av-contrasts})
 yielded significant clusters.
 % AV using nouns
-The contrast that used the narrator's nouns that did not actually exist in the movie stimulus
-(\texttt{se\_new} > \texttt{se\_old}) yielded a significant cluster in the right
-PPA and bilateral clusters in the superior lateral occipital cortices (the right
-hemispheric cluster extending into the superior parietal cortex).\todo{explanation?}
+The contrast that used the narrator's nouns that did not actually exist in the
+movie stimulus (\texttt{se\_new} > \texttt{se\_old}) yielded a significant
+cluster in the right PPA and bilateral clusters in the superior lateral
+occipital cortices (the right hemispheric cluster extending into the superior
+parietal cortex).\todo{explanation?}
 
 % AD stimulus
-For the analysis of the audio-description, we created control contrasts based on events of
-the annotated movie cuts (Tab.~\ref{tab:ao-contrasts}), which although invisible
-were nevertheless frequently perceivable due to changes in the soundscape.
+For the analysis of the audio-description, we created control contrasts based on
+events of the annotated movie cuts (Tab.~\ref{tab:ao-contrasts}), which although
+invisible were nevertheless frequently perceivable due to changes in the
+soundscape.
 % contrast 9
-Contrast 9 (\texttt{vse\_new > pe\_old}) revealed one significant cluster in the left
-inferior prefrontal cortex (pars triangularis) and right ventral
+Contrast 9 (\texttt{vse\_new > pe\_old}) revealed one significant cluster in the
+left inferior prefrontal cortex (pars triangularis) and right ventral
 precuneus/posterior cingulate gyrus.
 % contrast 12
 Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
@@ -1883,8 +1866,8 @@ correlated with \texttt{vse\_new} (cuts); \texttt{se\_old} (nouns) is
 r$\approx$0.4 correlated with \texttt{vse\_old}.
 
 % AV anno in AV data
-The the 5 movie PPA contrasts but with the movie data using cuts. All null results
-except:
+The the 5 movie PPA contrasts but with the movie data using cuts. All null
+results except:
 % contrast 9
 vse\_new > pe\_old (conrast 9): left inferior prefrontal cortex (pars
 triangularis) and right ventral precuneus/posterior cingulate gyrus.
