@@ -1663,13 +1663,12 @@ locations, and temporal progression in the motion picture "Forrest Gump".
 
 \subsection{additional contrasts}
 
-\todo{print contrasts; count per category? -> pattern "average of events" and
-counts vs. significant clusters?}
+\todo[inline]{print contrasts; count per category? -> pattern "average of
+events" and counts vs. significant clusters?}
 
 \subsubsection{PPA, RSC, and LOC (AV \& AV)}
 
 \todo[inline]{SE: use different colormap for overlap of contrasts' clusters}
-lche Kontraste (z.B. im Ergebnis) von anderen abgewichen?}
 
 % intro
 In order to test the robustness of our approach, we created overall five
@@ -1728,10 +1727,7 @@ contrasts 6 and 7).
 The results across the contrasts of the movie and audio-description indicate
 that our findings regarding the PPA but also RSC and LOC are robust and do not
 depend on the design of one specific contrasts.
-%
-\todo[inline]{print contrasts; counts per contrasted categories? "fit of
-averaged events"?}
-% but
+% but:
 Nevertheless, results are sensitive to the contrasted categories and the amount
 of available data.
 % example
@@ -1771,7 +1767,7 @@ GLM contrasts.
 
 \subsubsection{``random clusters''}
 
-\todo[inline]{following list probaly exhaustive but probably too long}
+\todo[inline]{following list is exhaustive but probably too detailed}
 %
 Lastly, some contrasts of the audio-description stimulus yielded significant
 clusters in regions that were not statistically significant in three or more
@@ -1831,48 +1827,53 @@ designs. Maybe subheadings would help?}
 %13 PPA (-/-); RSC (-/-), LOC (-/-)
 
 % intro
-We implemented five contrasts for every stimulus.
+For each contrast we created several control contrasts.
 % AV: no_cut > x
-In the analysis of the movie data, none of the four contrasts that compared the
-\texttt{no\_cut} category to a movie cut category (Tab.~\ref{tab:av-contrasts})
-yielded significant clusters.
-% AV using nouns
-The contrast that used the narrator's nouns that did not actually exist in the
-movie stimulus (\texttt{se\_new} > \texttt{se\_old}) yielded a significant
-cluster in the right PPA and bilateral clusters in the superior lateral
-occipital cortices (the right hemispheric cluster extending into the superior
-parietal cortex).\todo{explanation?}
+To test for XYZ\todo{yes, to test what?} within the movie fMRI data, we created
+four contrasts that compared hemodynamic activity during frames within movie
+shots (\texttt{no\_cut} category) with movie cut related categories (Tab.~\ref{tab:av-contrasts}).
+%
+None of these four contrasts yielded a significant cluster which suggest that
+XYZ\todo{concluding statement}.
+
+% \texttt{se\_new} (nouns) is r$\approx$0.3 correlated with \texttt{vse\_new}
+% (cuts); \texttt{se\_old} (nouns) is r$\approx$0.4 correlated with
+% \texttt{vse\_old}.
+Given that cuts to a setting depicted for the first time (\texttt{vse\_new}) and
+nouns indicating a a switch to a setting ocurring for the first timei
+(\texttt{se\_new}), and cuts to a recurringly depicted setting
+({\texttt{vse\_old}) and nouns indicating a switch a recurring setting
+(\texttt{se\_old} turned out to be moderately correlated
+(Fig.~\ref{fig:reg-corr}), we created a contrast that used the
+audio-description's nouns on the movie data ({\texttt{se\_new} >
+\texttt{se\_old}).
+% results
+The contrasts yielded a significant cluster in the right PPA and bilateral
+clusters in the superior lateral occipital cortices (the right hemispheric
+cluster extending into the superior parietal cortex).
+%
+Results suggest that XYZ.
+\todo{concluding statement}
 
 % AD stimulus
-For the analysis of the audio-description, we created control contrasts based on
-events of the annotated movie cuts (Tab.~\ref{tab:ao-contrasts}), which although
-invisible were nevertheless frequently perceivable due to changes in the
-soundscape.
+Finally for the analysis of the audio-description, we created control contrasts
+based on events of the annotated movie cuts (Tab.~\ref{tab:ao-contrasts}) in
+order to test XYZ.
+\todo{why exactly did we do this except "we do not expect (lots of) significant cluster because negative control?}
+%
+Two of five contrasts yielded signficant clusters.
 % contrast 9
 Contrast 9 (\texttt{vse\_new > pe\_old}) revealed one significant cluster in the
 left inferior prefrontal cortex (pars triangularis) and right ventral
 precuneus/posterior cingulate gyrus.
 % contrast 12
 Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
-one cluster in the right posterior hippocampus.\todo{explanation?}
+one cluster in the right posterior hippocampus.
+\todo{explanation?}
+%
+Overall results from the negative control contrast of the audio-description's
+data suggest that XYZ.
+\todo{concluding statement}.
 
-The four control contrasts of the movie stimulus that compared the
-\texttt{no\_cuts} to categories of movie cuts all lead to null results.
-% AD anno in AV data
-The movie contrast using nouns (\texttt{se\_new} > \texttt{se\_old}): PPA
-(unilateral), LOC (bilateral); These noun categories show highest correlation
-among nouns with their cut counterpart \texttt{se\_new} (nouns) is r$\approx$0.3
-correlated with \texttt{vse\_new} (cuts); \texttt{se\_old} (nouns) is
-r$\approx$0.4 correlated with \texttt{vse\_old}.
-
-% AV anno in AV data
-The the 5 movie PPA contrasts but with the movie data using cuts. All null
-results except:
-% contrast 9
-vse\_new > pe\_old (conrast 9): left inferior prefrontal cortex (pars
-triangularis) and right ventral precuneus/posterior cingulate gyrus.
-% contrast 12
-vse\_new > vse\_old, vpe\_old (contrast 12): one cluster in the right posterior
-hippocampus.
 
 \end{document}
