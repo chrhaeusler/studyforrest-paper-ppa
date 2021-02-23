@@ -568,11 +568,11 @@ any other \texttt{no\_cut} event.
 \begin{table*}[tbp]
     \caption{Overview of annotated stimulus features of the audio-visual
     movie and the audio-description.
-    Some of the noun categories (female, females, fname; male,
-    males, mname; face, head; object, objects;
-    Tab.~\ref{tab:descr-nouns-rules}) were pooled
-    into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead},
-    \texttt{object}).
+    Some of the audio-description's event categories listed here
+    (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead}, \texttt{object})
+    were created by pooling some categories of the original annotation of nouns
+    (female, females, fname; male, males, mname; face, head; object, objects;
+    Tab.~\ref{tab:descr-nouns-rules}).
     Respective event counts are given for the whole stimulus (\texttt{All} and
     the segments that were used for the eight sessions of fMRI scanning).
     Event counts for frame-based features are reported in units of a thousand.
@@ -809,6 +809,8 @@ onset to offset of the corresponding movie frame.
 For all regressors, the stimulus models were convolved with a double-gamma
 hemodynamic response function (HRF), as implemented in FSL.
 
+\todo[inline]{SE: "the eight segments": Are you sure, everybody remembered
+these? COH: no clue what to do with that feedback}
 % we checked correlations
 Given the unknown confound structure of the naturalistic stimuli, we inspected
 % correlations within stimuli and across stimuli
@@ -819,15 +821,13 @@ The computed Pearson correlation coefficients show only minor correlations of
 feature regressors for the same stimulus.
 % (highest) correlations across stimuli
 Maximum correlations are found for auditory low-level confounds across stimuli
-(\texttt{fg\_a(v|d)\_ger\_rms}, r=.76;
-\texttt{fg\_a(v|d)\_ger\_lrdiff}, r=.77),
+(\texttt{fg\_a(v|d)\_ger\_rms}, r=.76; \texttt{fg\_a(v|d)\_ger\_lrdiff}, r=.77),
 % no surprise
 which is to be expected, as the audio-description contains the audio track of
 the movie plus the additional narrator (Fig. \ref{fig:reg-corr}).
 % encouraged by that we build contrasts (statement)
 The observed correlation pattern did not indicate problematic confounds of
-nuisance variables and regressors of interest for any of the planned
-analyses.
+nuisance variables and regressors of interest for any of the planned analyses.
 
 
 \begin{figure*}[tbp]
