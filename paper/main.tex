@@ -106,6 +106,7 @@ narrative, studyforrest
 \begin{itemize}
     \item Todo's are mostly comments and can be deleted if issue is solved by
         current phrasing
+    \item maybe "do something with" dice-index
     \item position of figures and tables is very odd now but probably does not
         matter
 \end{itemize}
@@ -851,6 +852,9 @@ nuisance variables and regressors of interest for any of the planned analyses.
 \end{figure*}
 
 
+\todo[inline]{add a summary to the end of section 2.7 explaining in 2 sentences,
+what regressors you will be focussing on -> easier for those that got confused
+on the way}
 % AV design matrix
 The design matrices of the first-level time-series GLM analysis comprised the
 regressors for the stimulus features listed in Tables~\ref{tab:events} and
@@ -881,26 +885,31 @@ The design matrices were temporally filtered with the same high-pass filter (cut
 \subsection{Statistical analysis}
 
 % intro
-We performed standard two-level GLM analyses to aggregate results across the eight
-segments for every participant and each stimulus separately.
+We performed standard two-level GLM analyses to aggregate results across the
+eight segments for every participant and each stimulus separately.
 % level 3
 Subsequently, we conducted third-level analyses to average contrast estimates
 over participants for each stimulus, respectively.
 
+\todo[inline]{"we, subjectively, picked a primary contrast" :-(  -> you actually
+write "based on"}
+%
 Given the rich naturalistic stimuli and the availability of various stimulus
 feature annotations, there are several candidates for implementing contrasts to
 identify hemodynamic activity congruent with the hypothesized processing of
 spatial information in the PPA. However, while the rationale for any contrast
 composition must be sound, the selection of a single implementation remains
 arbitrary to some degree. Consequently, we computed multiple contrasts that are
-listed in Table~\ref{tab:contrasts} for movie
-and audio-description, respectively. For each stimulus we, subjectively, picked
-a primary contrast for result presentation (the first one in each Table) based
-on how well the average event within categories represents spatial and
-non-spatial information, and the number of events in the stimulus.
-An evaluation of the robustness of these results with respect to similar but
-different contrasts is provided in the supplementary materials.
+listed in Table~\ref{tab:contrasts} for movie and audio-description,
+respectively. For each stimulus we, subjectively, picked a primary contrast for
+result presentation (the first one in each Table) based on how well the average
+event within categories represents spatial and non-spatial information, and the
+number of events in the stimulus.  An evaluation of the robustness of these
+results with respect to similar but different contrasts is provided in the
+supplementary materials.
 
+\todo[inline]{"vse, vno, vpe,..." are not really the most intuitive regressor
+names -> ausschreiben, wo möglich}
 % AV: primary contrast
 In the primary contrast for the movie stimulus, we contrasted cuts to a setting
 that was not depicted before (\texttt{vse\_new}) to cuts merely switching the
@@ -911,9 +920,9 @@ afford to depict details of a scene.
 % AD: primary contrast
 In the primary contrast of the audio-description stimulus, we contrasted
 mentions of buildings and landmarks (\texttt{geo}), and rooms and
-geometry-defining objects (\texttt{groom}) with nouns referring to a
-person's head or face (\texttt{fahead}), and other non-geometry related
-categories (\texttt{body}, \texttt{bodypart}, \texttt{fahead}, \texttt{object},
+geometry-defining objects (\texttt{groom}) with nouns referring to a person's
+head or face (\texttt{fahead}), and other non-geometry related categories
+(\texttt{body}, \texttt{bodypart}, \texttt{fahead}, \texttt{object},
 \texttt{sex\_f}, \texttt{sex\_m}).
 
 % why furniture was not used
@@ -1031,6 +1040,15 @@ individual PPA overlaps were created from data provided by
 
 \section{Results}
 
+\todo[inline]{The presentation could be structured a bit more (subheadings,
+paragraphs etc), as it is, it is quite a long flow of text and numbers -> check
+instructions at scientific data}
+
+\todo[inline]{SE: imo, key question is only partially answered: how close is
+movie / audio to localizer". Can you corroborate figure 3 with some more
+numbers? COH: schwierig vergleichbar (insb. unterschiedliche thresholds), daher
+Bland-Altman-Plots -> mention that point at BA-Plots}
+
 % study goal
 We investigated if spatial information embedded in two naturalistic stimuli
 correlates with increased hemodynamic activity in the PPA.
@@ -1051,6 +1069,9 @@ space) can found at
 Additional analyses of the robustness of the results presented here
 are available as supplementary materials.
 
+\todo[inline]{"a visual but ecologically more valid stimulation" -> The "but"
+doesn't make sense to me here -> add phrasing similar to the one used in the
+(rephrased) intro}
 % AV intro
 First, we analyzed data from the movie offering a visual but ecologically more
 valid stimulation than static pictures.
@@ -1067,6 +1088,9 @@ to anterior) in both hemispheres.
 % LOC
 Two additional bilateral clusters are located in the superior lateral occipital
 cortex.
+\todo[inline]{SE: What to make out of the fact that the movie stimulation seems
+to evoke activation that goes substantially further caudal than the classical
+PPA? COH: part of the discussion; maybe a concluding statement here}
 
 % AD intro
 Second, we analyzed data from the audio-description offering exclusively
@@ -1298,6 +1322,17 @@ also additional voxels.
 % provides caveats to the interpretation describes how the paper
 % advances the field by providing new opportunities
 
+\todo[inline]{jeweils mit dem Befund, den Du diskutieren willst beginnen und mit
+einer take-home message enden.}
+
+\todo[inline]{Was mich etwas wundert, es gibt
+doch schon andere "event-related" analysen von movies, oder? Die werden kaum
+diskutiert. -> Studie, die etwas mit Event-related design zitieren;
+NeuroScout-Framework oder. Pliers Studien zitieren}
+
+\todo[inline]{Ebenso kommt mir das Potential (warum ist das relevant -> rich
+stimulus ie many possible analyses, better compliance, easier to perform for
+difficult populations, etc) eigentlich zu kurz}
 
 %#1 previous studies
 Several studies have reported increased hemodynamic activity in the PPA
