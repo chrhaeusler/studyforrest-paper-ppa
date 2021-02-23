@@ -460,28 +460,49 @@ to improve estimation efficiency.
 
 \subsection{Event selection} \label{rationale}
 
+\todo[inline]{SE: temporal order of the (naturalistic) stimuli is not unknown,
+you know it by looking at the movie; COH: yes, but actually no.}
+
 % traditionally
 In contrast to stimuli designed to trigger a perceptual process of interest,
 while controlling for confounding variables (e.g., color and luminance),
 % our approach: annotation and regressors
-naturalistic stimuli have an initially unknown temporal structure
+naturalistic stimuli have fixed but initially unknown temporal structure
 of stimulus features of interest, as well as an equally unknown confound structure.
 % annotation ftw
 In order to evaluate the suitability of the stimulus for the targeted analyses,
 and well as to inform the required hemodynamic models, we annotated the temporal
 structure of a range of stimulus features.
 
+In an earlier study, \cite{bartels2004mapping} manually annotated the content of
+individual movie frames (color, faces, language, and human bodies) and found
+that the functional specialization of brain areas is preserved during movie
+watching.
+
 % AV anno
 For the analysis of the movie stimulus, we took advantage of a previously
 published annotation of 869 movie cuts and the depicted location after each cut
 \citep{haeusler2016cutanno}.
-% rationale to use that annotation rationale behind using movie cuts
-We conceptualized cuts as events with information on the depicted environment
-that require viewers to re-orient themselves within the movie environment by
-switching to a new perspective within the same setting, or to a position in an
-entirely different setting.
+% we focus on cuts
+Contrary to manually annotating stimulus features of every movie frame (as
+performed by e.g. \cite{bartels2004mapping} for color, faces, language, and
+human bodies), we categorized movie cuts that - in general - realign the viewer
+within the movie environment by switching to another perspective within the
+same setting, or to a position in an entirely different setting.
+% this this should work
+More specifically, we sought to exploit a cinematographic bias as
+% establishing shots & shots within setting early in the movie
+at a setting's first occurrence in a movie, shots tend to broadly establish the
+setting and the spatial layout within the setting.
+% cut to recurrent scene
+On revisiting an already established setting, the field sizes of movie shots
+tend to decrease, and shots tend to more often depict people talking to each
+other or objects that are relevant to the evolved plot
+\citep{brown2012cinematography, katz1991film, mascelli1998five}.
+
 % AV regressors/events
-We assigned each cut to one of five categories (Tab.~\ref{tab:events}):
+Based on this cinematographic bias, we assigned each cut to one of five
+categories (Tab.~\ref{tab:events}):
 %
 1) a cut switching to a setting that was depicted for the first time
 (\texttt{vse\_new}),
@@ -500,26 +521,16 @@ depicted before (\texttt{vpe\_old}).
 % irrespective of visual content
 Note that this categorization is not necessarily evident from the visual content
 of the first movie frame after a cut.
-% cinematographic rationale cut to new scenes: establishing shots
-The cinematographic rationale was that movie shots tend to establish the setting
-and their spatial layout at their first occurence in a movie.
-% cut to recurrent scene
-On revisiting an already established setting later in the movie, the field sizes
-of movie shots tend to decrease (\texttt{vse\_old}), and shots tend to
-more often depict people talking to each other, or objects that are relevant to
-the evolved plot (\texttt{vpe\_old}) \citep{brown2012cinematography,
-katz1991film, mascelli1998five}.
 % neuroscientific rationale The neuroscientific rationale was that activity in
 % the PPA is greater when participants view novel versus repeated scenes or
 % view-points \citep{epstein1999parahippocampal, grill2006repetition}.  no cut
 % condition: intro
-
 As a control condition with events of no particular processing of spatial
 information (\texttt{no\_cut}) we pseudo-randomly selected movie frames from
 continuous movie shots that lasted longer than \unit[20]{s}, and
 % no cuts: how
-had a minimum temporal distance of at least \unit[10]{s} to any movie cut and
-to any other \texttt{no\_cut} event.
+had a minimum temporal distance of at least \unit[10]{s} to any movie cut and to
+any other \texttt{no\_cut} event.
 
 
 % AV regressors
