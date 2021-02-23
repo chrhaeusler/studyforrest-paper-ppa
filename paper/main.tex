@@ -482,7 +482,7 @@ that require viewers to re-orient themselves within the movie environment by
 switching to a new perspective within the same setting, or to a position in an
 entirely different setting.
 % AV regressors/events
-We assigned each cut to one of five categories (Tab.~\ref{tab:av-events}):
+We assigned each cut to one of five categories (Tab.~\ref{tab:events}):
 %
 1) a cut switching to a setting that was depicted for the first time
 (\texttt{vse\_new}),
@@ -526,7 +526,12 @@ to any other \texttt{no\_cut} event.
 % AV regressors
 \begin{table*}[tbp]
     \caption{Overview of annotated stimulus features of the audio-visual
-    movie.
+    movie and the audio-description.
+    Some of the noun categories (female, females, fname; male,
+    males, mname; face, head; object, objects;
+    Tab.~\ref{tab:descr-nouns-rules}) were pooled
+    into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead},
+    \texttt{object}).
     Respective event counts are given for the whole stimulus (\texttt{All} and
     the segments that were used for the eight sessions of fMRI scanning).
     Event counts for frame-based features are reported in units of a thousand.
@@ -541,12 +546,13 @@ to any other \texttt{no\_cut} event.
     %for every movie frame (\unit[40]{ms}).
     % For description of the two event categories of the audio-description's
     % narrator (\texttt{se\_new} and \texttt{se\_old}) to build contrast of
-    % negative control Tab.~\ref{tab:ao-events}.
+    % negative control Tab.~\ref{tab:events}.
     }
-\label{tab:av-events}
+\label{tab:events}
 \small
 \begin{tabular}{lp{3.7cm}lllllllll} \toprule \textbf{Label} & \textbf{Description} & \textbf{All} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
 \midrule
+\multicolumn{3}{l}{\textit{Movie stimulus}}\\
 \texttt{vse\_new} &  change of the camera position to a setting not depicted before & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII
 \tabularnewline
 \texttt{vse\_old} & change of the camera position to a recurring setting & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII
@@ -577,6 +583,50 @@ to any other \texttt{no\_cut} event.
 \texttt{fg\_av\_ger\_rms} & root mean square volume & \avFgavgerrmsAll & \avFgavgerrmsI & \avFgavgerrmsII & \avFgavgerrmsIII & \avFgavgerrmsIV & \avFgavgerrmsV & \avFgavgerrmsVI & \avFgavgerrmsVII & \avFgavgerrmsVIII
 \tabularnewline
 \texttt{fg\_av\_ger\_ud} & upper-lower luminance difference & \avFgavgerudAll & \avFgavgerudI & \avFgavgerudII & \avFgavgerudIII & \avFgavgerudIV & \avFgavgerudV & \avFgavgerudVI & \avFgavgerudVII & \avFgavgerudVIII
+\tabularnewline
+\midrule
+\multicolumn{3}{l}{\textit{Audio-description stimulus}}\\
+\texttt{body} & trunk of the body; overlaid clothes & \aoBodyAll & \aoBodyI & \aoBodyII
+& \aoBodyIII & \aoBodyIV & \aoBodyV & \aoBodyVI & \aoBodyVII & \aoBodyVIII
+\tabularnewline
+\texttt{bpart} & limbs and trousers & \aoBpartAll & \aoBpartI & \aoBpartII & \aoBpartIII & \aoBpartIV & \aoBpartV & \aoBpartVI & \aoBpartVII & \aoBpartVIII
+\tabularnewline
+\texttt{fahead} & face or head (parts) & \aoFaheadAll & \aoFaheadI & \aoFaheadII & \aoFaheadIII & \aoFaheadIV & \aoFaheadV & \aoFaheadVI & \aoFaheadVII & \aoFaheadVIII
+\tabularnewline
+\texttt{furn} & moveable furniture (insides \& outsides) & \aoFurnAll & \aoFurnI & \aoFurnII & \aoFurnIII & \aoFurnIV & \aoFurnV & \aoFurnVI & \aoFurnVII & \aoFurnVIII
+\tabularnewline
+\texttt{geo} & immobile landmarks & \aoGeoAll & \aoGeoI & \aoGeoII & \aoGeoIII & \aoGeoIV & \aoGeoV & \aoGeoVI & \aoGeoVII & \aoGeoVIII
+\tabularnewline
+\texttt{groom} & rooms \& locales or geometry-defining elements & \aoGroomAll & \aoGroomI & \aoGroomII & \aoGroomIII & \aoGroomIV & \aoGroomV & \aoGroomVI & \aoGroomVII & \aoGroomVIII
+\tabularnewline
+\texttt{object} & countable entities with firm boundaries & \aoObjAll & \aoObjI & \aoObjII & \aoObjIII & \aoObjIV & \aoObjV & \aoObjVI & \aoObjVII & \aoObjVIII
+\tabularnewline
+\texttt{se\_new} & a setting occurring for the first time & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
+\tabularnewline
+\texttt{se\_old} & a recurring setting & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
+\tabularnewline
+\texttt{sex\_f} & female person(s), name & \aoSexfAll & \aoSexfI & \aoSexfII & \aoSexfIII & \aoSexfIV & \aoSexfV & \aoSexfVI & \aoSexfVII & \aoSexfVIII
+\tabularnewline
+\texttt{sex\_m} & male person(s), name & \aoSexmAll & \aoSexmI & \aoSexmII & \aoSexmIII & \aoSexmIV & \aoSexmV & \aoSexmVI & \aoSexmVII & \aoSexmVIII
+\tabularnewline
+% vlo_ch has no events in segment 5. So indices are shifted
+%vse\_new & control for movie cut & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII
+%\tabularnewline
+%vse\_old & control for movie cut & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII
+%\tabularnewline
+%vlo\_ch & control for movie cut & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII
+%\tabularnewline
+%vpe\_new & control for movie cut & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII
+%\tabularnewline
+% vpe_old has no events in 3. So the indices are shifted
+%vpe\_old & control for movie cut & \aoVpeoldAll & \aoVpeoldI & \aoVpeoldII & 0 & \aoVpeoldIII & \aoVpeoldIV & \aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII
+% \tabularnewline
+\texttt{fg\_ad\_lrdiff} & left-right volume difference & \aoFgadlrdiffAll & \aoFgadlrdiffI & \aoFgadlrdiffII & \aoFgadlrdiffIII & \aoFgadlrdiffIV &
+\aoFgadlrdiffV & \aoFgadlrdiffVI & \aoFgadlrdiffVII & \aoFgadlrdiffVIII
+\tabularnewline
+\texttt{fg\_ad\_rms} & root mean square volume & \aoFgadrmsAll &
+\aoFgadrmsI & \aoFgadrmsII & \aoFgadrmsIII & \aoFgadrmsIV & \aoFgadrmsV &
+\aoFgadrmsVI & \aoFgadrmsVII & \aoFgadrmsVIII
 \tabularnewline
 \bottomrule
 \end{tabular}
@@ -626,7 +676,7 @@ belong exclusively to the higher-level category of changing a setting
 (\texttt{se\_new} or \texttt{se\_old}).
 % pooling of categories
 Some noun categories that were semantically similar and offered only a small
-amount of counts were pooled resulting in 11 final event categories (Tab.~\ref{tab:ao-events}).
+amount of counts were pooled resulting in 11 final event categories (Tab.~\ref{tab:events}).
 These event categories were then used to model hemodynamic
 responses.
 
@@ -639,7 +689,7 @@ responses.
         Some of these initial 18 noun categories were pooled resulting in 11
         event categories that served as basis to build the regressors of the
         GLM
-        (Tab.~\ref{tab:ao-events}).
+        (Tab.~\ref{tab:events}).
         % The category \texttt{++} also contains adverbial of time.
 }
 \label{tab:descr-nouns-rules}
@@ -688,70 +738,6 @@ helmet
 \end{tabular}
 \end{table*}
 
-
-% AD regressors
-\begin{table*}[tbp]
-    \caption{Overview of annotated stimulus features of the audio-description.
-    Respective event counts are given for the whole stimulus (\texttt{All} and
-    the segments that were used for the eight sessions of fMRI scanning.
-    Some of the annotation's original categories (female, females, fname; male,
-    males, mname; face, head; object, objects;
-    Tab.~\ref{tab:descr-nouns-rules}) were pooled
-    into 11 new categories (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead},
-    \texttt{object}).
-    Event counts for frame-based features are reported in units of a thousand.
-    % For a description of the five control conditions for movie cuts see
-    % Tab.~\ref{tab:av-events}.
-    }
-\label{tab:ao-events}
-\begin{tabular}{lp{3.8cm}lllllllll}
-\toprule \textbf{Label} & \textbf{Description} & \textbf{All} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} \\
-\midrule
-\texttt{body} & trunk of the body; overlaid clothes & \aoBodyAll & \aoBodyI & \aoBodyII
-& \aoBodyIII & \aoBodyIV & \aoBodyV & \aoBodyVI & \aoBodyVII & \aoBodyVIII
-\tabularnewline
-\texttt{bpart} & limbs and trousers & \aoBpartAll & \aoBpartI & \aoBpartII & \aoBpartIII & \aoBpartIV & \aoBpartV & \aoBpartVI & \aoBpartVII & \aoBpartVIII
-\tabularnewline
-\texttt{fahead} & face or head (parts) & \aoFaheadAll & \aoFaheadI & \aoFaheadII & \aoFaheadIII & \aoFaheadIV & \aoFaheadV & \aoFaheadVI & \aoFaheadVII & \aoFaheadVIII
-\tabularnewline
-\texttt{furn} & moveable furniture (insides \& outsides) & \aoFurnAll & \aoFurnI & \aoFurnII & \aoFurnIII & \aoFurnIV & \aoFurnV & \aoFurnVI & \aoFurnVII & \aoFurnVIII
-\tabularnewline
-\texttt{geo} & immobile landmarks & \aoGeoAll & \aoGeoI & \aoGeoII & \aoGeoIII & \aoGeoIV & \aoGeoV & \aoGeoVI & \aoGeoVII & \aoGeoVIII
-\tabularnewline
-\texttt{groom} & rooms \& locales or geometry-defining elements & \aoGroomAll & \aoGroomI & \aoGroomII & \aoGroomIII & \aoGroomIV & \aoGroomV & \aoGroomVI & \aoGroomVII & \aoGroomVIII
-\tabularnewline
-\texttt{object} & countable entities with firm boundaries & \aoObjAll & \aoObjI & \aoObjII & \aoObjIII & \aoObjIV & \aoObjV & \aoObjVI & \aoObjVII & \aoObjVIII
-\tabularnewline
-\texttt{se\_new} & a setting occurring for the first time & \aoSenewAll & \aoSenewI & \aoSenewII & \aoSenewIII & \aoSenewIV & \aoSenewV & \aoSenewVI & \aoSenewVII & \aoSenewVIII
-\tabularnewline
-\texttt{se\_old} & a recurring setting & \aoSeoldAll & \aoSeoldI & \aoSeoldII & \aoSeoldIII & \aoSeoldIV & \aoSeoldV & \aoSeoldVI & \aoSeoldVII & \aoSeoldVIII
-\tabularnewline
-\texttt{sex\_f} & female person(s), name & \aoSexfAll & \aoSexfI & \aoSexfII & \aoSexfIII & \aoSexfIV & \aoSexfV & \aoSexfVI & \aoSexfVII & \aoSexfVIII
-\tabularnewline
-\texttt{sex\_m} & male person(s), name & \aoSexmAll & \aoSexmI & \aoSexmII & \aoSexmIII & \aoSexmIV & \aoSexmV & \aoSexmVI & \aoSexmVII & \aoSexmVIII
-\tabularnewline
-% vlo_ch has no events in segment 5. So indices are shifted
-%vse\_new & control for movie cut & \aoVsenewAll & \aoVsenewI & \aoVsenewII & \aoVsenewIII & \aoVsenewIV & \aoVsenewV & \aoVsenewVI & \aoVsenewVII & \aoVsenewVIII
-%\tabularnewline
-%vse\_old & control for movie cut & \aoVseoldAll & \aoVseoldI & \aoVseoldII & \aoVseoldIII & \aoVseoldIV & \aoVseoldV & \aoVseoldVI & \aoVseoldVII & \aoVseoldVIII
-%\tabularnewline
-%vlo\_ch & control for movie cut & \aoVlochAll & \aoVlochI & \aoVlochII & \aoVlochIII & \aoVlochIV & 0 & \aoVlochV & \aoVlochVI & \aoVlochVII
-%\tabularnewline
-%vpe\_new & control for movie cut & \aoVpenewAll & \aoVpenewI & \aoVpenewII & \aoVpenewIII & \aoVpenewIV & \aoVpenewV & \aoVpenewVI & \aoVpenewVII & \aoVpenewVIII
-%\tabularnewline
-% vpe_old has no events in 3. So the indices are shifted
-%vpe\_old & control for movie cut & \aoVpeoldAll & \aoVpeoldI & \aoVpeoldII & 0 & \aoVpeoldIII & \aoVpeoldIV & \aoVpeoldV & \aoVpeoldVI & \aoVpeoldVII
-% \tabularnewline
-\texttt{fg\_ad\_lrdiff} & left-right volume difference & \aoFgadlrdiffAll & \aoFgadlrdiffI & \aoFgadlrdiffII & \aoFgadlrdiffIII & \aoFgadlrdiffIV &
-\aoFgadlrdiffV & \aoFgadlrdiffVI & \aoFgadlrdiffVII & \aoFgadlrdiffVIII
-\tabularnewline
-\texttt{fg\_ad\_rms} & root mean square volume & \aoFgadrmsAll &
-\aoFgadrmsI & \aoFgadrmsII & \aoFgadrmsIII & \aoFgadrmsIV & \aoFgadrmsV &
-\aoFgadrmsVI & \aoFgadrmsVII & \aoFgadrmsVIII
-\tabularnewline
-\bottomrule
-\end{tabular}
-\end{table*}
 
 % low-level confounds: intro
 Lastly, we algorithmically annotated the temporal structure of low-level
@@ -808,8 +794,8 @@ analyses.
     \includegraphics[width=\linewidth]{figures/regressor-corr} \caption{Pearson
         correlation coefficients of modeled time series used as regressors in
         the GLM analysis of the
-        audio-description (blue; Tab.~\ref{tab:ao-events} for a
-        description) and audio-visual movie (red; Tab.~\ref{tab:av-events}).
+        audio-description (blue; Tab.~\ref{tab:events} for a
+        description) and audio-visual movie (red; Tab.~\ref{tab:events}).
         Values are rounded to the nearest tenth.
         The correlation between the two stimuli's
         root mean square volume and between their left-right difference in
@@ -823,8 +809,8 @@ analyses.
 
 % AV design matrix
 The design matrices of the first-level time-series GLM analysis comprised the
-regressors for the stimulus features listed in Tables~\ref{tab:av-events} and
-\ref{tab:ao-events} for the movie and audio-description stimulus, respectively.
+regressors for the stimulus features listed in Tables~\ref{tab:events} and
+\ref{tab:events} for the movie and audio-description stimulus, respectively.
 % AD regressors in AV
 Additionally, the design for the movie stimulus also contained the
 regressors based on nouns used by the audio-description's narrator to indicate
@@ -832,11 +818,11 @@ a switch to another setting (categories \texttt{se\_new} and \texttt{se\_old}),
 in order to be able to implement cross-modal control contrasts.
 % AV regressors in AV
 Likewise, the audio-description design matrix included movie cut related regressors
-listed Table~\ref{tab:av-events} (excluding \texttt{no\_cut}).
+listed Table~\ref{tab:events} (excluding \texttt{no\_cut}).
 % both stimuli: null regressors
 For both stimuli, a null regressor was used for any event category in a segment
 for which no event of a category was present (e.g. no event of
-\texttt{vpe\_old} in segment 3; Tab.~\ref{tab:ao-events}).
+\texttt{vpe\_old} in segment 3; Tab.~\ref{tab:events}).
 % temporal derivatives
 Temporal derivatives of all regressors were added to the design matrix to compensate for
 regional differences \citep{friston1998event}.
