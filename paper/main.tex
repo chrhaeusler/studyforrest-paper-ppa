@@ -863,7 +863,7 @@ identify hemodynamic activity congruent with the hypothesized processing of
 spatial information in the PPA. However, while the rationale for any contrast
 composition must be sound, the selection of a single implementation remains
 arbitrary to some degree. Consequently, we computed multiple contrasts that are
-listed in Tables~\ref{tab:av-contrasts} and \ref{tab:ao-contrasts} for movie
+listed in Table~\ref{tab:contrasts} for movie
 and audio-description, respectively. For each stimulus we, subjectively, picked
 a primary contrast for result presentation (the first one in each Table) based
 on how well the average event within categories represents spatial and
@@ -903,27 +903,31 @@ disco'', ''[black and white] film recordings'') compared to perceptually richer
 descriptions.
 
 % control contrasts
-Finally, we created several control contrasts for both stimuli
-(Tab.~\ref{tab:av-contrasts} and Tab.~\ref{tab:ao-contrasts}).
+Finally, we created several control contrasts for both stimuli.
 % AV: no cut > cut
 For the movie stimulus, four contrasts were created contrasting the no-cut
-regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:av-contrasts}).
+regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:contrasts}).
 % AV: narrator
 One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by contrasting
 nouns spoken by the narrator.
 % AD stimulus
 For the audio-description stimulus, we created five control contrasts
-(Tab.~\ref{tab:ao-contrasts}) to test if activation in the PPA was
+(Tab.~\ref{tab:contrasts}) to test if activation in the PPA was
 correlated with moments of cuts, despite the absence of visual stimulation.
 
 \begin{table*}[tbp]
-\caption{Computed contrasts for the analysis of the movie and their purpose.}
-\label{tab:av-contrasts}
+  \caption{Computed contrasts for the analysis of the movie and the audio-description,
+    and their respective purpose. The primary contrasts are marked with an asterisk.
+    \texttt{non-spatial} refers to the annotation categories
+    \texttt{body}, \texttt{bodypart}, \texttt{fahead},
+    \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}.}
+\label{tab:contrasts}
 \begin{tabular}{lll}
 \toprule
 \textbf{Nr.} &  \textbf{Contrast} & \textbf{Purpose} \\
 \midrule
-1 & \texttt{vse\_new > vpe\_old} & spatial processing \tabularnewline
+\multicolumn{3}{l}{\textit{Movie stimulus}}\\
+1* & \texttt{vse\_new > vpe\_old} & spatial processing \tabularnewline
 2 & \texttt{vse\_new, vpe\_new > vse\_old, vpe\_old} & spatial processing \tabularnewline
 3 & \texttt{vse\_new > vse\_old} & spatial processing \tabularnewline
 4 & \texttt{vse\_new > vse\_old, vpe\_old} & spatial processing \tabularnewline
@@ -933,22 +937,9 @@ correlated with moments of cuts, despite the absence of visual stimulation.
 8 & \texttt{vno\_cut > vse\_new, vse\_old} & control \tabularnewline
 9 & \texttt{vno\_cut > vpe\_new, vpe\_old} & control \tabularnewline
 10 & \texttt{se\_new > se\_old} & control for (missing) narrator \tabularnewline
-\bottomrule
-\end{tabular}
-\end{table*}
-
-
-\begin{table*}[tbp]
-\caption{Computed contrasts for the analysis of the audio-description and their purpose.
-    \texttt{non-spatial} refers to the categories
-    \texttt{body}, \texttt{bodypart}, \texttt{fahead},
-    \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}.}
-\label{tab:ao-contrasts}
-\begin{tabular}{lll}
-\toprule
-\textbf{Nr.} &  \textbf{Contrast} & \textbf{Purpose} \\
 \midrule
-1 & \texttt{geo, groom > non-spatial} & spatial processing \tabularnewline
+\multicolumn{3}{l}{\textit{Audio-description stimulus}}\\
+1* & \texttt{geo, groom > non-spatial} & spatial processing \tabularnewline
 2 & \texttt{geo, groom, se\_new > non-spatial} & spatial processing \tabularnewline
 3 & \texttt{groom, se\_new, se\_old > non-spatial}  & spatial processing \tabularnewline
 4 & \texttt{geo > non-spatial} & spatial processing \tabularnewline
@@ -1674,9 +1665,9 @@ events" and counts vs. significant clusters?}
 
 % intro
 In order to test the robustness of our approach, we created overall five
-$t$-contrasts for the movie stimulus (Tab.~\ref{tab:av-contrasts}), and overall
+$t$-contrasts for the movie stimulus, and overall
 eight $t$-contrast for the audio-description stimulus
-(Tab.~\ref{tab:av-contrasts}).
+(Tab.~\ref{tab:contrasts}).
 % how
 Contrasts differ in contrasted categeories based on ``how well'' averaged events
 within categories were considered to represent spatial and non-spatial
@@ -1796,9 +1787,9 @@ bias in the contrasts.
 \centering
     \includegraphics[width=\linewidth]{figures/stability-slices}
     \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster corrected)
-        The audio-description's contrasts 1-8 (blue; \ref{tab:ao-contrasts})
+        The audio-description's contrasts 1-8 (blue)
         are overlaid over the audio-visual movie's contrasts 1-5 (red;
-        \ref{tab:av-contrasts}).
+        \ref{tab:contrasts}).
         Cluster are overlaid on top of the MNI152 T1-weighted head template
         with the acquisition field-of-view for the audio-description study
         highlighted.
@@ -1833,7 +1824,7 @@ For each contrast we created several control contrasts.
 % AV: no_cut > x
 To test for XYZ\todo{yes, to test what?} within the movie fMRI data, we created
 four contrasts that compared hemodynamic activity during frames within movie
-shots (\texttt{no\_cut} category) with movie cut related categories (Tab.~\ref{tab:av-contrasts}).
+shots (\texttt{no\_cut} category) with movie cut related categories (Tab.~\ref{tab:contrasts}).
 %
 None of these four contrasts yielded a significant cluster which suggest that
 XYZ\todo{concluding statement}.
@@ -1859,7 +1850,7 @@ Results suggest that XYZ.
 
 % AD stimulus
 Finally for the analysis of the audio-description, we created control contrasts
-based on events of the annotated movie cuts (Tab.~\ref{tab:ao-contrasts}) in
+based on events of the annotated movie cuts (Tab.~\ref{tab:contrasts}) in
 order to test XYZ.
 \todo{why exactly did we do this except "we do not expect (lots of) significant cluster because negative control?}
 %
