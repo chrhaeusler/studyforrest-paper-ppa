@@ -854,9 +854,6 @@ nuisance variables and regressors of interest for any of the planned analyses.
 \end{figure*}
 
 
-\todo[inline]{add a summary to the end of section 2.7 explaining in 2 sentences,
-what regressors you will be focussing on -> easier for those that got confused
-on the way}
 % AV design matrix
 The design matrix for the first-level time-series GLM analysis of the movie
 comprised regressors for the 12 event categories of the movie listed in
@@ -891,8 +888,6 @@ The design matrices were temporally filtered with the same high-pass filter
 
 \subsection{Statistical analysis}
 
-\todo[inline]{SE: "vse, vno, vpe,..." are not really the most intuitive regressor names -> ausschreiben, wo möglich}
-
 % intro
 We performed standard two-level GLM analyses to aggregate results across the
 eight segments for every participant and each stimulus separately.
@@ -900,22 +895,25 @@ eight segments for every participant and each stimulus separately.
 Subsequently, we conducted third-level analyses to average contrast estimates
 over participants for each stimulus, respectively.
 
-\todo[inline]{"we, subjectively, picked a primary contrast" :-(  -> you actually
-write "based on"}
-%
+% there isn't "the one road"
 Given the rich naturalistic stimuli and the availability of various stimulus
 feature annotations, there are several candidates for implementing contrasts to
 identify hemodynamic activity congruent with the hypothesized processing of
-spatial information in the PPA. However, while the rationale for any contrast
-composition must be sound, the selection of a single implementation remains
-arbitrary to some degree. Consequently, we computed multiple contrasts that are
-listed in Table~\ref{tab:contrasts} for movie and audio-description,
-respectively. For each stimulus we, subjectively, picked a primary contrast for
-result presentation (the first one in each Table) based on how well the average
-event within categories represents spatial and non-spatial information, and the
-number of events in the stimulus.  An evaluation of the robustness of these
-results with respect to similar but different contrasts is provided in the
-supplementary materials.
+spatial information in the PPA.
+% kind of arbitrary choice
+However, while the rationale for any contrast composition must be sound, the
+selection of a single implementation remains arbitrary to some degree.
+% hence, a couple of contrasts
+Consequently, we computed multiple contrasts that are listed in
+Table~\ref{tab:contrasts} for movie and audio-description, respectively.
+% subjectively assessed balance
+For each stimulus, we picked a primary contrast for result presentation (the
+first one in each Table) based on a subjectively assessed balance of how well
+the average event within categories represents spatial and non-spatial
+information, and the number of events in the stimulus.
+% reference to supplementals
+An evaluation of the robustness of these results with respect to similar but
+different contrasts is provided in the supplementary materials.
 
 % AV: primary contrast
 In the primary contrast for the movie stimulus, we contrasted cuts to a setting
@@ -931,7 +929,6 @@ geometry-defining objects (\texttt{groom}) with nouns referring to a person's
 head or face (\texttt{fahead}), and other non-geometry related categories
 (\texttt{body}, \texttt{bodypart}, \texttt{fahead}, \texttt{object},
 \texttt{sex\_f}, \texttt{sex\_m}).
-
 % why furniture was not used
 The category ``furniture'' (\texttt{furn}) was not used as a regressor of
 interest in any contrast because these nouns could be perceived as either a
@@ -949,24 +946,36 @@ disco'', ''[black and white] film recordings'') compared to perceptually richer
 descriptions.
 
 % control contrasts
-Finally, we created several control contrasts for both stimuli.
+Finally, we created several control contrasts for both stimuli
+(Tab.~\ref{tab:contrasts}).
 % AV: no cut > cut
 For the movie stimulus, four contrasts were created contrasting the no-cut
-regressor (\texttt{vno\_cut} to cut-related regressors \ref{tab:contrasts}).
+regressor (\texttt{vno\_cut}) to cut-related regressors.
 % AV: narrator
-One contrast (\texttt{vs\_new} > \texttt{vpe\_old}) was created by contrasting
-nouns spoken by the narrator.
+One contrast was created by contrasting nouns spoken by the (missing) narrator
+comparing nouns that indicate a switch to another setting (\texttt{se\_new} >
+\texttt{se\_old}), and were moderately correlated with movie cuts indicating a
+switch to another setting (Tab.~\ref{fig:reg-corr}).
 % AD stimulus
-For the audio-description stimulus, we created five control contrasts
-(Tab.~\ref{tab:contrasts}) to test if activation in the PPA was
-correlated with moments of cuts, despite the absence of visual stimulation.
+For the audio-description stimulus, we created five control contrasts to test if
+activation in the PPA was correlated with moments of cuts, despite the absence
+of visual stimulation.
+
+\todo[inline]{SE: "vse, vno, vpe,..." in Table 3 are not really the most
+intuitive regressor names; COH: writing out names will turn table into a mess;
+added reference to the Table that explains the abbreviations}
+
 
 \begin{table*}[tbp]
-  \caption{Computed contrasts for the analysis of the movie and the audio-description,
-    and their respective purpose. The primary contrasts are marked with an asterisk.
-    \texttt{non-spatial} refers to the annotation categories
+  \caption{Computed contrasts for the analysis of the movie and the audio
+    description, and their respective purpose.
+    The primary contrasts are marked with an asterisk.
+    \texttt{non-spatial} refers to the event categories
     \texttt{body}, \texttt{bodypart}, \texttt{fahead},
-    \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}.}
+    \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}.
+    An explanation of all event categories can be found in
+    Tab.~\ref{tab:events}.
+    }
 \label{tab:contrasts}
 \begin{tabular}{lll}
 \toprule
