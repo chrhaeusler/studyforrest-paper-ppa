@@ -203,7 +203,7 @@ face-related sentences. Moreover, this effect was only observed in sentences
 involving famous places.
 
 \todo[inline]{SE: (lack of) exclusivity is not really becoming evident from
-preceding paragraph; COH: but imo the last two paragraphs are about exactly
+preceding paragraph; COH: imo the last two paragraphs are about exactly
 that??}
 % summary if literature review
 In summary, studies suggest that the PPA does not exclusively respond to
@@ -486,24 +486,16 @@ to improve estimation efficiency.
 
 \subsection{Event selection} \label{rationale}
 
-\todo[inline]{SE: temporal order of the (naturalistic) stimuli is not unknown,
-you know it by looking at the movie; COH: yes, but actually no.}
-
 % traditionally
 In contrast to stimuli designed to trigger a perceptual process of interest,
 while controlling for confounding variables (e.g., color and luminance),
 % our approach: annotation and regressors
-naturalistic stimuli have fixed but initially unknown temporal structure
-of stimulus features of interest, as well as an equally unknown confound structure.
+naturalistic stimuli have fixed but initially unknown temporal structure of
+stimulus features of interest, as well as an equally unknown confound structure.
 % annotation ftw
 In order to evaluate the suitability of the stimulus for the targeted analyses,
 and well as to inform the required hemodynamic models, we annotated the temporal
 structure of a range of stimulus features.
-
-In an earlier study, \cite{bartels2004mapping} manually annotated the content of
-individual movie frames (color, faces, language, and human bodies) and found
-that the functional specialization of brain areas is preserved during movie
-watching.
 
 % AV anno
 For the analysis of the movie stimulus, we took advantage of a previously
@@ -1012,15 +1004,16 @@ added reference to the Table that explains the abbreviations}
 \end{table*}
 
 
-% alignments single subjects (for Bland-Altman-Plots) 1st level
-First-level GLM analyses were performed in the image-space of a participant-specific BOLD
-T2* template
+% alignments single subjects: 1st level
+First-level GLM analyses were performed in the image-space of a
+participant-specific BOLD T2* template using a previously determined linear
+transformation \citep{sengupta2016extension}.
 % subject template (for Bland-Altman-Plot of unthresholded maps)
 % \href{"https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/sub-01/bold3Tp2/brain.nii.gz"}{example})
-using a previously determined linear transformation \citep{sengupta2016extension}.
-For higher-level analyses image data were aligned with a study-specific T2* group template
-likewise using a previously computed non-linear transformation \citep{hanke2014audiomovie}.
 % group template (for group and individual brain slices)
+For higher-level analyses image data were aligned with a study-specific T2*
+group template likewise using a previously computed non-linear transformation
+\citep{hanke2014audiomovie}.
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/blob/master/templates/grpbold3Tp2/brain.nii.gz"
 % MNI152
 This group template was co-registered to the MNI 152 template with an affine
@@ -1056,41 +1049,40 @@ individual PPA overlaps were created from data provided by
 
 \section{Results}
 
-\todo[inline]{The presentation could be structured a bit more (subheadings,
-paragraphs etc), as it is, it is quite a long flow of text and numbers -> check
-instructions at scientific data}
-
-\todo[inline]{SE: imo, key question is only partially answered: how close is
-movie / audio to localizer". Can you corroborate figure 3 with some more
-numbers? COH: schwierig vergleichbar (insb. unterschiedliche thresholds), daher
-Bland-Altman-Plots -> mention that point at BA-Plots}
+\todo[inline]{SE: subheadings, paragraphs etc? COH: scientific data's analysis
+allows subheadings; added some}
 
 % study goal
 We investigated if spatial information embedded in two naturalistic stimuli
 correlates with increased hemodynamic activity in the PPA.
 % group level
-On a group average level, we compared results from whole-brain GLM
-analyses of the movie and the audio-description to a
-traditional visual localizer \citep{sengupta2016extension}.
+On a group average level, we compared results from whole-brain GLM analyses of
+the movie and the audio-description to a traditional visual localizer
+\citep{sengupta2016extension}.
 % individual level
-For each individual, we also compared the activation pattern from
-naturalistic auditory stimulation to the individual PPA localization
-with a block-design stimulus.
+For each individual, we also compared the activation pattern from naturalistic
+auditory stimulation to the individual PPA localization with a block-design
+stimulus.
 % NeuroVault
 Unthresholded $Z$-maps of all contrasts on a group level as well as individual
 results of the primary $t$-contrasts co-registered to the group-template (MNI152
 space) can found at
 \href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}.
 % reference to supplemental material
-Additional analyses of the robustness of the results presented here
-are available as supplementary materials.
+Additional analyses of the robustness of the results presented here are
+available as supplementary materials.
 
-\todo[inline]{"a visual but ecologically more valid stimulation" -> The "but"
-doesn't make sense to me here -> add phrasing similar to the one used in the
-(rephrased) intro}
-% AV intro
-First, we analyzed data from the movie offering a visual but ecologically more
-valid stimulation than static pictures.
+
+\subsection{group average results}
+
+\todo[inline]{SE: What to make out of the fact that the movie stimulation seems
+to evoke activation that goes substantially further caudal than the classical
+PPA? COH: part of the discussion; maybe a concluding statement here? imo it's
+good as it is}
+
+% av intro
+First, we analyzed data from the movie that offered ecologically more valid
+visual stimulation than a paradigm using blocks of pictures.
 % AV primary contrast
 The movie's primary $t$-contrast that compared cuts to a setting that was not
 depicted before to cuts within a recurring setting (\texttt{vse\_new >
@@ -1104,20 +1096,17 @@ to anterior) in both hemispheres.
 % LOC
 Two additional bilateral clusters are located in the superior lateral occipital
 cortex.
-\todo[inline]{SE: What to make out of the fact that the movie stimulation seems
-to evoke activation that goes substantially further caudal than the classical
-PPA? COH: part of the discussion; maybe a concluding statement here}
 
 % AD intro
-Second, we analyzed data from the audio-description offering exclusively
+Second, we analyzed data from the audio-description offering an exclusively
 auditory stimulation.
 % AD primary contrast
 The primary $t$-contrast for the audio-description (\texttt{geo, groom} >
 non-spatial noun categories) yielded six significant clusters
 (Tab.~\ref{tab:res-ao-group1}, Fig.~\ref{fig:group-slices}).
 % overlap with ROI
-Two bilateral clusters are located in the anterior part of the PPA group
-overlap reported by \cite{sengupta2016extension}.
+Two bilateral clusters are located in the anterior part of the PPA group overlap
+reported by \cite{sengupta2016extension}.
 % in detail
 Specifically, these clusters are located at the borders of the posterior
 parahippocampal cortex, the occipital and temporal fusiform gyrus and lingual
@@ -1214,6 +1203,8 @@ lateral occipital c. \\ % 0.0129
 \end{table*}
 
 
+\subsection{individual results}
+
 % results in detail voxels of significant clusters in PPA ROI (and RSC
 % liberally)
 % sub-01 (m): PPA (l/r), AD (l/r), AV (-/r); RSC: AD (l/r), AV (-/-)
@@ -1236,34 +1227,36 @@ Third, we inspected results from both naturalistic paradigms on the level of
 individual participants, and compared them to the individual PPA localizations
 provided by \cite{sengupta2016extension}, who reported
 % Sengupta et al., 2016; unilateral in sub-04 and sub-20
-bilateral parahippocampal clusters in 12 of 14
-participants and unilateral right clusters in two participants
-\citep[Tab.~3 in][]{sengupta2016extension}.
+bilateral parahippocampal clusters in 12 of 14 participants and unilateral right
+clusters in two participants \citep[Tab.~3 in][]{sengupta2016extension}.
 % one contrast to localize them all; "...and $Z$>3.4 for all"
 Unlike \cite{sengupta2016extension}, who determined PPA clusters using three
-candidate contrasts and a variable threshold, we used a single contrast for
-each naturalistic stimulus and a uniform threshold for all participants.
+candidate contrasts and a variable threshold, we used a single contrast for each
+naturalistic stimulus and a uniform threshold for all participants.
 % ref to figure
-Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $Z$-maps of the primary movie
-and audio-description $t$-contrasts, in comparison to the results of a conventional
-block-design localizer (unthresholded $Z$-maps are provided on NeuroVault).
+Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $Z$-maps of the primary
+movie and audio-description $t$-contrasts, in comparison to the results of a
+conventional block-design localizer (unthresholded $Z$-maps are provided on
+NeuroVault).
 % AV
-Results of the primary movie contrast yielded bilateral clusters in five participants,
-a unilateral right cluster in six participants (of which one participant yielded a
-unilateral cluster in the visual localizer), and a unilateral left cluster in
-one participant.
+Results of the primary movie contrast yielded bilateral clusters in five
+participants, a unilateral right cluster in six participants (of which one
+participant yielded a unilateral cluster in the visual localizer), and a
+unilateral left cluster in one participant.
 % difference to dedicated localizer
-We find bilateral clusters for participant \texttt{sub-20}, whereas the block-design
-localizer yielded only one cluster in the right hemisphere.
+We find bilateral clusters for participant \texttt{sub-20}, whereas the
+block-design localizer yielded only one cluster in the right hemisphere.
 % report here in group
-Results of the primary audio-description contrast yielded bilateral clusters in nine participants that are within or overlapping with the block-design localizer results.
+Results of the primary audio-description contrast yielded bilateral clusters in
+nine participants that are within or overlapping with the block-design localizer
+results.
 % subj-04
 In participant \texttt{sub-04}, two bilateral clusters are apparent, whereas
 block-design localizer, and movie stimulus yielded only one cluster in the right
 hemisphere.
 % sub-09
-For another participant (\texttt{sub-09}) the analysis yielded one cluster in the
-left-hemispheric PPA.
+For another participant (\texttt{sub-09}) the analysis yielded one cluster in
+the left-hemispheric PPA.
 
 
 \begin{figure*}[tbp]
@@ -1295,19 +1288,29 @@ left-hemispheric PPA.
     \label{fig:subs-thresh-ppa}
 \end{figure*}
 
+
+\todo[inline]{SE: imo, key question is only partially answered: how close is
+movie / audio to localizer". Can you corroborate figure 3 with some more
+numbers? COH: schwierig vergleichbar (insb. unterschiedliche thresholds), daher
+Bland-Altman-Plots -> as kinda mentioned in following paragraph}
+
 % Bland-Altman-Plots
 To illustrate the similarity of correlates of spatial processing in
 naturalistic (audio-description) and conventional stimulation, independent of a
 particular cluster-forming threshold, Bland-Altman plots for all participants
 are shown in Figure~\ref{fig:bland-altman}.
 % what it depicts
-Each subplot visualizes the mean value and difference (localizer minus audio-description) of all voxels in temporal and occipital cortices. The marginal distributions
-of the mean scores indicate a general agreement of both contrast scores across
-voxels in the PPA localization overlap as a probabilistic indicator (blue), and the
-individual block-design localizer results (red). Notably, 11 participants exhibit
-a pattern of increased $Z$-scores for the naturalistic stimulus (lower right
-quadrant) that includes voxels labeled by the block-design localizer, but
-also additional voxels.
+Each subplot visualizes the mean value and difference (localizer minus
+audio-description) of all voxels in temporal and occipital cortices.
+% maringal distributions
+The marginal distributions of the mean scores indicate a general agreement of
+both contrast scores across voxels in the PPA localization overlap as a
+probabilistic indicator (blue), and the individual block-design localizer
+results (red).
+% lower right quadrant
+Notably, 11 participants exhibit a pattern of increased $Z$-scores for the
+naturalistic stimulus (lower right quadrant) that includes voxels labeled by the
+block-design localizer, but also additional voxels.
 
 \begin{figure*}[tbp]
 \centering
@@ -1338,17 +1341,22 @@ also additional voxels.
 % provides caveats to the interpretation describes how the paper
 % advances the field by providing new opportunities
 
-\todo[inline]{jeweils mit dem Befund, den Du diskutieren willst beginnen und mit
-einer take-home message enden.}
+\todo[inline]{SE: mit Befund, den Du diskutieren willst beginnen, mit take-home
+message enden. COH: bekomme ich nur (und auch nur evtl.) reingepresst, wenn ich
+die Discussion komplett umschreibe; take-home message ist aber eh fast überall
+drin}
 
-\todo[inline]{Was mich etwas wundert, es gibt
-doch schon andere "event-related" analysen von movies, oder? Die werden kaum
-diskutiert. -> Studie, die etwas mit Event-related design zitieren;
-NeuroScout-Framework oder. Pliers Studien zitieren}
+\todo[inline]{SE: es gibt schon andere "event-related" analysen von movies,
+oder? COH: habe Paper durchgeguckt: Es gibt wenig bis gar nichts (obwohl
+Annotation immer mehr automatisiert werden können); Bzgl. Narrative ist im
+Grunde alles "voxel-wise enconding"; Rocca benutzt Annotation, aber auch
+"crafted" 23-min Narrative; NeuroScout: bisher absolut (?) keine veröffentlichte
+Studie, die NeuroScout genutzt hat; -> Bartels ist Klassiker, steht aber enorm
+allein da, und macht aber genau das, was wir machen "Naturalistic Stimulus statt
+Traditionell"; insofern: es gibt schon "irgendwie" andere Studien, die etwas mit
+Annotation (von Filmen) gemacht haben, die machen aber dann halt auch ganz
+anderes Zeug}
 
-\todo[inline]{Ebenso kommt mir das Potential (warum ist das relevant -> rich
-stimulus ie many possible analyses, better compliance, easier to perform for
-difficult populations, etc) eigentlich zu kurz}
 
 %#1 previous studies
 Several studies have reported increased hemodynamic activity in the PPA
@@ -1367,19 +1375,18 @@ specifically and predominantly evoke the processing of spatial information, we
 employed a naturalistic stimuli, a movie and its audio-description, that were
 designed for entertainment.
 
-%#3
-% hypo
-We hypothesized that due to the complex nature of the stimuli,
-unrelated factors would be balanced across a large number of events, and make
-the bias of spatial information accessible to a convential model-based
-statistical analysis of BOLD fMRI data.
+%#3 hypo
+We hypothesized that due to the complex nature of the stimuli, unrelated factors
+would be balanced across a large number of events, and make the bias of spatial
+information accessible to a convential model-based statistical analysis of BOLD
+fMRI data.
 % we need a detailed description -> annotation
-This model-driven approach required a detailed annotation of the
-occurence of relevant stimulus features.
+This model-driven approach required a detailed annotation of the occurence of
+relevant stimulus features.
 % event counts ftw
-The annotation of both stimuli revealed the respective number of incidentally occurring
-events to be similar to those of a conventional experimental paradigm used to
-localize functional regions of interest.
+The annotation of both stimuli revealed the respective number of incidentally
+occurring events to be similar to those of a conventional experimental paradigm
+used to localize functional regions of interest.
 
 %#4
 We modeled hemodynamic responses correlating with spatial information embedded
@@ -1407,8 +1414,7 @@ Current results may partially deviate from \cite{sengupta2016extension}, due to
 the uniform cluster forming threshold employed in this study versus their
 adaptive procedure (bilateral clusters in 12 of 14 participants and a unilateral
 right cluster in two participants (\texttt{sub-04}, \texttt{sub-20}).
-\todo[inline]{es wird jetzt lediglich in den results erwähnt, dass Sengupta
-einen von dreien benutzt hat}
+
 %#11 question
 The fact that clusters from the auditory stimulus are spatially restricted to
 the anterior part of clusters from both visual paradigms raises the question if
@@ -1493,10 +1499,9 @@ Contrary to \cite{aziz2008modulation}, our results suggest that auditory
 spatial information compared to non-spatial information correlates with
 bilaterally increased activation in the anterior part of the PPA.
 
-%#7
-% previous studies: no task
-It is common for conventional localizer paradigms to
-employ a task to keep participants attentive to the stimuli.
+%#7 previous studies: no task
+It is common for conventional localizer paradigms to employ a task to keep
+participants attentive to the stimuli.
 % but: Epstein (1998)
 Nevertheless, one early block-design study \citep{epstein1998ppa} compared
 results from a paradigm that employed a perceptual judgment task of static
@@ -1505,23 +1510,26 @@ pictures to the same paradigm but without that task.
 Hemodynamic activity was less but still significantly increased when
 participants had no task to keep them alert and attentive to the stimuli.
 % we have no task neither
-The naturalistic stimulation paradigm employed here is similar in the sense that participants had no behavioral or
-cognitive task \cite[e.g., forming a mental image of the stimuli;][]{ocraven2000mental} but just had to ``enjoy the presentation''.
+The naturalistic stimulation paradigm employed here is similar in the sense that
+participants had no behavioral or cognitive task \cite[e.g., forming a mental
+image of the stimuli;][]{ocraven2000mental} but just had to ``enjoy the
+presentation''.
 % but still: we are different
 Nevertheless, the naturalistic paradigm differs from \cite{epstein1998ppa},
-because the relevant stimulus features were embedded in a continuous stream of complex
-auditory (and visual) information which makes it unlikely that participants
-speculated on the purpose of the investigation, or performed undesired and unknown evaluation or categorization of isolated stimuli.
+because the relevant stimulus features were embedded in a continuous stream of
+complex auditory (and visual) information which makes it unlikely that
+participants speculated on the purpose of the investigation, or performed
+undesired and unknown evaluation or categorization of isolated stimuli.
 % concluding statement: kinda automatic process
-Our results therefore indicate that verbally communicated spatial information
-is processed, in the anterior PPA, automatically and without specifically
-guided attention.
+Our results therefore indicate that verbally communicated spatial information is
+processed, in the anterior PPA, automatically and without specifically guided
+attention.
 
 
 % shortcomings
 %#2
-Our approach to stimulus annotation and event selection
-differs from previous reports in the literature.
+Our approach to stimulus annotation and event selection differs from previous
+reports in the literature.
 % PPA: intro
 In an earlier study, \cite{bartels2004mapping} manually annotated the content of
 individual movie frames (color, faces, language, and human bodies) and found
@@ -1535,12 +1543,13 @@ film directors tend to establish the spatial layout of locations in earlier
 shots and later focus more on detailed depictions of people and objects
 \citep{brown2012cinematography, katz1991film, mascelli1998five}.
 % results
-The group results of the movie stimulus' primary contrast yielded a large cluster
-that spans the group overlap of individual PPA ROIs from anterior to posterior.
+The group results of the movie stimulus' primary contrast yielded a large
+cluster that spans the group overlap of individual PPA ROIs from anterior to
+posterior.
 % confound of higher perception
-The cluster's extent into more posterior, earlier visual areas could be
-an indication that the temporal averaging across events suffered from
-insufficient controlling for confounding visual features.
+The cluster's extent into more posterior, earlier visual areas could be an
+indication that the temporal averaging across events suffered from insufficient
+controlling for confounding visual features.
 % solution
 Future studies that aim to use a movie to localize visual areas in individual
 participants should extensively annotate the content of frames \citep[e.g.,
@@ -1586,21 +1595,19 @@ more concrete parts of a scene (e.g.``[a] beacon'', [a] ``farmhouse'').
 %generalize to an ad hoc approach to operationalize the perception of spatial
 %information at the moment of cuts in an audio-visual movie.
 
-
-%#12
-% RSC + LOC
-Apart from the PPA, results show significantly increased activity in the
-dorsal precuneus and posterior cingulate region (e.g. retrosplenial complex;
-RSC) and lateral occipital cortex (LOC; more lateral in the movie stimulus, more
-medial in the audio-description stimulus) for both naturalistic stimuli.
+%#12 RSC + LOC
+Apart from the PPA, results show significantly increased activity in the dorsal
+precuneus and posterior cingulate region (e.g. retrosplenial complex; RSC) and
+lateral occipital cortex (LOC; more lateral in the movie stimulus, more medial
+in the audio-description stimulus) for both naturalistic stimuli.
 % RSC intro
-Like the PPA, the RSC and LOC repeatedly exhibited increased hemodynamic activity
-in studies investigating visual spatial perception or navigation (see
-
+Like the PPA, the RSC and LOC repeatedly exhibited increased hemodynamic
+activity in studies investigating visual spatial perception or navigation (see
+\citep{chrastil2018heterogeneity, bettencourt2013role} for reviews)
 % not random shit
-Thus, our model-driven approach to operationalize spatial perception based on stimulus
-annotations reveals focussed activation patterns in networks that are implicated
-in visual spatial perception and cognition.
+Thus, our model-driven approach to operationalize spatial perception based on
+stimulus annotations reveals focussed activation patterns in networks that are
+implicated in visual spatial perception and cognition.
 
 %#13 natural stimulation
 In summary, natural stimuli like movies \citep{eickhoff2020towards,
@@ -1632,6 +1639,10 @@ Finally, the presented evidence on the in-principle suitability of a naturally
 engaging, purely auditory paradigm for localizing the PPA may offer a path to
 the development of diagnostic procedures more suitable for individuals with
 visual impairments or conditions like nystagmus.
+
+\todo[inline]{mir das Potential (warum ist das relevant -> rich stimulus ie many
+possible analyses, better compliance, easier to perform for difficult
+populations, etc) eigentlich zu kurz}
 
 
 \subsection*{Data and code availability}
