@@ -528,9 +528,8 @@ other or objects that are relevant to the evolved plot
 
 \todo[inline]{I think you need to help the reader understand, what annotations
 in the AV-movie are relevant in the current context; COH: imo that is more
-important in context of the contrasts (-> check if it is sufficiently described
-there); might fit in here, too, but makes current part unnessecarily
-complicated}
+important in context of the contrasts; in any case: "cinematographic rationale" is now mentioned first,
+then the categories are listed}
 
 % AV regressors/events
 Based on this cinematographic bias, we assigned each cut to one of five
@@ -567,8 +566,11 @@ any other \texttt{no\_cut} event.
 
 % AV regressors
 \begin{table*}[tbp]
-    \caption{Overview of annotated stimulus features of the audio-visual
+    \caption{Overview of event categories of the audio-visual
     movie and the audio-description.
+    Event categories of the movie are based on an annotation of cuts and
+    depicted locations.
+    Event categories of the audio-description based on an annotation of speech.
     Some of the audio-description's event categories listed here
     (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead}, \texttt{object})
     were created by pooling some categories of the original annotation of nouns
@@ -856,33 +858,40 @@ nuisance variables and regressors of interest for any of the planned analyses.
 what regressors you will be focussing on -> easier for those that got confused
 on the way}
 % AV design matrix
-The design matrices of the first-level time-series GLM analysis comprised the
-regressors for the stimulus features listed in Tables~\ref{tab:events} and
-\ref{tab:events} for the movie and audio-description stimulus, respectively.
+The design matrix for the first-level time-series GLM analysis of the movie
+comprised regressors for the 12 event categories of the movie listed in
+Table~\ref{tab:events}.
+% AD design matrix
+Similarly, the design matrix for the analysis of the audio-description comprised
+regressors for the 13 event categories of the audio-description, also listed in
+Table~\ref{tab:events}.
 % AD regressors in AV
-Additionally, the design for the movie stimulus also contained the
-regressors based on nouns used by the audio-description's narrator to indicate
-a switch to another setting (categories \texttt{se\_new} and \texttt{se\_old}),
-in order to be able to implement cross-modal control contrasts.
+In order to implement cross-modal control contrasts, the design matrix for the
+movie stimulus also contained the regressors based on nouns used by the
+audio-description's narrator to indicate a switch to another setting (categories
+\texttt{se\_new} and \texttt{se\_old}).
 % AV regressors in AV
-Likewise, the audio-description design matrix included movie cut related regressors
-listed Table~\ref{tab:events} (excluding \texttt{no\_cut}).
+Likewise, the design matrix for the audio-description included the five movie
+cut related regressors (\texttt{vse\_new}, \texttt{vse\_old}, \texttt{vlo\_ch},
+\texttt{vp\_new}, \texttt{vpe\_old}).
 % both stimuli: null regressors
 For both stimuli, a null regressor was used for any event category in a segment
-for which no event of a category was present (e.g. no event of
-\texttt{vpe\_old} in segment 3; Tab.~\ref{tab:events}).
+for which no event of a category was present (e.g. no event of \texttt{vpe\_old}
+in segment 3; Tab.~\ref{tab:events}).
 % temporal derivatives
-Temporal derivatives of all regressors were added to the design matrix to compensate for
-regional differences \citep{friston1998event}.
+Temporal derivatives of all regressors were added to the design matrix to
+compensate for regional differences \citep{friston1998event}.
 % motion parameters
-Lastly, six participant and run specific motion estimated (translation and rotation)
-were also included.
+Lastly, six participant and run specific motion estimated (translation and
+rotation) were also included.
 % high-pass filtering
-The design matrices were temporally filtered with the same high-pass filter (cutoff period of
-\unit[150]{s}) as the BOLD time series.
+The design matrices were temporally filtered with the same high-pass filter
+(cutoff period of \unit[150]{s}) as the BOLD time series.
 
 
 \subsection{Statistical analysis}
+
+\todo[inline]{SE: "vse, vno, vpe,..." are not really the most intuitive regressor names -> ausschreiben, wo möglich}
 
 % intro
 We performed standard two-level GLM analyses to aggregate results across the
@@ -908,8 +917,6 @@ number of events in the stimulus.  An evaluation of the robustness of these
 results with respect to similar but different contrasts is provided in the
 supplementary materials.
 
-\todo[inline]{"vse, vno, vpe,..." are not really the most intuitive regressor
-names -> ausschreiben, wo möglich}
 % AV: primary contrast
 In the primary contrast for the movie stimulus, we contrasted cuts to a setting
 that was not depicted before (\texttt{vse\_new}) to cuts merely switching the
