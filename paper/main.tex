@@ -1862,29 +1862,33 @@ or layout.\todo{speculative though}
 \todo[inline]{concluding statement?}
 
 
+
 \subsubsection{``random clusters''}
 
 \todo[inline]{following list is exhaustive but probably too detailed}
 %
-Lastly, some contrasts of the audio-description stimulus yielded significant
-clusters in regions that were not statistically significant in three or more
-contrasts.
-% details
+Lastly, contrasts of the audio-description stimulus yielded significant clusters
+in regions that were statistically in two or less contrasts.
+% contrast 2
 In detail, contrast 2 yielded clusters in the anterior cingulate gyrus
 (bilateral), right frontal pole, right frontal medial cortex, and right putamen.
-%
+% contrast 3
 Contrast 3 shows clusters in the anterior cingulate gyrus (bilateral), left
 frontal pole, and left insular.
-%
+% contrast 6
+Contrast 6 shows one additional cluster in the right medial frontal cortex.
+% contrast 7
 Contrast 7 shows clusters in the left frontal pole and left frontal operculum,
 left insular.
-%
-Contrast 6 shows one additional cluster in the right medial frontal cortex.
-% concludion statement
+% concluding statement
 Here again, significantly increased activation beyond areas known to be involved
 in processing of spatial information can be attributed to stimulus features of
 the naturalistic stimulus that were not sufficiently controlled leading to a
 bias in the contrasts.
+%
+\todo[inline]{imo other interpretations would speculative / reverse inference;
+but "if would look closer I would probably find a super plausible reason why
+brain areas are more active"}
 
 
 \begin{figure*}[tbp]
@@ -1924,42 +1928,50 @@ designs. Maybe subheadings would help?}
 %13 PPA (-/-); RSC (-/-), LOC (-/-)
 
 % intro
-For each contrast we created several control contrasts.
-% AV: no_cut > x
+For each naturalistic stimus, we created several control contrasts.
+% movie contrasts: not cut condition vs. cuts
 To test for XYZ\todo{yes, to test what?} within the movie fMRI data, we created
 four contrasts that compared hemodynamic activity during frames within movie
-shots (\texttt{no\_cut} category) with movie cut related categories (Tab.~\ref{tab:contrasts}).
+shots (\texttt{no\_cut} category) with movie cut related categories
+(Tab.~\ref{tab:contrasts}).
+% results
+None of these four contrasts yielded a significant cluster.
 %
-None of these four contrasts yielded a significant cluster which suggest that
-XYZ\todo{concluding statement}.
+Null results of control contrasts comparing frames within movie shots to frames
+immediately after a cut suggest that XYZ.
+%
+\todo[inline]{concluding statement}
 
 % \texttt{se\_new} (nouns) is r$\approx$0.3 correlated with \texttt{vse\_new}
 % (cuts); \texttt{se\_old} (nouns) is r$\approx$0.4 correlated with
 % \texttt{vse\_old}.
-Given that cuts to a setting depicted for the first time (\texttt{vse\_new}) and
-nouns indicating a a switch to a setting occurring for the first time
-(\texttt{se\_new}), and cuts to a recurringly depicted setting
-({\texttt{vse\_old}) and nouns indicating a switch a recurring setting
-(\texttt{se\_old} turned out to be moderately correlated
-(Fig.~\ref{fig:reg-corr}), we created a contrast that used the
-audio-description's nouns on the movie data ({\texttt{se\_new} >
-\texttt{se\_old}).
+The inspection of correlations of regressors across stimuli
+(Fig.~\ref{fig:reg-corr}) showed a moderate correlation among cuts to a setting
+depicted for the first time (\texttt{vse\_new}) and nouns indicating a switch to
+a setting occurring for the first time (\texttt{se\_new}), and cuts to a
+recurringly depicted setting ({\texttt{vse\_old}) and nouns indicating a switch
+a recurring setting (\texttt{se\_old}.
+%
+Hence, we created a contrast that used the audio-description's nouns on the
+movie data ({\texttt{se\_new} > \texttt{se\_old}).
 % results
 The contrasts yielded a significant cluster in the right PPA and bilateral
 clusters in the superior lateral occipital cortices (the right hemispheric
 cluster extending into the superior parietal cortex).
 %
 Results suggest that XYZ.
-\todo{concluding statement}
+%
+\todo[inline]{concluding statement? That last contrast was originally done to
+check that "soundscape at moment of cuts thing" but this is obsolete now}
+
+\todo{following: control contrast for AO; why exactly did we do this except "we
+do not expect (lots of) significant cluster because negative control?}
 
 % AD stimulus
 Finally for the analysis of the audio-description, we created control contrasts
 based on events of the annotated movie cuts (Tab.~\ref{tab:contrasts}) in
 order to test XYZ.
-
-\todo{why exactly did we do this except "we do not expect (lots of) significant
-cluster because negative control?}
-%
+% results
 Two of five contrasts yielded significant clusters.
 % contrast 9
 Contrast 9 (\texttt{vse\_new > pe\_old}) revealed one significant cluster in the
@@ -1970,7 +1982,9 @@ Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
 one cluster in the right posterior hippocampus.  \todo{explanation?}
 %
 Overall results from the negative control contrast of the audio-description's
-data suggest that XYZ.  \todo{concluding statement}.
+data suggest that XYZ.
+%
+\todo[inline]{concluding statement?}.
 
 
 \end{document}
