@@ -855,8 +855,8 @@ The design matrices were temporally filtered with the same high-pass filter
 \subsection{Statistical analysis}
 
 % intro
-We performed standard two-level GLM analyses to aggregate results across the
-eight segments for every participant and each stimulus separately.
+We performed standard two-level GLM analyses to aggregate results across all
+BOLD acquisition runs for every participant and each stimulus separately.
 % level 3
 Subsequently, we conducted third-level analyses to average contrast estimates
 over participants for each stimulus, respectively.
@@ -873,8 +873,8 @@ selection of a single implementation remains arbitrary to some degree.
 Consequently, we computed multiple contrasts that are listed in
 Table~\ref{tab:contrasts} for the movie and audio-description, respectively.
 % subjectively assessed balance
-For each stimulus, we picked a primary contrast for result presentation (the
-first one in each Table) based on a subjectively assessed balance of how well
+For each stimulus, we picked a primary contrast for result presentation (marked
+  with an asterisk in the table) based on a subjectively assessed balance of how well
 the averaged events within categories represent spatial and non-spatial
 information, and the number of events in the stimulus.
 % reference to supplementals
@@ -926,16 +926,11 @@ that indicate a switch to another setting (\texttt{se\_new} >
 \texttt{se\_old}), and
 %
 that were moderately correlated with movie cuts indicating a
-switch to another setting (Tab.~\ref{fig:reg-corr}).
+switch to another setting (Fig.~\ref{fig:reg-corr}).
 % AD stimulus
 For the audio-description stimulus, we created five control contrasts to test if
 activation in the PPA was correlated with moments of cuts, despite the absence
 of visual stimulation.
-
-\todo[inline]{SE: "vse, vno, vpe,..." in Table 3 are not really the most
-intuitive regressor names; COH: writing out names will turn table into a mess;
-added reference to the Table that explains the abbreviations}
-
 
 \begin{table*}[tbp]
   \caption{Computed contrasts for the analysis of the movie and the audio
