@@ -427,14 +427,14 @@ naturalistic stimulus paradigms (audio-description and movie).
 % data sources
 % https://github.com/psychoinformatics-de/studyforrest-data-aligned/tree/master/code
 % https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms}
-The current analyses were carried out on previously published fMRI data
-(\url{https://github.com/psychoinformatics-de/studyforrest-data-aligned}).
+The current analyses were carried out on the same preprocessed fMRI data that were used
+for the technical validation analysis presented in \cite{hanke2016simultaneous}\footnote{available from \url{https://github.com/psychoinformatics-de/studyforrest-data-aligned}}.
 Of those 15 participants in the studyforrest dataset that took
 part in all three experiments,
 % exclusion of VP 10
 data of one participant were dropped to due to invalid distortion correction
 during scanning of the audio-description stimulus.
-Data were previously corrected for motion, aligned with and re-sliced onto a
+Data were corrected for motion, aligned with and re-sliced onto a
 participant-specific BOLD template image \citep{sengupta2016extension}
 (uniform spatial resolution of \unit[2.5$\times$2.5$\times$2.5]{mm} for both
 audio-description and movie data).
@@ -446,6 +446,7 @@ FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
 \href{http://neuro.debian.net}{NeuroDebian} \citep{halchenko2012open}.
 
 % temporal filtering
+For the present analysis, the following additional preprocessing was performed.
 High-pass temporal filtering was applied to every stimulus segment using a
 Gaussian-weighted least-squares straight line with a cutoff period of
 \unit[150]{s} (sigma=\unit[75.0]{s}) to remove low-frequency confounds.
