@@ -355,19 +355,19 @@ inhibit physical movements except for eye-movements, and otherwise to simply
 ``enjoy'' the presentation.
 %
 For details on stimulus creation and presentation see
-\citet{hanke2014audiomovie,hanke2016simultaneous}.
+\citet{hanke2014audiomovie,hanke2016simultaneous}.\todo{ggf. nicht korrekt}
 
 % VIS study picture categories
 Stimuli for the block-design localizer study were 24 unique grayscale images of
 faces, bodies, objects, houses, outdoor scenes and scrambled images, matched in
 luminance and size, that were previously used in other studies
-\citep[e.g.,][]{haxby2011common}.
+(\citep[e.g.,][]{haxby2011common}).
 % procedure: presentation & instructions
 Participants performed a one-back image matching task for four block-design
 runs, with two \unit[16]{s} blocks per stimulus category in each run.
 %
 For details on stimulus creation and presentation see
-\citet{sengupta2016extension}.
+\citet{sengupta2016extension}.\todo{ggf. nicht korrekt}
 
 
 \subsection*{Stimulation setup}
@@ -438,10 +438,9 @@ participant-specific BOLD template image \citep{sengupta2016extension}
 (uniform spatial resolution of \unit[2.5$\times$2.5$\times$2.5]{mm} for both
 audio-description and movie data).
 % preprocessing intro
-Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool;
-\citep{woolrich2001autocorr}) as shipped with
-FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library};
-\citep{smith2004fsl}) on a computer-cluster running
+Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool \citep{woolrich2001autocorr}) as shipped with
+FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library}
+ \citep{smith2004fsl}) on a computer-cluster running
 \href{http://neuro.debian.net}{NeuroDebian} \citep{halchenko2012open}.
 
 % temporal filtering
@@ -459,7 +458,7 @@ A grand-mean intensity normalization of the entire 4D dataset was performed by a
 single multiplicative factor.
 % pre-whithening
 Correction for local autocorrelation in the time series (prewhitening) was
-applied using FILM (FMRIB's Improved Linear Model; \citep{woolrich2001autocorr})
+applied using FILM (FMRIB's Improved Linear Model \citep{woolrich2001autocorr})
 to improve estimation efficiency.
 
 
@@ -996,7 +995,7 @@ transformation (12 degrees of freedom).
 The second-level analyses, which averaged contrast estimates over the eight
 stimulus segments, were carried out using a fixed effects model by forcing the
 random effects variance to zero in FLAME (FMRIB's Local Analysis of Mixed
-Effects; \citep{beckmann2003general, woolrich2004multilevel}.
+Effects \citep{beckmann2003general, woolrich2004multilevel}).
 % thresholding ($Z$>2.3 in subject-space; $Z$>3.4 in group space)
 (Gaussianised T/F) statistic images were thresholded using clusters determined
 by $Z$>3.4 and a cluster-corrected significance threshold of $p$=.05
@@ -1322,7 +1321,7 @@ anderes Zeug}
 Several studies have reported increased hemodynamic activity in the PPA
 attributed to the processing of spatial information, for example, when
 participants were watching static pictures of landscapes compared to pictures of
-faces or objects \citep[e.g.,][]{epstein1998ppa, epstein1999parahippocampal}.
+faces or objects (\citep[e.g.,][]{epstein1998ppa, epstein1999parahippocampal}).
 % auditory semantics unclear
 However, reports regarding the correlates of processing spatial information in
 verbal stimulation are less clear \citep{aziz2008modulation}.
@@ -1472,9 +1471,9 @@ Hemodynamic activity was less but still significantly increased when
 participants had no task to keep them alert and attentive to the stimuli.
 % we have no task neither
 The naturalistic stimulation paradigm employed here is similar in the sense that
-participants had no behavioral or cognitive task \citet[e.g., forming a mental
-image of the stimuli;][]{ocraven2000mental} but just had to ``enjoy the
-presentation''.
+participants had no behavioral or cognitive task (\citet[e.g., forming a mental
+image of the stimuli;][]{ocraven2000mental})\todo{probably wrong}
+ but just had to ``enjoy the presentation''.
 % but still: we are different
 Nevertheless, the naturalistic paradigm differs from \citet{epstein1998ppa},
 because the relevant stimulus features were embedded in a continuous stream of
@@ -1512,9 +1511,9 @@ indication that the temporal averaging across events suffered from insufficient
 controlling for confounding visual features.
 % solution
 Future studies that aim to use a movie to localize visual areas in individual
-participants should extensively annotate the content of frames \citep[e.g.,
-using the open-source solution ``Pliers'' for feature extraction from a visual
-naturalistic stimulus;][]{mcnamara2017developing}.
+participants should extensively annotate the content of frames (e.g.,
+using the open-source solution ``Pliers''\citep{mcnamara2017developing} for feature extraction from a visual
+naturalistic stimulus).
 
 %#8
 % optimal stimulus type in vision
