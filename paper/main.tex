@@ -259,7 +259,7 @@ annotation of speech occurring in the movie's audio-description
 \citep{hausler2021studyforrest}.
 % GLM contrasts
 We applied model-based, mass-univariate analyses to a series of datasets with
-BOLD fMRI data from naturalistic and conventional block-design stimulation from
+BOLD fMRI data from naturalistic and conventional block-design stimulation of
 the same set of participants, available from the open-data resource
 \href{http://www.studyforrest.org}{studyforrest.org}
 \citep{hanke2016simultaneous, hanke2014audiomovie, sengupta2016extension}.
@@ -493,11 +493,11 @@ to improve estimation efficiency.
 In contrast to stimuli designed to trigger a perceptual process of interest,
 while controlling for confounding variables (e.g., color and luminance),
 % our approach: annotation and regressors
-naturalistic stimuli have fixed but initially unknown temporal structure of
+naturalistic stimuli have a fixed but initially unknown temporal structure of
 stimulus features of interest, as well as an equally unknown confound structure.
 % annotation ftw
 In order to evaluate the suitability of the stimulus for the targeted analyses,
-and well as to inform the required hemodynamic models, we annotated the temporal
+and to inform the required hemodynamic models, we annotated the temporal
 structure of a range of stimulus features.
 
 % AV anno
@@ -505,7 +505,7 @@ For the analysis of the movie stimulus, we took advantage of a previously
 published annotation of 869 movie cuts and the depicted location after each cut
 \citep{haeusler2016cutanno}.
 % we focus on cuts
-Contrary to manually annotating stimulus features of every movie frame (as
+Contrary to manually annotating stimulus features of movie frames (as
 performed by e.g. \cite{bartels2004mapping} for color, faces, language, and
 human bodies), we categorized movie cuts that - in general - realign the viewer
 within the movie environment by switching to another perspective within the
@@ -538,7 +538,7 @@ categories (Tab.~\ref{tab:events}):
 (\texttt{vse\_old}),
 %
 3) a cut switching to another locale within a setting (\texttt{vlo\_ch}; e.g. a
-cut from first to the second floor in Forrest's house),
+cut from the first to the second floor in Forrest's house),
 %
 4) a cut to another camera position within a setting or locale that was depicted
 for the first time (\texttt{vpe\_new}), and
@@ -566,15 +566,15 @@ any other \texttt{no\_cut} event.
     movie and the audio-description.
     Event categories of the movie are based on an annotation of cuts and
     depicted locations.
-    Event categories of the audio-description based on an annotation of nouns
-    spoken by the audio-description's narrator
+    Event categories of the audio-description are based on an annotation of
+    nouns spoken by the audio-description's narrator
     (Tab.~\ref{tab:descr-nouns-rules}).
     Some of the audio-description's event categories listed here
     (\texttt{sex\_f}; \texttt{sex\_m}; \texttt{fahead}, \texttt{object})
     were created by pooling some categories of the original annotation of nouns
     (female, females, fname; male, males, mname; face, head; object, objects).
-    Respective event counts are given for the whole stimulus (\texttt{All} and
-    the segments that were used for the eight sessions of fMRI scanning).
+    Respective event counts are given for the whole stimulus (\texttt{All}) and
+    the segments that were used for the eight sessions of fMRI scanning.
     Event counts for frame-based features are reported in units of a thousand.
     %\texttt{fg\_av\_ger\_pd} (perceptual differences of consecutive frames),
     %\texttt{fg\_av\_ger\_ml} (mean luminance of a frame),
@@ -821,7 +821,7 @@ The computed Pearson correlation coefficients show only minor correlations of
 feature regressors for the same stimulus.
 % (highest) correlations across stimuli; \texttt{fg\_a(v|d)\_ger\_rms}, r=.76;
 % \texttt{fg\_a(v|d)\_ger\_lrdiff}, r=.77)
-Maximum correlations are found for auditory low-level auditory confounds across
+Maximum correlations are found for low-level auditory confounds across
 stimuli,
 % no surprise
 which is to be expected, as the audio-description contains the audio track of
@@ -876,7 +876,7 @@ in segment 3; Tab.~\ref{tab:events}).
 Temporal derivatives of all regressors were added to the design matrix to
 compensate for regional differences \citep{friston1998event}.
 % motion parameters
-Lastly, six participant and run specific motion estimated (translation and
+Lastly, six participant and run specific motion estimates (translation and
 rotation) were also included.
 % high-pass filtering
 The design matrices were temporally filtered with the same high-pass filter
@@ -902,11 +902,11 @@ However, while the rationale for any contrast composition must be sound, the
 selection of a single implementation remains arbitrary to some degree.
 % hence, a couple of contrasts
 Consequently, we computed multiple contrasts that are listed in
-Table~\ref{tab:contrasts} for movie and audio-description, respectively.
+Table~\ref{tab:contrasts} for the movie and audio-description, respectively.
 % subjectively assessed balance
 For each stimulus, we picked a primary contrast for result presentation (the
 first one in each Table) based on a subjectively assessed balance of how well
-the average event within categories represents spatial and non-spatial
+the averaged events within categories represent spatial and non-spatial
 information, and the number of events in the stimulus.
 % reference to supplementals
 An evaluation of the robustness of these results with respect to similar but
@@ -933,9 +933,10 @@ geometry-defining scene element or as an isolated object.
 % why se_new & se_old were not used in the primary contrasts
 The categories of nouns indicating a switch to a setting that occurred for the
 first time (\texttt{se\_new}) or a setting that recurred during the plot
-(\texttt{se\_old}) were not included in the primary contrast because
+(\texttt{se\_old}) were not included in the primary contrast because they
+comprise
 % heterogeneous category
-a) they comprise nouns that could be a member of another category (e.g. ``[a]
+a)  nouns that could be a member of another category (e.g. ``[a]
 physician''), and
 % richness of verbal description vs. picture
 b) nouns that only vaguely identify a scene (e.g. ``[in] Greenbow'', ``[in a]
@@ -950,8 +951,12 @@ For the movie stimulus, four contrasts were created contrasting the no-cut
 regressor (\texttt{vno\_cut}) to cut-related regressors.
 % AV: narrator
 One contrast was created by contrasting nouns spoken by the (missing) narrator
-comparing nouns that indicate a switch to another setting (\texttt{se\_new} >
-\texttt{se\_old}), and were moderately correlated with movie cuts indicating a
+comparing nouns
+%
+that indicate a switch to another setting (\texttt{se\_new} >
+\texttt{se\_old}), and
+%
+that were moderately correlated with movie cuts indicating a
 switch to another setting (Tab.~\ref{fig:reg-corr}).
 % AD stimulus
 For the audio-description stimulus, we created five control contrasts to test if
@@ -1179,7 +1184,7 @@ lateral occipital cortex \\ % 0.00000769
 \begin{table*}[tbp]
 \caption{Clusters ($Z$-threshold $Z$>3.4; $p$<.05 cluster-corrected)
     of the primary $t$-contrast for the audio-description comparing
-    geometry-related nouns to non geometry-related nouns spoken by the
+    geometry-related nouns to non-spatial nouns spoken by the
     audio-description's narrator (\texttt{geo, groom > all non-geo}), sorted by size.
     The first brain structure given contains the voxel with the maximum $Z$-value,
     followed by brain structures from posterior to anterior, and partially
@@ -1241,7 +1246,7 @@ naturalistic stimulus and a uniform threshold for all participants.
 % ref to figure
 Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $Z$-maps of the primary
 movie and audio-description $t$-contrasts, in comparison to the results of a
-conventional block-design localizer (unthresholded $Z$-maps are provided on
+conventional block-design localizer (unthresholded $Z$-maps are provided at
 NeuroVault).
 % AV
 Results of the primary movie contrast yielded bilateral clusters in five
@@ -1538,9 +1543,8 @@ Our approach to stimulus annotation and event selection differs from previous
 reports in the literature.
 % PPA: intro
 In an earlier study, \cite{bartels2004mapping} manually annotated the content of
-individual movie frames (color, faces, language, and human bodies) and found
-that the functional specialization of brain areas is preserved during movie
-watching.
+movie frames (color, faces, language, and human bodies) and found that the
+functional specialization of brain areas is preserved during movie watching.
 %
 In contrast, we aimed to exploit a cinematographic confound in the structure of
 movies, where
@@ -1627,19 +1631,19 @@ environment than traditional experimental paradigms.
 We took advantage of three fMRI datasets and two stimulus annotations that are
 part of the open-data resource
 \href{http://www.studyforrest.org}{studyforrest.org} to operationalize the
-perception of spatial information embedded an audio-visual movie and an
+perception of spatial information embedded in an audio-visual movie and an
 auditory narrative, and compare current results to a previous report of a
 conventional, block-design localizer.
 % results
 The current study offers evidence that a model-driven GLM analysis based on
-annotations can be applied to naturalistic paradigm to localize concise
+annotations can be applied to a naturalistic paradigm to localize concise
 functional areas and networks correlating with specific perceptual processes.
 % interpretation
 More specifically, our results demonstrate that increased activation in the PPA
 during the perception of static pictures generalizes to the perception of
 spatial information embedded in a movie and an exclusively auditory stimulus.
 % interpretation: aPPA vs. pPPA
-Further, our results provide further evidence that the PPA can be divided into
+Our results provide further evidence that the PPA can be divided into
 functional subregions that coactivate during the perception of visual scenes.
 % interpretation
 Finally, the presented evidence on the in-principle suitability of a naturally
