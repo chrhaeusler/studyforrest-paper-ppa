@@ -1578,7 +1578,7 @@ visual impairments or conditions like nystagmus.
 The fMRI data, annotations, analysis scripts to generate the results, and
 results as Datalad \citep{datalad} datasets, published to or linked from the
 GIN repository
-\href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}} (DOI assignedment pending). 
+\href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}} (DOI assignment pending). 
 Unthresholded $Z$-maps of all contrasts
 can found at
 \href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}.
@@ -1674,21 +1674,8 @@ locations, and temporal progression in the motion picture "Forrest Gump".
 \section{Supplementary Materials}
 
 
-\subsection*{additional contrasts}
+\subsection*{Robustness of main findings across alternative contrasts}
 
-\todo[inline]{remove subheadings}
-
-\todo[inline]{introductory \& concluding sentences}
-
-\subsubsection*{PPA, RSC, and LOC (AV \& AV)}
-
-\todo[inline]{SE: use different colormap for overlap of contrasts' clusters}
-
-\todo[inline]{I manually adjusted the stability-slices.pdf; the Fig S1 should
-now (not just on my computer) show a black bar in the color maps for the
-audio-descriptions (because there are 5 and not 8 contrasts)}
-
-% intro
 In order to test the robustness of our approach, we created overall five
 $t$-contrasts for the movie stimulus, and overall eight $t$-contrast for the
 audio-description (Tab.~\ref{tab:contrasts}).
@@ -1758,7 +1745,7 @@ events a naturalistic stimulus may provide and how homogeneous the events to be
 averaged might be.
 
 
-\subsubsection*{auditory cortices}
+\subsection*{Incidental results}
 
 Several contrasts yielded significant clusters in superior temporal cortices
 (bilateral in contrasts 3, 6, 7; unilateral right in contrast 2).
@@ -1770,7 +1757,7 @@ cortices (bilateral: contrasts 3, 6, 7; unilateral right: contrast 2).
 % interpretation 1
 This suggests that variance correlating with lower level auditory processes was
 not averaged out across events and the employed nuisance regressors did not
-capture this variance appropriately.\todo{this sounds shitty}
+capture this variance appropriately.
 % interpretation 2
 Another possibility might be that increased hemodynamic activity in superior
 temporal cortices reflect a bias towards lower-level auditory perceptual
@@ -1779,18 +1766,10 @@ processes on the positive side of the GLM contrasts.
 Increased activity in primary and secondary auditory cortices could be
 attributed to changes in the soundscape that possibly accompany the narrator
 when he is indicating the switch to another setting by describing its identity
-or layout.\todo{speculative though}
-% concluding statement
-\todo[inline]{concluding statement?}
+or layout.
 
-
-
-\subsubsection*{``random clusters''}
-
-\todo[inline]{following list is exhaustive but probably too detailed}
-%
-Lastly, contrasts of the audio-description stimulus yielded significant clusters
-in regions that were statistically in two or less contrasts.
+Lastly, contrasts of the audio-description stimulus yielded clusters
+in regions that were classified as statistically significant in two or less contrasts.
 % contrast 2
 In detail, contrast 2 yielded clusters in the anterior cingulate gyrus
 (bilateral), right frontal pole, right frontal medial cortex, and right putamen.
@@ -1804,38 +1783,29 @@ Contrast 7 shows clusters in the left frontal pole and left frontal operculum,
 left insular.
 % concluding statement
 Here again, significantly increased activation beyond areas known to be involved
-in processing of spatial information can be attributed to stimulus features of
+in processing of spatial information could be attributed to stimulus features of
 the naturalistic stimulus that were not sufficiently controlled leading to a
 bias in the contrasts.
-%
-\todo[inline]{imo other interpretations would speculative / reverse inference;
-but "if would look closer I would probably find a super plausible reason why
-brain areas are more active"}
 
 
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/stability-slices}
     \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster corrected)
+        across all contrasts for both naturalistic stimuli.
         The audio-description's contrasts 1-8 (blue)
         are overlaid over the audio-visual movie's contrasts 1-5 (red;
         \ref{tab:contrasts}).
         Cluster are overlaid on top of the MNI152 T1-weighted head template
         with the acquisition field-of-view for the audio-description study
         highlighted.
-        Black: outline of overlapping individual PPA ROIs.
-        The figure shows that some contrasts yielded significant clusters
-        also in the lateral temporal and prefrontal cortex.
+        Black: outline of the union of individual PPA ROIs reported by \citet{sengupta2016extension}.
         }
     \label{fig:stability-slices}
 \end{figure*}
 
 
 \subsection*{Control contrasts}
-
-\todo[inline]{This section feels incomplete. Some explanation (attempts) are
-missing. Sometimes it is simply unclear which data were analyzed with which
-designs. Maybe subheadings would help?}
 
 % ---------- AV control contrasts ----------
 % 6: nothing; 7 nothing; 8: nothing; 9: nothing; 10 se_new > se_old (nouns but
@@ -1852,47 +1822,46 @@ designs. Maybe subheadings would help?}
 % intro
 For each naturalistic stimulus, we created several control contrasts.
 % movie contrasts: not cut condition vs. cuts
-To test for XYZ\todo{yes, to test what?} within the movie fMRI data, we created
+To test for the specificity of the main finds within the movie fMRI data, we created
 four contrasts that compared hemodynamic activity during frames within movie
 shots (\texttt{no\_cut} category) with movie cut related categories
 (Tab.~\ref{tab:contrasts}).
 % results
-None of these four contrasts yielded a significant cluster.
-%
-Null results of control contrasts comparing frames within movie shots to frames
-immediately after a cut suggest that XYZ.
-%
-\todo[inline]{concluding statement}
+None of these four contrasts yielded a significant cluster, suggesting that
+the observed differential hemodynamic response in the PPA for events defined
+by particular movie cuts is not observed for other arbitrarily selected time point
+in the movie.
 
 % \texttt{se\_new} (nouns) is r$\approx$0.3 correlated with \texttt{vse\_new}
 % (cuts); \texttt{se\_old} (nouns) is r$\approx$0.4 correlated with
 % \texttt{vse\_old}.
-The inspection of correlations of regressors across stimuli
+The correlation of regressors across stimuli
 (Fig.~\ref{fig:reg-corr}) showed a moderate correlation among cuts to a setting
-depicted for the first time (\texttt{vse\_new}) and nouns indicating a switch to
-a setting occurring for the first time (\texttt{se\_new}), and cuts to a
-recurringly depicted setting ({\texttt{vse\_old}) and nouns indicating a switch
-a recurring setting (\texttt{se\_old}.
+depicted for the first time (movie \texttt{vse\_new}) and nouns indicating a switch to
+a setting occurring for the first time (audio-description \texttt{se\_new}), and cuts to a
+recurringly depicted setting (movie {\texttt{vse\_old}) and nouns indicating a switch
+a recurring setting (audio-description \texttt{se\_old}).
 %
-Hence, we created a contrast that used the audio-description's nouns on the
-movie data ({\texttt{se\_new} > \texttt{se\_old}).
+Hence, we computed an indentical contrast ({\texttt{se\_new} >
+\texttt{se\_old}), comparing the audio-description's voice-over narrator
+nouns for the movie data and the audio-description.
 % results
-The contrasts yielded a significant cluster in the right [but not anterior] PPA
-and bilateral clusters in the superior lateral occipital cortices (the right
-hemispheric cluster extending into the superior parietal cortex).
+While for the movie data the contrast yielded a significant cluster in the
+right PPA, not in its anterior portion, and bilateral clusters in the
+superior lateral occipital cortices (the right hemispheric cluster extending
+into the superior parietal cortex), not significant differences where found
+for the audio-description (unthresholded contrast maps are available on NeuroVault).
 %
-Results suggest that XYZ.
-%
-\todo[inline]{concluding statement? That last contrast was originally done to
-check that "soundscape at moment of cuts thing" but this is obsolete now}
-
-\todo{following: control contrast for AO; why exactly did we do this except "we
-do not expect (lots of) significant cluster because negative control?}
+These results suggest that in the absence of the actual visual stimulation, the narrator's
+description of scene properties correlated with setting changes did not co-occur with
+increased hemodynamic activity in areas associated with the processing of spatial
+information.
 
 % AD stimulus
-Finally for the analysis of the audio-description, we created control contrasts
+Finally for the analysis of the audio-description, we computed control contrasts
 based on events of the annotated movie cuts (Tab.~\ref{tab:contrasts}) in
-order to test XYZ.
+order to evaluate the influence of stimulus features correlated with these visual
+events that remain present in the audio-description, such as changes in the soundscape.
 % results
 Two of five contrasts yielded significant clusters.
 % contrast 9
@@ -1901,12 +1870,11 @@ left inferior prefrontal cortex (pars triangularis) and right ventral
 precuneus/posterior cingulate gyrus.
 % contrast 12
 Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
-one cluster in the right posterior hippocampus.  \todo{not PPA! explanation?}
+one cluster in the right posterior hippocampus.
 %
-Overall results from the negative control contrast of the audio-description's
-data suggest that XYZ.
-%
-\todo[inline]{concluding statement?}
-
+The absence of observable hemodynamic response differences in the PPA suggests that
+without the visual information in the movie stimulus, no, or substantially less,
+processing of stimulus content with respect to spatial information co-occurred with
+the timing of the movie cuts.
 
 \end{document}
