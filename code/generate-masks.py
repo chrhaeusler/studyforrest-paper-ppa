@@ -16,12 +16,31 @@ script does for individual subjects
 '''
 
 from glob import glob
+import argparse
 import subprocess
 import nibabel as nib
 import numpy as np
 import os
 import re
 
+
+def parse_arguments():
+    '''
+    '''
+    parser = argparse.ArgumentParser(
+        description='creates lots of masks'
+    )
+
+    parser.add_argument('-out',
+                        required=False,
+                        default='rois-and-masks',
+                        help='the output directory (e.g. "rois-and-masks")')
+
+    args = parser.parse_args()
+
+    out_dir = args.out
+
+    return out_dir
 
 
 def find_files(pattern):
@@ -235,22 +254,31 @@ def warp_subj_to_mni(indBiMaskFpath, indBiInMNI, indWarp, xfmRef):
 # main program #
 if __name__ == "__main__":
     # some hardcoded sources
+    # input directory of Sengupta et al.
+    SENGUPTA = 'inputs/studyforrest-data-visualrois'
+
+    # input directory of the current paper's analysis
+    PPA_DIR = 'inputs/studyforrest_ppa'
+    # an exemplary 4D image of the audio-descriptions 4D data
+    AUDIO_4D_EXAMPLE = os.path.join(
+        PPA_DIR,
+        'inputs/studyforrest-data-aligned/'\
+        '###SUB###/in_bold3Tp2/###SUB###_task-aomovie_run-1_bold.nii.gz'
+    )
+
+    # input directory of templates & transforms
     TNT_DIR = 'inputs/studyforrest-data-templatetransforms'
-    xfmMat = os.path.join(TNT_DIR,
-                          'templates/grpbold3Tp2/xfm/',
-                          'mni2tmpl_12dof.mat')
+    # group BOLD image (reference image)
     xfmRef = os.path.join(TNT_DIR,
                           'templates/grpbold3Tp2/',
                           'brain.nii.gz')
+    # WHAT IS THIS?
+    xfmMat = os.path.join(TNT_DIR,
+                          'templates/grpbold3Tp2/xfm/',
+                          'mni2tmpl_12dof.mat')
 
-    SENGUPTA = 'inputs/studyforrest-data-visualrois'
-    PPA_DIR = 'inputs/studyforrest_ppa'
-
-    AUDIO_4D_EXAMPLE = 'inputs/studyforrest_ppa/'\
-        'inputs/studyforrest-data-aligned/'\
-        '###SUB###/in_bold3Tp2/###SUB###_task-aomovie_run-1_bold.nii.gz'
-
-    ROIS = 'rois-and-masks'
+    # the output directory
+    ROIS = parse_arguments()
 
     # 1. create bilateral, probabilistic & binary group masks
     # input: Juelich Histological Atlas
@@ -266,7 +294,6 @@ if __name__ == "__main__":
 
     # do the conversion
     create_grp_bilat_mask(grpMasksFpathes, grpMaskFpath)
-
 
     # process individuals
     print('\nprocessing individuals')

@@ -4,7 +4,7 @@ created on Mon June 07 2021
 author: Christian Olaf Haeusler
 
 ToDo:
-    - convert maps in BOLD to Anatomy
+    - pip install scikit-image nibabel matplotlib numpy
     - outlines of individual PPAs is not individually thresholded
 
 '''
@@ -14,8 +14,7 @@ from glob import glob
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import nibabel as nib
-from nilearn import plotting
-from nilearn.image import smooth_img
+import numpy as np
 import os
 import re
 import subprocess
@@ -500,9 +499,9 @@ def process_individuals(AUDIO_IN_PATTERN):
     fig, axs = plt.subplots(rows, cols,
                             figsize=fsize,
                             constrained_layout=False)
+
     # set the space between sublots/subjects in a way that title and legend
     # to not overlap
-
     plt.subplots_adjust(wspace=0.0, hspace=0)
     # trim the axis using the helper function
     axs = trim_axs(axs, len(subjs))
@@ -758,7 +757,111 @@ def plot_zmaps(subj, audio_zmap, movie_zmap,
     return out_fname
 
 
+def pysurfer_shit():
+    '''
+    '''
+    from surfer import Brain, project_volume_data
+
+    subject_id = 'MNI152_T1_1mm'  # 'fsaverage' 'MNI152_T1_1mm'
+    hemi = 'rh'
+    surf = 'inflated'  # 'white'
+
+    # call the Brain object constructor with theses parameters
+    # to initialize the visualization session
+    brain = Brain(subject_id, hemi, surf)
+
+    # Most of the time you will be plotting data that are in MNI152 space on
+    # the fsaverage brain. For this case, Freesurfer actually ships a
+    # registration matrix file to align your data with the surface
+    reg_file = os.path.join(os.environ['FREESURFER_HOME'],
+                            'average/mni152.register.dat')
+
+    # Note that the contours of the fsaverage surface don't perfectly match the
+    # MNI brain, so this will only approximate the location of your activation
+    # (although it generally does a pretty good job). A more accurate way to
+    # visualize data would be to run the MNI152 brain through the recon-all pipeline.
+    #
+    # Alternatively, if your data are already in register with the Freesurfer
+    # anatomy, you can provide project_volume_data with the subject ID, avoiding the
+    # need to specify a registration file.
+
+    # movie
+    zstat = project_volume_data(avPPAprobFile, 'rh', reg_file)
+
+    # colormap for movie
+    colorMap = plt.cm.get_cmap('YlOrRd')
+    colorMap = colorMap.reversed()
+
+    # plot the movie's map
+    brain.add_data(zstat, min=1, max=8, thresh=1, colormap=colorMap)
+
+    # audio-description
+    zstat = project_volume_data(aoPPAprobFile, 'rh', reg_file)
+
+    # colormap for audio-description
+    colorMap = plt.cm.get_cmap('Blues')
+    colorMap = colorMap.reversed()
+
+    # plot the audio-description's map
+    brain.add_data(zstat, min=1, max=8, thresh=1, colormap=colorMap)
+
+    # contour of GRP mask
+    contour_file = BIN_MASK_GRP
+
+    mask = project_volume_data(contour_file, 'rh', reg_file)
+
+    brain.add_contour_overlay(mask,
+                              colorbar=False,
+                              min=1,
+                              max=1,
+                              )
+                              # line_width=2)
+
+    brain.show_view('ven')
+
+    brain.save_imageset(subject_id, ['med', 'lat', 'ros', 'caud', 'ven'], 'png')
+
+
+    return None
+
+
+def edge_detection():
+    '''
+    '''
+    # edge detection of mask
+    mask_img = nib.load('rois-and-masks/bilat_PPA_binary.nii.gz')
+    mask_data = mask_img.get_fdata()
+
+    from skimage import feature
+    # loop through the horizontal slices (z-coordinates)
+    # and compute the edges in every 2D slices
+    for z_coord in range(mask_data.shape[2]):
+        # slice the 3D image
+        current_slice = mask_data[:, :, z_coord]
+        # get the edges
+        edges = feature.canny(current_slice).astype(int)
+        # put 2D images with edges into the 3D image
+        mask_data[:, :, z_coord] = edges
+
+    # just some renaming
+    edge_data = mask_data
+
+    edge_img = nib.Nifti1Image(edge_data,
+                               mask_img.affine,
+                               header=mask_img.header)
+    # save the image to file
+    edge_fpath = os.path.join(outPath, 'edge_test.nii.gz')
+    nib.save(edge_img, edge_fpath)
+
+    return
+
+
 if __name__ == "__main__":
+    from nilearn import datasets
+    from nilearn import surface
+    from nilearn import plotting
+    from nilearn import regions
+
     # set the background of all figures (for saving) to black
 #     plt.rcParams['savefig.facecolor'] = 'black'
 #     plt.rcParams['axes.facecolor'] = 'black'
@@ -772,36 +875,105 @@ if __name__ == "__main__":
     # create output path in case it does not exist
     os.makedirs(outPath, exist_ok=True)
 
-     # create probability map of the audio-description's contrasts
-#     print('creating probabilistic maps')
-    aoPPAprobFile = 'rois-and-masks/ao_ppa_prob.nii.gz'
-#     create_prob_maps(AO_COPE_PATTERN,
-#                      AO_PPA_COPES,
-#                      aoPPAprobFile)
-#
-     # create probability map of the movie's contrasts
+    # create probability map of the movie's contrasts
     avPPAprobFile = 'rois-and-masks/av_ppa_prob.nii.gz'
-#     create_prob_maps(AV_COPE_PATTERN,
-#                      AV_PPA_COPES,
-#                      avPPAprobFile)
+    aoPPAprobFile = 'rois-and-masks/ao_ppa_prob.nii.gz'
+    grpPPAbinFile = 'rois-and-masks/bilat_PPA_binary.nii.gz'
+    grpPPAprobFile = 'rois-and-masks/bilat_PPA_prob.nii.gz'
+
+    in_files = [avPPAprobFile, aoPPAprobFile, grpPPAbinFile, grpPPAprobFile]
+    # loop over volumes files that are supposed to be converted to
+    # surface maps
+    for in_file in in_files:
+        base = os.path.basename(in_file)
+        # loop over the two hemispheres
+        for hemi in ['lh', 'rh']:
+            out_file = base.replace('.nii.gz', f'_surf_{hemi}.mgz')
+            out_file = os.path.join(outPath, out_file)
+
+            if not os.path.exists(out_file):
+                # call mri_vol2surf
+                subprocess.call(['mri_vol2surf',
+                                 '--src', in_file,
+                                 '--reg', '/home/chris/freesurfer/average/mni152.register.dat',
+                                 # '--reg', 'edit.dat',
+                                 '--trgsubject', 'MNI152_T1_1mm_brain',
+                                 '--hemi', hemi,
+                                 '--interp', 'nearest',
+                                 '--surf', 'white',
+                                 #  '--surf-fwhm', '3',
+                                 '--o', out_file]
+                                )
+                print('done\n\n\n')
+
+    # PLOTTING OF AO
+    colorMap = plt.cm.get_cmap('Blues')
+    colorMap = colorMap.reversed()
+
+    plotting.plot_surf_stat_map(
+        '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
+        # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
+        'ao_ppa_prob_surf_rh.mgz',
+        bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
+        # axes=axs,
+        # title='surface right hemisphere',
+        hemi='right',
+        view='ventral', # 'lateral',  # 'ventral', # lateral'
+        cmap=colorMap,
+        threshold=1,
+        vmax=14,
+        alpha=1.0,  # alpha lvl of the mesh
+        darkness=1,  # darkness of background image; 0=white
+        colorbar=True
+    )
+
+    # save map
+    out_fname = os.path.join(outPath, 'surface-plot-ao.png')
+    plt.savefig(out_fname) #  transparent=True)
+
+    # PLOTTING OF Mask
+    colorMap = plt.cm.get_cmap('Blues')
+    colorMap = colorMap.reversed()
+
+    plotting.plot_surf_stat_map(
+        '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
+        # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
+        'bilat_PPA_prob_surf_rh.mgz',
+        bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
+        # axes=axs,
+        # title='surface right hemisphere',
+        hemi='right',
+        view='ventral', # 'lateral',  # 'ventral', # lateral'
+        cmap=colorMap,
+        threshold=1,
+        vmax=14,
+        alpha=1.0,  # alpha lvl of the mesh
+        darkness=1,  # darkness of background image; 0=white
+        colorbar=True
+    )
+
+    # save map
+    out_fname = os.path.join(outPath, 'surface-plot-mask.png')
+    plt.savefig(out_fname) #  transparent=True)
+
+
+
+    # maybe use nilearn.regions.connected_regions
+
+
+#    data = surface.load_surf_data('/home/chris/bilat_PPA_binary_surf-rh.mgz')
+#     coords, faces = surface.load_surf_mesh('/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated')
 #
-#     # plotting of the probability maps (left sagittal, coronal, right saggital)
-#     process_stability(aoPPAprobFile,
-#                       avPPAprobFile,
-#                       outPath)
+#     plotting.plot_surf_contours(
+#         '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
+#         '/home/chris/rPPA_overlap_surf-rh.mgz',
+#         # figure=fig,
+#         cmap='Greens')
+
+    # save that shit
 
 
+#     out_fname = out_fname.replace('.png', '.svg')
+#     plt.savefig(out_fname, transparent=True)
 
-    from surfer import Brain
-
-    subject_id = 'fsaverage'
-    hemi = 'lh'
-    surf = 'inflated'
-
-    brain = Brain(subject_id, hemi, surf)
-
-#     # plot of group results
-#     process_group_averages(outPath)
-#
-#     # process subjects
-#     process_individuals(AUDIO_IN_PATTERN)
+#    plt.show()
