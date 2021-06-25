@@ -33,7 +33,7 @@ def parse_arguments():
 
     parser.add_argument('-out',
                         required=False,
-                        default='rois-and-masks',
+                        default='',
                         help='the output directory (e.g. "rois-and-masks")')
 
     args = parser.parse_args()
@@ -63,51 +63,67 @@ def sort_nicely(l):
 
 
 def create_grp_bilat_mask(grp_masks, grp_out):
+    '''merges unilateral ROI overlaps to bilateral probabilistic & binary image
+    '''
+    # create the bilateral probabilistic image
+    if not os.path.exists(grp_out):
+        mask_img = nib.load(grp_masks[0])
+        mask_data = np.array(mask_img.dataobj)
+
+        # if there is more than one mask, load all of them and take their sum
+        if len(grp_masks) > 1:
+            for mask in grp_masks[1:]:
+                mask_data += np.array(nib.load(mask).dataobj)
+
+        # create the probabilistic image to be saved
+        bilat_mask_img = nib.Nifti1Image(mask_data,
+                                         mask_img.affine,
+                                         header=mask_img.header)
+
+        # save the bilateral probabilistic image
+        nib.save(bilat_mask_img, grp_out)
+
+    # binarize the bilateral probabilistic image
+    grp_out = grp_out.replace('prob', 'binary')
+
+    if not os.path.exists(grp_out):
+        # make the data binary by setting all non-zeros to 1
+        mask_data[mask_data > 0] = 1
+
+        # create the binary image to be saved
+        bilat_mask_img = nib.Nifti1Image(mask_data,
+                                         mask_img.affine,
+                                         header=mask_img.header)
+        # save the image
+        nib.save(bilat_mask_img, grp_out)
+
+        print('wrote', grp_out)
+
+    return None
+
+
+def grp_ppa_to_ind_space(in_file, output, ref, warp):
     '''
     '''
-    mask_img = nib.load(grp_masks[0])
-    mask_data = np.array(mask_img.dataobj)
+    # only process if output file does not exists
+    if os.path.exists(output):
+        print(output, 'already exists. skipping...')
+    else:
+        # download necessaty input
+        if not os.path.exists(ref):
+            subprocess.call(['datalad', 'get', ref])
 
-    # if there is more than one mask, load all of them and take their sum
-    if len(grp_masks) > 1:
-        for mask in grp_masks[1:]:
-            mask_data += np.array(nib.load(mask).dataobj)
+        if not os.path.exists(warp):
+            subprocess.call(['datalad', 'get', warp])
 
-    # save the probabilistic map
-    bilat_mask_img = nib.Nifti1Image(mask_data,
-                                     mask_img.affine,
-                                     header=mask_img.header)
-
-    nib.save(bilat_mask_img, grp_out.replace('binary', 'prob'))
-    nib.save(bilat_mask_img, grp_out)
-
-    # make the data binary by setting all non-zeros to 1
-    mask_data[mask_data > 0] = 1
-
-    # save the binarized mask
-    bilat_mask_img = nib.Nifti1Image(mask_data, mask_img.affine, header=mask_img.header)
-    nib.save(bilat_mask_img, grp_out)
-
-    print('wrote', grp_out)
-
-
-def grp_ppa_to_ind_space(input, output, ref, warp):
-    '''
-    '''
-    if not os.path.exists(ref):
-       subprocess.call(['datalad', 'get', ref])
-
-    if not os.path.exists(warp):
-       subprocess.call(['datalad', 'get', warp])
-
-    subprocess.call(
-        ['applywarp',
-         '-i', input,
-         '-o', output,
-         '-r', ref,
-         '-w', warp,
-         # '--premat=premat'
-         ])
+        subprocess.call(
+            ['applywarp',
+             '-i', in_file,
+             '-o', output,
+             '-r', ref,
+             '-w', warp,
+             # '--premat=premat'
+             ])
 
     return None
 
@@ -162,11 +178,14 @@ def combine_mni_masks(indBrain, occFpath, tempFpath, outFpath):
     mask_outp = occip_tempo_mask * brain_array
 
     # save that shit to file
-    nib.save(nib.Nifti1Image(
-        mask_outp,
-        occip_affine,
-        occip_header),
-        outFpath)
+    try:
+        nib.save(nib.Nifti1Image(
+            mask_outp,
+            occip_affine,
+            occip_header),
+            outFpath)
+    except PermissionError as e:
+        print(e)
 
     return None
 
@@ -196,13 +215,14 @@ def create_audio_mask(aoPattern, subj, ao_mask_fpath):
         audio_mask[audio_mask <= 400] = 0
         audio_mask[audio_mask > 400] = 1
 
-    nib.save(nib.Nifti1Image(
-        audio_mask,
-        audio_4d_img.affine,
-        audio_4d_img.header),
-        ao_mask_fpath)
-
-    return audio_mask
+    try:
+        nib.save(nib.Nifti1Image(
+            audio_mask,
+            audio_4d_img.affine,
+            audio_4d_img.header),
+            ao_mask_fpath)
+    except PermissionError as e:
+        print(e)
 
     return None
 
@@ -226,7 +246,10 @@ def create_ind_bilat_mask(indUniMasksFpath, indBilatMaskFpath):
                                 header=oneUniImg.header
                                 )
 
-    nib.save(bilatMask, indBilatMaskFpath)
+    try:
+        nib.save(bilatMask, indBilatMaskFpath)
+    except PermissionError as e:
+        print(e)
 
     return None
 
@@ -234,10 +257,11 @@ def create_ind_bilat_mask(indUniMasksFpath, indBilatMaskFpath):
 def warp_subj_to_mni(indBiMaskFpath, indBiInMNI, indWarp, xfmRef):
     '''
     '''
-    print(indWarp)
     if not os.path.exists(indWarp):
         subprocess.call(['datalad', 'get', indWarp])
 
+    if not os.path.exists(xfmRef):
+        subprocess.call(['datalad', 'get', xfmRef])
 
     # call FSL's applywarp
     subprocess.call(
@@ -272,13 +296,16 @@ if __name__ == "__main__":
     xfmRef = os.path.join(TNT_DIR,
                           'templates/grpbold3Tp2/',
                           'brain.nii.gz')
+
     # WHAT IS THIS?
     xfmMat = os.path.join(TNT_DIR,
                           'templates/grpbold3Tp2/xfm/',
                           'mni2tmpl_12dof.mat')
 
+    ROIS = 'rois-and-masks'
+
     # the output directory
-    ROIS = parse_arguments()
+    out_dir = parse_arguments()
 
     # 1. create bilateral, probabilistic & binary group masks
     # input: Juelich Histological Atlas
@@ -290,7 +317,7 @@ if __name__ == "__main__":
     grpMasksFpathes = find_files(uniGrpMaskPattern)
 
     # output
-    grpMaskFpath = 'rois-and-masks/bilat_PPA_binary.nii.gz'
+    grpMaskFpath = 'rois-and-masks/bilat_PPA_prob.nii.gz'
 
     # do the conversion
     create_grp_bilat_mask(grpMasksFpathes, grpMaskFpath)
@@ -314,7 +341,7 @@ if __name__ == "__main__":
     subjs = [re.search(r'sub-..', string).group() for string in aoFpathes]
     subjs = sorted(list(set(subjs)))
 
-    for subj in subjs:
+    for subj in subjs[7:10]:
         print('\nProcessing', subj)
         # 1. create bilateral, probabilistic & binarized PPA masks
         # from group masks (in group space)
@@ -336,20 +363,20 @@ if __name__ == "__main__":
         grp_ppa_to_ind_space(grpMaskFpath, indGrpPPA, indRef, indWarp)
 
         # 2. transform MNI brain lobe masks to individual subjects' spaces
-        print('convert probabilistic mask from MNI to subject space')
+        print('\nconvert probabilistic mask from MNI to subject space')
 
         indRef = os.path.join(TNT_DIR, subj, 'bold3Tp2/brain.nii.gz')
         templ2subjWarp = os.path.join(TNT_DIR, subj,
                                       'bold3Tp2/in_grpbold3Tp2/'
                                       'tmpl2subj_warp.nii.gz')
 
-        # convert the occipital mask
+        # convert the occipital mask from MNI to individual bold3Tp2
         indOccip = os.path.basename(juelMNIoccip)
         indOccip = os.path.join(ROIS, subj, indOccip)
         mni_masks_2_bold3Tp2(juelMNIoccip, indOccip,
                              indRef, templ2subjWarp, xfmMat)
 
-        # convert the temporal mask
+        # convert the temporal mask from MNI to individual bold3Tp2
         indTempo = os.path.basename(juelMNItempo)
         indTempo = os.path.join(ROIS, subj, indTempo)
         mni_masks_2_bold3Tp2(juelMNItempo, indTempo, indRef,
@@ -363,7 +390,7 @@ if __name__ == "__main__":
         combine_mni_masks(indBrain, indOccip, indTempo, indOccTemp)
 
         # 4. create FOV mask from 4d 7 tesla time series
-        print('create FOV mask (Hanke et al., 2014)')
+        print('\ncreate FOV mask (Hanke et al., 2014)')
         ao_mask_fpath = os.path.join(ROIS, subj, 'ao_fov_mask.nii.gz')
         create_audio_mask(AUDIO_4D_EXAMPLE, subj, ao_mask_fpath)
 
@@ -373,14 +400,17 @@ if __name__ == "__main__":
         # ROI masks
         # 5. joins & transforms individual PPA masks into group space
         # (ROI masks are taken from Sengupta et al. (2016)
-        print('convert individual ROI masks '
+        print('\nconvert individual ROI masks '
               '(Sengupata et al., 2016) to group space')
 
+        # find left and right hemispheric masks
         indMaskPattern = os.path.join(SENGUPTA,
                                       subj,
                                       'rois/?PPA_?_mask.nii.gz')
+        # do the globbing
         indUniMasksFpath = find_files(indMaskPattern)
 
+        # create the output name
         indBiMaskFpath = os.path.join(ROIS,
                                       subj,
                                       'PPA_%s.nii.gz' % len(indUniMasksFpath)
@@ -393,18 +423,90 @@ if __name__ == "__main__":
 
         # warp bilateral ROI clusters to MNI group space
         indBiMNIfPath = indBiMaskFpath.replace('.nii.gz', '_mni.nii.gz')
+        # name if current's subjects warp volume
         subj2templWarp = os.path.join(TNT_DIR,
-                                        subj,
-                                        'bold3Tp2/in_grpbold3Tp2/'
-                                        'subj2tmpl_warp.nii.gz')
+                                      subj,
+                                      'bold3Tp2/in_grpbold3Tp2/'
+                                      'subj2tmpl_warp.nii.gz'
+                                      )
 
         warp_subj_to_mni(indBiMaskFpath, indBiMNIfPath,
                             subj2templWarp, xfmRef)
 
         # binarize the individual bilateral ROI clusters (in MNI space)
         indBiMNIbinFpath = indBiMNIfPath.replace('mni', 'mni_bin')
+        # call fslmath
         subprocess.call(['fslmaths',
                             indBiMNIfPath,
                             '-bin',
                             indBiMNIbinFpath]
                         )
+
+
+        # out_path = os.path.join(TNT_DIR, subj, 'in_t1w')
+        out_path = os.path.join('test', subj, 'in_t1w')
+        os.makedirs(out_path, exist_ok=True)
+
+        # individual PPA from bold3Tp2 to t1w
+        subprocess.call(
+            ['flirt',
+             '-in', indBiMaskFpath,
+             '-ref', 'inputs/studyforrest-data-templatetransforms/sub-14/t1w/brain.nii.gz',
+             '-applyxfm',
+             '-init', 'inputs/studyforrest-data-templatetransforms/sub-14/bold3Tp2/in_t1w/xfm_6dof.mat',
+             '-out', os.path.join(out_path, 'PPA_2.nii.gz')
+             # '--premat=premat'
+             ]
+        )
+
+        # audio-description's contrast 1 (z=2.3) from bold3Tp2 to t1w
+        inFpath = AO_ZMAP_PATTERN.replace('sub-??', subj).replace('cope*', 'cope1')
+        inFpath = inFpath.replace('stats/zstat1.nii.gz', 'thresh_zstat1.nii.gz')
+        if not os.path.exists(inFpath):
+            subprocess.call(['datalad', 'get', inFpath])
+
+        highres_ref = os.path.join(TNT_DIR, subj, 't1w/brain.nii.gz')
+        if not os.path.exists(highres_ref):
+            subprocess.call(['datalad', 'get', highres_ref])
+
+        in_matrix = os.path.join(TNT_DIR, subj, 'bold3Tp2/in_t1w/xfm_6dof.mat')
+        if not os.path.exists(in_matrix):
+            subprocess.call(['datalad', 'get', in_matrix])
+
+        subprocess.call(
+            ['flirt',
+             '-in', inFpath,
+             '-ref', highres_ref,
+             '-applyxfm',
+             '-init', in_matrix,
+             '-out', os.path.join(out_path, 'ao-cope1-ind.nii.gz')
+             # '--premat=premat'
+             ]
+        )
+
+        ### MNI SPACE TO individual t1w ###
+        # audio-description's contrast 1 (z=3.4) from bold3Tp2 to t1w
+        inFpath = inFpath.replace('-ind', '-grp')
+        if not os.path.exists(inFpath):
+            subprocess.call(['datalad', 'get', inFpath])
+
+        highres_ref = os.path.join(TNT_DIR, subj, 't1w/brain.nii.gz')
+        if not os.path.exists(highres_ref):
+            subprocess.call(['datalad', 'get', highres_ref])
+
+        # THIS IS PROBABLY WRONT
+        in_matrix = os.path.join(TNT_DIR, subj, 't1w/in_mni152/tmpl2subj.mat')
+        if not os.path.exists(in_matrix):
+            subprocess.call(['datalad', 'get', in_matrix])
+
+        ### THIS IS WRONG BTW ###
+        subprocess.call(
+            ['flirt',
+             '-in', inFpath,
+             '-ref', highres_ref,
+             '-applyxfm',
+             '-init', in_matrix,
+             '-out', os.path.join(out_path, 'ao-cope1-grp.nii.gz')
+             # '--premat=premat'
+             ]
+        )

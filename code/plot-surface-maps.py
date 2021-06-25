@@ -904,76 +904,143 @@ if __name__ == "__main__":
                                  #  '--surf-fwhm', '3',
                                  '--o', out_file]
                                 )
-                print('done\n\n\n')
+
+    ### process individual subjects
+    ROIS = 'rois-and-masks'
+    MASKS_PATH_PATTERN = os.path.join(ROIS, 'sub-??')
+
+    masks_pathes = find_files(MASKS_PATH_PATTERN)
+
+    # get a list of subjects (as strings)
+    subjs = [re.search(r'sub-..', string).group() for string in masks_pathes]
+    subjs = sorted(list(set(subjs)))
+
+    # WORK WITH TEMPORARY EXTERNAL FREESURFER DATA DATASET
+    ORG_FS_SUBJS_DIR = os.environ['SUBJECTS_DIR']
+    FS_DATA = os.path.expanduser('~/cortical-surfaces-freesurfer')
+
+    ### TEMPORARY PATH ###
+    NEW_FS_SUBJS_DIR = os.path.join('test', 'freesurfer-subjects')
+    os.makedirs(NEW_FS_SUBJS_DIR, exist_ok = True)
+    os.environ['SUBJECTS_DIR'] = NEW_FS_SUBJS_DIR
+
+    for subj in subjs[7:10]:
+        # make as symbolic link to the freesurfer subject dir
+        source = os.path.join(FS_DATA, subj)
+        destination = os.path.join(NEW_FS_SUBJS_DIR, subj.replace('-', '0'))
+
+        if not os.path.exists(destination):
+            os.symlink(source, destination)
+
+        ### TEMPORARY INPATH ###
+        in_path = os.path.join('test', subj, 'in_t1w')
+        in_masks = find_files(os.path.join(in_path, '*.nii.gz'))
+
+        for in_file in in_masks:
+            # in_file = os.path.basename(in_file)
+            # loop over the two hemispheres
+            for hemi in ['lh', 'rh']:
+
+                # define some files that will be needed
+                src_registration = os.path.join(source, 'mri/transforms/T2raw.dat')
+                hemi_file = os.path.join(source, 'surf', f'{hemi}.white')
+                hemi_inflated = os.path.join(source, 'surf', f'{hemi}.inflated')
+
+                # download the files via datalad get
+                to_gets = [src_registration, hemi_file, hemi_inflated]
+                for to_get in to_gets:
+                    if not os.path.exists(to_get):
+                        pwd = os.getcwd()
+                        os.chdir(FS_DATA)
+                        subprocess.call(['datalad', 'get', to_get])
+                        os.chdir(pwd)
+
+                out_file = in_file.replace('.nii.gz', f'_surf-{hemi}.mgz')
+                # out_file = os.path.join(outPath, out_file)
+
+                if not os.path.exists(out_file):
+                    # call mri_vol2surf
+                    subprocess.call(
+                        ['mri_vol2surf',
+                         '--src', in_file,
+                         '--reg', src_registration,
+                         # '--reg', 'edit.dat',
+                         '--trgsubject', subj.replace('-', '0'),
+                         '--hemi', hemi,
+                         '--interp', 'nearest',
+                         '--surf', 'white',
+                         #  '--surf-fwhm', '3',
+                         '--o', out_file]
+                    )
+    # change Freesurfer subjects dir back to original subjects dir
+    os.environ['SUBJECTS_DIR'] = ORG_FS_SUBJS_DIR
 
     # PLOTTING OF AO
-    colorMap = plt.cm.get_cmap('Blues')
-    colorMap = colorMap.reversed()
-
-    plotting.plot_surf_stat_map(
-        '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
-        # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
-        'ao_ppa_prob_surf_rh.mgz',
-        bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
-        # axes=axs,
-        # title='surface right hemisphere',
-        hemi='right',
-        view='ventral', # 'lateral',  # 'ventral', # lateral'
-        cmap=colorMap,
-        threshold=1,
-        vmax=14,
-        alpha=1.0,  # alpha lvl of the mesh
-        darkness=1,  # darkness of background image; 0=white
-        colorbar=True
-    )
-
-    # save map
-    out_fname = os.path.join(outPath, 'surface-plot-ao.png')
-    plt.savefig(out_fname) #  transparent=True)
-
-    # PLOTTING OF Mask
-    colorMap = plt.cm.get_cmap('Blues')
-    colorMap = colorMap.reversed()
-
-    plotting.plot_surf_stat_map(
-        '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
-        # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
-        'bilat_PPA_prob_surf_rh.mgz',
-        bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
-        # axes=axs,
-        # title='surface right hemisphere',
-        hemi='right',
-        view='ventral', # 'lateral',  # 'ventral', # lateral'
-        cmap=colorMap,
-        threshold=1,
-        vmax=14,
-        alpha=1.0,  # alpha lvl of the mesh
-        darkness=1,  # darkness of background image; 0=white
-        colorbar=True
-    )
-
-    # save map
-    out_fname = os.path.join(outPath, 'surface-plot-mask.png')
-    plt.savefig(out_fname) #  transparent=True)
-
-
-
-    # maybe use nilearn.regions.connected_regions
-
-
-#    data = surface.load_surf_data('/home/chris/bilat_PPA_binary_surf-rh.mgz')
-#     coords, faces = surface.load_surf_mesh('/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated')
+#     colorMap = plt.cm.get_cmap('Blues')
+#     colorMap = colorMap.reversed()
 #
-#     plotting.plot_surf_contours(
+#     plotting.plot_surf_stat_map(
 #         '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
-#         '/home/chris/rPPA_overlap_surf-rh.mgz',
-#         # figure=fig,
-#         cmap='Greens')
-
-    # save that shit
-
-
-#     out_fname = out_fname.replace('.png', '.svg')
-#     plt.savefig(out_fname, transparent=True)
-
-#    plt.show()
+#         # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
+#         'ao_ppa_prob_surf_rh.mgz',
+#         bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
+#         # axes=axs,
+#         # title='surface right hemisphere',
+#         hemi='right',
+#         view='ventral', # 'lateral',  # 'ventral', # lateral'
+#         cmap=colorMap,
+#         threshold=1,
+#         vmax=14,
+#         alpha=1.0,  # alpha lvl of the mesh
+#         darkness=1,  # darkness of background image; 0=white
+#         colorbar=True
+#     )
+#
+#     # save map
+#     out_fname = os.path.join(outPath, 'surface-plot-ao.png')
+#     plt.savefig(out_fname) #  transparent=True)
+#
+#     # PLOTTING OF Mask
+#     colorMap = plt.cm.get_cmap('Blues')
+#     colorMap = colorMap.reversed()
+#
+#     plotting.plot_surf_stat_map(
+#         '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
+#         # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
+#         'bilat_PPA_prob_surf_rh.mgz',
+#         bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
+#         # axes=axs,
+#         # title='surface right hemisphere',
+#         hemi='right',
+#         view='ventral', # 'lateral',  # 'ventral', # lateral'
+#         cmap=colorMap,
+#         threshold=1,
+#         vmax=14,
+#         alpha=1.0,  # alpha lvl of the mesh
+#         darkness=1,  # darkness of background image; 0=white
+#         colorbar=True
+#     )
+#
+#     # save map
+#     out_fname = os.path.join(outPath, 'surface-plot-mask.png')
+#     plt.savefig(out_fname) #  transparent=True)
+#
+#     # maybe use nilearn.regions.connected_regions
+#
+#
+# #    data = surface.load_surf_data('/home/chris/bilat_PPA_binary_surf-rh.mgz')
+# #     coords, faces = surface.load_surf_mesh('/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated')
+# #
+# #     plotting.plot_surf_contours(
+# #         '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
+# #         '/home/chris/rPPA_overlap_surf-rh.mgz',
+# #         # figure=fig,
+# #         cmap='Greens')
+#
+#     # save that shit
+#
+#
+# #     out_fname = out_fname.replace('.png', '.svg')
+# #     plt.savefig(out_fname, transparent=True)
+#
+# #    plt.show()
