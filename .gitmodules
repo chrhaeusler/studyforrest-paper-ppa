@@ -18,3 +18,4 @@
 	path = inputs/studyforrest-data-freesurfer
 	url = https://github.com/psychoinformatics-de/studyforrest-data-freesurfer.git
 	datalad-id = 3304e775-5f5f-435a-b68e-d98c9f5fb72a
+	datalad-url = https://github.com/psychoinformatics-de/studyforrest-data-freesurfer.git
