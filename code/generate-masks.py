@@ -297,7 +297,6 @@ if __name__ == "__main__":
                           'templates/grpbold3Tp2/',
                           'brain.nii.gz')
 
-    # WHAT IS THIS?
     xfmMat = os.path.join(TNT_DIR,
                           'templates/grpbold3Tp2/xfm/',
                           'mni2tmpl_12dof.mat')
@@ -341,7 +340,7 @@ if __name__ == "__main__":
     subjs = [re.search(r'sub-..', string).group() for string in aoFpathes]
     subjs = sorted(list(set(subjs)))
 
-    for subj in subjs[7:10]:
+    for subj in subjs[7:8]:
         print('\nProcessing', subj)
         # 1. create bilateral, probabilistic & binarized PPA masks
         # from group masks (in group space)
@@ -442,19 +441,27 @@ if __name__ == "__main__":
                             indBiMNIbinFpath]
                         )
 
-
-        # out_path = os.path.join(TNT_DIR, subj, 'in_t1w')
-        out_path = os.path.join('test', subj, 'in_t1w')
+        # individuals to t1w
+        out_path = os.path.join(out_dir, subj, 'in_t1w')
         os.makedirs(out_path, exist_ok=True)
 
+        highres_ref = os.path.join(TNT_DIR, subj, 't1w/brain.nii.gz')
+        in_matrix = os.path.join(TNT_DIR, subj, 'bold3Tp2/in_t1w/xfm_6dof.mat')
+
+        for to_get in [highres_ref, in_matrix]:
+            if not os.path.exists(to_get):
+                subprocess.call(['datalad', 'get', to_get])
+
         # individual PPA from bold3Tp2 to t1w
+        print('\nconvert individual PPA mask from bold3Tp2 to t1w')
         subprocess.call(
             ['flirt',
              '-in', indBiMaskFpath,
-             '-ref', 'inputs/studyforrest-data-templatetransforms/sub-14/t1w/brain.nii.gz',
+             '-out', os.path.join(out_path, os.path.basename(indBiMaskFpath)),
+             '-ref', highres_ref,
              '-applyxfm',
-             '-init', 'inputs/studyforrest-data-templatetransforms/sub-14/bold3Tp2/in_t1w/xfm_6dof.mat',
-             '-out', os.path.join(out_path, 'PPA_2.nii.gz')
+             '-init', in_matrix,
+             '-interp', 'nearestneighbour'
              # '--premat=premat'
              ]
         )
@@ -462,51 +469,43 @@ if __name__ == "__main__":
         # audio-description's contrast 1 (z=2.3) from bold3Tp2 to t1w
         inFpath = AO_ZMAP_PATTERN.replace('sub-??', subj).replace('cope*', 'cope1')
         inFpath = inFpath.replace('stats/zstat1.nii.gz', 'thresh_zstat1.nii.gz')
+
         if not os.path.exists(inFpath):
-            subprocess.call(['datalad', 'get', inFpath])
+                subprocess.call(['datalad', 'get', inFpath])
 
-        highres_ref = os.path.join(TNT_DIR, subj, 't1w/brain.nii.gz')
-        if not os.path.exists(highres_ref):
-            subprocess.call(['datalad', 'get', highres_ref])
-
-        in_matrix = os.path.join(TNT_DIR, subj, 'bold3Tp2/in_t1w/xfm_6dof.mat')
-        if not os.path.exists(in_matrix):
-            subprocess.call(['datalad', 'get', in_matrix])
-
+        print('\nconvert audio-description\'s primary COPE from bold3Tp2 to t1w')
         subprocess.call(
             ['flirt',
              '-in', inFpath,
+             '-out', os.path.join(out_path, 'ao-cope1-ind.nii.gz'),
              '-ref', highres_ref,
              '-applyxfm',
              '-init', in_matrix,
-             '-out', os.path.join(out_path, 'ao-cope1-ind.nii.gz')
+             '-interp', 'nearestneighbour'
              # '--premat=premat'
              ]
         )
 
-        ### MNI SPACE TO individual t1w ###
-        # audio-description's contrast 1 (z=3.4) from bold3Tp2 to t1w
+        # audio-description's contrast 1 (z=3.4) from grpbold3Tp2 to t1w
+        print('\nconvert audio-description\'s primary COPE from grpbold3Tp2 to t1w')
+
+        # define inputs
         inFpath = inFpath.replace('-ind', '-grp')
-        if not os.path.exists(inFpath):
-            subprocess.call(['datalad', 'get', inFpath])
-
-        highres_ref = os.path.join(TNT_DIR, subj, 't1w/brain.nii.gz')
-        if not os.path.exists(highres_ref):
-            subprocess.call(['datalad', 'get', highres_ref])
-
-        # THIS IS PROBABLY WRONT
         in_matrix = os.path.join(TNT_DIR, subj, 't1w/in_mni152/tmpl2subj.mat')
-        if not os.path.exists(in_matrix):
-            subprocess.call(['datalad', 'get', in_matrix])
+        templ2subjWarp = os.path.join(TNT_DIR, subj, 'bold3Tp2/in_grpbold3Tp2/tmpl2subj_warp.nii.gz')
+        postmat = os.path.join(TNT_DIR, subj, 'bold3Tp2/in_t1w/xfm_6dof.mat')
 
-        ### THIS IS WRONG BTW ###
+        # download the necessary files
+        for to_get in [inFpath, in_matrix, templ2subjWarp, postmat]:
+            if not os.path.exists(to_get):
+                subprocess.call(['datalad', 'get', to_get])
+
         subprocess.call(
-            ['flirt',
-             '-in', inFpath,
-             '-ref', highres_ref,
-             '-applyxfm',
-             '-init', in_matrix,
-             '-out', os.path.join(out_path, 'ao-cope1-grp.nii.gz')
-             # '--premat=premat'
-             ]
-        )
+            ['applywarp',
+             '-i', inFpath,
+             '-o', os.path.join(out_path, 'ao-cope1-grp.nii.gz'),
+             '-r', highres_ref,
+             '-w', templ2subjWarp,
+             f'--postmat={postmat}',
+             '--interp=nn'  # nearest neighbour
+             ])

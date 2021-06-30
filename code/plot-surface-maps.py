@@ -856,6 +856,36 @@ def edge_detection():
     return
 
 
+def volume_2_surf(in_file, out_path, reg, target):
+    '''
+    '''
+    # get the filename with out path
+    base = os.path.basename(in_file)
+
+    # loop for left and right hemisphere
+    for hemi in ['lh', 'rh']:
+        # create output path / filename
+        out_file = base.replace('.nii.gz', f'_surf_{hemi}.mgz')
+        out_file = os.path.join(out_path, out_file)
+
+        # call freesurfers mri_vol2surf
+        if not os.path.exists(out_file):
+            # call mri_vol2surf
+            subprocess.call(['mri_vol2surf',
+                                '--src', in_file,
+                                '--reg', reg,
+                                # '--reg', 'edit.dat',
+                                '--trgsubject', target,
+                                '--hemi', hemi,
+                                '--interp', 'nearest',
+                                '--surf', 'white',
+                                #  '--surf-fwhm', '3',
+                                '--o', out_file]
+                            )
+
+    return None
+
+
 if __name__ == "__main__":
     from nilearn import datasets
     from nilearn import surface
@@ -875,38 +905,25 @@ if __name__ == "__main__":
     # create output path in case it does not exist
     os.makedirs(outPath, exist_ok=True)
 
-    # create probability map of the movie's contrasts
+    # create surface maps of following files in grpbold3Tp2
     avPPAprobFile = 'rois-and-masks/av_ppa_prob.nii.gz'
     aoPPAprobFile = 'rois-and-masks/ao_ppa_prob.nii.gz'
     grpPPAbinFile = 'rois-and-masks/bilat_PPA_binary.nii.gz'
     grpPPAprobFile = 'rois-and-masks/bilat_PPA_prob.nii.gz'
-
     in_files = [avPPAprobFile, aoPPAprobFile, grpPPAbinFile, grpPPAprobFile]
-    # loop over volumes files that are supposed to be converted to
-    # surface maps
+
+    # loop over the files surface maps
     for in_file in in_files:
-        base = os.path.basename(in_file)
-        # loop over the two hemispheres
-        for hemi in ['lh', 'rh']:
-            out_file = base.replace('.nii.gz', f'_surf_{hemi}.mgz')
-            out_file = os.path.join(outPath, out_file)
+        # call the function
+        volume_2_surf(in_file,
+                      outPath,
+                      '/home/chris/freesurfer/average/mni152.register.dat',
+                      'MNI152_T1_1mm_brain'
+                      )
 
-            if not os.path.exists(out_file):
-                # call mri_vol2surf
-                subprocess.call(['mri_vol2surf',
-                                 '--src', in_file,
-                                 '--reg', '/home/chris/freesurfer/average/mni152.register.dat',
-                                 # '--reg', 'edit.dat',
-                                 '--trgsubject', 'MNI152_T1_1mm_brain',
-                                 '--hemi', hemi,
-                                 '--interp', 'nearest',
-                                 '--surf', 'white',
-                                 #  '--surf-fwhm', '3',
-                                 '--o', out_file]
-                                )
-
+    ########################### INDIVIDUALS ##############################
     ### process individual subjects
-    ROIS = 'rois-and-masks'
+    ROIS = 'rois-and-masks'  # = input path
     MASKS_PATH_PATTERN = os.path.join(ROIS, 'sub-??')
 
     masks_pathes = find_files(MASKS_PATH_PATTERN)
@@ -915,22 +932,27 @@ if __name__ == "__main__":
     subjs = [re.search(r'sub-..', string).group() for string in masks_pathes]
     subjs = sorted(list(set(subjs)))
 
-    # WORK WITH TEMPORARY EXTERNAL FREESURFER DATA DATASET
+    # temporally, set freesurfer subjects dir  (e.g. ~/freesurfer/subjects)
+    # to current subdatast
+    # get the current dir
     ORG_FS_SUBJS_DIR = os.environ['SUBJECTS_DIR']
-    FS_DATA = os.path.expanduser('~/cortical-surfaces-freesurfer')
+    # the subdataset with forrest freesurfer data
+    TEMP_FS_DATA = os.path.expanduser('inputs/studyforrest-data-freesurfer')
 
-    ### TEMPORARY PATH ###
-    NEW_FS_SUBJS_DIR = os.path.join('test', 'freesurfer-subjects')
-    os.makedirs(NEW_FS_SUBJS_DIR, exist_ok = True)
-    os.environ['SUBJECTS_DIR'] = NEW_FS_SUBJS_DIR
+    ### THE symlinks (cause mri_vol2surf doest not like '-'
+    LINKS_DIR = os.path.join('test', 'freesurfer-subjects')
+    os.makedirs(LINKS_DIR, exist_ok = True)
+    os.environ['SUBJECTS_DIR'] = LINKS_DIR
 
-    for subj in subjs[7:10]:
+    for subj in subjs[7:8]:
         # make as symbolic link to the freesurfer subject dir
-        source = os.path.join(FS_DATA, subj)
-        destination = os.path.join(NEW_FS_SUBJS_DIR, subj.replace('-', '0'))
+        source = os.path.join(TEMP_FS_DATA, subj)
+        destination = os.path.join(LINKS_DIR, subj.replace('-', '0'))
 
+        # create the link
         if not os.path.exists(destination):
-            os.symlink(source, destination)
+            os.symlink(os.path.relpath(source, start=LINKS_DIR),
+                       destination)
 
         ### TEMPORARY INPATH ###
         in_path = os.path.join('test', subj, 'in_t1w')
@@ -945,15 +967,13 @@ if __name__ == "__main__":
                 src_registration = os.path.join(source, 'mri/transforms/T2raw.dat')
                 hemi_file = os.path.join(source, 'surf', f'{hemi}.white')
                 hemi_inflated = os.path.join(source, 'surf', f'{hemi}.inflated')
+                # put them into a list
+                to_gets = [src_registration, hemi_file, hemi_inflated]
 
                 # download the files via datalad get
-                to_gets = [src_registration, hemi_file, hemi_inflated]
                 for to_get in to_gets:
                     if not os.path.exists(to_get):
-                        pwd = os.getcwd()
-                        os.chdir(FS_DATA)
                         subprocess.call(['datalad', 'get', to_get])
-                        os.chdir(pwd)
 
                 out_file = in_file.replace('.nii.gz', f'_surf-{hemi}.mgz')
                 # out_file = os.path.join(outPath, out_file)
