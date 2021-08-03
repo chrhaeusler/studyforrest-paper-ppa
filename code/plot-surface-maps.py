@@ -4,61 +4,41 @@ created on Mon June 07 2021
 author: Christian Olaf Haeusler
 
 ToDo:
-    - pip install scikit-image nibabel matplotlib numpy
-    - outlines of individual PPAs is not individually thresholded
+    - https://matplotlib.org/2.0.2/users/tight_layout_guide.html
+    - plt.savefig(pad_inches=0) vs.  bbox_inches='tight'
+    - contrained layout?
 
 '''
 
+
 import argparse
-from glob import glob
+import math
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import nibabel as nib
 import numpy as np
 import os
 import re
 import subprocess
+from glob import glob
+from nilearn import plotting
+from os.path import join as opj
 
-# underlying anatomical HD image
-anatImg = '/usr/share/data/fsl-mni152-templates/MNI152_T1_0.5mm.nii.gz'
-
-# T2* EPI group FoV
-audioMask = 'rois-and-masks/fov_tmpl_0.5.nii.gz'
-
-# PPA group masks co-registered to MNI152
-PROB_MASK_GRP = 'rois-and-masks/bilat_PPA_prob.nii.gz'
-BIN_MASK_GRP = 'rois-and-masks/bilat_PPA_binary.nii.gz'
-
-# contrasts for audio-only stimulus
-AO_COPE_PATTERN = 'inputs/studyforrest_ppa/3rd-lvl/'\
-    'audio-ppa_c?_z3.4.gfeat/cope1.feat/thresh_zstat1.nii.gz'
-# first six contrasts aim for PPA, rest are control contrasts
-AO_PPA_COPES = range(1, 9)
-# primary PPA contrast
-AUDIO_GRP = AO_COPE_PATTERN.replace('c?', 'c1')
-
-# contrasts of audio-visual stimulus
-AV_COPE_PATTERN = 'inputs/studyforrest_ppa/3rd-lvl/'\
-    'movie-ppa_c?_z3.4.gfeat/cope1.feat/thresh_zstat1.nii.gz'
-# first five contrasts aim for PPA, rests are control contrasts
-AV_PPA_COPES = range(1, 6)
-# primary PPA CONTRAST
-MOVIE_GRP = AV_COPE_PATTERN.replace('c?', 'c1')
-
-# pattern of primary contrasts of individual subjects
-AUDIO_IN_PATTERN = 'inputs/studyforrest_ppa/sub-??/'\
-    '2nd-lvl_audio-ppa-grp.gfeat/cope1.feat/thresh_zstat1.nii.gz'
-MOVIE_IN_PATTERN = 'inputs/studyforrest_ppa/sub-??/'\
-    '2nd-lvl_movie-ppa-grp.gfeat/cope1.feat/thresh_zstat1.nii.gz'
-PPA_MASK_PATTERN = 'rois-and-masks/sub-??/PPA_?_mni_bin.nii.gz'
+FS_HOME = os.environ['FREESURFER_HOME']
+FG_FREESURFER = 'inputs/studyforrest-data-freesurfer'
+PPA_ANA = 'inputs/studyforrest_ppa'
 
 
 def parse_arguments():
     '''
     '''
     parser = argparse.ArgumentParser(
-        description='Create figures of results'
+        description='Create plots using surface maps'
     )
+
+    parser.add_argument('-i',
+                        required=False,
+                        default='rois-and-masks',
+                        help='input folder')
 
     parser.add_argument('-o',
                         required=False,
@@ -67,1000 +47,1076 @@ def parse_arguments():
 
     args = parser.parse_args()
 
+    inPath = args.i
     outPath = args.o
 
-    return outPath
+    return inPath, outPath
 
 
 def find_files(pattern):
     '''
     '''
+    # find the files
     found_files = glob(pattern)
-    found_files = sort_nicely(found_files)
+
+    # due some sorting
+    convert = lambda text: int(text) if text.isdigit() else text
+    alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
+    found_files.sort(key=alphanum_key)
 
     return found_files
 
 
-def sort_nicely(l):
-    '''Sorts a given list in the way that humans expect
-    '''
-    convert = lambda text: int(text) if text.isdigit() else text
-    alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
-    l.sort(key=alphanum_key)
-
-    return l
-
-
-def create_prob_maps(inFpattern, ppaCopes, outFname):
-    '''
-    '''
-    # threshold to be used for binarizing
-    zThresh = 3.4
-
-    imageFpathes = [inFpattern.replace('?', str(x)) for x in ppaCopes]
-
-    # initialize the image
-    probData = None
-    for imageFpath in imageFpathes:
-        # download the image file via datalad in case it's just a sym link
-        if not os.path.exists(imageFpath):
-            subprocess.call(['datalad', 'get', imageFpath])
-
-        # process first image
-        if probData is None:
-            threshImg = nib.load(imageFpath)
-            threshData = threshImg.get_fdata()
-            # binarize the data
-            threshData[threshData >= zThresh] = 1
-            probData = threshData
-        # add other images
-        else:
-            threshImg = nib.load(imageFpath)
-            threshData = threshImg.get_fdata()
-            # binarize the data
-            threshData[threshData >= zThresh] = 1
-            # update the previous loops' data with current loop's data
-            probData += threshData
-
-    finalImage = nib.Nifti1Image(probData,
-                                 threshImg.affine,
-                                 header=threshImg.header)
-    # save the image to file
-    nib.save(finalImage, outFname)
-
-
-def process_stability(ao_prob, av_prob, outfpath):
-    '''
-    '''
-    print('creating plot for stability of contrasts')
-
-    # parameters for creating the figure
-    fsize = (15, 6)
-    fig = plt.figure(figsize=fsize, constrained_layout=False)
-
-    # add the grid
-    grid = fig.add_gridspec(15, 12)
-
-    # left sagittal plane
-    ax1 = fig.add_subplot(grid[0:12, 0:4])
-    mode = 'x'
-    coord = [-28]
-    # call the function that handles details of the plotting
-    plot_stability_slice(mode,
-                         coord,
-                         BIN_MASK_GRP,
-                         av_prob,
-                         ao_prob,
-                         axis=ax1)
-
-    # mirror left sagittal the image such that brain 'looks' to the left
-    plt.gca().invert_xaxis()
-
-    # coronal slice
-    ax2 = fig.add_subplot(grid[0:12, 4:8])
-    mode = 'z'
-    coord = [-11]
-    # call the function that handles details of the plotting
-    plot_stability_slice(mode,
-                         coord,
-                         BIN_MASK_GRP,
-                         av_prob,
-                         ao_prob,
-                         axis=ax2)
-
-    # right sagittal plane
-    ax3 = fig.add_subplot(grid[0:12, 8:])
-    mode = 'x'
-    coord = [28]
-    # call the function that handles details of the plotting
-    plot_stability_slice(mode,
-                         coord,
-                         BIN_MASK_GRP,
-                         av_prob,
-                         ao_prob,
-                         axis=ax3)
-
-    # add the legend
-    # plotting of the legend
-    legendAxis = fig.add_subplot(grid[12:, :6])
-
-    blue = mpl.patches.Patch(color='#2474b7',
-                             label='descriptive nouns (8 contrasts)')
-    red = mpl.patches.Patch(color='#f03523',
-                            label='movie cuts (5 contrasts)',)
-    black = mpl.patches.Patch(color='#454545',
-                              label='union of individual PPA masks (Sengupta et al., 2016)')
-
-    legendAxis.legend(handles=[blue, red, black],
-                      loc='upper center',
-                      facecolor='white',  # background
-                      prop={'size': 12},
-                      framealpha=1)
-
-    # plotting of the colorbars
-    # blue colorbar for audio-description
-    cax1 = fig.add_subplot(grid[12:13, 6:11])
-    cmap = mpl.cm.Blues
-    cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=0, vmax=8)
-    cb1 = mpl.colorbar.ColorbarBase(cax1,
-                                    cmap=cmap,
-                                    norm=norm,
-                                    orientation='horizontal')
-
-    plt.setp(cax1.get_xticklabels(), visible=False)
-    cax1.tick_params(colors='w')
-    cb1.outline.set_edgecolor('w')
-
-    # red colorbar for movie
-    cax2 = fig.add_subplot(grid[13:14, 6:11])
-    cmap = mpl.cm.YlOrRd
-    cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=0, vmax=8)
-    cb2 = mpl.colorbar.ColorbarBase(cax2,
-                                    cmap=cmap,
-                                    norm=norm,
-                                    orientation='horizontal')
-
-    # ticklabels and edge of the colorbar
-    cax2.tick_params(colors='w')
-    cax2.xaxis.set_ticks(list(range(9)))
-    cb2.set_label('number of contrasts', color='w')
-    cb2.outline.set_edgecolor('w')
-
-    # shrinke the space between subplots
-    plt.subplots_adjust(wspace=0, hspace=0)
-
-    # save & close
-    fname = os.path.join(outfpath, 'stability-slices.svg')
-    plt.savefig(fname,
-                bbox_inches='tight',
-                pad_inches=0)
-
-    fname = os.path.join(outfpath, 'stability-slices.pdf')
-    plt.savefig(fname,
-                bbox_inches='tight',
-                pad_inches=0)
-
-    plt.close()
-
-    return None
-
-
-def plot_stability_slice(mode, coord,
-                         roi, movie_img, audio_img,
-                         axis,
-                         title=None):
-    '''
-    '''
-    # underlying MNI152 T1 0.5mm image
-    colorMap = plt.cm.get_cmap('Greys')
-    colorMap = colorMap.reversed()
-    display = plotting.plot_anat(anat_img=anatImg,
-                                 title=title,
-                                 axes=axis,
-                                 cut_coords=coord,
-                                 display_mode=mode,
-                                 cmap=colorMap,
-                                 draw_cross=False)
-
-    # add overlay of audio-description FoV
-    display.add_overlay(audioMask,
-                        cmap=colorMap,
-                        alpha=.9)
-
-    # add the movie contrasts on top of the anatomical image
-    colorMap = plt.cm.get_cmap('YlOrRd')
-    colorMap = colorMap.reversed()
-    display.add_overlay(movie_img,
-                        threshold=0,
-                        cmap=colorMap,
-                        vmin=0,
-                        vmax=8,
-                        alpha=1)
-
-    # add the audio contrasts on top of the movie contrasts
-    colorMap = plt.cm.get_cmap('Blues')
-    colorMap = colorMap.reversed()
-    display.add_overlay(audio_img,
-                        threshold=0,
-                        cmap=colorMap,
-                        vmin=0,
-                        vmax=8,
-                        alpha=1)
-
-    # add contours of group PPA
-    display.add_contours(roi,
-                         colors='black',
-                         levels=[0.5],
-                         antialiased=True,
-                         linewidths=2,
-                         alpha=0.55)
-
-    return display
-
-
-def process_group_averages(outfpath):
-    '''
-    '''
-    print('creating plot for 3rd lvl group analysis')
-
-    # parameters for creating the figure
-    fsize = (15, 6)
-    fig = plt.figure(figsize=fsize, constrained_layout=False)
-
-    # add the grid
-    grid = fig.add_gridspec(15, 12)
-
-    # left sagittal plane
-    ax1 = fig.add_subplot(grid[0:12, 0:4])
-    mode = 'x'
-    coord = [-28]
-    plot_grp_slice(mode, coord,
-                   BIN_MASK_GRP,
-                   MOVIE_GRP,
-                   AUDIO_GRP,
-                   ax1)
-
-    # mirror left sagittal the image such that brain 'looks' to the left
-    plt.gca().invert_xaxis()
-
-    plt.text(90, 110,
-             'Z>3.4, p<0.05',  # title=subject
-             size=15,
-             color='white',
-             backgroundcolor='black',
-             # set boxcolor and its edge to white and make transparent
-             bbox=dict(facecolor=(1, 1, 1, 0), edgecolor=(1, 1, 1, 0)))
-
-    # plot axial / horizontal plane
-    ax2 = fig.add_subplot(grid[0:12, 4:8])
-    mode = 'z'
-    coord = [-11]
-    plot_grp_slice(mode, coord,
-                   BIN_MASK_GRP,
-                   MOVIE_GRP,
-                   AUDIO_GRP,
-                   ax2)
-
-    # plot right sagittal plane
-    ax3 = fig.add_subplot(grid[0:12, 8:])
-    mode = 'x'
-    coord = [28]
-    plot_grp_slice(mode, coord,
-                   BIN_MASK_GRP,
-                   MOVIE_GRP,
-                   AUDIO_GRP,
-                   ax3)
-
-    # add the legend
-    # plotting of the legend
-    legendAxis = fig.add_subplot(grid[12:, :6])
-
-    blue = mpl.patches.Patch(color='#2474b7',
-                             label='geo, groom > all non-geo (audio-description)')
-    red = mpl.patches.Patch(color='#f03523',
-                            label='vse_new > vpe_old (movie)')
-    black = mpl.patches.Patch(color='#454545',
-                              label='union of individual PPA masks (Sengupta et al., 2016)')
-
-    legendAxis.legend(handles=[blue, red, black],
-                      loc='upper center',
-                      facecolor='white',  # white background
-                      prop={'size': 12},
-                      framealpha=1)
-
-    # plotting of the colorbars
-    # blue colorbar for audio-description
-    cax1 = fig.add_subplot(grid[12:13, 6:11])
-    cmap = mpl.cm.Blues
-    cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
-    cb1 = mpl.colorbar.ColorbarBase(cax1,
-                                    cmap=cmap,
-                                    norm=norm,
-                                    orientation='horizontal')
-
-    plt.setp(cax1.get_xticklabels(), visible=False)
-    cax1.tick_params(colors='w')
-    cb1.outline.set_edgecolor('w')
-
-    # red colorbar for movie
-    cax2 = fig.add_subplot(grid[13:14, 6:11])
-    cmap = mpl.cm.YlOrRd
-    cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
-    cb2 = mpl.colorbar.ColorbarBase(cax2,
-                                    cmap=cmap,
-                                    norm=norm,
-                                    orientation='horizontal')
-
-    # ticklabels and edge of the colorbar
-    cax2.tick_params(colors='w')
-    cb2.set_label('Z value', color='w')
-    cb2.outline.set_edgecolor('w')
-
-    # shrinke the space between subplots
-    plt.subplots_adjust(wspace=0, hspace=0)
-
-    # save & close
-    fname = os.path.join(outfpath, 'group-slices.svg')
-    plt.savefig(fname,
-                bbox_inches='tight',
-                pad_inches=0)
-
-    fname = os.path.join(outfpath, 'group-slices.pdf')
-    plt.savefig(fname,
-                bbox_inches='tight',
-                pad_inches=0)
-    plt.close()
-
-
-def plot_grp_slice(mode, coord, roi,
-                   movie_img, audio_img,
-                   axis,
-                   title=None):
-    '''
-    '''
-    # underlying MNI152 T1 0.5mm image
-    colorMap = plt.cm.get_cmap('Greys')
-    colorMap = colorMap.reversed()
-    display = plotting.plot_anat(anat_img=anatImg,
-                                 title=title,
-                                 axes=axis,
-                                 annotate=True,  # show l/r & slice no.
-                                 cut_coords=coord,
-                                 display_mode=mode,
-                                 cmap=colorMap,
-                                 draw_cross=False)
-
-    # add overlay of audio-description FoV
-    display.add_overlay(audioMask,
-                        cmap=colorMap,
-                        alpha=.9)
-
-    # add overlay of movie
-    colorMap = plt.cm.get_cmap('YlOrRd')
-    colorMap = colorMap.reversed()
-    display.add_overlay(movie_img,
-                        threshold=3.4,
-                        cmap=colorMap,
-                        vmin=3.4,
-                        # vmax=10,
-                        alpha=1)
-
-    # add overlay of audio-only
-    colorMap = plt.cm.get_cmap('Blues')
-    colorMap = colorMap.reversed()
-    display.add_overlay(audio_img,
-                        threshold=3.4,
-                        cmap=colorMap,
-                        vmin=3.4,
-                        # vmax=10,
-                        alpha=1)
-
-    # add contours of group PPA
-    display.add_contours(roi,
-                         colors='black',
-                         levels=[0.5],
-                         antialiased=True,
-                         linewidths=2,
-                         alpha=0.55)
-
-    return display
-
-
-def trim_axs(axs, N):
-    '''
-    '''
-    axs = axs.flat
-
-    for ax in axs[N:]:
-        ax.remove()
-
-    return axs[:N]
-
-
-def process_individuals(AUDIO_IN_PATTERN):
-    '''
-    '''
-    print('\ncreating figure with subjects as subplots')
-
-    aoFpathes = find_files(AUDIO_IN_PATTERN)
-    subjs = [re.search(r'sub-..', string).group() for string in aoFpathes]
-    subjs = sorted(list(set(subjs)))
-
-    # define the figure size
-    cols = 4
-    rows = len(subjs) // cols + 1
-    fsize = (12, 12)
-
-    # create 4x4 figure
-    fig, axs = plt.subplots(rows, cols,
-                            figsize=fsize,
-                            constrained_layout=False)
-
-    # set the space between sublots/subjects in a way that title and legend
-    # to not overlap
-    plt.subplots_adjust(wspace=0.0, hspace=0)
-    # trim the axis using the helper function
-    axs = trim_axs(axs, len(subjs))
-
-    # loop through the data of the individuals
-    for ax, subj in zip(axs, subjs):
-        # prepare, process, plot and create mosaic for individuals
-        print('creating subplot for', subj)
-        mask_fpath = PPA_MASK_PATTERN.replace('sub-??', subj)
-        mask_fpath = find_files(mask_fpath)[0]
-
-        # plotting of statistially thresholded maps
-        audio_zmap = AUDIO_IN_PATTERN.replace('sub-??', subj)
-        ao_thr_map = audio_zmap  # .replace('.nii.gz', '_thresh.nii.gz')
-
-        movie_zmap = MOVIE_IN_PATTERN.replace('sub-??', subj)
-        av_thr_map = movie_zmap  # .replace('.nii.gz', '_thresh.nii.gz')
-
-        # get the data via datalad get in case they are not downloaded yet
-        if not os.path.exists(ao_thr_map):
-            subprocess.call(['datalad', 'get', ao_thr_map])
-
-        if not os.path.exists(av_thr_map):
-            subprocess.call(['datalad', 'get', av_thr_map])
-
-        # perform the plotting
-        plot_thresh_zmaps(subj, ax,
-                          mask_fpath, av_thr_map, ao_thr_map)
-
-    # add legend and colorbar at right bottom of the figure
-    fig = add_legend_colobar_to_individuals(fig)
-
-    # save the plot to file
-    fname = os.path.join(outPath, 'subs-thresh-ppa.svg')
-    plt.savefig(fname,
-                bbox_inches='tight',
-                pad_inches=0)
-
-    fname = os.path.join(outPath, 'subs-thresh-ppa.pdf')
-    plt.savefig(fname,
-                bbox_inches='tight',
-                pad_inches=0)
-
-    plt.close()
-
-
-def plot_thresh_zmaps(subj, axis,
-                      mask_fpath, av_thr_map, ao_thr_map):
-    '''
-    '''
-    # underlying MNI152 T1 0.5mm image
-    colorMap = plt.cm.get_cmap('Greys')
-    colorMap = colorMap.reversed()
-
-    display = plotting.plot_anat(anat_img=anatImg,
-                                 # do not annotate but text explicitly
-                                 annotate=False,
-                                 # do not plot the title but text explicitly
-                                 # title=title,
-                                 axes=axis,
-                                 display_mode='z',
-                                 cut_coords=[-11],
-                                 cmap=colorMap,
-                                 draw_cross=False)
-
-    plt.text(-120, +70,
-             subj,  # title=subject
-             size=15,
-             color='white',
-             backgroundcolor='black',
-             # set boxcolor and its edge to white and make transparent
-             bbox=dict(facecolor=(1, 1, 1, 0), edgecolor=(1, 1, 1, 0)))
-
-    plt.text(-95, -118,  # x, y position
-             'z=-11',
-             size=11,
-             color='white',
-             backgroundcolor='black',
-             # set boxcolor and its edge to white and make transparent
-             bbox=dict(facecolor=(1, 1, 1, 0), edgecolor=(1, 1, 1, 0)))
-
-    # add overlay of audio-description FoV
-    display.add_overlay(audioMask,
-                        cmap=colorMap,
-                        alpha=.9)
-
-    # add overlay of movie
-    colorMap = plt.cm.get_cmap('YlOrRd')
-    colorMap = colorMap.reversed()
-    display.add_overlay(av_thr_map,
-                        threshold=3.4,
-                        cmap=colorMap,
-                        vmin=3.4,
-                        # vmax=10,
-                        alpha=1)
-
-    # add overlay of audio-only
-    colorMap = plt.cm.get_cmap('Blues')
-    colorMap = colorMap.reversed()
-    display.add_overlay(ao_thr_map,
-                        threshold=3.4,
-                        cmap=colorMap,
-                        vmin=3.4,
-                        # vmax=10,
-                        alpha=1)
-
-    # add contours of group PPA
-    # first smooth the mask
-    smoothed_mask = smooth_img(mask_fpath, fwhm=2)
-
-    display.add_contours(smoothed_mask,
-                         colors='black',
-                         levels=[0.5],
-                         antialiased=True,
-                         linewidths=2,
-                         alpha=0.55)
-
-    return None
-
-
-def add_legend_colobar_to_individuals(fig):
-    '''
-    '''
-    # make the gridspace
-    # subplot of legend and subplots of colorbars share the height of one
-    # brain, hence 2*4 columns = 8
-    # the 3 colorbars need 3 grids, hence 8*3
-    # well, it turns out, only 2 colorbars are needed
-    # but spacing is cool anyway
-    grid = fig.add_gridspec(8*3, 8*3)
-
-    # plotting of the legend
-    legendAxis = fig.add_subplot(grid[6*3:6*3+3, 13:23])
-
-    blue = mpl.patches.Patch(color='#2474b7',
-                             label='geo, groom > all non-geo (audio-description)')
-    red = mpl.patches.Patch(color='#f03523',
-                            label='vse_new > vpe_old (movie)',)
-    black = mpl.patches.Patch(color='#454545',
-                              label='individual PPA mask (Sengupta et al., 2016)')
-
-    legendAxis.legend(handles=[blue, red, black],
-                      loc='center',
-                      facecolor='white',  # white background
-                      prop={'size': 12},
-                      framealpha=1)
-
-    # plotting of the colorbars
-    # blue colorbar for audio-description
-    cax1 = fig.add_subplot(grid[21, 13:23])
-    cmap = mpl.cm.Blues
-    cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
-    cb1 = mpl.colorbar.ColorbarBase(cax1,
-                                    cmap=cmap,
-                                    norm=norm,
-                                    orientation='horizontal')
-
-    plt.setp(cax1.get_xticklabels(), visible=False)
-    cax1.tick_params(colors='w')
-    cb1.outline.set_edgecolor('w')
-
-    # red colorbar for movie
-    cax2 = fig.add_subplot(grid[22, 13:23])
-    cmap = mpl.cm.YlOrRd
-    cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
-    cb2 = mpl.colorbar.ColorbarBase(cax2,
-                                    cmap=cmap,
-                                    norm=norm,
-                                    orientation='horizontal')
-
-    # ticklabels and edge of the colorbar
-    cax2.tick_params(colors='w')
-    cb2.set_label('Z value', color='w')
-    cb2.outline.set_edgecolor('w')
-
-    return fig
-
-
-def plot_zmaps(subj, audio_zmap, movie_zmap,
-               mask_fpath, audio_thresh, movie_thresh, outfpath):
-    '''
-    this function was used in an early version of the script to plot individual
-    unthresholded zmaps (that are still in subjects space).
-
-    It does that by taking individual thresholds that were explored and set by
-    visually inspection of unthresholded results
-    e.g.:
-    inputs/studyforrest_ppa/sub-01/2nd-lvl_audio-ppa-ind.gfeat/cope1.feat/stats/zstat1.nii.gz
-    inputs/studyforrest_ppa/sub-01/2nd-lvl_movie-ppa-ind.gfeat/cope1.feat/stats/zstat1.nii.gz
-    '''
-    from nilearn.image import math_img
-
-    THRESH_DICT = {
-        'sub-01': {'AO': 2.6, 'AV': 3.4},
-        'sub-02': {'AO': 2.0, 'AV': 3.2},
-        'sub-03': {'AO': 2.0, 'AV': 3.2},
-        'sub-04': {'AO': 3.2, 'AV': 3.0},
-        'sub-05': {'AO': 2.0, 'AV': 2.4},
-        'sub-06': {'AO': 2.6, 'AV': 2.4},
-        'sub-09': {'AO': 2.2, 'AV': 3.2},
-        'sub-14': {'AO': 2.4, 'AV': 2.4},
-        'sub-15': {'AO': 3.6, 'AV': 2.8},
-        'sub-16': {'AO': 3.4, 'AV': 3.4},
-        'sub-17': {'AO': 3.8, 'AV': 4.0},
-        'sub-18': {'AO': 3.4, 'AV': 3.0},
-        'sub-19': {'AO': 3.0, 'AV': 3.6},
-        'sub-20': {'AO': 3.4, 'AV': 3.2}
-        }
-
-    out_fname = os.path.join(outfpath, subj + '_ppa.svg')
-    audio_thresh = THRESH_DICT[subj]['AO']
-    movie_thresh = THRESH_DICT[subj]['AV']
-
-    a_mask = math_img('img > %s' % audio_thresh, img=audio_zmap)
-    azmap_masked = math_img('zmap * mask', zmap=audio_zmap, mask=a_mask)
-
-    m_mask = math_img('img > %s' % movie_thresh, img=movie_zmap)
-    mzmap_masked = math_img('zmap * mask', zmap=movie_zmap, mask=m_mask)
-
-    # {‘ortho’, ‘tiled’, ‘x’, ‘y’, ‘z’, ‘yx’, ‘xz’, ‘yz’}
-    # plotting the binary PPA mask
-    display = plotting.plot_roi(mask_fpath,
-                                title=subj,
-                                display_mode='z',
-                                cut_coords=[-11],
-                                draw_cross=False,
-                                cmap=plotting.cm.red_transparent,
-                                vmax=15.0,
-                                alpha=1)
-
-    # add overlay of movie
-    display.add_overlay(mzmap_masked,
-                        threshold=movie_thresh,
-                        cmap='Wistia',
-                        vmin=0,
-                        vmax=7,
-                        alpha=.95)
-
-    # add overlay of audio-only
-    display.add_overlay(azmap_masked,
-                        threshold=audio_thresh,
-                        cmap=plotting.cm.black_blue,
-                        vmin=0,
-                        vmax=7,
-                        alpha=.95)
-
-    # save that shit
-    plt.savefig(out_fname, transparent=True)
-    plt.close()
-
-    return out_fname
-
-
-def pysurfer_shit():
-    '''
-    '''
-    from surfer import Brain, project_volume_data
-
-    subject_id = 'MNI152_T1_1mm'  # 'fsaverage' 'MNI152_T1_1mm'
-    hemi = 'rh'
-    surf = 'inflated'  # 'white'
-
-    # call the Brain object constructor with theses parameters
-    # to initialize the visualization session
-    brain = Brain(subject_id, hemi, surf)
-
-    # Most of the time you will be plotting data that are in MNI152 space on
-    # the fsaverage brain. For this case, Freesurfer actually ships a
-    # registration matrix file to align your data with the surface
-    reg_file = os.path.join(os.environ['FREESURFER_HOME'],
-                            'average/mni152.register.dat')
-
-    # Note that the contours of the fsaverage surface don't perfectly match the
-    # MNI brain, so this will only approximate the location of your activation
-    # (although it generally does a pretty good job). A more accurate way to
-    # visualize data would be to run the MNI152 brain through the recon-all pipeline.
-    #
-    # Alternatively, if your data are already in register with the Freesurfer
-    # anatomy, you can provide project_volume_data with the subject ID, avoiding the
-    # need to specify a registration file.
-
-    # movie
-    zstat = project_volume_data(avPPAprobFile, 'rh', reg_file)
-
-    # colormap for movie
-    colorMap = plt.cm.get_cmap('YlOrRd')
-    colorMap = colorMap.reversed()
-
-    # plot the movie's map
-    brain.add_data(zstat, min=1, max=8, thresh=1, colormap=colorMap)
-
-    # audio-description
-    zstat = project_volume_data(aoPPAprobFile, 'rh', reg_file)
-
-    # colormap for audio-description
-    colorMap = plt.cm.get_cmap('Blues')
-    colorMap = colorMap.reversed()
-
-    # plot the audio-description's map
-    brain.add_data(zstat, min=1, max=8, thresh=1, colormap=colorMap)
-
-    # contour of GRP mask
-    contour_file = BIN_MASK_GRP
-
-    mask = project_volume_data(contour_file, 'rh', reg_file)
-
-    brain.add_contour_overlay(mask,
-                              colorbar=False,
-                              min=1,
-                              max=1,
-                              )
-                              # line_width=2)
-
-    brain.show_view('ven')
-
-    brain.save_imageset(subject_id, ['med', 'lat', 'ros', 'caud', 'ven'], 'png')
-
-
-    return None
-
-
-def edge_detection():
-    '''
-    '''
-    # edge detection of mask
-    mask_img = nib.load('rois-and-masks/bilat_PPA_binary.nii.gz')
-    mask_data = mask_img.get_fdata()
-
-    from skimage import feature
-    # loop through the horizontal slices (z-coordinates)
-    # and compute the edges in every 2D slices
-    for z_coord in range(mask_data.shape[2]):
-        # slice the 3D image
-        current_slice = mask_data[:, :, z_coord]
-        # get the edges
-        edges = feature.canny(current_slice).astype(int)
-        # put 2D images with edges into the 3D image
-        mask_data[:, :, z_coord] = edges
-
-    # just some renaming
-    edge_data = mask_data
-
-    edge_img = nib.Nifti1Image(edge_data,
-                               mask_img.affine,
-                               header=mask_img.header)
-    # save the image to file
-    edge_fpath = os.path.join(outPath, 'edge_test.nii.gz')
-    nib.save(edge_img, edge_fpath)
-
-    return
-
-
 def volume_2_surf(in_file, out_path, reg, target):
     '''
+    some explanation of the mri_vol2surf parameters:
+        --projfrac frac : (0->1)fractional projection along normal
+        --projfrac-avg min max del : average along normal
+        --projfrac-max min max del : max along normal
+        e.g.
+        --projfrac 0.5: sample halfway between white and pial surfaces
+        --projfrac-avg .2 .8 .1: start at 20%, stop at 80%, sample every 10%
     '''
-    # get the filename with out path
-    base = os.path.basename(in_file)
+    # get the filename without its path
+    # rename the thresholded zmaps (output of FSL) to a readable name
+    if 'audio-ppa_c1_z3.4.gfeat' in in_file:
+        base = 'ao_c1_z3.4.nii.gz'
+    elif 'movie-ppa_c1_z3.4.gfeat' in in_file:
+        base = 'av_c1_z3.4.nii.gz'
+    else:
+        base = os.path.basename(in_file)
 
     # loop for left and right hemisphere
     for hemi in ['lh', 'rh']:
         # create output path / filename
         out_file = base.replace('.nii.gz', f'_surf_{hemi}.mgz')
-        out_file = os.path.join(out_path, out_file)
+        out_fpath = opj(out_path, out_file)
 
-        # call freesurfers mri_vol2surf
-        if not os.path.exists(out_file):
-            # call mri_vol2surf
-            subprocess.call(['mri_vol2surf',
-                                '--src', in_file,
-                                '--reg', reg,
-                                # '--reg', 'edit.dat',
-                                '--trgsubject', target,
-                                '--hemi', hemi,
-                                '--interp', 'nearest',
-                                '--surf', 'white',
-                                #  '--surf-fwhm', '3',
-                                '--o', out_file]
-                            )
+        # check if input file is a MASK (and thus not a z-map)
+        if 'PPA' in in_file:
+            # call freesurfers mri_vol2surf with smoothing
+            subprocess.call(
+                ['mri_vol2surf',
+                 '--src', in_file,
+                 '--reg', reg,  # for individuals: sub-*/mri/transforms/T2raw.dat
+                 '--trgsubject', target,
+                 '--hemi', hemi,
+                 '--interp', 'nearest',
+                 '--surf', 'white',
+                 '--projfrac-max', '0', '1', '0.1',
+                 '--surf-fwhm', '3',  # smoothing of x mm
+                 '--o', out_fpath]
+            )
+        else:
+            # call freesurfers mri_vol2surf without smoothing
+            subprocess.call(
+                ['mri_vol2surf',
+                 '--src', in_file,
+                 '--reg', reg,  # for individuals: sub-*/mri/transforms/T2raw.dat
+                 '--trgsubject', target,
+                 '--hemi', hemi,
+                 '--interp', 'nearest',
+                 '--surf', 'white',
+                 '--projfrac-max', '0', '1', '0.1',
+                 '--o', out_fpath]
+            )
+
+    return None
+
+
+def create_grp_surfaces(in_path, out_path):
+    '''Converts brain volume files to surface maps
+    '''
+    out_path = opj(out_path, 'in_t1w')
+    os.makedirs(outPath, exist_ok=True)
+
+    # input files
+    in_files = dict(
+        avPPAprobFile=opj(in_path, 'av_ppa_prob.nii.gz'),
+        aoPPAprobFile=opj(in_path, 'ao_ppa_prob.nii.gz'),
+        grpPPAbinFile=opj(in_path, 'bilat_PPA_binary.nii.gz'),
+        grpPPAprobFile=opj(in_path, 'bilat_PPA_prob.nii.gz'),
+        aoCope1=opj(PPA_ANA, '3rd-lvl/audio-ppa_c1_z3.4.gfeat/cope1.feat/thresh_zstat1.nii.gz'),
+        avCope1=opj(PPA_ANA, '3rd-lvl/movie-ppa_c1_z3.4.gfeat/cope1.feat/thresh_zstat1.nii.gz'),
+    )
+
+    # loop over the files surface maps
+    for in_file in in_files.values():
+        # download input files in case they do not exist
+        if not os.path.exists(in_file):
+            subprocess.call(['datalad', 'get', in_file])
+
+        # call the function
+        volume_2_surf(in_file,
+                      out_path,
+                      opj(FS_HOME, 'average/mni152.register.dat'),
+                      'MNI152_T1_1mm_brain'
+                      )
+
+    return None
+
+
+def create_ind_surfaces(inPath, outPath, tmp_subjs_dir=FG_FREESURFER):
+    '''
+    '''
+    # find all subjects for which masks exists in the input directory
+    pattern = opj(inPath, 'sub-??')
+    masks_pathes = find_files(pattern)
+    # create a list of available subjects (as strings)
+    subjs = [re.search(r'sub-..', string).group() for string in masks_pathes]
+    subjs = sorted(list(set(subjs)))
+
+    #  we will temporarily set the freesurfer subjects dir
+    # from its original location to the subdataset with the data of the
+    # studyforres subjects
+
+    # get the current freesurfer subject dir
+    org_subjs_dir = os.environ['SUBJECTS_DIR']
+
+    # because mri_vol2surf doest not like the '-' in subjects' directory names
+    # create a new directory and that will comprise symlinks to the subdataset
+    links_dir = opj(outPath, 'freesurfer-subjects')
+    os.makedirs(links_dir, exist_ok=True)
+    # finally set the name of the temporal subjects dir
+    os.environ['SUBJECTS_DIR'] = links_dir
+
+    # loop over subjects for which we ran the current's paper analyses
+    for subj in subjs:
+        # create symbolic links that do not contain '-' in the directory name
+        source = opj(tmp_subjs_dir, subj)
+        destination = opj(links_dir, subj.replace('-', '0'))
+        # create the link
+        if not os.path.exists(destination):
+            os.symlink(os.path.relpath(source, start=links_dir),
+                       destination)
+
+        # the current subject's input path
+        # that contains the maps and masks in t1w
+        subj_in_path = opj(inPath, subj, 'in_t1w')
+        subj_masks = find_files(opj(subj_in_path, '*.nii.gz'))
+
+        # for non-testing purposes inPath and outPath shold be the same
+        # following two lines handle the testing (e.g. outPath='test')
+        subj_out_path = opj(outPath, subj, 'in_t1w')
+        os.makedirs(subj_out_path, exist_ok=True)
+
+        for in_file in subj_masks:
+            # loop over the two hemispheres to download inputs
+            for hemi in ['lh', 'rh']:
+                # define some files that will be needed
+                src_registration = opj(source, 'mri/transforms', 'T2raw.dat')
+                hemi_file = opj(source, 'surf', f'{hemi}.white')
+                hemi_inflated = opj(source, 'surf', f'{hemi}.inflated')
+                thickness = opj(source, 'surf', f'{hemi}.thickness')
+
+                # download the files via datalad get
+                for to_get in [src_registration, hemi_file, hemi_inflated, thickness]:
+                    if not os.path.exists(to_get):
+                        subprocess.call(['datalad', 'get', to_get])
+
+            # call the function that calls freesurfer's mri_vol2surf
+            # function will loop over hemispheres
+            target = subj.replace('-', '0')
+            volume_2_surf(in_file, subj_out_path, src_registration, target)
+
+    # change Freesurfer subjects dir back to original subjects dir
+    os.environ['SUBJECTS_DIR'] = org_subjs_dir
+
+    return None
+
+
+def process_grp_plotting(inPath, outPath):
+    '''
+    '''
+    # set the inPath for maps / masks in grp t1w
+    inPath = opj(inPath, 'in_t1w')
+
+    # AO cope1
+    left = opj(inPath, 'ao_c1_z3.4_surf_lh.mgz')
+    right = opj(inPath, 'ao_c1_z3.4_surf_rh.mgz')
+    color_map = plt.cm.get_cmap('Blues')
+    color_map = color_map.reversed()
+    thresh = 3.4  # range should be >3.4
+    out_fname = opj(outPath, f'grp_ao_c1_surf_thresh{thresh}.png')
+
+    create_2x4_plot(left, right,
+                    color_map,
+                    darkness=0,  # background / mesh
+                    threshold=thresh,
+                    vmin=thresh, vmax=5.5,
+                    cbar_min=thresh, cbar_max=5.5,
+                    out=out_fname
+                    )
+
+    # AV cope1
+    left = opj(inPath, 'av_c1_z3.4_surf_lh.mgz')
+    right = opj(inPath, 'av_c1_z3.4_surf_rh.mgz')
+    color_map = plt.cm.get_cmap('YlOrRd')
+    color_map = color_map.reversed()
+    thresh = 3.4  # range should be >3.4
+    out_fname = opj(outPath, f'grp_av_c1_surf_thresh{thresh}.png')
+
+    create_2x4_plot(left, right,
+                    color_map,
+                    darkness=1,  # background / mesh
+                    threshold=thresh,
+                    vmin=thresh, vmax=5.5,
+                    cbar_min=thresh, cbar_max=5.5,
+                    out=out_fname
+                    )
+
+    # AO stability
+    left = opj(inPath, 'ao_ppa_prob_surf_lh.mgz')
+    right = opj(inPath, 'ao_ppa_prob_surf_rh.mgz')
+    color_map = plt.cm.get_cmap('Blues')
+    color_map = color_map.reversed()
+    thresh = 1  # usually 1
+    out_fname = opj(outPath, f'grp_ao_stability_surf_thresh{thresh}.png')
+
+    create_2x4_plot(left, right,
+                    color_map,
+                    darkness=0,  # background / mesh
+                    threshold=thresh,
+                    vmin=thresh, vmax=8,
+                    cbar_min=thresh, cbar_max=8,
+                    out=out_fname
+                    )
+
+    # AV stability
+    left = opj(inPath, 'av_ppa_prob_surf_lh.mgz')
+    right = opj(inPath, 'av_ppa_prob_surf_rh.mgz')
+    color_map = plt.cm.get_cmap('YlOrRd')
+    color_map = color_map.reversed()
+    thresh = 1  # usually 1
+    out_fname = opj(outPath, f'grp_av_stability_surf_thresh{thresh}.png')
+
+    create_2x4_plot(left, right,
+                    color_map,
+                    darkness=1,
+                    threshold=thresh,
+                    vmin=thresh, vmax=8,
+                    cbar_min=thresh, cbar_max=8,
+                    out = out_fname
+                    )
+
+    # PPA OVERLAP
+    left = opj(inPath, 'bilat_PPA_prob_surf_lh.mgz')
+    right = opj(inPath, 'bilat_PPA_prob_surf_rh.mgz')
+    color_map = plt.cm.get_cmap('gray')  # black = small; white = high values
+    thresh = 0.7  # range should be 1-14
+    ### since it was smoothed, we now have 'a lot' of non voxels that are
+    ### between 0 and 1
+    out_fname = opj(outPath, f'grp_roi_ppa_surf_thresh{thresh}.png')
+
+    create_2x4_plot(left, right,
+                    color_map,
+                    darkness=0,  # background / mesh
+                    threshold=thresh,
+                    vmin=0.0001, vmax=2000000,
+                    cbar_min=0.0001, cbar_max=2000000,
+                    out=out_fname
+                    )
+
+    return None
+
+
+def create_2x4_plot(stat_map_left, stat_map_right,
+                    color_map,
+                    darkness=1,
+                    threshold=1,
+                    vmin=1, vmax=8,
+                    cbar_min=1, cbar_max=8,
+                    alpha=1,
+                    out='test.png'):
+    '''
+    '''
+    # get the environment variable of the Freesurfer installation
+    fs_subjs_dir = os.environ['SUBJECTS_DIR']
+
+    # create the figure
+    # fsize = (12, 8)
+    fig = plt.figure(
+        # figsize=fsize,
+        constrained_layout=False)
+
+    # left hemisphere; general stuff
+    l_surf_mesh = opj(fs_subjs_dir, 'MNI152_T1_1mm_brain/surf/lh.inflated')
+    l_backgr = opj(fs_subjs_dir, 'MNI152_T1_1mm_brain/surf/lh.sulc')
+
+    # right hemisphere; general stuff
+    r_surf_mesh = opj(fs_subjs_dir, 'MNI152_T1_1mm_brain/surf/rh.inflated')
+    r_backgr = opj(fs_subjs_dir, 'MNI152_T1_1mm_brain/surf/rh.sulc')
+
+    # left; lateral view
+    ax1 = fig.add_subplot(2, 4, 1, projection='3d')
+    title = None
+    hemi = 'left'
+    view = 'lateral'
+    cbar_bool = False
+
+    plot_surface_map(ax1,
+                     color_map,
+                     hemi, view,
+                     l_surf_mesh, alpha,
+                     l_backgr, darkness,
+                     stat_map_left,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    # left; ventral view
+    ax2 = fig.add_subplot(2, 4, 2, projection='3d')
+    title = None  # 'Left Hemisphere'
+    hemi = 'left'
+    view = 'ventral'
+    cbar_bool = False
+
+    plot_surface_map(ax2,
+                     color_map,
+                     hemi, view,
+                     l_surf_mesh, alpha,
+                     l_backgr, darkness,
+                     stat_map_left,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    plt.gca().invert_xaxis()
+
+    # left; dorsal
+    ax3 = fig.add_subplot(2, 4, 3, projection='3d')
+    title = None  # 'Left Hemisphere'
+    hemi = 'left'
+    view = 'dorsal'
+    cbar_bool = False
+
+    plot_surface_map(ax3,
+                     color_map,
+                     hemi, view,
+                     l_surf_mesh, alpha,
+                     l_backgr, darkness,
+                     stat_map_left,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    # right; lateral view
+    ax4 = fig.add_subplot(2, 4, 4, projection='3d')
+    title = None
+    hemi = 'right'
+    view = 'lateral'
+    cbar_bool = False
+
+    plot_surface_map(ax4,
+                     color_map,
+                     hemi, view,
+                     r_surf_mesh, alpha,
+                     r_backgr, darkness,
+                     stat_map_right,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    # left; medial view
+    ax5 = fig.add_subplot(2, 4, 5, projection='3d')
+    title = None
+    hemi = 'left'
+    view = 'medial'
+    cbar_bool = False
+
+    plot_surface_map(ax5,
+                     color_map,
+                     hemi, view,
+                     l_surf_mesh, alpha,
+                     l_backgr, darkness,
+                     stat_map_left,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    # right; ventral view
+    ax6 = fig.add_subplot(2, 4, 6, projection='3d')
+    title = None  # 'Right Hemisphere'
+    hemi = 'right'
+    view = 'ventral'
+    cbar_bool = False
+
+    plot_surface_map(ax6,
+                     color_map,
+                     hemi, view,
+                     r_surf_mesh, alpha,
+                     r_backgr, darkness,
+                     stat_map_right,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    plt.gca().invert_xaxis()
+
+    # right; dorsal view
+    ax8 = fig.add_subplot(2, 4, 7, projection='3d')
+    title = None
+    hemi = 'right'
+    view = 'dorsal'
+    cbar_bool = False
+
+    plot_surface_map(ax8,
+                     color_map,
+                     hemi, view,
+                     r_surf_mesh, alpha,
+                     r_backgr, darkness,
+                     stat_map_right,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    # right; medial view
+    ax8 = fig.add_subplot(2, 4, 8, projection='3d')
+    title = None
+    hemi = 'right'
+    view = 'medial'
+    cbar_bool = False
+
+    plot_surface_map(ax8,
+                     color_map,
+                     hemi, view,
+                     r_surf_mesh, alpha,
+                     r_backgr, darkness,
+                     stat_map_right,
+                     threshold,
+                     vmin, vmax,
+                     cbar_min, cbar_max,
+                     cbar_bool,
+                     title)
+
+    print(plt.gcf().get_size_inches())
+
+    # set the space between sublots
+    plt.subplots_adjust(wspace=-.20, hspace=-.68)
+
+    # save as png
+    fig.savefig(out,
+                dpi=600,
+                bbox_inches='tight',
+                transparent=True)
+
+#     # save as .svg
+#     fig.savefig(out.replace('.png', '.svg'),
+#                 dpi=600,
+#                 bbox_inches='tight',
+#                 transparent=True)
+
+    plt.close()
+
+    return None
+
+
+def plot_surface_map(ax,
+                     color_map,
+                     hemi, view,
+                     surf_mesh, alpha,
+                     backgr, darkness,
+                     stat_map,
+                     threshold,
+                     vmin, vmax,
+                     cbar_vmin=1, cbar_vmax=8,
+                     cbar_bool=False,
+                     title=None):
+    '''
+    '''
+    plotting.plot_surf(
+        surf_mesh,
+        stat_map,
+        axes=ax,
+        alpha=alpha,  # alpha lvl of the mesh
+        bg_map=backgr,
+        darkness=darkness,  # darkness of background image; 0=white
+        hemi=hemi,
+        view=view,
+        threshold=threshold,
+        vmin=threshold,
+        vmax=vmax,
+        cmap=color_map,
+        cbar_vmin=cbar_vmin, cbar_vmax=cbar_vmax,
+        colorbar=cbar_bool,
+        title=title,
+    )
+
+    return ax
+
+
+def process_individuals_plotting(outPath, fg_freesurfer):
+    '''
+    '''
+    # AO cope1
+    left = opj(outPath, 'SUB', 'in_t1w', 'ao-cope1-grp_surf_lh.mgz')
+    right = opj(outPath, 'SUB', 'in_t1w', 'ao-cope1-grp_surf_rh.mgz')
+    # colormap blue to white
+    color_map = plt.cm.get_cmap('Blues')
+    color_map = color_map.reversed()
+    ### THRESHOLD
+    thresh = 3.4  # usually 3.4
+    out_fname = opj(outPath, f'subs_ao_c1_surf_thresh{thresh}.png')
+
+    create_mosaic_plot(
+        fg_freesurfer,
+        outPath,
+        left, right,
+        color_map,
+        darkness=0,  # background / mesh
+        threshold=thresh,
+        vmin=thresh, vmax=7.1,
+        cbar_min=thresh, cbar_max=7.1,
+        out=out_fname
+    )
+
+    # AV cope1
+    left = opj(outPath, 'SUB', 'in_t1w', 'av-cope1-grp_surf_lh.mgz')
+    right = opj(outPath, 'SUB', 'in_t1w', 'av-cope1-grp_surf_rh.mgz')
+    # colormap red to yellow
+    color_map = plt.cm.get_cmap('YlOrRd')
+    color_map = color_map.reversed()
+    ### THRESHOLD
+    thresh = 3.4  # usually 3.4
+    out_fname = opj(outPath, f'subs_av_c1_surf_thresh{thresh}.png')
+
+    create_mosaic_plot(
+        fg_freesurfer,
+        outPath,
+        left, right,
+        color_map,
+        darkness=1,  # background / mesh
+        threshold=thresh,  # must be adjusted?
+        vmin=thresh, vmax=7.1,
+        cbar_min=thresh, cbar_max=7.1,
+        out=out_fname
+    )
+
+    # individual PPA ROIS
+    left = opj(outPath, 'SUB', 'in_t1w', 'PPA_?_surf_lh.mgz')
+    right = opj(outPath, 'SUB', 'in_t1w', 'PPA_?_surf_rh.mgz')
+    # colormap
+    color_map = plt.cm.get_cmap('gray')  # black = small; white = high values
+    ### THRESHOLD
+    thresh = 0.7  # usually 1
+    ### since it was smoothed, we now have 'a lot' of non voxels that are
+    ### between 0 and 1
+    out_fname = opj(outPath, f'subs_rois_ppa_thresh{thresh}.png')
+
+    create_mosaic_plot(
+        fg_freesurfer,
+        outPath,
+        left, right,
+        color_map,
+        darkness=0,  # background / mesh
+        threshold=thresh,
+        vmin=0.0001, vmax=2000000,
+        cbar_min=0.0001, cbar_max=2000000,
+        out=out_fname
+    )
+
+    return None
+
+
+def create_mosaic_plot(fg_freesurfer,
+                       inPath,
+                       stat_map_left, stat_map_right,  # freesurfer dir
+                       color_map,
+                       darkness,
+                       threshold,
+                       vmin, vmax,
+                       cbar_min, cbar_max,
+                       alpha=1,
+                       text=True,
+                       out='test.png'):
+    '''
+    '''
+    masks_path_pattern = opj(inPath, 'sub-??')
+    masks_pathes = find_files(masks_path_pattern)
+
+    # create a list of available subjects (as strings)
+    subjs = [re.search(r'sub-..', string).group() for string in masks_pathes]
+    subjs = sorted(list(set(subjs)))
+
+    # some parameters for the figure (monster)
+    cols = 4  # fixed by personal judgement
+    # calculate the number of rows needed; per subject, 2 rows (=hemispheres)
+    rows = 2 * (math.ceil(len(subjs) / cols))
+    # fsize = (12, 12)
+
+    # create figure
+    fig = plt.figure(
+        # figsize=fsize,
+        constrained_layout=False
+    )
+
+    # create a list of value pairs that
+    # contain the subplot's number for each subjects' hemispheres
+    # DO NOT TOUCH; IT WORKS
+    x = np.arange(1, cols * rows + 1)
+    a = x.reshape(rows, cols)
+    dunno = [np.transpose(a[x:x+2, :]) for x in list(range(0, a.shape[0], 2))]
+    items = np.concatenate(dunno)
+
+    print(f'\n{out}')
+    for subj, pair in zip(subjs, items):
+        # just print some feedback about the process onto command line
+        print('adding', subj, 'to plot')
+        # for each hemisphere of the current subject, get the subplot's number
+        l_sbplt = pair[0]
+        r_sbplt = pair[1]
+
+        # list of needed files from studyforrest-data-freesurfer
+        to_gets = ['lh.inflated', 'rh.inflated',
+                   # 'lh.curv', 'rh.curv',
+                   'lh.sulc', 'rh.sulc']
+        # in case they do not exists locally, download them
+        for to_get in to_gets:
+            f_path = opj(fg_freesurfer, subj, 'surf', to_get)
+            if not os.path.exists(to_get):
+                subprocess.call(['datalad', 'get', f_path])
+
+        # general stuff for both hemispheres
+        view = 'ventral'
+        alpha = 1  # of surface mesh
+        cbar_bool = False
+        title = None
+
+        # left hemisphere: parameters
+        hemi = 'left'
+        # mesh and background
+        surf_mesh = opj(fg_freesurfer, subj, 'surf', 'lh.inflated')
+        backgr = opj(fg_freesurfer, subj, 'surf', 'lh.sulc')
+        # map overlay
+        map_left = stat_map_left.replace('SUB', subj)
+        # some subjects have only one-hemispheric PPA, so search for a pattern
+        if 'PPA_?_' in map_left:
+            map_left = find_files(map_left)[0]
+
+        # add the subplot of the left hemisphere to figure
+        fig.add_subplot(rows, cols, l_sbplt, projection='3d')
+        ax = plt.gca()
+
+        # do the plotting
+        plot_surface_map(ax,
+                         color_map,
+                         hemi, view,
+                         surf_mesh, alpha,
+                         backgr, darkness,
+                         map_left,
+                         threshold,
+                         vmin, vmax,
+                         cbar_min, cbar_max,
+                         cbar_bool,
+                         title)
+
+        ax.invert_xaxis()
+
+        # add text (the number of the subjects
+        # 0, 0 is in the middle of (sub) plot (?)
+        if text is True:
+            ax.text2D(-0.088,  # x position; more minus -> more left
+                      0.022,  # y position; more minus -> more down
+                      # too high = 0.1; too low: 0.01
+                      subj,  # title=subject
+                      size=6,
+                      color='black',
+                      backgroundcolor='white',
+                      # set boxcolor and its edge to white and make transparent
+                      bbox=dict(facecolor=(0, 0, 0, 0),  # last number should be alpha level?
+                                edgecolor=(0, 0, 0, 0))
+                    )
+
+        # right hemisphere: parameters
+        hemi = 'right'
+        # mesh and background
+        surf_mesh = opj(fg_freesurfer, subj, 'surf', 'rh.inflated')
+        backgr = opj(fg_freesurfer, subj, 'surf', 'rh.sulc')
+        # map overlay
+        map_right = stat_map_right.replace('SUB', subj)
+        if 'PPA_?_' in map_right:
+            map_right = find_files(map_right)[0]
+
+        # add the subplot to figure
+        fig.add_subplot(rows, cols, r_sbplt, projection='3d')
+        ax = plt.gca()
+
+        plot_surface_map(ax,
+                         color_map,
+                         hemi, view,
+                         surf_mesh, alpha,
+                         backgr, darkness,
+                         map_right,
+                         threshold,
+                         vmin, vmax,
+                         cbar_min, cbar_max,
+                         cbar_bool,
+                         title)
+
+        ax.invert_xaxis()
+
+    # set the space between sublots/subjects
+    plt.subplots_adjust(wspace=-.45, hspace=-.65)
+
+    # save as png
+    fig.savefig(out,
+                dpi=600,
+                bbox_inches='tight',
+                transparent=True)
+
+#     # save as svg
+#     fig.savefig(out.replace('.png', '.svg'),
+#                 dpi=600
+#                 bbox_inches='tight',
+#                 transparent=True)
+
+    plt.close()
+
+    return None
+
+
+def process_legend_1colorbar(outPath):
+    '''
+    '''
+    # group, stability, audio
+    plot_legend_1colorbar(
+        color_first='#2474b7',
+        cmap=mpl.cm.Blues.reversed(),
+        label_first='descriptive nouns (8 contrasts)',
+        label_second='union of individual PPA masks (Sengupta et al., 2016)',
+        vmin=1,
+        vmax=8,
+        cbar_label='number of contrasts',
+        out=opj(outPath, 'grp_ao_stability_legend.png')
+    )
+
+    # group, stability, movie
+    plot_legend_1colorbar(
+        color_first='#f03523',
+        cmap=mpl.cm.YlOrRd.reversed(),
+        label_first='movie cuts (5 contrasts)',
+        label_second='union of individual PPA masks (Sengupta et al., 2016)',
+        vmin=1,
+        vmax=8,
+        cbar_label='number of contrasts',
+        out=opj(outPath, 'grp_av_stability_legend.png')
+    )
+
+    # group, primary, audio
+    plot_legend_1colorbar(
+        color_first='#2474b7',
+        cmap=mpl.cm.Blues.reversed(),
+        label_first='audio contrast \'geo, groom > all non-geo\'',
+        label_second='union of individual PPA masks (Sengupta et al., 2016)',
+        vmin=3.4,
+        vmax=5.5,
+        cbar_label='Z value',
+        out=opj(outPath, 'grp_ao_c1_legend.png')
+    )
+    # group, primary, movie
+    plot_legend_1colorbar(
+        color_first='#f03523',
+        cmap=mpl.cm.YlOrRd.reversed(),
+        label_first='movie contrast \'vse_new > vpe_old\'',
+        label_second='union of individual PPA masks (Sengupta et al., 2016)',
+        vmin=3.4,
+        vmax=5.5,
+        cbar_label='Z value',
+        out=opj(outPath, 'grp_av_c1_legend.png')
+    )
+
+    # subjects, primary, audio
+    plot_legend_1colorbar(
+        color_first='#2474b7',
+        cmap=mpl.cm.Blues.reversed(),
+        label_first='audio contrast \'geo, groom > all non-geo\'',
+        label_second='individual PPA mask (Sengupta et al., 2016)',
+        vmin=3.4,
+        vmax=7.1,
+        cbar_label='Z value',
+        out=opj(outPath, 'subjs_ao_legend.png')
+    )
+
+    # subjects, primary, movie
+    plot_legend_1colorbar(
+        color_first='#f03523',
+        cmap=mpl.cm.YlOrRd.reversed(),
+        label_first='movie contrast \'vse_new > vpe_old\'',
+        label_second='individual PPA mask (Sengupta et al., 2016)',
+        vmin=3.4,
+        vmax=7.1,
+        cbar_label='Z value',
+        out=opj(outPath, 'subjs_av_legend.png')
+    )
+
+
+def plot_legend_1colorbar(
+    color_first='#2474b7',
+    cmap=mpl.cm.Blues.reversed(),
+    label_first='descriptive nouns (8 contrasts)',
+    label_second='union of individual PPA masks (Sengupta et al., 2016)',
+    vmin=1,
+    vmax=8,
+    cbar_label='number of contrasts',
+    out='test.png'):
+    '''
+    '''
+    fsize = (15, 6)  # width * height
+    fig = plt.figure(
+        figsize=fsize,
+        constrained_layout=False)
+
+    grid = fig.add_gridspec(15, 12)  # rows * columns
+
+    # legend
+    legendAxis = fig.add_subplot(grid[12:, :5])
+
+    first = mpl.patches.Patch(color=color_first, label=label_first)
+    second = mpl.patches.Patch(color='#454545', label=label_second)
+
+    legendAxis.legend(handles=[first, second],
+                      loc='center',
+                      facecolor='white',  # background
+                      edgecolor='k',
+                      prop={'size': 12},
+                      framealpha=1)
+
+    # don't draw line on x- and y-axis
+    plt.axis('off')
+    # hide ticks
+    #  legendAxis.tick_params(axis='both', which='both', length=0)
+    # hide tick lebels
+    #  plt.setp(legendAxis.get_xticklabels(), visible=False)
+    #  plt.setp(legendAxis.get_yticklabels(), visible=False)
+
+    # colorbar
+    # blue colorbar for audio-description
+    cax1 = fig.add_subplot(grid[12:13, 6:11])
+    norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+    cb1 = mpl.colorbar.ColorbarBase(cax1,
+                                    cmap=cmap,
+                                    norm=norm,
+                                    orientation='horizontal')
+
+    # color edges, ticks, and tick labels and edges
+    cb1.outline.set_edgecolor('k')
+    cb1.set_label(cbar_label, color='k')
+
+    cax1.tick_params(colors='k')
+    if label_first == 'descriptive nouns (8 contrasts)':
+        cax1.xaxis.set_ticks(list(range(1, 9)))
+    elif label_first == 'movie cuts (5 contrasts)':
+        cax1.xaxis.set_ticks(list(range(1, 6)))
+
+    # shrinke the space between subplots
+    plt.subplots_adjust(wspace=0, hspace=0)
+
+    # save & close
+    fname = os.path.join(out)
+    plt.savefig(fname,
+                dpi=200,
+                bbox_inches='tight',
+                pad_inches=0.2,
+                transparent=True)
+
+#     fig.savefig(fname.replace('.png', '.svg'),
+#                 dpi=300,
+#                 bbox_inches='tight',
+#                 pad_inches=0.2,
+#                 transparent=True)
+
+    plt.close()
+
+    return None
+
+
+def process_legend_2colorbars(outPath):
+    '''
+    '''
+    # group, stability, audio & movie
+    plot_legend_2colorbars(
+        blue_l='descriptive nouns (8 contrasts)',
+        red_l='movie cuts (5 contrasts)',
+        black_l='union of individual PPA masks (Sengupta et al., 2016)',
+        vmin=1,
+        vmax=8,
+        label='number of contrasts',
+        out=opj(outPath, 'grp_ao_av_stability_legend.png')
+    )
+
+    # group, primary, audio & movie
+    plot_legend_2colorbars(
+        blue_l='audio contrast \'geo, groom > all non-geo\'',
+        red_l='movie contrast \'vse_new > vpe_old\'',
+        black_l='union of individual PPA masks (Sengupta et al., 2016)',
+        vmin=3.4,
+        vmax=5.5,
+        label='Z value',
+        out=opj(outPath, 'grp_ao_av_c1_legend.png')
+    )
+
+    # subjects, primary, audio & movie
+    plot_legend_2colorbars(
+        blue_l='audio contrast \'geo, groom > all non-geo\'',
+        red_l='movie contrast \'vse_new > vpe_old\'',
+        black_l='individual PPA mask (Sengupta et al., 2016)',
+        vmin=3.4,
+        vmax=7.1,
+        label='Z value',
+        out=opj(outPath, 'subjs_ao_av_c1_legend.png')
+    )
+
+    return None
+
+
+def plot_legend_2colorbars(
+    blue_l='descriptive nouns (8 contrasts)',
+    red_l='movie cuts (5 contrasts)',
+    black_l='union of individual PPA masks (Sengupta et al., 2016)',
+    vmin=1,
+    vmax=8,
+    label='number of contrasts',
+    out='test.png'):
+    '''
+    '''
+
+    fsize = (15, 6)  # width * height
+    fig = plt.figure(
+        figsize=fsize,
+        constrained_layout=False)
+
+    grid = fig.add_gridspec(15, 12)  # rows * columns
+
+    # legend
+    legendAxis = fig.add_subplot(grid[12:, :5])
+
+    blue = mpl.patches.Patch(color='#2474b7', label=blue_l)
+    red = mpl.patches.Patch(color='#f03523',  label=red_l)
+    black = mpl.patches.Patch(color='#454545', label=black_l)
+
+    legendAxis.legend(handles=[blue, red, black],
+                      loc='center',
+                      facecolor='white',  # background
+                      edgecolor='k',
+                      prop={'size': 12},
+                      framealpha=1)
+
+    # don't draw line on x- and y-axis
+    plt.axis('off')
+    # hide ticks
+    #  legendAxis.tick_params(axis='both', which='both', length=0)
+    # hide tick lebels
+    #  plt.setp(legendAxis.get_xticklabels(), visible=False)
+    #  plt.setp(legendAxis.get_yticklabels(), visible=False)
+
+    # colorbar
+    # blue colorbar for audio-description
+    cax1 = fig.add_subplot(grid[12:13, 6:11])
+    cmap = mpl.cm.Blues
+    cmap = cmap.reversed()
+    norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+    cb1 = mpl.colorbar.ColorbarBase(cax1,
+                                    cmap=cmap,
+                                    norm=norm,
+                                    orientation='horizontal')
+
+    plt.setp(cax1.get_xticklabels(), visible=False)
+    cax1.tick_params(colors='k')
+    cb1.outline.set_edgecolor('k')
+
+    # red colorbar for movie
+    cax2 = fig.add_subplot(grid[13:14, 6:11])
+    cmap = mpl.cm.YlOrRd
+    cmap = cmap.reversed()
+    norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+    cb2 = mpl.colorbar.ColorbarBase(cax2,
+                                    cmap=cmap,
+                                    norm=norm,
+                                    orientation='horizontal')
+
+    # color edges, ticks, and tick labels and edges
+    cb2.outline.set_edgecolor('k')
+    if blue_l == 'descriptive nouns (8 contrasts)':
+        cax2.xaxis.set_ticks(list(range(1, 9)))
+    cax2.tick_params(colors='k')
+    cb2.set_label(label, color='k')
+
+
+    # shrinke the space between subplots
+    plt.subplots_adjust(wspace=0, hspace=0)
+
+    # save & close
+    fname = os.path.join(out)
+    plt.savefig(fname,
+                dpi=200,
+                bbox_inches='tight',
+                pad_inches=0.2,
+                transparent=True)
+
+#     # save as .svg
+#     fig.savefig(fname.replace('.png', '.svg'),
+#                 dpi=300,
+#                 bbox_inches='tight',
+#                 pad_inches=0.2,
+#                 transparent=True)
+
+    plt.close()
 
     return None
 
 
 if __name__ == "__main__":
-    from nilearn import datasets
-    from nilearn import surface
-    from nilearn import plotting
-    from nilearn import regions
-
-    # set the background of all figures (for saving) to black
-#     plt.rcParams['savefig.facecolor'] = 'black'
-#     plt.rcParams['axes.facecolor'] = 'black'
-
     # cleanup in case script was interupted during debugging
     plt.close()
 
     # read command line arguments
-    outPath = parse_arguments()
+    inPath, outPath = parse_arguments()
 
     # create output path in case it does not exist
     os.makedirs(outPath, exist_ok=True)
 
-    # create surface maps of following files in grpbold3Tp2
-    avPPAprobFile = 'rois-and-masks/av_ppa_prob.nii.gz'
-    aoPPAprobFile = 'rois-and-masks/ao_ppa_prob.nii.gz'
-    grpPPAbinFile = 'rois-and-masks/bilat_PPA_binary.nii.gz'
-    grpPPAprobFile = 'rois-and-masks/bilat_PPA_prob.nii.gz'
-    in_files = [avPPAprobFile, aoPPAprobFile, grpPPAbinFile, grpPPAprobFile]
+    # create surface maps in grpbold3Tp2 space
+    # environment variable 'FREESURFER_HOME' must be set
+    # call the function that calls freesurfer's mri_vol2surf
+    print('create group surface')
+#     create_grp_surfaces(inPath, outPath)
 
-    # loop over the files surface maps
-    for in_file in in_files:
-        # call the function
-        volume_2_surf(in_file,
-                      outPath,
-                      '/home/chris/freesurfer/average/mni152.register.dat',
-                      'MNI152_T1_1mm_brain'
-                      )
+    # create surface maps in individual bold3Tp2 spaces
+    print('create individual surfaces')
+#     create_ind_surfaces(inPath, outPath)
 
-    ########################### INDIVIDUALS ##############################
-    ### process individual subjects
-    ROIS = 'rois-and-masks'  # = input path
-    MASKS_PATH_PATTERN = os.path.join(ROIS, 'sub-??')
+    # plotting of surfaces in group space:
+    # a) union of dedicated visualizer ROIS
+    # b) primary AO & AV contrasts,
+    # c) stability of AO & AV contrats
+    ### change 'test' to inPath
+    print('processing plotting of group surfaces')
+#     process_grp_plotting('test', outPath)
 
-    masks_pathes = find_files(MASKS_PATH_PATTERN)
+    # plotting of surfaces in individual bold3Tp2 space
+    # a) individual ROIs
+    # b) primary AO & AV contrast
+    print('processing plotting of individuals')
+#    process_individuals_plotting(outPath, FG_FREESURFER)
 
-    # get a list of subjects (as strings)
-    subjs = [re.search(r'sub-..', string).group() for string in masks_pathes]
-    subjs = sorted(list(set(subjs)))
+    # binary oder probabilistic input? (from nilearn.image import smooth_img)
+    print('processing legends and 1 colorbar')
+    process_legend_1colorbar(outPath)
 
-    # temporally, set freesurfer subjects dir  (e.g. ~/freesurfer/subjects)
-    # to current subdatast
-    # get the current dir
-    ORG_FS_SUBJS_DIR = os.environ['SUBJECTS_DIR']
-    # the subdataset with forrest freesurfer data
-    TEMP_FS_DATA = os.path.expanduser('inputs/studyforrest-data-freesurfer')
-
-    ### THE symlinks (cause mri_vol2surf doest not like '-'
-    LINKS_DIR = os.path.join('test', 'freesurfer-subjects')
-    os.makedirs(LINKS_DIR, exist_ok = True)
-    os.environ['SUBJECTS_DIR'] = LINKS_DIR
-
-    for subj in subjs[7:8]:
-        # make as symbolic link to the freesurfer subject dir
-        source = os.path.join(TEMP_FS_DATA, subj)
-        destination = os.path.join(LINKS_DIR, subj.replace('-', '0'))
-
-        # create the link
-        if not os.path.exists(destination):
-            os.symlink(os.path.relpath(source, start=LINKS_DIR),
-                       destination)
-
-        ### TEMPORARY INPATH ###
-        in_path = os.path.join('test', subj, 'in_t1w')
-        in_masks = find_files(os.path.join(in_path, '*.nii.gz'))
-
-        for in_file in in_masks:
-            # in_file = os.path.basename(in_file)
-            # loop over the two hemispheres
-            for hemi in ['lh', 'rh']:
-
-                # define some files that will be needed
-                src_registration = os.path.join(source, 'mri/transforms/T2raw.dat')
-                hemi_file = os.path.join(source, 'surf', f'{hemi}.white')
-                hemi_inflated = os.path.join(source, 'surf', f'{hemi}.inflated')
-                # put them into a list
-                to_gets = [src_registration, hemi_file, hemi_inflated]
-
-                # download the files via datalad get
-                for to_get in to_gets:
-                    if not os.path.exists(to_get):
-                        subprocess.call(['datalad', 'get', to_get])
-
-                out_file = in_file.replace('.nii.gz', f'_surf-{hemi}.mgz')
-                # out_file = os.path.join(outPath, out_file)
-
-                if not os.path.exists(out_file):
-                    # call mri_vol2surf
-                    subprocess.call(
-                        ['mri_vol2surf',
-                         '--src', in_file,
-                         '--reg', src_registration,
-                         # '--reg', 'edit.dat',
-                         '--trgsubject', subj.replace('-', '0'),
-                         '--hemi', hemi,
-                         '--interp', 'nearest',
-                         '--surf', 'white',
-                         #  '--surf-fwhm', '3',
-                         '--o', out_file]
-                    )
-    # change Freesurfer subjects dir back to original subjects dir
-    os.environ['SUBJECTS_DIR'] = ORG_FS_SUBJS_DIR
-
-    # PLOTTING OF AO
-#     colorMap = plt.cm.get_cmap('Blues')
-#     colorMap = colorMap.reversed()
-#
-#     plotting.plot_surf_stat_map(
-#         '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
-#         # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
-#         'ao_ppa_prob_surf_rh.mgz',
-#         bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
-#         # axes=axs,
-#         # title='surface right hemisphere',
-#         hemi='right',
-#         view='ventral', # 'lateral',  # 'ventral', # lateral'
-#         cmap=colorMap,
-#         threshold=1,
-#         vmax=14,
-#         alpha=1.0,  # alpha lvl of the mesh
-#         darkness=1,  # darkness of background image; 0=white
-#         colorbar=True
-#     )
-#
-#     # save map
-#     out_fname = os.path.join(outPath, 'surface-plot-ao.png')
-#     plt.savefig(out_fname) #  transparent=True)
-#
-#     # PLOTTING OF Mask
-#     colorMap = plt.cm.get_cmap('Blues')
-#     colorMap = colorMap.reversed()
-#
-#     plotting.plot_surf_stat_map(
-#         '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
-#         # '/home/chris/ao_ppa_prob-surf-rh.mgz',  # stat_map
-#         'bilat_PPA_prob_surf_rh.mgz',
-#         bg_map='/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.sulc',  # curv vs. sulc?
-#         # axes=axs,
-#         # title='surface right hemisphere',
-#         hemi='right',
-#         view='ventral', # 'lateral',  # 'ventral', # lateral'
-#         cmap=colorMap,
-#         threshold=1,
-#         vmax=14,
-#         alpha=1.0,  # alpha lvl of the mesh
-#         darkness=1,  # darkness of background image; 0=white
-#         colorbar=True
-#     )
-#
-#     # save map
-#     out_fname = os.path.join(outPath, 'surface-plot-mask.png')
-#     plt.savefig(out_fname) #  transparent=True)
-#
-#     # maybe use nilearn.regions.connected_regions
-#
-#
-# #    data = surface.load_surf_data('/home/chris/bilat_PPA_binary_surf-rh.mgz')
-# #     coords, faces = surface.load_surf_mesh('/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated')
-# #
-# #     plotting.plot_surf_contours(
-# #         '/home/chris/freesurfer/subjects/MNI152_T1_1mm_brain/surf/rh.inflated',  # surf_mash
-# #         '/home/chris/rPPA_overlap_surf-rh.mgz',
-# #         # figure=fig,
-# #         cmap='Greens')
-#
-#     # save that shit
-#
-#
-# #     out_fname = out_fname.replace('.png', '.svg')
-# #     plt.savefig(out_fname, transparent=True)
-#
-# #    plt.show()
+    # binary oder probabilistic input? (from nilearn.image import smooth_img)
+    print('processing legends and 2 colorbars')
+    process_legend_2colorbars(outPath)

@@ -33,7 +33,7 @@ def parse_arguments():
 
     parser.add_argument('-out',
                         required=False,
-                        default='',
+                        default='rois-and-masks',
                         help='the output directory (e.g. "rois-and-masks")')
 
     args = parser.parse_args()
@@ -340,7 +340,7 @@ if __name__ == "__main__":
     subjs = [re.search(r'sub-..', string).group() for string in aoFpathes]
     subjs = sorted(list(set(subjs)))
 
-    for subj in subjs[7:8]:
+    for subj in subjs:
         print('\nProcessing', subj)
         # 1. create bilateral, probabilistic & binarized PPA masks
         # from group masks (in group space)
@@ -504,6 +504,51 @@ if __name__ == "__main__":
             ['applywarp',
              '-i', inFpath,
              '-o', os.path.join(out_path, 'ao-cope1-grp.nii.gz'),
+             '-r', highres_ref,
+             '-w', templ2subjWarp,
+             f'--postmat={postmat}',
+             '--interp=nn'  # nearest neighbour
+             ])
+
+
+        # movie's contrast 1 (z=2.3) from bold3Tp2 to t1w
+        inFpath = AV_ZMAP_PATTERN.replace('sub-??', subj).replace('cope*', 'cope1')
+        inFpath = inFpath.replace('stats/zstat1.nii.gz', 'thresh_zstat1.nii.gz')
+
+        if not os.path.exists(inFpath):
+                subprocess.call(['datalad', 'get', inFpath])
+
+        print('\nconvert movie\'s primary COPE from bold3Tp2 to t1w')
+        subprocess.call(
+            ['flirt',
+             '-in', inFpath,
+             '-out', os.path.join(out_path, 'av-cope1-ind.nii.gz'),
+             '-ref', highres_ref,
+             '-applyxfm',
+             '-init', in_matrix,
+             '-interp', 'nearestneighbour'
+             # '--premat=premat'
+             ]
+        )
+
+        # movie's contrast 1 (z=3.4) from grpbold3Tp2 to t1w
+        print('\nconvert movie\'s primary COPE from grpbold3Tp2 to t1w')
+
+        # define inputs
+        inFpath = inFpath.replace('-ind', '-grp')
+        in_matrix = os.path.join(TNT_DIR, subj, 't1w/in_mni152/tmpl2subj.mat')
+        templ2subjWarp = os.path.join(TNT_DIR, subj, 'bold3Tp2/in_grpbold3Tp2/tmpl2subj_warp.nii.gz')
+        postmat = os.path.join(TNT_DIR, subj, 'bold3Tp2/in_t1w/xfm_6dof.mat')
+
+        # download the necessary files
+        for to_get in [inFpath, in_matrix, templ2subjWarp, postmat]:
+            if not os.path.exists(to_get):
+                subprocess.call(['datalad', 'get', to_get])
+
+        subprocess.call(
+            ['applywarp',
+             '-i', inFpath,
+             '-o', os.path.join(out_path, 'av-cope1-grp.nii.gz'),
              '-r', highres_ref,
              '-w', templ2subjWarp,
              f'--postmat={postmat}',

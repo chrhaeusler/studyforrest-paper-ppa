@@ -198,7 +198,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     cax1 = fig.add_subplot(grid[12:13, 6:11])
     cmap = mpl.cm.Blues
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=0, vmax=8)
+    norm = mpl.colors.Normalize(vmin=1, vmax=8)
     cb1 = mpl.colorbar.ColorbarBase(cax1,
                                     cmap=cmap,
                                     norm=norm,
@@ -212,7 +212,7 @@ def process_stability(ao_prob, av_prob, outfpath):
     cax2 = fig.add_subplot(grid[13:14, 6:11])
     cmap = mpl.cm.YlOrRd
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=0, vmax=8)
+    norm = mpl.colors.Normalize(vmin=1, vmax=8)
     cb2 = mpl.colorbar.ColorbarBase(cax2,
                                     cmap=cmap,
                                     norm=norm,
@@ -220,7 +220,7 @@ def process_stability(ao_prob, av_prob, outfpath):
 
     # ticklabels and edge of the colorbar
     cax2.tick_params(colors='w')
-    cax2.xaxis.set_ticks(list(range(9)))
+    cax2.xaxis.set_ticks(list(range(1,9)))
     cb2.set_label('number of contrasts', color='w')
     cb2.outline.set_edgecolor('w')
 
@@ -271,7 +271,7 @@ def plot_stability_slice(mode, coord,
     display.add_overlay(movie_img,
                         threshold=0,
                         cmap=colorMap,
-                        vmin=0,
+                        vmin=1,
                         vmax=8,
                         alpha=1)
 
@@ -281,7 +281,7 @@ def plot_stability_slice(mode, coord,
     display.add_overlay(audio_img,
                         threshold=0,
                         cmap=colorMap,
-                        vmin=0,
+                        vmin=1,
                         vmax=8,
                         alpha=1)
 
@@ -354,9 +354,9 @@ def process_group_averages(outfpath):
     legendAxis = fig.add_subplot(grid[12:, :6])
 
     blue = mpl.patches.Patch(color='#2474b7',
-                             label='geo, groom > all non-geo (audio-description)')
+                             label='audio contrast \'geo, groom > all non-geo\'')
     red = mpl.patches.Patch(color='#f03523',
-                            label='vse_new > vpe_old (movie)')
+                            label='movie contrast \'vse_new > vpe_old\'')
     black = mpl.patches.Patch(color='#454545',
                               label='union of individual PPA masks (Sengupta et al., 2016)')
 
@@ -371,7 +371,7 @@ def process_group_averages(outfpath):
     cax1 = fig.add_subplot(grid[12:13, 6:11])
     cmap = mpl.cm.Blues
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
+    norm = mpl.colors.Normalize(vmin=3.4, vmax=5.5)
     cb1 = mpl.colorbar.ColorbarBase(cax1,
                                     cmap=cmap,
                                     norm=norm,
@@ -385,7 +385,7 @@ def process_group_averages(outfpath):
     cax2 = fig.add_subplot(grid[13:14, 6:11])
     cmap = mpl.cm.YlOrRd
     cmap = cmap.reversed()
-    norm = mpl.colors.Normalize(vmin=3.4, vmax=7.1)
+    norm = mpl.colors.Normalize(vmin=3.4, vmax=5.5)
     cb2 = mpl.colorbar.ColorbarBase(cax2,
                                     cmap=cmap,
                                     norm=norm,
@@ -442,7 +442,7 @@ def plot_grp_slice(mode, coord, roi,
                         threshold=3.4,
                         cmap=colorMap,
                         vmin=3.4,
-                        # vmax=10,
+                        vmax=5.5,  # max value in map is 5.307
                         alpha=1)
 
     # add overlay of audio-only
@@ -452,7 +452,7 @@ def plot_grp_slice(mode, coord, roi,
                         threshold=3.4,
                         cmap=colorMap,
                         vmin=3.4,
-                        # vmax=10,
+                        vmax=5.5,  # max value in map is 4.481
                         alpha=1)
 
     # add contours of group PPA
@@ -591,7 +591,7 @@ def plot_thresh_zmaps(subj, axis,
                         threshold=3.4,
                         cmap=colorMap,
                         vmin=3.4,
-                        # vmax=10,
+                        vmax=7.1,
                         alpha=1)
 
     # add overlay of audio-only
@@ -601,7 +601,7 @@ def plot_thresh_zmaps(subj, axis,
                         threshold=3.4,
                         cmap=colorMap,
                         vmin=3.4,
-                        # vmax=10,
+                        vmax=7.1,
                         alpha=1)
 
     # add contours of group PPA
@@ -633,9 +633,9 @@ def add_legend_colobar_to_individuals(fig):
     legendAxis = fig.add_subplot(grid[6*3:6*3+3, 13:23])
 
     blue = mpl.patches.Patch(color='#2474b7',
-                             label='geo, groom > all non-geo (audio-description)')
+                             label='audio contrast \'geo, groom > all non-geo\'')
     red = mpl.patches.Patch(color='#f03523',
-                            label='vse_new > vpe_old (movie)',)
+                            label='movie contrast \'vse_new > vpe_old\'')
     black = mpl.patches.Patch(color='#454545',
                               label='individual PPA mask (Sengupta et al., 2016)')
 
@@ -676,81 +676,6 @@ def add_legend_colobar_to_individuals(fig):
     cb2.outline.set_edgecolor('w')
 
     return fig
-
-
-def plot_zmaps(subj, audio_zmap, movie_zmap,
-               mask_fpath, audio_thresh, movie_thresh, outfpath):
-    '''
-    this function was used in an early version of the script to plot individual
-    unthresholded zmaps (that are still in subjects space).
-
-    It does that by taking individual thresholds that were explored and set by
-    visually inspection of unthresholded results
-    e.g.:
-    inputs/studyforrest_ppa/sub-01/2nd-lvl_audio-ppa-ind.gfeat/cope1.feat/stats/zstat1.nii.gz
-    inputs/studyforrest_ppa/sub-01/2nd-lvl_movie-ppa-ind.gfeat/cope1.feat/stats/zstat1.nii.gz
-    '''
-    from nilearn.image import math_img
-
-    THRESH_DICT = {
-        'sub-01': {'AO': 2.6, 'AV': 3.4},
-        'sub-02': {'AO': 2.0, 'AV': 3.2},
-        'sub-03': {'AO': 2.0, 'AV': 3.2},
-        'sub-04': {'AO': 3.2, 'AV': 3.0},
-        'sub-05': {'AO': 2.0, 'AV': 2.4},
-        'sub-06': {'AO': 2.6, 'AV': 2.4},
-        'sub-09': {'AO': 2.2, 'AV': 3.2},
-        'sub-14': {'AO': 2.4, 'AV': 2.4},
-        'sub-15': {'AO': 3.6, 'AV': 2.8},
-        'sub-16': {'AO': 3.4, 'AV': 3.4},
-        'sub-17': {'AO': 3.8, 'AV': 4.0},
-        'sub-18': {'AO': 3.4, 'AV': 3.0},
-        'sub-19': {'AO': 3.0, 'AV': 3.6},
-        'sub-20': {'AO': 3.4, 'AV': 3.2}
-        }
-
-    out_fname = os.path.join(outfpath, subj + '_ppa.svg')
-    audio_thresh = THRESH_DICT[subj]['AO']
-    movie_thresh = THRESH_DICT[subj]['AV']
-
-    a_mask = math_img('img > %s' % audio_thresh, img=audio_zmap)
-    azmap_masked = math_img('zmap * mask', zmap=audio_zmap, mask=a_mask)
-
-    m_mask = math_img('img > %s' % movie_thresh, img=movie_zmap)
-    mzmap_masked = math_img('zmap * mask', zmap=movie_zmap, mask=m_mask)
-
-    # {‘ortho’, ‘tiled’, ‘x’, ‘y’, ‘z’, ‘yx’, ‘xz’, ‘yz’}
-    # plotting the binary PPA mask
-    display = plotting.plot_roi(mask_fpath,
-                                title=subj,
-                                display_mode='z',
-                                cut_coords=[-11],
-                                draw_cross=False,
-                                cmap=plotting.cm.red_transparent,
-                                vmax=15.0,
-                                alpha=1)
-
-    # add overlay of movie
-    display.add_overlay(mzmap_masked,
-                        threshold=movie_thresh,
-                        cmap='Wistia',
-                        vmin=0,
-                        vmax=7,
-                        alpha=.95)
-
-    # add overlay of audio-only
-    display.add_overlay(azmap_masked,
-                        threshold=audio_thresh,
-                        cmap=plotting.cm.black_blue,
-                        vmin=0,
-                        vmax=7,
-                        alpha=.95)
-
-    # save that shit
-    plt.savefig(out_fname, transparent=True)
-    plt.close()
-
-    return out_fname
 
 
 if __name__ == "__main__":
