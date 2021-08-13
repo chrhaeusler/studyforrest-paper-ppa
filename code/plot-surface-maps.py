@@ -1093,18 +1093,18 @@ if __name__ == "__main__":
     # environment variable 'FREESURFER_HOME' must be set
     # call the function that calls freesurfer's mri_vol2surf
     print('create group surface')
-#    create_grp_surfaces(inPath, inPath)
+    create_grp_surfaces(inPath, inPath)
 
     # create surface maps in individual bold3Tp2 spaces
     print('create individual surfaces')
-#    create_ind_surfaces(inPath, inPath)
+    create_ind_surfaces(inPath, inPath)
 
     # plotting of surfaces in group space:
     # a) union of dedicated visualizer ROIS
     # b) primary AO & AV contrasts,
     # c) stability of AO & AV contrats
     print('processing plotting of group surfaces')
-#    process_grp_plotting(inPath, outPath)
+    process_grp_plotting(inPath, outPath)
 
     # plotting of surfaces in individual bold3Tp2 space
     # a) individual ROIs
@@ -1112,10 +1112,8 @@ if __name__ == "__main__":
     print('processing plotting of individuals')
     process_individuals_plotting(inPath, outPath, FG_FREESURFER)
 
-    # binary oder probabilistic input? (from nilearn.image import smooth_img)
-    print('processing legends and 1 colorbar')
-#    process_legend_1colorbar(outPath)
-
-    # binary oder probabilistic input? (from nilearn.image import smooth_img)
     print('processing legends and 2 colorbars')
     process_legend_2colorbars(outPath)
+
+    # print('processing legends and 1 colorbar')
+    # process_legend_1colorbar(outPath)
