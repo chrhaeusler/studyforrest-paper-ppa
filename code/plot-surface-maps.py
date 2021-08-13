@@ -128,7 +128,7 @@ def create_grp_surfaces(in_path, out_path):
     '''Converts brain volume files to surface maps
     '''
     out_path = opj(out_path, 'in_t1w')
-    os.makedirs(outPath, exist_ok=True)
+    os.makedirs(out_path, exist_ok=True)
 
     # input files
     in_files = dict(
@@ -236,8 +236,8 @@ def process_grp_plotting(inPath, outPath):
     right = opj(inPath, 'ao_c1_z3.4_surf_rh.mgz')
     color_map = plt.cm.get_cmap('Blues')
     color_map = color_map.reversed()
-    thresh = 3.4  # range should be >3.4
-    out_fname = opj(outPath, f'grp_ao_c1_surf_thresh{thresh}.png')
+    thresh = 3.4  # usually 3.4
+    out_fname = opj(outPath, f'grp_ao_c1_surf.png')
 
     create_2x4_plot(left, right,
                     color_map,
@@ -253,8 +253,8 @@ def process_grp_plotting(inPath, outPath):
     right = opj(inPath, 'av_c1_z3.4_surf_rh.mgz')
     color_map = plt.cm.get_cmap('YlOrRd')
     color_map = color_map.reversed()
-    thresh = 3.4  # range should be >3.4
-    out_fname = opj(outPath, f'grp_av_c1_surf_thresh{thresh}.png')
+    thresh = 3.4  # usually 3.4
+    out_fname = opj(outPath, f'grp_av_c1_surf.png')
 
     create_2x4_plot(left, right,
                     color_map,
@@ -271,7 +271,7 @@ def process_grp_plotting(inPath, outPath):
     color_map = plt.cm.get_cmap('Blues')
     color_map = color_map.reversed()
     thresh = 1  # usually 1
-    out_fname = opj(outPath, f'grp_ao_stability_surf_thresh{thresh}.png')
+    out_fname = opj(outPath, f'grp_ao_stability_surf.png')
 
     create_2x4_plot(left, right,
                     color_map,
@@ -288,7 +288,7 @@ def process_grp_plotting(inPath, outPath):
     color_map = plt.cm.get_cmap('YlOrRd')
     color_map = color_map.reversed()
     thresh = 1  # usually 1
-    out_fname = opj(outPath, f'grp_av_stability_surf_thresh{thresh}.png')
+    out_fname = opj(outPath, f'grp_av_stability_surf.png')
 
     create_2x4_plot(left, right,
                     color_map,
@@ -303,10 +303,8 @@ def process_grp_plotting(inPath, outPath):
     left = opj(inPath, 'bilat_PPA_prob_surf_lh.mgz')
     right = opj(inPath, 'bilat_PPA_prob_surf_rh.mgz')
     color_map = plt.cm.get_cmap('gray')  # black = small; white = high values
-    thresh = 0.7  # range should be 1-14
-    ### since it was smoothed, we now have 'a lot' of non voxels that are
-    ### between 0 and 1
-    out_fname = opj(outPath, f'grp_roi_ppa_surf_thresh{thresh}.png')
+    thresh = 0.7   # usually 1 but we smoothed
+    out_fname = opj(outPath, f'grp_ppa_surf.png')
 
     create_2x4_plot(left, right,
                     color_map,
@@ -503,8 +501,6 @@ def create_2x4_plot(stat_map_left, stat_map_right,
                      cbar_bool,
                      title)
 
-    print(plt.gcf().get_size_inches())
-
     # set the space between sublots
     plt.subplots_adjust(wspace=-.20, hspace=-.68)
 
@@ -559,21 +555,22 @@ def plot_surface_map(ax,
     return ax
 
 
-def process_individuals_plotting(outPath, fg_freesurfer):
+def process_individuals_plotting(inPath, outPath, fg_freesurfer):
     '''
     '''
     # AO cope1
-    left = opj(outPath, 'SUB', 'in_t1w', 'ao-cope1-grp_surf_lh.mgz')
-    right = opj(outPath, 'SUB', 'in_t1w', 'ao-cope1-grp_surf_rh.mgz')
+    left = opj(inPath, 'SUB', 'in_t1w', 'ao-cope1-grp_surf_lh.mgz')
+    right = opj(inPath, 'SUB', 'in_t1w', 'ao-cope1-grp_surf_rh.mgz')
     # colormap blue to white
     color_map = plt.cm.get_cmap('Blues')
     color_map = color_map.reversed()
     ### THRESHOLD
     thresh = 3.4  # usually 3.4
-    out_fname = opj(outPath, f'subs_ao_c1_surf_thresh{thresh}.png')
+    out_fname = opj(outPath, f'subs_ao_c1_surf.png')
 
     create_mosaic_plot(
         fg_freesurfer,
+        inPath,
         outPath,
         left, right,
         color_map,
@@ -585,17 +582,19 @@ def process_individuals_plotting(outPath, fg_freesurfer):
     )
 
     # AV cope1
-    left = opj(outPath, 'SUB', 'in_t1w', 'av-cope1-grp_surf_lh.mgz')
-    right = opj(outPath, 'SUB', 'in_t1w', 'av-cope1-grp_surf_rh.mgz')
+    left = opj(inPath, 'SUB', 'in_t1w', 'av-cope1-grp_surf_lh.mgz')
+    right = opj(inPath, 'SUB', 'in_t1w', 'av-cope1-grp_surf_rh.mgz')
+
     # colormap red to yellow
     color_map = plt.cm.get_cmap('YlOrRd')
     color_map = color_map.reversed()
     ### THRESHOLD
     thresh = 3.4  # usually 3.4
-    out_fname = opj(outPath, f'subs_av_c1_surf_thresh{thresh}.png')
+    out_fname = opj(outPath, f'subs_av_c1_surf.png')
 
     create_mosaic_plot(
         fg_freesurfer,
+        inPath,
         outPath,
         left, right,
         color_map,
@@ -607,18 +606,17 @@ def process_individuals_plotting(outPath, fg_freesurfer):
     )
 
     # individual PPA ROIS
-    left = opj(outPath, 'SUB', 'in_t1w', 'PPA_?_surf_lh.mgz')
-    right = opj(outPath, 'SUB', 'in_t1w', 'PPA_?_surf_rh.mgz')
+    left = opj(inPath, 'SUB', 'in_t1w', 'PPA_?_surf_lh.mgz')
+    right = opj(inPath, 'SUB', 'in_t1w', 'PPA_?_surf_rh.mgz')
     # colormap
     color_map = plt.cm.get_cmap('gray')  # black = small; white = high values
     ### THRESHOLD
-    thresh = 0.7  # usually 1
-    ### since it was smoothed, we now have 'a lot' of non voxels that are
-    ### between 0 and 1
-    out_fname = opj(outPath, f'subs_rois_ppa_thresh{thresh}.png')
+    thresh = 0.7  # usually 1 but we smoothed
+    out_fname = opj(outPath, f'subs_ppa_surf.png')
 
     create_mosaic_plot(
         fg_freesurfer,
+        inPath,
         outPath,
         left, right,
         color_map,
@@ -634,6 +632,7 @@ def process_individuals_plotting(outPath, fg_freesurfer):
 
 def create_mosaic_plot(fg_freesurfer,
                        inPath,
+                       outPath,
                        stat_map_left, stat_map_right,  # freesurfer dir
                        color_map,
                        darkness,
@@ -702,6 +701,7 @@ def create_mosaic_plot(fg_freesurfer,
         surf_mesh = opj(fg_freesurfer, subj, 'surf', 'lh.inflated')
         backgr = opj(fg_freesurfer, subj, 'surf', 'lh.sulc')
         # map overlay
+
         map_left = stat_map_left.replace('SUB', subj)
         # some subjects have only one-hemispheric PPA, so search for a pattern
         if 'PPA_?_' in map_left:
@@ -1093,29 +1093,28 @@ if __name__ == "__main__":
     # environment variable 'FREESURFER_HOME' must be set
     # call the function that calls freesurfer's mri_vol2surf
     print('create group surface')
-#     create_grp_surfaces(inPath, outPath)
+#    create_grp_surfaces(inPath, inPath)
 
     # create surface maps in individual bold3Tp2 spaces
     print('create individual surfaces')
-#     create_ind_surfaces(inPath, outPath)
+#    create_ind_surfaces(inPath, inPath)
 
     # plotting of surfaces in group space:
     # a) union of dedicated visualizer ROIS
     # b) primary AO & AV contrasts,
     # c) stability of AO & AV contrats
-    ### change 'test' to inPath
     print('processing plotting of group surfaces')
-#     process_grp_plotting('test', outPath)
+#    process_grp_plotting(inPath, outPath)
 
     # plotting of surfaces in individual bold3Tp2 space
     # a) individual ROIs
     # b) primary AO & AV contrast
     print('processing plotting of individuals')
-#    process_individuals_plotting(outPath, FG_FREESURFER)
+    process_individuals_plotting(inPath, outPath, FG_FREESURFER)
 
     # binary oder probabilistic input? (from nilearn.image import smooth_img)
     print('processing legends and 1 colorbar')
-    process_legend_1colorbar(outPath)
+#    process_legend_1colorbar(outPath)
 
     # binary oder probabilistic input? (from nilearn.image import smooth_img)
     print('processing legends and 2 colorbars')

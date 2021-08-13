@@ -115,22 +115,22 @@ call for considering a functional subdivision of the PPA.  \end{abstract}
 
 % brain mapping via fMRI
 Studies in the field of neuropsychology and neuroimaging
-(\citep[e.g.,][]{penfield1950cerebral, fox1984noninvasive}) have shown that different
-parts of the brain are specialized for different perceptual and cognitive
-functions.
+(\citep[e.g.,][]{penfield1950cerebral, fox1984noninvasive}) have shown that
+different parts of the brain are specialized for different perceptual and
+cognitive functions.
 % occipital cortex for vision -> two pathways
-The occipital cortex is considered to be primarily involved in the early stages
-of visual perception and giving rise to two distinct pathways that process
-different kind of visual information:
+the occipital cortex is considered to be primarily involved in the early stages
+of visual perception and giving rise to two distinct [but interacting] pathways
+that serve different functions:
 % dorsal vs ventral pathway
-a dorsal stream (the ``where pathway'') that leads into the parietal lobe, and a
-ventral stream (the ``what pathway'') that leads into the temporal lobe
-\citep{goodale1992separate, mishkin1982contribution}.
+a) a dorsal stream (the ``how pathway'') that [leads into the parietal lobe,]
+and supports [nonconscious] visual guidance of action, and
+b) a ventral stream (the ``what pathway'') that [leads into the temporal lobe
+and] supports [conscious] perception and recognition.
+\citep{goodale1992separate, milner2017two, mishkin1982contribution}.
 
-\todo[inline]{Goodale and Milner (1992), which is literally a call for what and
-    how pathways. The function of these pathways remains in dispute but its
-    clear that where (spatial processing) must take place in both streams. You
-should probably acknowledge that.}
+\todo[inline]{reviewer #1: its clear that where (spatial processing) must take
+place in both streams. You should probably acknowledge that.}
 % PPA
 A classic example of a higher-level visual area in the ventral pathway is the
 ``parahippocampal place area'' (PPA) \citep{epstein1998ppa,
@@ -143,7 +143,8 @@ regions of the fusiform gyrus and anterior lingual gyrus
 Increased hemodynamic activity is observed in the PPA when participants view
 pictures of landscapes, buildings or landmarks (compared to e.g. pictures of
 faces or tools) during blood oxygenation level-dependent functional magnetic
-resonance imaging (BOLD fMRI) (\citep[see reviews][]{epstein2014neural, aminoff2013role}).
+resonance imaging (BOLD fMRI) (\citep[see reviews][]{epstein2014neural,
+aminoff2013role}).
 % \citep{aguirre1998area, epstein2014neural, epstein1998ppa, troiani2012object}.
 
 % literature review overview: imagination & haptic exploration; van der Hurk: 64
@@ -314,7 +315,7 @@ visual stimulation than a paradigm using blocks of pictures.
 The movie's primary $t$-contrast that compared cuts to a setting that was not
 depicted before to cuts within a recurring setting (\texttt{vse\_new >
 vpe\_old}) yielded three significant clusters (see Table~\ref{tab:res-av-group1},
-Figgure~\ref{fig:group-slices}).
+Figure~\ref{fig:group-slices}).
 % PPA (others the clusters extend into).
 One cluster spans across the midline and comprises parts of the intracalcarine
 and cuneal cortex, the lingual gyrus and retrosplenial cortex, the occipital and
@@ -503,11 +504,12 @@ the left-hemispheric PPA.
         $t$-contrast (blue) that compares geometry related nouns to non-
         geometry related nouns spoken by the narrator
         (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
-        primary $t$-contrast (blue) that compares cuts to setting depicted for
+        primary $t$-contrast (red) that compares cuts to setting depicted for
         the first time with cuts within a recurring setting
         (\texttt{vse\_new > vpe\_old}).
         Black:
-        outline of participant-specific PPA ROIs.
+        outline of participant-specific PPA ROIs reported by
+        \citet{sengupta2016extension}.
         Light gray: The
         audio-description's field of view \citep{hanke2014audiomovie}.
         To facilitate comparisons across participants, we chose the same horizontal
@@ -1589,21 +1591,21 @@ individual PPA overlaps were created from data provided by
 
 
 
-\section*{Data (and code) availability}
+\section*{Data availability}
 
 % Zenodo (registered but zipped) vs. OSF (datalad dataset but probably
 % unregistered)
 The fMRI data, annotations, analysis scripts to generate the results, and
 results as Datalad \citep{datalad} datasets, published to or linked from the
-GIN repository
-\href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}} (DOI assignment pending).
+GIN repository \href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}} (DOI assignment pending).
 Unthresholded $Z$-maps of all contrasts can be found at
 \href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}.
 
 
 \section*{Code availability}
 
-\todo[inline]{Please also split "Code and Data availability" into two sections}
+Scripts to generate the results as Datalad \citep{datalad} are published to a
+GIN repository \href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}} (DOI assignment pending).
 
 
 \section*{Data Citations}
@@ -1669,10 +1671,6 @@ locations, and temporal progression in the motion picture "Forrest Gump".
 %  \textbf{\bibinfo{volume}{30}}, \bibinfo{pages}{135--137}
 %  (\bibinfo{year}{2012}).
 %\end{thebibliography}
-
-
-
-
 
 
 \section*{Acknowledgements}
@@ -1918,5 +1916,109 @@ The absence of observable hemodynamic response differences in the PPA suggests
 that without the visual information in the movie stimulus, no, or substantially
 less, processing of stimulus content with respect to spatial information
 co-occurred with the timing of the movie cuts.
+
+
+\subsection*{Surface maps}
+
+\todo[inline]{Just mention this part in the main document via 'the corresponding
+surface plots (Fig xy) can be found in the supplemental materials'?}
+\todo[inline]{write intro regarding purpose of additional surface plots?}
+
+% reconstruction MNI
+Cortical reconstruction of the MNI152 T1-weighted brain template
+[MNI152\_T1\_1mmi\_brain.nii.gz] was performed using
+\href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer} v7.1.1
+\citep{dale1999cortical}.
+% reconstruction: individual results
+Subject-specific cortical surfaces are part of pre-existing
+\href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer.git}{dataset}
+that used FreeSurfer v5.3.0 to reconstruct surfaces from T1-weighted images and
+an additional high-resolution T2-weighted image.
+
+% projection
+Results were projected onto the corticals surface using
+\href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer's} \citep{dale1999cortical}
+'mri\_vol2surf' command.
+% smoothing
+Group and individual PPAs were additionally patially smoothed applying a
+Gaussian kernel with full width at half maximum (FWHM) of \unit[3.0]{mm}.
+
+\subsubsection*{Group results}
+Group results see Table~\ref{tab:res-ao-group1} for AO results,
+Table~\ref{tab:res-av-group1} for AV results, and
+Figure~\ref{fig:grp_ao_av_c1_surf} for surface maps.
+
+
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/grp_ao_av_c1_surf}
+
+    \caption{Mixed-effects group-level (N=14) clusters ($Z$>3.4, $p$<.05
+      cluster-corrected) of activity correlated with the processing of spatial
+      information are projected onto the surface of the MNI152
+      T1-weighted template.
+      %
+      The results of the audio-description's primary $t$-contrast (blue) that
+      compares geometry-related nouns spoken by the narrator to non-spatial
+      nouns (\texttt{geo, groom} > all non-spatial categories) are overlaid
+      on the movie's primary $t$-contrast (red) that compares cuts to a
+      setting depicted for the first time with cuts within a recurring setting
+      (\texttt{vse\_new > vpe\_old}).
+      %
+      Black: outline of the union of individual PPA ROIs reported by
+      \citet{sengupta2016extension}.
+    }
+    \label{fig:grp_ao_av_c1_surf}
+\end{figure*}
+
+
+\subsubsection*{Stability}
+Group results see Figure~\ref{fig:grp_ao_av_stability} for surface maps.
+
+
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/grp_ao_av_stability_surf}
+    \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
+        corrected) across all contrasts for both naturalistic stimuli.
+        The audio-description's contrasts 1-8 (blue)
+        are overlaid over the audio-visual movie's contrasts 1-5 (red;
+        \ref{tab:contrasts}).
+        Cluster are projected onto the surface of the
+        MNI152 T1-weighted template.
+        Black: outline of the union of individual PPA ROIs reported by
+        \citet{sengupta2016extension}.
+        }
+    \label{fig:grp_ao_av_stability}
+\end{figure*}
+
+
+\subsubsection*{Individual resultsStability}
+
+Individual results see Figure~\ref{fig:subjs_ao_av_c1_surf} for surface maps.
+\todo[inline]{RSC in of AV is essentially not visible}
+
+
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/subjs_ao_av_c1_surf}
+    \caption{Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
+        cluster-corrected)
+        projected onto subject-specific brain surface that were
+        [re]constructed from individual T1-weighted brain images.
+        The results of the audio-description's primary
+        $t$-contrast (blue) that compares geometry related nouns to non-
+        geometry related nouns spoken by the narrator
+        (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
+        primary $t$-contrast (red) that compares cuts to setting depicted for
+        the first time with cuts within a recurring setting
+        (\texttt{vse\_new > vpe\_old}).
+        Black: outline of participant-specific PPA ROIs reported by
+        \citet{sengupta2016extension}.
+        }
+    \label{fig:subjs_ao_av_c1_surf}
+\end{figure*}
+
+
 
 \end{document}
