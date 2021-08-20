@@ -1,0 +1,416 @@
+\documentclass[english,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{stix2}
+\usepackage{babel}
+\usepackage[section]{placeins}
+\usepackage{flafter}
+\usepackage{comment}
+\usepackage{breakurl}
+\usepackage{svg}
+\usepackage[labelfont=bf,font=small]{caption}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+% \usepackage[disable]{todonotes}
+\usepackage{todonotes}
+\usepackage{units}
+\usepackage[left=2.5cm,right=2.5cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+\usepackage[
+colorlinks=true,
+	citecolor=black,
+  urlcolor=black,
+	linkcolor=black
+]{hyperref}
+%\newcommand{\scidatalogo}{\includegraphics[height=36pt]{SciData_logo.jpg}}
+\newcommand{\scidatalogo}{}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+%\setlength{\headheight}{40pt}
+%\lhead{\textsc{\scidatalogo}}
+\usepackage[comma,super,sort&compress]{natbib}
+\usepackage{xr}
+\externaldocument{main}
+\makeatletter
+\renewcommand{\thefigure}{S\@arabic\c@figure}
+\makeatother
+% \usepackage{helvet}
+
+% \renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\input{descr-stats-ao-events.tex}
+\input{descr-stats-av-events.tex}
+\input{descr-stats-anno.tex}
+
+% title has to be < 110 chars incl. spaces at the moment 106 Chars
+\title{Processing of visual and non-visual naturalistic spatial information in
+  the "parahippocampal place area"}
+
+\author{
+    Christian~O.~Häusler\textsuperscript{1,2{*}},
+    Simon B. Eickhoff\textsuperscript{1,2},
+    Michael Hanke\textsuperscript{1,2}}
+% https://www.nature.com/sdata/publish/for-authors#other-formats
+
+\maketitle
+\thispagestyle{fancy}
+
+\noindent
+1. Psychoinformatics Lab, Institute of Neuroscience and Medicine, Brain \&
+Behaviour (INM-7), Research Centre Jülich, Jülich, Germany\\
+\noindent
+2. Institute of Systems Neuroscience, Medical Faculty, Heinrich Heine University,
+Düsseldorf, Germany\\
+{*}corresponding author: Christian Olaf Häusler (der.haeusler@gmx.net)
+
+
+\section*{Supplementary Information}
+
+
+\subsection*{Robustness of main findings across alternative contrasts}
+
+In order to test the robustness of our approach, we created overall five
+$t$-contrasts for the movie stimulus, and overall eight $t$-contrast for the
+audio-description (see Table~\ref{tab:contrasts}).
+% how
+Contrasts differ in contrasted categories based on ``how well'' averaged events
+within categories were considered to represent spatial and non-spatial
+information, and the number of events in the stimulus.
+% NeuroVault
+Unthresholded $Z$-maps of all contrasts on a group level co-registered to the
+group-template (MNI152 space) can be found at
+\href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}.
+
+% AV PPA contrasts
+% 1 PPA (l/r); RSC (l/r), LOC (l/r), VisC (l/r),
+% intracalcarine, cuneal, ling.c
+% 2 PPA (l/r); RSC (-/-), LOC (l/r), VisC (-/-)
+% 3 PPA (l/r); RSC (-/-), LOC (-/-), VisC (-/r), occ. fusisf. g.
+% 4 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), lingual g., occ. fusif. g.
+% 5 PPA (l/r); RSC (l/r), LOC (l/r), VisC (-/-), occ. fusif. g.
+
+% AV results: PPA; biggest overlap in posterior part of PPA group overlap  =
+% temporal occipital fusiform cortex
+Reliably across all five movie contrasts, we find bilaterally significant
+clusters that overlap with the PPA group overlap
+(see Figure~\ref{fig:stability-slices}).
+% AV: RSC & LOC
+Several contrasts of the movie also yielded bilaterally significant clusters in
+the ventral precuneal cortex and posterior cingulate gyrus (i.e. retrosplenial
+complex; contrasts 1, 4, 5), and lateral occipital cortex (contrasts 1, 2, 4,
+5).
+
+% AD PPA contrasts
+% 1 PPA (l/r); RSC (l/r), LOC (l/r)
+% 2 PPA (l/r); RSC (l/r), LOC (l/r), r. sup.temp.C., r.fr.pole; putamen; etc
+% 3 PPA (l/r); RSC (l/r), LOC (l/r),l&r sup.temp.C., anterior cing., paracing.
+% 4 PPA (l/r); RSC (l/r), LOC (l/r)
+% 5 PPA (l/r); RSC (l/r), LOC (-/-)
+% 6 PPA (l/r); RSC (l/r), LOC (l/-), l&r sup.temp.C.; medial pref. c., precun
+% 7 PPA (-/-); RSC (l/r), LOC (l/-), l&r sup.temp.C.; left frontal pole
+% 8 PPA (-/-); RSC (-/-), LOC (-/-)
+
+% AD: results
+In results from the analysis of the audio-description, all contrasts except
+contrast 7 and 8  yielded significant bilateral clusters in anterior regions of
+the group PPA overlap (see Figure~\ref{fig:stability-slices}).
+% AD: RSC & LOC
+Contrasts of the audio-description also yielded bilaterally significant clusters
+in the ventral precuneus (all contrasts except contrasts 8) and lateral
+occipital cortex (bilateral in contrasts 1 to 4; unilateral in contrasts 6 and
+7).
+% concluding stament regarding PPA, RSC, and LOC
+Results across contrasts of both naturalistic stimuli indicate that our findings
+regarding the PPA but also RSC and LOC are robust and do not depend on the
+design of one specific contrasts.
+% but:
+Nevertheless, results are sensitive to the contrasted categories and the amount
+of available data.
+% example
+For example, contrast 7 and 8 (\texttt{se\_new}, \texttt{se\_old} > non-spatial
+categories, and \texttt{se\_new} > non-spatial categories) that used the most
+heterogeneous categories (nouns indicating switches to other settings) and a low
+amount of events yielded neither a significant cluster in the right-hemispheric
+nor left-hemispheric PPA.
+% concluding statement
+Hence, investigators that use model-driven analyses have to consider how many
+events a naturalistic stimulus may provide and how homogeneous the events to be
+averaged might be.
+
+
+\subsection*{Incidental results}
+
+Several contrasts yielded significant clusters in superior temporal cortices
+(bilateral in contrasts 3, 6, 7; unilateral right in contrast 2).
+% AD: auditory cortices
+Further, contrasts that compare, possibly among others, nouns indicating a
+switch to another setting (categories \texttt{se\_new} or \texttt{se\_old}) to
+non-spatial categories yielded significant clusters in superior temporal
+cortices (bilateral: contrasts 3, 6, 7; unilateral right: contrast 2).
+% interpretation 1
+This suggests that variance correlating with lower level auditory processes was
+not averaged out across events (e.g. switches to another setting might often not
+just cued by the narrator but also by a change of the soundscape or cued by a
+the start of a new song) and the employed nuisance regressors did not capture
+this variance appropriately.
+% interpretation 2
+Another possibility might be that increased hemodynamic activity in superior
+temporal cortices reflect a bias towards lower-level auditory perceptual
+processes on the positive side of the GLM contrasts.
+% soundscape
+Increased activity in primary and secondary auditory cortices could be
+attributed to changes in the soundscape that possibly accompany the narrator
+when he is indicating the switch to another setting by describing its identity
+or layout.
+
+%
+Lastly, contrasts of the audio-description stimulus yielded clusters
+in regions that were classified as statistically significant in two or less contrasts.
+% contrast 2
+In detail, contrast 2 yielded clusters in the anterior cingulate gyrus
+(bilateral), right frontal pole, right frontal medial cortex, and right putamen.
+% contrast 3
+Contrast 3 shows clusters in the anterior cingulate gyrus (bilateral), left
+frontal pole, and left insular.
+% contrast 6
+Contrast 6 shows one additional cluster in the right medial frontal cortex.
+% contrast 7
+Contrast 7 shows clusters in the left frontal pole and left frontal operculum,
+left insular.
+% concluding statement
+Here again, significantly increased activation beyond areas known to be involved
+in processing of spatial information could be attributed to stimulus features of
+the naturalistic stimulus that were not sufficiently controlled leading to a
+bias in the contrasts.
+
+
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/stability-slices}
+    \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster corrected)
+        across all contrasts for both naturalistic stimuli.
+        The audio-description's contrasts 1-8 (blue)
+        are overlaid over the audio-visual movie's contrasts 1-5 (red;
+        see Table~\ref{tab:contrasts}).
+        Cluster are overlaid on top of the MNI152 T1-weighted head template
+        with the acquisition field-of-view for the audio-description study
+        highlighted.
+        Black: outline of the union of individual PPA ROIs reported by \citet{sengupta2016extension}.
+        }
+    \label{fig:stability-slices}
+\end{figure*}
+
+
+\subsection*{Control contrasts}
+
+% ---------- AV control contrasts ----------
+% 6: nothing; 7 nothing; 8: nothing; 9: nothing; 10 se_new > se_old (nouns but
+% in AV stimulus): LOC (l/r) right PPA, bilateral, sup. lat. occ. c., sup.
+% parietal lobe (right)
+
+% ---------- AD control contrasts ----------
+% 9 PPA (-/-); RSC (-/r), LOC (-/-), left pars triangularis
+%10 PPA (-/-); RSC (-/-), LOC (-/-)
+%11 PPA (-/-); RSC (-/-), LOC (-/-),
+%12 PPA (-/-); RSC (-/-), LOC (-/-), right posterior hippocampus
+%13 PPA (-/-); RSC (-/-), LOC (-/-)
+
+% intro
+For each naturalistic stimulus, we created several control contrasts.
+% movie contrasts: not cut condition vs. cuts
+To test for the specificity of the main findings within the movie fMRI data, we
+created four contrasts that compared hemodynamic activity during frames within
+movie shots (\texttt{no\_cut} category) with movie cut related categories (see
+Table~\ref{tab:contrasts}).
+% results
+None of these four contrasts yielded a significant cluster, suggesting that the
+observed differential hemodynamic response in the PPA for events defined by
+particular movie cuts is not observed for other arbitrarily selected time point
+in the movie.
+
+% \texttt{se\_new} (nouns) is r$\approx$0.3 correlated with \texttt{vse\_new}
+% (cuts); \texttt{se\_old} (nouns) is r$\approx$0.4 correlated with
+% \texttt{vse\_old}.
+The correlation of regressors across stimuli (Figure~\ref{fig:reg-corr}) showed
+a moderate correlation among cuts to a setting depicted for the first time
+(movie \texttt{vse\_new}) and nouns indicating a switch to a setting occurring
+for the first time (audio-description \texttt{se\_new}), and cuts to a
+recurringly depicted setting (movie {\texttt{vse\_old}) and nouns indicating a
+switch a recurring setting (audio-description \texttt{se\_old}).
+%
+Hence, we computed an indentical contrast ({\texttt{se\_new} >
+\texttt{se\_old}), comparing the audio-description's voice-over narrator nouns
+for the movie data and the audio-description.
+% results
+While for the movie data the contrast yielded a significant cluster in the right
+PPA, not in its anterior portion, and bilateral clusters in the superior lateral
+occipital cortices (the right hemispheric cluster extending into the superior
+parietal cortex), not significant differences where found for the
+audio-description (unthresholded contrast maps are available on NeuroVault).
+%
+These results suggest that in the absence of the actual visual stimulation, the
+narrator's description of scene properties correlated with setting changes did
+not co-occur with increased hemodynamic activity in areas associated with the
+processing of spatial information.
+
+% AD stimulus
+Finally for the analysis of the audio-description, we computed control contrasts
+based on events of the annotated movie cuts (Table~5) in order
+to evaluate the influence of stimulus features correlated with these visual
+events that remain present in the audio-description, such as changes in the
+soundscape.
+% results
+Two of five contrasts yielded significant clusters.
+% contrast 9
+Contrast 9 (\texttt{vse\_new > pe\_old}) revealed one significant cluster in the
+left inferior prefrontal cortex (pars triangularis) and right ventral
+precuneus/posterior cingulate gyrus.
+% contrast 12
+Contrast 12 (\texttt{vse\_new} > \texttt{vse\_old}, \texttt{vpe\_old}) revealed
+one cluster in the right posterior hippocampus.
+%
+The absence of observable hemodynamic response differences in the PPA suggests
+that without the visual information in the movie stimulus, no, or substantially
+less, processing of stimulus content with respect to spatial information
+co-occurred with the timing of the movie cuts.
+
+
+\subsection*{Surface maps}
+
+\todo[inline]{Just mention this part in the main document via 'the corresponding
+surface plots (Fig xy) can be found in the supplemental materials'?}
+\todo[inline]{write intro regarding purpose of additional surface plots?}
+
+% reconstruction MNI
+Cortical reconstruction of the MNI152 T1-weighted brain template
+[MNI152\_T1\_1mmi\_brain.nii.gz] was performed using
+\href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer} v7.1.1
+\citep{dale1999cortical}.
+% reconstruction: individual results
+Subject-specific cortical surfaces are part of pre-existing
+\href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer.git}{dataset}
+that used FreeSurfer v5.3.0 to reconstruct surfaces from T1-weighted images and
+an additional high-resolution T2-weighted image.
+
+% projection
+Results were projected onto the corticals surface using
+\href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer's} \citep{dale1999cortical}
+'mri\_vol2surf' command.
+% smoothing
+Group and individual PPAs were additionally patially smoothed applying a
+Gaussian kernel with full width at half maximum (FWHM) of \unit[3.0]{mm}.
+
+\subsubsection*{Group results}
+Group results see Table~\ref{tab:res-ao-group1} for AO results,
+Table~\ref{tab:res-av-group1} for AV results, and
+Figure~\ref{fig:grp_ao_av_c1_surf} for surface maps.
+
+
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/grp_ao_av_c1_surf}
+
+    \caption{Mixed-effects group-level (N=14) clusters ($Z$>3.4, $p$<.05
+      cluster-corrected) of activity correlated with the processing of spatial
+      information are projected onto the surface of the MNI152
+      T1-weighted template.
+      %
+      The results of the audio-description's primary $t$-contrast (blue) that
+      compares geometry-related nouns spoken by the narrator to non-spatial
+      nouns (\texttt{geo, groom} > all non-spatial categories) are overlaid
+      on the movie's primary $t$-contrast (red) that compares cuts to a
+      setting depicted for the first time with cuts within a recurring setting
+      (\texttt{vse\_new > vpe\_old}).
+      %
+      Black: outline of the union of individual PPA ROIs reported by
+      \citet{sengupta2016extension}.
+    }
+    \label{fig:grp_ao_av_c1_surf}
+\end{figure*}
+
+
+\subsubsection*{Stability}
+Group results see Figure~\ref{fig:grp_ao_av_stability} for surface maps.
+
+
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/grp_ao_av_stability_surf}
+    \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
+        corrected) across all contrasts for both naturalistic stimuli.
+        The audio-description's contrasts 1-8 (blue)
+        are overlaid over the audio-visual movie's contrasts 1-5 (red;
+        \ref{tab:contrasts}).
+        Cluster are projected onto the surface of the
+        MNI152 T1-weighted template.
+        Black: outline of the union of individual PPA ROIs reported by
+        \citet{sengupta2016extension}.
+        }
+    \label{fig:grp_ao_av_stability}
+\end{figure*}
+
+
+\subsubsection*{Individual results}
+
+\todo[inline]{RSC in of AV is essentially not visible}
+
+Individual results see Figure~\ref{fig:subjs_ao_av_c1_surf} for surface maps.
+
+
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/subjs_ao_av_c1_surf}
+    \caption{Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
+        cluster-corrected)
+        projected onto subject-specific brain surface that were
+        [re]constructed from individual T1-weighted brain images.
+        The results of the audio-description's primary
+        $t$-contrast (blue) that compares geometry related nouns to non-
+        geometry related nouns spoken by the narrator
+        (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
+        primary $t$-contrast (red) that compares cuts to setting depicted for
+        the first time with cuts within a recurring setting
+        (\texttt{vse\_new > vpe\_old}).
+        Black: outline of participant-specific PPA ROIs reported by
+        \citet{sengupta2016extension}.
+        }
+    \label{fig:subjs_ao_av_c1_surf}
+\end{figure*}
+
+
+{\small\bibliographystyle{unsrtnat}
+\bibliography{references}}
+
+%\begin{thebibliography}{1}
+%\expandafter\ifx\csname url\endcsname\relax
+%  \def\url#1{\texttt{#1}}\fi
+%\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+%\providecommand{\bibinfo}[2]{#2}
+%\providecommand{\eprint}[2][]{\url{#2}}
+%
+%\bibitem{cite1}
+%\bibinfo{author}{Califano, A.}, \bibinfo{author}{Butte, A.~J.},
+%  \bibinfo{author}{Friend, S.}, \bibinfo{author}{Ideker, T.} \&
+%  \bibinfo{author}{Schadt, E.}
+%\newblock \bibinfo{title}{{Leveraging models of cell regulation and GWAS data
+%  in integrative network-based association studies}}.
+%\newblock \emph{\bibinfo{journal}{Nature Genetics}}
+%  \textbf{\bibinfo{volume}{44}}, \bibinfo{pages}{841--847}
+%  (\bibinfo{year}{2012}).
+%
+%\bibitem{cite2}
+%\bibinfo{author}{Wang, R.} \emph{et~al.}
+%\newblock \bibinfo{title}{{PRIDE Inspector: a tool to visualize and validate MS
+%  proteomics data.}}
+%\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
+%  \textbf{\bibinfo{volume}{30}}, \bibinfo{pages}{135--137}
+%  (\bibinfo{year}{2012}).
+%\end{thebibliography}
+
+\setcounter{figure}{0}
+
+
+\end{document}
