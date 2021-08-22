@@ -67,15 +67,22 @@ Düsseldorf, Germany\\
 {*}corresponding author: Christian Olaf Häusler (der.haeusler@gmx.net)
 
 
-\section*{Supplementary Information}
-
 \todo[inline]{Position der Abbildungen ist im kompilierten PDF maximal
 verwirrend}
+\todo[inline]{table of contents not necessary (?) but table of figures; see
+    Guidelines: ``A table of contens should be included on the first page,
+    listing the page number of each supplementary figure``}
+
+\listoffigures
+
+\pagebreak[4]
 
 
-\subsubsection*{Surface plot of group results}
+\section*{Supplementary Information}
 
-% intro
+\subsection*{Surface plots}
+
+% group results; intro
 Figure~\ref{fig:grp_ao_av_c1_surf} shows the group results for/of/from the
 movie's primary contrast (\texttt{vse\_new > vpe\_old}) and audio-description's
 primary contrast (\texttt{geo, groom} > non-spatial noun categories) mapped onto
@@ -91,35 +98,7 @@ Results were projected onto the corticals surface using
 % smoothing
 The union of individual PPAs was spatially smoothed applying a Gaussian kernel
 with full width at half maximum (FWHM) of \unit[3.0]{mm}.
-
-\begin{figure*}[tbp]
-\centering
-    \includegraphics[width=\linewidth]{figures/grp_ao_av_c1_surf}
-
-    \caption{Mixed-effects group-level (N=14) clusters ($Z$>3.4, $p$<.05
-      cluster-corrected) of activity correlated with the processing of spatial
-      information are projected onto the surface of the MNI152
-      T1-weighted template.
-      %
-      The results of the audio-description's primary $t$-contrast (blue) that
-      compares geometry-related nouns spoken by the narrator to non-spatial
-      nouns (\texttt{geo, groom} > all non-spatial categories) are overlaid
-      on the movie's primary $t$-contrast (red) that compares cuts to a
-      setting depicted for the first time with cuts within a recurring setting
-      (\texttt{vse\_new > vpe\_old}).
-      %
-      Black: outline of the union of individual PPA ROIs reported by
-      \citet{sengupta2016extension}.
-    }
-    \label{fig:grp_ao_av_c1_surf}
-\end{figure*}
-
-
-
-\subsubsection*{Surface plot of individual results}
-
-
-% intro
+% individiaul results; intro
 Figure~\ref{fig:subjs_ao_av_c1_surf} shows the individual results for/of/from
 the movie's primary contrast (\texttt{vse\_new > vpe\_old}) and
 audio-description's primary contrast (\texttt{geo, groom} > non-spatial noun
@@ -137,15 +116,36 @@ Results were projected onto the cortical surfaces using
 Individual PPA ROIs were spatially smoothed applying a Gaussian kernel with full
 width at half maximum (FWHM) of \unit[3.0]{mm}.
 
+\begin{figure*}[tbp]
+\centering
+    \includegraphics[width=\linewidth]{figures/grp_ao_av_c1_surf}
+
+    \caption[Mixed-effects group-level (N=14) clusters ($Z$>3.4, $p$<.05
+      cluster-corrected) of activity correlated with the processing of spatial
+      information are projected onto the surface of the MNI152
+      T1-weighted brain template.]
+      %
+      {The results of the audio-description's primary $t$-contrast (blue) that
+      compares geometry-related nouns spoken by the narrator to non-spatial
+      nouns (\texttt{geo, groom} > all non-spatial categories) are overlaid
+      on the movie's primary $t$-contrast (red) that compares cuts to a
+      setting depicted for the first time with cuts within a recurring setting
+      (\texttt{vse\_new > vpe\_old}).
+      %
+      Black: outline of the union of individual PPA ROIs reported by
+      \citet{sengupta2016extension}.
+    }
+    \label{fig:grp_ao_av_c1_surf}
+\end{figure*}
+
 
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/subjs_ao_av_c1_surf}
-    \caption{Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
+    \caption[Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
         cluster-corrected)
-        projected onto subject-specific brain surface that were
-        [re]constructed from individual T1-weighted brain images.
-        The results of the audio-description's primary
+        projected onto reconstructed subject-specific brain surfaces.]
+        {The results of the audio-description's primary
         $t$-contrast (blue) that compares geometry related nouns to non-
         geometry related nouns spoken by the narrator
         (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
@@ -233,10 +233,9 @@ averaged might be.
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
-        corrected)
-        across all contrasts for both naturalistic stimuli.
-        The audio-description's contrasts 1-8 (blue)
+    \caption[Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
+        corrected) across all contrasts for both naturalistic stimuli.]
+        {The audio-description's contrasts 1-8 (blue)
         are overlaid over the audio-visual movie's contrasts 1-5 (red;
         see Table~\ref{tab:contrasts}).
         Cluster are overlaid on top of the MNI152 T1-weighted head template
@@ -252,13 +251,12 @@ averaged might be.
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/grp_ao_av_stability_surf}
-    \caption{Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
-        corrected) across all contrasts for both naturalistic stimuli.
-        The audio-description's contrasts 1-8 (blue)
+    \caption[Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
+    corrected) across all contrasts for both naturalistic stimuli projected onto
+the surface of the MNI152 T1-weighted brain template.]
+    {The audio-description's contrasts 1-8 (blue)
         are overlaid over the audio-visual movie's contrasts 1-5 (red;
         \ref{tab:contrasts}).
-        Cluster are projected onto the surface of the
-        MNI152 T1-weighted template.
         Black: outline of the union of individual PPA ROIs reported by
         \citet{sengupta2016extension}.
         }
