@@ -104,7 +104,7 @@ def volume_2_surf(in_file, out_path, reg, target):
                  '--interp', 'nearest',
                  '--surf', 'white',
                  '--projfrac-max', '0', '1', '0.1',
-                 '--surf-fwhm', '3',  # smoothing of x mm
+                 '--surf-fwhm', '2',  # smoothing of x mm
                  '--o', out_fpath]
             )
         else:
@@ -1067,12 +1067,12 @@ def plot_legend_2colorbars(
                 pad_inches=0.2,
                 transparent=True)
 
-#     # save as .svg
-#     fig.savefig(fname.replace('.png', '.svg'),
-#                 dpi=300,
-#                 bbox_inches='tight',
-#                 pad_inches=0.2,
-#                 transparent=True)
+    # save as .svg
+    fig.savefig(fname.replace('.png', '.svg'),
+                dpi=300,
+                bbox_inches='tight',
+                pad_inches=0.2,
+                transparent=True)
 
     plt.close()
 
