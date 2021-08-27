@@ -80,73 +80,34 @@ verwirrend}
 
 \section*{Supplementary Information}
 
-\subsection*{Surface plots}
+\subsection*{Surface plots of individual results}
 
-% group results; intro
-Figure~\ref{fig:grp_ao_av_c1_surf} shows the group results for/of/from the
-movie's primary contrast (\texttt{vse\_new > vpe\_old}) and audio-description's
-primary contrast (\texttt{geo, groom} > non-spatial noun categories) mapped onto
-the cortical surface of the MNI152 T1-weighted brain template.
-% mapping procedure
-Cortical reconstruction of the MNI152 template was performed using
-\href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer} v7.1.1
-\citep{dale1999cortical}.
-% projection
-Results were projected onto the corticals surface using
-\href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer's} \citep{dale1999cortical}
-'mri\_vol2surf' command.
-% smoothing
-The union of individual PPAs was spatially smoothed applying a Gaussian kernel
-with full width at half maximum (FWHM) of \unit[3.0]{mm}.
 % individiaul results; intro
-Figure~\ref{fig:subjs_ao_av_c1_surf} shows the individual results for/of/from
+Figure~\ref{fig:subjs_ao_av_c1_surf} shows the individual results of
 the movie's primary contrast (\texttt{vse\_new > vpe\_old}) and
 audio-description's primary contrast (\texttt{geo, groom} > non-spatial noun
 categories) mapped onto subject-specific cortical surfaces.
-% source of surfaces
-Individual surfaces were provided by a preexisting
-\href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer.git}{dataset}
-that used FreeSurfer v5.3.0 to reconstruct surfaces from T1-weighted images and
-an additional high-resolution T2-weighted image.
+% reconstruction
+% \href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer.git}{dataset}
+\href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer} v5.3.0
+\citep{dale1999cortical} was used to reconstruct surfaces from T1-weighted
+images and an additional high-resolution T2-weighted image.
 % projection
 Results were projected onto the cortical surfaces using
 \href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer's} \citep{dale1999cortical}
 'mri\_vol2surf' command.
 % smoothing
-Individual PPA ROIs were spatially smoothed applying a Gaussian kernel with full
-width at half maximum (FWHM) of \unit[3.0]{mm}.
-
-\begin{figure*}[tbp]
-\centering
-    \includegraphics[width=\linewidth]{figures/grp_ao_av_c1_surf}
-
-    \caption[NAME]
-    {Mixed-effects group-level (N=14) clusters ($Z$>3.4, $p$<.05
-    cluster-corrected) of activity correlated with the processing of spatial
-    information are projected onto the surface of the MNI152
-    T1-weighted brain template.
-    %
-    The results of the audio-description's primary $t$-contrast (blue) that
-    compares geometry-related nouns spoken by the narrator to non-spatial
-    nouns (\texttt{geo, groom} > all non-spatial categories) are overlaid
-    on the movie's primary $t$-contrast (red) that compares cuts to a
-    setting depicted for the first time with cuts within a recurring setting
-    (\texttt{vse\_new > vpe\_old}).
-    %
-    Black: outline of the union of individual PPA ROIs reported by
-    \citet{sengupta2016extension}.
-    }
-    \label{fig:grp_ao_av_c1_surf}
-\end{figure*}
-
+After projection, individual PPA ROIs were spatially smoothed applying a
+Gaussian kernel with full width at half maximum (FWHM) of \unit[2.0]{mm}.
 
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/subjs_ao_av_c1_surf}
-    \caption[Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
-        cluster-corrected)
-        projected onto reconstructed subject-specific brain surfaces.]
-        {The results of the audio-description's primary
+    \caption[Participant-specific surface plots of primary contrasts]
+    {Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
+        cluster-corrected) projected onto reconstructed subject-specific brain
+        surfaces.
+        The results of the audio-description's primary
         $t$-contrast (blue) that compares geometry related nouns to non-
         geometry related nouns spoken by the narrator
         (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
@@ -154,7 +115,8 @@ width at half maximum (FWHM) of \unit[3.0]{mm}.
         the first time with cuts within a recurring setting
         (\texttt{vse\_new > vpe\_old}).
         Black: outline of participant-specific PPA ROIs reported by
-        \citet{sengupta2016extension}.
+        \citet{sengupta2016extension} that was spatially smoothed by applying a
+        Gaussian kernel with full width at half maximum (FWHM) of \unit[2.0]{mm}.
         }
     \label{fig:subjs_ao_av_c1_surf}
 \end{figure*}
@@ -186,7 +148,7 @@ group-template (MNI152 space) can be found at
 % temporal occipital fusiform cortex
 Reliably across all five movie contrasts, we find bilaterally significant
 clusters that overlap with the PPA group overlap (see
-Figure~\ref{fig:stability-slices} and Figure~\ref{fig:grp_ao_av_stability}).
+Figure~\ref{fig:stability-slices-volsurf}).
 % AV: RSC & LOC
 Several contrasts of the movie also yielded bilaterally significant clusters in
 the ventral precuneal cortex and posterior cingulate gyrus (i.e. retrosplenial
@@ -206,7 +168,7 @@ complex; contrasts 1, 4, 5), and lateral occipital cortex (contrasts 1, 2, 4,
 % AD: results
 In results from the analysis of the audio-description, all contrasts except
 contrast 7 and 8  yielded significant bilateral clusters in anterior regions of
-the group PPA overlap (see Figure~\ref{fig:stability-slices}).
+the group PPA overlap (see Figure~\ref{fig:stability-slices-volsurf}).
 % AD: RSC & LOC
 Contrasts of the audio-description also yielded bilaterally significant clusters
 in the ventral precuneus (all contrasts except contrasts 8) and lateral
@@ -233,36 +195,29 @@ averaged might be.
 
 \begin{figure*}[tbp]
 \centering
-    \includegraphics[width=\linewidth]{figures/stability-slices}
-    \caption[NAME]
+    \includegraphics[width=\linewidth]{figures/stability-slices-volsurf}
+    \caption[Group results across contrasts of movie and audio-description]
     {Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
     corrected) across all contrasts for both naturalistic stimuli.
     The audio-description's contrasts 1-8 (blue)
     are overlaid over the audio-visual movie's contrasts 1-5 (red;
     see Table~\ref{tab:contrasts}).
-    Cluster are overlaid on top of the MNI152 T1-weighted head template
+    % volume
+    a) results as brain slices on top of the MNI152 T1-weighted head template,
     with the acquisition field-of-view for the audio-description study
     highlighted.
-    Black: outline of the union of individual PPA ROIs reported by
-        \citet{sengupta2016extension}.
+    % PPA
+    For comparison depicted as a black outline, the union of the
+    individual PPA localization reported by \citet{sengupta2016extension}
+    that was spatially smoothed applying a Gaussian kernel with full
+    width at half maximum (FWHM) of \unit[2.0]{mm}.
+    % surface map
+    b) results projected onto the reconstructed
+    surface of the MNI152 T1-weighted brain template.
+    After projection, the union of individual PPA localizations was
+    spatially smoothed by a Gaussian kernel with FWHM of \unit[2.0]{mm}
     }
-    \label{fig:stability-slices}
-\end{figure*}
-
-
-\begin{figure*}[tbp]
-\centering
-    \includegraphics[width=\linewidth]{figures/grp_ao_av_stability_surf}
-    \caption[NAME]
-    {Overlap of significant clusters ($Z$>3.4; $p$<.05, cluster
-    corrected) across all contrasts for both naturalistic stimuli projected
-    onto the surface of the MNI152 T1-weighted brain template.
-    The audio-description's contrasts 1-8 (blue) are overlaid over the
-    audio-visual movie's contrasts 1-5 (red; \ref{tab:contrasts}).
-    Black: outline of the union of individual PPA ROIs reported by
-    \citet{sengupta2016extension}.
-    }
-    \label{fig:grp_ao_av_stability}
+    \label{fig:stability-slices-volsurf}
 \end{figure*}
 
 
