@@ -105,12 +105,6 @@ call for considering a functional subdivision of the PPA.  \end{abstract}
 
 \pagebreak[4]
 
-\todo[inline]{\textbf{My notes:}\par
-    1. change url(s) of datasets\par
-    2. cross-referencing to Supplementary Figures does not work but show
-``??''. Referencing from suppl.tex to main.tex works tough
-}
-
 
 \section*{Introduction}
 
@@ -285,14 +279,9 @@ impaired individuals.
 %an auditory naturalistic stimulus.
 
 
-
-
-
 \section*{Results}
 
 \todo[inline]{Summarize some methods here?}
-
-\todo[inline]{The dataset (\citep{haeusler2021ppa}) should probably be cited here + datalad yada yada}
 
 % study goal
 We investigated if spatial information embedded in two naturalistic stimuli
@@ -525,8 +514,8 @@ naturalistic stimulus and a uniform threshold for all participants.
 Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $Z$-maps of the primary
 movie and audio-description $t$-contrasts, in comparison to the results of a
 conventional block-design localizer (see Figure~\ref{fig:subjs_ao_av_c1_surf}
-for surface plot; sunthresholded $Z$-maps are provided at
-NeuroVault).
+for surface plot; unthresholded $Z$-maps are provided at
+\href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}).
 % AV
 Results of the primary movie contrast yielded bilateral clusters in five
 participants, a unilateral right cluster in six participants (of which one
@@ -1051,23 +1040,23 @@ naturalistic stimulus paradigms (audio-description and movie).
 \subsection*{Preprocessing}
 
 % data sources
-% https://github.com/psychoinformatics-de/studyforrest-data-aligned/tree/master/code
-% https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms}
-The current analyses were carried out on the same preprocessed fMRI data that were used
-for the technical validation analysis presented in \citet{hanke2016simultaneous}, and available from \href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{github.com/ psychoinformatics-de/studyforrest-data-aligned}.
-Of those 15 participants in the studyforrest dataset that took
-part in all three experiments,
+The current analyses were carried out on the same preprocessed fMRI data
+\citep{hanke2016aligned} that were used for the technical validation analysis
+presented in \citet{hanke2016simultaneous}.
 % exclusion of VP 10
-data of one participant were dropped due to invalid distortion correction
-during scanning of the audio-description stimulus.
+Of those 15 participants in the studyforrest dataset that took part in all three
+experiments, data of one participant were dropped due to invalid distortion
+correction during scanning of the audio-description stimulus.
+% preprocessing of pre-aligned data
 Data were corrected for motion, aligned with and re-sliced onto a
-participant-specific BOLD template image \citep{sengupta2016extension}
-(uniform spatial resolution of \unit[2.5$\times$2.5$\times$2.5]{mm} for both
+participant-specific BOLD template image \citep{sengupta2016extension} (uniform
+spatial resolution of \unit[2.5$\times$2.5$\times$2.5]{mm} for both
 audio-description and movie data).
 % preprocessing intro
-Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool \citep{woolrich2001autocorr}) as shipped with
-FSL v5.0.9 (\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library}
- \citep{smith2004fsl}) on a computer-cluster running
+Preprocessing was performed by FEAT v6.00 (FMRI Expert Analysis Tool
+\citep{woolrich2001autocorr}) as shipped with FSL v5.0.9
+(\href{https://www.fmrib.ox.ac.uk/fsl}{FMRIB's Software Library}
+\citep{smith2004fsl}) on a computer-cluster running
 \href{http://neuro.debian.net}{NeuroDebian} \citep{halchenko2012open}.
 
 % temporal filtering
@@ -1653,11 +1642,53 @@ individual PPA overlaps were created from data provided by
 
 \section*{Data Availability}
 
-% Zenodo (registered but zipped) vs. OSF (datalad dataset but probably
-% unregistered)
+\todo[inline]{Datasets are not cited / do not occur in the references}
+\todo[inline]{I did not know how to cite because authors are intersection /
+union of the papers, how to order authors\dots}
+
+% new; PPA analysis
+All fMRI data, annotations, and results are available as Datalad \citep{datalad}
+datasets, published to or linked from the GIN repository
+\href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}}
+(DOI assignment pending) \citep{haeusler2021ppa}.
+% original
+Raw data of the audio-description, movie and visual localizer were originally
+published on the \emph{OpenfMRI} portal
+(\url{https://legacy.openfmri.org/dataset/ds000113}\citep{Hanke2014ds000113},
+\url{https://legacy.openfmri.org/dataset/ds000113d}\citep{hanke2016ds000113d}).
+% visual localizer
+Results from the localization of higher visual areas are available as Datalad
+datasets at
+\emph{GitHub} (
+\href{https://github.com/psychoinformatics-de/studyforrest-data-visualrois}{\url{github.com/psychoinformatics-de/studyforrest-data-visualrois}}\citep{sengupta2016extensiondata}).
+% raw data
+The realigned participant-specific timeseries that were used in the current analyses were derived from the raw data releases and are available as Datalad
+datasets at \emph{GitHub} (
+\href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{\url{github.com/psychoinformatics-de/studyforrest-data-aligned}}
+\citep{hanke2016aligned}).
+% cut annotation
+The annotation of cuts is available at \emph{F1000Research} (
+\href{https://doi.org/10.5256/f1000research.9536.d134823}{\url{doi.org/10.5256/f1000research.9536.d134823}}
+\citep{haeusler2016cutdata}),
+% speech annotation
+the annotation of speech is available at \emph{OSF}
+(\href{https://doi.org/10.17605/OSF.IO/F5J3E}{\url{doi.org/10.17605/OSF.IO/F5J3E}}
+\citep{haeusler2020speechdata}).
+% surface data
+Participant-specific reconstructed cortical surface are available as Datalad
+dataset at \emph{GitHub} (
+\href{https://gin.g-node.org/studyforrest/cortical-surfaces-freesurfer}{\url{gin.g-node.org/studyforrest/cortical-surfaces-freesurfer}}
+\citep{hanke2016freesurferdata}).
+
+
+\bigbreak
+% old
 The fMRI data, annotations, and results are available as Datalad \citep{datalad} datasets,
 published to or linked from the
-GIN repository \href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}} (DOI assignment pending).
+GIN repository
+\href{https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis}{\url{gin.g-node.org/chaeusler/studyforrest-ppa-analysis}}
+(DOI assignment pending) \citep{haeusler2021ppa}.
+% AO & AV
 The fMRI datasets for the movie and the audio-description were used in their original form, as published and available on the legacy OpenFMRI portal (\url{https://legacy.openfmri.org/dataset/ds000113}, \url{https://legacy.openfmri.org/dataset/ds000113c}, \url{https://legacy.openfmri.org/dataset/ds000113d}), as well as from \url{https://www.studyforrest.org} in the form of DataLad datasets.
 The same data are available in a modified and merged form on OpenNeuro at \url{https://openneuro.org/datasets/ds000113}.
 Unthresholded $Z$-maps of all contrasts can be found at

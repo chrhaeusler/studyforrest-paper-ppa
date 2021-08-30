@@ -1,9 +1,9 @@
-all: main.pdf suppl.pdf
-
-main.pdf: main.tex descr-stats-ao-events.tex descr-stats-av-events.tex descr-stats-anno.tex
-	latexmk -pdf -g $<
+all: suppl.pdf main.pdf
 
 suppl.pdf: suppl.tex
+	latexmk -pdf -g $<
+
+main.pdf: main.tex descr-stats-ao-events.tex descr-stats-av-events.tex descr-stats-anno.tex
 	latexmk -pdf -g $<
 
 clean:
