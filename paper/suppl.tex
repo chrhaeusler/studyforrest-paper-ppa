@@ -75,8 +75,9 @@ verwirrend}
 contens should be included on the first page, listing the page number of each
 supplementary figure``}
 
-\todo[inline]{add the references to main manuscript (see ``??'') because
-cross-referencing does not work in the pdf that gets compiled first}
+\todo[inline]{references to Figures/Tables in main.tex are hardcoded;
+    cross-referencing only works to the PDF that gets compiled as the second
+one?}
 
 
 \tableofcontents
@@ -88,36 +89,37 @@ cross-referencing does not work in the pdf that gets compiled first}
 \section{Surface plots of individual results}
 
 % individiaul results; intro
-Figure~\ref{fig:subjs_ao_av_c1_surf} shows the individual results of
-the movie's primary contrast (\texttt{vse\_new > vpe\_old}) and
-audio-description's primary contrast (\texttt{geo, groom} > non-spatial noun
-categories) mapped onto subject-specific cortical surfaces.
+The results of the fixed-effects second-level analysis of the movie's primary
+contrast (\texttt{vse\_new > vpe\_old}) and audio-description's primary contrast
+(\texttt{geo, groom} > non-spatial noun categories) mapped onto subject-specific
+cortical surfaces can be seen in Figure~\ref{fig:subjs_ao_av_c1_surf}.
 % reconstruction
 % \href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer.git}{dataset}
 \href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer} v5.3.0
 \citep{dale1999cortical} was used to reconstruct surfaces from T1-weighted
 images and an additional high-resolution T2-weighted image
-\citep{hanke2016freesurferdata}.
+\citep{hanke2016freesurferdata}.\todo{ref to GitHub ``data-freesurfer''}
 % projection
-Results were projected onto the cortical surfaces using
+Thresholded $Z$-maps ($Z$>3.4; $p$<.05, cluster-corrected) were projected onto
+the cortical surfaces using
 \href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer's} \citep{dale1999cortical}
-'mri\_vol2surf' command.
+'mri\_vol2surf' command (unthresholded $Z$-maps are provided at
+\href{https://neurovault.org/collections/KADGMGVZ}{\url{neurovault.org/collections/KADGMGVZ}}).
 % smoothing
-After projection, individual PPA ROIs were spatially smoothed applying a
+After projection, individual PPA ROIs were spatially smoothed by applying a
 Gaussian kernel with full width at half maximum (FWHM) of \unit[2.0]{mm}.
 
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/subjs_ao_av_c1_surf}
     \caption[Participant-specific surface plots of primary contrasts]
-    {Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
+    {Fixed-effects individual-level GLM results ($Z$>3.4; $p$<.05
         cluster-corrected) projected onto reconstructed subject-specific brain
         surfaces.
         The results of the audio-description's primary
-        $t$-contrast (blue) that compares geometry related nouns to non-
-        geometry related nouns spoken by the narrator
+        $t$-contrast (blue) that compares geometry related nouns to non-       geometry related nouns spoken by the narrator
         (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
-        primary $t$-contrast (red) that compares cuts to setting depicted for
+        primary $t$-contrast (red) that compares cuts to a setting depicted for
         the first time with cuts within a recurring setting
         (\texttt{vse\_new > vpe\_old}).
         Black: outline of participant-specific PPA ROIs reported by
@@ -132,7 +134,8 @@ Gaussian kernel with full width at half maximum (FWHM) of \unit[2.0]{mm}.
 
 In order to test the robustness of our approach, we created overall five
 $t$-contrasts for the movie stimulus, and overall eight $t$-contrast for the
-audio-description (see Table~\ref{tab:contrasts}).
+audio-description (see Table~5).\todo{hardcoded; cross-ref does not work}
+% \ref{tab:contrasts}).
 % how
 Contrasts differ in contrasted categories based on ``how well'' averaged events
 within categories were considered to represent spatial and non-spatial
@@ -207,15 +210,16 @@ averaged might be.
     corrected) across all contrasts for both naturalistic stimuli.
     The audio-description's contrasts 1-8 (blue)
     are overlaid over the audio-visual movie's contrasts 1-5 (red;
-    see Table~\ref{tab:contrasts}).
+    see Table~5)
+    . %\ref{tab:contrasts}).
     % volume
     a) results as brain slices on top of the MNI152 T1-weighted head template,
     with the acquisition field-of-view for the audio-description study
     highlighted.
     % PPA
     For comparison depicted as a black outline, the union of the
-    individual PPA localization reported by \citet{sengupta2016extension}
-    that was spatially smoothed applying a Gaussian kernel with full
+    individual PPA localizations reported by \citet{sengupta2016extension}
+    that was spatially smoothed by applying a Gaussian kernel with full
     width at half maximum (FWHM) of \unit[2.0]{mm}.
     % surface map
     b) results projected onto the reconstructed
@@ -237,7 +241,7 @@ switch to another setting (categories \texttt{se\_new} or \texttt{se\_old}) to
 non-spatial categories yielded significant clusters in superior temporal
 cortices (bilateral: contrasts 3, 6, 7; unilateral right: contrast 2).
 % interpretation 1
-This suggests that variance correlating with lower level auditory processes was
+This suggests that variance correlating with lower-level auditory processes was
 not averaged out across events and that the employed nuisance regressors did not
 capture this variance appropriately.
 % possible explanation
@@ -285,17 +289,19 @@ For each naturalistic stimulus, we created several control contrasts.
 To test for the specificity of the main findings within the movie fMRI data, we
 created four contrasts that compared hemodynamic activity during frames within
 movie shots (\texttt{no\_cut} category) with movie cut related categories (see
-Table~\ref{tab:contrasts}).
+Table~5).\todo{hardcoded}
+% \ref{tab:contrasts}).
 % results
 None of these four contrasts yielded a significant cluster, suggesting that the
 observed differential hemodynamic response in the PPA for events defined by
-particular movie cuts is not observed for other arbitrarily selected time point
+particular movie cuts is not observed for other arbitrarily selected time points
 in the movie.
 
 % \texttt{se\_new} (nouns) is r$\approx$0.3 correlated with \texttt{vse\_new}
 % (cuts); \texttt{se\_old} (nouns) is r$\approx$0.4 correlated with
 % \texttt{vse\_old}.
-The correlation of regressors across stimuli (Figure~\ref{fig:reg-corr}) showed
+% \ref{fig:reg-corr})
+The correlation of regressors across stimuli (Figure~4)\todo{hardcoded} showed
 a moderate correlation among cuts to a setting depicted for the first time
 (movie \texttt{vse\_new}) and nouns indicating a switch to a setting occurring
 for the first time (audio-description \texttt{se\_new}), and cuts to a
@@ -309,7 +315,7 @@ for the movie data and the audio-description.
 While for the movie data the contrast yielded a significant cluster in the right
 PPA, not in its anterior portion, and bilateral clusters in the superior lateral
 occipital cortices (the right hemispheric cluster extending into the superior
-parietal cortex), not significant differences where found for the
+parietal cortex), no significant differences where found for the
 audio-description (unthresholded contrast maps are available on NeuroVault).
 %
 These results suggest that in the absence of the actual visual stimulation, the
@@ -319,7 +325,7 @@ processing of spatial information.
 
 % AD stimulus
 Finally for the analysis of the audio-description, we computed control contrasts
-based on events of the annotated movie cuts (Table~5) in order
+based on events of the annotated movie cuts (see Table~5) in order
 to evaluate the influence of stimulus features correlated with these visual
 events that remain present in the audio-description, such as changes in the
 soundscape.

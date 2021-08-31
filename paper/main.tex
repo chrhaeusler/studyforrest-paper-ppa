@@ -187,7 +187,7 @@ face-related sentences. Moreover, this effect was only observed in sentences
 involving famous places.
 
 % summary if literature review
-Taken together, the literature suggest that the PPA does not exclusively respond
+Taken together, the literature suggests that the PPA does not exclusively respond
 to visually presented scene-related, spatial information.
 % three things in common
 However, all reviewed studies share three common aspects:
@@ -211,8 +211,8 @@ environment that our brains are accommodated to
 \citep{sonkusare2019naturalistic}.
 
 % open question
-\todo[inline]{I revised the following paragraph; I guess it's okay that way}
-In this study, we investigate whether increased hemodynamic activity in the PPA
+\todo[inline]{I revised the following paragraph; I guess it's okay that way} In
+this study, we investigate whether increased hemodynamic activity in the PPA
 that is usually detected by contrasting blocks of pictures is also present under
 more natural conditions.
 % we use 2 naturalistic stimuli
@@ -237,19 +237,21 @@ naturalistic nature of the movie stimulus, but limited to the auditory domain.
 We applied model-based, mass-univariate analyses to BOLD fMRI data from both
 naturalistic stimuli \citep{hanke2016simultaneous, hanke2014audiomovie},
 available from the open-data resource
-\href{http://www.studyforrest.org}{studyforrest.org} \citep{hanke2016aligned}.
+\href{http://www.studyforrest.org}{studyforrest.org}
+\citep{hanke2016aligned}.\todo{new ref. to dataset}
 % comparison to previous GLM
 We compare current results to results of a previously performed model-based,
 mass-univariate analysis that was applied to data from a conventional
-block-designed functional localizer paradigm performed with the same
-set of participants \citep{sengupta2016extension, sengupta2016extensiondata}.
+functional localizer performed with the same set of participants
+\citep{sengupta2016extension, sengupta2016extensiondata}.\todo{new ref. to
+dataset}
 % intro to hypo a
 Similarly to the functional localizer, we currently also capitalize on events
 that should evoke the cognitive processing of spatial information.
 % hypo a
 Thus, we hypothesized that our whole-brain analyses would reveal increased
-hemodynamic activity in medial temporal regions that were functionally
-defined as the PPA by the analysis of the localizer data.
+hemodynamic activity in medial temporal regions that were functionally defined
+as the PPA by the analysis of the localizer data.
 %hypo b: individuals
 We hypothesized further that a purely auditory stimulus could, in principle,
 localize the PPA as an example of a ``visual area'' in individual persons,
@@ -286,7 +288,8 @@ impaired individuals.
 We investigated if spatial information embedded in two naturalistic stimuli
 correlates with increased hemodynamic activity in the PPA.
 % group level
-On a group average level, we compared results from whole-brain GLM analyses of
+On a group average level, we compared results from whole-brain general linear
+model (GLM) analyses of
 the movie and the audio-description to a traditional visual localizer
 \citep{sengupta2016extension}.
 % individual level
@@ -305,8 +308,9 @@ available in the Supplementary Information.
 
 \subsection*{Group analyses}
 
-\todo[inline]{the ``method'' of creating the surface plot is written here
-because it is just one sentence}
+\todo[inline]{text is change to reference volume and surface plots; the
+``method'' of creating the surface plot is written here because it is just one
+sentence}
 
 % av intro
 First, we analyzed data from the movie that offered ecologically more valid
@@ -340,11 +344,10 @@ auditory stimulation.
 % AD primary contrast
 The primary $t$-contrast for the audio-description (\texttt{geo, groom} >
 non-spatial noun categories) yielded six significant clusters (see
-Table~\ref{tab:res-ao-group1}, Figure~\ref{fig:grp_ao_av_c1_volsurf} as
-volume plots and surface plots).
+Table~\ref{tab:res-ao-group1}, Figure~\ref{fig:grp_ao_av_c1_volsurf}).
 % overlap with ROI
-Two bilateral clusters are located in the anterior part of the PPA group overlap
-reported by \citet{sengupta2016extension}.
+Two bilateral clusters are located in the anterior part of the PPA group
+overlap reported by \citet{sengupta2016extension}.
 % in detail
 Specifically, these clusters are located at the borders of the posterior
 parahippocampal cortex, the occipital and temporal fusiform gyrus and lingual
@@ -362,7 +365,7 @@ cortex.
 \begin{figure*}[tbp] \centering
     \includegraphics[width=\linewidth]{figures/group-slices}
 
-    \caption{Mixed-effects group-level (N=14) clusters ($Z$>3.4, $p$<.05
+    \caption{Mixed-effects group-level (N=14) clusters ($Z$>3.4; $p$<.05,
       cluster-corrected) of activity correlated with the processing of spatial
       information are displayed on top of the MNI152 T1-weighted head template,
       with the acquisition field-of-view for the audio-description study
@@ -375,7 +378,7 @@ cortex.
       setting depicted for the first time with cuts within a recurring setting
       (\texttt{vse\_new > vpe\_old}).
       %
-      For comparison, the union of the individual PPA localization reported
+      For comparison, the union of the individual PPA localizations reported
       by \citet{sengupta2016extension} are indicated as a black outline.
     }
     \label{fig:group-slices}
@@ -389,7 +392,7 @@ cortex.
 \centering
     \includegraphics[width=\linewidth]{figures/group-slices-volsurf}
 
-    \caption{Mixed-effects group-level (N=14) clusters ($Z$>3.4, $p$<.05
+    \caption{Mixed-effects group-level (N=14) clusters ($Z$>3.4; $p$<.05,
       cluster-corrected) of activity correlated with the processing of spatial
       information.
       The results of the audio-description's primary $t$-contrast (blue) that
@@ -405,21 +408,21 @@ cortex.
       highlighted.
       % PPA
       For comparison depicted as a black outline, the union of the
-      individual PPA localization reported by \citet{sengupta2016extension}
-      that was spatially smoothed applying a Gaussian kernel with full
+      individual PPA localizations reported by \citet{sengupta2016extension}
+      that was spatially smoothed by applying a Gaussian kernel with full
       width at half maximum (FWHM) of \unit[2.0]{mm}.
       % surface
       b) results projected onto the reconstructed
       surface of the MNI152 T1-weighted brain template.
       After projection, the union of individual PPA localizations was
-      spatially smoothed by a Gaussian kernel with FWHM of \unit[2.0]{mm}
+      spatially smoothed by a Gaussian kernel with FWHM of \unit[2.0]{mm}.
     }
     \label{fig:grp_ao_av_c1_volsurf}
 \end{figure*}
 
 
 \begin{table*}[tbp]
-\caption{Clusters ($Z$-threshold $Z$>3.4; $p$<.05 cluster-corrected)
+\caption{Clusters ($Z$-threshold $Z$>3.4; $p$<.05, cluster-corrected)
     of the primary $t$-contrast for the audio-visual movie comparing cuts to a
     setting depicted for the first time with cuts within a recurring setting
     (\texttt{vse\_new > vpe\_old}), sorted by size.
@@ -449,7 +452,7 @@ lateral occipital cortex \\ % 0.00000769
 
 % table group results primary AD contrast
 \begin{table*}[tbp]
-\caption{Clusters ($Z$-threshold $Z$>3.4; $p$<.05 cluster-corrected)
+\caption{Clusters ($Z$-threshold $Z$>3.4; $p$<.05, cluster-corrected)
     of the primary $t$-contrast for the audio-description comparing
     geometry-related nouns to non-spatial nouns spoken by the
     audio-description's narrator (\texttt{geo, groom > all non-geo}), sorted by size.
@@ -507,7 +510,7 @@ individual participants, and compared them to the individual PPA localizations
 provided by \citet{sengupta2016extension}, who reported
 % Sengupta et al., 2016; unilateral in sub-04 and sub-20
 bilateral parahippocampal clusters in 12 of 14 participants and unilateral right
-clusters in two participants \citep[see Table~3 in][]{sengupta2016extension}.
+clusters in two participants (\citep[see Table~3 in][]{sengupta2016extension}).
 % one contrast to localize them all; "...and $Z$>3.4 for all"
 Unlike \citet{sengupta2016extension}, who determined PPA clusters using three
 candidate contrasts and a variable threshold, we used a single contrast for each
@@ -516,7 +519,7 @@ naturalistic stimulus and a uniform threshold for all participants.
 Figure~\ref{fig:subs-thresh-ppa} depicts thresholded $Z$-maps of the primary
 movie and audio-description $t$-contrasts, in comparison to the results of a
 conventional block-design localizer (see Figure~\ref{fig:subjs_ao_av_c1_surf}
-for surface plot; unthresholded $Z$-maps are provided at
+for surface plost; unthresholded $Z$-maps are provided at
 \href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}).
 % AV
 Results of the primary movie contrast yielded bilateral clusters in five
@@ -542,21 +545,20 @@ the left-hemispheric PPA.
 \begin{figure*}[tbp]
 \centering
     \includegraphics[width=\linewidth]{figures/subs-thresh-ppa}
-    \caption{Fixed-effects individual-level GLM results ($Z$>3.4, $p$<.05
+    \caption{Fixed-effects individual-level GLM results ($Z$>3.4; $p$<.05,
         cluster-corrected).
         Individual brains are aligned via non-linear
         transformation to a study-specific T2* group template that is
         co-registered to the MNI152 template with an affine transformation (12
         degrees of freedom).
         The results of the audio-description's primary
-        $t$-contrast (blue) that compares geometry related nouns to non-
-        geometry related nouns spoken by the narrator
+        $t$-contrast (blue) that compares geometry related nouns to non-geometry related nouns spoken by the narrator
         (\texttt{geo, groom > all non-geo}) are overlaid over the movie's
-        primary $t$-contrast (red) that compares cuts to setting depicted for
+        primary $t$-contrast (red) that compares cuts to a setting depicted for
         the first time with cuts within a recurring setting
         (\texttt{vse\_new > vpe\_old}).
         Black:
-        outline of participant-specific PPA ROIs reported by
+        outline of participant-specific PPA(s) reported by
         \citet{sengupta2016extension}.
         Light gray: The
         audio-description's field of view \citep{hanke2014audiomovie}.
@@ -619,9 +621,9 @@ block-design localizer, but also additional voxels.
 
 %#1 previous studies
 Several studies have reported increased hemodynamic activity in the PPA
-attributed to the processing of spatial information, for example, when
-participants were watching static pictures of landscapes compared to pictures of
-faces or objects \citep{epstein1998ppa, epstein1999parahippocampal}.
+attributed to the processing of scene-related, spatial information, for example,
+when participants were watching static pictures of landscapes compared to
+pictures of faces or objects \citep{epstein1998ppa, epstein1999parahippocampal}.
 % auditory semantics unclear
 However, reports regarding the correlates of processing spatial information in
 verbal stimulation are less clear \citep{aziz2008modulation}.
@@ -660,7 +662,7 @@ Likewise, results for the audio-description identify significant activation in
 the PPA but restricted to its anterior part.
 % individual level
 Bilateral clusters in 9 of 14
-participants (of which \texttt{sub-04} shows only a right-lateralized PPA ROI
+participants (of which \texttt{sub-04} shows only a right-lateralized PPA
 in the block-design localizer results), and a unilateral
 significant cluster in one participant, indicate that the group average results
 are representative for the majority of individual participants.
@@ -707,7 +709,7 @@ components of the default mode network, including caudal inferior parietal lobe,
 retrosplenial complex, medial prefrontal cortex, and lateral surface of the
 anterior temporal lobe \citep{baldassano2013differential, baldassano2016two}.
 % conclusion: subregions
-\citet{baldassano2013differential} proposes that the PPA creates a complete
+\citet{baldassano2013differential} propose that the PPA creates a complete
 scene representation, based on different aspects of a visual scene processed in
 subregions of the PPA.
 % Their distinct connectivity properties do suggest that each may be involved in
@@ -740,7 +742,7 @@ aspects.
 % diff to Aziz (2008)
 \citet{aziz2008modulation} modeled events from onset to offset of sentences,
 describing unknown and famous places and faces, and compared activity levels
-that were averaged across voxels of ROIs (PPA and fusiform face area, FFA
+that were averaged across voxels of regions of interest (PPA and fusiform face area, FFA
 \citep{kanwisher1997ffa}) defined by a localizer experiment.
 % Aziz results
 Their results showed decreased activity in only the left PPA
@@ -802,7 +804,7 @@ shots and later focus more on detailed depictions of people and objects
 \citep{brown2012cinematography, katz1991film, mascelli1998five}.
 % results
 The group results of the movie stimulus' primary contrast yielded a large
-cluster that spans the group overlap of individual PPA ROIs from anterior to
+cluster that spans the group overlap of individual PPAs from anterior to
 posterior.
 % confound of higher perception
 The cluster extends into more posterior, earlier visual areas could be an
@@ -861,13 +863,11 @@ in the audio-description stimulus) for both naturalistic stimuli.
 % RSC intro
 Like the PPA, the RSC and LOC repeatedly exhibited increased hemodynamic
 activity in studies investigating visual spatial perception or navigation (see reviews
-\citep{chrastil2018heterogeneity, bettencourt2013role, epstein2019scene})
+\citep{chrastil2018heterogeneity, bettencourt2013role, epstein2019scene}).
 % not random shit
 Thus, our model-driven approach to operationalize spatial perception based on
 stimulus annotations reveals focussed activation patterns in networks that are
 implicated in visual spatial perception and cognition.
-
-\todo[inline]{Maybe add sentence here that ``further studies are obvious''}
 
 
 %#13 natural stimulation
@@ -878,7 +878,7 @@ silbert2014coupled, wilson2008beyond} can be used as a continuous, complex,
 immersive, task-free paradigm that more closely resembles our natural dynamic
 environment than traditional experimental paradigms.
 % method
-We took advantage of three fMRI datasets and two stimulus annotations that are
+We took advantage of three\todo{actually two} fMRI datasets and two stimulus annotations that are
 part of the open-data resource
 \href{http://www.studyforrest.org}{studyforrest.org} to operationalize the
 perception of spatial information embedded in an audio-visual movie and an
@@ -970,10 +970,10 @@ other relevant auditory content.
 % task
 For all sessions with naturalistic stimuli, participants were instructed to
 inhibit physical movements except for eye-movements, and otherwise to simply
-``enjoy'' the presentation.
+``enjoy the presentation''.
 %
 For details on stimulus creation and presentation see
-\citet{hanke2014audiomovie,hanke2016simultaneous}.
+\citet{hanke2014audiomovie, hanke2016simultaneous}.
 
 % VIS study picture categories
 Stimuli for the block-design localizer study were 24 unique grayscale images of
@@ -992,7 +992,7 @@ For details on stimulus creation and presentation see
 
 % AD
 In the audio-description study, visual instructions were presented on a
-rear-projection screen inside scanner bore. During the functional scans, the
+rear-projection screen inside the scanner bore. During the functional scans, the
 projector presented a medium gray screen with the primary purpose to illuminate
 a participant's visual field in order to prevent premature fatigue.
 % AV & VIS
@@ -1043,7 +1043,7 @@ naturalistic stimulus paradigms (audio-description and movie).
 
 % data sources
 The current analyses were carried out on the same preprocessed fMRI data
-\citep{hanke2016aligned} that were used for the technical validation analysis
+\citep{hanke2016aligned}\todo{new ref.} that were used for the technical validation analysis
 presented in \citet{hanke2016simultaneous}.
 % exclusion of VP 10
 Of those 15 participants in the studyforrest dataset that took part in all three
@@ -1615,7 +1615,7 @@ transformation (12 degrees of freedom).
 
 % second level model
 The second-level analyses, which averaged contrast estimates over the eight
-stimulus segments, were carried out using a fixed effects model by forcing the
+stimulus segments, were carried out using a fixed-effects model by forcing the
 random effects variance to zero in FLAME (FMRIB's Local Analysis of Mixed
 Effects \citep{beckmann2003general, woolrich2004multilevel}).
 % thresholding ($Z$>2.3 in subject-space; $Z$>3.4 in group space)
@@ -1636,7 +1636,7 @@ Brain regions associated with observed clusters were determined with the Jülich
 Histological Atlas \citep{eickhoff2005toolbox, eickhoff2007assignment} and the
 Harvard-Oxford Cortical Atlas \citep{desikan2006automated} provided by FSL.
 % PPA masks
-Regions of interest (ROI) masks for individual PPAs and a PPA group mask of
+Regions of interest masks for individual PPAs and a PPA group mask of
 individual PPA overlaps were created from data provided by
 \citet{sengupta2016extension}.
 
