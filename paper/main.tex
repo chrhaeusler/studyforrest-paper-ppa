@@ -78,7 +78,7 @@ The same 14 participants were watching a Hollywood movie and listening to its
 audio-description as part of the open-data resource \textit{studyforrest.org}.
 % auditory localizer?
 %in order to explore if a naturalistic auditory narrative could be used to
-%localize a ``visual area''.  GLM
+%localize a ``visual area''.
 We model hemodynamic activity based on annotations of selected stimulus
 features,
 % VIS
@@ -282,28 +282,47 @@ impaired individuals.
 
 \section*{Results}
 
-\todo[inline]{Summarize some methods here?}
+\todo[inline]{I tried to keep the summary of methods short and use a pretty
+similar phrasing; still, I wouldn't get the result section and read the Method
+section and tables there while reading the results\dots. Most important imo is
+to link the Tables (Events + Contrasts) and explain that there is that ``primary
+contrast'' thing.}
 
 % study goal
 We investigated if spatial information embedded in two naturalistic stimuli
 correlates with increased hemodynamic activity in the PPA.
+%
+Based on an annotation of cuts in the movie and an annotation of speech spoken
+by the audio-description's narrator, we selected events in both stimuli that
+should correlate with the perception of spatial information and contrasted them
+with events that should not (or to a less degree) correlate with non-spatial
+perception (see Table~\ref{tab:events}).
+% from supplementals
+In order to test the robustness of our approach, we created multiple linear
+model (GLM) $t$-contrasts for the movie and audio-description (see
+Table~\ref{tab:contrasts}).
+% subjectively assessed balance
+For each stimulus, we chose a primary contrast for result presentation (marked
+with an asterisk in the table) based on a subjectively assessed balance of how
+well the averaged events within categories represent spatial and non-spatial
+information, and the number of events in the stimulus.
 % group level
-On a group average level, we compared results from whole-brain general linear
-model (GLM) analyses of
-the movie and the audio-description to a traditional visual localizer
-\citep{sengupta2016extension}.
+On a group average level, we here report results from whole-brain analyses of
+the movie's and the audio-description's primary contrasts and compare these
+results to a traditional visual localizer \citep{sengupta2016extension}.
 % individual level
-For each individual, we also compared the activation pattern from naturalistic
+For each individual, we also compare the activation pattern from naturalistic
 auditory stimulation to the individual PPA localization with a block-design
 stimulus.
+% reference to supplementals
+An evaluation of the results' robustness across all created contrasts on a group
+average level is provided in the Supplementary Information (see
+Figure~\ref{fig:stability-slices-volsurf}).
 % NeuroVault
-Unthresholded $Z$-maps of all contrasts on a group level as well as individual
-results of the primary $t$-contrasts co-registered to the group-template (MNI152
-space) can be found at
+Unthresholded $Z$-maps of all contrasts on a group average level as well as
+individual results of the primary $t$-contrasts co-registered to the
+group-template (MNI152 space) can be found at
 \href{https://neurovault.org/collections/KADGMGVZ/}{\url{neurovault.org/collections/KADGMGVZ}}.
-% reference to supplemental material
-Additional analyses of the robustness of the results presented here are
-available in the Supplementary Information.
 
 
 \subsection*{Group analyses}
@@ -1494,7 +1513,7 @@ Consequently, we computed multiple contrasts that are listed in
 Table~\ref{tab:contrasts} for the movie and audio-description, respectively.
 % subjectively assessed balance
 For each stimulus, we picked a primary contrast for result presentation (marked
-  with an asterisk in the table) based on a subjectively assessed balance of how well
+with an asterisk in the table) based on a subjectively assessed balance of how well
 the averaged events within categories represent spatial and non-spatial
 information, and the number of events in the stimulus.
 % reference to supplementals
