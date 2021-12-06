@@ -85,13 +85,12 @@ cortical surfaces can be seen in Figure~\ref{fig:subjs_ao_av_c1_surf}.
 \href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer} v5.3.0
 \citep{dale1999cortical} was used to reconstruct surfaces from T1-weighted
 images and an additional high-resolution T2-weighted image
-\citep{hanke2016freesurferdata}.\todo{ref to GitHub ``data-freesurfer''}
+\citep{hanke2016freesurferdata}.
 % projection
 Thresholded $Z$-maps ($Z$>3.4; $p$<.05, cluster-corrected) were projected onto
 the cortical surfaces using
 \href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer's} \citep{dale1999cortical}
-'mri\_vol2surf' command (unthresholded $Z$-maps are provided at
-\href{https://neurovault.org/collections/KADGMGVZ}{\url{neurovault.org/collections/KADGMGVZ}}).
+'mri\_vol2surf' command (unthresholded $Z$-maps are provided at \href{https://neurovault.org/collections/KADGMGVZ}{\url{neurovault.org/collections/KADGMGVZ}}).
 % smoothing
 After projection, individual PPA ROIs were spatially smoothed by applying a
 Gaussian kernel with full width at half maximum (FWHM) of \unit[2.0]{mm}.
@@ -121,7 +120,7 @@ Gaussian kernel with full width at half maximum (FWHM) of \unit[2.0]{mm}.
 
 In order to test the robustness of our approach, we created overall five
 $t$-contrasts for the movie stimulus, and overall eight $t$-contrast for the
-audio-description (see Table~5).\todo{hardcoded; cross-ref does not work}
+audio-description (see Table~5).
 % \ref{tab:contrasts}).
 % how
 Contrasts differ in contrasted categories based on ``how well'' averaged events
@@ -276,7 +275,7 @@ For each naturalistic stimulus, we created several control contrasts.
 To test for the specificity of the main findings within the movie fMRI data, we
 created four contrasts that compared hemodynamic activity during frames within
 movie shots (\texttt{no\_cut} category) with movie cut related categories (see
-Table~5).\todo{hardcoded}
+Table~5).
 % \ref{tab:contrasts}).
 % results
 None of these four contrasts yielded a significant cluster, suggesting that the
@@ -288,7 +287,7 @@ in the movie.
 % (cuts); \texttt{se\_old} (nouns) is r$\approx$0.4 correlated with
 % \texttt{vse\_old}.
 % \ref{fig:reg-corr})
-The correlation of regressors across stimuli (Figure~4)\todo{hardcoded} showed
+The correlation of regressors across stimuli (Figure~4) showed
 a moderate correlation among cuts to a setting depicted for the first time
 (movie \texttt{vse\_new}) and nouns indicating a switch to a setting occurring
 for the first time (audio-description \texttt{se\_new}), and cuts to a
