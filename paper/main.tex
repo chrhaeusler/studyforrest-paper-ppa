@@ -232,17 +232,15 @@ naturalistic nature of the movie stimulus, but limited to the auditory domain.
 We applied model-based, mass-univariate analyses to BOLD fMRI data from both
 naturalistic stimuli \citep{hanke2016simultaneous, hanke2014audiomovie},
 available from the open-data resource
-\href{http://www.studyforrest.org}{studyforrest.org}
-\citep{hanke2016aligned}.\todo{ref. to GitHub aligned}
+\href{http://www.studyforrest.org}{studyforrest.org} \citep{hanke2016aligned}.
 % comparison to previous GLM
 We compare current results to results of a previously performed model-based,
 mass-univariate analysis that was applied to data from a conventional functional
 localizer performed with the same set of participants
-\citep{sengupta2016extension, sengupta2016extensiondata}.\todo{new ref. to paper
-\& GitHub}
+\citep{sengupta2016extension, sengupta2016extensiondata}.
 % intro to hypo a
-Similarly to the functional localizer, we also capitalize on events
-that should evoke the cognitive processing of spatial information.
+Similarly to the functional localizer, we currently also capitalize on events
+that ought to evoke the cognitive processing of spatial information.
 % hypo a
 Thus, we hypothesized that our whole-brain analyses would reveal increased
 hemodynamic activity in medial temporal regions that were functionally
@@ -685,10 +683,15 @@ The fact that clusters of responses to the auditory stimulus are spatially
 restricted to the anterior part of clusters from both visual paradigms raises
 the question if the revealed correlation patterns can be attributed to different
 features inherent in the visual stimuli compared to a purely auditory stimulus.
+% preliminary 'cause cross-scanner
+Due to the nature of the datasets investigated here, such an attribution can
+only be preliminary, because the auditory stimulation dataset also differs in
+key acquisition properties (field-strength, resolution) from the comparison
+datasets, representing a confound of undetermined impact.
 % visual scenes: probably submodules
-In the domain of visual scene perception, previous studies provide evidence that
-the PPA can be divided into functionally subregions that might process different
-stimulus features.
+However, previous studies in the field of visual perception provide evidence
+that the PPA can be divided into functionally subregions that might process
+different stimulus features.
 % posterior: functionality
 The posterior PPA (pPPA) is functionally more responsive than the anterior PPA
 (aPPA) to low-level features of scenes or (abstract) objects
@@ -863,19 +866,36 @@ more concrete parts of a scene (e.g.``[a] beacon'', ``[a] farmhouse'').
 %information at the moment of cuts in an audio-visual movie.
 
 %#12 RSC + LOC
-Apart from the PPA, results show significantly increased activity in the dorsal
-precuneus and posterior cingulate region (e.g. retrosplenial complex; RSC) and
-lateral occipital cortex (LOC; more lateral in the movie stimulus, more medial
-in the audio-description stimulus) for both naturalistic stimuli.
+Apart from the PPA, results show significantly increased activity in the ventral
+precuneus and posterior cingulate region (referred to as ``retrosplenial
+complex'', RSC) of the medial parietal cortex, and in the superior lateral
+occipital cortex (referred to as ``occipital place area'', OPA) for both
+naturalistic stimuli.
 % RSC intro
-Like the PPA, the RSC and LOC repeatedly exhibited increased hemodynamic
-activity in studies investigating visual spatial perception or navigation (see reviews
-\citep{chrastil2018heterogeneity, bettencourt2013role, epstein2019scene}).
-% not random shit
+Like the PPA, the RSC and OPA have repeatedly  shown increased hemodynamic
+activity in studies investigating visual spatial perception and navigation
+\citep{chrastil2018heterogeneity, bettencourt2013role, dilks2013occipital,
+epstein2019scene}).
+% inference
 Thus, our model-driven approach to operationalize spatial perception based on
-stimulus annotations reveals focussed activation patterns in networks that are
-implicated in visual spatial perception and cognition.
-
+stimulus annotations reveals increased hemodynamic responses in a network that
+is implicated in visual spatial perception and cognition.
+% medial parietal cortex: anterior-posterior gradient
+Similarly to the parahippocampal cortex \citep{aminoff2013role}, the medial
+parietal cortex exhibits a posterior-anterior gradient from being more involved
+in perceptual processes to being more involved in memory related processes
+\citep{chrastil2018heterogeneity, hassabis2009construction, silson2019posterior,
+steel2021network}.
+% future studies
+Future, complementary studies using specifically designed paradigms could
+investigate where in the posterior-anterior axis of the parahippocampal and
+medial parietal cortex auditory semantic information is correlated with
+increased hemodynamic activity:
+% we hypothesize
+we hypothesize that the auditory perception of spatial information (compared to
+non-spatial information) is correlating with clusters in the middle of possibly
+overlapping clusters correlating with visual perception (peak activity more
+posterior) and scene construction from memory (peak activity more anterior).
 
 %#13 natural stimulation
 In summary, natural stimuli like movies \citep{eickhoff2020towards,
@@ -1050,7 +1070,7 @@ naturalistic stimulus paradigms (audio-description and movie).
 
 % data sources
 The current analyses were carried out on the same preprocessed fMRI data
-\citep{hanke2016aligned}\todo{ref. to GitHub aligned} that were used for the technical validation analysis
+\citep{hanke2016aligned} that were used for the technical validation analysis
 presented in \citet{hanke2016simultaneous}.
 % exclusion of VP 10
 Of those 15 participants in the studyforrest dataset that took part in all three
@@ -1105,20 +1125,20 @@ For the analysis of the movie stimulus, we took advantage of a previously
 published annotation of 869 movie cuts and the depicted location after each cut
 \citep{haeusler2016cutanno}.
 % we focus on cuts
-Contrary to manually annotating stimulus features of movie frames (for example, as
-performed by \citet{bartels2004mapping} for color, faces, language, and
-human bodies), we categorized movie cuts that - in general - realign the viewer
-within the movie environment by switching to another perspective within the
-same setting, or to a position in an entirely different setting.
+Contrary to manually annotating stimulus features of movie frames (for example,
+as performed by \citet{bartels2004mapping} for color, faces, language, and human
+bodies), we categorized movie cuts that - in general - realign the viewer within
+the movie environment by switching to another perspective within the same
+setting, or to a position in an entirely different setting.
 % this this should work
 More specifically, we sought to exploit a cinematographic bias as
 % establishing shots & shots within setting early in the movie
 at a setting's first occurrence in a movie, shots tend to broadly establish the
 setting and the spatial layout within the setting.
 % cut to recurrent scene
-On revisiting an already established setting, the field sizes of movie shots
-tend to decrease, and shots tend to more often depict people talking to each
-other or objects that are relevant to the evolved plot
+On revisiting an already established setting, the shot sizes tend to decrease
+and more often depict people talking to each other or objects that are relevant
+to the evolved plot
 \citep{brown2012cinematography, katz1991film, mascelli1998five}.
 
 % AV regressors/events
@@ -1509,19 +1529,29 @@ An evaluation of the robustness of these results with respect to similar but
 different contrasts is provided in the Supplementary Information.
 
 % AV: primary contrast
-In the primary contrast for the movie stimulus, we contrasted cuts to a setting
+In the primary contrast of the movie stimulus, we contrasted cuts to a setting
 that was not depicted before (\texttt{vse\_new}) to cuts merely switching the
 camera position within a setting that was already established earlier in the
-movie (\texttt{vpe\_old}), because the former are designed to orient the viewer
-in the movie environment using wider-camera angles, whereas the latter can
-afford to depict details of a scene.
-% AD: primary contrast
-In the primary contrast of the audio-description stimulus, we contrasted
-mentions of buildings and landmarks (\texttt{geo}), and rooms and
-geometry-defining objects (\texttt{groom}) with nouns referring to a person's
-head or face (\texttt{fahead}), and other non-geometry related categories
-(\texttt{body}, \texttt{bodypart}, \texttt{fahead}, \texttt{object},
-\texttt{sex\_f}, \texttt{sex\_m}).
+movie (\texttt{vpe\_old}).
+% reason
+We chose the contrast \texttt{vse\_new > vpe\_old} as the primary contrast,
+because it is contrasting the most different categories in regard to the
+averaged movie frames' content:
+% explanation b
+due to a cinematographic bias, the category \texttt{vse\_new} tends to comprise
+mostly shots that were designed to orient the viewer in the movie's broader
+environment using wider shots sizes (ranging from ``establishing shots'' to
+``wide shots'').
+% explanation b
+In contrast, the category \texttt{vpe\_old} comprises mostly
+shots depicting details of a scene using narrower shot sizes (ranging from
+``medium shots'' to ``close ups'').
+% AD: primary contrast In the primary contrast of the
+audio-description stimulus, we contrasted mentions of buildings and landmarks
+(\texttt{geo}), and rooms and geometry-defining objects (\texttt{groom}) with
+nouns referring to a person's head or face (\texttt{fahead}), and other
+non-geometry related categories (\texttt{body}, \texttt{bodypart},
+\texttt{fahead}, \texttt{object}, \texttt{sex\_f}, \texttt{sex\_m}).
 % why furniture was not used
 The category ``furniture'' (\texttt{furn}) was not used as a regressor of
 interest in any contrast because these nouns could be perceived as either a
@@ -1532,8 +1562,8 @@ first time (\texttt{se\_new}) or a setting that recurred during the plot
 (\texttt{se\_old}) were not included in the primary contrast because they
 comprise
 % heterogeneous category
-a)  nouns that could be a member of another category (e.g. ``[a]
-physician''), and
+a)  nouns that could be a member of another category (e.g. ``[a] physician''),
+and
 % richness of verbal description vs. picture
 b) nouns that only vaguely identify a scene (e.g. ``[in] Greenbow'', ``[in a]
 disco'', ''[black and white] film recordings'') compared to perceptually richer
