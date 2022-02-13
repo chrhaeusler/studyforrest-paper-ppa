@@ -6,7 +6,6 @@
 \usepackage[section]{placeins}
 \usepackage{flafter}
 \usepackage{comment}
-\usepackage{breakurl}
 \usepackage{svg}
 \usepackage[labelfont=bf,font=small]{caption}
 \usepackage{booktabs}
@@ -23,6 +22,7 @@ colorlinks=true,
   urlcolor=black,
 	linkcolor=black
 ]{hyperref}
+\usepackage{breakurl}
 %\newcommand{\scidatalogo}{\includegraphics[height=36pt]{SciData_logo.jpg}}
 \newcommand{\scidatalogo}{}
 \pagestyle{fancy}
@@ -85,12 +85,14 @@ cortical surfaces can be seen in Figure~\ref{fig:subjs_ao_av_c1_surf}.
 \href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer} v5.3.0
 \citep{dale1999cortical} was used to reconstruct surfaces from T1-weighted
 images and an additional high-resolution T2-weighted image
-\citep{hanke2016freesurferdata}.
+% \citep{hanke2016freesurferdata}
+(s. \href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer}{\url{github.com/psychoinformatics-de/studyforrest-data-freesurfer}}).
 % projection
-Thresholded $Z$-maps ($Z$>3.4; $p$<.05, cluster-corrected) were projected onto
+Thresholded $Z$-maps ($Z$>3.4; $p$<.05,\linebreak cluster-corrected) were projected onto
 the cortical surfaces using
 \href{https://surfer.nmr.mgh.harvard.edu}{FreeSurfer's} \citep{dale1999cortical}
-'mri\_vol2surf' command (unthresholded $Z$-maps are provided at \href{https://neurovault.org/collections/KADGMGVZ}{\url{neurovault.org/collections/KADGMGVZ}}).
+'mri\_vol2surf' command (unthresholded $Z$-maps are provided at
+\href{https://neurovault.org/collections/KADGMGVZ}{\url{neurovault.org/collections/KADGMGVZ}}).
 % smoothing
 After projection, individual PPA ROIs were spatially smoothed by applying a
 Gaussian kernel with full width at half maximum (FWHM) of \unit[2.0]{mm}.

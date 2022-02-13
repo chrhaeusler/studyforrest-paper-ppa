@@ -6,7 +6,6 @@
 \usepackage[section]{placeins}
 \usepackage{flafter}
 \usepackage{comment}
-\usepackage{breakurl}
 \usepackage{svg}
 \usepackage[labelfont=bf,font=small]{caption}
 \usepackage{booktabs}
@@ -23,6 +22,7 @@ colorlinks=true,
   urlcolor=black,
 	linkcolor=black
 ]{hyperref}
+%t\usepackage{breakurl}
 %\newcommand{\scidatalogo}{\includegraphics[height=36pt]{SciData_logo.jpg}}
 \newcommand{\scidatalogo}{}
 \pagestyle{fancy}
@@ -35,6 +35,7 @@ colorlinks=true,
 \externaldocument{suppl}
 % \usepackage{helvet}
 
+\newcommand{\cmmnt}[1]{\ignorespaces}
 % \renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
@@ -232,12 +233,12 @@ naturalistic nature of the movie stimulus, but limited to the auditory domain.
 We applied model-based, mass-univariate analyses to BOLD fMRI data from both
 naturalistic stimuli \citep{hanke2016simultaneous, hanke2014audiomovie},
 available from the open-data resource
-\href{http://www.studyforrest.org}{studyforrest.org} \citep{hanke2016aligned}.
+\href{http://www.studyforrest.org}{studyforrest.org}.
 % comparison to previous GLM
 We compare current results to results of a previously performed model-based,
 mass-univariate analysis that was applied to data from a conventional functional
 localizer performed with the same set of participants
-\citep{sengupta2016extension, sengupta2016extensiondata}.
+\citep{sengupta2016extension}.
 % intro to hypo a
 Similarly to the functional localizer, we currently also capitalize on events
 that ought to evoke the cognitive processing of spatial information.
@@ -282,21 +283,21 @@ correlates with increased hemodynamic activity in the PPA.
 Based on an annotation of cuts in the movie and an annotation of speech spoken
 by the audio-description's narrator, we selected events in both stimuli that
 should correlate with the perception of spatial information and contrasted them
-with events that should correlate with non-spatial
-perception to a lesser degree, or not at all (see Table~\ref{tab:events}).
+with events that should correlate with non-spatial perception to a lesser
+degree, or not at all\cmmnt{ (see Table~\ref{tab:events})}.
 % from supplementals
 In order to test the robustness of our approach, we created multiple linear
-model (GLM) $t$-contrasts for the movie and audio-description (see
-Table~\ref{tab:contrasts}).
+model (GLM) $t$-contrasts for the movie and audio-description\cmmnt{ (see
+Table~\ref{tab:contrasts})}.
 % subjectively assessed balance
-For each stimulus, we chose a primary contrast for result presentation
-based on a subjectively assessed balance of how
-well the averaged events within categories represent spatial and non-spatial
-information, and the number of events in the stimulus.
+For each stimulus, we chose a primary contrast for result presentation based on
+a subjectively assessed balance of how well the averaged events within
+categories represent spatial and non-spatial information, and the number of
+events in the stimulus.
 % group level
-On a group average level, we report results from whole-brain analyses of
-the movie's and the audio-description's primary contrasts and compare these
-results to a traditional visual localizer \citep{sengupta2016extension}.
+On a group average level, we report results from whole-brain analyses of the
+movie's and the audio-description's primary contrasts and compare these results
+to a traditional visual localizer \citep{sengupta2016extension}.
 % individual level
 For each individual, we also compare the activation pattern from naturalistic
 auditory stimulation to the individual PPA localization with a block-design
@@ -1069,9 +1070,9 @@ naturalistic stimulus paradigms (audio-description and movie).
 \subsection*{Preprocessing}
 
 % data sources
-The current analyses were carried out on the same preprocessed fMRI data
-\citep{hanke2016aligned} that were used for the technical validation analysis
-presented in \citet{hanke2016simultaneous}.
+The current analyses were carried out on the same preprocessed fMRI data (s.
+\href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{\url{github.com/psychoinformatics-de/studyforrest-data-aligned}}) that were used for the technical validation analysis presented in
+\citet{hanke2016simultaneous}.
 % exclusion of VP 10
 Of those 15 participants in the studyforrest dataset that took part in all three
 experiments, data of one participant were dropped due to invalid distortion
@@ -1691,17 +1692,16 @@ datasets, published to or linked from the \emph{G-Node GIN} repository
 Raw data of the audio-description, movie and visual localizer were originally
 published on the \emph{OpenfMRI} portal
 (\url{https://legacy.openfmri.org/dataset/ds000113}\citep{Hanke2014ds000113},
-\url{https://legacy.openfmri.org/dataset/ds000113d}\citep{hanke2016ds000113d}).
+\space \url{https://legacy.openfmri.org/dataset/ds000113d}\citep{hanke2016ds000113d}).
 % visual localizer
 Results from the localization of higher visual areas are available as Datalad
 datasets at \emph{GitHub} (
-\href{https://github.com/psychoinformatics-de/studyforrest-data-visualrois}{\url{github.com/psychoinformatics-de/studyforrest-data-visualrois}}\citep{sengupta2016extensiondata}).
+\href{https://github.com/psychoinformatics-de/studyforrest-data-visualrois}{\url{github.com/psychoinformatics-de/studyforrest-data-visualrois}}).
 % raw data
 The realigned participant-specific timeseries that were used in the current
 analyses were derived from the raw data releases and are available as Datalad
 datasets at \emph{GitHub} (
-\href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{\url{github.com/psychoinformatics-de/studyforrest-data-aligned}}
-\citep{hanke2016aligned}).
+\href{https://github.com/psychoinformatics-de/studyforrest-data-aligned}{\url{github.com/psychoinformatics-de/studyforrest-data-aligned}}.
 % cut annotation
 The annotation of cuts is available at \emph{F1000Research}
 (\href{https://doi.org/10.5256/f1000research.9536.d134823}{\url{doi.org/10.5256/f1000research.9536.d134823}}
@@ -1713,9 +1713,8 @@ the annotation of speech is available at \emph{OSF}
 % surface data
 Participant-specific reconstructed cortical surface are available as Datalad
 dataset at \emph{GitHub} (
-\href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer}{\url{github.com/psychoinformatics-de/studyforrest-data-freesurfer}}
-\citep{hanke2016freesurferdata}), and are also part of the original data release
-on \emph{OpenfMRI}
+\href{https://github.com/psychoinformatics-de/studyforrest-data-freesurfer}{\url{github.com/psychoinformatics-de/studyforrest-data-freesurfer}},
+and are also part of the original data release on \emph{OpenfMRI}
 (\url{https://legacy.openfmri.org/dataset/ds000113}\citep{Hanke2014ds000113}.
 
 The same data are available in a modified and merged form on OpenNeuro at \url{https://openneuro.org/datasets/ds000113}.
