@@ -1178,11 +1178,13 @@
 	year = "2019"
 }
 
-@misc{delavega2021neuroscout,
+@software{delavega2021neuroscout,
 	author = "Alejandro {De La Vega} and Ross Blair and Tal Yarkoni",
+	doi = "10.5281/zenodo.2592674",
+	month = jan,
 	publisher = "Zenodo",
 	title = "{Neuroscout}",
-	howpublished = "{\emph{Zenodo} \url{https://doi.org/10.5281/zenodo.2592674}}",
+	url = "https://doi.org/10.5281/zenodo.2592674",
 	version = "v0.8",
 	year = "2021"
 }
@@ -1195,6 +1197,7 @@
 	pages = "3262",
 	publisher = "The Open Journal",
 	title = "{DataLad: distributed system for joint management of code, data, and their relationship}",
+	url = "https://doi.org/10.21105/joss.03262",
 	volume = "6",
 	year = "2021"
 }
@@ -1233,45 +1236,75 @@
 	year = "1982"
 }
 
-@misc{haeusler2016cutdata,
+@article{haeusler2016cutdata,
 	author = "Christian Olaf Häusler and Michael Hanke",
+	journal = "F1000Research",
 	title = "{Dataset 1 in: An annotation of cuts, depicted locations, and temporal progression in the motion picture “Forrest Gump”}",
-	howpublished = "{\emph{F1000Research} \url{https://doi.org/10.5256/f1000research.9536.d134823}}",
+	url = "https://doi.org/10.5256/f1000research.9536.d134823",
 	year = "2016"
 }
 
-@misc{haeusler2020speechdata,
+@article{haeusler2020speechdata,
 	author = "Christian Olaf Häusler and Michael Hanke",
+	journal = "OSF",
 	title = "{studyforrest-speechannotation}",
-	howpublished = "{\emph{OSF} \url{https://doi.org/10.17605/OSF.IO/F5J3E}}",
+	url = "https://doi.org/10.17605/OSF.IO/F5J3E",
 	year = "2020"
 }
 
-@misc{haeusler2021ppa,
+@article{haeusler2021ppa,
 	author = "Christian Olaf Häusler and Michael Hanke",
+	journal = "G-Node",
 	title = "{Processing of visual and non-visual naturalistic spatial information in the “parahippocampal place area”: from raw data to results}",
-	howpublished = "{\emph{G-Node} \url{https://doi.org/10.12751/g-node.7is9s6}}",
+	url = "https://doi.org/10.12751/g-node.7is9s6",
 	year = "2021"
 }
 
-@misc{hanke2014ds000113,
-	author = "Michael Hanke and Florian J. Baumgartner and Pierre Ibe and Falko R. Kaule and Stefan Pollmann and Oliver Speck and Wolf Zinke and Jörg Stadler",
-	title = "{A high-resolution 7-Tesla fMRI dataset from complex natural stimulation with an audio movie}",
-	howpublished = "{\emph{OpenfMRI} \url{https://legacy.openfmri.org/dataset/ds000113}}",
-	year = "2014"
-}
-
-@misc{sengupta2016ds000113c,
-	author = "Ayan Sengupta and Renat Yakupov and Oliver Speck and Stefan Pollmann and Michael Hanke",
-	title = "{Multi-resolution 7T fMRI data on the representation of visual orientation}",
-	howpublished = "{\emph{OpenfMRI} \url{https://legacy.openfmri.org/dataset/ds000113c}}",
+@article{sengupta2016extensiondata,
+	author = "Ayan Sengupta and Falko R. Kaule and Swaroop J. Guntupalli and Michael B. Hoffmann and Christian Häusler and Jörg Stadler and Michael Hanke",
+	journal = "GitHub",
+	title = "{studyforrest.org Dataset. Localization of higher-level visual ROIs}",
+	url = "https://github.com/psychoinformatics-de/studyforrest-data-visualrois",
 	year = "2016"
 }
 
-@misc{hanke2016ds000113d,
+@article{hanke2016aligned,
+	author = "Michael Hanke",
+	journal = "GitHub",
+	title = "{studyforrest.org Dataset. Pre-aligned MRI data}",
+	url = "https://github.com/psychoinformatics-de/studyforrest-data-aligned",
+	year = "2016"
+}
+
+@article{hanke2016freesurferdata,
+	author = "Michael Hanke",
+	journal = "GitHub",
+	title = "{studyforrest.org Dataset. Reconstruction of cortical surfaces}",
+	url = "https://github.com/psychoinformatics-de/studyforrest-data-freesurfer",
+	year = "2016"
+}
+
+@article{hanke2014ds000113,
+	author = "Michael Hanke and Florian J. Baumgartner and Pierre Ibe and Falko R. Kaule and Stefan Pollmann and Oliver Speck and Wolf Zinke and Jörg Stadler",
+	journal = "OpenfMRI",
+	title = "{A high-resolution 7-Tesla fMRI dataset from complex natural stimulation with an audio movie}",
+	url = "https://legacy.openfmri.org/dataset/ds000113",
+	year = "2014"
+}
+
+@article{sengupta2016ds000113c,
+	author = "Ayan Sengupta and Renat Yakupov and Oliver Speck and Stefan Pollmann and Michael Hanke",
+	journal = "OpenfMRI",
+	title = "{Multi-resolution 7T fMRI data on the representation of visual orientation}",
+	url = "https://legacy.openfmri.org/dataset/ds000113c",
+	year = "2016"
+}
+
+@article{hanke2016ds000113d,
 	author = "Michael Hanke and Daniel Kottke and Vittorio Iacovella and Michael B. Hoffmann and Ayan Sengupta and Falko R. Kaule and Christian Häusler and Swaroop J Guntupalli and Florian J. Baumgartner and Jörg Stadler",
+	journal = "OpenfMRI",
 	title = "{Simultaneous fMRI/eyetracking while movie watching, plus visual localizers}",
-	howpublished = "{\emph{OpenfMRI} \url{https://legacy.openfmri.org/dataset/ds000113d}}",
+	url = "https://legacy.openfmri.org/dataset/ds000113d",
 	year = "2016"
 }
 
